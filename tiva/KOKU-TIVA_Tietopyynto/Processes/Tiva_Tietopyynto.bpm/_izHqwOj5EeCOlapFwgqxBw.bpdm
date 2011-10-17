@@ -16,20 +16,20 @@
     </bpdm:dependencies>
     <bpel:scope bpdm:label="Pyynto" bpdm:ID="_izHqwOj5EeCOlapFwgqxBw">
         <bpel:partnerLinks>
-            <bpel:partnerLink name="pyyntoAndProsessiForPortTypeProcessPlkVar" partnerLinkType="diag:PyyntoAndProsessiForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="Prosessi_for_Pyynto" bpdm:invokedService="Prosessi:PyyntoAndProsessiForPortTypeProcessPlkService" bpdm:invokedPort="Prosessi_for_PyyntoPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Pyynto/PyyntoAndProsessiForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_izHqwOj5EeCOlapFwgqxBw:_DcMYwPP9EeCaoK6-NKuILQ" bpdm:isManaged="true" bpdm:otherPoolId="_dDZK8NY5EeCSFM5MejvcYQ"/>
+            <bpel:partnerLink name="pyyntoAndProsessiForPortTypeProcessPlkVar" partnerLinkType="diag:PyyntoAndProsessiForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="Prosessi_for_Pyynto" bpdm:invokedService="Prosessi:PyyntoAndProsessiForPortTypeProcessPlkService" bpdm:invokedPort="Prosessi_for_PyyntoPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Pyynto/PyyntoAndProsessiForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_izHqwOj5EeCOlapFwgqxBw:_84CrwPVbEeCgsf-1346ddA" bpdm:isManaged="true" bpdm:otherPoolId="_dDZK8NY5EeCSFM5MejvcYQ"/>
         </bpel:partnerLinks>
         <bpel:variables>
-            <bpel:variable name="tiva_Tietopyynto_init_FormInitProcessRequestMsg" messageType="Tiva_Tietopyynto_init_Form:initProcessRequest" bpdm:id="_FuZE4PP9EeCaoK6-NKuILQ" bpdm:messageIds=" out:_FtwLsPP9EeCaoK6-NKuILQ">
+            <bpel:variable name="tiva_Tietopyynto_init_FormInitProcessRequestMsg" messageType="Tiva_Tietopyynto_init_Form:initProcessRequest" bpdm:id="_9WN1gPVbEeCgsf-1346ddA" bpdm:messageIds=" out:_9V_zEPVbEeCgsf-1346ddA">
                 <bpel:from bpdm:toPart="root">
                     <bpel:literal bpdm:linkedMessageType="Tiva_Tietopyynto_init_Form:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
-            <bpel:variable name="tiva_Tietopyynto_init_FormInitProcessResponseMsg" messageType="Tiva_Tietopyynto_init_Form:initProcessResponse" bpdm:id="_GBY5YPP9EeCaoK6-NKuILQ" bpdm:messageIds="inc:_GAm2QPP9EeCaoK6-NKuILQ"/>
+            <bpel:variable name="tiva_Tietopyynto_init_FormInitProcessResponseMsg" messageType="Tiva_Tietopyynto_init_Form:initProcessResponse" bpdm:id="_-XaMwPVbEeCgsf-1346ddA" bpdm:messageIds="inc:_-WpXwPVbEeCgsf-1346ddA"/>
         </bpel:variables>
         <bpel:sequence>
-            <bpdm:messagingtask operation="initProcess" partnerLink="pyyntoAndProsessiForPortTypeProcessPlkVar" portType="Tiva_Tietopyynto_init_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Luo pyynto" bpdm:ID="_DcMYwPP9EeCaoK6-NKuILQ">
-                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tiva_Tietopyynto_init_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_izHqwOj5EeCOlapFwgqxBw" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_init_Form:initProcessRequest" bpdm:ID="_FtwLsPP9EeCaoK6-NKuILQ"></bpdm:linkset>
-                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="tiva_Tietopyynto_init_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_izHqwOj5EeCOlapFwgqxBw" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_init_Form:initProcessResponse" bpdm:ID="_GAm2QPP9EeCaoK6-NKuILQ"></bpdm:linkset>
+            <bpdm:messagingtask operation="initProcess" partnerLink="pyyntoAndProsessiForPortTypeProcessPlkVar" portType="Tiva_Tietopyynto_init_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Luo pyyntö" bpdm:ID="_84CrwPVbEeCgsf-1346ddA">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tiva_Tietopyynto_init_FormInitProcessRequestMsg" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_init_Form:initProcessRequest" bpdm:ID="_9V_zEPVbEeCgsf-1346ddA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="tiva_Tietopyynto_init_FormInitProcessResponseMsg" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_init_Form:initProcessResponse" bpdm:ID="_-WpXwPVbEeCgsf-1346ddA"></bpdm:linkset>
             </bpdm:messagingtask>
         </bpel:sequence>
     </bpel:scope>

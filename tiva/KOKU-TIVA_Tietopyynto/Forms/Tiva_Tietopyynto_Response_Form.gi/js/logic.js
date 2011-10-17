@@ -3,11 +3,38 @@ function getTaskSubscribe() {
     Intalio.Internal.Utilities.GET_TASK_SUCCESS, preload);
 };
 
+function getPortNumber() {
+    var url = window.location.href;
+    var url_parts = url.split("/");
+    var domain_name_parts = url_parts[2].split(":");
+    var port_number = domain_name_parts[1];
+    return port_number;
+}
+
+function getDomainName() {
+    var url = window.location.href;
+    var url_parts = url.split("/");
+    var domain_name_parts = url_parts[2].split(":");
+    var domain_name = domain_name_parts[0];
+    return domain_name;
+}
+
+function getURL() {
+    var newString = "http://" + getDomainName() + ":" + getPortNumber();
+    return newString;
+}
+
+function getIntalioUser() {
+    var username = Intalio.Internal.Utilities.getUser();
+    username = username.substring((username.indexOf("/") + 1));
+    return username;
+}
+
 /**
  * Operations to load before form is shown to user
  */
 function preload() {
-    
+                
     getParents();
     selectActiveTreeNodes();
     var rootnode = TivaTietopyyntoForm.getCache().getDocument("Kategoriat-nomap");
@@ -36,25 +63,35 @@ function preload() {
 }
 
 function preloadCategories() {
-   var xmlData, xmlString;
+    var xmlData, xmlString, intalioUserUid, intalioUser;
     
-    xmlData = Arcusys.Internal.Communication.GetCategories();
-
+    intalioUserUid = "";
+    
+    intalioUser = getIntalioUser();
+        
+    xmlData = Arcusys.Internal.Communication.GetSenderUid(intalioUser);
+       
+    //intalioUserUid = xmlData.selectSingleNode("//ns2:getUserUidByLooraNameResponse", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getFirstChild();
+    intalioUserUid = xmlData.selectSingleNode("//userUid").getValue();
+              
+    xmlData = Arcusys.Internal.Communication.GetCategories(intalioUserUid);
+    
     xmlData = xmlData.selectSingleNode("//ns2:getTietoelementitResponse", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getFirstChild();
     xmlData = xmlData.toString();
 
     xmlString = "<data jsxid=\"jsxroot\">" + xmlData + "</data>";
 
     TivaTietopyyntoForm.getJSXByName("matrix1").setXMLString(xmlString);
-    TivaTietopyyntoForm.getJSXByName("matrix1").repaint();
     TivaTietopyyntoForm.getJSXByName("matrix1").repaintData();
     
 }
 
 function getParents() {
-    var target = TivaTietopyyntoForm.getJSXByName("Pyynto_Kohde").getValue();
-    
+    var target = TivaTietopyyntoForm.getJSXByName("Pyynto_Kohde_UID").getValue();
+         
     xmlData = Arcusys.Internal.Communication.GetChildinfo(target);
+    
+        
     list = ["firstname", "lastname"];
     userData = parseXML(xmlData, "parents", list);
 
@@ -196,11 +233,11 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var tout, msg, endpoint, url, req, objXML;
 
         tout = 1000;
-     
+                   
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo><childUid>" + uid + "</childUid></soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
 
-        url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        //url = "http://jbossportal.intra.arcusys.fi:8080/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        url = getURL() + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
         endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
@@ -215,7 +252,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         objXML = req.getResponseXML();
 
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+             alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildinfo)" );
         } else {
             return objXML;
 
@@ -225,16 +262,17 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetCategories = function() {
+    arc.GetCategories = function(userUid) {
         var tout, msg, endpoint, url, req, objXML;
-
+       
         tout = 1000;
      
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getTietoelementit/></soapenv:Body></soapenv:Envelope>";
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getTietoelementit><userUid>" + userUid + "</userUid></soa:getTietoelementit></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = "http://jbossportal.intra.arcusys.fi:8080/palvelut-portlet/ajaxforms/WsProxyServlet2";
-
+        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+       
+        url = getURL() + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+       
         endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
@@ -248,7 +286,42 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         objXML = req.getResponseXML();
 
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+             alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetCategories)" );
+        } else {
+           
+            return objXML;
+
+        }
+
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetSenderUid = function(looraName) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+
+        tout = 1000;
+        limit = 100;
+
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + looraName + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
+
+        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        url = getURL() + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
+        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetUsers)" );
         } else {
             return objXML;
 

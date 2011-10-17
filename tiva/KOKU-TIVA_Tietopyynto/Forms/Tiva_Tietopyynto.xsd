@@ -11,6 +11,10 @@
     		<element name="Perustiedot_Extend03" type="string"></element>
     		<element name="Perustiedot_Extend04" type="string"></element>
     		<element name="Perustiedot_Lahettaja" type="string"></element>
+    		<element name="Perustiedot_Vastaanottaja_UID"
+    			type="string">
+    		</element>
+    		<element name="Perustiedot_Lahettaja_UID" type="string"></element>
     	</sequence>
     </complexType>
     
@@ -25,6 +29,7 @@
     		<element name="Pyynto_Extend02" type="string"></element>
     		<element name="Pyynto_Extend03" type="string"></element>
     		<element name="Pyynto_Extend04" type="string"></element>
+    		<element name="Pyynto_Kohde_UID" type="string"></element>
     	</sequence>
     </complexType>
     
@@ -39,7 +44,7 @@
     		<element name="Vastaus_VoimassaToistaiseksi"
     			type="boolean">
     		</element>
-    		<element name="Vastaus_Extend01" type="string"></element>
+    		<element name="Vastaus_Extend01" type="int"></element>
     		<element name="Vastaus_Extend02" type="string"></element>
     		<element name="Vastaus_Extend03" type="string"></element>
     		<element name="Vastaus_Extend04" type="string"></element>

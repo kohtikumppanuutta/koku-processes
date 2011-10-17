@@ -9,21 +9,22 @@
    <xs:element name="hyvaksyTietopyyntoResponse" type="tns:hyvaksyTietopyyntoResponse"/>
    <xs:element name="luoTietopyynto" type="tns:luoTietopyynto"/>
    <xs:element name="luoTietopyyntoResponse" type="tns:luoTietopyyntoResponse"/>
+   <xs:element name="record" type="tns:informationCategoryTO"/>
    <xs:complexType name="getTietoelementit">
     <xs:sequence/>
    </xs:complexType>
    <xs:complexType name="getTietoelementitResponse">
     <xs:sequence>
-     <xs:element minOccurs="0" name="tietoelementti" type="tns:informationCategoryTO"/>
+     <xs:element minOccurs="0" name="record" type="tns:informationCategoryTO"/>
     </xs:sequence>
    </xs:complexType>
    <xs:complexType name="informationCategoryTO">
     <xs:sequence>
-     <xs:element minOccurs="0" name="categoryId" type="xs:long"/>
-     <xs:element minOccurs="0" name="description" type="xs:string"/>
-     <xs:element minOccurs="0" name="name" type="xs:string"/>
-     <xs:element maxOccurs="unbounded" minOccurs="0" name="subcategories" nillable="true" type="tns:informationCategoryTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="record" type="tns:informationCategoryTO"/>
     </xs:sequence>
+    <xs:attribute name="jsxid" type="xs:long"/>
+    <xs:attribute name="description" type="xs:string"/>
+    <xs:attribute name="jsxtext" type="xs:string"/>
    </xs:complexType>
    <xs:complexType name="luoTietopyynto">
     <xs:sequence>

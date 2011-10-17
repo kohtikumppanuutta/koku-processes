@@ -30,7 +30,7 @@
 			</xsl:element>
 			
 			<xsl:element name="receiverUid">
-				<xsl:value-of select="//ka:Perustiedot_Vastaanottaja/text()"/>
+				<xsl:value-of select="//ka:Perustiedot_Vastaanottaja_UID/text()"/>
 			</xsl:element>
 			
 			<xsl:element name="requestPurpose">
@@ -38,11 +38,11 @@
 			</xsl:element>
 			
 			<xsl:element name="senderUid">
-				<xsl:value-of select="//ka:Perustiedot_Lahettaja/text()"/>
+				<xsl:value-of select="//ka:Perustiedot_Lahettaja_UID/text()"/>
 			</xsl:element>
 	 		
 	 		<xsl:element name="targetPersonUid">
-				<xsl:value-of select="//ka:Pyynto_Kohde/text()"/>
+				<xsl:value-of select="//ka:Pyynto_Kohde_UID/text()"/>
 			</xsl:element>
 			
 			<xsl:element name="title">
