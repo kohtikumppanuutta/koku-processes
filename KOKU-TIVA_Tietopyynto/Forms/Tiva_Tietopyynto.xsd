@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.arcusys.fi/Tiva_Tietopyynto" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/Tiva_Tietopyynto">
+	
+    <complexType name="Perustiedot_Type">
+    	<sequence>
+    		<element name="Perustiedot_Otsikko" type="string"></element>
+    		<element name="Perustiedot_Vastaanottaja" type="string"></element>
+    		<element name="Perustiedot_Lisatietoa" type="string"></element>
+    		<element name="Perustiedot_Extend01" type="string"></element>
+    		<element name="Perustiedot_Extend02" type="string"></element>
+    		<element name="Perustiedot_Extend03" type="string"></element>
+    		<element name="Perustiedot_Extend04" type="string"></element>
+    		<element name="Perustiedot_Lahettaja" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Pyynto_Type">
+    	<sequence>
+    		<element name="Pyynto_Kohde" type="string"></element>
+    		<element name="Pyynto_Havainnointitiedot" type="string"></element>
+    		<element name="Pyynto_Tarkoitus" type="string"></element>
+    		<element name="Pyynto_Lainsaadanto" type="string"></element>
+    		<element name="Pyynto_Lisatieto" type="string"></element>
+    		<element name="Pyynto_Extend01" type="string"></element>
+    		<element name="Pyynto_Extend02" type="string"></element>
+    		<element name="Pyynto_Extend03" type="string"></element>
+    		<element name="Pyynto_Extend04" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Vastaus_type">
+    	<sequence>
+    		<element name="Vastaus_Perustelut" type="string"></element>
+    		<element name="Vastaus_Lisatieto" type="string"></element>
+    		<element name="Vastaus_Voimassa" type="date"></element>
+    		<element name="Vastaus_Tyyppi" type="string"></element>
+    		<element name="Vastaus_Paatos" type="boolean"></element>
+    		<element name="Vastaus_Liite" type="string"></element>
+    		<element name="Vastaus_VoimassaToistaiseksi"
+    			type="boolean">
+    		</element>
+    		<element name="Vastaus_Extend01" type="string"></element>
+    		<element name="Vastaus_Extend02" type="string"></element>
+    		<element name="Vastaus_Extend03" type="string"></element>
+    		<element name="Vastaus_Extend04" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="Tiva_Tietopyynto_Form"
+    	type="tns:Tiva_Tietopyynto_Type">
+    </element>
+    
+    <complexType name="Tiva_Tietopyynto_Type">
+    	<sequence>
+    		<element name="Vastaus" type="tns:Vastaus_type"></element>
+    		<element name="Pyynto" type="tns:Pyynto_Type"></element>
+    		<element name="Perustiedot" type="tns:Perustiedot_Type"></element>
+    		<element name="Havannointitiedot" type="tns:Havannointitiedot_Type"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+
+    
+
+
+    <complexType name="Havannointitiedot_Type">
+    	<sequence>
+    		<element name="Havannointitiedot_Valitut" type="string"></element>
+    		<element name="Havannointitiedot_Avattu" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>
