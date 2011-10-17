@@ -1,0 +1,38 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:attachments="http://www.intalio.com/gi/Pohjanluontiform.gi/attachments" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:Pohjanluontiform1="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Pohjanluontiform2="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Pohjanluontiform="http://www.intalio.com/gi/Pohjanluontiform.gi" xmlns:this="http://thisdiagram/Virkailija" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Virkailija">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_hI25kNPKEeCtDPd7kTBk1g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Pohjanluontiform.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Pohjanluontiform.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/DynamicFields" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///DynamicFields.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi/attachments" bpdm:prefix="Pohjanluontiform1" bpdm:comment="contrib=&apos;project:///Pohjanluontiform.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Pohjanluontiform.gi" bpdm:prefix="Pohjanluontiform2" bpdm:comment="contrib=&apos;project:///Pohjanluontiform.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Pohjanluontiform.gi" bpdm:prefix="Pohjanluontiform" bpdm:comment="contrib=&apos;project:///Pohjanluontiform.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Virkailija" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_hI25kNPKEeCtDPd7kTBk1g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Pohjanluontiform.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///DynamicFields.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_hI25kNPKEeCtDPd7kTBk1g" bpdm:label="Prosessi"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Virkailija" bpdm:ID="_dAmDsNPKEeCtDPd7kTBk1g">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="prosessiAndVirkailijaForPortTypeProcessPlkVar" partnerLinkType="diag:ProsessiAndVirkailijaForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="Prosessi_for_Virkailija" bpdm:invokedService="Prosessi:ProsessiAndVirkailijaForPortTypeProcessPlkService" bpdm:invokedPort="Prosessi_for_VirkailijaPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Virkailija/ProsessiAndVirkailijaForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_dAmDsNPKEeCtDPd7kTBk1g:_ogDtAPP9EeC37vdtVMGnEw" bpdm:isManaged="true" bpdm:otherPoolId="_hI25kNPKEeCtDPd7kTBk1g"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="pohjanluontiformInitProcessRequestMsg" messageType="Pohjanluontiform:initProcessRequest" bpdm:id="_pYfw4PP9EeC37vdtVMGnEw" bpdm:messageIds=" out:_pYVY0PP9EeC37vdtVMGnEw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Pohjanluontiform:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="pohjanluontiformInitProcessResponseMsg" messageType="Pohjanluontiform:initProcessResponse" bpdm:id="_pk7qYPP9EeC37vdtVMGnEw" bpdm:messageIds="inc:_pkmTMPP9EeC37vdtVMGnEw"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="prosessiAndVirkailijaForPortTypeProcessPlkVar" portType="Pohjanluontiform:Process" isMyRole="false" enableSharing="false" bpdm:label="Luo pohja" bpdm:ID="_ogDtAPP9EeC37vdtVMGnEw">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="pohjanluontiformInitProcessRequestMsg" bpdm:msgVarScopeId="_dAmDsNPKEeCtDPd7kTBk1g" bpdm:variableIsManaged="true" bpdm:messageType="Pohjanluontiform:initProcessRequest" bpdm:ID="_pYVY0PP9EeC37vdtVMGnEw"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="pohjanluontiformInitProcessResponseMsg" bpdm:msgVarScopeId="_dAmDsNPKEeCtDPd7kTBk1g" bpdm:variableIsManaged="true" bpdm:messageType="Pohjanluontiform:initProcessResponse" bpdm:ID="_pkmTMPP9EeC37vdtVMGnEw"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

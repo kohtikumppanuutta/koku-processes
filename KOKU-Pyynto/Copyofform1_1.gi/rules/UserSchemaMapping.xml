@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
+  <record jsxid="mi_1" jxstext="Operation (Transaction)" type="T" jsxopen="1" opname="jsxtransaction">
+    <headers jsxid="mi_2">
+      <record jsxid="mi_3" name="Content-Type" value="text/xml"/>
+    </headers>
+    <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../DynamicFields.xsd">
+      <record jsxid="mi_5" jsxtext="Dynamic_Fields_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Dynamic_Fields_Form']" datatype="" tns="http://www.arcusys.fi/DynamicFields" jsxopen="1">
+        <record jsxid="mi_6" jsxtext="TextInput" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput']">
+          <restrictions>
+            <record jsxid="mi_7" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_8" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_9" jsxtext="TextInput_Question" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_Question']">
+            <restrictions>
+              <record jsxid="mi_10" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_11">
+              <record jsxid="mi_12" name="CDF Attribute" value="TextInput_Question"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_13" jsxtext="TextInput_Section" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_Section']">
+            <restrictions>
+              <record jsxid="mi_14" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_15">
+              <record jsxid="mi_16" name="CDF Attribute" value="TextInput_Section"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_17" jsxtext="TextInput_AnswerText" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_AnswerText']">
+            <restrictions>
+              <record jsxid="mi_18" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_19">
+              <record jsxid="mi_20" name="CDF Attribute" value="TextInput_AnswerText"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_21" jsxtext="TextInput_Number" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_Number']">
+            <restrictions>
+              <record jsxid="mi_22" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_23">
+              <record jsxid="mi_24" name="CDF Attribute" value="TextInput_Number"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_25" jsxtext="TextInput_Type" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_Type']">
+            <restrictions>
+              <record jsxid="mi_26" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_27">
+              <record jsxid="mi_28" name="CDF Attribute" value="TextInput_Type"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_29">
+            <record jsxid="mi_30" name="Script" value="if(typeof(this._i_30)=='undefined'){this._i_30=-1;my.getCDFDocument('TextInput-nomap','OUTBOUND');}"/>
+            <record jsxid="mi_31" name="CDF Record"/>
+          </mappings>
+        </record>
+        
+        
+        <record jsxid="x41679" jsxtext="MultipleChoice" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice']" jsxopen="1" jsxSelectMask="CDF Attribute">
+          <restrictions>
+            <record jsxid="x47406" name="maxoccur" value="unbounded"/>
+            <record jsxid="x36928" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="x49114" jsxtext="MultipleChoice_Section" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Section']" jsxSelectMask="CDF Attribute">
+            <restrictions>
+              <record jsxid="x93793" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_11">
+              <record jsxid="x73690" name="CDF Attribute" value="MultipleChoice_Section"/>
+            </mappings>
+          </record>
+          <record jsxid="x88193" jsxtext="MultipleChoice_Number" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Number']" jsxSelectMask="CDF Attribute">
+            <restrictions>
+              <record jsxid="x20202" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_15">
+              <record jsxid="x51640" name="CDF Attribute" value="MultipleChoice_Number"/>
+            </mappings>
+          </record>
+          
+          
+          
+          <mappings jsxid="mi_29">
+            <record jsxid="x33855" name="Script" value="if(typeof(this._i_66)=='undefined'){this._i_66=-1;my.getCDFDocument('MultipleChoice-nomap','OUTBOUND');}"/>
+            <record jsxid="x38130" name="CDF Record"/>
+          </mappings>
+        <record jsxid="x48143" jsxtext="MultipleChoice_Question" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Question']" jsxSelectMask="CDF Attribute">
+            <restrictions>
+              <record jsxid="x96647" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_15">
+              <record jsxid="x58630" name="CDF Attribute" value="MultipleChoice_Question"/>
+            </mappings>
+          </record><record jsxid="x88023" jsxtext="MultipleChoice_Checked" type="E" datatype="boolean" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x74533" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_15">
+              <record jsxid="x79509" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutputMatrix(CDFCONTEXT.getAttribute('MultipleChoice_Checked')));"/>
+            </mappings>
+          </record></record><record jsxid="mi_56" jsxtext="Header" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Header']">
+          <restrictions>
+            <record jsxid="mi_57" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_58" jsxtext="Header_Text" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Header_Text']">
+            <restrictions>
+              <record jsxid="mi_59" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_60">
+              <record jsxid="mi_61" name="DOM" value="Header_Text"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_62" jsxtext="User" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_63" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_64" jsxtext="User_Recipient" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_Recipient']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_65" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_66">
+              <record jsxid="mi_67" name="DOM" value="User_Recipient"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_68" jsxtext="User_Sender" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_Sender']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_69" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_70">
+              <record jsxid="mi_71" name="DOM" value="User_Sender"/>
+            </mappings>
+          </record>
+        <record jsxid="x15885" jsxtext="User_AnswerUntil" type="E" datatype="date" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_AnswerUntil']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x321" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_70">
+              <record jsxid="x90455" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('User_AnswerUntil', my.getNamespace())));"/>
+            </mappings>
+          </record><record jsxid="x20430" jsxtext="User_SenderDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_SenderDisplay']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x10962" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_70">
+              <record jsxid="x51691" name="DOM" value="User_SenderDisplay"/>
+            </mappings>
+          </record><record jsxid="x62607" jsxtext="User_RecipientDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_RecipientDisplay']" jsxSelectMask="Script" jsxselected="1">
+            <restrictions>
+              <record jsxid="x84533" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_66">
+              <record jsxid="x74877" name="DOM" value="User_RecipientDisplay"/>
+            </mappings>
+          </record></record>
+        <record jsxid="mi_72" jsxtext="HTML" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='HTML']">
+          <restrictions>
+            <record jsxid="mi_73" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_74" jsxtext="HTML_Sisalto" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='HTML_Sisalto']">
+            <restrictions>
+              <record jsxid="mi_75" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_76">
+              <record jsxid="mi_77" name="DOM" value="HTML_Sisalto"/>
+            </mappings>
+          </record>
+        </record>
+      <record jsxid="x77924" jsxtext="RequestProcessing" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='RequestProcessing']">
+          <restrictions>
+            <record jsxid="x13482" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="x99193" jsxtext="RequestProcessing_RequestID" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='RequestProcessing_RequestID']">
+            <restrictions>
+              <record jsxid="x75076" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_76">
+              <record jsxid="x65828" name="DOM" value="RequestProcessing_RequestID"/>
+            </mappings>
+          </record>
+        </record><record jsxid="x17728" jsxtext="Kommentti" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Kommentti']" jsxopen="1">
+          <restrictions>
+            <record jsxid="x88883" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="x85625" jsxtext="Kommentti_Kommentti" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Kommentti_Kommentti']">
+            <restrictions>
+              <record jsxid="x33046" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_60">
+              <record jsxid="x7722" name="DOM" value="Kommentti_Kommentti"/>
+            </mappings>
+          </record>
+        </record></record>
+    </record>
+    <record jsxid="mi_78" jsxtext="Output (response)" type="O" jsxopen="1" src="../DynamicFields.xsd" onafterreceive="createFields();">
+      <record jsxid="mi_79" jsxtext="Dynamic_Fields_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Dynamic_Fields_Form']" datatype="" tns="http://www.arcusys.fi/DynamicFields" jsxopen="1">
+        <record jsxid="mi_80" jsxtext="TextInput" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput']" jsxSelectMask="CDF Attribute">
+          <restrictions>
+            <record jsxid="mi_81" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_82" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_83" jsxtext="TextInput_Question" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_Question']">
+            <restrictions>
+              <record jsxid="mi_84" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_85">
+              <record jsxid="mi_86" name="CDF Attribute" value="TextInput_Question"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_87" jsxtext="TextInput_Section" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_Section']">
+            <restrictions>
+              <record jsxid="mi_88" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_89">
+              <record jsxid="mi_90" name="CDF Attribute" value="TextInput_Section"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_91" jsxtext="TextInput_AnswerText" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_AnswerText']">
+            <restrictions>
+              <record jsxid="mi_92" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_93">
+              <record jsxid="mi_94" name="CDF Attribute" value="TextInput_AnswerText"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_95" jsxtext="TextInput_Number" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_Number']">
+            <restrictions>
+              <record jsxid="mi_96" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_97">
+              <record jsxid="mi_98" name="CDF Attribute" value="TextInput_Number"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_99" jsxtext="TextInput_Type" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput_Type']">
+            <restrictions>
+              <record jsxid="mi_100" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_101">
+              <record jsxid="mi_102" name="CDF Attribute" value="TextInput_Type"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_103">
+            <record jsxid="mi_104" name="Script" value="if(typeof(this._i_104)=='undefined'){this._i_104=-1;my.getCDFDocument('TextInput-nomap','INBOUND');}"/>
+            <record jsxid="mi_105" name="CDF Record"/>
+          </mappings>
+        </record>
+        
+        
+        <record jsxid="x81914" jsxtext="MultipleChoice" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice']" jsxSelectMask="CDF Attribute" jsxopen="1">
+          <restrictions>
+            <record jsxid="x11910" name="maxoccur" value="unbounded"/>
+            <record jsxid="x41615" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="x12592" jsxtext="MultipleChoice_Section" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Section']" jsxSelectMask="CDF Attribute">
+            <restrictions>
+              <record jsxid="x64843" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_85">
+              <record jsxid="x29648" name="CDF Attribute" value="MultipleChoice_Section"/>
+            </mappings>
+          </record>
+          <record jsxid="x28419" jsxtext="MultipleChoice_Number" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Number']" jsxSelectMask="CDF Attribute">
+            <restrictions>
+              <record jsxid="x58481" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_89">
+              <record jsxid="x25988" name="CDF Attribute" value="MultipleChoice_Number"/>
+            </mappings>
+          </record>
+          <record jsxid="x84619" jsxtext="MultipleChoice_Question" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Question']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x77199" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_93">
+              <record jsxid="x93318" name="CDF Attribute" value="MultipleChoice_Question"/>
+            </mappings>
+          </record>
+          <record jsxid="x21745" jsxtext="MultipleChoice_Checked" type="E" datatype="boolean" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x45104" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_97">
+              <record jsxid="x73285" name="Script" value="CDFCONTEXT.setAttribute('MultipleChoice_Checked', Intalio.Internal.Utilities.fixCheckboxInputMatrix(MESSAGENODE.getValue()));"/>
+            </mappings>
+          </record>
+          
+          <mappings jsxid="mi_103">
+            <record jsxid="x79833" name="Script" value="if(typeof(this._i_162)=='undefined'){this._i_162=-1;my.getCDFDocument('MultipleChoice-nomap','INBOUND');}"/>
+            <record jsxid="x16286" name="CDF Record"/>
+          </mappings>
+        </record><record jsxid="mi_130" jsxtext="Header" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Header']" jsxSelectMask="CDF Attribute">
+          <restrictions>
+            <record jsxid="mi_131" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_132" jsxtext="Header_Text" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Header_Text']">
+            <restrictions>
+              <record jsxid="mi_133" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_134">
+              <record jsxid="mi_135" name="DOM" value="Header_Text"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_136" jsxtext="User" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_137" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_138" jsxtext="User_Recipient" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_Recipient']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_139" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_140">
+              <record jsxid="mi_141" name="DOM" value="User_Recipient"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_142" jsxtext="User_Sender" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_Sender']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_143" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_144">
+              <record jsxid="mi_145" name="DOM" value="User_Sender"/>
+            </mappings>
+          </record>
+        <record jsxid="x20578" jsxtext="User_AnswerUntil" type="E" datatype="date" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_AnswerUntil']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x98797" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_144">
+              <record jsxid="x73842" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('User_AnswerUntil', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record><record jsxid="x86601" jsxtext="User_SenderDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_SenderDisplay']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x60636" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_144">
+              <record jsxid="x59826" name="DOM" value="User_SenderDisplay"/>
+            </mappings>
+          </record><record jsxid="x3287" jsxtext="User_RecipientDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_RecipientDisplay']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x94360" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_140">
+              <record jsxid="x23442" name="DOM" value="User_RecipientDisplay"/>
+            </mappings>
+          </record></record>
+        <record jsxid="mi_146" jsxtext="HTML" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='HTML']" jsxSelectMask="CDF Attribute">
+          <restrictions>
+            <record jsxid="mi_147" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_148" jsxtext="HTML_Sisalto" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='HTML_Sisalto']">
+            <restrictions>
+              <record jsxid="mi_149" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_150">
+              <record jsxid="mi_151" name="DOM" value="HTML_Sisalto"/>
+            </mappings>
+          </record>
+        <mappings jsxid="x77488"><record jsxid="jsx_2" name="Script" value="testAlert();"/></mappings></record>
+      <record jsxid="x20023" jsxtext="RequestProcessing" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='RequestProcessing']" jsxopen="1">
+          <restrictions>
+            <record jsxid="x50747" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="x14787" jsxtext="RequestProcessing_RequestID" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='RequestProcessing_RequestID']">
+            <restrictions>
+              <record jsxid="x39914" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_140">
+              <record jsxid="x73461" name="DOM" value="RequestProcessing_RequestID"/>
+            </mappings>
+          </record>
+          
+        </record><record jsxid="x5449" jsxtext="Kommentti" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Kommentti']" jsxopen="1">
+          <restrictions>
+            <record jsxid="x83808" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="x5330" jsxtext="Kommentti_Kommentti" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Kommentti_Kommentti']">
+            <restrictions>
+              <record jsxid="x34079" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_140">
+              <record jsxid="x53930" name="DOM" value="Kommentti_Kommentti"/>
+            </mappings>
+          </record>
+          
+        </record></record>
+    </record>
+  </record>
+</data>
