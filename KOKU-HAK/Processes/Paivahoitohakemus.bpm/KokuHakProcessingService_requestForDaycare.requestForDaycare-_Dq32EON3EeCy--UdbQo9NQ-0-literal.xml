@@ -1,0 +1,20 @@
+﻿<bpel:literal xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:attachments="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi/attachments"
+    xmlns:this="http://thisdiagram/Prosessi"
+    xmlns:KokuHakProcessingServiceImpl="http://soa.hak.koku.arcusys.fi/"
+    xmlns:tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Palvelut="http://thisdiagram/Palvelut"
+    xmlns:diag="http://thisdiagram"
+    xmlns:Paivahoitohakemus_init_Form="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace">
+<KokuHakProcessingServiceImpl:requestForDaycare>
+    <request>
+        <creatorUid></creatorUid>
+        <daycareNeededFromDate></daycareNeededFromDate>
+        <formContent></formContent>
+        <targetPersonUid></targetPersonUid>
+    </request>
+</KokuHakProcessingServiceImpl:requestForDaycare>
+</bpel:literal>
