@@ -1,0 +1,19 @@
+﻿<bpel:literal xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:attachments="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi/attachments"
+    xmlns:this="http://thisdiagram/Prosessi"
+    xmlns:tns="http://soa.kv.koku.arcusys.fi/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Kayttajaviestinta_init_Form="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi"
+    xmlns:Käyttäjä="http://thisdiagram/Käyttäjä"
+    xmlns:diag="http://thisdiagram"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace">
+<tns:sendMessage>
+    <fromUser></fromUser>
+    <subject></subject>
+    <receipients>
+        <receipient></receipient>
+    </receipients>
+    <messageContent></messageContent>
+</tns:sendMessage>
+</bpel:literal>

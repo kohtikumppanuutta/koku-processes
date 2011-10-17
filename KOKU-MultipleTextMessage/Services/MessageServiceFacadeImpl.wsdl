@@ -1,0 +1,289 @@
+<definitions name="MessageServiceFacade" targetNamespace="http://service.kv.koku.arcusys.fi/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.kv.koku.arcusys.fi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://service.kv.koku.arcusys.fi/" version="1.0" xmlns:tns="http://service.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="getMessageById" type="tns:getMessageById"/>
+   <xs:element name="getMessageByIdResponse" type="tns:getMessageByIdResponse"/>
+   <xs:element name="getMessages" type="tns:getMessages"/>
+   <xs:element name="getMessagesResponse" type="tns:getMessagesResponse"/>
+   <xs:element name="getSentMessages" type="tns:getSentMessages"/>
+   <xs:element name="getSentMessagesResponse" type="tns:getSentMessagesResponse"/>
+   <xs:element name="receiveMessage" type="tns:receiveMessage"/>
+   <xs:element name="receiveMessageResponse" type="tns:receiveMessageResponse"/>
+   <xs:element name="sendMessage" type="tns:sendMessage"/>
+   <xs:element name="sendMessageFrom" type="tns:sendMessageFrom"/>
+   <xs:element name="sendMessageFromResponse" type="tns:sendMessageFromResponse"/>
+   <xs:element name="sendMessageResponse" type="tns:sendMessageResponse"/>
+   <xs:element name="sendNewMessage" type="tns:sendNewMessage"/>
+   <xs:element name="sendNewMessageResponse" type="tns:sendNewMessageResponse"/>
+   <xs:complexType name="sendMessage">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="arg0" type="tns:messageTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messageTO">
+    <xs:complexContent>
+     <xs:extension base="tns:messageSummary">
+      <xs:sequence>
+       <xs:element minOccurs="0" name="content" type="xs:string"/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="messageSummary">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="createdDate" type="xs:dateTime"/>
+     <xs:element minOccurs="0" name="fromUser" type="xs:string"/>
+     <xs:element minOccurs="0" name="messageId" type="xs:long"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="receipients" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="subject" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendMessageResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSentMessages">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSentMessagesResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:messageTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getMessages">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+     <xs:element minOccurs="0" name="arg1" type="tns:folderType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getMessagesResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:messageSummary"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendNewMessage">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+     <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="arg2" type="xs:string"/>
+     <xs:element minOccurs="0" name="arg3" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendNewMessageResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getMessageById">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getMessageByIdResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:messageTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="receiveMessage">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+     <xs:element minOccurs="0" name="arg1" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="receiveMessageResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="sendMessageFrom">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="arg0" type="tns:userHolder"/>
+     <xs:element minOccurs="0" name="arg1" type="tns:subjectHolder"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="arg2" type="tns:userHolder"/>
+     <xs:element minOccurs="0" name="arg3" type="tns:contentHolder"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userHolder">
+    <xs:complexContent>
+     <xs:extension base="tns:stringValueHolder">
+      <xs:sequence/>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="stringValueHolder">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="value" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="subjectHolder">
+    <xs:complexContent>
+     <xs:extension base="tns:stringValueHolder">
+      <xs:sequence/>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="contentHolder">
+    <xs:complexContent>
+     <xs:extension base="tns:stringValueHolder">
+      <xs:sequence/>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sendMessageFromResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="folderType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="Inbox"/>
+     <xs:enumeration value="Sent"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+ </types>
+ <message name="MessageServiceFacade_sendNewMessage">
+  <part element="tns:sendNewMessage" name="sendNewMessage"/>
+ </message>
+ <message name="MessageServiceFacade_getSentMessagesResponse">
+  <part element="tns:getSentMessagesResponse" name="getSentMessagesResponse"/>
+ </message>
+ <message name="MessageServiceFacade_getMessages">
+  <part element="tns:getMessages" name="getMessages"/>
+ </message>
+ <message name="MessageServiceFacade_sendNewMessageResponse">
+  <part element="tns:sendNewMessageResponse" name="sendNewMessageResponse"/>
+ </message>
+ <message name="MessageServiceFacade_getSentMessages">
+  <part element="tns:getSentMessages" name="getSentMessages"/>
+ </message>
+ <message name="MessageServiceFacade_receiveMessageResponse">
+  <part element="tns:receiveMessageResponse" name="receiveMessageResponse"/>
+ </message>
+ <message name="MessageServiceFacade_sendMessage">
+  <part element="tns:sendMessage" name="sendMessage"/>
+ </message>
+ <message name="MessageServiceFacade_sendMessageFromResponse">
+  <part element="tns:sendMessageFromResponse" name="sendMessageFromResponse"/>
+ </message>
+ <message name="MessageServiceFacade_receiveMessage">
+  <part element="tns:receiveMessage" name="receiveMessage"/>
+ </message>
+ <message name="MessageServiceFacade_getMessageById">
+  <part element="tns:getMessageById" name="getMessageById"/>
+ </message>
+ <message name="MessageServiceFacade_getMessagesResponse">
+  <part element="tns:getMessagesResponse" name="getMessagesResponse"/>
+ </message>
+ <message name="MessageServiceFacade_getMessageByIdResponse">
+  <part element="tns:getMessageByIdResponse" name="getMessageByIdResponse"/>
+ </message>
+ <message name="MessageServiceFacade_sendMessageFrom">
+  <part element="tns:sendMessageFrom" name="sendMessageFrom"/>
+ </message>
+ <message name="MessageServiceFacade_sendMessageResponse">
+  <part element="tns:sendMessageResponse" name="sendMessageResponse"/>
+ </message>
+ <portType name="MessageServiceFacade">
+  <operation name="getMessageById" parameterOrder="getMessageById">
+   <input message="tns:MessageServiceFacade_getMessageById"/>
+   <output message="tns:MessageServiceFacade_getMessageByIdResponse"/>
+  </operation>
+  <operation name="getMessages" parameterOrder="getMessages">
+   <input message="tns:MessageServiceFacade_getMessages"/>
+   <output message="tns:MessageServiceFacade_getMessagesResponse"/>
+  </operation>
+  <operation name="getSentMessages" parameterOrder="getSentMessages">
+   <input message="tns:MessageServiceFacade_getSentMessages"/>
+   <output message="tns:MessageServiceFacade_getSentMessagesResponse"/>
+  </operation>
+  <operation name="receiveMessage" parameterOrder="receiveMessage">
+   <input message="tns:MessageServiceFacade_receiveMessage"/>
+   <output message="tns:MessageServiceFacade_receiveMessageResponse"/>
+  </operation>
+  <operation name="sendMessage" parameterOrder="sendMessage">
+   <input message="tns:MessageServiceFacade_sendMessage"/>
+   <output message="tns:MessageServiceFacade_sendMessageResponse"/>
+  </operation>
+  <operation name="sendMessageFrom" parameterOrder="sendMessageFrom">
+   <input message="tns:MessageServiceFacade_sendMessageFrom"/>
+   <output message="tns:MessageServiceFacade_sendMessageFromResponse"/>
+  </operation>
+  <operation name="sendNewMessage" parameterOrder="sendNewMessage">
+   <input message="tns:MessageServiceFacade_sendNewMessage"/>
+   <output message="tns:MessageServiceFacade_sendNewMessageResponse"/>
+  </operation>
+ </portType>
+ <binding name="MessageServiceFacadeBinding" type="tns:MessageServiceFacade">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getMessageById">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getMessages">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getSentMessages">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="receiveMessage">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="sendMessage">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="sendMessageFrom">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="sendNewMessage">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="MessageServiceFacade">
+  <port binding="tns:MessageServiceFacadeBinding" name="MessageServiceFacadePort">
+   <soap:address location="http://127.0.0.1:8180/kv-model-0.1-SNAPSHOT/MessageServiceFacadeImpl?wsdl"/>
+  </port>
+ </service>
+</definitions>

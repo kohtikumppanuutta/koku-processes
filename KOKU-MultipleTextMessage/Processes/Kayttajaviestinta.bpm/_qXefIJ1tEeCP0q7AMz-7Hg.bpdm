@@ -1,0 +1,36 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:attachments="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi/attachments" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Kayttajaviestinta_init_Form="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi" xmlns:this="http://thisdiagram/Käyttäjä" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Käyttäjä">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_sFmN0J1tEeCP0q7AMz-7Hg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Kayttajaviestinta_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Kayttajaviestinta.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Kayttajaviestinta_init_Form.gi" bpdm:prefix="Kayttajaviestinta_init_Form" bpdm:comment="contrib=&apos;project:///Forms/Kayttajaviestinta_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Käyttäjä" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_sFmN0J1tEeCP0q7AMz-7Hg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Kayttajaviestinta_init_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Kayttajaviestinta.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_sFmN0J1tEeCP0q7AMz-7Hg" bpdm:label="Prosessi"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Käyttäjä" bpdm:ID="_qXefIJ1tEeCP0q7AMz-7Hg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="prosessiAndKäyttäjäForPortTypeProcessPlkVar" partnerLinkType="diag:ProsessiAndKäyttäjäForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="Prosessi_for_Käyttäjä" bpdm:invokedService="Prosessi:ProsessiAndKäyttäjäForPortTypeProcessPlkService" bpdm:invokedPort="Prosessi_for_KäyttäjäPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Käyttäjä/ProsessiAndKäyttäjäForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_qXefIJ1tEeCP0q7AMz-7Hg:_u220gZ1tEeCP0q7AMz-7Hg" bpdm:isManaged="true" bpdm:otherPoolId="_sFmN0J1tEeCP0q7AMz-7Hg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="kayttajaviestinta_init_FormInitProcessRequestMsg" messageType="Kayttajaviestinta_init_Form:initProcessRequest" bpdm:id="_wfNSYJ1tEeCP0q7AMz-7Hg" bpdm:messageIds=" out:_wfBFIJ1tEeCP0q7AMz-7Hg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Kayttajaviestinta_init_Form:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kayttajaviestinta_init_FormInitProcessResponseMsg" messageType="Kayttajaviestinta_init_Form:initProcessResponse" bpdm:id="_w_xBwJ1tEeCP0q7AMz-7Hg" bpdm:messageIds="inc:_w_bqkJ1tEeCP0q7AMz-7Hg"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="prosessiAndKäyttäjäForPortTypeProcessPlkVar" portType="Kayttajaviestinta_init_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Kayttajaviestinta_init_Form-init request" bpdm:ID="_u220gZ1tEeCP0q7AMz-7Hg">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kayttajaviestinta_init_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_qXefIJ1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="Kayttajaviestinta_init_Form:initProcessRequest" bpdm:ID="_wfBFIJ1tEeCP0q7AMz-7Hg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kayttajaviestinta_init_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_qXefIJ1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="Kayttajaviestinta_init_Form:initProcessResponse" bpdm:ID="_w_bqkJ1tEeCP0q7AMz-7Hg"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
