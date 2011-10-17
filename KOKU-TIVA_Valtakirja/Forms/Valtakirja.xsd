@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.arcusys.fi/Valtakirja" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/Valtakirja">
+
+    <complexType name="Valtakirjapohja_Type">
+    	<sequence>
+    		<element name="Valtakirjapohja_Id" type="string"></element>
+    		<element name="Valtakirjapohja_Nimi" type="string"></element>
+    		<element name="Valtakirjapohja_Kuvaus" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Tiedot_Type">
+    	<sequence>
+            <element name="Tiedot_ValtakirjaId" type="string"></element>
+            <element name="Tiedot_Voimassa" type="date"></element>
+    		<element name="Tiedot_VastausMennessa" type="date"></element>
+    		<element name="Tiedot_Hyvaksytty" type="boolean"></element>
+    		<element name="Tiedot_Mitatoity" type="boolean"></element>
+    		<element name="Tiedot_Lahettaja" type="string"></element>
+    		<element name="Tiedot_Vastaanottaja" type="string"></element>
+    		<element name="Tiedot_Henkilo" type="string"></element>
+    		<element name="Tiedot_VastaanottajanKommentti" type="string"></element>
+    		<element name="Tiedot_VastaanottajaDisplay" type="string"></element>
+    		<element name="Tiedot_LahettajaDisplay" type="string"></element>
+    		<element name="Tiedot_HenkiloDisplay" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="Valtakirja_Type">
+    	<sequence>
+    		<element name="Valtakirjapohja"
+    			type="tns:Valtakirjapohja_Type">
+    		</element>
+    		<element name="Tiedot" type="tns:Tiedot_Type"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Valtakirja_Form" type="tns:Valtakirja_Type"></element>
+</schema>

@@ -1,0 +1,11 @@
+
+behind_proxy=false
+bundleExportPath=/home/hkorhola/workspace/KOKU-TIVA_Valtakirja
+deploy.fileRuntimeSelection=Forms\:Forms/Valtakirja.xsd\:Forms/Valtakirja_Decision_Form.gi\:Forms/Valtakirja_Edit_Form.gi\:Forms/Valtakirja_Form.gi\:Processes/MuokkaaValtakirjaa.bpm\:Processes/Valtakirja.bpm\:Services\:Services/KokuValtakirjaProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl\:
+deploy_bundleShouldBeArchived=false
+deploy_bundleShouldBeDeployed=true
+deploy_gi_serverUrl=http\://localhost\:8080/gi
+deploy_serverUrl=http\://localhost\:8080/ode
+deploymenttimeout=120
+diagram_baseUri=http\://www.arcusys.fi
+eclipse.preferences.version=1

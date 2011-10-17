@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_yFV2UdRuEeCRlpcBbJyn8g" iD="_yFV2UNRuEeCRlpcBbJyn8g">
+  <pools xmi:type="bpmn:Pool" xmi:id="_yFkf0dRuEeCRlpcBbJyn8g" iD="_yFkf0NRuEeCRlpcBbJyn8g" name="Valtuuttaja">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0XopENRuEeCRlpcBbJyn8g" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0XopEdRuEeCRlpcBbJyn8g" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_9Z_aYdRuEeCRlpcBbJyn8g" iD="_9Z_aYNRuEeCRlpcBbJyn8g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9Z_aYtRuEeCRlpcBbJyn8g" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9Z_aY9RuEeCRlpcBbJyn8g" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9aBPktRuEeCRlpcBbJyn8g" key="defaultDeclarationName" value="valtakirja_FormInitProcessRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9aDEwdRuEeCRlpcBbJyn8g" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}initProcessRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_9aB2oNRuEeCRlpcBbJyn8g" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9aCdsNRuEeCRlpcBbJyn8g" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9aDEwNRuEeCRlpcBbJyn8g" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_90askdRuEeCRlpcBbJyn8g" iD="_90askNRuEeCRlpcBbJyn8g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_90asktRuEeCRlpcBbJyn8g" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90ask9RuEeCRlpcBbJyn8g" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90chwtRuEeCRlpcBbJyn8g" key="defaultDeclarationName" value="valtakirja_FormInitProcessResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90e-ANRuEeCRlpcBbJyn8g" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}initProcessResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_90dI0NRuEeCRlpcBbJyn8g" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_90dv4NRuEeCRlpcBbJyn8g" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90eW8NRuEeCRlpcBbJyn8g" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_5mNmwNRuEeCRlpcBbJyn8g" iD="_5mG5ENRuEeCRlpcBbJyn8g" associations="_9aB2oNRuEeCRlpcBbJyn8g _90dI0NRuEeCRlpcBbJyn8g" name="Valtakirja_Form-init request" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5mNmwdRuEeCRlpcBbJyn8g" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5mNmwtRuEeCRlpcBbJyn8g" key="projectRelativePath" value="Forms/Valtakirja_Form.gi"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5mNmw9RuEeCRlpcBbJyn8g" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5mNmxNRuEeCRlpcBbJyn8g" key="factoryId" value="gi"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5mNmxdRuEeCRlpcBbJyn8g" key="taskType" value="init"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5mNmxtRuEeCRlpcBbJyn8g" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5mNmx9RuEeCRlpcBbJyn8g" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?invokerequestresponse={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}Process/initProcess"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6U-xQNRuEeCRlpcBbJyn8g" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6VBNgNRuEeCRlpcBbJyn8g" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6VCboNRuEeCRlpcBbJyn8g" key="roles" value="koku/kuntalainen"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6wzxoNRuEeCRlpcBbJyn8g" source="pipa">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6w2N4NRuEeCRlpcBbJyn8g" key="description" value="Valtakirja TESTI"/>
+      </eAnnotations>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_9ZviwdRuEeCRlpcBbJyn8g"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_90FVYdRuEeCRlpcBbJyn8g"/>
+    </vertices>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_1DELsdRuEeCRlpcBbJyn8g" iD="_1DELsNRuEeCRlpcBbJyn8g" name="Prosessi">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_9aE58dRuEeCRlpcBbJyn8g" iD="_9aE58NRuEeCRlpcBbJyn8g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9aE58tRuEeCRlpcBbJyn8g" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9aE589RuEeCRlpcBbJyn8g" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9aGIEtRuEeCRlpcBbJyn8g" key="defaultDeclarationName" value="valtakirja_FormInitProcessRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9aHWMdRuEeCRlpcBbJyn8g" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}initProcessRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_9aGvINRuEeCRlpcBbJyn8g" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9aGvIdRuEeCRlpcBbJyn8g" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9aHWMNRuEeCRlpcBbJyn8g" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_90V0EdRuEeCRlpcBbJyn8g" iD="_90V0ENRuEeCRlpcBbJyn8g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_90V0EtRuEeCRlpcBbJyn8g" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90V0E9RuEeCRlpcBbJyn8g" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90XpQtRuEeCRlpcBbJyn8g" key="defaultDeclarationName" value="valtakirja_FormInitProcessResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90ZecdRuEeCRlpcBbJyn8g" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}initProcessResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_90YQUNRuEeCRlpcBbJyn8g" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_90Y3YNRuEeCRlpcBbJyn8g" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90ZecNRuEeCRlpcBbJyn8g" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_Y6FGwdR5EeCEvPS1L9wOgg" iD="_Y6FGwNR5EeCEvPS1L9wOgg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Y6FGwtR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y6FGw9R5EeCEvPS1L9wOgg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y6JYMdR5EeCEvPS1L9wOgg" key="defaultDeclarationName" value="valtakirja_FormCreateTaskRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y6OQsNR5EeCEvPS1L9wOgg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}createTaskRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_Y6KmUNR5EeCEvPS1L9wOgg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Y6L0cNR5EeCEvPS1L9wOgg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y6NpoNR5EeCEvPS1L9wOgg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_ZsaiodR5EeCEvPS1L9wOgg" iD="_ZsaioNR5EeCEvPS1L9wOgg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZsaiotR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Zsaio9R5EeCEvPS1L9wOgg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Zse0EtR5EeCEvPS1L9wOgg" key="defaultDeclarationName" value="valtakirja_FormCreateTaskResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZskTodR5EeCEvPS1L9wOgg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}createTaskResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_ZsgpQNR5EeCEvPS1L9wOgg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZsiecNR5EeCEvPS1L9wOgg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZskToNR5EeCEvPS1L9wOgg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_aCSE8dR5EeCEvPS1L9wOgg" iD="_aCSE8NR5EeCEvPS1L9wOgg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aCSE8tR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCSE89R5EeCEvPS1L9wOgg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCWWYdR5EeCEvPS1L9wOgg" key="defaultDeclarationName" value="valtakirja_FormNotifyTaskCompletionRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCdEENR5EeCEvPS1L9wOgg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}notifyTaskCompletionRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_aCYyoNR5EeCEvPS1L9wOgg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aCan0NR5EeCEvPS1L9wOgg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCcdANR5EeCEvPS1L9wOgg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_aR8RkdR5EeCEvPS1L9wOgg" iD="_aR8RkNR5EeCEvPS1L9wOgg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aR8RktR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aR8Rk9R5EeCEvPS1L9wOgg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aSDmUtR5EeCEvPS1L9wOgg" key="defaultDeclarationName" value="valtakirja_FormNotifyTaskCompletionResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aSLiINR5EeCEvPS1L9wOgg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}notifyTaskCompletionResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_aSGpoNR5EeCEvPS1L9wOgg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aSJF4NR5EeCEvPS1L9wOgg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aSK7ENR5EeCEvPS1L9wOgg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_71JjgNRuEeCRlpcBbJyn8g" iD="_71I8cNRuEeCRlpcBbJyn8g" associations="_9aGvINRuEeCRlpcBbJyn8g _90YQUNRuEeCRlpcBbJyn8g" outgoingEdges="_wlS7sdR1EeCRlpcBbJyn8g" name="Luo tilaus" activityType="EventStartMessage">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_9ZviwdRuEeCRlpcBbJyn8g"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_90FVYdRuEeCRlpcBbJyn8g"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_vJAj4dR1EeCRlpcBbJyn8g" iD="_vJAj4NR1EeCRlpcBbJyn8g" associations="_Y6KmUNR5EeCEvPS1L9wOgg _ZsgpQNR5EeCEvPS1L9wOgg" outgoingEdges="_Jm4NAdR6EeCEvPS1L9wOgg" incomingEdges="_wlS7sdR1EeCRlpcBbJyn8g" name="Lähetä valtakirja" activityType="EventIntermediateMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Y53EUdR5EeCEvPS1L9wOgg"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_Zr8BgdR5EeCEvPS1L9wOgg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_z-S30dR1EeCRlpcBbJyn8g" iD="_z-S30NR1EeCRlpcBbJyn8g" associations="_aCYyoNR5EeCEvPS1L9wOgg _aSGpoNR5EeCEvPS1L9wOgg" outgoingEdges="_xNYSkdR5EeCEvPS1L9wOgg" incomingEdges="_KMPj4dR6EeCEvPS1L9wOgg" name="Vastaanota valtakirja" activityType="EventIntermediateMessage">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_aB6RgdR5EeCEvPS1L9wOgg"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_aRj3EdR5EeCEvPS1L9wOgg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_6BYbodR1EeCRlpcBbJyn8g" iD="_6BYboNR1EeCRlpcBbJyn8g" incomingEdges="_xNYSkdR5EeCEvPS1L9wOgg" activityType="EventEndEmpty"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_JCS5QdR6EeCEvPS1L9wOgg" iD="_JCS5QNR6EeCEvPS1L9wOgg" outgoingEdges="_KMPj4dR6EeCEvPS1L9wOgg _LfetYdR6EeCEvPS1L9wOgg" incomingEdges="_Jm4NAdR6EeCEvPS1L9wOgg" activityType="GatewayEventBasedExclusive"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_K8OPUdR6EeCEvPS1L9wOgg" iD="_K8OPUNR6EeCEvPS1L9wOgg" outgoingEdges="_9DUJUNR6EeCEvPS1L9wOgg" incomingEdges="_LfetYdR6EeCEvPS1L9wOgg" activityType="EventIntermediateTimer"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_MQX-0dR6EeCEvPS1L9wOgg" iD="_MQX-0NR6EeCEvPS1L9wOgg" incomingEdges="_9SGMMdR6EeCEvPS1L9wOgg" activityType="EventEndEmpty"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_8MPXYNR6EeCEvPS1L9wOgg" iD="_8MOwUNR6EeCEvPS1L9wOgg" outgoingEdges="_9SGMMdR6EeCEvPS1L9wOgg" incomingEdges="_9DUJUNR6EeCEvPS1L9wOgg" name="a" activityType="Task"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_wlS7sdR1EeCRlpcBbJyn8g" iD="_wlS7sNR1EeCRlpcBbJyn8g"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_xNYSkdR5EeCEvPS1L9wOgg" iD="_xNYSkNR5EeCEvPS1L9wOgg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Jm4NAdR6EeCEvPS1L9wOgg" iD="_Jm4NANR6EeCEvPS1L9wOgg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_KMPj4dR6EeCEvPS1L9wOgg" iD="_KMPj4NR6EeCEvPS1L9wOgg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_LfetYdR6EeCEvPS1L9wOgg" iD="_LfetYNR6EeCEvPS1L9wOgg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_9DUJUNR6EeCEvPS1L9wOgg" iD="_9DTiQNR6EeCEvPS1L9wOgg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_9SGMMdR6EeCEvPS1L9wOgg" iD="_9SGMMNR6EeCEvPS1L9wOgg"/>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_2tbbwdRuEeCRlpcBbJyn8g" iD="_2tbbwNRuEeCRlpcBbJyn8g" name="Valtuutettava">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_36_bENRuEeCRlpcBbJyn8g" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_36_bEdRuEeCRlpcBbJyn8g" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_Y6QF4dR5EeCEvPS1L9wOgg" iD="_Y6QF4NR5EeCEvPS1L9wOgg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Y6QF4tR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y6QF49R5EeCEvPS1L9wOgg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y6SiItR5EeCEvPS1L9wOgg" key="defaultDeclarationName" value="valtakirja_Form1CreateTaskRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y6UXUNR5EeCEvPS1L9wOgg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}createTaskRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_Y6TJMNR5EeCEvPS1L9wOgg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Y6TwQNR5EeCEvPS1L9wOgg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y6TwQdR5EeCEvPS1L9wOgg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_ZsUcAdR5EeCEvPS1L9wOgg" iD="_ZsUcANR5EeCEvPS1L9wOgg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZsUcAtR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZsUcA9R5EeCEvPS1L9wOgg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZsW4QtR5EeCEvPS1L9wOgg" key="defaultDeclarationName" value="valtakirja_Form1CreateTaskResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZsZ7kdR5EeCEvPS1L9wOgg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}createTaskResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_ZsYGYNR5EeCEvPS1L9wOgg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZsYtcNR5EeCEvPS1L9wOgg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZsZ7kNR5EeCEvPS1L9wOgg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_aCKwMdR5EeCEvPS1L9wOgg" iD="_aCKwMNR5EeCEvPS1L9wOgg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aCKwMtR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCKwM9R5EeCEvPS1L9wOgg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCNzgtR5EeCEvPS1L9wOgg" key="defaultDeclarationName" value="valtakirja_Form1NotifyTaskCompletionRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCRd4NR5EeCEvPS1L9wOgg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}notifyTaskCompletionRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_aCPBoNR5EeCEvPS1L9wOgg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aCQPwNR5EeCEvPS1L9wOgg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCQ20NR5EeCEvPS1L9wOgg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_aSMJMdR5EeCEvPS1L9wOgg" iD="_aSMJMNR5EeCEvPS1L9wOgg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aSMJMtR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aSMJM9R5EeCEvPS1L9wOgg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aSPMiNR5EeCEvPS1L9wOgg" key="defaultDeclarationName" value="valtakirja_Form1NotifyTaskCompletionResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aSUFANR5EeCEvPS1L9wOgg" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}notifyTaskCompletionResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_aSRBsNR5EeCEvPS1L9wOgg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aSSP0NR5EeCEvPS1L9wOgg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aSTd8NR5EeCEvPS1L9wOgg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_YbuW2NR5EeCEvPS1L9wOgg" iD="_YbgUYNR5EeCEvPS1L9wOgg" associations="_Y6TJMNR5EeCEvPS1L9wOgg _ZsYGYNR5EeCEvPS1L9wOgg" outgoingEdges="_YbyBOtR5EeCEvPS1L9wOgg" name="Valtakirja_Form-create" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YbuW2dR5EeCEvPS1L9wOgg" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YbuW2tR5EeCEvPS1L9wOgg" key="projectRelativePath" value="Forms/Valtakirja_Form.gi"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YbuW29R5EeCEvPS1L9wOgg" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YbuW3NR5EeCEvPS1L9wOgg" key="factoryId" value="gi"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YbuW3dR5EeCEvPS1L9wOgg" key="taskType" value="create-and-complete"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YbuW3tR5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YbuW39R5EeCEvPS1L9wOgg" key="partnerLinkTypeKey" value="WFmagic_YbgUYNR5EeCEvPS1L9wOgg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YbuW4NR5EeCEvPS1L9wOgg" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?wsdloperationbound={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}WorkflowSoapService/Valtakirja_FormPort/createTask"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_Y53EUdR5EeCEvPS1L9wOgg"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Zr8BgdR5EeCEvPS1L9wOgg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_YbwzENR5EeCEvPS1L9wOgg" iD="_YbiJk9R5EeCEvPS1L9wOgg" associations="_aCPBoNR5EeCEvPS1L9wOgg _aSRBsNR5EeCEvPS1L9wOgg" incomingEdges="_YbyBOtR5EeCEvPS1L9wOgg" name="Valtakirja_Form-complete" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YbwzEdR5EeCEvPS1L9wOgg" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YbwzEtR5EeCEvPS1L9wOgg" key="projectRelativePath" value="Forms/Valtakirja_Form.gi"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YbwzE9R5EeCEvPS1L9wOgg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YbwzFNR5EeCEvPS1L9wOgg" key="partnerLinkTypeKey" value="WFmagic_YbgUYNR5EeCEvPS1L9wOgg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YbwzFdR5EeCEvPS1L9wOgg" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?invokerequestresponse={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}Process/notifyTaskCompletion"/>
+      </eAnnotations>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_aB6RgdR5EeCEvPS1L9wOgg"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_aRj3EdR5EeCEvPS1L9wOgg"/>
+    </vertices>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_YbyBOtR5EeCEvPS1L9wOgg" iD="_YbjXsNR5EeCEvPS1L9wOgg" name=""/>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_9ZviwdRuEeCRlpcBbJyn8g" iD="_9ZviwNRuEeCRlpcBbJyn8g" source="_5mNmwNRuEeCRlpcBbJyn8g" target="_71JjgNRuEeCRlpcBbJyn8g">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9Z23gNRuEeCRlpcBbJyn8g" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9Z23gdRuEeCRlpcBbJyn8g" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}Process/initProcess/input/initProcessRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_90FVYdRuEeCRlpcBbJyn8g" iD="_90FVYNRuEeCRlpcBbJyn8g" source="_71JjgNRuEeCRlpcBbJyn8g" target="_5mNmwNRuEeCRlpcBbJyn8g">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_90MqINRuEeCRlpcBbJyn8g" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90MqIdRuEeCRlpcBbJyn8g" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}Process/initProcess/output/initProcessResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_Y53EUdR5EeCEvPS1L9wOgg" iD="_Y53EUNR5EeCEvPS1L9wOgg" source="_vJAj4dR1EeCRlpcBbJyn8g" target="_YbuW2NR5EeCEvPS1L9wOgg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Y57VwNR5EeCEvPS1L9wOgg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y57VwdR5EeCEvPS1L9wOgg" key="partnerLinkTypeKey" value="WFmagic_YbgUYNR5EeCEvPS1L9wOgg"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y57VwtR5EeCEvPS1L9wOgg" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?messageForBoundOperation={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}WorkflowSoapService/Valtakirja_FormPort/createTask/input/createTaskRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_Zr8BgdR5EeCEvPS1L9wOgg" iD="_Zr8BgNR5EeCEvPS1L9wOgg" source="_YbuW2NR5EeCEvPS1L9wOgg" target="_vJAj4dR1EeCRlpcBbJyn8g">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZsEkYNR5EeCEvPS1L9wOgg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZsEkYdR5EeCEvPS1L9wOgg" key="partnerLinkTypeKey" value="WFmagic_YbgUYNR5EeCEvPS1L9wOgg"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZsEkYtR5EeCEvPS1L9wOgg" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?messageForBoundOperation={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}WorkflowSoapService/Valtakirja_FormPort/createTask/output/createTaskResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_aB6RgdR5EeCEvPS1L9wOgg" iD="_aB6RgNR5EeCEvPS1L9wOgg" source="_YbwzENR5EeCEvPS1L9wOgg" target="_z-S30dR1EeCRlpcBbJyn8g">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aCAYINR5EeCEvPS1L9wOgg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCAYIdR5EeCEvPS1L9wOgg" key="partnerLinkTypeKey" value="WFmagic_YbgUYNR5EeCEvPS1L9wOgg"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aCAYItR5EeCEvPS1L9wOgg" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}Process/notifyTaskCompletion/input/notifyTaskCompletionRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_aRj3EdR5EeCEvPS1L9wOgg" iD="_aRj3ENR5EeCEvPS1L9wOgg" source="_z-S30dR1EeCRlpcBbJyn8g" target="_YbwzENR5EeCEvPS1L9wOgg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aRqkwNR5EeCEvPS1L9wOgg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aRqkwdR5EeCEvPS1L9wOgg" key="partnerLinkTypeKey" value="WFmagic_YbgUYNR5EeCEvPS1L9wOgg"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aRqkwtR5EeCEvPS1L9wOgg" key="douri" value="project:///Forms/Valtakirja_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Valtakirja_Form.gi}Process/notifyTaskCompletion/output/notifyTaskCompletionResponse"/>
+    </eAnnotations>
+  </messages>
+</bpmn:BpmnDiagram>

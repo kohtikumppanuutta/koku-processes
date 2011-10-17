@@ -1,0 +1,9 @@
+<object type="com.intalio.ria.Field">
+        <variants/>
+        <strings riaLabelText="Tiedot_Mitatoity" riaLayoutDirection="vertical" jsxname="Tiedot_Mitatoity-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
+        <object type="jsx3.gui.CheckBox">
+          <variants jsxchecked="0" jsxheight="18"/>
+          <strings jsxname="Tiedot_Mitatoity" jsxmargin="0 4 0 0"/>
+          <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+        </object>
+      </object>

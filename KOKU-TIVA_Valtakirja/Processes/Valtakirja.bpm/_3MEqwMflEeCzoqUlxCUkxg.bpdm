@@ -1,0 +1,250 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:attachments="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Valtakirja_Decision_Form="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi/attachments" xmlns:tns="http://www.arcusys.fi/Valtakirja" xmlns:KokuValtakirjaProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Prosessi" xmlns:Valtakirja_Form="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Valtakirja_Decision_Form1="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi" xmlns:Palvelut="http://thisdiagram/Palvelut" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi/attachments" bpdm:prefix="Valtakirja_Decision_Form" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/Valtakirja" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.tiva.koku.arcusys.fi/" bpdm:prefix="KokuValtakirjaProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_0bZS4MflEeCzoqUlxCUkxg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///Services/UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi" bpdm:prefix="Valtakirja_Form" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi" bpdm:prefix="Valtakirja_Decision_Form1" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="Palvelut" bpdm:comment="contrib=&apos;partner-pool:///_ZwRacMftEeCzoqUlxCUkxg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="WFmagic_ewNt8sfnEeCzoqUlxCUkxgService">
+                <wsdl:port name="Prosessi_for_VastaanottajaForThePortTypeProcessPort" binding="this:WFmagic_ewNt8sfnEeCzoqUlxCUkxgServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Vastaanottaja/WFmagic_ewNt8sfnEeCzoqUlxCUkxg"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_ewNt8sfnEeCzoqUlxCUkxgServiceBinding" type="Valtakirja_Decision_Form1:Process" bpdm:isSynchronized="true"/>
+            <wsdl:service name="ProsessiAndAntajaForPortTypeProcessPlkService">
+                <wsdl:port name="Prosessi_for_AntajaPort" binding="this:ProsessiAndAntajaForPortTypeProcessPlkServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Antaja/ProsessiAndAntajaForPortTypeProcessPlk"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="ProsessiAndAntajaForPortTypeProcessPlkServiceBinding" type="Valtakirja_Form:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_0bZS4MflEeCzoqUlxCUkxg" bpdm:label="Antaja"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Valtakirja_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Valtakirja.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_7mSMQMflEeCzoqUlxCUkxg" bpdm:label="Vastaanottaja"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Valtakirja_Decision_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_ZwRacMftEeCzoqUlxCUkxg" bpdm:label="Palvelut"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/UsersAndGroupsServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Prosessi" bpdm:ID="_3MEqwMflEeCzoqUlxCUkxg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="prosessiAndAntajaForPortTypeProcessPlkVar" partnerLinkType="diag:ProsessiAndAntajaForPortTypeProcessPlk" myRole="Prosessi_for_Antaja" bpdm:enableSharing="false" bpdm:providedService="this:ProsessiAndAntajaForPortTypeProcessPlkService" bpdm:providedPort="Prosessi_for_AntajaPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Antaja/ProsessiAndAntajaForPortTypeProcessPlk" bpdm:providedIsDefault="true" bpdm:clientTasks="_3MEqwMflEeCzoqUlxCUkxg:_CwnE8MfmEeCzoqUlxCUkxg" bpdm:isManaged="true" bpdm:otherPoolId="_0bZS4MflEeCzoqUlxCUkxg"/>
+            <bpel:partnerLink name="wFmagic_ewNt8sfnEeCzoqUlxCUkxgPlkVar" partnerLinkType="diag:WFmagic_ewNt8sfnEeCzoqUlxCUkxg" initializePartnerRole="no" myRole="Prosessi_for_VastaanottajaForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_ewNt8sfnEeCzoqUlxCUkxgService" bpdm:providedPort="Prosessi_for_VastaanottajaForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Vastaanottaja/WFmagic_ewNt8sfnEeCzoqUlxCUkxg" bpdm:providedIsDefault="true" partnerRole="Vastaanottaja_for_ProsessiForValtakirja_Decision_FormPort" bpdm:invokedService="Valtakirja_Decision_Form1:WorkflowSoapService" bpdm:invokedPort="Valtakirja_Decision_FormPort" bpdm:invokedSOAPAddress="http://intalio.intra.arcusys.fi:8080/fds/workflow/Valtakirja_Decision_Form" bpdm:invokedIsDefault="true" bpdm:clientTasks="_3MEqwMflEeCzoqUlxCUkxg:_kSoNoMfnEeCzoqUlxCUkxg, _3MEqwMflEeCzoqUlxCUkxg:_nHL_8MfnEeCzoqUlxCUkxg" bpdm:isManaged="true" bpdm:otherPoolId="_7mSMQMflEeCzoqUlxCUkxg"/>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuValtakirjaProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi" bpdm:invokedService="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService" bpdm:invokedPort="KokuValtakirjaProcessingServicePort" bpdm:invokedSOAPAddress="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_3MEqwMflEeCzoqUlxCUkxg:_JjxhMMfuEeCzoqUlxCUkxg, _3MEqwMflEeCzoqUlxCUkxg:_Mu2WEMfuEeCzoqUlxCUkxg, _3MEqwMflEeCzoqUlxCUkxg:_LkG64MfmEeCzoqUlxCUkxg" bpdm:isManaged="true" bpdm:otherPoolId="_ZwRacMftEeCzoqUlxCUkxg"/>
+            <bpel:partnerLink name="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi" bpdm:invokedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:invokedPort="UsersAndGroupsServicePort" bpdm:invokedSOAPAddress="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_3MEqwMflEeCzoqUlxCUkxg:_U6rlkPMQEeC6aqQJKR8yVQ" bpdm:isManaged="true" bpdm:otherPoolId="_ZwRacMftEeCzoqUlxCUkxg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="valtakirja_FormInitProcessRequestMsg" messageType="Valtakirja_Form:initProcessRequest" bpdm:id="_D_vxkMfmEeCzoqUlxCUkxg" bpdm:messageIds="inc:_D_cPkMfmEeCzoqUlxCUkxg"/>
+            <bpel:variable name="valtakirja_FormInitProcessResponseMsg" messageType="Valtakirja_Form:initProcessResponse" bpdm:id="_EOv24MfmEeCzoqUlxCUkxg" bpdm:messageIds=" out:_EOfYMMfmEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Valtakirja_Form:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="Valtakirja_Form" element="tns:Valtakirja_Form" bpdm:id="_HtTocMfmEeCzoqUlxCUkxg"/>
+            <bpel:variable name="valtakirja_Decision_Form1CreateTaskRequestMsg" messageType="Valtakirja_Decision_Form1:createTaskRequest" binding="Valtakirja_Decision_Form1:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_pCsqYMfnEeCzoqUlxCUkxg" bpdm:messageIds=" out:_pCa9kMfnEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Valtakirja_Decision_Form1:createTaskRequest" bpdm:linkedPart="root" bpdm:binding="Valtakirja_Decision_Form1:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="valtakirja_Decision_Form1CreateTaskResponseMsg" messageType="Valtakirja_Decision_Form1:createTaskResponse" binding="Valtakirja_Decision_Form1:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_puYrsMfnEeCzoqUlxCUkxg" bpdm:messageIds="inc:_pt-cAMfnEeCzoqUlxCUkxg"/>
+            <bpel:variable name="valtakirja_Decision_Form1NotifyTaskCompletionRequestMsg" messageType="Valtakirja_Decision_Form1:notifyTaskCompletionRequest" bpdm:id="_qBYgNMfnEeCzoqUlxCUkxg" bpdm:messageIds="inc:_qA-QgMfnEeCzoqUlxCUkxg"/>
+            <bpel:variable name="valtakirja_Decision_Form1NotifyTaskCompletionResponseMsg" messageType="Valtakirja_Decision_Form1:notifyTaskCompletionResponse" bpdm:id="_qUWfgMfnEeCzoqUlxCUkxg" bpdm:messageIds=" out:_qT-sEMfnEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Valtakirja_Decision_Form1:notifyTaskCompletionResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg" messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirja" binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" operation="annaValtakirja" opMsgType="0" bpdm:id="_e2l0AMftEeCzoqUlxCUkxg" bpdm:messageIds=" out:_e2WjcMftEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="annaValtakirja">
+                    <bpel:literal bpdm:linkedMessageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirja" bpdm:linkedPart="annaValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="annaValtakirja"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuValtakirjaProcessingServiceImplAnnaValtakirjaResponseMsg" messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirjaResponse" binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" operation="annaValtakirja" opMsgType="1" bpdm:id="_fT3l4MftEeCzoqUlxCUkxg" bpdm:messageIds="inc:_fTdWMMftEeCzoqUlxCUkxg"/>
+            <bpel:variable name="kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaRequestMsg" messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hyvaksyValtakirja" binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" operation="hyvaksyValtakirja" opMsgType="0" bpdm:id="_fscogMfuEeCzoqUlxCUkxg" bpdm:messageIds=" out:_fsMJ0MfuEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="hyvaksyValtakirja">
+                    <bpel:literal bpdm:linkedMessageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hyvaksyValtakirja" bpdm:linkedPart="hyvaksyValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="hyvaksyValtakirja"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaResponseMsg" messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hyvaksyValtakirjaResponse" binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" operation="hyvaksyValtakirja" opMsgType="1" bpdm:id="_gel3JcfuEeCzoqUlxCUkxg" bpdm:messageIds="inc:_geNcoMfuEeCzoqUlxCUkxg"/>
+            <bpel:variable name="kokuValtakirjaProcessingServiceImplHylkaaValtakirjaRequestMsg" messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hylkaaValtakirja" binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" operation="hylkaaValtakirja" opMsgType="0" bpdm:id="_hCSaEMfuEeCzoqUlxCUkxg" bpdm:messageIds=" out:_hCCicMfuEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="hylkaaValtakirja">
+                    <bpel:literal bpdm:linkedMessageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hylkaaValtakirja" bpdm:linkedPart="hylkaaValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="hylkaaValtakirja"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuValtakirjaProcessingServiceImplHylkaaValtakirjaResponseMsg" messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hylkaaValtakirjaResponse" binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" operation="hylkaaValtakirja" opMsgType="1" bpdm:id="_huVAtcfuEeCzoqUlxCUkxg" bpdm:messageIds="inc:_ht470MfuEeCzoqUlxCUkxg"/>
+            <bpel:variable name="usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUid" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getKunpoNameByUserUid" opMsgType="0" bpdm:id="_kRk3EPMQEeC6aqQJKR8yVQ" bpdm:messageIds=" out:_kRU_cPMQEeC6aqQJKR8yVQ">
+                <bpel:from bpdm:toPart="getKunpoNameByUserUid">
+                    <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUid" bpdm:linkedPart="getKunpoNameByUserUid" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:opMsgType="0" bpdm:operation="getKunpoNameByUserUid"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUidResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getKunpoNameByUserUid" opMsgType="1" bpdm:id="_kr730PMQEeC6aqQJKR8yVQ" bpdm:messageIds="inc:_krgaAPMQEeC6aqQJKR8yVQ"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="initProcess" partnerLink="prosessiAndAntajaForPortTypeProcessPlkVar" portType="Valtakirja_Form:Process" isMyRole="true" enableSharing="false" bpdm:label="Vastaanota tilaus" bpdm:ID="_CwnE8MfmEeCzoqUlxCUkxg">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="valtakirja_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Form:initProcessRequest" bpdm:ID="_D_cPkMfmEeCzoqUlxCUkxg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="valtakirja_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Form:initProcessResponse" bpdm:ID="_EOfYMMfmEeCzoqUlxCUkxg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Luo tilaus" bpdm:ID="_E5QzgMfmEeCzoqUlxCUkxg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$valtakirja_FormInitProcessRequestMsg.root/Valtakirja_Form:taskOutput/tns:Valtakirja_Form</bpel:from>
+                        <bpel:to>$Valtakirja_Form</bpel:to><mapper:mapperLink><mapper:vertice id="701272969" targetPath="$Valtakirja_Form" targetedBy="1596221227-arg0"></mapper:vertice><mapper:vertice id="1596221227" sourcePath="$valtakirja_FormInitProcessRequestMsg.root/Valtakirja_Form:taskOutput/tns:Valtakirja_Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="annaValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä valtakirja webservicelle" bpdm:ID="_LkG64MfmEeCzoqUlxCUkxg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form/tns:Valtakirjapohja/tns:Valtakirjapohja_Id</bpel:from>
+                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/valtakirjapohjaId</bpel:to><mapper:mapperLink><mapper:vertice id="1647563551" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/valtakirjapohjaId" targetedBy="1271067166-arg0"></mapper:vertice><mapper:vertice id="1271067166" sourcePath="$Valtakirja_Form/tns:Valtakirjapohja/tns:Valtakirjapohja_Id"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Lahettaja</bpel:from>
+                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/lahettaja</bpel:to><mapper:mapperLink><mapper:vertice id="2142606056" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/lahettaja" targetedBy="1542653809-arg0"></mapper:vertice><mapper:vertice id="1542653809" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Lahettaja"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja</bpel:from>
+                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/vastaanottaja</bpel:to><mapper:mapperLink><mapper:vertice id="734896782" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/vastaanottaja" targetedBy="201646673-arg0"></mapper:vertice><mapper:vertice id="201646673" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Henkilo</bpel:from>
+                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/kohdehenkilo</bpel:to><mapper:mapperLink><mapper:vertice id="1929620582" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/kohdehenkilo" targetedBy="2124019122-arg0"></mapper:vertice><mapper:vertice id="2124019122" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Henkilo"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastausMennessa</bpel:from>
+                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/vastausmennessa</bpel:to><mapper:mapperLink><mapper:vertice id="464539639" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/vastausmennessa" targetedBy="1231542283-arg0"></mapper:vertice><mapper:vertice id="1231542283" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastausMennessa"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Voimassa</bpel:from>
+                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/maaraaika</bpel:to><mapper:mapperLink><mapper:vertice id="2098366959" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/maaraaika" targetedBy="921554411-arg0"></mapper:vertice><mapper:vertice id="921554411" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Voimassa"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_e2WjcMftEeCzoqUlxCUkxg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuValtakirjaProcessingServiceImplAnnaValtakirjaResponseMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirjaResponse" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_fTdWMMftEeCzoqUlxCUkxg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Tallenna valtakirjaID" bpdm:ID="_1OJr4MftEeCzoqUlxCUkxg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaResponseMsg.annaValtakirjaResponse/valtakirjaId</bpel:from>
+                        <bpel:to>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_ValtakirjaId</bpel:to><mapper:mapperLink><mapper:vertice id="680736782" targetPath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_ValtakirjaId" targetedBy="1662754842-arg0"></mapper:vertice><mapper:vertice id="1662754842" sourcePath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaResponseMsg.annaValtakirjaResponse/valtakirjaId"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="getKunpoNameByUserUid" partnerLink="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Hae vastaanottajan Kunponimi" bpdm:ID="_U6rlkPMQEeC6aqQJKR8yVQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja</bpel:from>
+                        <bpel:to>$usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg.getKunpoNameByUserUid/userUid</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="2072947316" targetPath="$usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg.getKunpoNameByUserUid/userUid" targetedBy="1917386370-arg0"></mapper:vertice>
+  <mapper:vertice id="1917386370" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUid" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_kRU_cPMQEeC6aqQJKR8yVQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUidResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_krgaAPMQEeC6aqQJKR8yVQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Tallenna kunponimi" bpdm:ID="_o5-lkPMQEeC6aqQJKR8yVQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg.getKunpoNameByUserUidResponse/kunpoUsername</bpel:from>
+                        <bpel:to>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastaanottajaDisplay</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1509459051" targetPath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastaanottajaDisplay" targetedBy="1869404751-arg0"></mapper:vertice>
+  <mapper:vertice id="1869404751" sourcePath="$usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg.getKunpoNameByUserUidResponse/kunpoUsername"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="createTask" partnerLink="wFmagic_ewNt8sfnEeCzoqUlxCUkxgPlkVar" portType="Valtakirja_Decision_Form1:Workflow" isMyRole="false" enableSharing="false" bpdm:label="Lähetä vastaanottajalle" bpdm:ID="_kSoNoMfnEeCzoqUlxCUkxg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form</bpel:from>
+                        <bpel:to>$valtakirja_Decision_Form1CreateTaskRequestMsg.root/Valtakirja_Decision_Form1:taskInput/tns:Valtakirja_Form</bpel:to><mapper:mapperLink><mapper:vertice id="352064682" targetPath="$valtakirja_Decision_Form1CreateTaskRequestMsg.root/Valtakirja_Decision_Form1:taskInput/tns:Valtakirja_Form" targetedBy="930016431-arg0"></mapper:vertice><mapper:vertice id="930016431" sourcePath="$Valtakirja_Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>concat("koku/", $Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastaanottajaDisplay)</bpel:from>
+                        <bpel:to>$valtakirja_Decision_Form1CreateTaskRequestMsg.root/Valtakirja_Decision_Form1:taskMetaData/Valtakirja_Decision_Form1:userOwner</bpel:to><mapper:mapperLink><mapper:vertice id="1313060996" targetPath="$valtakirja_Decision_Form1CreateTaskRequestMsg.root/Valtakirja_Decision_Form1:taskMetaData/Valtakirja_Decision_Form1:userOwner" targetedBy="1151051721-arg1"></mapper:vertice><mapper:vertice id="1151051721" dimension="78x24" location="228,144"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="83613815" dimension="78x24" location="120,144" targetedBy="1151051721-arg0"><mapper:value>"koku/"</mapper:value></mapper:vertice><mapper:vertice id="1992803690" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastaanottajaDisplay" targetedBy="1151051721-arg2"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Valtakirja_Form/tns:Valtakirjapohja/tns:Valtakirjapohja_Nimi</bpel:from>
+                        <bpel:to>$valtakirja_Decision_Form1CreateTaskRequestMsg.root/Valtakirja_Decision_Form1:taskMetaData/Valtakirja_Decision_Form1:description</bpel:to><mapper:mapperLink><mapper:vertice id="1819745141" targetPath="$valtakirja_Decision_Form1CreateTaskRequestMsg.root/Valtakirja_Decision_Form1:taskMetaData/Valtakirja_Decision_Form1:description" targetedBy="1622021164-arg0"></mapper:vertice><mapper:vertice id="1622021164" sourcePath="$Valtakirja_Form/tns:Valtakirjapohja/tns:Valtakirjapohja_Nimi"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="valtakirja_Decision_Form1CreateTaskRequestMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Decision_Form1:createTaskRequest" bpdm:binding="Valtakirja_Decision_Form1:WorkflowSoapBinding" bpdm:ID="_pCa9kMfnEeCzoqUlxCUkxg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="valtakirja_Decision_Form1CreateTaskResponseMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Decision_Form1:createTaskResponse" bpdm:binding="Valtakirja_Decision_Form1:WorkflowSoapBinding" bpdm:ID="_pt-cAMfnEeCzoqUlxCUkxg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="notifyTaskCompletion" partnerLink="wFmagic_ewNt8sfnEeCzoqUlxCUkxgPlkVar" portType="Valtakirja_Decision_Form1:Process" isMyRole="true" enableSharing="false" bpdm:label="Vastaanota päätös" bpdm:ID="_nHL_8MfnEeCzoqUlxCUkxg">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="valtakirja_Decision_Form1NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Decision_Form1:notifyTaskCompletionRequest" bpdm:ID="_qA-QgMfnEeCzoqUlxCUkxg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="valtakirja_Decision_Form1NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Decision_Form1:notifyTaskCompletionResponse" bpdm:ID="_qT-sEMfnEeCzoqUlxCUkxg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Päivitä valtakirja" bpdm:ID="_UfVekMfoEeCzoqUlxCUkxg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$valtakirja_Decision_Form1NotifyTaskCompletionRequestMsg.root/Valtakirja_Decision_Form1:taskOutput/tns:Valtakirja_Form</bpel:from>
+                        <bpel:to>$Valtakirja_Form</bpel:to><mapper:mapperLink><mapper:vertice id="1222761644" targetPath="$Valtakirja_Form" targetedBy="996639538-arg0"></mapper:vertice><mapper:vertice id="996639538" sourcePath="$valtakirja_Decision_Form1NotifyTaskCompletionRequestMsg.root/Valtakirja_Decision_Form1:taskOutput/tns:Valtakirja_Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_INV5wMfuEeCzoqUlxCUkxg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_P_SMEMfuEeCzoqUlxCUkxg" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Lähetä hylkäys]">
+                    <bpel:condition>($Valtakirja_Form/tns:Tiedot/tns:Tiedot_Mitatoity = true()) and ($Valtakirja_Form/tns:Tiedot/tns:Tiedot_Hyvaksytty = false())<mapper:mapperLink><mapper:vertice id="1041596886" targetPath="$condition" targetedBy="1136566617-arg2"></mapper:vertice><mapper:vertice id="1136566617" dimension="78x24" location="509,78"><mapper:value>and</mapper:value></mapper:vertice><mapper:vertice id="1979656305" dimension="78x24" location="300,48" targetedBy="1136566617-arg0"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1381633628" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Mitatoity" targetedBy="1979656305-arg0"></mapper:vertice><mapper:vertice id="1375318710" dimension="148x24" location="72,72" targetedBy="1979656305-arg1"><mapper:value>true()</mapper:value></mapper:vertice><mapper:vertice id="1615066309" dimension="125x24" location="300,168" targetedBy="1136566617-arg1"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="2126883838" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Hyvaksytty" targetedBy="1615066309-arg0"></mapper:vertice><mapper:vertice id="1467587865" dimension="78x24" location="144,204" targetedBy="1615066309-arg1"><mapper:value>false()</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_QX12AMfuEeCzoqUlxCUkxg" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Lähetä hyväksyntä]">
+                    <bpel:condition>($Valtakirja_Form/tns:Tiedot/tns:Tiedot_Hyvaksytty = true()) and ($Valtakirja_Form/tns:Tiedot/tns:Tiedot_Mitatoity = false())<mapper:mapperLink><mapper:vertice id="915151375" targetPath="$condition" targetedBy="1074486536-arg2"></mapper:vertice><mapper:vertice id="1074486536" dimension="78x24" location="485,66"><mapper:value>and</mapper:value></mapper:vertice><mapper:vertice id="671279811" dimension="78x24" location="276,36" targetedBy="1074486536-arg0"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1211401272" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Hyvaksytty" targetedBy="671279811-arg0"></mapper:vertice><mapper:vertice id="938521400" dimension="148x24" location="48,60" targetedBy="671279811-arg1"><mapper:value>true()</mapper:value></mapper:vertice><mapper:vertice id="461782585" dimension="125x24" location="180,168" targetedBy="1074486536-arg1"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1790858892" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Mitatoity" targetedBy="461782585-arg0"></mapper:vertice><mapper:vertice id="205085146" dimension="78x24" location="62,172" targetedBy="461782585-arg1"><mapper:value>false()</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="hylkaaValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä hylkäys" bpdm:ID="_JjxhMMfuEeCzoqUlxCUkxg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja</bpel:from>
+                                <bpel:to>$kokuValtakirjaProcessingServiceImplHylkaaValtakirjaRequestMsg.hylkaaValtakirja/valtuutettu</bpel:to><mapper:mapperLink><mapper:vertice id="874832372" targetPath="$kokuValtakirjaProcessingServiceImplHylkaaValtakirjaRequestMsg.hylkaaValtakirja/valtuutettu" targetedBy="540482286-arg0"></mapper:vertice><mapper:vertice id="540482286" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_ValtakirjaId</bpel:from>
+                                <bpel:to>$kokuValtakirjaProcessingServiceImplHylkaaValtakirjaRequestMsg.hylkaaValtakirja/valtakirjaId</bpel:to><mapper:mapperLink><mapper:vertice id="2039663935" targetPath="$kokuValtakirjaProcessingServiceImplHylkaaValtakirjaRequestMsg.hylkaaValtakirja/valtakirjaId" targetedBy="1329621179-arg0"></mapper:vertice><mapper:vertice id="1329621179" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_ValtakirjaId"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastaanottajanKommentti</bpel:from>
+                                <bpel:to>$kokuValtakirjaProcessingServiceImplHylkaaValtakirjaRequestMsg.hylkaaValtakirja/kommentti</bpel:to><mapper:mapperLink><mapper:vertice id="1044853195" targetPath="$kokuValtakirjaProcessingServiceImplHylkaaValtakirjaRequestMsg.hylkaaValtakirja/kommentti" targetedBy="399561287-arg0"></mapper:vertice><mapper:vertice id="399561287" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastaanottajanKommentti"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuValtakirjaProcessingServiceImplHylkaaValtakirjaRequestMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hylkaaValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_hCCicMfuEeCzoqUlxCUkxg"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuValtakirjaProcessingServiceImplHylkaaValtakirjaResponseMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hylkaaValtakirjaResponse" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_ht470MfuEeCzoqUlxCUkxg"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="hyvaksyValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä hyväksyntä" bpdm:ID="_Mu2WEMfuEeCzoqUlxCUkxg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja</bpel:from>
+                                <bpel:to>$kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaRequestMsg.hyvaksyValtakirja/valtuutettu</bpel:to><mapper:mapperLink><mapper:vertice id="110754811" targetPath="$kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaRequestMsg.hyvaksyValtakirja/valtuutettu" targetedBy="1158836923-arg0"></mapper:vertice><mapper:vertice id="1158836923" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_ValtakirjaId</bpel:from>
+                                <bpel:to>$kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaRequestMsg.hyvaksyValtakirja/valtakirjaId</bpel:to><mapper:mapperLink><mapper:vertice id="405291775" targetPath="$kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaRequestMsg.hyvaksyValtakirja/valtakirjaId" targetedBy="1221237201-arg0"></mapper:vertice><mapper:vertice id="1221237201" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_ValtakirjaId"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastaanottajanKommentti</bpel:from>
+                                <bpel:to>$kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaRequestMsg.hyvaksyValtakirja/kommentti</bpel:to><mapper:mapperLink><mapper:vertice id="1211741510" targetPath="$kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaRequestMsg.hyvaksyValtakirja/kommentti" targetedBy="93341183-arg0"></mapper:vertice><mapper:vertice id="93341183" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastaanottajanKommentti"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaRequestMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hyvaksyValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_fsMJ0MfuEeCzoqUlxCUkxg"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuValtakirjaProcessingServiceImplHyvaksyValtakirjaResponseMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_hyvaksyValtakirjaResponse" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_geNcoMfuEeCzoqUlxCUkxg"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpdm:gateway>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_TtrwcMfuEeCzoqUlxCUkxg" bpdm:gatewayType="data_xor" bpdm:isMerge="true"></bpdm:gateway>
+            <bpdm:messagingtask eventType="end: empty" bpdm:label="Empty_End_Event" bpdm:ID="_2HW-EMfoEeCzoqUlxCUkxg"></bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

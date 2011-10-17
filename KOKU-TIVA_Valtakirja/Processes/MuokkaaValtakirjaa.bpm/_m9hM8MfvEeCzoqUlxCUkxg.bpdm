@@ -1,0 +1,47 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Palvelut" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Palvelut">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_k_QwgMfvEeCzoqUlxCUkxg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_k_QwgMfvEeCzoqUlxCUkxg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.tiva.koku.arcusys.fi/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_k_QwgMfvEeCzoqUlxCUkxg" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Palvelut" bpdm:ID="_m9hM8MfvEeCzoqUlxCUkxg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuValtakirjaProcessingServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="tns:KokuValtakirjaProcessingService" bpdm:providedPort="KokuValtakirjaProcessingServicePort" bpdm:provideSOAPAddress="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_m9hM8MfvEeCzoqUlxCUkxg:_uUEsIt3aEeCn27jzkiU-cA, _m9hM8MfvEeCzoqUlxCUkxg:_uUF6QN3aEeCn27jzkiU-cA" bpdm:isManaged="true" bpdm:otherPoolId="_k_QwgMfvEeCzoqUlxCUkxg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="tnsMuokkaaValtakirjaRequestMsg" messageType="tns:KokuValtakirjaProcessingService_muokkaaValtakirja" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="muokkaaValtakirja" opMsgType="0" bpdm:id="__RIqMN3aEeCn27jzkiU-cA" bpdm:messageIds="inc:__QlQkN3aEeCn27jzkiU-cA"/>
+            <bpel:variable name="tnsMuokkaaValtakirjaResponseMsg" messageType="tns:KokuValtakirjaProcessingService_muokkaaValtakirjaResponse" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="muokkaaValtakirja" opMsgType="1" bpdm:id="__9muoN3aEeCn27jzkiU-cA" bpdm:messageIds=" out:__9QJUN3aEeCn27jzkiU-cA">
+                <bpel:from bpdm:toPart="muokkaaValtakirjaResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:KokuValtakirjaProcessingService_muokkaaValtakirjaResponse" bpdm:linkedPart="muokkaaValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="muokkaaValtakirja"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="tnsMitatoiValtakirjaRequestMsg" messageType="tns:KokuValtakirjaProcessingService_mitatoiValtakirja" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="mitatoiValtakirja" opMsgType="0" bpdm:id="_AZL3YN3bEeCn27jzkiU-cA" bpdm:messageIds="inc:_AYkzYN3bEeCn27jzkiU-cA"/>
+            <bpel:variable name="tnsMitatoiValtakirjaResponseMsg" messageType="tns:KokuValtakirjaProcessingService_mitatoiValtakirjaResponse" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="mitatoiValtakirja" opMsgType="1" bpdm:id="_Aqb_cN3bEeCn27jzkiU-cA" bpdm:messageIds=" out:_AqJEgN3bEeCn27jzkiU-cA">
+                <bpel:from bpdm:toPart="mitatoiValtakirjaResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:KokuValtakirjaProcessingService_mitatoiValtakirjaResponse" bpdm:linkedPart="mitatoiValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="mitatoiValtakirja"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="muokkaaValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="tns:KokuValtakirjaProcessingService" isMyRole="true" enableSharing="false" bpdm:label="muokkaaValtakirja" bpdm:ID="_uUF6QN3aEeCn27jzkiU-cA">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsMuokkaaValtakirjaRequestMsg" bpdm:msgVarScopeId="_m9hM8MfvEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_muokkaaValtakirja" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="__QlQkN3aEeCn27jzkiU-cA"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsMuokkaaValtakirjaResponseMsg" bpdm:msgVarScopeId="_m9hM8MfvEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_muokkaaValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="__9QJUN3aEeCn27jzkiU-cA"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="mitatoiValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="tns:KokuValtakirjaProcessingService" isMyRole="true" enableSharing="false" bpdm:label="mitatoiValtakirja" bpdm:ID="_uUEsIt3aEeCn27jzkiU-cA">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsMitatoiValtakirjaRequestMsg" bpdm:msgVarScopeId="_m9hM8MfvEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_mitatoiValtakirja" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_AYkzYN3bEeCn27jzkiU-cA"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsMitatoiValtakirjaResponseMsg" bpdm:msgVarScopeId="_m9hM8MfvEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_mitatoiValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_AqJEgN3bEeCn27jzkiU-cA"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>

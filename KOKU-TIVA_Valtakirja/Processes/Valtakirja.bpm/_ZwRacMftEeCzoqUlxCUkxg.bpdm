@@ -1,0 +1,74 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Palvelut" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Palvelut">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_3MEqwMflEeCzoqUlxCUkxg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_3MEqwMflEeCzoqUlxCUkxg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.tiva.koku.arcusys.fi/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///Services/UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_3MEqwMflEeCzoqUlxCUkxg" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/UsersAndGroupsServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Palvelut" bpdm:ID="_ZwRacMftEeCzoqUlxCUkxg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuValtakirjaProcessingServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="tns:KokuValtakirjaProcessingService" bpdm:providedPort="KokuValtakirjaProcessingServicePort" bpdm:provideSOAPAddress="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_ZwRacMftEeCzoqUlxCUkxg:_dRgslMftEeCzoqUlxCUkxg, _ZwRacMftEeCzoqUlxCUkxg:_dRdpQMftEeCzoqUlxCUkxg, _ZwRacMftEeCzoqUlxCUkxg:_dRhTosftEeCzoqUlxCUkxg" bpdm:isManaged="true" bpdm:otherPoolId="_3MEqwMflEeCzoqUlxCUkxg"/>
+            <bpel:partnerLink name="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForUsersAndGroupsServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:providedPort="UsersAndGroupsServicePort" bpdm:provideSOAPAddress="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_ZwRacMftEeCzoqUlxCUkxg:_hJtuQPMQEeC6aqQJKR8yVQ" bpdm:isManaged="true" bpdm:otherPoolId="_3MEqwMflEeCzoqUlxCUkxg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="tnsAnnaValtakirjaRequestMsg" messageType="tns:KokuValtakirjaProcessingService_annaValtakirja" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="annaValtakirja" opMsgType="0" bpdm:id="_e2-1kMftEeCzoqUlxCUkxg" bpdm:messageIds="inc:_e2WjcMftEeCzoqUlxCUkxg"/>
+            <bpel:variable name="tnsAnnaValtakirjaResponseMsg" messageType="tns:KokuValtakirjaProcessingService_annaValtakirjaResponse" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="annaValtakirja" opMsgType="1" bpdm:id="_fTxfQMftEeCzoqUlxCUkxg" bpdm:messageIds=" out:_fTdWMMftEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="annaValtakirjaResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:KokuValtakirjaProcessingService_annaValtakirjaResponse" bpdm:linkedPart="annaValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="annaValtakirja"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="tnsHyvaksyValtakirjaRequestMsg" messageType="tns:KokuValtakirjaProcessingService_hyvaksyValtakirja" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="hyvaksyValtakirja" opMsgType="0" bpdm:id="_fsqD4MfuEeCzoqUlxCUkxg" bpdm:messageIds="inc:_fsMJ0MfuEeCzoqUlxCUkxg"/>
+            <bpel:variable name="tnsHyvaksyValtakirjaResponseMsg" messageType="tns:KokuValtakirjaProcessingService_hyvaksyValtakirjaResponse" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="hyvaksyValtakirja" opMsgType="1" bpdm:id="_geeiYMfuEeCzoqUlxCUkxg" bpdm:messageIds=" out:_geNcoMfuEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="hyvaksyValtakirjaResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:KokuValtakirjaProcessingService_hyvaksyValtakirjaResponse" bpdm:linkedPart="hyvaksyValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="hyvaksyValtakirja"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="tnsHylkaaValtakirjaRequestMsg" messageType="tns:KokuValtakirjaProcessingService_hylkaaValtakirja" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="hylkaaValtakirja" opMsgType="0" bpdm:id="_hCi4xcfuEeCzoqUlxCUkxg" bpdm:messageIds="inc:_hCCicMfuEeCzoqUlxCUkxg"/>
+            <bpel:variable name="tnsHylkaaValtakirjaResponseMsg" messageType="tns:KokuValtakirjaProcessingService_hylkaaValtakirjaResponse" binding="tns:KokuValtakirjaProcessingServiceBinding" operation="hylkaaValtakirja" opMsgType="1" bpdm:id="_huL2wMfuEeCzoqUlxCUkxg" bpdm:messageIds=" out:_ht470MfuEeCzoqUlxCUkxg">
+                <bpel:from bpdm:toPart="hylkaaValtakirjaResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:KokuValtakirjaProcessingService_hylkaaValtakirjaResponse" bpdm:linkedPart="hylkaaValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="hylkaaValtakirja"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUid" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getKunpoNameByUserUid" opMsgType="0" bpdm:id="_kR0usPMQEeC6aqQJKR8yVQ" bpdm:messageIds="inc:_kRU_cPMQEeC6aqQJKR8yVQ"/>
+            <bpel:variable name="usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUidResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getKunpoNameByUserUid" opMsgType="1" bpdm:id="_krw4sPMQEeC6aqQJKR8yVQ" bpdm:messageIds=" out:_krgaAPMQEeC6aqQJKR8yVQ">
+                <bpel:from bpdm:toPart="getKunpoNameByUserUidResponse">
+                    <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUidResponse" bpdm:linkedPart="getKunpoNameByUserUidResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:opMsgType="1" bpdm:operation="getKunpoNameByUserUid"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="annaValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="tns:KokuValtakirjaProcessingService" isMyRole="true" enableSharing="false" bpdm:label="annaValtakirja" bpdm:ID="_dRdpQMftEeCzoqUlxCUkxg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsAnnaValtakirjaRequestMsg" bpdm:msgVarScopeId="_ZwRacMftEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_annaValtakirja" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_e2WjcMftEeCzoqUlxCUkxg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsAnnaValtakirjaResponseMsg" bpdm:msgVarScopeId="_ZwRacMftEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_annaValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_fTdWMMftEeCzoqUlxCUkxg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="hyvaksyValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="tns:KokuValtakirjaProcessingService" isMyRole="true" enableSharing="false" bpdm:label="hyvaksyValtakirja" bpdm:ID="_dRhTosftEeCzoqUlxCUkxg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsHyvaksyValtakirjaRequestMsg" bpdm:msgVarScopeId="_ZwRacMftEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_hyvaksyValtakirja" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_fsMJ0MfuEeCzoqUlxCUkxg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsHyvaksyValtakirjaResponseMsg" bpdm:msgVarScopeId="_ZwRacMftEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_hyvaksyValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_geNcoMfuEeCzoqUlxCUkxg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="hylkaaValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="tns:KokuValtakirjaProcessingService" isMyRole="true" enableSharing="false" bpdm:label="hylkaaValtakirja" bpdm:ID="_dRgslMftEeCzoqUlxCUkxg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsHylkaaValtakirjaRequestMsg" bpdm:msgVarScopeId="_ZwRacMftEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_hylkaaValtakirja" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_hCCicMfuEeCzoqUlxCUkxg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsHylkaaValtakirjaResponseMsg" bpdm:msgVarScopeId="_ZwRacMftEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuValtakirjaProcessingService_hylkaaValtakirjaResponse" bpdm:binding="tns:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_ht470MfuEeCzoqUlxCUkxg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="getKunpoNameByUserUid" partnerLink="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="true" enableSharing="false" bpdm:label="getKunpoNameByUserUid" bpdm:ID="_hJtuQPMQEeC6aqQJKR8yVQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg" bpdm:msgVarScopeId="_ZwRacMftEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUid" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_kRU_cPMQEeC6aqQJKR8yVQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg" bpdm:msgVarScopeId="_ZwRacMftEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUidResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_krgaAPMQEeC6aqQJKR8yVQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>
