@@ -1,0 +1,120 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:TIVA3InitForm="http://www.intalio.com/gi/Forms/TIVA3InitForm.gi" xmlns:this="http://thisdiagram/Prosessi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://www.arcusys.fi/KOKU/TIVA3" xmlns:Palvelut="http://thisdiagram/Palvelut" xmlns:diag="http://thisdiagram" xmlns:KokuSuostumusProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:attachments="http://www.intalio.com/gi/Forms/TIVA3InitForm.gi/attachments" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/TIVA3InitForm.gi" bpdm:prefix="TIVA3InitForm" bpdm:comment="contrib=&apos;project:///Forms/TIVA3InitForm.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/KOKU/TIVA3" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/TIVA3.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="Palvelut" bpdm:comment="contrib=&apos;partner-pool:///_Se-JEM1pEeChbu4fvBTCGg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_O-kkcM1pEeChbu4fvBTCGg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.tiva.koku.arcusys.fi/" bpdm:prefix="KokuSuostumusProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuSuostumusProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/TIVA3InitForm.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/TIVA3InitForm.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///Services/UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="VirkailijaAndProsessiForPortTypeProcessPlkService">
+                <wsdl:port name="Prosessi_for_VirkailijaPort" binding="this:VirkailijaAndProsessiForPortTypeProcessPlkServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Virkailija/VirkailijaAndProsessiForPortTypeProcessPlk"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="VirkailijaAndProsessiForPortTypeProcessPlkServiceBinding" type="TIVA3InitForm:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/TIVA3InitForm.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/TIVA3.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuSuostumusProcessingServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_O-kkcM1pEeChbu4fvBTCGg" bpdm:label="Virkailija"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_Se-JEM1pEeChbu4fvBTCGg" bpdm:label="Palvelut"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/UsersAndGroupsServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Prosessi" bpdm:ID="_MK97sOQjEeC7QNahpmA8Zg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="virkailijaAndProsessiForPortTypeProcessPlkVar" partnerLinkType="diag:VirkailijaAndProsessiForPortTypeProcessPlk" myRole="Prosessi_for_Virkailija" bpdm:enableSharing="false" bpdm:providedService="this:VirkailijaAndProsessiForPortTypeProcessPlkService" bpdm:providedPort="Prosessi_for_VirkailijaPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Virkailija/VirkailijaAndProsessiForPortTypeProcessPlk" bpdm:providedIsDefault="true" bpdm:clientTasks="_MK97sOQjEeC7QNahpmA8Zg:_OocqwOQjEeC7QNahpmA8Zg" bpdm:isManaged="true" bpdm:otherPoolId="_O-kkcM1pEeChbu4fvBTCGg"/>
+            <bpel:partnerLink name="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi" bpdm:invokedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:invokedPort="UsersAndGroupsServicePort" bpdm:invokedSOAPAddress="http://127.0.0.1:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_MK97sOQjEeC7QNahpmA8Zg:_A7sncPM4EeCUfuBHBPlb1A" bpdm:isManaged="true" bpdm:otherPoolId="_Se-JEM1pEeChbu4fvBTCGg"/>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuSuostumusProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuSuostumusProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi" bpdm:invokedService="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService" bpdm:invokedPort="KokuSuostumusProcessingServicePort" bpdm:invokedSOAPAddress="http://ip-172-19-1-4:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_MK97sOQjEeC7QNahpmA8Zg:_X1H1sOQjEeC7QNahpmA8Zg, _MK97sOQjEeC7QNahpmA8Zg:_fci6EOQjEeC7QNahpmA8Zg" bpdm:isManaged="true" bpdm:otherPoolId="_Se-JEM1pEeChbu4fvBTCGg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="TIVA3Form" element="tns:TIVA3Form" bpdm:id="_DVOXIOQwEeC7QNahpmA8Zg"/>
+            <bpel:variable name="tIVA3InitFormInitProcessRequestMsg" messageType="TIVA3InitForm:initProcessRequest" bpdm:id="_QQkfIOQjEeC7QNahpmA8Zg" bpdm:messageIds="inc:_QQPvAOQjEeC7QNahpmA8Zg"/>
+            <bpel:variable name="tIVA3InitFormInitProcessResponseMsg" messageType="TIVA3InitForm:initProcessResponse" bpdm:id="_QgRvEOQjEeC7QNahpmA8Zg" bpdm:messageIds=" out:_Qf-NEOQjEeC7QNahpmA8Zg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="TIVA3InitForm:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameMsg" messageType="UsersAndGroupsServiceImpl:getUserUidByLooraName" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" operation="getUserUidByLooraName" opMsgType="0" bpdm:id="_Iz22gPM4EeCUfuBHBPlb1A" bpdm:messageIds=" out:_IzmX0PM4EeCUfuBHBPlb1A">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:getUserUidByLooraName" bpdm:linkedPart="parameters" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:opMsgType="0" bpdm:operation="getUserUidByLooraName"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg" messageType="UsersAndGroupsServiceImpl:getUserUidByLooraNameResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" operation="getUserUidByLooraName" opMsgType="1" bpdm:id="_JBAhsPM4EeCUfuBHBPlb1A" bpdm:messageIds="inc:_JAkc0PM4EeCUfuBHBPlb1A"/>
+            <bpel:variable name="kokuSuostumusProcessingServiceImplKirjaaSuostumusRequestMsg" messageType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService_kirjaaSuostumus" binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceBinding" operation="kirjaaSuostumus" opMsgType="0" bpdm:id="_bSomEPPUEeCcs_3Ae26dPA" bpdm:messageIds=" out:_6DymIPPUEeCcs_3Ae26dPA,_bSO9cPPUEeCcs_3Ae26dPA">
+                <bpel:from bpdm:toPart="kirjaaSuostumus">
+                    <bpel:literal bpdm:linkedMessageType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService_kirjaaSuostumus" bpdm:linkedPart="kirjaaSuostumus" bpdm:binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="kirjaaSuostumus"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuSuostumusProcessingServiceImplKirjaaSuostumusResponseMsg" messageType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService_kirjaaSuostumusResponse" binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceBinding" operation="kirjaaSuostumus" opMsgType="1" bpdm:id="_b8Hn8PPUEeCcs_3Ae26dPA" bpdm:messageIds="inc:_6UXYwPPUEeCcs_3Ae26dPA,_b7cSgPPUEeCcs_3Ae26dPA"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="initProcess" partnerLink="virkailijaAndProsessiForPortTypeProcessPlkVar" portType="TIVA3InitForm:Process" isMyRole="true" enableSharing="false" bpdm:label="Ota vastaan hakemus" bpdm:ID="_OocqwOQjEeC7QNahpmA8Zg">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tIVA3InitFormInitProcessRequestMsg" bpdm:msgVarScopeId="_MK97sOQjEeC7QNahpmA8Zg" bpdm:variableIsManaged="true" bpdm:messageType="TIVA3InitForm:initProcessRequest" bpdm:ID="_QQPvAOQjEeC7QNahpmA8Zg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tIVA3InitFormInitProcessResponseMsg" bpdm:msgVarScopeId="_MK97sOQjEeC7QNahpmA8Zg" bpdm:variableIsManaged="true" bpdm:messageType="TIVA3InitForm:initProcessResponse" bpdm:ID="_Qf-NEOQjEeC7QNahpmA8Zg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Luo Hakemus" bpdm:ID="_SAY28OQjEeC7QNahpmA8Zg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$tIVA3InitFormInitProcessRequestMsg.root/TIVA3InitForm:taskOutput/tns:TIVA3Form</bpel:from>
+                        <bpel:to>$TIVA3Form</bpel:to><mapper:mapperLink><mapper:vertice id="739353370" targetPath="$TIVA3Form" targetedBy="1503677777-arg0"></mapper:vertice><mapper:vertice id="1503677777" sourcePath="$tIVA3InitFormInitProcessRequestMsg.root/TIVA3InitForm:taskOutput/tns:TIVA3Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="getUserUidByLooraName" partnerLink="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_A7sncPM4EeCUfuBHBPlb1A">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$TIVA3Form/tns:Kayttaja/tns:Kayttaja_Lahettaja</bpel:from>
+                        <bpel:to>$usersAndGroupsServiceImplGetUserUidByLooraNameMsg.parameters/looraUsername</bpel:to><mapper:mapperLink><mapper:vertice id="1322948322" targetPath="$usersAndGroupsServiceImplGetUserUidByLooraNameMsg.parameters/looraUsername" targetedBy="1827728077-arg0"></mapper:vertice><mapper:vertice id="1827728077" sourcePath="$TIVA3Form/tns:Kayttaja/tns:Kayttaja_Lahettaja"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByLooraNameMsg" bpdm:msgVarScopeId="_MK97sOQjEeC7QNahpmA8Zg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:getUserUidByLooraName" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:ID="_IzmX0PM4EeCUfuBHBPlb1A"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg" bpdm:msgVarScopeId="_MK97sOQjEeC7QNahpmA8Zg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:getUserUidByLooraNameResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:ID="_JAkc0PM4EeCUfuBHBPlb1A"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Tallenna Lähettäjä" bpdm:ID="_BqJo4PM4EeCUfuBHBPlb1A">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg.parameters/userUid</bpel:from>
+                        <bpel:to>$TIVA3Form/tns:Kayttaja/tns:Kayttaja_Lahettaja</bpel:to><mapper:mapperLink><mapper:vertice id="96985252" targetPath="$TIVA3Form/tns:Kayttaja/tns:Kayttaja_Lahettaja" targetedBy="638333593-arg0"></mapper:vertice><mapper:vertice id="638333593" sourcePath="$usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg.parameters/userUid"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="kirjaaSuostumus" partnerLink="palvelutAndProsessiForKokuSuostumusProcessingServicePortPlkVar" portType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Kirjaa Hakemus" bpdm:ID="_X1H1sOQjEeC7QNahpmA8Zg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>bpel:doXslTransform("../xsl/kirjaaSuostumus1.xsl", $TIVA3Form)</bpel:from>
+                        <bpel:to>$kokuSuostumusProcessingServiceImplKirjaaSuostumusRequestMsg.kirjaaSuostumus</bpel:to><mapper:mapperLink><mapper:vertice id="2095958511" targetPath="$kokuSuostumusProcessingServiceImplKirjaaSuostumusRequestMsg.kirjaaSuostumus" targetedBy="1695939991-arg2"></mapper:vertice><mapper:vertice id="1695939991" dimension="224x39" location="348,132"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="2025981079" dimension="252x24" location="264,36" targetedBy="1695939991-arg0"><mapper:value>"../xsl/kirjaaSuostumus1.xsl"</mapper:value></mapper:vertice><mapper:vertice id="2043471028" sourcePath="$TIVA3Form" targetedBy="1695939991-arg1"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuSuostumusProcessingServiceImplKirjaaSuostumusRequestMsg" bpdm:msgVarScopeId="_MK97sOQjEeC7QNahpmA8Zg" bpdm:variableIsManaged="true" bpdm:messageType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService_kirjaaSuostumus" bpdm:binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceBinding" bpdm:ID="_bSO9cPPUEeCcs_3Ae26dPA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuSuostumusProcessingServiceImplKirjaaSuostumusResponseMsg" bpdm:msgVarScopeId="_MK97sOQjEeC7QNahpmA8Zg" bpdm:variableIsManaged="true" bpdm:messageType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService_kirjaaSuostumusResponse" bpdm:binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceBinding" bpdm:ID="_b7cSgPPUEeCcs_3Ae26dPA"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_d8LTgOQjEeC7QNahpmA8Zg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
+                <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_fWJCoO2QEeCp1udcO5sf9Q" bpdm:targetDisplayName="default"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_fsHSoO2QEeCp1udcO5sf9Q" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Kirjaa Hakemus]">
+                    <bpel:condition>$TIVA3Form/tns:Kayttaja/tns:Kayttaja_UseampiVastaanottaja = "true"<mapper:mapperLink><mapper:vertice id="346473545" targetPath="$condition" targetedBy="1673253369-arg2"></mapper:vertice><mapper:vertice id="1673253369" dimension="78x24" location="348,60"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1077656236" sourcePath="$TIVA3Form/tns:Kayttaja/tns:Kayttaja_UseampiVastaanottaja" targetedBy="1673253369-arg0"></mapper:vertice><mapper:vertice id="1057734475" dimension="78x24" location="351,103" targetedBy="1673253369-arg1"><mapper:value>"true"</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpel:sequence></bpel:sequence>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="kirjaaSuostumus" partnerLink="palvelutAndProsessiForKokuSuostumusProcessingServicePortPlkVar" portType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Kirjaa Hakemus" bpdm:ID="_fci6EOQjEeC7QNahpmA8Zg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>bpel:doXslTransform("../xsl/kirjaaSuostumus2.xsl", $TIVA3Form)</bpel:from>
+                                <bpel:to>$kokuSuostumusProcessingServiceImplKirjaaSuostumusRequestMsg.kirjaaSuostumus</bpel:to><mapper:mapperLink><mapper:vertice id="1412277327" targetPath="$kokuSuostumusProcessingServiceImplKirjaaSuostumusRequestMsg.kirjaaSuostumus" targetedBy="1379037406-arg2"></mapper:vertice><mapper:vertice id="1379037406" dimension="224x39" location="372,144"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="1726504507" dimension="252x24" location="288,48" targetedBy="1379037406-arg0"><mapper:value>"../xsl/kirjaaSuostumus2.xsl"</mapper:value></mapper:vertice><mapper:vertice id="150297395" sourcePath="$TIVA3Form" targetedBy="1379037406-arg1"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuSuostumusProcessingServiceImplKirjaaSuostumusRequestMsg" bpdm:msgVarScopeId="_MK97sOQjEeC7QNahpmA8Zg" bpdm:variableIsManaged="true" bpdm:messageType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService_kirjaaSuostumus" bpdm:binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceBinding" bpdm:ID="_6DymIPPUEeCcs_3Ae26dPA"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuSuostumusProcessingServiceImplKirjaaSuostumusResponseMsg" bpdm:msgVarScopeId="_MK97sOQjEeC7QNahpmA8Zg" bpdm:variableIsManaged="true" bpdm:messageType="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService_kirjaaSuostumusResponse" bpdm:binding="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingServiceBinding" bpdm:ID="_6UXYwPPUEeCcs_3Ae26dPA"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpdm:gateway>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_Xr8XEO2QEeCp1udcO5sf9Q" bpdm:gatewayType="data_xor" bpdm:isMerge="true"></bpdm:gateway>
+            <bpdm:messagingtask eventType="end: empty" bpdm:label="The End" bpdm:ID="_ox_SAO2QEeCp1udcO5sf9Q"></bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

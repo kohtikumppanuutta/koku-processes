@@ -1,0 +1,56 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Palvelut" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Palvelut">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_MK97sOQjEeC7QNahpmA8Zg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_MK97sOQjEeC7QNahpmA8Zg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.tiva.koku.arcusys.fi/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Services/KokuSuostumusProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///Services/UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuSuostumusProcessingServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_MK97sOQjEeC7QNahpmA8Zg" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/UsersAndGroupsServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Palvelut" bpdm:ID="_Se-JEM1pEeChbu4fvBTCGg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForUsersAndGroupsServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:providedPort="UsersAndGroupsServicePort" bpdm:provideSOAPAddress="http://127.0.0.1:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_Se-JEM1pEeChbu4fvBTCGg:_FfBosPM4EeCUfuBHBPlb1A" bpdm:isManaged="true" bpdm:otherPoolId="_MK97sOQjEeC7QNahpmA8Zg"/>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuSuostumusProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuSuostumusProcessingServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="tns:KokuSuostumusProcessingService" bpdm:providedPort="KokuSuostumusProcessingServicePort" bpdm:provideSOAPAddress="http://ip-172-19-1-4:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_Se-JEM1pEeChbu4fvBTCGg:_Y176IPPUEeCcs_3Ae26dPA, _Se-JEM1pEeChbu4fvBTCGg:_3iqGIPPUEeCcs_3Ae26dPA" bpdm:isManaged="true" bpdm:otherPoolId="_MK97sOQjEeC7QNahpmA8Zg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameMsg" messageType="UsersAndGroupsServiceImpl:getUserUidByLooraName" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" operation="getUserUidByLooraName" opMsgType="0" bpdm:id="_I0CcsPM4EeCUfuBHBPlb1A" bpdm:messageIds="inc:_IzmX0PM4EeCUfuBHBPlb1A"/>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg" messageType="UsersAndGroupsServiceImpl:getUserUidByLooraNameResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" operation="getUserUidByLooraName" opMsgType="1" bpdm:id="_JA2JoPM4EeCUfuBHBPlb1A" bpdm:messageIds=" out:_JAkc0PM4EeCUfuBHBPlb1A">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:getUserUidByLooraNameResponse" bpdm:linkedPart="parameters" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="getUserUidByLooraName"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="tnsKirjaaSuostumusRequestMsg" messageType="tns:KokuSuostumusProcessingService_kirjaaSuostumus" binding="tns:KokuSuostumusProcessingServiceBinding" operation="kirjaaSuostumus" opMsgType="0" bpdm:id="_bS658PPUEeCcs_3Ae26dPA" bpdm:messageIds="inc:_6DymIPPUEeCcs_3Ae26dPA,_bSO9cPPUEeCcs_3Ae26dPA"/>
+            <bpel:variable name="tnsKirjaaSuostumusResponseMsg" messageType="tns:KokuSuostumusProcessingService_kirjaaSuostumusResponse" binding="tns:KokuSuostumusProcessingServiceBinding" operation="kirjaaSuostumus" opMsgType="1" bpdm:id="_b71UEPPUEeCcs_3Ae26dPA" bpdm:messageIds=" out:_b7cSgPPUEeCcs_3Ae26dPA,_6UXYwPPUEeCcs_3Ae26dPA">
+                <bpel:from bpdm:toPart="kirjaaSuostumusResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:KokuSuostumusProcessingService_kirjaaSuostumusResponse" bpdm:linkedPart="kirjaaSuostumusResponse" bpdm:binding="tns:KokuSuostumusProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="kirjaaSuostumus"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="getUserUidByLooraName" partnerLink="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="true" enableSharing="false" bpdm:label="getUserUidByLooraName" bpdm:ID="_FfBosPM4EeCUfuBHBPlb1A">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByLooraNameMsg" bpdm:msgVarScopeId="_Se-JEM1pEeChbu4fvBTCGg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:getUserUidByLooraName" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:ID="_IzmX0PM4EeCUfuBHBPlb1A"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg" bpdm:msgVarScopeId="_Se-JEM1pEeChbu4fvBTCGg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:getUserUidByLooraNameResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:ID="_JAkc0PM4EeCUfuBHBPlb1A"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="kirjaaSuostumus" partnerLink="palvelutAndProsessiForKokuSuostumusProcessingServicePortPlkVar" portType="tns:KokuSuostumusProcessingService" isMyRole="true" enableSharing="false" bpdm:label="kirjaaSuostumus" bpdm:ID="_3iqGIPPUEeCcs_3Ae26dPA">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsKirjaaSuostumusRequestMsg" bpdm:msgVarScopeId="_Se-JEM1pEeChbu4fvBTCGg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuSuostumusProcessingService_kirjaaSuostumus" bpdm:binding="tns:KokuSuostumusProcessingServiceBinding" bpdm:ID="_6DymIPPUEeCcs_3Ae26dPA"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsKirjaaSuostumusResponseMsg" bpdm:msgVarScopeId="_Se-JEM1pEeChbu4fvBTCGg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuSuostumusProcessingService_kirjaaSuostumusResponse" bpdm:binding="tns:KokuSuostumusProcessingServiceBinding" bpdm:ID="_6UXYwPPUEeCcs_3Ae26dPA"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="kirjaaSuostumus" partnerLink="palvelutAndProsessiForKokuSuostumusProcessingServicePortPlkVar" portType="tns:KokuSuostumusProcessingService" isMyRole="true" enableSharing="false" bpdm:label="kirjaaSuostumus" bpdm:ID="_Y176IPPUEeCcs_3Ae26dPA">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsKirjaaSuostumusRequestMsg" bpdm:msgVarScopeId="_Se-JEM1pEeChbu4fvBTCGg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuSuostumusProcessingService_kirjaaSuostumus" bpdm:binding="tns:KokuSuostumusProcessingServiceBinding" bpdm:ID="_bSO9cPPUEeCcs_3Ae26dPA"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsKirjaaSuostumusResponseMsg" bpdm:msgVarScopeId="_Se-JEM1pEeChbu4fvBTCGg" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuSuostumusProcessingService_kirjaaSuostumusResponse" bpdm:binding="tns:KokuSuostumusProcessingServiceBinding" bpdm:ID="_b7cSgPPUEeCcs_3Ae26dPA"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>
