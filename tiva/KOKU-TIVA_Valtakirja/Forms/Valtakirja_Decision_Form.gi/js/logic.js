@@ -1,8 +1,137 @@
 /* place JavaScript code here */
+function getDomainName() {
+
+    var url = window.location.href;
+   // alert(url);
+    var url_parts = url.split("/");
+   // alert(url_parts);
+    var domain_name_parts = url_parts[2].split(":");
+   // alert(domain_name_parts);
+    var domain_name = domain_name_parts[0];
+    
+    return domain_name;
+
+}
+
+
+function getPortNumber() {
+    
+    var url = window.location.href;
+    
+    var url_parts = url.split("/");
+    
+    var domain_name_parts = url_parts[2].split(":");
+    
+    var port_number = domain_name_parts[1];
+    
+    return port_number;
+
+}
+
+
+function getUrl() {
+    //var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
+    //var url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
+
+
+    var domain = getDomainName();
+    var port = getPortNumber();
+    
+    var url = "http://" + domain + ":" + port + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+    return url;
+    
+}
+
+
+function hideButtonsAndImages() {
+    $('span[label|="IntalioInternal_Image"]').remove();
+
+}
 
 function prepareDecision() {
    // alert("prepareDecision");
     Valtakirja_Form.getJSXByName("labelValtakirjaKuvaus").setText(Valtakirja_Form.getJSXByName("Valtakirjapohja_Kuvaus").getValue()).repaint();
+    
+    var valtakirjaId = Valtakirja_Form.getJSXByName("Tiedot_ValtakirjaId").getValue();
+    var kayttaja = Valtakirja_Form.getJSXByName("Tiedot_Lahettaja").getValue();
+        try {
+
+            // Add form preload functions here.
+            var valtakirjaData = Arcusys.Internal.Communication.GetValtakirja(valtakirjaId, kayttaja);
+            //Arcusys.Internal.Communication.GerLDAPUser();
+          //  alert(valtakirjaData);
+            if(valtakirjaData != null) {
+                mapValtakirjaDataToFields(valtakirjaData);
+            }
+        } catch (e) {
+            alert(e);
+        }
+
+}
+
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetValtakirja= function(valtakirjaId, kayttaja) {
+        
+        var tout = 1000;   
+        var limit = 100;
+        var searchString = "";
+        
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getValtakirja><valtakirjaId>" + valtakirjaId + "</valtakirjaId><kayttaja>" + kayttaja + "</kayttaja></soa:getValtakirja></soapenv:Body></soapenv:Envelope>";
+       
+        var url = getUrl();
+        
+        var endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
+        
+        /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
+        var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";*/
+
+
+        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);      
+        
+        //req.setRequestHeader("Content-Type","text/xml");
+
+        //req.setRequestHeader("SOAPAction","");
+        
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.send(msg, tout);
+       var objXML = req.getResponseXML();
+       // alert(req.getStatus());
+        
+       // var objXML = req.getResponseXML();
+       // alert("DEBUG - SERVER RESPONSE:" + objXML);
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+});
+
+
+function mapValtakirjaDataToFields(valtakirjaData) {
+    
+    var validTill = valtakirjaData.selectSingleNode("//validTill", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    
+    var array = validTill.split("-");
+    array[2] = array[2].charAt(0) + array[2].charAt(1);
+    
+  //  alert(array);
+    var d = new Date();
+    
+    d.setDate(array[2]);
+    d.setMonth(array[1]);
+    d.setFullYear(array[0]);
+  //  alert(d);
+  //  alert(validTill);
+    Valtakirja_Form.getJSXByName("Tiedot_Voimassa").setValue(d);
+    
 }
 
 

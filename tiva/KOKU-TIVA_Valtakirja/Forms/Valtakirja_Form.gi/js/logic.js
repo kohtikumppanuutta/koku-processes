@@ -1,4 +1,3 @@
-
 function getDomainName() {
 
     var url = window.location.href;
@@ -118,7 +117,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
            // alert(objXML);
             return objXML;
@@ -165,7 +164,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -206,11 +205,11 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        req.send(msg, tout);
        var objXML = req.getResponseXML();
        // alert(req.getStatus());
-        
+       // alert(objXML);
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -255,7 +254,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
            // alert(objXML);
             return objXML;
@@ -334,9 +333,9 @@ function listChildsParents(childId) {
     var childData = Valtakirja_Form.getCache().getDocument("propsResults_xml").selectSingleNode("//child[uid='" + childId + "']", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
     //alert(childData);
    createXMLDocumentForCache(childData, "propsResultsChild_xml");
-   
+  // alert(childData);
    descendants = Valtakirja_Form.getCache().getDocument("propsResultsChild_xml").selectNodeIterator("//parents", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
-   
+   //alert(descendants);
    
  //  var descendants = childDataFile.selectNodeIterator("//parents", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
    // alert(descendants);
@@ -351,9 +350,11 @@ function listChildsParents(childId) {
        // alert(childNode);
        // requestTemplateId = childNode.getAttributeNode("return");
        personName = childNode.getFirstChild().getValue();
+      // alert(personName);
       // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
        // alert(templateId);
         personId = childNode.getLastChild().getValue();
+       // alert(personId);
         //alert(templateName);
        // subject = childNode.selectSingleNode("//subject").getValue();
         //alert(templateDescription);
@@ -385,26 +386,92 @@ function createXMLDocumentForCache(documentData,documentName) {
 }
 
 
+function parseXML(xmlData, rootName, childlist) {
+    var i, j, attributes, node, childNode, childChildNode, childs;
+    i = 0;
+
+    attributes = [];
+
+    childs = xmlData.selectNodeIterator("/\/" + rootName);
+
+    while (childs.hasNext()) {
+
+        attributes[i] = [];
+        node = childs.next();
+        if (node == null) {
+            break;
+        }
+        for (j = 0; j < (childlist.length+2); j++) {
+            childNode = node.getFirstChild();
+            while (childNode != null) {
+                if (childNode.getNodeName() == childlist[j]) {
+                    attributes[i][j] = childNode.getValue();
+                    break;
+                }
+                childNode = childNode.getNextSibling();
+            }
+        }
+        i++;
+    }
+
+    return valuesToArray(attributes);
+}
+
+
+/**
+ * Compresesses multidimensional array to sigle dimensional
+ * Users information comma seperated. One user/node.
+ */
+function valuesToArray(attributes) {
+    var tempArray, i, j, line;
+    tempArray = [];
+
+    for (i = 0; i < attributes.length; i++) {
+        line = "";
+        for (j = 0; j < attributes[i].length; j++) {
+            line = line + attributes[i][j];
+            if (j < (attributes[i].length - 1 )) {
+                line = line + ",";
+
+            }
+
+        }
+        tempArray[i] = line;
+
+    }
+    return tempArray;
+}
+
+
 function mapChildrenNamesToField(data) {
   //  alert(data);
     var descendants = data.selectNodeIterator("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
    // alert(descendants);
-    var personId, personDescription; 
+    var personId, personDescription, personName, childAttributes;
+    var childAttributeList = new Array(); 
     var xmlForSelectBox = "<data>";
-    
+    var childList = ["displayName", "uid"];
     while(descendants.hasNext()) {
     
         childNode = descendants.next();
        // alert(childNode);
        // alert(childNode);
        // requestTemplateId = childNode.getAttributeNode("return");
-       personName = childNode.getFirstChild().getValue();
-      // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
+      //  personName = childNode.getFirstChild().getValue();
+       
+       childAttributes = parseXML(childNode, "child", childList);
+      // alert(childAttributes);
+       childAttributeList = childAttributes[0].split(",");
+       personName = childAttributeList[0];
+       personId = childAttributeList[1];
+       // alert(personName + " " + personId);
+      
+       // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
        // alert(personName);
-        personId = childNode.getFirstChild().getNextSibling().getNextSibling().getNextSibling().getValue();
+      //  personId = childNode.getFirstChild().getNextSibling().getNextSibling().getNextSibling().getValue();
        // alert(personId);
        // subject = childNode.selectSingleNode("//subject").getValue();
-        //alert(templateDescription);
+       //alert(templateDescription);
         xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + personId + "\" jsxtext=\"" + personName + "\"/>";
         
        // alert(requestTemplateId + subject);
@@ -432,6 +499,7 @@ function mapChildrenNamesToField(data) {
        }
     */
    // var values = "";
+  // alert(xmlForSelectBox);
     Valtakirja_Form.getJSXByName("Tiedot_Henkilo").setXMLString(xmlForSelectBox);
     Valtakirja_Form.getJSXByName("Tiedot_Henkilo").resetXmlCacheData();
     Valtakirja_Form.getJSXByName("Tiedot_Henkilo").repaint();

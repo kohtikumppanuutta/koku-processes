@@ -20,10 +20,13 @@ div[label=IntalioInternal_SpacerBlock] {
 
 span[label=IntalioInternal_SaveButton], 
 span[label=IntalioInternal_ClaimButton], 
-span[label=IntalioInternal_RevokeButton],
-img[src=../images/attachments.gif] {
+span[label=IntalioInternal_RevokeButton] {
     display: none !important;
 }
+/*
+span[label="IntalioInternal_Image"] {
+    display: none !important;
+}*/
 
 #_jsx_0_1{
     display: block !important;

@@ -178,7 +178,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        //alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -224,7 +224,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -271,7 +271,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 

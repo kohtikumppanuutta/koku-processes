@@ -227,13 +227,13 @@
               <record jsxid="mi_79" name="DOM" value="Tiedot_Vastaanottaja"/>
             </mappings>
           </record>
-        <record jsxid="x43305" jsxtext="Tiedot_VastaanottajanKommentti" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_VastaanottajanKommentti']" jsxSelectMask="Script">
+        <record jsxid="x43305" jsxtext="Tiedot_VastaanottajanKommentti" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_VastaanottajanKommentti']" jsxselected="1" jsxSelectMask="Script">
             <restrictions>
               <record jsxid="x54476" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_78">
               <record jsxid="x54761" name="DOM" value="Tiedot_VastaanottajanKommentti"/>
-            <record jsxid="jsx_1" value="prepareDecision();" name="Script"/></mappings>
+            <record jsxid="jsx_1" value="prepareDecision();" name="Script"/><record jsxid="jsx_2" value="hideButtonsAndImages();" name="Script"/></mappings>
           </record><record jsxid="x74180" jsxtext="Tiedot_LahettajaDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_LahettajaDisplay']">
             <restrictions>
               <record jsxid="x41129" name="nillable" value="true"/>
@@ -248,7 +248,7 @@
             <mappings jsxid="mi_78">
               <record jsxid="x45938" name="DOM" value="Tiedot_VastaanottajaDisplay"/>
             </mappings>
-          </record><record jsxid="x80113" jsxtext="Tiedot_HenkiloDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_HenkiloDisplay']" jsxselected="1">
+          </record><record jsxid="x80113" jsxtext="Tiedot_HenkiloDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_HenkiloDisplay']">
             <restrictions>
               <record jsxid="x66336" name="nillable" value="true"/>
             </restrictions>

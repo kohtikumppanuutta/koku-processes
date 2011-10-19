@@ -248,7 +248,7 @@
                   <strings riaLabelText="Tiedot_Voimassa" jsxname="Tiedot_Voimassa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.DatePicker">
                     <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxfirstweekday="1" jsxrequired="0" jsxenabled="0"/>
-                    <strings jsxformat="dd.MM.yyyy" jsxname="Tiedot_Voimassa" jsxmargin="0 4 0 0"/>
+                    <strings jsxformat="yyyy-MM-dd" jsxname="Tiedot_Voimassa" jsxmargin="0 4 0 0"/>
                     <events jsxhide="com.intalio.ria.validate(this);" jsxchange="checkDateNotBefore(newDATE, getTodayDateFinnish());"/>
                   </object>
                 </object>
@@ -289,7 +289,7 @@
                   <strings riaLabelText="Tiedot_VastausMennessa" jsxname="Tiedot_VastausMennessa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.DatePicker">
                     <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxfirstweekday="1" jsxrequired="0" jsxenabled="0"/>
-                    <strings jsxformat="dd.MM.yyyy" jsxname="Tiedot_VastausMennessa" jsxmargin="0 4 0 0"/>
+                    <strings jsxformat="yyyy-MM-dd" jsxname="Tiedot_VastausMennessa" jsxmargin="0 4 0 0"/>
                     <events jsxhide="com.intalio.ria.validate(this);" jsxchange="checkDateNotBefore(newDATE, getTodayDateFinnish());"/>
                   </object>
                 </object>
