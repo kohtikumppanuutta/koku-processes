@@ -390,7 +390,8 @@
  </binding>
  <service name="KokuRequestProcessingService">
   <port binding="tns:KokuRequestProcessingServiceBinding" name="KokuRequestProcessingServicePort">
-   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl"/>
+<!--   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl"/>-->
+   <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl"/>
   </port>
  </service>
 </definitions>

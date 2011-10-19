@@ -1067,8 +1067,8 @@
                   <variants/>
                   <strings jsxname="User_AnswerUntil-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.DatePicker">
-                    <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18"/>
-                    <strings jsxname="User_AnswerUntil" jsxmargin="0 4 0 0" jsxformat="dd.MM.yyyy"/>
+                    <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18" jsxrequired="1"/>
+                    <strings jsxname="User_AnswerUntil" jsxmargin="0 4 0 0" jsxformat="dd.MM.yyyy" jsxtip="Vastauksen määräaika"/>
                     <events jsxhide="com.intalio.ria.validate(this);"/>
                   </object>
                 </object>

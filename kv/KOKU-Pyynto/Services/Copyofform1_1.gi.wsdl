@@ -345,7 +345,7 @@
 
   <wsdl:service name="WorkflowSoapService">
     <wsdl:port name="Copyofform1_1Port" binding="Copyofform1_1:WorkflowSoapBinding">
-      <soap:address location="http://localhost:8080/fds/workflow/Copyofform1_1"/>
+      <soap:address location="http://intalio.intra.arcusys.fi:8080/fds/workflow/Copyofform1_1"/>
     </wsdl:port>
   </wsdl:service>
 
