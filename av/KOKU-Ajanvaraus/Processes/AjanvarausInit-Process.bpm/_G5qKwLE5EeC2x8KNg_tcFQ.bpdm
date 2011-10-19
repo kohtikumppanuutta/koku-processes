@@ -1,0 +1,36 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:attachments="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://www.arcusys.fi/KOKU/Ajanvaraus" xmlns:Ajanvaraus_Init_Form="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi" xmlns:this="http://thisdiagram/Virkailija" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Virkailija">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_miG_MLE5EeC2x8KNg_tcFQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus_Init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/KOKU/Ajanvaraus" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi" bpdm:prefix="Ajanvaraus_Init_Form" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus_Init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Virkailija" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_miG_MLE5EeC2x8KNg_tcFQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Ajanvaraus_Init_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Ajanvaraus.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_miG_MLE5EeC2x8KNg_tcFQ" bpdm:label="Prosessi"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Virkailija" bpdm:ID="_G5qKwLE5EeC2x8KNg_tcFQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="prosessiAndVirkailijaForPortTypeProcessPlkVar" partnerLinkType="diag:ProsessiAndVirkailijaForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="Prosessi_for_Virkailija" bpdm:invokedService="Prosessi:ProsessiAndVirkailijaForPortTypeProcessPlkService" bpdm:invokedPort="Prosessi_for_VirkailijaPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Virkailija/ProsessiAndVirkailijaForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_G5qKwLE5EeC2x8KNg_tcFQ:_DYnqwMmUEeCNbLE3JZ8FWg" bpdm:isManaged="true" bpdm:otherPoolId="_miG_MLE5EeC2x8KNg_tcFQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="ajanvaraus_Init_FormInitProcessRequestMsg" messageType="Ajanvaraus_Init_Form:initProcessRequest" bpdm:id="_D3A28MmUEeCNbLE3JZ8FWg" bpdm:messageIds=" out:_D2xmYMmUEeCNbLE3JZ8FWg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Ajanvaraus_Init_Form:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="ajanvaraus_Init_FormInitProcessResponseMsg" messageType="Ajanvaraus_Init_Form:initProcessResponse" bpdm:id="_EL2egMmUEeCNbLE3JZ8FWg" bpdm:messageIds="inc:_ELTE4MmUEeCNbLE3JZ8FWg"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="prosessiAndVirkailijaForPortTypeProcessPlkVar" portType="Ajanvaraus_Init_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Ajanvaraus_Init_Form-init request" bpdm:ID="_DYnqwMmUEeCNbLE3JZ8FWg">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="ajanvaraus_Init_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_G5qKwLE5EeC2x8KNg_tcFQ" bpdm:variableIsManaged="true" bpdm:messageType="Ajanvaraus_Init_Form:initProcessRequest" bpdm:ID="_D2xmYMmUEeCNbLE3JZ8FWg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="ajanvaraus_Init_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_G5qKwLE5EeC2x8KNg_tcFQ" bpdm:variableIsManaged="true" bpdm:messageType="Ajanvaraus_Init_Form:initProcessResponse" bpdm:ID="_ELTE4MmUEeCNbLE3JZ8FWg"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

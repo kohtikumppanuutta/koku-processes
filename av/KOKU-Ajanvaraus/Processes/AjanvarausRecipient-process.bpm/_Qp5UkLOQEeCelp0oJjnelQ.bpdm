@@ -1,0 +1,39 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:KokuAppointmentProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:KokuAppointmentProcessingServiceImpl1="http://soa.av.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://www.arcusys.fi/KOKU/Ajanvaraus" xmlns:s="http://thisdiagram/s" xmlns:Ajanvaraus_receive_Form="http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi/attachments" xmlns:this="http://thisdiagram/Kuntalainen" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Kuntalainen">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuAppointmentProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.av.koku.arcusys.fi/" bpdm:prefix="KokuAppointmentProcessingServiceImpl1" bpdm:comment="contrib=&apos;project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/KOKU/Ajanvaraus" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/s" bpdm:prefix="s" bpdm:comment="contrib=&apos;partner-pool:///_cWxLYLOQEeCelp0oJjnelQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi" bpdm:prefix="Ajanvaraus_receive_Form" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus_receive_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus_receive_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Kuntalainen" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_cWxLYLOQEeCelp0oJjnelQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Ajanvaraus.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Ajanvaraus_receive_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_cWxLYLOQEeCelp0oJjnelQ" bpdm:label="s"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Kuntalainen" bpdm:ID="_Qp5UkLOQEeCelp0oJjnelQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="sAndKuntalainenForPortTypeProcessPlkVar" partnerLinkType="diag:sAndKuntalainenForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="s_for_Kuntalainen" bpdm:invokedService="s:sAndKuntalainenForPortTypeProcessPlkService" bpdm:invokedPort="s_for_KuntalainenPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/s/Kuntalainen/sAndKuntalainenForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_Qp5UkLOQEeCelp0oJjnelQ:_erRzsL5cEeCS5rrlGBJbAA" bpdm:isManaged="true" bpdm:otherPoolId="_cWxLYLOQEeCelp0oJjnelQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="ajanvaraus_receive_FormInitProcessRequestMsg" messageType="Ajanvaraus_receive_Form:initProcessRequest" bpdm:id="_fIn3AL5cEeCS5rrlGBJbAA" bpdm:messageIds=" out:_fIaboL5cEeCS5rrlGBJbAA">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Ajanvaraus_receive_Form:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="ajanvaraus_receive_FormInitProcessResponseMsg" messageType="Ajanvaraus_receive_Form:initProcessResponse" bpdm:id="_faUD8L5cEeCS5rrlGBJbAA" bpdm:messageIds="inc:_fZu1IL5cEeCS5rrlGBJbAA"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="sAndKuntalainenForPortTypeProcessPlkVar" portType="Ajanvaraus_receive_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Ajanvaraus_receive_Form-init request" bpdm:ID="_erRzsL5cEeCS5rrlGBJbAA">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="ajanvaraus_receive_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_Qp5UkLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="Ajanvaraus_receive_Form:initProcessRequest" bpdm:ID="_fIaboL5cEeCS5rrlGBJbAA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="ajanvaraus_receive_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_Qp5UkLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="Ajanvaraus_receive_Form:initProcessResponse" bpdm:ID="_fZu1IL5cEeCS5rrlGBJbAA"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

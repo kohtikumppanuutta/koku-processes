@@ -1,0 +1,218 @@
+<definitions name="KokuAppointmentProcessingService" targetNamespace="http://soa.av.koku.arcusys.fi/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.av.koku.arcusys.fi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://soa.av.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.av.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="approveAppointment" type="tns:approveAppointment"/>
+   <xs:element name="approveAppointmentResponse" type="tns:approveAppointmentResponse"/>
+   <xs:element name="declineAppointment" type="tns:declineAppointment"/>
+   <xs:element name="declineAppointmentResponse" type="tns:declineAppointmentResponse"/>
+   <xs:element name="getAppointment" type="tns:getAppointment"/>
+   <xs:element name="getAppointmentForReply" type="tns:getAppointmentForReply"/>
+   <xs:element name="getAppointmentForReplyResponse" type="tns:getAppointmentForReplyResponse"/>
+   <xs:element name="getAppointmentResponse" type="tns:getAppointmentResponse"/>
+   <xs:element name="storeAppointment" type="tns:storeAppointment"/>
+   <xs:element name="storeAppointmentResponse" type="tns:storeAppointmentResponse"/>
+   <xs:complexType name="approveAppointment">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="targetUser" type="xs:string"/>
+     <xs:element minOccurs="0" name="user" type="xs:string"/>
+     <xs:element minOccurs="0" name="appointmentId" type="xs:long"/>
+     <xs:element name="slotNumber" type="xs:int"/>
+     <xs:element minOccurs="0" name="comment" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approveAppointmentResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="declineAppointment">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="targetUser" type="xs:string"/>
+     <xs:element minOccurs="0" name="user" type="xs:string"/>
+     <xs:element minOccurs="0" name="appointmentId" type="xs:long"/>
+     <xs:element minOccurs="0" name="comment" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="declineAppointmentResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getAppointment">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="appointmentId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAppointmentResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="appointment" type="tns:appointmentForEditTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appointmentForEditTO">
+    <xs:complexContent>
+     <xs:extension base="tns:appointmentForReplyTO">
+      <xs:sequence>
+       <xs:element maxOccurs="unbounded" minOccurs="0" name="receipients" nillable="true" type="tns:appointmentReceipientTO"/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="appointmentForReplyTO">
+    <xs:complexContent>
+     <xs:extension base="tns:appointmentSummary">
+      <xs:sequence>
+       <xs:element maxOccurs="unbounded" minOccurs="0" name="slots" nillable="true" type="tns:appointmentSlot"/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="appointmentSummary">
+    <xs:sequence>
+     <xs:element name="appointmentId" type="xs:long"/>
+     <xs:element minOccurs="0" name="sender" type="xs:string"/>
+     <xs:element minOccurs="0" name="subject" type="xs:string"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appointmentReceipientTO">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="receipients" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="targetPerson" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appointmentSlot">
+    <xs:sequence>
+     <xs:element name="slotNumber" type="xs:int"/>
+     <xs:element minOccurs="0" name="appointmentDate" type="xs:date"/>
+     <xs:element minOccurs="0" name="startTime" type="xs:time"/>
+     <xs:element minOccurs="0" name="endTime" type="xs:time"/>
+     <xs:element minOccurs="0" name="location" type="xs:string"/>
+     <xs:element minOccurs="0" name="comment" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAppointmentForReply">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="appointmentId" type="xs:long"/>
+     <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAppointmentForReplyResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:appointmentForReplyTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storeAppointment">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="appointment" type="tns:appointmentForEditTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storeAppointmentResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name="KokuAppointmentProcessingService_getAppointmentForReplyResponse">
+  <part element="tns:getAppointmentForReplyResponse" name="getAppointmentForReplyResponse"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_approveAppointmentResponse">
+  <part element="tns:approveAppointmentResponse" name="approveAppointmentResponse"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_declineAppointment">
+  <part element="tns:declineAppointment" name="declineAppointment"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_storeAppointment">
+  <part element="tns:storeAppointment" name="storeAppointment"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_getAppointmentForReply">
+  <part element="tns:getAppointmentForReply" name="getAppointmentForReply"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_getAppointment">
+  <part element="tns:getAppointment" name="getAppointment"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_getAppointmentResponse">
+  <part element="tns:getAppointmentResponse" name="getAppointmentResponse"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_approveAppointment">
+  <part element="tns:approveAppointment" name="approveAppointment"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_declineAppointmentResponse">
+  <part element="tns:declineAppointmentResponse" name="declineAppointmentResponse"/>
+ </message>
+ <message name="KokuAppointmentProcessingService_storeAppointmentResponse">
+  <part element="tns:storeAppointmentResponse" name="storeAppointmentResponse"/>
+ </message>
+ <portType name="KokuAppointmentProcessingService">
+  <operation name="approveAppointment" parameterOrder="approveAppointment">
+   <input message="tns:KokuAppointmentProcessingService_approveAppointment"/>
+   <output message="tns:KokuAppointmentProcessingService_approveAppointmentResponse"/>
+  </operation>
+  <operation name="declineAppointment" parameterOrder="declineAppointment">
+   <input message="tns:KokuAppointmentProcessingService_declineAppointment"/>
+   <output message="tns:KokuAppointmentProcessingService_declineAppointmentResponse"/>
+  </operation>
+  <operation name="getAppointment" parameterOrder="getAppointment">
+   <input message="tns:KokuAppointmentProcessingService_getAppointment"/>
+   <output message="tns:KokuAppointmentProcessingService_getAppointmentResponse"/>
+  </operation>
+  <operation name="getAppointmentForReply" parameterOrder="getAppointmentForReply">
+   <input message="tns:KokuAppointmentProcessingService_getAppointmentForReply"/>
+   <output message="tns:KokuAppointmentProcessingService_getAppointmentForReplyResponse"/>
+  </operation>
+  <operation name="storeAppointment" parameterOrder="storeAppointment">
+   <input message="tns:KokuAppointmentProcessingService_storeAppointment"/>
+   <output message="tns:KokuAppointmentProcessingService_storeAppointmentResponse"/>
+  </operation>
+ </portType>
+ <binding name="KokuAppointmentProcessingServiceBinding" type="tns:KokuAppointmentProcessingService">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="approveAppointment">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="declineAppointment">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getAppointment">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getAppointmentForReply">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="storeAppointment">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="KokuAppointmentProcessingService">
+  <port binding="tns:KokuAppointmentProcessingServiceBinding" name="KokuAppointmentProcessingServicePort">
+   <!-- <soap:address location="http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl"/> -->
+   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl"/>
+  </port>
+ </service>
+</definitions>

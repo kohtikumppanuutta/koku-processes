@@ -1,0 +1,64 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxoverflow="2" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxwidth="600" jsxheight="25"/>
+    <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
+    <dynamics jsxborder="@No jsxborder"/>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+      <strings jsxname="layout (--)" jsxrows="*" jsxwidth="100%" jsxheight="100%"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxheight="25" jsxwidth="600"/>
+        <strings jsxname="rootpane"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+          <strings jsxname="layout ( | )" jsxcols="75%,10%,*" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
+            <dynamics jsxborder="@No jsxborder"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxrelativeposition="1" jsxoverflow="3"/>
+              <strings jsxname="entry" jsxtext="Ajankohta" jsxclassname="FormLabel"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
+            <dynamics jsxborder="@No jsxborder"/>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"/>
+              <strings jsxname="button" jsxtext="Muokkaa" jsxmargin="0 4 0 0"/>
+              <events jsxexecute="modifyThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
+            <dynamics jsxborder="@No jsxborder"/>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"/>
+              <strings jsxname="button" jsxtext="Poista" jsxmargin="0 4 0 0"/>
+              <events jsxexecute="removeThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxheight="0" jsxwidth="600"/>
+        <strings jsxname="modPane" jsxdisplay=""/>
+        <dynamics jsxborder="@No jsxborder"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.TextBox">
+      <variants/>
+      <strings jsxname="entryId" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+      <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+    </object>
+  </object>
+</serialization>

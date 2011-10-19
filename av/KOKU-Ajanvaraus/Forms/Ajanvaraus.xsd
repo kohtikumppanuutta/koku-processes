@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.arcusys.fi/KOKU/Ajanvaraus" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/KOKU/Ajanvaraus">
+
+    <complexType name="slots_Type">
+    	<sequence>
+    		<element name="appointmentId" type="string"></element>
+            <element name="slotNumber" type="string"></element>
+            <element name="appointmentDate" type="string"></element>
+    		<element name="startTime" type="string"></element>
+    		<element name="endTime" type="string"></element>
+            <element name="location" type="string"></element>
+            <element name="comment" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Header_Type">
+    	<sequence>
+    		<element name="Header_Text" type="string"></element>
+    		<element name="Header_Description" type="string"></element>
+    		<element name="Header_Location" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="User_Type">
+    	<sequence>
+    		<element name="User_Recipient" type="string"></element>
+    		<element name="User_Sender" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Recipients_Type">
+    	<sequence>
+    		<element name="Recipients_Recipient1" type="string"></element>
+            <element name="Recipients_Recipient2" type="string"></element>
+            <element name="Recipients_TargetPerson" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    
+    
+
+    <complexType name="Ajanvaraus_Type">
+    	<sequence>
+    		<element name="slots" type="tns:slots_Type"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    		<element name="Header" type="tns:Header_Type"></element>
+    		<element name="Recipients" type="tns:Recipients_Type"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    		<element name="User" type="tns:User_Type"></element>
+    		<element name="Lomake" type="tns:Lomake_Type"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Ajanvaraus_Form" type="tns:Ajanvaraus_Type"></element>
+
+    <complexType name="Lomake_Type">
+    	<sequence>
+    		<element name="Lomake_ID" type="string"></element>
+    		<element name="Lomake_Status" type="string"></element>
+    		<element name="Lomake_Hyvaksytty_Aika" type="string"></element>
+            <element name="Lomake_Kohdehenkilo" type="string"></element>
+            <element name="Lomake_Viesti" type="string"></element>
+    		<element name="Lomake_Extend1" type="string"></element>
+    		<element name="Lomake_Extend2" type="string"></element>
+    		<element name="Lomake_Extend3" type="boolean"></element>
+    		<element name="Lomake_Extend4" type="boolean"></element>
+    	</sequence>
+    </complexType>
+</schema>
