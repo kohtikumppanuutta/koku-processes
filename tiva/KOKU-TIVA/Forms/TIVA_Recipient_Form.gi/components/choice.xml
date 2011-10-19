@@ -1,0 +1,59 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxoverflow="2" jsxwidth="680" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+    <strings jsxname="choicePane" jsxdisplay="" jsxvisibility=""/>
+    <dynamics jsxborder="@No jsxborder"/>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+      <strings jsxname="layout ( | )" jsxcols="5%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0" jsxdisplay="" jsxvisibility=""/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings jsxname="vastaus-field" jsxclassname="field" riaLabelText="vastaus" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
+          <object type="jsx3.gui.CheckBox">
+            <variants jsxheight="18" jsxchecked="0"/>
+            <strings jsxname="vastaus" jsxtext="" jsxmargin="0 4 0 0"/>
+            <events jsxtoggle="TIVAForm.getJSXByName(&quot;Suostumus_Hylkaa&quot;).setChecked(0,true);"/>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxdisplay="" jsxvisibility=""/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="choiceLabel" jsxtext="Kysymys" jsxclassname="FormLabel" jsxdisplay=""/>
+          <object type="jsx3.gui.Image">
+            <variants jsxoverflow="2" jsxrelativeposition="1"/>
+            <strings jsxname="tooltipImg" jsxsrc="images/help-button-small.png" jsxcursor="pointer" jsxpadding="0 0 0 6" jsxdisplay=""/>
+            <events jsxclick="showDialog(&quot;dialog&quot;,this.getParent().getParent().getParent().getParent().getChild(&quot;choice_tarkentavaTeksti&quot;).getValue(),&quot;Tarkennus&quot;,&quot;KOKU-ohjeet&quot;);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <variants/>
+          <strings jsxname="tooltipText" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.TextBox">
+      <variants jsxtype="1"/>
+      <strings jsxname="choice_tarkentavaTeksti" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+      <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+    </object>
+    <object type="jsx3.gui.TextBox">
+      <variants/>
+      <strings jsxname="choiceId" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+      <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+    </object>
+  </object>
+</serialization>

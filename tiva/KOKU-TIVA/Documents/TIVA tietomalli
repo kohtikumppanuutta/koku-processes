@@ -1,0 +1,41 @@
+TIVA
+
+Pohja
+-----------------
+PohjaId
+Otsikko
+Saateteksti
+Laatimispäivämäärä
+Laatija
+
+Toimenpiteet [*]
+---------------------
+ToimenpideId
+Kuvaus
+
+Vastaukset [*]
+---------------------
+VastausId
+Vastaus (boolean)
+
+Lomake (not necessarily needed)
+---------------------
+Lomake_Laheta (boolean, checking if the template will be sent or just saved)
+
+Vastaanottajat [*]
+--------------------
+Vastaanottaja
+
+Suostumus
+---------------------
+SuostumusId
+Status (avoin, evätty, osa suostumuksista puuttuu, voimassa, määräaika umpeutunut, mitätöity)
+Päivämäärä
+Määräaika
+Kommentti
+Suostuja
+
+Kayttaja
+---------------------
+Kayttaja_Lahettaja
+Kayttaja_Vastaanottaja
