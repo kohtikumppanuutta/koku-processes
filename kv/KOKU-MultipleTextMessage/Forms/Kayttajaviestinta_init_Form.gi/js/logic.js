@@ -57,9 +57,57 @@ function getTaskSubscribe() {
     Intalio.Internal.Utilities.GET_TASK_SUCCESS, prepareForm);
 };
 
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetKunpoUsernameByUid= function(uid) {
+        
+        var tout = 1000;   
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getKunpoNameByUserUid><userUid>" + uid + "</userUid></soa:getKunpoNameByUserUid></soapenv:Body></soapenv:Envelope>";
+       
+        var url = getUrl();
+        
+        var endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
+        var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";*/
+
+
+        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);      
+    
+        //req.setRequestHeader("Content-Type","text/xml");
+
+        //req.setRequestHeader("SOAPAction","");
+        
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.send(msg, tout);
+       var objXML = req.getResponseXML();
+       // alert(req.getStatus());
+        
+       // var objXML = req.getResponseXML();
+       // alert("DEBUG - SERVER RESPONSE:" + objXML);
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+           // alert(objXML);
+            return objXML;
+
+        }
+    };
+});
+
+
+
 function mapSelectedRecipientsToMatrix() {
 
-    var node, hasEmptyChild, jsxid, childIterator, group, uid, groupUid, childNode, xmlData, list, userData, i;
+    var node, hasEmptyChild, jsxid, childIterator, group, uid, groupUid, childNode, xmlData, list, userData, i, kunpoUsername, displayName;
 
     hasEmptyChild = false;
     jsxid = 0;
@@ -84,13 +132,30 @@ function mapSelectedRecipientsToMatrix() {
 
             list = ["uid"];
             userData = parseXML(xmlData, "user", list);
-
+           // alert(userData);
             for (i = 0; i < userData.length; i++) {
                 uid = userData[i];
+               // alert("try");
+                try {
+        
+                    // Add form preload functions here.
+                    kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
+                    //Arcusys.Internal.Communication.GerLDAPUser();
+                    
+                    if(kunpoUsername != null) {
+                        displayName = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+                    }
+                } catch (e) {
+                    alert(e);
+                }
+
+
 
                 node = KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild().cloneNode();
                 node.setAttribute("jsxid", jsxid);
                 node.setAttribute("receipient", uid);
+                node.setAttribute("receipientDisplay", displayName);
+              //  alert(displayName);
                 KayttajaviestintaForm.getCache().getDocument("receipients-nomap").insertBefore(node);
                 jsxid++;
 
@@ -99,8 +164,22 @@ function mapSelectedRecipientsToMatrix() {
             uid = childNode.getAttribute("uid");
             node = KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild().cloneNode();
 
+                try {
+        
+                    // Add form preload functions here.
+                    kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
+                    //Arcusys.Internal.Communication.GerLDAPUser();
+                    
+                    if(kunpoUsername != null) {
+                        displayName = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+                    }
+                } catch (e) {
+                    alert(e);
+                }
+
             node.setAttribute("jsxid", jsxid);
             node.setAttribute("receipient", uid);
+            node.setAttribute("receipientDisplay", displayName);
             KayttajaviestintaForm.getCache().getDocument("receipients-nomap").insertBefore(node);
             jsxid++;
 
@@ -115,7 +194,7 @@ function mapSelectedRecipientsToMatrix() {
 
 
 function intalioPreStart() {
-
+   // alert("PreStart");
     mapSelectedRecipientsToMatrix();
 
 }
@@ -199,7 +278,7 @@ function searchGroup(searchString) {
     KayttajaviestintaForm.getJSXByName("searchGroupMatrix").repaintData();
 
     if (entryFound == false) {
-        alert ("Valitettavasti antamallasi hakusanalla ei loytynyt tuloksia");
+        alert ("Valitettavasti antamallasi hakusanalla ei l\xF6ytynyt tuloksia");
     }
 }
 
@@ -313,7 +392,7 @@ function searchNames(searchString) {
 
     KayttajaviestintaForm.getJSXByName("searchMatrix").repaintData();
     if (entryFound == false) {
-        alert ("Valitettavasti antamallasi hakusanalla ei loytynyt tuloksia");
+        alert ("Valitettavasti antamallasi hakusanalla ei l\xF6ytynyt tuloksia");
     }
 
 }
@@ -493,7 +572,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         objXML = req.getResponseXML();
 
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -532,7 +611,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         objXML = req.getResponseXML();
 
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -571,7 +650,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         objXML = req.getResponseXML();
 
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 

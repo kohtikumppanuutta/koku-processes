@@ -20,6 +20,7 @@
     <complexType name="receipients_Type">
 		<sequence>
 			<element name="receipient" type="string"></element>
+			<element name="receipientDisplay" type="string"></element>
 		</sequence>
 	</complexType>
 
