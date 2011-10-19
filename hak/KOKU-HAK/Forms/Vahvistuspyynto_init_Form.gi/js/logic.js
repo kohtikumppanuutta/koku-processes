@@ -1,4 +1,11 @@
 /* place JavaScript code here */
+
+function intalioPreStart() {
+    
+    Vahvistuspyynto_Form.getJSXByName("Tiedot_Sijainti").setValue(Vahvistuspyynto_Form.getJSXByName("Tiedot_Sijainti").getText()).repaint();
+    return null;
+}
+
 function getUrl() {
     //var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
     //var url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
@@ -68,16 +75,27 @@ function prepareForm() {
         
         try {
 
-            var receipientUsername = Arcusys.Internal.Communication.GetUsernameByUid(Vahvistuspyynto_Form.getJSXByName("Tiedot_HakijaUid"));
+            var receipientUsername = Arcusys.Internal.Communication.GetUsernameByUid(Vahvistuspyynto_Form.getJSXByName("Tiedot_HakijaUid").getValue());
             //Arcusys.Internal.Communication.GerLDAPUser();
             
             if(receipientUsername != null) {
-                Valtakirja_Form.getJSXByName("Tiedot_HakijaDisplay").setValue(receipientUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
+                Vahvistuspyynto_Form.getJSXByName("Tiedot_HakijaDisplay").setValue(receipientUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
             }
         } catch (e) {
             alert(e);
         }
         
+        try {
+
+            var targetUsername = Arcusys.Internal.Communication.GetUsernameByUid(Vahvistuspyynto_Form.getJSXByName("Tiedot_Kohdehenkilo").getValue());
+            //Arcusys.Internal.Communication.GerLDAPUser();
+            
+            if(targetUsername != null) {
+                Vahvistuspyynto_Form.getJSXByName("Tiedot_Kohdehenkilo").setValue(targetUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
+            }
+        } catch (e) {
+            alert(e);
+        }
         
     }
     
@@ -95,7 +113,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        var endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
@@ -116,11 +134,11 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        req.send(msg, tout);
        var objXML = req.getResponseXML();
        // alert(req.getStatus());
-        
+       // alert(objXML);
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -165,7 +183,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -190,17 +208,17 @@ function gup(name) {
 
 function mapFormDataToFields(formData) {
     // alert(formData);
-    var creatorUid = formData.selectSingleNode("//creatorUid", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-    var daycareNeededFromDate = formData.selectSingleNode("//daycareNeededFromDate", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-    var formContent = formData.selectSingleNode("//formContent", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
+    var creatorUid = formData.selectSingleNode("//creatorUid", "xmlns:ns2='http://soa.hak.koku.arcusys.fi/'").getValue();
+    var daycareNeededFromDate = formData.selectSingleNode("//daycareNeededFromDate", "xmlns:ns2='http://soa.hak.koku.arcusys.fi/'").getValue();
+    var formContent = formData.selectSingleNode("//formContent", "xmlns:ns2='http://soa.hak.koku.arcusys.fi/'").getValue();
     // var requestId = formData.selectSingleNode("//requestId", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-    var targetPersonUid = formData.selectSingleNode("//targetPersonUid", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
+    var targetPersonUid = formData.selectSingleNode("//targetPersonUid", "xmlns:ns2='http://soa.hak.koku.arcusys.fi/'").getValue();
     
     Vahvistuspyynto_Form.getJSXByName("Tiedot_HakijaUid").setValue(creatorUid).repaint();
-    Vahvistuspyynto_Form.getJSXByName("Tiedot_HoidontarveAlkaa").setValue(creatorUid).repaint();
-    Vahvistuspyynto_Form.getJSXByName("Tiedot_HTML").setValue(creatorUid).repaint();
+    Vahvistuspyynto_Form.getJSXByName("Tiedot_HoidontarveAlkaa").setValue(daycareNeededFromDate).repaint();
+    Vahvistuspyynto_Form.getJSXByName("Tiedot_HTML").setValue(formContent).repaint();
     // Vahvistuspyynto_Form.getJSXByName("Tiedot_RequestId").setValue(creatorUid).repaint();
-    Vahvistuspyynto_Form.getJSXByName("Tiedot_Kohdehenkilo").setValue(creatorUid).repaint();
+    Vahvistuspyynto_Form.getJSXByName("Tiedot_Kohdehenkilo").setValue(targetPersonUid).repaint();
     
     
     Vahvistuspyynto_Form.getJSXByName("Tiedot_HoidontarveAlkaa").setFormat("dd.MM.yyyy");

@@ -187,12 +187,12 @@
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Q49Y0ejZEeC_j-NSyBsshA"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_RJmc4ejZEeC_j-NSyBsshA"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_Lj2VUejZEeC_j-NSyBsshA" iD="_Lj2VUOjZEeC_j-NSyBsshA" associations="_VjM6YOjZEeC_j-NSyBsshA _V22PIOjZEeC_j-NSyBsshA" outgoingEdges="_7c3Z8ej0EeC_j-NSyBsshA" incomingEdges="_NaUHsejZEeC_j-NSyBsshA" name="Vastaanota hakemus" activityType="EventIntermediateMessage">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_Lj2VUejZEeC_j-NSyBsshA" iD="_Lj2VUOjZEeC_j-NSyBsshA" associations="_VjM6YOjZEeC_j-NSyBsshA _V22PIOjZEeC_j-NSyBsshA" outgoingEdges="_Pwp7YPZrEeC0ybj4-JjvwA" incomingEdges="_NaUHsejZEeC_j-NSyBsshA" name="Vastaanota hakemus" activityType="EventIntermediateMessage">
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_ViyqsejZEeC_j-NSyBsshA"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_V2ebsejZEeC_j-NSyBsshA"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_ZU2nEejZEeC_j-NSyBsshA" iD="_ZU2nEOjZEeC_j-NSyBsshA" incomingEdges="_GY1_Uej1EeC_j-NSyBsshA" activityType="EventEndEmpty"/>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_6hEgEej0EeC_j-NSyBsshA" iD="_6hEgEOj0EeC_j-NSyBsshA" outgoingEdges="_CGrmkej1EeC_j-NSyBsshA _CdBqAej1EeC_j-NSyBsshA" incomingEdges="_7c3Z8ej0EeC_j-NSyBsshA" activityType="GatewayDataBasedExclusive"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_6hEgEej0EeC_j-NSyBsshA" iD="_6hEgEOj0EeC_j-NSyBsshA" outgoingEdges="_CGrmkej1EeC_j-NSyBsshA _CdBqAej1EeC_j-NSyBsshA" incomingEdges="_QAFegfZrEeC0ybj4-JjvwA" activityType="GatewayDataBasedExclusive"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_72Cu8ej0EeC_j-NSyBsshA" iD="_72Cu8Oj0EeC_j-NSyBsshA" associations="_K2q1gOj1EeC_j-NSyBsshA _La91YOj1EeC_j-NSyBsshA" outgoingEdges="_DYZGEej1EeC_j-NSyBsshA" incomingEdges="_CGrmkej1EeC_j-NSyBsshA" name="Hyväksy" activityType="EventIntermediateMessage">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_K2VeUej1EeC_j-NSyBsshA"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_LakMwej1EeC_j-NSyBsshA"/>
@@ -202,15 +202,17 @@
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_KRgS8ej1EeC_j-NSyBsshA"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_C-D6gej1EeC_j-NSyBsshA" iD="_C-D6gOj1EeC_j-NSyBsshA" outgoingEdges="_GY1_Uej1EeC_j-NSyBsshA" incomingEdges="_DYZGEej1EeC_j-NSyBsshA _DvbtEej1EeC_j-NSyBsshA" activityType="GatewayDataBasedExclusive"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_OxinwfZrEeC0ybj4-JjvwA" iD="_OxinwPZrEeC0ybj4-JjvwA" outgoingEdges="_QAFegfZrEeC0ybj4-JjvwA" incomingEdges="_Pwp7YPZrEeC0ybj4-JjvwA" name="Päivitä hakemus" activityType="Task"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_FuvjIejZEeC_j-NSyBsshA" iD="_FuvjIOjZEeC_j-NSyBsshA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_NHstsejZEeC_j-NSyBsshA" iD="_NHstsOjZEeC_j-NSyBsshA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_NaUHsejZEeC_j-NSyBsshA" iD="_NaUHsOjZEeC_j-NSyBsshA"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_7c3Z8ej0EeC_j-NSyBsshA" iD="_7c3Z8Oj0EeC_j-NSyBsshA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_CGrmkej1EeC_j-NSyBsshA" iD="_CGrmkOj1EeC_j-NSyBsshA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_CdBqAej1EeC_j-NSyBsshA" iD="_CdBqAOj1EeC_j-NSyBsshA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_DYZGEej1EeC_j-NSyBsshA" iD="_DYZGEOj1EeC_j-NSyBsshA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_DvbtEej1EeC_j-NSyBsshA" iD="_DvbtEOj1EeC_j-NSyBsshA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_GY1_Uej1EeC_j-NSyBsshA" iD="_GY1_UOj1EeC_j-NSyBsshA"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Pwp7YPZrEeC0ybj4-JjvwA" iD="_PwpUUPZrEeC0ybj4-JjvwA"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_QAFegfZrEeC0ybj4-JjvwA" iD="_QAFegPZrEeC0ybj4-JjvwA"/>
   </pools>
   <pools xmi:type="bpmn:Pool" xmi:id="_wFcfcejYEeC_j-NSyBsshA" iD="_wFcfcOjYEeC_j-NSyBsshA" name="Kuntalainen">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yGBQEOjYEeC_j-NSyBsshA" source="executablepool">

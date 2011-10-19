@@ -1,4 +1,11 @@
 /* place JavaScript code here */
+function intalioPreStart() {
+    Paivahoitohakemus_Form.getJSXByName("Lapsi_ValittuDisplay").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getText()).repaint();
+    Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getValue()).repaint();
+    
+}
+
+
 function getUrl() {
     //var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
     //var url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
@@ -285,7 +292,7 @@ function checkChildrenSsn(fieldName) {
           
             fieldName.focus();
             fieldName.setValue("");
-            alert("Henkilotunnus on jo kaytossa paivahoitoa hakevalla lapsella");
+            alert("Henkil\xF6tunnus on jo kayt\xF6ss\xE4 p\xE4iv\xE4hoitoa hakevalla lapsella");
         }
     }
   
@@ -643,7 +650,7 @@ function checkStringSsn(ssnCheck, notify) {
     }
     if (bError == true) {
         if(notify == true){
-            alert('Henkilotunnuksen muoto ei ole oikein. Tarkista henkilotunnus!');
+            alert('Henkil\xF6tunnuksen muoto ei ole oikein. Tarkista henkilotunnus!');
         }
         return false;
     }
@@ -1000,7 +1007,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -1045,7 +1052,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        // var objXML = req.getResponseXML();
        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if (objXML == null) {
-            alert("Virhe palvelinyhteydessa");
+            alert("Virhe palvelinyhteydess\xE4");
         } else {
             return objXML;
 
@@ -1055,23 +1062,90 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
 
 
+function parseXML(xmlData, rootName, childlist) {
+    var i, j, attributes, node, childNode, childChildNode, childs;
+    i = 0;
+
+    attributes = [];
+
+    childs = xmlData.selectNodeIterator("/\/" + rootName);
+
+    while (childs.hasNext()) {
+
+        attributes[i] = [];
+        node = childs.next();
+        if (node == null) {
+            break;
+        }
+        for (j = 0; j < (childlist.length+2); j++) {
+            childNode = node.getFirstChild();
+            while (childNode != null) {
+                if (childNode.getNodeName() == childlist[j]) {
+                    attributes[i][j] = childNode.getValue();
+                    break;
+                }
+                childNode = childNode.getNextSibling();
+            }
+        }
+        i++;
+    }
+
+    return valuesToArray(attributes);
+}
+
+
+/**
+ * Compresesses multidimensional array to sigle dimensional
+ * Users information comma seperated. One user/node.
+ */
+function valuesToArray(attributes) {
+    var tempArray, i, j, line;
+    tempArray = [];
+
+    for (i = 0; i < attributes.length; i++) {
+        line = "";
+        for (j = 0; j < attributes[i].length; j++) {
+            line = line + attributes[i][j];
+            if (j < (attributes[i].length - 1 )) {
+                line = line + ",";
+
+            }
+
+        }
+        tempArray[i] = line;
+
+    }
+    return tempArray;
+}
+
+
+
 function mapChildrenNamesToField(data) {
   //  alert(data);
     var descendants = data.selectNodeIterator("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
    // alert(descendants);
-    var personId, personDescription; 
+    var personId, personDescription, childAttributes; 
+    var childAttributeList = new Array(); 
     var xmlForSelectBox = "<data>";
-    
+    var childList = ["displayName", "uid"];
     while(descendants.hasNext()) {
     
         childNode = descendants.next();
        // alert(childNode);
+       
+       childAttributes = parseXML(childNode, "child", childList);
+      // alert(childAttributes);
+       childAttributeList = childAttributes[0].split(",");
+       personName = childAttributeList[0];
+       personId = childAttributeList[1];
+       
+       
        // alert(childNode);
        // requestTemplateId = childNode.getAttributeNode("return");
-       personName = childNode.getFirstChild().getValue();
+      // personName = childNode.getFirstChild().getValue();
       // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
        // alert(personName);
-        personId = childNode.getFirstChild().getNextSibling().getNextSibling().getNextSibling().getValue();
+      //  personId = childNode.getFirstChild().getNextSibling().getNextSibling().getNextSibling().getValue();
        // alert(personId);
        // subject = childNode.selectSingleNode("//subject").getValue();
         //alert(templateDescription);

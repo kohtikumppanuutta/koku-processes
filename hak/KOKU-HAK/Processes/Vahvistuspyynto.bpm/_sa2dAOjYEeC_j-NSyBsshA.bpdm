@@ -1,30 +1,30 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:this="http://thisdiagram/Prosessi" xmlns:Vahvistuspyynto_init_Form="http://www.intalio.com/gi/Forms/Vahvistuspyynto_init_Form.gi" xmlns:KokuHakProcessingServiceImpl="http://soa.hak.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Vahvistuspyynto_Decision_Form1="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi" xmlns:Vahvistuspyynto_Decision_Form="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi/attachments" xmlns:Palvelut="http://thisdiagram/Palvelut" xmlns:diag="http://thisdiagram" xmlns:tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" xmlns:attachments="http://www.intalio.com/gi/Forms/Vahvistuspyynto_init_Form.gi/attachments" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Vahvistuspyynto_init_Form="http://www.intalio.com/gi/Forms/Vahvistuspyynto_init_Form.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Vahvistuspyynto_Decision_Form1="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi" xmlns:diag="http://thisdiagram" xmlns:this="http://thisdiagram/Prosessi" xmlns:KokuHakProcessingServiceImpl="http://soa.hak.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Vahvistuspyynto_Decision_Form="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi/attachments" xmlns:Kuntalainen="http://thisdiagram/Kuntalainen" xmlns:tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" xmlns:attachments="http://www.intalio.com/gi/Forms/Vahvistuspyynto_init_Form.gi/attachments" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
     <bpdm:dependencies version="6000089">
-        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Vahvistuspyynto_init_Form.gi" bpdm:prefix="Vahvistuspyynto_init_Form" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://soa.hak.koku.arcusys.fi/" bpdm:prefix="KokuHakProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuHakProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi" bpdm:prefix="Vahvistuspyynto_Decision_Form1" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi/attachments" bpdm:prefix="Vahvistuspyynto_Decision_Form" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="Palvelut" bpdm:comment="contrib=&apos;partner-pool:///_ygu2IOjYEeC_j-NSyBsshA"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_rH6OcOjYEeC_j-NSyBsshA"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.hak.koku.arcusys.fi/" bpdm:prefix="KokuHakProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuHakProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi/attachments" bpdm:prefix="Vahvistuspyynto_Decision_Form" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Kuntalainen" bpdm:prefix="Kuntalainen" bpdm:comment="contrib=&apos;partner-pool:///_wFcfcOjYEeC_j-NSyBsshA"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/KOKU/Vahvistuspyynto" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto.xsd"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Vahvistuspyynto_init_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
         <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
-            <wsdl:service name="WFmagic_OyYG0OjZEeC_j-NSyBsshAService">
-                <wsdl:port name="Prosessi_for_KuntalainenForThePortTypeProcessPort" binding="this:WFmagic_OyYG0OjZEeC_j-NSyBsshAServiceBinding">
-                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Kuntalainen/WFmagic_OyYG0OjZEeC_j-NSyBsshA"/>
-                </wsdl:port>
-            </wsdl:service>
-            <bpel:binding name="WFmagic_OyYG0OjZEeC_j-NSyBsshAServiceBinding" type="Vahvistuspyynto_Decision_Form1:Process" bpdm:isSynchronized="true"/>
             <wsdl:service name="ProsessiAndVirkailijaForPortTypeProcessPlkService">
                 <wsdl:port name="Prosessi_for_VirkailijaPort" binding="this:ProsessiAndVirkailijaForPortTypeProcessPlkServiceBinding">
                     <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Virkailija/ProsessiAndVirkailijaForPortTypeProcessPlk"/>
                 </wsdl:port>
             </wsdl:service>
             <bpel:binding name="ProsessiAndVirkailijaForPortTypeProcessPlkServiceBinding" type="Vahvistuspyynto_init_Form:Process" bpdm:isSynchronized="true"/>
+            <wsdl:service name="WFmagic_OyYG0OjZEeC_j-NSyBsshAService">
+                <wsdl:port name="Prosessi_for_KuntalainenForThePortTypeProcessPort" binding="this:WFmagic_OyYG0OjZEeC_j-NSyBsshAServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Kuntalainen/WFmagic_OyYG0OjZEeC_j-NSyBsshA"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_OyYG0OjZEeC_j-NSyBsshAServiceBinding" type="Vahvistuspyynto_Decision_Form1:Process" bpdm:isSynchronized="true"/>
         </bpdm:namespaceContributor>
         <bpdm:namespaceContributor bpdm:url="partner-pool:///_rH6OcOjYEeC_j-NSyBsshA" bpdm:label="Virkailija"/>
         <bpdm:namespaceContributor bpdm:url="project:///Forms/Vahvistuspyynto_init_Form.gi.wsdl"/>
@@ -38,7 +38,7 @@
         <bpel:partnerLinks>
             <bpel:partnerLink name="prosessiAndVirkailijaForPortTypeProcessPlkVar" partnerLinkType="diag:ProsessiAndVirkailijaForPortTypeProcessPlk" myRole="Prosessi_for_Virkailija" bpdm:enableSharing="false" bpdm:providedService="this:ProsessiAndVirkailijaForPortTypeProcessPlkService" bpdm:providedPort="Prosessi_for_VirkailijaPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Virkailija/ProsessiAndVirkailijaForPortTypeProcessPlk" bpdm:providedIsDefault="true" bpdm:clientTasks="_sa2dAOjYEeC_j-NSyBsshA:_CJiXAOjZEeC_j-NSyBsshA" bpdm:isManaged="true" bpdm:otherPoolId="_rH6OcOjYEeC_j-NSyBsshA"/>
             <bpel:partnerLink name="wFmagic_OyYG0OjZEeC_j-NSyBsshAPlkVar" partnerLinkType="diag:WFmagic_OyYG0OjZEeC_j-NSyBsshA" initializePartnerRole="no" myRole="Prosessi_for_KuntalainenForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_OyYG0OjZEeC_j-NSyBsshAService" bpdm:providedPort="Prosessi_for_KuntalainenForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Kuntalainen/WFmagic_OyYG0OjZEeC_j-NSyBsshA" bpdm:providedIsDefault="true" partnerRole="Kuntalainen_for_ProsessiForVahvistuspyynto_Decision_FormPort" bpdm:invokedService="Vahvistuspyynto_Decision_Form1:WorkflowSoapService" bpdm:invokedPort="Vahvistuspyynto_Decision_FormPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/Vahvistuspyynto_Decision_Form" bpdm:invokedIsDefault="true" bpdm:clientTasks="_sa2dAOjYEeC_j-NSyBsshA:_KJjhkOjZEeC_j-NSyBsshA, _sa2dAOjYEeC_j-NSyBsshA:_Lj2VUOjZEeC_j-NSyBsshA" bpdm:isManaged="true" bpdm:otherPoolId="_wFcfcOjYEeC_j-NSyBsshA"/>
-            <bpel:partnerLink name="palvelutAndProsessiForKokuHakProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuHakProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi" bpdm:invokedService="KokuHakProcessingServiceImpl:KokuHakProcessingService" bpdm:invokedPort="KokuHakProcessingServicePort" bpdm:invokedSOAPAddress="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_sa2dAOjYEeC_j-NSyBsshA:_72Cu8Oj0EeC_j-NSyBsshA, _sa2dAOjYEeC_j-NSyBsshA:_AtK18Oj1EeC_j-NSyBsshA" bpdm:isManaged="true" bpdm:otherPoolId="_ygu2IOjYEeC_j-NSyBsshA"/>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuHakProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuHakProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi" bpdm:invokedService="KokuHakProcessingServiceImpl:KokuHakProcessingService" bpdm:invokedPort="KokuHakProcessingServicePort" bpdm:invokedSOAPAddress="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_sa2dAOjYEeC_j-NSyBsshA:_AtK18Oj1EeC_j-NSyBsshA, _sa2dAOjYEeC_j-NSyBsshA:_72Cu8Oj0EeC_j-NSyBsshA" bpdm:isManaged="true" bpdm:otherPoolId="_ygu2IOjYEeC_j-NSyBsshA"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="vahvistuspyynto_init_FormInitProcessRequestMsg" messageType="Vahvistuspyynto_init_Form:initProcessRequest" bpdm:id="_DObigOjZEeC_j-NSyBsshA" bpdm:messageIds="inc:_DOBS0OjZEeC_j-NSyBsshA"/>
@@ -82,11 +82,7 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>$vahvistuspyynto_init_FormInitProcessRequestMsg.root/Vahvistuspyynto_init_Form:taskOutput/tns:Vahvistuspyynto_Form</bpel:from>
-                        <bpel:to>$Vahvistuspyynto_Form</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="671011808" targetPath="$Vahvistuspyynto_Form" targetedBy="513428104-arg0"></mapper:vertice>
-  <mapper:vertice id="513428104" sourcePath="$vahvistuspyynto_init_FormInitProcessRequestMsg.root/Vahvistuspyynto_init_Form:taskOutput/tns:Vahvistuspyynto_Form"></mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$Vahvistuspyynto_Form</bpel:to><mapper:mapperLink><mapper:vertice id="671011808" targetPath="$Vahvistuspyynto_Form" targetedBy="513428104-arg0"></mapper:vertice><mapper:vertice id="513428104" sourcePath="$vahvistuspyynto_init_FormInitProcessRequestMsg.root/Vahvistuspyynto_init_Form:taskOutput/tns:Vahvistuspyynto_Form"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>
@@ -94,11 +90,7 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>$Vahvistuspyynto_Form</bpel:from>
-                        <bpel:to>$vahvistuspyynto_Decision_Form1CreateTaskRequestMsg.root/Vahvistuspyynto_Decision_Form1:taskInput/tns:Vahvistuspyynto_Form</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="54953926" targetPath="$vahvistuspyynto_Decision_Form1CreateTaskRequestMsg.root/Vahvistuspyynto_Decision_Form1:taskInput/tns:Vahvistuspyynto_Form" targetedBy="1930251632-arg0"></mapper:vertice>
-  <mapper:vertice id="1930251632" sourcePath="$Vahvistuspyynto_Form"></mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$vahvistuspyynto_Decision_Form1CreateTaskRequestMsg.root/Vahvistuspyynto_Decision_Form1:taskInput/tns:Vahvistuspyynto_Form</bpel:to><mapper:mapperLink><mapper:vertice id="54953926" targetPath="$vahvistuspyynto_Decision_Form1CreateTaskRequestMsg.root/Vahvistuspyynto_Decision_Form1:taskInput/tns:Vahvistuspyynto_Form" targetedBy="1930251632-arg0"></mapper:vertice><mapper:vertice id="1930251632" sourcePath="$Vahvistuspyynto_Form"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="vahvistuspyynto_Decision_Form1CreateTaskRequestMsg" bpdm:msgVarScopeId="_sa2dAOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="Vahvistuspyynto_Decision_Form1:createTaskRequest" bpdm:binding="Vahvistuspyynto_Decision_Form1:WorkflowSoapBinding" bpdm:ID="_Q49Y0OjZEeC_j-NSyBsshA"></bpdm:linkset>
@@ -108,75 +100,47 @@
                 <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="vahvistuspyynto_Decision_Form1NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_sa2dAOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="Vahvistuspyynto_Decision_Form1:notifyTaskCompletionRequest" bpdm:ID="_ViyqsOjZEeC_j-NSyBsshA"></bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="vahvistuspyynto_Decision_Form1NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_sa2dAOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="Vahvistuspyynto_Decision_Form1:notifyTaskCompletionResponse" bpdm:ID="_V2ebsOjZEeC_j-NSyBsshA"></bpdm:linkset>
             </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Päivitä hakemus" bpdm:ID="_OxinwPZrEeC0ybj4-JjvwA">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$vahvistuspyynto_Decision_Form1NotifyTaskCompletionRequestMsg.root/Vahvistuspyynto_Decision_Form1:taskOutput/tns:Vahvistuspyynto_Form</bpel:from>
+                        <bpel:to>$Vahvistuspyynto_Form</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1642264170" targetPath="$Vahvistuspyynto_Form" targetedBy="2110704036-arg0"></mapper:vertice>
+  <mapper:vertice id="2110704036" sourcePath="$vahvistuspyynto_Decision_Form1NotifyTaskCompletionRequestMsg.root/Vahvistuspyynto_Decision_Form1:taskOutput/tns:Vahvistuspyynto_Form"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
             <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_6hEgEOj0EeC_j-NSyBsshA" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
                 <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_CGrmkOj1EeC_j-NSyBsshA" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Hyväksy]">
-                    <bpel:condition>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Hyvaksyy = true()
-<mapper:mapperLink>
-  <mapper:vertice id="1299790058" targetPath="$condition" targetedBy="597352295-arg2"></mapper:vertice>
-  <mapper:vertice id="597352295" dimension="78x24" location="187,50">
-    <mapper:value>=</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="1637963732" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Hyvaksyy" targetedBy="597352295-arg0"></mapper:vertice>
-  <mapper:vertice id="1125446206" dimension="78x24" location="96,166" targetedBy="597352295-arg1">
-    <mapper:value>true()</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink></bpel:condition>
+                    <bpel:condition>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Hyvaksyy = true()<mapper:mapperLink><mapper:vertice id="1299790058" targetPath="$condition" targetedBy="597352295-arg2"></mapper:vertice><mapper:vertice id="597352295" dimension="78x24" location="187,50"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1637963732" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Hyvaksyy" targetedBy="597352295-arg0"></mapper:vertice><mapper:vertice id="1125446206" dimension="78x24" location="96,166" targetedBy="597352295-arg1"><mapper:value>true()</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_CdBqAOj1EeC_j-NSyBsshA" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Hylkää]">
-                    <bpel:condition>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Hylkaa = true()
-<mapper:mapperLink>
-  <mapper:vertice id="1346636904" targetPath="$condition" targetedBy="1493111992-arg0"></mapper:vertice>
-  <mapper:vertice id="1493111992" dimension="78x24" location="403,131">
-    <mapper:value>=</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="862049456" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Hylkaa" targetedBy="1493111992-arg1"></mapper:vertice>
-  <mapper:vertice id="303560839" dimension="78x24" location="216,155" targetedBy="1493111992-arg2">
-    <mapper:value>true()</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink></bpel:condition>
+                    <bpel:condition>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Hylkaa = true()<mapper:mapperLink><mapper:vertice id="1346636904" targetPath="$condition" targetedBy="1493111992-arg0"></mapper:vertice><mapper:vertice id="1493111992" dimension="78x24" location="403,131"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="862049456" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Hylkaa" targetedBy="1493111992-arg1"></mapper:vertice><mapper:vertice id="303560839" dimension="78x24" location="216,155" targetedBy="1493111992-arg2"><mapper:value>true()</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
                 </bpdm:linkset>
                 <bpel:sequence>
                     <bpdm:messagingtask eventType="intermediate: message" operation="approveDaycarePlace" partnerLink="palvelutAndProsessiForKokuHakProcessingServicePortPlkVar" portType="KokuHakProcessingServiceImpl:KokuHakProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Hyväksy" bpdm:ID="_72Cu8Oj0EeC_j-NSyBsshA">
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_RequestId</bpel:from>
-                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/requestId</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1299520807" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/requestId" targetedBy="1270241846-arg0"></mapper:vertice>
-  <mapper:vertice id="1270241846" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_RequestId"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/requestId</bpel:to><mapper:mapperLink><mapper:vertice id="1299520807" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/requestId" targetedBy="1270241846-arg0"></mapper:vertice><mapper:vertice id="1270241846" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_RequestId"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_HakijaUid</bpel:from>
-                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/userUid</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1553807229" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/userUid" targetedBy="1979048581-arg0"></mapper:vertice>
-  <mapper:vertice id="1979048581" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_HakijaUid"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/userUid</bpel:to><mapper:mapperLink><mapper:vertice id="1553807229" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/userUid" targetedBy="1979048581-arg0"></mapper:vertice><mapper:vertice id="1979048581" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_HakijaUid"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Sijainti</bpel:from>
-                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/location</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="331220169" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/location" targetedBy="224518106-arg0"></mapper:vertice>
-  <mapper:vertice id="224518106" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Sijainti"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/location</bpel:to><mapper:mapperLink><mapper:vertice id="331220169" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/location" targetedBy="224518106-arg0"></mapper:vertice><mapper:vertice id="224518106" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Sijainti"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Lisatietoja</bpel:from>
-                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/comment</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="524620155" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/comment" targetedBy="278582637-arg0"></mapper:vertice>
-  <mapper:vertice id="278582637" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Lisatietoja"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/comment</bpel:to><mapper:mapperLink><mapper:vertice id="524620155" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/comment" targetedBy="278582637-arg0"></mapper:vertice><mapper:vertice id="278582637" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Lisatietoja"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_KorkeinMaksu</bpel:from>
-                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/highestPrice</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1486814593" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/highestPrice" targetedBy="678055217-arg0"></mapper:vertice>
-  <mapper:vertice id="678055217" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_KorkeinMaksu"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/highestPrice</bpel:to><mapper:mapperLink><mapper:vertice id="1486814593" targetPath="$kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg.approveDaycarePlace/highestPrice" targetedBy="678055217-arg0"></mapper:vertice><mapper:vertice id="678055217" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_KorkeinMaksu"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuHakProcessingServiceImplApproveDaycarePlaceRequestMsg" bpdm:msgVarScopeId="_sa2dAOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="KokuHakProcessingServiceImpl:KokuHakProcessingService_approveDaycarePlace" bpdm:binding="KokuHakProcessingServiceImpl:KokuHakProcessingServiceBinding" bpdm:ID="_K2VeUOj1EeC_j-NSyBsshA"></bpdm:linkset>
@@ -188,27 +152,15 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_RequestId</bpel:from>
-                                <bpel:to>$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/requestId</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1012089919" targetPath="$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/requestId" targetedBy="1094676887-arg0"></mapper:vertice>
-  <mapper:vertice id="1094676887" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_RequestId"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/requestId</bpel:to><mapper:mapperLink><mapper:vertice id="1012089919" targetPath="$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/requestId" targetedBy="1094676887-arg0"></mapper:vertice><mapper:vertice id="1094676887" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_RequestId"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_HakijaUid</bpel:from>
-                                <bpel:to>$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/userUid</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1476919933" targetPath="$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/userUid" targetedBy="778861547-arg0"></mapper:vertice>
-  <mapper:vertice id="778861547" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_HakijaUid"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/userUid</bpel:to><mapper:mapperLink><mapper:vertice id="1476919933" targetPath="$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/userUid" targetedBy="778861547-arg0"></mapper:vertice><mapper:vertice id="778861547" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_HakijaUid"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Lisatietoja</bpel:from>
-                                <bpel:to>$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/comment</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="631953637" targetPath="$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/comment" targetedBy="1215291409-arg0"></mapper:vertice>
-  <mapper:vertice id="1215291409" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Lisatietoja"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/comment</bpel:to><mapper:mapperLink><mapper:vertice id="631953637" targetPath="$kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg.rejectDaycarePlace/comment" targetedBy="1215291409-arg0"></mapper:vertice><mapper:vertice id="1215291409" sourcePath="$Vahvistuspyynto_Form/tns:Tiedot/tns:Tiedot_Lisatietoja"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuHakProcessingServiceImplRejectDaycarePlaceRequestMsg" bpdm:msgVarScopeId="_sa2dAOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="KokuHakProcessingServiceImpl:KokuHakProcessingService_rejectDaycarePlace" bpdm:binding="KokuHakProcessingServiceImpl:KokuHakProcessingServiceBinding" bpdm:ID="_J4pHAOj1EeC_j-NSyBsshA"></bpdm:linkset>
