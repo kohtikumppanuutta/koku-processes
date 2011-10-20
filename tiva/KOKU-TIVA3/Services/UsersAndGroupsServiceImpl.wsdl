@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="UsersAndGroupsService" targetNamespace="http://soa.common.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.common.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions name="UsersAndGroupsService" targetNamespace="http://soa.common.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.common.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
 <xs:schema elementFormDefault="unqualified" targetNamespace="http://soa.common.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.common.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:element name="getChildInfo" type="tns:getChildInfo" />
@@ -502,7 +502,8 @@
   </wsdl:binding>
   <wsdl:service name="UsersAndGroupsService">
     <wsdl:port binding="tns:UsersAndGroupsServiceSoapBinding" name="UsersAndGroupsServicePort">
-      <soap:address location="http://127.0.0.1:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" />
+      <soap:address location="htto://trelx51x:8080/arcusys-koku-0.1-SNAPHSOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl"/>
+      <!-- <soap:address location="http://127.0.0.1:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" /> -->
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
