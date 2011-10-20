@@ -224,7 +224,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var msg, endpoint, url, tout, appointmentId, req, objXML;
     
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointmentForReply><appointmentId>" + id + "</appointmentId><arg1>" + targetPerson + "</arg1></soa:getAppointmentForReply></soapenv:Body></soapenv:Envelope>";
-        endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        //endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
         url = getUrl();
         
         tout = 1000;
