@@ -30,7 +30,7 @@ function intalioPreStart() {
 
 /* Checks if a template has been created with a same name than template being created */
 function checkTemplateName() {
-    var objXML, nodeIterator, otsikko, node, flag = false;
+    var objXML, nodeIterator, node, flag = false;
 
     objXML = Arcusys.Internal.Communication.getTemplatesData(TIVA_Form.getJSXByName("Pohja_Otsikko").getValue());
     nodeIterator = objXML.selectNodeIterator("//otsikko", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
@@ -45,18 +45,16 @@ function checkTemplateName() {
 
     if (flag) {
         return "Saman niminen suostumuspohja on jo olemassa. Olkaa hyv\u00E4 ja valitkaa uusi nimi.";
-    }
-    else {
+    } else {
         return "";
     }
 }
 
-function checkSuostumukset()    {
+function checkSuostumukset() {
     var error;
     if (TIVA_Form.getJSXByName("toimenpiteetBlock").getFirstChild() == null) {
         error = "Pohjalle ei ole asetettu toimenpiteit\u00E4!";
-    }
-    else {
+    } else {
         error = "";
     }
     return error;
@@ -67,7 +65,7 @@ function checkRecipients() {
 
     activated = TIVA_Form.getJSXByName("Pohja_Laheta").getChecked();
     recipients = TIVA_Form.getCache().getDocument("Vastaanottajat-nomap").getFirstChild();
-    
+
     if (activated && recipients == null) {
         error = "Olet aktivoinut pohjan, joten sill\u00E4 t\u00E4ytyy olla v\u00E4hint\u00E4\u00E4n yksi vastaanottaja!";
     } else {
@@ -79,7 +77,7 @@ function checkRecipients() {
 // General functions -----------------------------------------------------------------------------------------------------------------------------
 
 function clearDataCache(cacheName, matrixName) {
-    while (TIVA_Form.getCache().getDocument(cacheName).getFirstChild() != null)    {
+    while (TIVA_Form.getCache().getDocument(cacheName).getFirstChild() != null) {
         TIVA_Form.getCache().getDocument(cacheName).removeChild(TIVA_Form.getCache().getDocument(cacheName).getFirstChild());
     }
     if (matrixName) {
@@ -113,19 +111,19 @@ function swapConsentGivers(selection) {
 
 function activateTemplate(check) {
     if (check == 1) {
-        TIVA_Form.getJSXByName("Haku_Lapset").setDisplay("block",true).repaint();
-        TIVA_Form.getJSXByName("Message").setDisplay("block",true).repaint();
-        TIVA_Form.getJSXByName("voimassaoloaika").setDisplay("block",true).repaint();
+        TIVA_Form.getJSXByName("Haku_Lapset").setDisplay("block", true).repaint();
+        TIVA_Form.getJSXByName("Message").setDisplay("block", true).repaint();
+        TIVA_Form.getJSXByName("voimassaoloaika").setDisplay("block", true).repaint();
     } else {
-        TIVA_Form.getJSXByName("Haku_Lapset").setDisplay("none",true).repaint();
-        TIVA_Form.getJSXByName("Message").setDisplay("none",true).repaint();
-        TIVA_Form.getJSXByName("voimassaoloaika").setDisplay("none",true).repaint();
+        TIVA_Form.getJSXByName("Haku_Lapset").setDisplay("none", true).repaint();
+        TIVA_Form.getJSXByName("Message").setDisplay("none", true).repaint();
+        TIVA_Form.getJSXByName("voimassaoloaika").setDisplay("none", true).repaint();
     }
 }
 
 // Adding consent slots --------------------------------------------------------------------------------------------------------------------------
 
-function mapFieldsToMatrix(id,description,infotext) {
+function mapFieldsToMatrix(id, description, infotext) {
     var node, hasEmptyChild;
 
     hasEmptyChild = formatDataCache("Toimenpiteet-nomap", "Toimenpiteet");
@@ -135,7 +133,7 @@ function mapFieldsToMatrix(id,description,infotext) {
     node.setAttribute("jsxid", id);
     node.setAttribute("Toimenpiteet_ToimenpideId", id);
     node.setAttribute("Toimenpiteet_Kuvaus", description);
-    if (infotext != null)    {
+    if (infotext != null) {
         node.setAttribute("Toimenpiteet_Tarkentava_Teksti", infotext);
     }
     TIVA_Form.getCache().getDocument("Toimenpiteet-nomap").insertBefore(node);
@@ -144,7 +142,7 @@ function mapFieldsToMatrix(id,description,infotext) {
     }
 }
 
-function addChoice(id,description,infotext,prefill) {
+function addChoice(id, description, infotext, prefill) {
     var section, label, choiceId, info;
 
     if (!TIVA_Form.getJSXByName("toimenpide").getValue() && !prefill) {
@@ -164,8 +162,7 @@ function addChoice(id,description,infotext,prefill) {
     if (infotext != "") {
         info.setValue(infotext);
         TIVA_Form.getJSXByName("tarkentavaTeksti").setValue("");
-    }
-    else {
+    } else {
         section.getDescendantOfName("tooltipImg").setDisplay("none", true);
     }
     label.setName(label.getName() + id);
@@ -173,9 +170,9 @@ function addChoice(id,description,infotext,prefill) {
     label.setText(description, true);
     choiceId.setValue(id);
 
-    mapFieldsToMatrix(id,description, infotext);
+    mapFieldsToMatrix(id, description, infotext);
     TIVA_Form.getJSXByName("toimenpide").setValue("");
-}    
+}
 
 function removeChoice(node, id) {
     TIVA_Form.getJSXByName("toimenpiteetBlock").removeChild(node);
@@ -183,15 +180,15 @@ function removeChoice(node, id) {
     TIVA_Form.getJSXByName("toimenpiteetBlock").setHeight(TIVA_Form.getJSXByName("toimenpiteetBlock").getHeight() - 30, true).repaint();
 }
 
-function getId()    {
+function getId() {
     var id = TIVA_Form.getJSXByName("id").getValue();
-    TIVA_Form.getJSXByName("id").setValue(parseInt(id) + 1, 10);
+    TIVA_Form.getJSXByName("id").setValue(parseInt(id, 10) + 1);
     return id;
 }
 
 // Preload ---------------------------------------------------------------------------------------------------------------------------------------
 
-function preload()    {
+function preload() {
     var username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("/") + 1));
 
@@ -205,7 +202,7 @@ function preload()    {
  *
  */
 function mapSelectedRecipientsToMatrix() {
-    var node, childNode, hasEmptyChild, counter, group, i, j, groups, recipient1, recipient2, targetPerson, childIterator, person, personInfo;
+    var node, childNode, hasEmptyChild, counter, recipient1, recipient2, targetPerson, childIterator;
 
     clearDataCache("Vastaanottajat-nomap");
 
@@ -231,13 +228,13 @@ function mapSelectedRecipientsToMatrix() {
         counter++;
     }
 
-    if (hasEmptyChild==true) {
+    if (hasEmptyChild) {
         TIVA_Form.getCache().getDocument("Vastaanottajat-nomap").removeChild(TIVA_Form.getCache().getDocument("Vastaanottajat-nomap").getFirstChild());
     }
 }
 
 function searchNames(searchString) {
-    var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list, parent1, parent2, paren1Data, parent2Data, parent1Info, parent2Info;
+    var node, hasEmptyChild, entryFound, userData, xmlData, personInfo, list, parents, parent1, parent2, parent1Data, parent2Data, parent1Info, parent2Info, parent1List, parent2List;
     entryFound = false;
 
     if (searchString == "") {
@@ -257,7 +254,7 @@ function searchNames(searchString) {
     if (entryFound) {
         clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
         hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
-    
+
         parents = xmlData.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
 
         parent1 = parents.get(0);
@@ -302,14 +299,14 @@ function addToRecipients(selection) {
         return;
     }
 
-    var counter, node, hasEmptyChild, chosen, childIterator, uid, firstname, lastname, childNode;
+    var counter, node, hasEmptyChild, chosen, childIterator, uid, targetPerson, firstname, lastname, vanhempi1, vanhempi2, vanhempi1Uid, vanhempi2Uid, childNode;
 
     clearDataCache("receipientsToShow-nomap");
 
     counter = TIVA_Form.getJSXByName("recipientCounter").getValue();
 
     childIterator = TIVA_Form.getCache().getDocument("HaetutLapset-nomap").getChildIterator();
-    
+
     hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
 
     while (childIterator.hasNext()) {
@@ -364,7 +361,7 @@ function addToRecipients(selection) {
  *
  */
 function parseXML(xmlData, rootName, childlist) {
-    var i, j, attributes, node, childNode, childChildNode, childs;
+    var i, j, attributes, node, childNode, childs;
 
     i = 0;
     attributes = [];
@@ -376,7 +373,7 @@ function parseXML(xmlData, rootName, childlist) {
         if (node == null) {
             break;
         }
-        for (j = 0; j < (childlist.length+2); j++) {
+        for (j = 0; j < (childlist.length); j++) {
             childNode = node.getFirstChild();
             while (childNode != null) {
                 if (childNode.getNodeName() == childlist[j]) {
@@ -402,7 +399,7 @@ function valuesToArray(attributes) {
         line = "";
         for (j = 0; j < attributes[i].length; j++) {
             line = line + attributes[i][j];
-            if (j < (attributes[i].length - 1 )) {
+            if (j < (attributes[i].length - 1)) {
                 line = line + ",";
             }
         }
@@ -413,8 +410,8 @@ function valuesToArray(attributes) {
 
 // Web Service Calls -----------------------------------------------------------------------------------------------------------------------------
 
-jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetChildren = function(searchString) {
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc) {
+    arc.GetChildren = function (searchString) {
         var tout, msg, endpoint, url, req, objXML, limit;
 
         tout = 1000;
@@ -422,8 +419,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         req = new jsx3.net.Request();
@@ -442,20 +440,21 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 });
 
 //Package FormPreFill
-jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.getTemplatesData= function(str) {
-        var tout, msg, endpoint, url, req, objXML
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc) {
+    arc.getTemplatesData = function (str) {
+        var tout, msg, endpoint, url, req, objXML;
 
-        tout = 1000;   
+        tout = 1000;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaSuostumuspohjat><searchString>" + str + "</searchString><limit>10</limit></soa:selaaSuostumuspohjat></soapenv:Body></soapenv:Envelope>";
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
         url = getUrl();
 
-        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         req = new jsx3.net.Request();
-        req.open('POST', url, false);      
+        req.open('POST', url, false);
 
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         req.send(msg, tout);
@@ -501,32 +500,32 @@ function getUrl() {
     return url;
 }
 
-function showDialog (dialogId, text, textTitle, title) {
+function showDialog(dialogId, text, textTitle, title) {
     var dialog, cssDisplay;
 
     dialog = $("#" + dialogId);
 
     cssDisplay = dialog.css('display');
-    if (cssDisplay === 'none'){
+    if (cssDisplay === 'none') {
         dialog.dialog({title: title});
         dialog.dialog("option", "width", 400);
         dialog.dialog("option", "height", 300);
-        dialog.dialog("option", "position", ['middle','middle']);
+        dialog.dialog("option", "position", ['middle', 'middle']);
         dialog.dialog();
     } else {
-         dialog.dialog({ show: null });
+        dialog.dialog({show: null});
     }
     dialog.html("<p style=\"text-align:left;\"><b>" + textTitle + "</b></p><p style=\"margin:0 0 0 0;\">" + text + "</p>");
 }
 
 jsx3.lang.Package.definePackage(
     "Intalio.Internal.CustomErrors",
-    function(error) {
-    
-    error.getError=function(name){
-        var errortext = TIVA_Form.getJSXByName(name).getTip();
-        errortext = "Puuttuvat tiedot: " + errortext;
-        return errortext;
-    };
-  }
+    function (error) {
+
+        error.getError = function (name) {
+            var errortext = TIVA_Form.getJSXByName(name).getTip();
+            errortext = "Puuttuvat tiedot: " + errortext;
+            return errortext;
+        };
+    }
 );

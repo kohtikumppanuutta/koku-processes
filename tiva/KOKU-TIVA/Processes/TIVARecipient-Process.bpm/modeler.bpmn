@@ -32,7 +32,7 @@
         </eAnnotations>
       </associations>
     </artifacts>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_9ChDQMfxEeCRvvRZnbvRbg" iD="_9CbjsMfxEeCRvvRZnbvRbg" associations="_9f3tocfxEeCRvvRZnbvRbg _9rCb0MfxEeCRvvRZnbvRbg" name="Lähetä Hakemus" activityType="Task">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_9ChDQMfxEeCRvvRZnbvRbg" iD="_9CbjsMfxEeCRvvRZnbvRbg" associations="_9f3tocfxEeCRvvRZnbvRbg _9rCb0MfxEeCRvvRZnbvRbg" name="Laheta Hakemus" activityType="Task">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9ChDQcfxEeCRvvRZnbvRbg" source="genericFile">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9ChDQsfxEeCRvvRZnbvRbg" key="projectRelativePath" value="Forms/TIVA_Recipient_Form.gi"/>
       </eAnnotations>
@@ -186,14 +186,14 @@
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_9fodEcfxEeCRvvRZnbvRbg"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_9qoMIMfxEeCRvvRZnbvRbg"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_ZTy1gccLEeC_nN5MDcBneQ" iD="_ZTy1gMcLEeC_nN5MDcBneQ" associations="_k1O4YMcLEeC_nN5MDcBneQ _lQdb0McLEeC_nN5MDcBneQ" outgoingEdges="_ED448dVTEeCVPtuzZwEfuA" incomingEdges="__-29QdVSEeCVPtuzZwEfuA" name="Lähetä suostumus" activityType="EventIntermediateMessage">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_ZTy1gccLEeC_nN5MDcBneQ" iD="_ZTy1gMcLEeC_nN5MDcBneQ" associations="_k1O4YMcLEeC_nN5MDcBneQ _lQdb0McLEeC_nN5MDcBneQ" outgoingEdges="_ED448dVTEeCVPtuzZwEfuA" incomingEdges="__-29QdVSEeCVPtuzZwEfuA" name="Laheta suostumus" activityType="EventIntermediateMessage">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_k079cccLEeC_nN5MDcBneQ"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_lQB-AccLEeC_nN5MDcBneQ"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_ae9BEccLEeC_nN5MDcBneQ" iD="_ae9BEMcLEeC_nN5MDcBneQ" incomingEdges="_W9JawdVPEeCVPtuzZwEfuA" name="The End" activityType="EventEndEmpty"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_J8BsUcfyEeCRvvRZnbvRbg" iD="_J8BsUMfyEeCRvvRZnbvRbg" outgoingEdges="_b66m8fM4EeCUfuBHBPlb1A" incomingEdges="_KjacccfyEeCRvvRZnbvRbg" name="Luo hakemus" activityType="Task"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_GP2-EdVPEeCVPtuzZwEfuA" iD="_GP2-ENVPEeCVPtuzZwEfuA" outgoingEdges="_P6l-AdVPEeCVPtuzZwEfuA _4k338dVSEeCVPtuzZwEfuA" incomingEdges="_dFb5UfM4EeCUfuBHBPlb1A" activityType="GatewayDataBasedExclusive"/>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_OF_z4dVPEeCVPtuzZwEfuA" iD="_OF_z4NVPEeCVPtuzZwEfuA" associations="_URGrQNVPEeCVPtuzZwEfuA _UnS9sNVPEeCVPtuzZwEfuA" outgoingEdges="_WeUwwdVPEeCVPtuzZwEfuA" incomingEdges="_P6l-AdVPEeCVPtuzZwEfuA" name="Evää suostumus" activityType="EventIntermediateMessage">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_OF_z4dVPEeCVPtuzZwEfuA" iD="_OF_z4NVPEeCVPtuzZwEfuA" associations="_URGrQNVPEeCVPtuzZwEfuA _UnS9sNVPEeCVPtuzZwEfuA" outgoingEdges="_WeUwwdVPEeCVPtuzZwEfuA" incomingEdges="_P6l-AdVPEeCVPtuzZwEfuA" name="Evaa suostumus" activityType="EventIntermediateMessage">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_UQzJQdVPEeCVPtuzZwEfuA"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_Um1DodVPEeCVPtuzZwEfuA"/>
     </vertices>

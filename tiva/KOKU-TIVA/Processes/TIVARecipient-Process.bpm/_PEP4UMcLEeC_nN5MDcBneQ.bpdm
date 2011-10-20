@@ -27,7 +27,7 @@
             <bpel:variable name="tIVA_Recipient_FormInitProcessResponseMsg" messageType="TIVA_Recipient_Form:initProcessResponse" bpdm:id="_9q_YhcfxEeCRvvRZnbvRbg" bpdm:messageIds="inc:_9qnlEMfxEeCRvvRZnbvRbg"/>
         </bpel:variables>
         <bpel:sequence>
-            <bpdm:messagingtask operation="initProcess" partnerLink="prosessiAndKuntalainenForPortTypeProcessPlkVar" portType="TIVA_Recipient_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Lähetä Hakemus" bpdm:ID="_9CbjsMfxEeCRvvRZnbvRbg">
+            <bpdm:messagingtask operation="initProcess" partnerLink="prosessiAndKuntalainenForPortTypeProcessPlkVar" portType="TIVA_Recipient_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Laheta Hakemus" bpdm:ID="_9CbjsMfxEeCRvvRZnbvRbg">
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tIVA_Recipient_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_PEP4UMcLEeC_nN5MDcBneQ" bpdm:variableIsManaged="true" bpdm:messageType="TIVA_Recipient_Form:initProcessRequest" bpdm:ID="_9fodEMfxEeCRvvRZnbvRbg"></bpdm:linkset>
                 <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="tIVA_Recipient_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_PEP4UMcLEeC_nN5MDcBneQ" bpdm:variableIsManaged="true" bpdm:messageType="TIVA_Recipient_Form:initProcessResponse" bpdm:ID="_9qnlEMfxEeCRvvRZnbvRbg"></bpdm:linkset>
             </bpdm:messagingtask>
