@@ -1,0 +1,80 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:Paivahoitohakemus_Notify_Decision_Fo="http://www.intalio.com/gi/Forms/Paivahoitohakemus_Notify_Decision_Form.gi/attachments" xmlns:Paivahoitohakemus="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Paivahoitohakemus_Notify_Decision_Form="http://www.intalio.com/gi/Forms/Paivahoitohakemus_Notify_Decision_Form.gi" xmlns:Paivahoitohakemus_Decision_Form="http://www.intalio.com/gi/Forms/Paivahoitohakemus_Decision_Form.gi" xmlns:tns="http://www.arcusys.fi/pttk/palvelukanava" xmlns:this="http://thisdiagram/Virkailija" xmlns:attachments="http://www.intalio.com/gi/Forms/Paivahoitohakemus_Decision_Form.gi/attachments" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Virkailija">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_LGIjgGpyEeC-QbW8o6EhxQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Paivahoitohakemus_Notify_Decision_Form.gi/attachments" bpdm:prefix="Paivahoitohakemus_Notify_Decision_Fo" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus_Notify_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" bpdm:prefix="Paivahoitohakemus" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Paivahoitohakemus_Notify_Decision_Form.gi" bpdm:prefix="Paivahoitohakemus_Notify_Decision_Form" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus_Notify_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Paivahoitohakemus_Decision_Form.gi" bpdm:prefix="Paivahoitohakemus_Decision_Form" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/pttk/palvelukanava" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Services/eMailService/EMailService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Virkailija" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Paivahoitohakemus_Decision_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_LGIjgGpyEeC-QbW8o6EhxQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_LGIjgGpyEeC-QbW8o6EhxQ" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/eMailService/EMailService.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Paivahoitohakemus_Decision_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Paivahoitohakemus.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Paivahoitohakemus_Notify_Decision_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/LDAP/LDAPService.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Virkailija" bpdm:ID="_NoZr8GpyEeC-QbW8o6EhxQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="wFmagic_BZBkAGp9EeCczv7dQ4LOdgPlkVar" partnerLinkType="diag:WFmagic_BZBkAGp9EeCczv7dQ4LOdg" initializePartnerRole="no" myRole="Virkailija_for_ProsessiForPaivahoitohakemus_Decision_FormPort" bpdm:enableSharing="false" bpdm:providedService="Paivahoitohakemus_Decision_Form:WorkflowSoapService" bpdm:providedPort="Paivahoitohakemus_Decision_FormPort" bpdm:provideSOAPAddress="http://intalio.intra.arcusys.fi:8080/fds/workflow/Paivahoitohakemus_Decision_Form" bpdm:providedIsDefault="true" partnerRole="Prosessi_for_VirkailijaForThePortTypeProcess" bpdm:invokedService="Prosessi:WFmagic_BZBkAGp9EeCczv7dQ4LOdgService" bpdm:invokedPort="Prosessi_for_VirkailijaForThePortTypeProcessPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Virkailija/WFmagic_BZBkAGp9EeCczv7dQ4LOdg" bpdm:invokedIsDefault="true" bpdm:clientTasks="_NoZr8GpyEeC-QbW8o6EhxQ:_BZBkAGp9EeCczv7dQ4LOdg, _NoZr8GpyEeC-QbW8o6EhxQ:_BZEnUGp9EeCczv7dQ4LOdg" bpdm:isManaged="true" bpdm:otherPoolId="_LGIjgGpyEeC-QbW8o6EhxQ"/>
+            <bpel:partnerLink name="virkailijaAndProsessiForEMailServiceImplPortPlkVar" partnerLinkType="diag:VirkailijaAndProsessiForEMailServiceImplPortPlk" myRole="Virkailija_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="tns:EMailService" bpdm:providedPort="EMailServiceImplPort" bpdm:provideSOAPAddress="http://intalio.intra.arcusys.fi:8080/pttk-services/services/EMailService" bpdm:providedIsDefault="true" bpdm:clientTasks="_NoZr8GpyEeC-QbW8o6EhxQ:_c9LF0HcQEeCIv7SwipRlAA" bpdm:isManaged="true" bpdm:otherPoolId="_LGIjgGpyEeC-QbW8o6EhxQ"/>
+            <bpel:partnerLink name="virkailijaAndProsessiForPaivahoitohakemus_Notify_Decision_FormPortPlkVar" partnerLinkType="diag:VirkailijaAndProsessiForPaivahoitohakemus_Notify_Decision_FormPortPlk" myRole="Virkailija_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="Paivahoitohakemus_Notify_Decision_Form:WorkflowSoapService" bpdm:providedPort="Paivahoitohakemus_Notify_Decision_FormPort" bpdm:provideSOAPAddress="http://intalio.intra.arcusys.fi:8080/fds/workflow/Paivahoitohakemus_Notify_Decision_Form" bpdm:providedIsDefault="true" bpdm:clientTasks="_NoZr8GpyEeC-QbW8o6EhxQ:_yaOiEGp_EeCczv7dQ4LOdg" bpdm:isManaged="true" bpdm:otherPoolId="_LGIjgGpyEeC-QbW8o6EhxQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="paivahoitohakemus_Decision_FormCreateTaskRequestMsg" messageType="Paivahoitohakemus_Decision_Form:createTaskRequest" binding="Paivahoitohakemus_Decision_Form:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_HY4NoGp9EeCczv7dQ4LOdg" bpdm:messageIds="inc:_HYQikGp9EeCczv7dQ4LOdg"/>
+            <bpel:variable name="paivahoitohakemus_Decision_FormCreateTaskResponseMsg" messageType="Paivahoitohakemus_Decision_Form:createTaskResponse" binding="Paivahoitohakemus_Decision_Form:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_LOt2wGp9EeCczv7dQ4LOdg" bpdm:messageIds=" out:_LOZtsGp9EeCczv7dQ4LOdg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Paivahoitohakemus_Decision_Form:createTaskResponse" bpdm:linkedPart="root" bpdm:binding="Paivahoitohakemus_Decision_Form:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="paivahoitohakemus_Decision_FormNotifyTaskCompletionRequestMsg" messageType="Paivahoitohakemus_Decision_Form:notifyTaskCompletionRequest" bpdm:id="_VpInMGp9EeCczv7dQ4LOdg" bpdm:messageIds=" out:_Vo1FMGp9EeCczv7dQ4LOdg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Paivahoitohakemus_Decision_Form:notifyTaskCompletionRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="paivahoitohakemus_Decision_FormNotifyTaskCompletionResponseMsg" messageType="Paivahoitohakemus_Decision_Form:notifyTaskCompletionResponse" bpdm:id="_WMGKUGp9EeCczv7dQ4LOdg" bpdm:messageIds="inc:_WLKWMGp9EeCczv7dQ4LOdg"/>
+            <bpel:variable name="tnsSendEmailMsg" messageType="tns:sendEmail" binding="tns:EMailServiceSoapBinding" operation="sendEmail" opMsgType="0" bpdm:id="_fQGxwHcQEeCIv7SwipRlAA" bpdm:messageIds="inc:_fOPJgHcQEeCIv7SwipRlAA"/>
+            <bpel:variable name="tnsSendEmailResponseMsg" messageType="tns:sendEmailResponse" binding="tns:EMailServiceSoapBinding" operation="sendEmail" opMsgType="1" bpdm:id="_foCJkHcQEeCIv7SwipRlAA" bpdm:messageIds=" out:_fnPfYHcQEeCIv7SwipRlAA">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="tns:sendEmailResponse" bpdm:linkedPart="parameters" bpdm:binding="tns:EMailServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="sendEmail"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="paivahoitohakemus_Notify_Decision_FormNotifyRequestMsg" messageType="Paivahoitohakemus_Notify_Decision_Form:notifyRequest" binding="Paivahoitohakemus_Notify_Decision_Form:WorkflowSoapBinding" operation="notify" opMsgType="0" bpdm:id="_zrA0gGp_EeCczv7dQ4LOdg" bpdm:messageIds="inc:_zqP_gGp_EeCczv7dQ4LOdg"/>
+            <bpel:variable name="paivahoitohakemus_Notify_Decision_FormNotifyResponseMsg" messageType="Paivahoitohakemus_Notify_Decision_Form:notifyResponse" binding="Paivahoitohakemus_Notify_Decision_Form:WorkflowSoapBinding" operation="notify" opMsgType="1" bpdm:id="_0rGYgGp_EeCczv7dQ4LOdg" bpdm:messageIds=" out:_0qvMIGp_EeCczv7dQ4LOdg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Paivahoitohakemus_Notify_Decision_Form:notifyResponse" bpdm:linkedPart="root" bpdm:binding="Paivahoitohakemus_Notify_Decision_Form:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="notify"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="notify" partnerLink="virkailijaAndProsessiForPaivahoitohakemus_Notify_Decision_FormPortPlkVar" portType="Paivahoitohakemus_Notify_Decision_Form:Workflow" isMyRole="true" enableSharing="false" bpdm:label="Paivahoitohakemus_Notify_Decision_Form-notify" bpdm:ID="_yaOiEGp_EeCczv7dQ4LOdg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="paivahoitohakemus_Notify_Decision_FormNotifyRequestMsg" bpdm:msgVarScopeId="_NoZr8GpyEeC-QbW8o6EhxQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_Notify_Decision_Form:notifyRequest" bpdm:binding="Paivahoitohakemus_Notify_Decision_Form:WorkflowSoapBinding" bpdm:ID="_zqP_gGp_EeCczv7dQ4LOdg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="paivahoitohakemus_Notify_Decision_FormNotifyResponseMsg" bpdm:msgVarScopeId="_NoZr8GpyEeC-QbW8o6EhxQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_Notify_Decision_Form:notifyResponse" bpdm:binding="Paivahoitohakemus_Notify_Decision_Form:WorkflowSoapBinding" bpdm:ID="_0qvMIGp_EeCczv7dQ4LOdg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="sendEmail" partnerLink="virkailijaAndProsessiForEMailServiceImplPortPlkVar" portType="tns:EMailService" isMyRole="true" enableSharing="false" bpdm:label="sendEmail" bpdm:ID="_c9LF0HcQEeCIv7SwipRlAA">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsSendEmailMsg" bpdm:msgVarScopeId="_NoZr8GpyEeC-QbW8o6EhxQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendEmail" bpdm:binding="tns:EMailServiceSoapBinding" bpdm:ID="_fOPJgHcQEeCIv7SwipRlAA"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsSendEmailResponseMsg" bpdm:msgVarScopeId="_NoZr8GpyEeC-QbW8o6EhxQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendEmailResponse" bpdm:binding="tns:EMailServiceSoapBinding" bpdm:ID="_fnPfYHcQEeCIv7SwipRlAA"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_BZBkAGp9EeCczv7dQ4LOdgPlkVar" portType="Paivahoitohakemus_Decision_Form:Workflow" isMyRole="true" enableSharing="false" bpdm:label="Vastaanota" bpdm:ID="_BZBkAGp9EeCczv7dQ4LOdg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="paivahoitohakemus_Decision_FormCreateTaskRequestMsg" bpdm:msgVarScopeId="_NoZr8GpyEeC-QbW8o6EhxQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_Decision_Form:createTaskRequest" bpdm:binding="Paivahoitohakemus_Decision_Form:WorkflowSoapBinding" bpdm:ID="_HYQikGp9EeCczv7dQ4LOdg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="paivahoitohakemus_Decision_FormCreateTaskResponseMsg" bpdm:msgVarScopeId="_NoZr8GpyEeC-QbW8o6EhxQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_Decision_Form:createTaskResponse" bpdm:binding="Paivahoitohakemus_Decision_Form:WorkflowSoapBinding" bpdm:ID="_LOZtsGp9EeCczv7dQ4LOdg"></bpdm:linkset>
+                </bpdm:messagingtask>
+                <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_BZBkAGp9EeCczv7dQ4LOdgPlkVar" portType="Paivahoitohakemus_Decision_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Tee paatos" bpdm:ID="_BZEnUGp9EeCczv7dQ4LOdg">
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="paivahoitohakemus_Decision_FormNotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_NoZr8GpyEeC-QbW8o6EhxQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_Decision_Form:notifyTaskCompletionRequest" bpdm:ID="_Vo1FMGp9EeCczv7dQ4LOdg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="paivahoitohakemus_Decision_FormNotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_NoZr8GpyEeC-QbW8o6EhxQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_Decision_Form:notifyTaskCompletionResponse" bpdm:ID="_WLKWMGp9EeCczv7dQ4LOdg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>

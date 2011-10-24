@@ -1,0 +1,160 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:KokuAppointmentProcessingServiceImpl1="http://soa.av.koku.arcusys.fi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:this="http://thisdiagram/s" xmlns:Ajanvaraus_receive_Form="http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi/attachments" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:KokuAppointmentProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/KOKU/Ajanvaraus" xmlns:Palvelut="http://thisdiagram/Palvelut" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/s">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.av.koku.arcusys.fi/" bpdm:prefix="KokuAppointmentProcessingServiceImpl1" bpdm:comment="contrib=&apos;project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/s" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi" bpdm:prefix="Ajanvaraus_receive_Form" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus_receive_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus_receive_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_Qp5UkLOQEeCelp0oJjnelQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///Services/UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuAppointmentProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/KOKU/Ajanvaraus" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Ajanvaraus.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="Palvelut" bpdm:comment="contrib=&apos;partner-pool:///_c5Bj4LOQEeCelp0oJjnelQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="sAndKuntalainenForPortTypeProcessPlkService">
+                <wsdl:port name="s_for_KuntalainenPort" binding="this:sAndKuntalainenForPortTypeProcessPlkServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/s/Kuntalainen/sAndKuntalainenForPortTypeProcessPlk"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="sAndKuntalainenForPortTypeProcessPlkServiceBinding" type="Ajanvaraus_receive_Form:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Ajanvaraus.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Ajanvaraus_receive_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuAppointmentProcessingServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_c5Bj4LOQEeCelp0oJjnelQ" bpdm:label="Palvelut"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_Qp5UkLOQEeCelp0oJjnelQ" bpdm:label="Kuntalainen"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/UsersAndGroupsServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="s" bpdm:ID="_cWxLYLOQEeCelp0oJjnelQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="sAndKuntalainenForPortTypeProcessPlkVar" partnerLinkType="diag:sAndKuntalainenForPortTypeProcessPlk" myRole="s_for_Kuntalainen" bpdm:enableSharing="false" bpdm:providedService="this:sAndKuntalainenForPortTypeProcessPlkService" bpdm:providedPort="s_for_KuntalainenPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/s/Kuntalainen/sAndKuntalainenForPortTypeProcessPlk" bpdm:providedIsDefault="true" bpdm:clientTasks="_cWxLYLOQEeCelp0oJjnelQ:_p7g98LduEeCo_P1EMSwThw" bpdm:isManaged="true" bpdm:otherPoolId="_Qp5UkLOQEeCelp0oJjnelQ"/>
+            <bpel:partnerLink name="sAndPalvelutForKokuAppointmentProcessingServicePortPlkVar" partnerLinkType="diag:sAndPalvelutForKokuAppointmentProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_s" bpdm:invokedService="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService" bpdm:invokedPort="KokuAppointmentProcessingServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_cWxLYLOQEeCelp0oJjnelQ:_1jK9kLduEeCo_P1EMSwThw, _cWxLYLOQEeCelp0oJjnelQ:_AC_RULzTEeCDsqtca-Akpg" bpdm:isManaged="true" bpdm:otherPoolId="_c5Bj4LOQEeCelp0oJjnelQ"/>
+            <bpel:partnerLink name="sAndPalvelutForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:sAndPalvelutForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_s" bpdm:invokedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:invokedPort="UsersAndGroupsServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_cWxLYLOQEeCelp0oJjnelQ:_yaNegPM4EeCUfuBHBPlb1A" bpdm:isManaged="true" bpdm:otherPoolId="_c5Bj4LOQEeCelp0oJjnelQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="ajanvaraus_receive_FormInitProcessRequestMsg" messageType="Ajanvaraus_receive_Form:initProcessRequest" bpdm:id="_fIsIdb5cEeCS5rrlGBJbAA" bpdm:messageIds="inc:_fIaboL5cEeCS5rrlGBJbAA"/>
+            <bpel:variable name="ajanvaraus_receive_FormInitProcessResponseMsg" messageType="Ajanvaraus_receive_Form:initProcessResponse" bpdm:id="_faBwEL5cEeCS5rrlGBJbAA" bpdm:messageIds=" out:_fZu1IL5cEeCS5rrlGBJbAA">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Ajanvaraus_receive_Form:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="Ajanvaraus_Form" element="tns:Ajanvaraus_Form" bpdm:id="_i5YL0L5cEeCS5rrlGBJbAA"/>
+            <bpel:variable name="kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg" messageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_approveAppointment" binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" operation="approveAppointment" opMsgType="0" bpdm:id="_G95YkNIJEeCKyeixYtRwlQ" bpdm:messageIds=" out:_G9pg8NIJEeCKyeixYtRwlQ">
+                <bpel:from bpdm:toPart="approveAppointment">
+                    <bpel:literal bpdm:linkedMessageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_approveAppointment" bpdm:linkedPart="approveAppointment" bpdm:binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="approveAppointment"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuAppointmentProcessingServiceImpl1ApproveAppointmentResponseMsg" messageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_approveAppointmentResponse" binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" operation="approveAppointment" opMsgType="1" bpdm:id="_HV_IddIJEeCKyeixYtRwlQ" bpdm:messageIds="inc:_HVicgNIJEeCKyeixYtRwlQ"/>
+            <bpel:variable name="kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg" messageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_declineAppointment" binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" operation="declineAppointment" opMsgType="0" bpdm:id="_JQqscNIJEeCKyeixYtRwlQ" bpdm:messageIds=" out:_JQZmsNIJEeCKyeixYtRwlQ">
+                <bpel:from bpdm:toPart="declineAppointment">
+                    <bpel:literal bpdm:linkedMessageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_declineAppointment" bpdm:linkedPart="declineAppointment" bpdm:binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="declineAppointment"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuAppointmentProcessingServiceImpl1DeclineAppointmentResponseMsg" messageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_declineAppointmentResponse" binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" operation="declineAppointment" opMsgType="1" bpdm:id="_Jt3l0NIJEeCKyeixYtRwlQ" bpdm:messageIds="inc:_JtZEsNIJEeCKyeixYtRwlQ"/>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByKunpoNameMsg" messageType="UsersAndGroupsServiceImpl:getUserUidByKunpoName" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" operation="getUserUidByKunpoName" opMsgType="0" bpdm:id="_-oSaAPVeEeCgTIH4f6bVSw" bpdm:messageIds=" out:_-oCiYPVeEeCgTIH4f6bVSw">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:getUserUidByKunpoName" bpdm:linkedPart="parameters" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:opMsgType="0" bpdm:operation="getUserUidByKunpoName"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByKunpoNameResponseMsg" messageType="UsersAndGroupsServiceImpl:getUserUidByKunpoNameResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" operation="getUserUidByKunpoName" opMsgType="1" bpdm:id="_-5vWYPVeEeCgTIH4f6bVSw" bpdm:messageIds="inc:_-5SqcPVeEeCgTIH4f6bVSw"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="initProcess" partnerLink="sAndKuntalainenForPortTypeProcessPlkVar" portType="Ajanvaraus_receive_Form:Process" isMyRole="true" enableSharing="false" bpdm:label="Message_Start_Event" bpdm:ID="_p7g98LduEeCo_P1EMSwThw">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="ajanvaraus_receive_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="Ajanvaraus_receive_Form:initProcessRequest" bpdm:ID="_fIaboL5cEeCS5rrlGBJbAA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="ajanvaraus_receive_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="Ajanvaraus_receive_Form:initProcessResponse" bpdm:ID="_fZu1IL5cEeCS5rrlGBJbAA"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Luo Hakemus" bpdm:ID="_vQWgALwhEeCWWeLwZcNOxQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$ajanvaraus_receive_FormInitProcessRequestMsg.root/Ajanvaraus_receive_Form:taskOutput/tns:Ajanvaraus_Form</bpel:from>
+                        <bpel:to>$Ajanvaraus_Form</bpel:to><mapper:mapperLink><mapper:vertice id="1286257804" targetPath="$Ajanvaraus_Form" targetedBy="2115822880-arg0"></mapper:vertice><mapper:vertice id="2115822880" sourcePath="$ajanvaraus_receive_FormInitProcessRequestMsg.root/Ajanvaraus_receive_Form:taskOutput/tns:Ajanvaraus_Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="getUserUidByKunpoName" partnerLink="sAndPalvelutForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_yaNegPM4EeCUfuBHBPlb1A">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$Ajanvaraus_Form/tns:User/tns:User_Recipient</bpel:from>
+                        <bpel:to>$usersAndGroupsServiceImplGetUserUidByKunpoNameMsg.parameters/kunpoUsername</bpel:to><mapper:mapperLink><mapper:vertice id="1379861257" targetPath="$usersAndGroupsServiceImplGetUserUidByKunpoNameMsg.parameters/kunpoUsername" targetedBy="111648206-arg0"></mapper:vertice><mapper:vertice id="111648206" sourcePath="$Ajanvaraus_Form/tns:User/tns:User_Recipient"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByKunpoNameMsg" bpdm:msgVarScopeId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:getUserUidByKunpoName" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:ID="_-oCiYPVeEeCgTIH4f6bVSw"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByKunpoNameResponseMsg" bpdm:msgVarScopeId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:getUserUidByKunpoNameResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:ID="_-5SqcPVeEeCgTIH4f6bVSw"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Tallenna Vastaanottaja" bpdm:ID="_zVCIAPM4EeCUfuBHBPlb1A">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$usersAndGroupsServiceImplGetUserUidByKunpoNameResponseMsg.parameters/userUid</bpel:from>
+                        <bpel:to>$Ajanvaraus_Form/tns:User/tns:User_Recipient</bpel:to><mapper:mapperLink><mapper:vertice id="1484411174" targetPath="$Ajanvaraus_Form/tns:User/tns:User_Recipient" targetedBy="167850017-arg0"></mapper:vertice><mapper:vertice id="167850017" sourcePath="$usersAndGroupsServiceImplGetUserUidByKunpoNameResponseMsg.parameters/userUid"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_4kjw4LzSEeCDsqtca-Akpg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_559dkLzSEeCDsqtca-Akpg" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Vahvista Hakemus]">
+                    <bpel:condition>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Status = "Approved"<mapper:mapperLink><mapper:vertice id="1292994313" targetPath="$condition" targetedBy="338552740-arg2"></mapper:vertice><mapper:vertice id="338552740" dimension="78x24" location="492,48"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="2089511366" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Status" targetedBy="338552740-arg0"></mapper:vertice><mapper:vertice id="1855522994" dimension="102x24" location="403,104" targetedBy="338552740-arg1"><mapper:value>"Approved"</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_qcw6ULzTEeCDsqtca-Akpg" bpdm:targetDisplayName="default"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_s44XcLzTEeCDsqtca-Akpg" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Hylkaa Hakemus]">
+                    <bpel:condition>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Status = "Declined"<mapper:mapperLink><mapper:vertice id="2079520825" targetPath="$condition" targetedBy="1421596721-arg2"></mapper:vertice><mapper:vertice id="1421596721" dimension="78x24" location="468,24"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1792701392" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Status" targetedBy="1421596721-arg0"></mapper:vertice><mapper:vertice id="1887618769" dimension="78x24" location="379,80" targetedBy="1421596721-arg1"><mapper:value>"Declined"</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="approveAppointment" partnerLink="sAndPalvelutForKokuAppointmentProcessingServicePortPlkVar" portType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Vahvista Hakemus" bpdm:ID="_1jK9kLduEeCo_P1EMSwThw">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:User/tns:User_Recipient</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/user</bpel:to><mapper:mapperLink><mapper:vertice id="2024768512" targetPath="$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/user" targetedBy="840821864-arg0"></mapper:vertice><mapper:vertice id="840821864" sourcePath="$Ajanvaraus_Form/tns:User/tns:User_Recipient"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_ID</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/appointmentId</bpel:to><mapper:mapperLink><mapper:vertice id="1232443430" targetPath="$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/appointmentId" targetedBy="567995858-arg0"></mapper:vertice><mapper:vertice id="567995858" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_ID"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Hyvaksytty_Aika</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/slotNumber</bpel:to><mapper:mapperLink><mapper:vertice id="628982568" targetPath="$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/slotNumber" targetedBy="961879970-arg0"></mapper:vertice><mapper:vertice id="961879970" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Hyvaksytty_Aika"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Viesti</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/comment</bpel:to><mapper:mapperLink><mapper:vertice id="1924184854" targetPath="$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/comment" targetedBy="1408368264-arg0"></mapper:vertice><mapper:vertice id="1408368264" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Viesti"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Kohdehenkilo</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/targetUser</bpel:to><mapper:mapperLink><mapper:vertice id="527465066" targetPath="$kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg.approveAppointment/targetUser" targetedBy="698150442-arg0"></mapper:vertice><mapper:vertice id="698150442" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Kohdehenkilo"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuAppointmentProcessingServiceImpl1ApproveAppointmentRequestMsg" bpdm:msgVarScopeId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_approveAppointment" bpdm:binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" bpdm:ID="_G9pg8NIJEeCKyeixYtRwlQ"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuAppointmentProcessingServiceImpl1ApproveAppointmentResponseMsg" bpdm:msgVarScopeId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_approveAppointmentResponse" bpdm:binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" bpdm:ID="_HVicgNIJEeCKyeixYtRwlQ"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+                <bpel:sequence></bpel:sequence>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="declineAppointment" partnerLink="sAndPalvelutForKokuAppointmentProcessingServicePortPlkVar" portType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Hylkaa Hakemus" bpdm:ID="_AC_RULzTEeCDsqtca-Akpg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:User/tns:User_Recipient</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg.declineAppointment/user</bpel:to><mapper:mapperLink><mapper:vertice id="1860559115" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg.declineAppointment/user" targetedBy="1490264064-arg0"></mapper:vertice><mapper:vertice id="1490264064" sourcePath="$Ajanvaraus_Form/tns:User/tns:User_Recipient"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_ID</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg.declineAppointment/appointmentId</bpel:to><mapper:mapperLink><mapper:vertice id="645510684" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg.declineAppointment/appointmentId" targetedBy="446298848-arg0"></mapper:vertice><mapper:vertice id="446298848" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_ID"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Viesti</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg.declineAppointment/comment</bpel:to><mapper:mapperLink><mapper:vertice id="1461192678" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg.declineAppointment/comment" targetedBy="997879018-arg0"></mapper:vertice><mapper:vertice id="997879018" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Viesti"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Kohdehenkilo</bpel:from>
+                                <bpel:to>$kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg.declineAppointment/targetUser</bpel:to><mapper:mapperLink><mapper:vertice id="255281698" targetPath="$kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg.declineAppointment/targetUser" targetedBy="1346828636-arg0"></mapper:vertice><mapper:vertice id="1346828636" sourcePath="$Ajanvaraus_Form/tns:Lomake/tns:Lomake_Kohdehenkilo"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuAppointmentProcessingServiceImpl1DeclineAppointmentRequestMsg" bpdm:msgVarScopeId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_declineAppointment" bpdm:binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" bpdm:ID="_JQZmsNIJEeCKyeixYtRwlQ"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuAppointmentProcessingServiceImpl1DeclineAppointmentResponseMsg" bpdm:msgVarScopeId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingService_declineAppointmentResponse" bpdm:binding="KokuAppointmentProcessingServiceImpl1:KokuAppointmentProcessingServiceBinding" bpdm:ID="_JtZEsNIJEeCKyeixYtRwlQ"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpdm:gateway>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_MLiXgLzTEeCDsqtca-Akpg" bpdm:gatewayType="data_xor" bpdm:isMerge="true"></bpdm:gateway>
+            <bpdm:messagingtask eventType="end: empty" bpdm:label="Empty_End_Event" bpdm:ID="_doYu0LOREeCelp0oJjnelQ"></bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

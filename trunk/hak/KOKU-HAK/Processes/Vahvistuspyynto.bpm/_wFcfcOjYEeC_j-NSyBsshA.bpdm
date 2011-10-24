@@ -1,0 +1,46 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Vahvistuspyynto_Decision_Form="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi/attachments" xmlns:this="http://thisdiagram/Kuntalainen" xmlns:diag="http://thisdiagram" xmlns:tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Kuntalainen">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_sa2dAOjYEeC_j-NSyBsshA"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi" bpdm:prefix="Vahvistuspyynto_Decision_Form" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Kuntalainen" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_sa2dAOjYEeC_j-NSyBsshA"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/KOKU/Vahvistuspyynto" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Vahvistuspyynto.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_sa2dAOjYEeC_j-NSyBsshA" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Vahvistuspyynto_Decision_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Vahvistuspyynto.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Kuntalainen" bpdm:ID="_wFcfcOjYEeC_j-NSyBsshA">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="wFmagic_OyYG0OjZEeC_j-NSyBsshAPlkVar" partnerLinkType="diag:WFmagic_OyYG0OjZEeC_j-NSyBsshA" initializePartnerRole="no" myRole="Kuntalainen_for_ProsessiForVahvistuspyynto_Decision_FormPort" bpdm:enableSharing="false" bpdm:providedService="Vahvistuspyynto_Decision_Form:WorkflowSoapService" bpdm:providedPort="Vahvistuspyynto_Decision_FormPort" bpdm:provideSOAPAddress="http://localhost:8080/fds/workflow/Vahvistuspyynto_Decision_Form" bpdm:providedIsDefault="true" partnerRole="Prosessi_for_KuntalainenForThePortTypeProcess" bpdm:invokedService="Prosessi:WFmagic_OyYG0OjZEeC_j-NSyBsshAService" bpdm:invokedPort="Prosessi_for_KuntalainenForThePortTypeProcessPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Kuntalainen/WFmagic_OyYG0OjZEeC_j-NSyBsshA" bpdm:invokedIsDefault="true" bpdm:clientTasks="_wFcfcOjYEeC_j-NSyBsshA:_OybxMOjZEeC_j-NSyBsshA, _wFcfcOjYEeC_j-NSyBsshA:_OyYG0OjZEeC_j-NSyBsshA" bpdm:isManaged="true" bpdm:otherPoolId="_sa2dAOjYEeC_j-NSyBsshA"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="vahvistuspyynto_Decision_FormCreateTaskRequestMsg" messageType="Vahvistuspyynto_Decision_Form:createTaskRequest" binding="Vahvistuspyynto_Decision_Form:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_Q5bS4OjZEeC_j-NSyBsshA" bpdm:messageIds="inc:_Q49Y0OjZEeC_j-NSyBsshA"/>
+            <bpel:variable name="vahvistuspyynto_Decision_FormCreateTaskResponseMsg" messageType="Vahvistuspyynto_Decision_Form:createTaskResponse" binding="Vahvistuspyynto_Decision_Form:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_RJ8bIOjZEeC_j-NSyBsshA" bpdm:messageIds=" out:_RJmc4OjZEeC_j-NSyBsshA">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Vahvistuspyynto_Decision_Form:createTaskResponse" bpdm:linkedPart="root" bpdm:binding="Vahvistuspyynto_Decision_Form:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="vahvistuspyynto_Decision_FormNotifyTaskCompletionRequestMsg" messageType="Vahvistuspyynto_Decision_Form:notifyTaskCompletionRequest" bpdm:id="_VjCiUOjZEeC_j-NSyBsshA" bpdm:messageIds=" out:_ViyqsOjZEeC_j-NSyBsshA">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Vahvistuspyynto_Decision_Form:notifyTaskCompletionRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="vahvistuspyynto_Decision_FormNotifyTaskCompletionResponseMsg" messageType="Vahvistuspyynto_Decision_Form:notifyTaskCompletionResponse" bpdm:id="_V27usujZEeC_j-NSyBsshA" bpdm:messageIds="inc:_V2ebsOjZEeC_j-NSyBsshA"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_OyYG0OjZEeC_j-NSyBsshAPlkVar" portType="Vahvistuspyynto_Decision_Form:Workflow" isMyRole="true" enableSharing="false" bpdm:label="Vastaanota hakemus" bpdm:ID="_OyYG0OjZEeC_j-NSyBsshA">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="vahvistuspyynto_Decision_FormCreateTaskRequestMsg" bpdm:msgVarScopeId="_wFcfcOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="Vahvistuspyynto_Decision_Form:createTaskRequest" bpdm:binding="Vahvistuspyynto_Decision_Form:WorkflowSoapBinding" bpdm:ID="_Q49Y0OjZEeC_j-NSyBsshA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="vahvistuspyynto_Decision_FormCreateTaskResponseMsg" bpdm:msgVarScopeId="_wFcfcOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="Vahvistuspyynto_Decision_Form:createTaskResponse" bpdm:binding="Vahvistuspyynto_Decision_Form:WorkflowSoapBinding" bpdm:ID="_RJmc4OjZEeC_j-NSyBsshA"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_OyYG0OjZEeC_j-NSyBsshAPlkVar" portType="Vahvistuspyynto_Decision_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Käsittele hakemus" bpdm:ID="_OybxMOjZEeC_j-NSyBsshA">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="vahvistuspyynto_Decision_FormNotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_wFcfcOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="Vahvistuspyynto_Decision_Form:notifyTaskCompletionRequest" bpdm:ID="_ViyqsOjZEeC_j-NSyBsshA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="vahvistuspyynto_Decision_FormNotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_wFcfcOjYEeC_j-NSyBsshA" bpdm:variableIsManaged="true" bpdm:messageType="Vahvistuspyynto_Decision_Form:notifyTaskCompletionResponse" bpdm:ID="_V2ebsOjZEeC_j-NSyBsshA"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

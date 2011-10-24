@@ -1,0 +1,49 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:this="http://thisdiagram/Valtuutettava" xmlns:Valtakirja_Form1="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi" xmlns:Valtakirja_Form="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attachments="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi/attachments" xmlns:tns="http://www.arcusys.fi/Valtakirja" xmlns:Valtakirja_Decision_Form="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Valtuutettava">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_1DELsNRuEeCRlpcBbJyn8g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Valtuutettava" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi" bpdm:prefix="Valtakirja_Form1" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi/attachments" bpdm:prefix="Valtakirja_Form" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/Valtakirja" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi" bpdm:prefix="Valtakirja_Decision_Form" bpdm:comment="contrib=&apos;project:///Forms/Valtakirja_Decision_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_1DELsNRuEeCRlpcBbJyn8g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Valtakirja_Decision_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Valtakirja.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_1DELsNRuEeCRlpcBbJyn8g" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Valtakirja_Form.gi.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Valtuutettava" bpdm:ID="_2tbbwNRuEeCRlpcBbJyn8g">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="wFmagic_YbgUYNR5EeCEvPS1L9wOggPlkVar" partnerLinkType="diag:WFmagic_YbgUYNR5EeCEvPS1L9wOgg" initializePartnerRole="no" myRole="Valtuutettava_for_ProsessiForValtakirja_FormPort" bpdm:enableSharing="false" bpdm:providedService="Valtakirja_Form1:WorkflowSoapService" bpdm:providedPort="Valtakirja_FormPort" bpdm:provideSOAPAddress="http://localhost:8080/fds/workflow/Valtakirja_Form" bpdm:providedIsDefault="true" partnerRole="Prosessi_for_ValtuutettavaForThePortTypeProcess" bpdm:invokedService="Prosessi:WFmagic_YbgUYNR5EeCEvPS1L9wOggService" bpdm:invokedPort="Prosessi_for_ValtuutettavaForThePortTypeProcessPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Valtuutettava/WFmagic_YbgUYNR5EeCEvPS1L9wOgg" bpdm:invokedIsDefault="true" bpdm:clientTasks="_2tbbwNRuEeCRlpcBbJyn8g:_YbiJk9R5EeCEvPS1L9wOgg, _2tbbwNRuEeCRlpcBbJyn8g:_YbgUYNR5EeCEvPS1L9wOgg" bpdm:isManaged="true" bpdm:otherPoolId="_1DELsNRuEeCRlpcBbJyn8g"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="valtakirja_Form1CreateTaskRequestMsg" messageType="Valtakirja_Form1:createTaskRequest" binding="Valtakirja_Form1:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_Y6QF4NR5EeCEvPS1L9wOgg" bpdm:messageIds="inc:_Y53EUNR5EeCEvPS1L9wOgg"/>
+            <bpel:variable name="valtakirja_Form1CreateTaskResponseMsg" messageType="Valtakirja_Form1:createTaskResponse" binding="Valtakirja_Form1:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_ZsUcANR5EeCEvPS1L9wOgg" bpdm:messageIds=" out:_Zr8BgNR5EeCEvPS1L9wOgg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Valtakirja_Form1:createTaskResponse" bpdm:linkedPart="root" bpdm:binding="Valtakirja_Form1:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="valtakirja_Form1NotifyTaskCompletionRequestMsg" messageType="Valtakirja_Form1:notifyTaskCompletionRequest" bpdm:id="_aCKwMNR5EeCEvPS1L9wOgg" bpdm:messageIds=" out:_aB6RgNR5EeCEvPS1L9wOgg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Valtakirja_Form1:notifyTaskCompletionRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="valtakirja_Form1NotifyTaskCompletionResponseMsg" messageType="Valtakirja_Form1:notifyTaskCompletionResponse" bpdm:id="_aSMJMNR5EeCEvPS1L9wOgg" bpdm:messageIds="inc:_aRj3ENR5EeCEvPS1L9wOgg"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_YbgUYNR5EeCEvPS1L9wOggPlkVar" portType="Valtakirja_Form1:Workflow" isMyRole="true" enableSharing="false" bpdm:label="Valtakirja_Form-create" bpdm:ID="_YbgUYNR5EeCEvPS1L9wOgg">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="valtakirja_Form1CreateTaskRequestMsg" bpdm:msgVarScopeId="_2tbbwNRuEeCRlpcBbJyn8g" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Form1:createTaskRequest" bpdm:binding="Valtakirja_Form1:WorkflowSoapBinding" bpdm:ID="_Y53EUNR5EeCEvPS1L9wOgg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="valtakirja_Form1CreateTaskResponseMsg" bpdm:msgVarScopeId="_2tbbwNRuEeCRlpcBbJyn8g" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Form1:createTaskResponse" bpdm:binding="Valtakirja_Form1:WorkflowSoapBinding" bpdm:ID="_Zr8BgNR5EeCEvPS1L9wOgg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_YbgUYNR5EeCEvPS1L9wOggPlkVar" portType="Valtakirja_Form1:Process" isMyRole="false" enableSharing="false" bpdm:label="Valtakirja_Form-complete" bpdm:ID="_YbiJk9R5EeCEvPS1L9wOgg">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="valtakirja_Form1NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_2tbbwNRuEeCRlpcBbJyn8g" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Form1:notifyTaskCompletionRequest" bpdm:ID="_aB6RgNR5EeCEvPS1L9wOgg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="valtakirja_Form1NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_2tbbwNRuEeCRlpcBbJyn8g" bpdm:variableIsManaged="true" bpdm:messageType="Valtakirja_Form1:notifyTaskCompletionResponse" bpdm:ID="_aRj3ENR5EeCEvPS1L9wOgg"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

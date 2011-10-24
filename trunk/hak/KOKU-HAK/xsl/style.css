@@ -1,0 +1,68 @@
+body {
+	font-size: 62.5%;
+	font-family: Helvetica, sans-serif;
+	background: white;	
+}
+
+p {
+	font-size: 1.3em;
+	margin-bottom: 15px;
+}
+
+#page-wrap {
+	width: 850px;
+	background: white;
+	padding: 20px 50px 20px 50px;
+	margin: 20px auto;
+	min-height: 500px;
+	height: auto !important;
+	height: 500px;
+}
+
+.section {
+	padding: 5px;
+	width: 80%;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+	margin: 0px 0px 10px 0px;
+	border: 2px solid #ccc;
+	float: left;
+	
+
+}
+.component .section {
+	width: 50%;
+	float: left;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+}
+.component .label {
+	
+	font-weight: bold;
+	
+}
+.component .value{
+	
+	font-weight: normal;
+	
+}
+
+.header {
+float: left;
+width: 100%;
+float: left;
+}
+.header .logo {
+width: 30%;
+
+}
+.header .topic {
+font-family: Helvetica, sans-serif;
+font-size: 1.4em;
+font-weight: bold;
+width: 70%;
+}
+
+
+
+

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ServiceRequestServiceImplService" targetNamespace="http://www.arcusys.fi/pttk/palvelukanava" xmlns:ns1="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.arcusys.fi/pttk/palvelukanava" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://www.arcusys.fi/pttk/palvelukanava" version="1.0" xmlns:tns="http://www.arcusys.fi/pttk/palvelukanava" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="addOrUpdateRequest" type="tns:addOrUpdateRequest"/>
+<xs:element name="addOrUpdateRequestResponse" type="tns:addOrUpdateRequestResponse"/>
+<xs:element name="addServiceRequest" type="tns:addServiceRequest"/>
+<xs:element name="addServiceRequestResponse" type="tns:addServiceRequestResponse"/>
+<xs:element name="getServiceRequests" type="tns:getServiceRequests"/>
+<xs:element name="getServiceRequestsResponse" type="tns:getServiceRequestsResponse"/>
+<xs:element name="updateServiceRequest" type="tns:updateServiceRequest"/>
+<xs:element name="updateServiceRequestResponse" type="tns:updateServiceRequestResponse"/>
+<xs:complexType name="addOrUpdateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pid" type="xs:string"/>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addOrUpdateRequestResponse">
+    <xs:sequence>
+      <xs:element name="successful" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addServiceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pid" type="xs:string"/>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addServiceRequestResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="updateServiceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pid" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateServiceRequestResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getServiceRequests">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getServiceRequestsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ServiceRequest" type="tns:serviceRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="serviceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="date" type="xs:string"/>
+      <xs:element minOccurs="0" name="pid" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateServiceRequestResponse">
+    <wsdl:part element="tns:updateServiceRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateRequest">
+    <wsdl:part element="tns:addOrUpdateRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateServiceRequest">
+    <wsdl:part element="tns:updateServiceRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addServiceRequest">
+    <wsdl:part element="tns:addServiceRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getServiceRequests">
+    <wsdl:part element="tns:getServiceRequests" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addServiceRequestResponse">
+    <wsdl:part element="tns:addServiceRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateRequestResponse">
+    <wsdl:part element="tns:addOrUpdateRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getServiceRequestsResponse">
+    <wsdl:part element="tns:getServiceRequestsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ServiceRequestService">
+    <wsdl:operation name="addOrUpdateRequest">
+      <wsdl:input message="tns:addOrUpdateRequest" name="addOrUpdateRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:addOrUpdateRequestResponse" name="addOrUpdateRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addServiceRequest">
+      <wsdl:input message="tns:addServiceRequest" name="addServiceRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:addServiceRequestResponse" name="addServiceRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateServiceRequest">
+      <wsdl:input message="tns:updateServiceRequest" name="updateServiceRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:updateServiceRequestResponse" name="updateServiceRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceRequests">
+      <wsdl:input message="tns:getServiceRequests" name="getServiceRequests">
+    </wsdl:input>
+      <wsdl:output message="tns:getServiceRequestsResponse" name="getServiceRequestsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceRequestServiceImplServiceSoapBinding" type="tns:ServiceRequestService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addOrUpdateRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addOrUpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addOrUpdateRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addServiceRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addServiceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addServiceRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateServiceRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateServiceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateServiceRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceRequests">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getServiceRequests">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServiceRequestsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceRequestServiceImplService">
+    <wsdl:port binding="tns:ServiceRequestServiceImplServiceSoapBinding" name="ServiceRequestServiceImplPort">
+      <soap:address location="http://intalio.intra.arcusys.fi:8080/pttk-services/services/ServiceRequestService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

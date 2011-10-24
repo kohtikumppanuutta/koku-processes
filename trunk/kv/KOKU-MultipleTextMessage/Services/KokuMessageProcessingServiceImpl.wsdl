@@ -1,0 +1,117 @@
+<definitions name="KokuMessageProcessingService" targetNamespace="http://soa.kv.koku.arcusys.fi/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://soa.kv.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="receiveMessage" type="tns:receiveMessage"/>
+   <xs:element name="receiveMessageResponse" type="tns:receiveMessageResponse"/>
+   <xs:element name="receiveNewMessage" type="tns:receiveNewMessage"/>
+   <xs:element name="receiveNewMessageResponse" type="tns:receiveNewMessageResponse"/>
+   <xs:element name="sendMessage" type="tns:sendMessage"/>
+   <xs:element name="sendMessageResponse" type="tns:sendMessageResponse"/>
+   <xs:complexType name="receiveMessage">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="toUser" type="xs:string"/>
+     <xs:element minOccurs="0" name="messageId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="receiveMessageResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="sendMessage">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="fromUser" type="xs:string"/>
+     <xs:element minOccurs="0" name="subject" type="xs:string"/>
+     <xs:element minOccurs="0" name="receipients" type="tns:receipients"/>
+     <xs:element minOccurs="0" name="messageContent" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="receipients">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="receipient" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendMessageResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="messageId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="receiveNewMessage">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="fromUser" type="xs:string"/>
+     <xs:element minOccurs="0" name="subject" type="xs:string"/>
+     <xs:element minOccurs="0" name="toUser" type="xs:string"/>
+     <xs:element minOccurs="0" name="messageContent" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="receiveNewMessageResponse">
+    <xs:sequence/>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name="KokuMessageProcessingService_sendMessageResponse">
+  <part element="tns:sendMessageResponse" name="sendMessageResponse"/>
+ </message>
+ <message name="KokuMessageProcessingService_sendMessage">
+  <part element="tns:sendMessage" name="sendMessage"/>
+ </message>
+ <message name="KokuMessageProcessingService_receiveNewMessageResponse">
+  <part element="tns:receiveNewMessageResponse" name="receiveNewMessageResponse"/>
+ </message>
+ <message name="KokuMessageProcessingService_receiveNewMessage">
+  <part element="tns:receiveNewMessage" name="receiveNewMessage"/>
+ </message>
+ <message name="KokuMessageProcessingService_receiveMessageResponse">
+  <part element="tns:receiveMessageResponse" name="receiveMessageResponse"/>
+ </message>
+ <message name="KokuMessageProcessingService_receiveMessage">
+  <part element="tns:receiveMessage" name="receiveMessage"/>
+ </message>
+ <portType name="KokuMessageProcessingService">
+  <operation name="receiveMessage" parameterOrder="receiveMessage">
+   <input message="tns:KokuMessageProcessingService_receiveMessage"/>
+   <output message="tns:KokuMessageProcessingService_receiveMessageResponse"/>
+  </operation>
+  <operation name="receiveNewMessage" parameterOrder="receiveNewMessage">
+   <input message="tns:KokuMessageProcessingService_receiveNewMessage"/>
+   <output message="tns:KokuMessageProcessingService_receiveNewMessageResponse"/>
+  </operation>
+  <operation name="sendMessage" parameterOrder="sendMessage">
+   <input message="tns:KokuMessageProcessingService_sendMessage"/>
+   <output message="tns:KokuMessageProcessingService_sendMessageResponse"/>
+  </operation>
+ </portType>
+ <binding name="KokuMessageProcessingServiceBinding" type="tns:KokuMessageProcessingService">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="receiveMessage">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="receiveNewMessage">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="sendMessage">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="KokuMessageProcessingService">
+  <port binding="tns:KokuMessageProcessingServiceBinding" name="KokuMessageProcessingServicePort">
+   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl"/>
+  </port>
+ </service>
+</definitions>

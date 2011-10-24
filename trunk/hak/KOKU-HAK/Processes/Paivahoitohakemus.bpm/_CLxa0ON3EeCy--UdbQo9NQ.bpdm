@@ -1,0 +1,36 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:attachments="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi/attachments" xmlns:tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:this="http://thisdiagram/Kuntalainen" xmlns:diag="http://thisdiagram" xmlns:Paivahoitohakemus_init_Form="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Kuntalainen">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_Dq32EON3EeCy--UdbQo9NQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Kuntalainen" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_Dq32EON3EeCy--UdbQo9NQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi" bpdm:prefix="Paivahoitohakemus_init_Form" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_Dq32EON3EeCy--UdbQo9NQ" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Paivahoitohakemus_init_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Paivahoitohakemus.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Kuntalainen" bpdm:ID="_CLxa0ON3EeCy--UdbQo9NQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="prosessiAndKuntalainenForPortTypeProcessPlkVar" partnerLinkType="diag:ProsessiAndKuntalainenForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="Prosessi_for_Kuntalainen" bpdm:invokedService="Prosessi:ProsessiAndKuntalainenForPortTypeProcessPlkService" bpdm:invokedPort="Prosessi_for_KuntalainenPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Kuntalainen/ProsessiAndKuntalainenForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_CLxa0ON3EeCy--UdbQo9NQ:_LYdz4ON3EeCy--UdbQo9NQ" bpdm:isManaged="true" bpdm:otherPoolId="_Dq32EON3EeCy--UdbQo9NQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="paivahoitohakemus_init_FormInitProcessRequestMsg" messageType="Paivahoitohakemus_init_Form:initProcessRequest" bpdm:id="_Q1s4oON3EeCy--UdbQo9NQ" bpdm:messageIds=" out:_Q1cZ8ON3EeCy--UdbQo9NQ">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Paivahoitohakemus_init_Form:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="paivahoitohakemus_init_FormInitProcessResponseMsg" messageType="Paivahoitohakemus_init_Form:initProcessResponse" bpdm:id="_Rxjc5eN3EeCy--UdbQo9NQ" bpdm:messageIds="inc:_RxKbUON3EeCy--UdbQo9NQ"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="prosessiAndKuntalainenForPortTypeProcessPlkVar" portType="Paivahoitohakemus_init_Form:Process" isMyRole="false" enableSharing="false" bpdm:label="Lähetä hakemus" bpdm:ID="_LYdz4ON3EeCy--UdbQo9NQ">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="paivahoitohakemus_init_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_CLxa0ON3EeCy--UdbQo9NQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_init_Form:initProcessRequest" bpdm:ID="_Q1cZ8ON3EeCy--UdbQo9NQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="paivahoitohakemus_init_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_CLxa0ON3EeCy--UdbQo9NQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_init_Form:initProcessResponse" bpdm:ID="_RxKbUON3EeCy--UdbQo9NQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

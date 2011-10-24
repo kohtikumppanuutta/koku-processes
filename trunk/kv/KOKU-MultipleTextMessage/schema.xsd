@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://bpms.intalio.com/bpms/basic-types"
+    xmlns:tns="http://bpms.intalio.com/bpms/basic-types"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:element name="doXSLTransform1" type="xs:string" />
+	<xs:element name="doXSLTransform1_Response" type="xs:string" />
+	<xs:element name="doXSLTransform2" type="tns:doXSLTransform2_Type" />
+	<xs:element name="doXSLTransform2_Response" type="tns:doXSLTransform2_ResponseType" />
+
+	<xs:complexType name="ArrayOfItem">
+		<xs:sequence>
+			<xs:element type="xs:string" name="item" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="doXSLTransform2_Type">
+		<xs:sequence>
+			<xs:element type="tns:ArrayOfItem" name="items" />
+			<xs:element type="xs:string" name="item" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="doXSLTransform2_ResponseType">
+		<xs:sequence>
+			<xs:element type="tns:ArrayOfItem" name="items" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
+

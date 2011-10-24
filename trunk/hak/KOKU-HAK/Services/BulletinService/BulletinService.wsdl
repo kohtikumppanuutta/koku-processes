@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BulletinService" targetNamespace="http://ixonos.com/palvelukanava/services/bulletinservice" xmlns:ns1="http://ixonos.com/util/xsd" xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ixonos.com/palvelukanava/services/bulletinservice" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ixonos.com/util/xsd" xmlns:ns1="http://bulletinservice.services.palvelukanava.ixonos.com/xsd" xmlns:tns="http://ixonos.com/util/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://bulletinservice.services.palvelukanava.ixonos.com/xsd"/>
+  <xs:element name="addBulletin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userId" type="xs:string"/>
+        <xs:element name="bulletinContent" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBulletins">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="userId" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBulletinsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ns1:Bulletin"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removeBulletin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bulletinId" type="xs:string"/>
+        <xs:element name="userId" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+<xs:schema targetNamespace="http://bulletinservice.services.palvelukanava.ixonos.com/xsd" version="1.0" xmlns:tns="http://bulletinservice.services.palvelukanava.ixonos.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:complexType name="Bulletin">
+    <xs:sequence>
+      <xs:element form="qualified" name="bulletinId" type="xs:string"/>
+      <xs:element form="qualified" name="content" type="xs:string"/>
+      <xs:element form="qualified" name="date" type="xs:anySimpleType"/>
+      <xs:element form="qualified" name="userId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="removeBulletin">
+    <wsdl:part element="ns1:removeBulletin" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBulletinsResponse">
+    <wsdl:part element="ns1:getBulletinsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBulletins">
+    <wsdl:part element="ns1:getBulletins" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addBulletin">
+    <wsdl:part element="ns1:addBulletin" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BulletinServicePortType">
+    <wsdl:operation name="addBulletin">
+      <wsdl:input message="tns:addBulletin" name="addBulletin" wsaw:Action="urn:addBulletin">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getBulletins">
+      <wsdl:input message="tns:getBulletins" name="getBulletins" wsaw:Action="urn:getBulletins">
+    </wsdl:input>
+      <wsdl:output message="tns:getBulletinsResponse" name="getBulletinsResponse" wsaw:Action="urn:getBulletinsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeBulletin">
+      <wsdl:input message="tns:removeBulletin" name="removeBulletin" wsaw:Action="urn:removeBulletin">
+    </wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BulletinServiceSoapBinding" type="tns:BulletinServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addBulletin">
+      <soap:operation soapAction="urn:addBulletin" style="document"/>
+      <wsdl:input name="addBulletin">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getBulletins">
+      <soap:operation soapAction="urn:getBulletins" style="document"/>
+      <wsdl:input name="getBulletins">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBulletinsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeBulletin">
+      <soap:operation soapAction="urn:removeBulletin" style="document"/>
+      <wsdl:input name="removeBulletin">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BulletinService">
+    <wsdl:port binding="tns:BulletinServiceSoapBinding" name="BulletinServiceHttpSoap11Endpoint">
+      <soap:address location="http://intalio.intra.arcusys.fi:8080/pttk-services/services/BulletinService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

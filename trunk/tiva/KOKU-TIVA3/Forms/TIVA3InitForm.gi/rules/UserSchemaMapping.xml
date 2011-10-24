@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
+  <record jsxid="mi_1" jxstext="Operation (Transaction)" type="T" jsxopen="1" opname="jsxtransaction">
+    <headers jsxid="mi_2">
+      <record jsxid="mi_3" name="Content-Type" value="text/xml"/>
+    </headers>
+    <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../TIVA3.xsd">
+      <record jsxid="mi_5" jsxtext="TIVA3Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='TIVA3Form']" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" jsxopen="1">
+        <record jsxid="mi_6" jsxtext="Kayttaja" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja']">
+          <restrictions>
+            <record jsxid="mi_7" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_8" jsxtext="Kayttaja_Lahettaja" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja_Lahettaja']">
+            <restrictions>
+              <record jsxid="mi_9" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_10">
+              <record jsxid="mi_11" name="DOM" value="Kayttaja_Lahettaja"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_12" jsxtext="Kayttaja_Vastaanottaja1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja_Vastaanottaja1']">
+            <restrictions>
+              <record jsxid="mi_13" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_14">
+              <record jsxid="mi_15" name="DOM" value="Kayttaja_Vastaanottaja1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_16" jsxtext="Kayttaja_Vastaanottaja2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja_Vastaanottaja2']">
+            <restrictions>
+              <record jsxid="mi_17" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_18">
+              <record jsxid="mi_19" name="DOM" value="Kayttaja_Vastaanottaja2"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_20" jsxtext="Kayttaja_UseampiVastaanottaja" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja_UseampiVastaanottaja']">
+            <restrictions>
+              <record jsxid="mi_21" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_22">
+              <record jsxid="mi_23" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Kayttaja_UseampiVastaanottaja', my.getNamespace())));"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_24" jsxtext="Pohja" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja']">
+          <restrictions>
+            <record jsxid="mi_25" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_26" jsxtext="Pohja_PohjaId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_PohjaId']">
+            <restrictions>
+              <record jsxid="mi_27" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_28">
+              <record jsxid="mi_29" name="DOM" value="Pohja_PohjaId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_30" jsxtext="Pohja_Otsikko" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Otsikko']">
+            <restrictions>
+              <record jsxid="mi_31" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_32">
+              <record jsxid="mi_33" name="DOM" value="Pohja_Otsikko"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_34" jsxtext="Pohja_Kuvaus" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Kuvaus']">
+            <restrictions>
+              <record jsxid="mi_35" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_36">
+              <record jsxid="mi_37" name="DOM" value="Pohja_Kuvaus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_38" jsxtext="Pohja_Laatimispvm" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Laatimispvm']">
+            <restrictions>
+              <record jsxid="mi_39" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_40">
+              <record jsxid="mi_41" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('Pohja_Laatimispvm', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_42" jsxtext="Pohja_Laatija" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Laatija']">
+            <restrictions>
+              <record jsxid="mi_43" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_44">
+              <record jsxid="mi_45" name="DOM" value="Pohja_Laatija"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_46" jsxtext="Pohja_Extend1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Extend1']">
+            <restrictions>
+              <record jsxid="mi_47" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_48">
+              <record jsxid="mi_49" name="DOM" value="Pohja_Extend1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_50" jsxtext="Pohja_Extend2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Extend2']">
+            <restrictions>
+              <record jsxid="mi_51" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_52">
+              <record jsxid="mi_53" name="DOM" value="Pohja_Extend2"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_54" jsxtext="Suostumus" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus']">
+          <restrictions>
+            <record jsxid="mi_55" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_56" jsxtext="Suostumus_SuostumusId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus_SuostumusId']">
+            <restrictions>
+              <record jsxid="mi_57" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_58">
+              <record jsxid="mi_59" name="DOM" value="Suostumus_SuostumusId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_60" jsxtext="Suostumus_Kohdehenkilo" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus_Kohdehenkilo']">
+            <restrictions>
+              <record jsxid="mi_61" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_62">
+              <record jsxid="mi_63" name="DOM" value="Suostumus_Kohdehenkilo"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_64" jsxtext="Suostumus_Maaraaika" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus_Maaraaika']">
+            <restrictions>
+              <record jsxid="mi_65" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_66">
+              <record jsxid="mi_67" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('Suostumus_Maaraaika', my.getNamespace())));"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_68" jsxtext="Suostumus1" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_69" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_70" jsxtext="Suostumus1_Suostumustapa" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Suostumustapa']">
+            <restrictions>
+              <record jsxid="mi_71" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_72">
+              <record jsxid="mi_73" name="DOM" value="Suostumus1_Suostumustapa"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_74" jsxtext="Suostumus1_Suostumusajankohta" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Suostumusajankohta']">
+            <restrictions>
+              <record jsxid="mi_75" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_76">
+              <record jsxid="mi_77" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('Suostumus1_Suostumusajankohta', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_78" jsxtext="Suostumus1_Lisatiedot" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Lisatiedot']">
+            <restrictions>
+              <record jsxid="mi_79" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_80">
+              <record jsxid="mi_81" name="DOM" value="Suostumus1_Lisatiedot"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_82" jsxtext="Suostumus1_Liite" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Liite']">
+            <restrictions>
+              <record jsxid="mi_83" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_84">
+              <record jsxid="mi_85" name="DOM" value="liite_tiedosto1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_86" jsxtext="Suostumus1_Sailytyspaikka" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Sailytyspaikka']">
+            <restrictions>
+              <record jsxid="mi_87" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_88">
+              <record jsxid="mi_89" name="DOM" value="Suostumus1_Sailytyspaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_90" jsxtext="Suostumus1_Extend1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Extend1']">
+            <restrictions>
+              <record jsxid="mi_91" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_92">
+              <record jsxid="mi_93" name="DOM" value="Suostumus1_Extend1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_94" jsxtext="Suostumus1_Extend2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Extend2']">
+            <restrictions>
+              <record jsxid="mi_95" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_96">
+              <record jsxid="mi_97" name="DOM" value="Suostumus1_Extend2"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_98" jsxtext="Suostumus2" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_99" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_100" jsxtext="Suostumus2_Suostumustapa" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Suostumustapa']">
+            <restrictions>
+              <record jsxid="mi_101" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_102">
+              <record jsxid="mi_103" name="DOM" value="Suostumus2_Suostumustapa"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_104" jsxtext="Suostumus2_Suostumusjankohta" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Suostumusjankohta']">
+            <restrictions>
+              <record jsxid="mi_105" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_106">
+              <record jsxid="mi_107" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('Suostumus2_Suostumusjankohta', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_108" jsxtext="Suostumus2_Lisatiedot" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Lisatiedot']">
+            <restrictions>
+              <record jsxid="mi_109" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_110">
+              <record jsxid="mi_111" name="DOM" value="Suostumus2_Lisatiedot"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_112" jsxtext="Suostumus2_Liite" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Liite']" jsxselected="1">
+            <restrictions>
+              <record jsxid="mi_113" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_114">
+              <record jsxid="mi_115" name="DOM" value="liite_tiedosto2"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_116" jsxtext="Suostumus2_Sailytyspaikka" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Sailytyspaikka']">
+            <restrictions>
+              <record jsxid="mi_117" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_118">
+              <record jsxid="mi_119" name="DOM" value="Suostumus2_Sailytyspaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_120" jsxtext="Suostumus2_Extend1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Extend1']">
+            <restrictions>
+              <record jsxid="mi_121" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_122">
+              <record jsxid="mi_123" name="DOM" value="Suostumus2_Extend1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_124" jsxtext="Suostumus2_Extend2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Extend2']">
+            <restrictions>
+              <record jsxid="mi_125" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_126">
+              <record jsxid="mi_127" name="DOM" value="Suostumus2_Extend2"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_128" jsxtext="Vastaanottajat" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaanottajat']">
+          <restrictions>
+            <record jsxid="mi_129" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_130" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_131" jsxtext="Vastaanottajat_Vastaanottaja1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaanottajat_Vastaanottaja1']">
+            <restrictions>
+              <record jsxid="mi_132" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_133">
+              <record jsxid="mi_134" name="CDF Attribute" value="Vastaanottajat_Vastaanottaja1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_135" jsxtext="Vastaanottajat_Vastaanottaja2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaanottajat_Vastaanottaja2']">
+            <restrictions>
+              <record jsxid="mi_136" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_137">
+              <record jsxid="mi_138" name="CDF Attribute" value="Vastaanottajat_Vastaanottaja2"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_139" jsxtext="Vastaanottajat_Kohdehenkilo" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaanottajat_Kohdehenkilo']">
+            <restrictions>
+              <record jsxid="mi_140" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_141">
+              <record jsxid="mi_142" name="CDF Attribute" value="Vastaanottajat_Kohdehenkilo"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_143">
+            <record jsxid="mi_144" name="Script" value="if(typeof(this._i_144)=='undefined'){this._i_144=-1;my.getCDFDocument('Vastaanottajat-nomap','OUTBOUND');}"/>
+            <record jsxid="mi_145" name="CDF Record"/>
+          </mappings>
+        </record>
+        <record jsxid="mi_146" jsxtext="Toimenpiteet" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Toimenpiteet']">
+          <restrictions>
+            <record jsxid="mi_147" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_148" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_149" jsxtext="Toimenpiteet_ToimenpideId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Toimenpiteet_ToimenpideId']">
+            <restrictions>
+              <record jsxid="mi_150" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_151">
+              <record jsxid="mi_152" name="CDF Attribute" value="Toimenpiteet_ToimenpideId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_153" jsxtext="Toimenpiteet_Kuvaus" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Toimenpiteet_Kuvaus']">
+            <restrictions>
+              <record jsxid="mi_154" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_155">
+              <record jsxid="mi_156" name="CDF Attribute" value="Toimenpiteet_Kuvaus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_157" jsxtext="Toimenpiteet_Tarkentava_Teksti" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Toimenpiteet_Tarkentava_Teksti']">
+            <restrictions>
+              <record jsxid="mi_158" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_159">
+              <record jsxid="mi_160" name="CDF Attribute" value="Toimenpiteet_Tarkentava_Teksti"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_161">
+            <record jsxid="mi_162" name="Script" value="if(typeof(this._i_162)=='undefined'){this._i_162=-1;my.getCDFDocument('Toimenpiteet-nomap','OUTBOUND');}"/>
+            <record jsxid="mi_163" name="CDF Record"/>
+          </mappings>
+        </record>
+        <record jsxid="mi_164" jsxtext="Vastaukset" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaukset']">
+          <restrictions>
+            <record jsxid="mi_165" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_166" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_167" jsxtext="Vastaukset_VastausId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaukset_VastausId']">
+            <restrictions>
+              <record jsxid="mi_168" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_169">
+              <record jsxid="mi_170" name="CDF Attribute" value="Vastaukset_VastausId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_171" jsxtext="Vastaukset_Vastaus" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaukset_Vastaus']">
+            <restrictions>
+              <record jsxid="mi_172" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_173">
+              <record jsxid="mi_174" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutputMatrix(CDFCONTEXT.getAttribute('Vastaukset_Vastaus')));"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_175">
+            <record jsxid="mi_176" name="Script" value="if(typeof(this._i_176)=='undefined'){this._i_176=-1;my.getCDFDocument('Vastaukset-nomap','OUTBOUND');}"/>
+            <record jsxid="mi_177" name="CDF Record"/>
+          </mappings>
+        </record>
+      </record>
+    </record>
+    <record jsxid="mi_178" jsxtext="Output (response)" type="O" jsxopen="1" src="../TIVA3.xsd">
+      <record jsxid="mi_179" jsxtext="TIVA3Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='TIVA3Form']" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" jsxopen="1">
+        <record jsxid="mi_180" jsxtext="Kayttaja" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja']">
+          <restrictions>
+            <record jsxid="mi_181" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_182" jsxtext="Kayttaja_Lahettaja" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja_Lahettaja']">
+            <restrictions>
+              <record jsxid="mi_183" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_184">
+              <record jsxid="mi_185" name="DOM" value="Kayttaja_Lahettaja"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_186" jsxtext="Kayttaja_Vastaanottaja1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja_Vastaanottaja1']">
+            <restrictions>
+              <record jsxid="mi_187" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_188">
+              <record jsxid="mi_189" name="DOM" value="Kayttaja_Vastaanottaja1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_190" jsxtext="Kayttaja_Vastaanottaja2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja_Vastaanottaja2']">
+            <restrictions>
+              <record jsxid="mi_191" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_192">
+              <record jsxid="mi_193" name="DOM" value="Kayttaja_Vastaanottaja2"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_194" jsxtext="Kayttaja_UseampiVastaanottaja" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Kayttaja_UseampiVastaanottaja']">
+            <restrictions>
+              <record jsxid="mi_195" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_196">
+              <record jsxid="mi_197" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Kayttaja_UseampiVastaanottaja', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_198" jsxtext="Pohja" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja']">
+          <restrictions>
+            <record jsxid="mi_199" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_200" jsxtext="Pohja_PohjaId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_PohjaId']">
+            <restrictions>
+              <record jsxid="mi_201" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_202">
+              <record jsxid="mi_203" name="DOM" value="Pohja_PohjaId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_204" jsxtext="Pohja_Otsikko" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Otsikko']">
+            <restrictions>
+              <record jsxid="mi_205" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_206">
+              <record jsxid="mi_207" name="DOM" value="Pohja_Otsikko"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_208" jsxtext="Pohja_Kuvaus" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Kuvaus']">
+            <restrictions>
+              <record jsxid="mi_209" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_210">
+              <record jsxid="mi_211" name="DOM" value="Pohja_Kuvaus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_212" jsxtext="Pohja_Laatimispvm" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Laatimispvm']">
+            <restrictions>
+              <record jsxid="mi_213" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_214">
+              <record jsxid="mi_215" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('Pohja_Laatimispvm', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_216" jsxtext="Pohja_Laatija" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Laatija']">
+            <restrictions>
+              <record jsxid="mi_217" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_218">
+              <record jsxid="mi_219" name="DOM" value="Pohja_Laatija"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_220" jsxtext="Pohja_Extend1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Extend1']">
+            <restrictions>
+              <record jsxid="mi_221" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_222">
+              <record jsxid="mi_223" name="DOM" value="Pohja_Extend1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_224" jsxtext="Pohja_Extend2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Pohja_Extend2']">
+            <restrictions>
+              <record jsxid="mi_225" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_226">
+              <record jsxid="mi_227" name="DOM" value="Pohja_Extend2"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_228" jsxtext="Suostumus" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus']">
+          <restrictions>
+            <record jsxid="mi_229" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_230" jsxtext="Suostumus_SuostumusId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus_SuostumusId']">
+            <restrictions>
+              <record jsxid="mi_231" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_232">
+              <record jsxid="mi_233" name="DOM" value="Suostumus_SuostumusId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_234" jsxtext="Suostumus_Kohdehenkilo" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus_Kohdehenkilo']">
+            <restrictions>
+              <record jsxid="mi_235" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_236">
+              <record jsxid="mi_237" name="DOM" value="Suostumus_Kohdehenkilo"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_238" jsxtext="Suostumus_Maaraaika" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus_Maaraaika']">
+            <restrictions>
+              <record jsxid="mi_239" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_240">
+              <record jsxid="mi_241" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('Suostumus_Maaraaika', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_242" jsxtext="Suostumus1" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_243" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_244" jsxtext="Suostumus1_Suostumustapa" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Suostumustapa']">
+            <restrictions>
+              <record jsxid="mi_245" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_246">
+              <record jsxid="mi_247" name="DOM" value="Suostumus1_Suostumustapa"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_248" jsxtext="Suostumus1_Suostumusajankohta" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Suostumusajankohta']">
+            <restrictions>
+              <record jsxid="mi_249" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_250">
+              <record jsxid="mi_251" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('Suostumus1_Suostumusajankohta', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_252" jsxtext="Suostumus1_Lisatiedot" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Lisatiedot']">
+            <restrictions>
+              <record jsxid="mi_253" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_254">
+              <record jsxid="mi_255" name="DOM" value="Suostumus1_Lisatiedot"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_256" jsxtext="Suostumus1_Liite" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Liite']">
+            <restrictions>
+              <record jsxid="mi_257" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_258">
+              <record jsxid="mi_259" name="DOM" value="Suostumus1_Liite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_260" jsxtext="Suostumus1_Sailytyspaikka" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Sailytyspaikka']">
+            <restrictions>
+              <record jsxid="mi_261" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_262">
+              <record jsxid="mi_263" name="DOM" value="Suostumus1_Sailytyspaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_264" jsxtext="Suostumus1_Extend1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Extend1']">
+            <restrictions>
+              <record jsxid="mi_265" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_266">
+              <record jsxid="mi_267" name="DOM" value="Suostumus1_Extend1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_268" jsxtext="Suostumus1_Extend2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus1_Extend2']">
+            <restrictions>
+              <record jsxid="mi_269" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_270">
+              <record jsxid="mi_271" name="DOM" value="Suostumus1_Extend2"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_272" jsxtext="Suostumus2" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_273" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_274" jsxtext="Suostumus2_Suostumustapa" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Suostumustapa']">
+            <restrictions>
+              <record jsxid="mi_275" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_276">
+              <record jsxid="mi_277" name="DOM" value="Suostumus2_Suostumustapa"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_278" jsxtext="Suostumus2_Suostumusjankohta" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Suostumusjankohta']">
+            <restrictions>
+              <record jsxid="mi_279" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_280">
+              <record jsxid="mi_281" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('Suostumus2_Suostumusjankohta', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_282" jsxtext="Suostumus2_Lisatiedot" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Lisatiedot']">
+            <restrictions>
+              <record jsxid="mi_283" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_284">
+              <record jsxid="mi_285" name="DOM" value="Suostumus2_Lisatiedot"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_286" jsxtext="Suostumus2_Liite" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Liite']">
+            <restrictions>
+              <record jsxid="mi_287" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_288">
+              <record jsxid="mi_289" name="DOM" value="Suostumus2_Liite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_290" jsxtext="Suostumus2_Sailytyspaikka" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Sailytyspaikka']">
+            <restrictions>
+              <record jsxid="mi_291" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_292">
+              <record jsxid="mi_293" name="DOM" value="Suostumus2_Sailytyspaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_294" jsxtext="Suostumus2_Extend1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Extend1']">
+            <restrictions>
+              <record jsxid="mi_295" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_296">
+              <record jsxid="mi_297" name="DOM" value="Suostumus2_Extend1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_298" jsxtext="Suostumus2_Extend2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Suostumus2_Extend2']">
+            <restrictions>
+              <record jsxid="mi_299" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_300">
+              <record jsxid="mi_301" name="DOM" value="Suostumus2_Extend2"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_302" jsxtext="Vastaanottajat" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaanottajat']">
+          <restrictions>
+            <record jsxid="mi_303" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_304" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_305" jsxtext="Vastaanottajat_Vastaanottaja1" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaanottajat_Vastaanottaja1']">
+            <restrictions>
+              <record jsxid="mi_306" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_307">
+              <record jsxid="mi_308" name="CDF Attribute" value="Vastaanottajat_Vastaanottaja1"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_309" jsxtext="Vastaanottajat_Vastaanottaja2" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaanottajat_Vastaanottaja2']">
+            <restrictions>
+              <record jsxid="mi_310" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_311">
+              <record jsxid="mi_312" name="CDF Attribute" value="Vastaanottajat_Vastaanottaja2"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_313" jsxtext="Vastaanottajat_Kohdehenkilo" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaanottajat_Kohdehenkilo']">
+            <restrictions>
+              <record jsxid="mi_314" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_315">
+              <record jsxid="mi_316" name="CDF Attribute" value="Vastaanottajat_Kohdehenkilo"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_317">
+            <record jsxid="mi_318" name="Script" value="if(typeof(this._i_318)=='undefined'){this._i_318=-1;my.getCDFDocument('Vastaanottajat-nomap','INBOUND');}"/>
+            <record jsxid="mi_319" name="CDF Record"/>
+          </mappings>
+        </record>
+        <record jsxid="mi_320" jsxtext="Toimenpiteet" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Toimenpiteet']">
+          <restrictions>
+            <record jsxid="mi_321" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_322" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_323" jsxtext="Toimenpiteet_ToimenpideId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Toimenpiteet_ToimenpideId']">
+            <restrictions>
+              <record jsxid="mi_324" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_325">
+              <record jsxid="mi_326" name="CDF Attribute" value="Toimenpiteet_ToimenpideId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_327" jsxtext="Toimenpiteet_Kuvaus" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Toimenpiteet_Kuvaus']">
+            <restrictions>
+              <record jsxid="mi_328" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_329">
+              <record jsxid="mi_330" name="CDF Attribute" value="Toimenpiteet_Kuvaus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_331" jsxtext="Toimenpiteet_Tarkentava_Teksti" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Toimenpiteet_Tarkentava_Teksti']">
+            <restrictions>
+              <record jsxid="mi_332" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_333">
+              <record jsxid="mi_334" name="CDF Attribute" value="Toimenpiteet_Tarkentava_Teksti"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_335">
+            <record jsxid="mi_336" name="Script" value="if(typeof(this._i_336)=='undefined'){this._i_336=-1;my.getCDFDocument('Toimenpiteet-nomap','INBOUND');}"/>
+            <record jsxid="mi_337" name="CDF Record"/>
+          </mappings>
+        </record>
+        <record jsxid="mi_338" jsxtext="Vastaukset" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaukset']">
+          <restrictions>
+            <record jsxid="mi_339" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_340" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_341" jsxtext="Vastaukset_VastausId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaukset_VastausId']">
+            <restrictions>
+              <record jsxid="mi_342" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_343">
+              <record jsxid="mi_344" name="CDF Attribute" value="Vastaukset_VastausId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_345" jsxtext="Vastaukset_Vastaus" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/TIVA3" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/TIVA3']//jsx1:element[@name='Vastaukset_Vastaus']">
+            <restrictions>
+              <record jsxid="mi_346" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_347">
+              <record jsxid="mi_348" name="Script" value="CDFCONTEXT.setAttribute('Vastaukset_Vastaus', Intalio.Internal.Utilities.fixCheckboxInputMatrix(MESSAGENODE.getValue()));"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_349">
+            <record jsxid="mi_350" name="Script" value="if(typeof(this._i_350)=='undefined'){this._i_350=-1;my.getCDFDocument('Vastaukset-nomap','INBOUND');}"/>
+            <record jsxid="mi_351" name="CDF Record"/>
+          </mappings>
+        </record>
+      </record>
+    </record>
+  </record>
+</data>

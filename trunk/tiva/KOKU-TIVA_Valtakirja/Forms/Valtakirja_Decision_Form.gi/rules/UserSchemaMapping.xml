@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
+  <record jsxid="mi_1" jxstext="Operation (Transaction)" type="T" jsxopen="1" opname="jsxtransaction">
+    <headers jsxid="mi_2">
+      <record jsxid="mi_3" name="Content-Type" value="text/xml"/>
+    </headers>
+    <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../Valtakirja.xsd">
+      <record jsxid="mi_5" jsxtext="Valtakirja_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirja_Form']" datatype="" tns="http://www.arcusys.fi/Valtakirja" jsxopen="1">
+        <record jsxid="mi_6" jsxtext="Valtakirjapohja" type="C" datatype="" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirjapohja']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_7" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_8" jsxtext="Valtakirjapohja_Id" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirjapohja_Id']">
+            <restrictions>
+              <record jsxid="mi_9" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_10">
+              <record jsxid="mi_11" name="DOM" value="Valtakirjapohja_Id"/>
+            </mappings>
+          </record>
+        <record jsxid="x37579" jsxtext="Valtakirjapohja_Nimi" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirjapohja_Nimi']">
+            <restrictions>
+              <record jsxid="x84306" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_10">
+              <record jsxid="x89293" name="DOM" value="Valtakirjapohja_Nimi"/>
+            </mappings>
+          </record><record jsxid="x9822" jsxtext="Valtakirjapohja_Kuvaus" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirjapohja_Kuvaus']">
+            <restrictions>
+              <record jsxid="x68245" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_10">
+              <record jsxid="x24072" name="DOM" value="Valtakirjapohja_Kuvaus"/>
+            </mappings>
+          </record></record>
+        <record jsxid="mi_12" jsxtext="Tiedot" type="C" datatype="" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_13" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_14" jsxtext="Tiedot_ValtakirjaId" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_ValtakirjaId']">
+            <restrictions>
+              <record jsxid="mi_15" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_16">
+              <record jsxid="mi_17" name="DOM" value="Tiedot_ValtakirjaId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_18" jsxtext="Tiedot_Voimassa" type="E" datatype="date" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Voimassa']">
+            <restrictions>
+              <record jsxid="mi_19" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_20">
+              <record jsxid="mi_21" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('Tiedot_Voimassa', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_22" jsxtext="Tiedot_VastausMennessa" type="E" datatype="date" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_VastausMennessa']">
+            <restrictions>
+              <record jsxid="mi_23" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_24">
+              <record jsxid="mi_25" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('Tiedot_VastausMennessa', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_26" jsxtext="Tiedot_Hyvaksytty" type="E" datatype="boolean" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Hyvaksytty']">
+            <restrictions>
+              <record jsxid="mi_27" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_28">
+              <record jsxid="mi_29" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Tiedot_Hyvaksytty', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_30" jsxtext="Tiedot_Mitatoity" type="E" datatype="boolean" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Mitatoity']">
+            <restrictions>
+              <record jsxid="mi_31" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_32">
+              <record jsxid="mi_33" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Tiedot_Mitatoity', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_34" jsxtext="Tiedot_Lahettaja" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Lahettaja']">
+            <restrictions>
+              <record jsxid="mi_35" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_36">
+              <record jsxid="mi_37" name="DOM" value="Tiedot_Lahettaja"/>
+            </mappings>
+          </record>
+          <record jsxid="x1890" jsxtext="Tiedot_Henkilo" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Henkilo']">
+            <restrictions>
+              <record jsxid="x96982" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_40">
+              <record jsxid="x90942" name="DOM" value="Tiedot_Henkilo"/>
+            </mappings>
+          </record><record jsxid="mi_38" jsxtext="Tiedot_Vastaanottaja" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Vastaanottaja']">
+            <restrictions>
+              <record jsxid="mi_39" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_40">
+              <record jsxid="mi_41" name="DOM" value="Tiedot_Vastaanottaja"/>
+            </mappings>
+          </record>
+        <record jsxid="x74396" jsxtext="Tiedot_VastaanottajanKommentti" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_VastaanottajanKommentti']">
+            <restrictions>
+              <record jsxid="x43253" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_40">
+              <record jsxid="x24882" name="DOM" value="Tiedot_VastaanottajanKommentti"/>
+            </mappings>
+          </record><record jsxid="x40413" jsxtext="Tiedot_VastaanottajaDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_VastaanottajaDisplay']">
+            <restrictions>
+              <record jsxid="x25958" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_40">
+              <record jsxid="x61771" name="DOM" value="Tiedot_VastaanottajaDisplay"/>
+            </mappings>
+          </record><record jsxid="x28867" jsxtext="Tiedot_LahettajaDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_LahettajaDisplay']">
+            <restrictions>
+              <record jsxid="x87776" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_36">
+              <record jsxid="x66108" name="DOM" value="Tiedot_LahettajaDisplay"/>
+            </mappings>
+          </record><record jsxid="x65612" jsxtext="Tiedot_HenkiloDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_HenkiloDisplay']">
+            <restrictions>
+              <record jsxid="x56517" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_40">
+              <record jsxid="x77337" name="DOM" value="Tiedot_HenkiloDisplay"/>
+            </mappings>
+          </record></record>
+      </record>
+    </record>
+    <record jsxid="mi_42" jsxtext="Output (response)" type="O" jsxopen="1" src="../Valtakirja.xsd">
+      <record jsxid="mi_43" jsxtext="Valtakirja_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirja_Form']" datatype="" tns="http://www.arcusys.fi/Valtakirja" jsxopen="1">
+        <record jsxid="mi_44" jsxtext="Valtakirjapohja" type="C" datatype="" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirjapohja']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_45" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_46" jsxtext="Valtakirjapohja_Id" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirjapohja_Id']">
+            <restrictions>
+              <record jsxid="mi_47" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_48">
+              <record jsxid="mi_49" name="DOM" value="Valtakirjapohja_Id"/>
+            </mappings>
+          </record>
+        <record jsxid="x91762" jsxtext="Valtakirjapohja_Nimi" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirjapohja_Nimi']">
+            <restrictions>
+              <record jsxid="x66977" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_48">
+              <record jsxid="x25081" name="DOM" value="Valtakirjapohja_Nimi"/>
+            </mappings>
+          </record><record jsxid="x97048" jsxtext="Valtakirjapohja_Kuvaus" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Valtakirjapohja_Kuvaus']">
+            <restrictions>
+              <record jsxid="x6317" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_48">
+              <record jsxid="x90012" name="DOM" value="Valtakirjapohja_Kuvaus"/>
+            </mappings>
+          </record></record>
+        <record jsxid="mi_50" jsxtext="Tiedot" type="C" datatype="" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_51" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_52" jsxtext="Tiedot_ValtakirjaId" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_ValtakirjaId']">
+            <restrictions>
+              <record jsxid="mi_53" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_54">
+              <record jsxid="mi_55" name="DOM" value="Tiedot_ValtakirjaId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_56" jsxtext="Tiedot_Voimassa" type="E" datatype="date" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Voimassa']">
+            <restrictions>
+              <record jsxid="mi_57" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_58">
+              <record jsxid="mi_59" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('Tiedot_Voimassa', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_60" jsxtext="Tiedot_VastausMennessa" type="E" datatype="date" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_VastausMennessa']">
+            <restrictions>
+              <record jsxid="mi_61" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_62">
+              <record jsxid="mi_63" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('Tiedot_VastausMennessa', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_64" jsxtext="Tiedot_Hyvaksytty" type="E" datatype="boolean" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Hyvaksytty']">
+            <restrictions>
+              <record jsxid="mi_65" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_66">
+              <record jsxid="mi_67" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Tiedot_Hyvaksytty', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_68" jsxtext="Tiedot_Mitatoity" type="E" datatype="boolean" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Mitatoity']">
+            <restrictions>
+              <record jsxid="mi_69" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_70">
+              <record jsxid="mi_71" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Tiedot_Mitatoity', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_72" jsxtext="Tiedot_Lahettaja" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Lahettaja']">
+            <restrictions>
+              <record jsxid="mi_73" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_74">
+              <record jsxid="mi_75" name="DOM" value="Tiedot_Lahettaja"/>
+            </mappings>
+          </record>
+          <record jsxid="x11637" jsxtext="Tiedot_Henkilo" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Henkilo']">
+            <restrictions>
+              <record jsxid="x79454" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_74">
+              <record jsxid="x5780" name="DOM" value="Tiedot_Henkilo"/>
+            </mappings>
+          </record><record jsxid="mi_76" jsxtext="Tiedot_Vastaanottaja" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_Vastaanottaja']">
+            <restrictions>
+              <record jsxid="mi_77" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_78">
+              <record jsxid="mi_79" name="DOM" value="Tiedot_Vastaanottaja"/>
+            </mappings>
+          </record>
+        <record jsxid="x43305" jsxtext="Tiedot_VastaanottajanKommentti" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_VastaanottajanKommentti']" jsxselected="1" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x54476" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_78">
+              <record jsxid="x54761" name="DOM" value="Tiedot_VastaanottajanKommentti"/>
+            <record jsxid="jsx_1" value="prepareDecision();" name="Script"/><record jsxid="jsx_2" value="hideButtonsAndImages();" name="Script"/></mappings>
+          </record><record jsxid="x74180" jsxtext="Tiedot_LahettajaDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_LahettajaDisplay']">
+            <restrictions>
+              <record jsxid="x41129" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_74">
+              <record jsxid="x42618" name="DOM" value="Tiedot_LahettajaDisplay"/>
+            </mappings>
+          </record><record jsxid="x23860" jsxtext="Tiedot_VastaanottajaDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_VastaanottajaDisplay']">
+            <restrictions>
+              <record jsxid="x35382" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_78">
+              <record jsxid="x45938" name="DOM" value="Tiedot_VastaanottajaDisplay"/>
+            </mappings>
+          </record><record jsxid="x80113" jsxtext="Tiedot_HenkiloDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/Valtakirja" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/Valtakirja']//jsx1:element[@name='Tiedot_HenkiloDisplay']">
+            <restrictions>
+              <record jsxid="x66336" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_74">
+              <record jsxid="x74267" name="DOM" value="Tiedot_HenkiloDisplay"/>
+            </mappings>
+          </record></record>
+      </record>
+    </record>
+  </record>
+</data>

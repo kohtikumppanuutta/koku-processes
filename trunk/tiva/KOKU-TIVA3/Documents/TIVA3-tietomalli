@@ -1,0 +1,40 @@
+Pohja
+  PohjaId
+  Otsikko
+  Kuvaus
+  Laatimis pvm (creation date)
+  Laatija (creator)
+Lomake
+  LomakeId
+  Kohdehenkilö (target person)
+  (KohdehenkilöId?)
+  määräaika (validity period)
+  lisätiedot (other information)
+Suostumus [*]
+  Suostuja
+  (SuostujaId?)
+  suostumustapa (suullinen, paperilomake, fax, sähköposti) (consent type)
+  suostumusajankohta (consent date)
+  liite (attachment)
+  paperilla annetun suostumuksen säilytyspaikka (storage location of consent given in paper format)
+  lisätiedot (other information)
+
+Web Services
+  luoSuostumuspohja
+    request:
+      - Pohja
+    response:
+      - PohjaId
+  selaaSuostumuspohjat (prefill)
+    request:
+      - PohjaId
+    response:
+      - Pohja
+  kirjaaSuostumus
+    request:
+      - PohjaId
+      - Lomake
+      - Suostumus [*]
+    response:
+      - LomakeId
+

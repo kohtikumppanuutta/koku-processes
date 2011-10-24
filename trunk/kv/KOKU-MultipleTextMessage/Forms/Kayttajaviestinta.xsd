@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.kv.koku.arcusys.fi/" xmlns:tns="http://soa.kv.koku.arcusys.fi/" elementFormDefault="qualified">
+<complexType name="Message_Type">
+    	<sequence>
+    		<element name="Message_FromUser" type="string"/>
+			<element name="Message_Content" type="string"/>
+			<element name="Message_Subject" type="string"/>
+			
+    	</sequence>
+    </complexType>
+    <complexType name="Kayttajaviestinta_Type">
+		<sequence>
+			<element name="Message" type="tns:Message_Type" />
+			<element name="receipients" type="tns:receipients_Type" maxOccurs="unbounded" minOccurs="0"/>
+		</sequence>
+    </complexType>
+    <element name="Kayttajaviestinta_Form"
+    	type="tns:Kayttajaviestinta_Type" />
+
+    <complexType name="receipients_Type">
+		<sequence>
+			<element name="receipient" type="string"></element>
+			<element name="receipientDisplay" type="string"></element>
+		</sequence>
+	</complexType>
+
+</schema>

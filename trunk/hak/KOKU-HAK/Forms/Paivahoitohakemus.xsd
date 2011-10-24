@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus">
+
+    <complexType name="User_Metadata_Type">
+    	<sequence>
+    		<element name="Username" type="string"></element>
+    		<element name="Firstname" type="string"></element>
+    		<element name="Lastname" type="string"></element>
+    		<element name="SSN" type="string"></element>
+    		<element name="Last_logon" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Application_Metadata_Type">
+    	<sequence>
+    		<element name="Status" type="string"></element>
+    		<element name="Name" type="string"></element>
+    		<element name="Category" type="string"></element>
+    		<element name="Created_Date" type="string"></element>
+    		<element name="Changed_Date" type="string"></element>
+    		<element name="ID_Number" type="string"></element>
+    		<element name="Kirjaus_Nro" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Administrator_Metadata_Type">
+    	<sequence>
+    		<element name="Username" type="string"></element>
+    		<element name="Firstname" type="string"></element>
+    		<element name="Lastname" type="string"></element>
+    		<element name="Authenticated_with" type="string"></element>
+    		<element name="Date" type="string"></element>
+    		<element name="Rolename" type="string"></element>
+    		<element name="Email" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Paatos_Type">
+    	<sequence>  
+    		<element name="Paatos_Paatos" type="string"></element>
+    		<element name="Paatos_Extend01" type="string"></element>
+    		<element name="Paatos_Extend02" type="string"></element>
+    		<element name="Paatos_Extend03" type="string"></element>
+    		<element name="Paatos_Extend04" type="string"></element>
+	    	<element name="Paatos_Extend05" type="string"></element>	
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Tyyppi_Type">
+    	<sequence>  
+    		<element name="Tyyppi_Tyyppi" type="string"></element>	
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Lapsi_Type">
+    	<sequence>
+    		<element name="Lapsi_Etunimi" type="string"></element>
+    		<element name="Lapsi_Sukunimi" type="string"></element>
+    		<element name="Lapsi_Henkilotunnus" type="string"></element>
+    		<element name="Lapsi_Lahiosoite" type="string"></element>
+    		<element name="Lapsi_Postinumero" type="string"></element>
+    		<element name="Lapsi_Postitoimipaikka" type="string"></element>
+    		<element name="Lapsi_Aidinkieli">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Suomi"></enumeration>
+    					<enumeration value="Ruotsi"></enumeration>
+    					<enumeration value="Saame"></enumeration>
+    					<enumeration value="Venäjä"></enumeration>
+    					<enumeration value="Tanska-Norja-Islanti"></enumeration>
+    					<enumeration value="Englanti"></enumeration>
+    					<enumeration value="Saksa"></enumeration>
+    					<enumeration value="Ranska"></enumeration>
+    					<enumeration value="Muu"></enumeration>
+    					<enumeration value="Tuntematon"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Lapsi_Kotipaikka">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Joensuu"></enumeration>
+    					<enumeration value="Lieksa"></enumeration>
+    					<enumeration value="Kontiolahti"></enumeration>
+    					<enumeration value="Eno"></enumeration>
+    					<enumeration value="Kitee"></enumeration>
+    					<enumeration value="Pyhäselkä"></enumeration>
+    					<enumeration value="Rääkkylä"></enumeration>
+    					<enumeration value="Nurmes"></enumeration>
+    					<enumeration value="Valtimo"></enumeration>
+    					<enumeration value="Tohmajärvi"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Lapsi_Extend01" type="string"></element>
+    		<element name="Lapsi_Extend02" type="string"></element>
+    		<element name="Lapsi_AidinkieliKoodi" type="string"></element>
+    		<element name="Lapsi_KotipaikkaKoodi" type="string"></element>
+    		<element name="Lapsi_Alue">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Lapsi_AlueKoodi" type="string"></element>
+    		<element name="Lapsi_Valittu" type="string"></element>
+    		<element name="Lapsi_ValittuDisplay" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Huoltaja_Type">
+    	<sequence>
+    		<element name="Huoltaja_Etunimi" type="string"></element>
+    		<element name="Huoltaja_Sukunimi" type="string"></element>
+    		<element name="Huoltaja_Henkilotunnus" type="string"></element>
+    		<element name="Huoltaja_Puhelin" type="string"></element>
+    		<element name="Huoltaja_Sahkopostiosoite" type="string"></element>
+    		<element name="Huoltaja_Matkapuhelin" type="string"></element>
+    		<element name="Huoltaja_Tyopaikka" type="string"></element>
+    		<element name="Huoltaja_TyopaikanOsoite" type="string"></element>
+    		<element name="Huoltaja_TyopaikanPuhelin" type="string"></element>
+    		<element name="Huoltaja_Ammatti" type="string"></element>
+    		<element name="Huoltaja_TyoaikaAlkaa" type="string"></element>
+    		<element name="Huoltaja_TyoaikaLoppuu" type="string"></element>
+    		<element name="Huoltaja_VuorotyoKylla" type="boolean"></element>
+    		<element name="Huoltaja_VuorotyoEi" type="boolean"></element>
+    		<element name="Huoltaja_Huoltajuus">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Yksinhuoltajuus"></enumeration>
+    					<enumeration value="Yhteishuoltajuus"></enumeration>
+    					<enumeration
+    						value="Perhehoitoon sijoitettu lapsi">
+    					</enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Huoltaja_Perhesuhde">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Naimaton"></enumeration>
+    					<enumeration value="Avioliitossa"></enumeration>
+    					<enumeration value="Asumuserossa"></enumeration>
+    					<enumeration value="Eronnut"></enumeration>
+    					<enumeration value="Leski"></enumeration>
+    					<enumeration value="Avoliitossa"></enumeration>
+    					<enumeration value="Rekisteröity parisuhde"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Huoltaja_Extend01" type="string"></element>
+    		<element name="Huoltaja_Extend02" type="string"></element>
+    		<element name="Huoltaja_HuoltajuusKoodi" type="string"></element>
+    		<element name="Huoltaja_PerhesuhdeKoodi" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Puoliso_Type">
+    	<sequence>
+    		<element name="Puoliso_Etunimi" type="string"></element>
+    		<element name="Puoliso_Sukunimi" type="string"></element>
+    		<element name="Puoliso_Henkilotunnus" type="string"></element>
+    		<element name="Puoliso_Puhelin" type="string"></element>
+    		<element name="Puoliso_Sahkopostiosoite" type="string"></element>
+    		<element name="Puoliso_Matkapuhelin" type="string"></element>
+    		<element name="Puoliso_Tyopaikka" type="string"></element>
+    		<element name="Puoliso_TyopaikanOsoite" type="string"></element>
+    		<element name="Puoliso_TyopaikanPuhelin" type="string"></element>
+    		<element name="Puoliso_Ammatti" type="string"></element>
+    		<element name="Puoliso_TyoaikaAlkaa" type="string"></element>
+    		<element name="Puoliso_TyoaikaLoppuu" type="string"></element>
+    		<element name="Puoliso_VuorotyoKylla" type="boolean"></element>
+    		<element name="Puoliso_VuorotyoEi" type="boolean"></element>
+    		<element name="Puoliso_Extend01" type="string"></element>
+    		<element name="Puoliso_Extend02" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="MuutLapset_Type">
+    	<sequence>
+    		<element name="MuutLapset_Etunimi" type="string"></element>
+    		<element name="MuutLapset_Sukunimi" type="string"></element>
+    		<element name="MuutLapset_Henkilotunnus" type="string"></element>
+    		<element name="MuutLapset_Extend01" type="string"></element>
+    		<element name="MuutLapset_Extend02" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="HoidonTarve_Type">
+    	<sequence>
+    		<element name="HoidonTarve_Kokopaiva" type="boolean"></element>
+    		<element name="HoidonTarve_KokopaivaAlkaa" type="string"></element>
+    		<element name="HoidonTarve_KokopaivaLoppuu" type="string"></element>
+    		<element name="HoidonTarve_Osapaiva" type="boolean"></element>
+    		<element name="HoidonTarve_OsapaivaAlkaa" type="string"></element>
+    		<element name="HoidonTarve_OsapaivaLoppuu" type="string"></element>
+    		<element name="HoidonTarve_VuorohoitoKylla"
+    			type="boolean">
+    		</element>
+    		<element name="HoidonTarve_VuorohoitoEi" type="boolean"></element>
+    		<element name="HoidonTarve_VuorohoitoLa" type="boolean"></element>
+    		<element name="HoidonTarve_VuorohoitoSu" type="boolean"></element>
+    		<element name="HoidonTarve_VuorohoitoIlta" type="boolean"></element>
+    		<element name="HoidonTarve_VuorohoitoYo" type="boolean"></element>
+    		<element name="HoidonTarve_Hoitopaivat" type="string"></element>
+    		<element name="HoidonTarve_Alkaen" type="date"></element>
+    		<element name="HoidonTarve_AutoKylla" type="boolean"></element>
+    		<element name="HoidonTarve_AutoEi" type="boolean"></element>
+    		<element name="HoidonTarve_Extend01" type="string"></element>
+    		<element name="HoidonTarve_Extend02" type="string"></element>
+    		<element name="HoidonTarve_Iltahoito" type="boolean"></element>
+    		<element name="HoidonTarve_IltahoitoLa" type="boolean"></element>
+    		<element name="HoidonTarve_IltahoitoSu" type="boolean"></element>
+    		<element name="HoidonTarve_IltaHoitoAlkaa" type="time"></element>
+    		<element name="HoidonTarve_IltaHoitoLoppuu" type="time"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Hakutoive_Type">
+    	<sequence>
+    		<element name="Hakutoive_Kunta">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Joensuu"></enumeration>
+    					<enumeration value="Kontiolahti"></enumeration>
+    					<enumeration value="Lieksa"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_1Tyyppi">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_1Alue">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_2Tyyppi">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_2Alue">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_3Tyyppi">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_3Alue">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_4Tyyppi">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_4Alue">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_5Tyyppi">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_5Alue">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Oletus"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Hakutoive_Extend01" type="string"></element>
+    		<element name="Hakutoive_Extend02" type="string"></element>
+            <element name="Hakutoive_KuntaKoodi" type="string"></element>
+            <element name="Hakutoive_1AlueKoodi" type="string"></element>
+            <element name="Hakutoive_1TyyppiKoodi" type="string"></element>
+            <element name="Hakutoive_2AlueKoodi" type="string"></element>
+            <element name="Hakutoive_2TyyppiKoodi" type="string"></element>
+            <element name="Hakutoive_3AlueKoodi" type="string"></element>
+            <element name="Hakutoive_3TyyppiKoodi" type="string"></element>
+            <element name="Hakutoive_4AlueKoodi" type="string"></element>
+            <element name="Hakutoive_4TyyppiKoodi" type="string"></element>
+            <element name="Hakutoive_5AlueKoodi" type="string"></element>
+    		<element name="Hakutoive_5TyyppiKoodi" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Lisatiedot_Type">
+    	<sequence>
+    		<element name="Lisatiedot_Terveydentila" type="string"></element>
+    		<element name="Lisatiedot_Kotielaimet" type="string"></element>
+    		<element name="Lisatiedot_Lisatietoja" type="string"></element>
+    		<element name="Lisatiedot_MaksuKylla" type="boolean"></element>
+    		<element name="Lisatiedot_MaksuEi" type="boolean"></element>
+    		<element name="Lisatiedot_Extend01" type="string"></element>
+    		<element name="Lisatiedot_Extend02" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="Paivahoitohakemus_Type">
+    	<sequence>
+    		<element name="Hakijan_Tunnistetiedot"
+    			type="tns:User_Metadata_Type">
+    		</element>
+    		<element name="Hakemuksen_Tunnistetiedot"
+    			type="tns:Application_Metadata_Type">
+    		</element>
+    		<element name="Kasittelijan_Tunnistetiedot"
+    			type="tns:Administrator_Metadata_Type">
+    		</element>
+    		<element name="Paatos" type="tns:Paatos_Type"></element>
+
+    		<element name="Lapsi" type="tns:Lapsi_Type"></element>
+    		<element name="Huoltaja" type="tns:Huoltaja_Type"></element>
+    		<element name="Puoliso" type="tns:Puoliso_Type"></element>
+    		<element name="MuutLapset" type="tns:MuutLapset_Type"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="HoidonTarve" type="tns:HoidonTarve_Type"></element>
+    		<element name="Hakutoive" type="tns:Hakutoive_Type"></element>
+    		<element name="Lisatiedot" type="tns:Lisatiedot_Type"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Paivahoitohakemus_Form" type="tns:Paivahoitohakemus_Type"></element>
+</schema>

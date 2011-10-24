@@ -1,0 +1,258 @@
+<definitions name="KokuValtakirjaProcessingService" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://soa.tiva.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="annaValtakirja" type="tns:annaValtakirja"/>
+   <xs:element name="annaValtakirjaResponse" type="tns:annaValtakirjaResponse"/>
+   <xs:element name="getValtakirja" type="tns:getValtakirja"/>
+   <xs:element name="getValtakirjaResponse" type="tns:getValtakirjaResponse"/>
+   <xs:element name="hylkaaValtakirja" type="tns:hylkaaValtakirja"/>
+   <xs:element name="hylkaaValtakirjaResponse" type="tns:hylkaaValtakirjaResponse"/>
+   <xs:element name="hyvaksyValtakirja" type="tns:hyvaksyValtakirja"/>
+   <xs:element name="hyvaksyValtakirjaResponse" type="tns:hyvaksyValtakirjaResponse"/>
+   <xs:element name="mitatoiValtakirja" type="tns:mitatoiValtakirja"/>
+   <xs:element name="mitatoiValtakirjaResponse" type="tns:mitatoiValtakirjaResponse"/>
+   <xs:element name="muokkaaValtakirja" type="tns:muokkaaValtakirja"/>
+   <xs:element name="muokkaaValtakirjaResponse" type="tns:muokkaaValtakirjaResponse"/>
+   <xs:element name="selaaValtakirjapohjat" type="tns:selaaValtakirjapohjat"/>
+   <xs:element name="selaaValtakirjapohjatResponse" type="tns:selaaValtakirjapohjatResponse"/>
+   <xs:complexType name="selaaValtakirjapohjat">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="searchString" type="xs:string"/>
+     <xs:element name="limit" type="xs:int"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="selaaValtakirjapohjatResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="valtakirjapohjat" type="tns:valtakirjapohja"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="valtakirjapohja">
+    <xs:sequence>
+     <xs:element name="templateId" type="xs:long"/>
+     <xs:element minOccurs="0" name="templateName" type="xs:string"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="annaValtakirja">
+    <xs:sequence>
+     <xs:element name="valtakirjapohjaId" type="xs:long"/>
+     <xs:element minOccurs="0" name="vastausmennessa" type="xs:anySimpleType"/>
+     <xs:element minOccurs="0" name="maaraaika" type="xs:anySimpleType"/>
+     <xs:element minOccurs="0" name="lahettaja" type="xs:string"/>
+     <xs:element minOccurs="0" name="vastaanottaja" type="xs:string"/>
+     <xs:element minOccurs="0" name="kohdehenkilo" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="annaValtakirjaResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="valtakirjaId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hyvaksyValtakirja">
+    <xs:sequence>
+     <xs:element name="valtakirjaId" type="xs:long"/>
+     <xs:element minOccurs="0" name="valtuutettu" type="xs:string"/>
+     <xs:element minOccurs="0" name="kommentti" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hyvaksyValtakirjaResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="hylkaaValtakirja">
+    <xs:sequence>
+     <xs:element name="valtakirjaId" type="xs:long"/>
+     <xs:element minOccurs="0" name="valtuutettu" type="xs:string"/>
+     <xs:element minOccurs="0" name="kommentti" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hylkaaValtakirjaResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="muokkaaValtakirja">
+    <xs:sequence>
+     <xs:element name="valtakirjaId" type="xs:long"/>
+     <xs:element minOccurs="0" name="valtuuttaja" type="xs:string"/>
+     <xs:element minOccurs="0" name="maaraaika" type="xs:anySimpleType"/>
+     <xs:element minOccurs="0" name="kommentti" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="muokkaaValtakirjaResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="mitatoiValtakirja">
+    <xs:sequence>
+     <xs:element name="valtakirjaId" type="xs:long"/>
+     <xs:element minOccurs="0" name="valtuuttaja" type="xs:string"/>
+     <xs:element minOccurs="0" name="kommentti" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mitatoiValtakirjaResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getValtakirja">
+    <xs:sequence>
+     <xs:element name="valtakirjaId" type="xs:long"/>
+     <xs:element minOccurs="0" name="kayttaja" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getValtakirjaResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="valtakirja" type="tns:authorizationDetailTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authorizationDetailTO">
+    <xs:sequence>
+     <xs:element name="authorizationId" type="xs:long"/>
+     <xs:element minOccurs="0" name="createDate" type="xs:anySimpleType"/>
+     <xs:element minOccurs="0" name="receiverUid" type="xs:string"/>
+     <xs:element minOccurs="0" name="senderUid" type="xs:string"/>
+     <xs:element minOccurs="0" name="template" type="tns:valtakirjapohja"/>
+     <xs:element minOccurs="0" name="validTill" type="xs:anySimpleType"/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name="KokuValtakirjaProcessingService_hylkaaValtakirjaResponse">
+  <part element="tns:hylkaaValtakirjaResponse" name="hylkaaValtakirjaResponse"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_hyvaksyValtakirjaResponse">
+  <part element="tns:hyvaksyValtakirjaResponse" name="hyvaksyValtakirjaResponse"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_muokkaaValtakirjaResponse">
+  <part element="tns:muokkaaValtakirjaResponse" name="muokkaaValtakirjaResponse"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_annaValtakirja">
+  <part element="tns:annaValtakirja" name="annaValtakirja"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_hylkaaValtakirja">
+  <part element="tns:hylkaaValtakirja" name="hylkaaValtakirja"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_selaaValtakirjapohjat">
+  <part element="tns:selaaValtakirjapohjat" name="selaaValtakirjapohjat"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_mitatoiValtakirja">
+  <part element="tns:mitatoiValtakirja" name="mitatoiValtakirja"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_selaaValtakirjapohjatResponse">
+  <part element="tns:selaaValtakirjapohjatResponse" name="selaaValtakirjapohjatResponse"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_getValtakirjaResponse">
+  <part element="tns:getValtakirjaResponse" name="getValtakirjaResponse"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_getValtakirja">
+  <part element="tns:getValtakirja" name="getValtakirja"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_muokkaaValtakirja">
+  <part element="tns:muokkaaValtakirja" name="muokkaaValtakirja"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_hyvaksyValtakirja">
+  <part element="tns:hyvaksyValtakirja" name="hyvaksyValtakirja"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_mitatoiValtakirjaResponse">
+  <part element="tns:mitatoiValtakirjaResponse" name="mitatoiValtakirjaResponse"/>
+ </message>
+ <message name="KokuValtakirjaProcessingService_annaValtakirjaResponse">
+  <part element="tns:annaValtakirjaResponse" name="annaValtakirjaResponse"/>
+ </message>
+ <portType name="KokuValtakirjaProcessingService">
+  <operation name="annaValtakirja" parameterOrder="annaValtakirja">
+   <input message="tns:KokuValtakirjaProcessingService_annaValtakirja"/>
+   <output message="tns:KokuValtakirjaProcessingService_annaValtakirjaResponse"/>
+  </operation>
+  <operation name="getValtakirja" parameterOrder="getValtakirja">
+   <input message="tns:KokuValtakirjaProcessingService_getValtakirja"/>
+   <output message="tns:KokuValtakirjaProcessingService_getValtakirjaResponse"/>
+  </operation>
+  <operation name="hylkaaValtakirja" parameterOrder="hylkaaValtakirja">
+   <input message="tns:KokuValtakirjaProcessingService_hylkaaValtakirja"/>
+   <output message="tns:KokuValtakirjaProcessingService_hylkaaValtakirjaResponse"/>
+  </operation>
+  <operation name="hyvaksyValtakirja" parameterOrder="hyvaksyValtakirja">
+   <input message="tns:KokuValtakirjaProcessingService_hyvaksyValtakirja"/>
+   <output message="tns:KokuValtakirjaProcessingService_hyvaksyValtakirjaResponse"/>
+  </operation>
+  <operation name="mitatoiValtakirja" parameterOrder="mitatoiValtakirja">
+   <input message="tns:KokuValtakirjaProcessingService_mitatoiValtakirja"/>
+   <output message="tns:KokuValtakirjaProcessingService_mitatoiValtakirjaResponse"/>
+  </operation>
+  <operation name="muokkaaValtakirja" parameterOrder="muokkaaValtakirja">
+   <input message="tns:KokuValtakirjaProcessingService_muokkaaValtakirja"/>
+   <output message="tns:KokuValtakirjaProcessingService_muokkaaValtakirjaResponse"/>
+  </operation>
+  <operation name="selaaValtakirjapohjat" parameterOrder="selaaValtakirjapohjat">
+   <input message="tns:KokuValtakirjaProcessingService_selaaValtakirjapohjat"/>
+   <output message="tns:KokuValtakirjaProcessingService_selaaValtakirjapohjatResponse"/>
+  </operation>
+ </portType>
+ <binding name="KokuValtakirjaProcessingServiceBinding" type="tns:KokuValtakirjaProcessingService">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="annaValtakirja">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getValtakirja">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="hylkaaValtakirja">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="hyvaksyValtakirja">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="mitatoiValtakirja">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="muokkaaValtakirja">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="selaaValtakirjapohjat">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="KokuValtakirjaProcessingService">
+  <port binding="tns:KokuValtakirjaProcessingServiceBinding" name="KokuValtakirjaProcessingServicePort">
+   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl"/>
+  </port>
+ </service>
+</definitions>
