@@ -522,8 +522,8 @@
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxvalue="15"/>
-        <strings jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants/>
+        <strings jsxvalue="15" jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
@@ -568,7 +568,7 @@
               <strings riaLabelText="Viesti_Otsikko" jsxname="Viesti_Otsikko-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
               <object type="jsx3.gui.TextBox">
                 <variants jsxtype="1" jsxheight="100" jsxwidth="500" jsxenabled="1" jsxmaxlength="255"/>
-                <strings jsxname="Header_Description" jsxmargin="0 4 0 0" jsxvalue="" jsxpadding=""/>
+                <strings jsxname="Header_Description" jsxmargin="0 4 0 0" jsxvalue="                   testiteksti" jsxpadding=""/>
                 <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange=""/>
               </object>
             </object>
@@ -1014,8 +1014,8 @@
         <dynamics jsxborder="@No jsxborder"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxvalue="33"/>
-        <strings jsxname="calendarEntryId" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants/>
+        <strings jsxvalue="33" jsxname="calendarEntryId" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
