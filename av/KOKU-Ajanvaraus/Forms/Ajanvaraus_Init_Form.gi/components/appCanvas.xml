@@ -568,7 +568,7 @@
               <strings riaLabelText="Viesti_Otsikko" jsxname="Viesti_Otsikko-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
               <object type="jsx3.gui.TextBox">
                 <variants jsxtype="1" jsxheight="100" jsxwidth="500" jsxenabled="1" jsxmaxlength="255"/>
-                <strings jsxname="Header_Description" jsxmargin="0 4 0 0" jsxvalue="                   testiteksti" jsxpadding=""/>
+                <strings jsxname="Header_Description" jsxmargin="0 4 0 0" jsxvalue="" jsxpadding=""/>
                 <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange=""/>
               </object>
             </object>
@@ -595,12 +595,12 @@
       <variants/>
       <strings riaTitleText="Tapaamisten lisääminen" jsxname="tapaamistenLisaaminen" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="270"/>
+        <variants jsxoverflow="2" jsxwidth="720" jsxheight="320"/>
         <strings jsxname="pane" jsxpadding="" jsxbgcolor=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="10%,14%,18%,18%,30%,16%" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+          <strings jsxname="layout (--)" jsxrows="8%,12%,16%,16%,18%,20%,14%" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder=""/>
@@ -678,7 +678,7 @@
                     <dynamics jsxborder="@No jsxborder"/>
                     <object type="jsx3.gui.Block">
                       <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                      <strings jsxname="label" jsxtext="Monta tapaamista" jsxclassname="FormLabel"/>
+                      <strings jsxname="label" jsxtext="Toistuvat tapaamiset" jsxclassname="FormLabel"/>
                     </object>
                   </object>
                 </object>
@@ -749,7 +749,7 @@
                   <variants/>
                   <strings riaLabelText="hours" jsxname="hours-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
-                    <variants jsxwidth="100" jsxheight="18" jsxtype="1" jsxxmlasync="1" _isfocusing="true"/>
+                    <variants jsxwidth="100" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
                     <strings jsxname="aloitusAika" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;  &lt;record jsxid=&quot;06:00&quot; jsxtext=&quot;06:00&quot;/&gt;  &lt;record jsxid=&quot;06:15&quot; jsxtext=&quot;06:15&quot;/&gt;  &lt;record jsxid=&quot;06:30&quot; jsxtext=&quot;06:30&quot;/&gt;  &lt;record jsxid=&quot;06:45&quot; jsxtext=&quot;06:45&quot;/&gt;  &lt;record jsxid=&quot;07:00&quot; jsxtext=&quot;07:00&quot;/&gt;  &lt;record jsxid=&quot;07:15&quot; jsxtext=&quot;07:15&quot;/&gt;  &lt;record jsxid=&quot;07:30&quot; jsxtext=&quot;07:30&quot;/&gt;  &lt;record jsxid=&quot;07:45&quot; jsxtext=&quot;07:45&quot;/&gt;  &lt;record jsxid=&quot;08:00&quot; jsxtext=&quot;08:00&quot;/&gt;  &lt;record jsxid=&quot;08:15&quot; jsxtext=&quot;08:15&quot;/&gt;  &lt;record jsxid=&quot;08:30&quot; jsxtext=&quot;08:30&quot;/&gt;  &lt;record jsxid=&quot;08:45&quot; jsxtext=&quot;08:45&quot;/&gt;  &lt;record jsxid=&quot;09:00&quot; jsxtext=&quot;09:00&quot;/&gt;  &lt;record jsxid=&quot;09:15&quot; jsxtext=&quot;09:15&quot;/&gt;  &lt;record jsxid=&quot;09:30&quot; jsxtext=&quot;09:30&quot;/&gt;  &lt;record jsxid=&quot;09:45&quot; jsxtext=&quot;09:45&quot;/&gt;  &lt;record jsxid=&quot;10:00&quot; jsxtext=&quot;10:00&quot;/&gt;  &lt;record jsxid=&quot;10:15&quot; jsxtext=&quot;10:15&quot;/&gt;  &lt;record jsxid=&quot;10:30&quot; jsxtext=&quot;10:30&quot;/&gt;  &lt;record jsxid=&quot;10:45&quot; jsxtext=&quot;10:45&quot;/&gt;  &lt;record jsxid=&quot;11:00&quot; jsxtext=&quot;11:00&quot;/&gt;  &lt;record jsxid=&quot;11:15&quot; jsxtext=&quot;11:15&quot;/&gt;  &lt;record jsxid=&quot;11:30&quot; jsxtext=&quot;11:30&quot;/&gt;  &lt;record jsxid=&quot;11:45&quot; jsxtext=&quot;11:45&quot;/&gt;  &lt;record jsxid=&quot;12:00&quot; jsxtext=&quot;12:00&quot;/&gt;  &lt;record jsxid=&quot;12:15&quot; jsxtext=&quot;12:15&quot;/&gt;  &lt;record jsxid=&quot;12:30&quot; jsxtext=&quot;12:30&quot;/&gt;  &lt;record jsxid=&quot;12:45&quot; jsxtext=&quot;12:45&quot;/&gt;  &lt;record jsxid=&quot;13:00&quot; jsxtext=&quot;13:00&quot;/&gt;  &lt;record jsxid=&quot;13:15&quot; jsxtext=&quot;13:15&quot;/&gt;  &lt;record jsxid=&quot;13:30&quot; jsxtext=&quot;13:30&quot;/&gt;  &lt;record jsxid=&quot;13:45&quot; jsxtext=&quot;13:45&quot;/&gt;  &lt;record jsxid=&quot;14:00&quot; jsxtext=&quot;14:00&quot;/&gt;  &lt;record jsxid=&quot;14:15&quot; jsxtext=&quot;14:15&quot;/&gt;  &lt;record jsxid=&quot;14:30&quot; jsxtext=&quot;14:30&quot;/&gt;  &lt;record jsxid=&quot;14:45&quot; jsxtext=&quot;14:45&quot;/&gt;  &lt;record jsxid=&quot;15:00&quot; jsxtext=&quot;15:00&quot;/&gt;  &lt;record jsxid=&quot;15:15&quot; jsxtext=&quot;15:15&quot;/&gt;  &lt;record jsxid=&quot;15:30&quot; jsxtext=&quot;15:30&quot;/&gt;  &lt;record jsxid=&quot;15:45&quot; jsxtext=&quot;15:45&quot;/&gt;  &lt;record jsxid=&quot;16:00&quot; jsxtext=&quot;16:00&quot;/&gt;  &lt;record jsxid=&quot;16:15&quot; jsxtext=&quot;16:15&quot;/&gt;  &lt;record jsxid=&quot;16:30&quot; jsxtext=&quot;16:30&quot;/&gt;  &lt;record jsxid=&quot;16:45&quot; jsxtext=&quot;16:45&quot;/&gt;  &lt;record jsxid=&quot;17:00&quot; jsxtext=&quot;17:00&quot;/&gt; &lt;/data&gt;" jsxxmlid="" jsxdefaulttext="- Valitse -"/>
                     <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
@@ -785,7 +785,7 @@
                   <variants/>
                   <strings riaLabelText="hours" jsxname="hours-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
-                    <variants jsxwidth="100" jsxheight="18" jsxtype="1" jsxxmlasync="1" _isfocusing="true"/>
+                    <variants jsxwidth="100" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
                     <strings jsxname="lopetusAika" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt; &lt;record jsxid=&quot;07:00&quot; jsxtext=&quot;07:00&quot;/&gt;  &lt;record jsxid=&quot;07:15&quot; jsxtext=&quot;07:15&quot;/&gt;  &lt;record jsxid=&quot;07:30&quot; jsxtext=&quot;07:30&quot;/&gt;  &lt;record jsxid=&quot;07:45&quot; jsxtext=&quot;07:45&quot;/&gt;  &lt;record jsxid=&quot;08:00&quot; jsxtext=&quot;08:00&quot;/&gt;  &lt;record jsxid=&quot;08:15&quot; jsxtext=&quot;08:15&quot;/&gt;  &lt;record jsxid=&quot;08:30&quot; jsxtext=&quot;08:30&quot;/&gt;  &lt;record jsxid=&quot;08:45&quot; jsxtext=&quot;08:45&quot;/&gt;  &lt;record jsxid=&quot;09:00&quot; jsxtext=&quot;09:00&quot;/&gt;  &lt;record jsxid=&quot;09:15&quot; jsxtext=&quot;09:15&quot;/&gt;  &lt;record jsxid=&quot;09:30&quot; jsxtext=&quot;09:30&quot;/&gt;  &lt;record jsxid=&quot;09:45&quot; jsxtext=&quot;09:45&quot;/&gt;  &lt;record jsxid=&quot;10:00&quot; jsxtext=&quot;10:00&quot;/&gt;  &lt;record jsxid=&quot;10:15&quot; jsxtext=&quot;10:15&quot;/&gt;  &lt;record jsxid=&quot;10:30&quot; jsxtext=&quot;10:30&quot;/&gt;  &lt;record jsxid=&quot;10:45&quot; jsxtext=&quot;10:45&quot;/&gt;  &lt;record jsxid=&quot;11:00&quot; jsxtext=&quot;11:00&quot;/&gt;  &lt;record jsxid=&quot;11:15&quot; jsxtext=&quot;11:15&quot;/&gt;  &lt;record jsxid=&quot;11:30&quot; jsxtext=&quot;11:30&quot;/&gt;  &lt;record jsxid=&quot;11:45&quot; jsxtext=&quot;11:45&quot;/&gt;  &lt;record jsxid=&quot;12:00&quot; jsxtext=&quot;12:00&quot;/&gt;  &lt;record jsxid=&quot;12:15&quot; jsxtext=&quot;12:15&quot;/&gt;  &lt;record jsxid=&quot;12:30&quot; jsxtext=&quot;12:30&quot;/&gt;  &lt;record jsxid=&quot;12:45&quot; jsxtext=&quot;12:45&quot;/&gt;  &lt;record jsxid=&quot;13:00&quot; jsxtext=&quot;13:00&quot;/&gt;  &lt;record jsxid=&quot;13:15&quot; jsxtext=&quot;13:15&quot;/&gt;  &lt;record jsxid=&quot;13:30&quot; jsxtext=&quot;13:30&quot;/&gt;  &lt;record jsxid=&quot;13:45&quot; jsxtext=&quot;13:45&quot;/&gt;  &lt;record jsxid=&quot;14:00&quot; jsxtext=&quot;14:00&quot;/&gt;  &lt;record jsxid=&quot;14:15&quot; jsxtext=&quot;14:15&quot;/&gt;  &lt;record jsxid=&quot;14:30&quot; jsxtext=&quot;14:30&quot;/&gt;  &lt;record jsxid=&quot;14:45&quot; jsxtext=&quot;14:45&quot;/&gt;  &lt;record jsxid=&quot;15:00&quot; jsxtext=&quot;15:00&quot;/&gt;  &lt;record jsxid=&quot;15:15&quot; jsxtext=&quot;15:15&quot;/&gt;  &lt;record jsxid=&quot;15:30&quot; jsxtext=&quot;15:30&quot;/&gt;  &lt;record jsxid=&quot;15:45&quot; jsxtext=&quot;15:45&quot;/&gt;  &lt;record jsxid=&quot;16:00&quot; jsxtext=&quot;16:00&quot;/&gt;  &lt;record jsxid=&quot;16:15&quot; jsxtext=&quot;16:15&quot;/&gt;  &lt;record jsxid=&quot;16:30&quot; jsxtext=&quot;16:30&quot;/&gt;  &lt;record jsxid=&quot;16:45&quot; jsxtext=&quot;16:45&quot;/&gt;  &lt;record jsxid=&quot;17:00&quot; jsxtext=&quot;17:00&quot;/&gt;  &lt;record jsxid=&quot;17:15&quot; jsxtext=&quot;17:15&quot;/&gt;  &lt;record jsxid=&quot;17:30&quot; jsxtext=&quot;17:30&quot;/&gt;  &lt;record jsxid=&quot;17:45&quot; jsxtext=&quot;17:45&quot;/&gt;  &lt;record jsxid=&quot;18:00&quot; jsxtext=&quot;18:00&quot;/&gt;  &lt;record jsxid=&quot;18:15&quot; jsxtext=&quot;18:15&quot;/&gt;  &lt;record jsxid=&quot;18:30&quot; jsxtext=&quot;18:30&quot;/&gt;  &lt;record jsxid=&quot;18:45&quot; jsxtext=&quot;18:45&quot;/&gt;  &lt;record jsxid=&quot;19:00&quot; jsxtext=&quot;19:00&quot;/&gt; &lt;/data&gt;" jsxxmlid="" jsxxmlurl="" jsxdefaulttext="- Valitse -"/>
                     <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
@@ -816,6 +816,261 @@
                     <variants jsxwidth="500" jsxmaxlength="40"/>
                     <strings jsxname="paikka" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2" jsxwidth="720" jsxheight="260"/>
+            <strings jsxname="pane" jsxpadding="" jsxbgcolor=""/>
+            <dynamics jsxborder="@No jsxborder"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxrelativeposition="1" jsxoverflow="3"/>
+              <strings jsxname="label" jsxtext="Rajaa tapaamiset viikonpäivittäin" jsxclassname="FormLabel"/>
+            </object>
+            <object type="jsx3.gui.LayoutGrid">
+              <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+              <dynamics jsxborder="@No jsxborder"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxoverflow="2"/>
+                <strings jsxname="week" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                <dynamics jsxborder="@No jsxborder"/>
+                <object type="jsx3.gui.LayoutGrid">
+                  <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                  <strings jsxname="layout ( | )" jsxcols="10%,10%,10%,10%,10%,10%,10%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                  <dynamics jsxborder="@No jsxborder"/>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="jsx3.gui.LayoutGrid">
+                      <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                      <strings jsxname="layout ( | )" jsxcols="50%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                      <dynamics jsxborder="@No jsxborder"/>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="com.intalio.ria.Field">
+                          <variants/>
+                          <strings riaLabelText="day" jsxname="day-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                          <object type="jsx3.gui.CheckBox">
+                            <variants jsxheight="18" jsxenabled="0" jsxchecked="1"/>
+                            <strings jsxname="day" jsxtext="" jsxmargin="0 4 0 0"/>
+                            <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+                          </object>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                          <strings jsxname="label" jsxtext="Ma" jsxclassname="FormLabel"/>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="jsx3.gui.LayoutGrid">
+                      <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                      <strings jsxname="layout ( | )" jsxcols="50%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                      <dynamics jsxborder="@No jsxborder"/>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="com.intalio.ria.Field">
+                          <variants/>
+                          <strings riaLabelText="day" jsxname="day-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                          <object type="jsx3.gui.CheckBox">
+                            <variants jsxheight="18" jsxenabled="0" jsxchecked="1"/>
+                            <strings jsxname="day" jsxtext="" jsxmargin="0 4 0 0"/>
+                            <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+                          </object>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                          <strings jsxname="label" jsxtext="Ti" jsxclassname="FormLabel"/>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="jsx3.gui.LayoutGrid">
+                      <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                      <strings jsxname="layout ( | )" jsxcols="50%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                      <dynamics jsxborder="@No jsxborder"/>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="com.intalio.ria.Field">
+                          <variants/>
+                          <strings riaLabelText="day" jsxname="day-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                          <object type="jsx3.gui.CheckBox">
+                            <variants jsxheight="18" jsxenabled="0" jsxchecked="1"/>
+                            <strings jsxname="day" jsxtext="" jsxmargin="0 4 0 0"/>
+                            <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+                          </object>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                          <strings jsxname="label" jsxtext="Ke" jsxclassname="FormLabel"/>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="jsx3.gui.LayoutGrid">
+                      <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                      <strings jsxname="layout ( | )" jsxcols="50%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                      <dynamics jsxborder="@No jsxborder"/>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="com.intalio.ria.Field">
+                          <variants/>
+                          <strings riaLabelText="day" jsxname="day-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                          <object type="jsx3.gui.CheckBox">
+                            <variants jsxheight="18" jsxenabled="0" jsxchecked="1"/>
+                            <strings jsxname="day" jsxtext="" jsxmargin="0 4 0 0"/>
+                            <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+                          </object>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                          <strings jsxname="label" jsxtext="To" jsxclassname="FormLabel"/>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="jsx3.gui.LayoutGrid">
+                      <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                      <strings jsxname="layout ( | )" jsxcols="50%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                      <dynamics jsxborder="@No jsxborder"/>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="com.intalio.ria.Field">
+                          <variants/>
+                          <strings riaLabelText="day" jsxname="day-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                          <object type="jsx3.gui.CheckBox">
+                            <variants jsxheight="18" jsxenabled="0" jsxchecked="1"/>
+                            <strings jsxname="day" jsxtext="" jsxmargin="0 4 0 0"/>
+                            <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+                          </object>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                          <strings jsxname="label" jsxtext="Pe" jsxclassname="FormLabel"/>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="jsx3.gui.LayoutGrid">
+                      <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                      <strings jsxname="layout ( | )" jsxcols="50%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                      <dynamics jsxborder="@No jsxborder"/>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="com.intalio.ria.Field">
+                          <variants/>
+                          <strings riaLabelText="day" jsxname="day-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                          <object type="jsx3.gui.CheckBox">
+                            <variants jsxheight="18" jsxenabled="0" jsxchecked="0"/>
+                            <strings jsxname="day" jsxtext="" jsxmargin="0 4 0 0"/>
+                            <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+                          </object>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                          <strings jsxname="label" jsxtext="La" jsxclassname="FormLabel"/>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="jsx3.gui.LayoutGrid">
+                      <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                      <strings jsxname="layout ( | )" jsxcols="50%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                      <dynamics jsxborder="@No jsxborder"/>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="com.intalio.ria.Field">
+                          <variants/>
+                          <strings riaLabelText="day" jsxname="day-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                          <object type="jsx3.gui.CheckBox">
+                            <variants jsxheight="18" jsxchecked="0" jsxenabled="0"/>
+                            <strings jsxname="day" jsxtext="" jsxmargin="0 4 0 0"/>
+                            <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+                          </object>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Block">
+                        <variants jsxoverflow="2"/>
+                        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px" jsxbgcolor=""/>
+                        <dynamics jsxborder="@No jsxborder"/>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                          <strings jsxname="label" jsxtext="Su" jsxclassname="FormLabel"/>
+                        </object>
+                      </object>
+                    </object>
                   </object>
                 </object>
               </object>
@@ -1014,8 +1269,8 @@
         <dynamics jsxborder="@No jsxborder"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants/>
-        <strings jsxvalue="33" jsxname="calendarEntryId" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants jsxvalue="87"/>
+        <strings jsxname="calendarEntryId" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>

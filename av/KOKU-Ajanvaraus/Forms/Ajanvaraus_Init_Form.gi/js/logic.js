@@ -101,6 +101,30 @@ function getUserNameByUid(uid) {
     return firstname + " " + lastname;
 }
 
+function enableAll(pane, flag) {
+    var descendants = [];
+    
+    descendants = AjanvarausForm.getJSXByName("week").getDescendantsOfType("jsx3.gui.CheckBox");
+    
+    for (i = 0; i < descendants.length; i++) {
+        descendants[i].setEnabled(flag, true);
+    }
+}
+
+function getFinDay(day) {
+    var finDay;
+    
+    if (day != 0) {
+        finDay = day - 1
+    }
+    else {
+        finDay = 6;
+    }
+    
+    return finDay;
+}
+
+
 // Slot modifying --------------------------------------------------------------------------------------------------------------------------------
 
 function checkIfModifyOpen() {
@@ -200,6 +224,23 @@ function getSectionID() {
 
 // Adding appointment slot(s) --------------------------------------------------------------------------------------------------------------------
 
+function getDaySelections() {
+    var descendants, selections = [], i;
+
+    descendants = AjanvarausForm.getJSXByName("week").getDescendantsOfType("jsx3.gui.CheckBox");
+    
+    for (i = 0; i < descendants.length; i++) {
+        if (descendants[i].getChecked()) {
+            selections[i] = true;
+        }
+        else {
+            selections[i] = false;
+        }
+    }
+    
+    return selections;
+}
+
 function validateSingleSection() {
     if (!AjanvarausForm.getJSXByName("aloitusPvm").getDate()) {
         alert("Aloitusp\u00E4iv\u00E4m\u00E4\u00E4r\u00E4-kentt\u00E4 on tyhj\u00E4!");
@@ -286,6 +327,7 @@ function singleSlotFunc() {
     AjanvarausForm.getJSXByName("multiSlots").setChecked(0, true);
     AjanvarausForm.getJSXByName("lopetusPvm").setDate(null);
     AjanvarausForm.getJSXByName("lopetusAika").setValue("").repaint();
+    enableAll("week", 0);
 
     if (!AjanvarausForm.getJSXByName("singleSlot").getChecked()) {
         AjanvarausForm.getJSXByName("singleSlot").setChecked(1, true);
@@ -296,6 +338,7 @@ function multiSlotsFunc() {
     AjanvarausForm.getJSXByName("lopetusPvm").getAncestorOfName("pane").setDisplay("block", true);
     AjanvarausForm.getJSXByName("lopetusAika").getAncestorOfName("pane").setDisplay("block", true);
     AjanvarausForm.getJSXByName("singleSlot").setChecked(0, true);
+    enableAll("week", 1);
 
     if (!AjanvarausForm.getJSXByName("multiSlots").getChecked()) {
         AjanvarausForm.getJSXByName("multiSlots").setChecked(1, true);
@@ -366,6 +409,7 @@ function inputMultiSections() {
     }
     startDate = AjanvarausForm.getJSXByName("aloitusPvm").getDate();
     endDate = AjanvarausForm.getJSXByName("lopetusPvm").getDate();
+    selectedDays = getDaySelections();
 
     helperStartTime = new Date();
     helperEndTime = new Date();
@@ -383,15 +427,33 @@ function inputMultiSections() {
     helperStartTime.setMinutes(startTimeMinutes);
     helperEndTime.setHours(endTimeHours);
     helperEndTime.setMinutes(endTimeMinutes);
+    endMinutes = fixEndTime(helperStartTime, helperEndTime, duration);
+    helperEndTime.setMinutes(helperEndTime.getMinutes() - parseInt(endMinutes, 10));
+    helperEndTime = new Date(helperEndTime);
 
     for (day = startDate; day <= endDate; day.setDate(day.getDate() + 1)) {
         for (hour = helperStartTime; hour < helperEndTime; hour.setMinutes(hour.getMinutes() + duration)) {
-            inputSection(day,hour,duration,locat);
+            if (selectedDays[getFinDay(day.getDay())]) {
+                inputSection(day,hour,duration,locat);
+            }
         }
         helperStartTime = new Date();
         helperStartTime.setHours(startTimeHours);
         helperStartTime.setMinutes(startTimeMinutes);
     }
+}
+
+function fixEndTime(start, end, duration) {
+    var i, tempEnd, tempStart, subtraction;
+    tempEnd = new Date(end.getTime());
+    subtraction = new Date(end.getTime());
+
+    for (tempStart = new Date(start.getTime()); tempStart < tempEnd; tempStart.setMinutes(tempStart.getMinutes() + duration)) {
+        if ((tempEnd.getMinutes() - tempStart.getMinutes()) < duration) {
+            subtraction.setMinutes(tempEnd.getMinutes() - tempStart.getMinutes());
+        }
+    }
+    return subtraction.getMinutes().toString();
 }
 
 function mapFieldsToMatrix(id, entryDate, entryStartTime, entryEndTime, entryLocation, prefill) {
@@ -696,7 +758,7 @@ function addToRecipients() {
     var counter, node, i = 0, hasEmptyChild, chosen, childIterator, uid, firstname, lastname, childNode, vahnempi1, vanhempi1Uid, vanhempi2, vanhempi2Uid;
 
     counter = AjanvarausForm.getJSXByName("recipientCounter").getValue();
-    clearDataCache("receipientsToShow-nomap", "dummyMatrix");
+    //clearDataCache("receipientsToShow-nomap", "dummyMatrix");
 
     childIterator = AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").getChildIterator();
     hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
@@ -815,8 +877,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         appointmentId = id;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
-        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        //endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
         url = getUrl();
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
@@ -848,8 +910,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
 
         url = getUrl();
-        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         req = new jsx3.net.Request();
@@ -879,8 +941,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
-        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -927,6 +989,7 @@ function getPortNumber() {
 function getUrl() {
     var url = "http://" + getDomainName() + ":" + getPortNumber();
     url = url + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+    url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
     return url;
 }
 
