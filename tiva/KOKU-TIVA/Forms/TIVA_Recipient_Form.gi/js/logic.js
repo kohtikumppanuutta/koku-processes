@@ -420,32 +420,23 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 // Extra functions -------------------------------------------------------------------------------------------------------------------------------
 
 function getDomainName() {
-    var url, url_parts, domain_name_parts, domain_name;
+    var url, url_parts, domain_name;
 
     url = window.location.href;
     url_parts = url.split("/");
-    domain_name_parts = url_parts[2].split(":");
-    domain_name = domain_name_parts[0];
-
+    domain_name = url_parts[2];
+       
     return domain_name;
+
 }
 
-function getPortNumber() {
-    var url, url_parts, domain_name_parts, port_number;
-
-    url = window.location.href;
-    url_parts = url.split("/");
-    domain_name_parts = url_parts[2].split(":");
-    port_number = domain_name_parts[1];
-
-    return port_number;
-}
-
-
+//Getting the domain name and port if available
 function getUrl() {
-    var url = "http://" + getDomainName() + ":" + getPortNumber();
-    url = url + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-    return url;
+    var domin;
+
+    domain = getDomainName();
+    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
 }
 
 function gup(name) {
