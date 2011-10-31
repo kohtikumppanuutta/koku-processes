@@ -67,7 +67,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="none"/>
+      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="block"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="280"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -136,7 +136,7 @@
                   <strings riaLabelText="Viesti_SuostumuksenAntajat" jsxname="Viesti_SuostumuksenAntajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" jsxrequired="0" _isfocusing="true"/>
-                    <strings jsxname="suostumuksenAntajat" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;1&quot; jsxtext=&quot;Lapsi itse&quot;/&gt;&lt;record jsxid=&quot;2&quot; jsxtext=&quot;Toinen Huoltajista&quot;/&gt;&lt;record jsxid=&quot;3&quot; jsxtext=&quot;Molemmat huoltajista&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxvalue=""/>
+                    <strings jsxname="suostumuksenAntajat" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;1&quot; jsxtext=&quot;Lapsi itse&quot;/&gt;&lt;record jsxid=&quot;2&quot; jsxtext=&quot;Toinen Huoltajista&quot;/&gt;&lt;record jsxid=&quot;3&quot; jsxtext=&quot;Molemmat huoltajista&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxvalue="2"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);swapConsentGivers(this.getValue());"/>
                   </object>
                 </object>
@@ -415,7 +415,7 @@
                       <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="50"/>
-                        <strings jsxname="deleteButtonColumn" jsxtext="Poista" jsxpadding="2" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxtextalign="center" jsxcelltextalign="center" jsxdisplay="none"/>
+                        <strings jsxname="deleteButtonColumn" jsxtext="Poista" jsxpadding="2" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxtextalign="center" jsxcelltextalign="center" jsxdisplay=""/>
                         <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                         <object type="jsx3.gui.ImageButton">
                           <variants jsxwidth="16" jsxheight="16" jsxenabled="1" jsxstate="0" jsxprefetch="1" jsxtype="0"/>
@@ -434,12 +434,12 @@
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxname="receipient2-field" jsxwidth="*" jsxtext="Käyttäjä 2" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient2" jsxdisplay="none"/>
+                        <variants jsxwidth="144"/>
+                        <strings jsxname="receipient2-field" jsxtext="Käyttäjä 1" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient2" jsxdisplay=""/>
                         <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                         <object type="jsx3.gui.TextBox">
-                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="150" jsxtop="0" jsxwidth="182" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="receipient2" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10" jsxenabled="0"/>
+                          <strings jsxname="receipient2" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
                           <events jsxkeydown="1;"/>
                         </object>
                       </object>
@@ -454,12 +454,12 @@
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxname="receipient2Uid" jsxwidth="*" jsxtext="Käyttäjä 2" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient2Uid" jsxdisplay="none"/>
+                        <variants jsxwidth="144"/>
+                        <strings jsxname="receipient2Uid" jsxtext="Käyttäjä 1" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient2Uid" jsxdisplay="none"/>
                         <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                         <object type="jsx3.gui.TextBox">
-                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="150" jsxtop="0" jsxwidth="182" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="receipient2Uid" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="100" jsxzindex="10" jsxenabled="0"/>
+                          <strings jsxname="receipient2Uid" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
                           <events jsxkeydown="1;"/>
                         </object>
                       </object>
@@ -486,7 +486,7 @@
                   <strings riaLabelText="button" jsxname="button-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="showOrHideSearch" jsxtext="Lisää vastaanottajia" jsxmargin="12 4 0 0"/>
+                    <strings jsxname="showOrHideSearch" jsxtext="Piilota Haku" jsxmargin="12 4 0 0"/>
                     <events jsxexecute="if (TIVAForm.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  TIVAForm.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;block&quot;).repaint();  TIVAForm.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;,true);  TIVAForm.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(TIVAForm.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  TIVAForm.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;none&quot;).repaint(); TIVAForm.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;,true);  TIVAForm.getJSXByName(&quot;searchVisible&quot;).setChecked(0); } "/>
                   </object>
                 </object>
@@ -550,7 +550,7 @@
         </object>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="0"/>
+        <variants jsxheight="18" jsxchecked="1"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -1051,7 +1051,7 @@
         <strings riaLabelText="Suostumus_Extend1" jsxname="Suostumus_Extend1-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="none"/>
         <object type="jsx3.gui.TextBox">
           <variants/>
-          <strings jsxname="Suostumus_Extend1" jsxmargin="0 4 0 0" jsxvalue="Child"/>
+          <strings jsxname="Suostumus_Extend1" jsxmargin="0 4 0 0" jsxvalue="AnyParent"/>
           <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
       </object>
