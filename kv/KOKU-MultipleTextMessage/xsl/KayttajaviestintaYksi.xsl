@@ -5,6 +5,7 @@
 	<xsl:output method="html" />
 	
 	<xsl:param name="Vastaanottaja" />
+	<xsl:preserve-space elements="Message_Content"/>
 	
 	<xsl:template match="/">
 
@@ -23,10 +24,40 @@
 						<h2 class="old"><xsl:value-of select="//ka:Message_Subject/text()"/></h2>
 					</div>
 					<div class="innerContent">
-						<div class="old"><p><xsl:value-of select="//ka:Message_Content/text()"/></p></div>
+						<!-- <div class="old"><p><xsl:value-of select="//ka:Message_Content/text()"/></p></div> -->
+						<div class="old"><p><xsl:call-template name="PreserveLineBreaks"><xsl:with-param name="text" select="//ka:Message_Content/text()" /></xsl:call-template></p></div>
 					</div>
 				</div>
 
 			
 </xsl:template>
+
+<xsl:template name="PreserveLineBreaks">
+        <xsl:param name="text"/>
+        <xsl:choose>
+            <xsl:when test="contains($text,'&#xA;')">
+                <xsl:value-of select="substring-before($text,'&#xA;')"/>
+                <br/>
+                <xsl:call-template name="PreserveLineBreaks">
+                    <xsl:with-param name="text">
+                        <xsl:value-of select="substring-after($text,'&#xA;')"/>
+                    </xsl:with-param>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="contains($text,'&#x20;')">
+                <xsl:value-of select="substring-before($text,'&#x20;')"/>
+                &#160;
+                <xsl:call-template name="PreserveLineBreaks">
+                    <xsl:with-param name="text">
+                        <xsl:value-of select="substring-after($text,'&#x20;')"/>
+                    </xsl:with-param>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$text"/>
+            </xsl:otherwise>
+        </xsl:choose>
+
+    </xsl:template>
+
 </xsl:stylesheet>
