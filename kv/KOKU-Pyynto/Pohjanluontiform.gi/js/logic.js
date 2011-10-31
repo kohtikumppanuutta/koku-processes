@@ -1,5 +1,25 @@
 /* place JavaScript code here */
 
+function isNumeric(targetField){
+   var validChars = "0123456789";
+   var isNumber=true;
+   var char;
+   var text2 = targetField.getValue();
+ 
+   for (i = 0; i < text2.length && isNumber == true; i++) 
+      { 
+      char = text2.charAt(i); 
+      if (validChars.indexOf(char) == -1) 
+         {
+         isNumber = false;
+         alert("Syot\xE4 vain positiivisia kokonaislukuja!");
+         targetField.setValue("").repaint();
+         }
+      }
+
+}
+
+
 function checkTimeNotBefore(time, timeNot, errorMsg, type) {
    // alert(dateValue);
    // alert(timeValue);
@@ -365,31 +385,20 @@ function getEndpoint() {
     
 }
 
-
+//Getting the domain name and port if available
 function getUrl() {
-    //var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-    //var url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
-
     
     var domain = getDomainName();
-    var port = getPortNumber();
-    
-    var url = "http://" + domain + ":" + port + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-    return url;
-    
-}
+    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
+}
 
 function getDomainName() {
 
     var url = window.location.href;
-   // alert(url);
     var url_parts = url.split("/");
-   // alert(url_parts);
-    var domain_name_parts = url_parts[2].split(":");
-   // alert(domain_name_parts);
-    var domain_name = domain_name_parts[0];
-    
+    var domain_name = url_parts[2];
+       
     return domain_name;
 
 }
@@ -1035,6 +1044,9 @@ function getInputType() {
     if (form1.getJSXByName("vastausKalenteriVaihtoehdot").getChecked()) {
         input = "CALENDAR";
     }
+    if (form1.getJSXByName("vastausNumero").getChecked()) {
+        input = "NUMBER";
+    }
 
     return input;
 }
@@ -1067,11 +1079,28 @@ function inputSection(title,question) {
         mapFieldsToMatrix(title,question,sectionNumber,inputType);
         inputCalendarSection(title,question,sectionNumber);
     }
+    if (inputType=="NUMBER") {
+       // alert("MULTIPLE_CHOICE");
+        mapFieldsToMatrix(title,question,sectionNumber,inputType);
+        inputNumberSection(title,question,sectionNumber);
+    }
 }
 
 function inputTextSection(title,question,nameSection) {
     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 205).repaint();
     var textSection = form1.getJSXByName("block").load("components/textinputsection.xml",true);
+    
+    // textSection.setTitleText(title).repaint();
+    textSection.setName(nameSection).repaint();
+    //alert(textSection.getChild());
+    //alert(textSection.getJSXByName("labelKysymys").getText());
+    form1.getJSXByName("labelKysymys").setText(question).repaint();
+    
+}
+
+function inputNumberSection(title,question,nameSection) {
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 95).repaint();
+    var textSection = form1.getJSXByName("block").load("components/numberinputsection.xml",true);
     
     // textSection.setTitleText(title).repaint();
     textSection.setName(nameSection).repaint();

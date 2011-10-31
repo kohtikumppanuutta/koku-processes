@@ -417,30 +417,20 @@ function addCalendarChoices(questionName) {
 }
 
 
+//Getting the domain name and port if available
 function getUrl() {
-    //var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-    //var url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
-
     
     var domain = getDomainName();
-    var port = getPortNumber();
-    
-    var url = "http://" + domain + ":" + port + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-    return url;
-    
-}
+    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
+}
 
 function getDomainName() {
 
     var url = window.location.href;
-   // alert(url);
     var url_parts = url.split("/");
-   // alert(url_parts);
-    var domain_name_parts = url_parts[2].split(":");
-   // alert(domain_name_parts);
-    var domain_name = domain_name_parts[0];
-    
+    var domain_name = url_parts[2];
+       
     return domain_name;
 
 }
