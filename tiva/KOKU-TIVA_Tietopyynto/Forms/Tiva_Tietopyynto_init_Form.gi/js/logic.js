@@ -4,6 +4,15 @@ function intalioPreStart() {
    
 }
 
+
+function getEndpoint() {
+    
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51x:8080";
+    return endpoint;
+    
+}
+
 function getPortNumber() {
     var url = window.location.href;
     var url_parts = url.split("/");
@@ -13,16 +22,22 @@ function getPortNumber() {
 }
 
 function getDomainName() {
+
     var url = window.location.href;
     var url_parts = url.split("/");
-    var domain_name_parts = url_parts[2].split(":");
-    var domain_name = domain_name_parts[0];
+    var domain_name = url_parts[2];
+       
     return domain_name;
+
 }
 
+
+
 function getURL() {
-    var newString = "http://" + getDomainName() + ":" + getPortNumber();
-    return newString;
+    
+    var domain = getDomainName();
+    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
 }
 
 function mapSelectedValuesToMatrix() {
@@ -356,7 +371,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getURL() + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -391,7 +406,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getURL() + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -425,7 +440,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getURL() + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -458,7 +473,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
          url = getURL() + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -492,7 +507,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         url = getURL() + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
        
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 

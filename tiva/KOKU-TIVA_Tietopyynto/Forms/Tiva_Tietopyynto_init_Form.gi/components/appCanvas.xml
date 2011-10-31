@@ -1,4 +1,4 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
   <name/>
   <icon/>
   <description/>
@@ -1021,7 +1021,7 @@
                   <variants/>
                   <strings riaLabelText="Vastaus_Voimassa" jsxname="Vastaus_Voimassa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="block"/>
                   <object type="jsx3.gui.DatePicker">
-                    <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxrequired="0" jsxyear="2011" jsxmonth="7" jsxdate="7"/>
+                    <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxrequired="0"/>
                     <strings jsxformat="dd.MM.yyy" jsxname="Vastaus_Voimassa" jsxmargin="0 4 0 0" jsxdisplay=""/>
                     <events jsxhide="com.intalio.ria.validate(this);"/>
                   </object>
