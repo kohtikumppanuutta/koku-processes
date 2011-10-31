@@ -398,8 +398,8 @@
  </binding>
  <service name='KokuSuostumusProcessingService'>
   <port binding='tns:KokuSuostumusProcessingServiceBinding' name='KokuSuostumusProcessingServicePort'>
-    <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl"/>
-    <!-- <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl"/> -->
+    <!-- <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl"/> -->
+    <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl"/>
   </port>
  </service>
 </definitions>
