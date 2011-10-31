@@ -175,7 +175,8 @@
  </binding>
  <service name="KokuHakProcessingService">
   <port binding="tns:KokuHakProcessingServiceBinding" name="KokuHakProcessingServicePort">
-   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl"/>
+<!--   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl"/>-->
+   <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl"/>
   </port>
  </service>
 </definitions>
