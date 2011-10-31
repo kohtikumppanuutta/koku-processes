@@ -1,14 +1,26 @@
 /* place JavaScript code here */
+function getEndpoint() {
+    
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51x:8080";
+    return endpoint;
+    
+}
+
+//Getting the domain name and port if available
+function getUrl() {
+    
+    var domain = getDomainName();
+    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
+}
+
 function getDomainName() {
 
     var url = window.location.href;
-   // alert(url);
     var url_parts = url.split("/");
-   // alert(url_parts);
-    var domain_name_parts = url_parts[2].split(":");
-   // alert(domain_name_parts);
-    var domain_name = domain_name_parts[0];
-    
+    var domain_name = url_parts[2];
+       
     return domain_name;
 
 }
@@ -28,19 +40,6 @@ function getPortNumber() {
 
 }
 
-
-function getUrl() {
-    //var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-    //var url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
-
-
-    var domain = getDomainName();
-    var port = getPortNumber();
-    
-    var url = "http://" + domain + ":" + port + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-    return url;
-    
-}
 
 
 function hideButtonsAndImages() {
@@ -81,7 +80,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";

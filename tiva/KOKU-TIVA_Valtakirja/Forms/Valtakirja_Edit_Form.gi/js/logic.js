@@ -1,28 +1,27 @@
 /* place JavaScript code here */
-function getUrl() {
-    //var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-    //var url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
-
+function getEndpoint() {
     
-    var domain = getDomainName();
-    var port = getPortNumber();
-    
-    var url = "http://" + domain + ":" + port + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-    return url;
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51x:8080";
+    return endpoint;
     
 }
 
 
+//Getting the domain name and port if available
+function getUrl() {
+    
+    var domain = getDomainName();
+    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
+}
+
 function getDomainName() {
 
     var url = window.location.href;
-   // alert(url);
     var url_parts = url.split("/");
-   // alert(url_parts);
-    var domain_name_parts = url_parts[2].split(":");
-   // alert(domain_name_parts);
-    var domain_name = domain_name_parts[0];
-    
+    var domain_name = url_parts[2];
+       
     return domain_name;
 
 }
@@ -156,7 +155,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var tout = 1000;   
 
         var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getValtakirja><valtakirjaId>" + valtakirjaId + "</valtakirjaId><kayttaja>" + username + "</kayttaja></soa:getValtakirja></soapenv:Body></soapenv:Envelope>";
-        var endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
 
         var url = getUrl();
 
@@ -199,7 +198,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
       
         var url = getUrl();
         
-        var endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
@@ -246,7 +245,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
       
         var url = getUrl();
         
-        var endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
@@ -316,6 +315,16 @@ function changeMandateTemplate() {
     Valtakirja_Form.getJSXByName("Valtakirjapohja_Kuvaus").setValue(templateDesc);
 }
 
+
+function checkDate(dateValue) {
+    var notBefore = checkDateNotBefore(dateValue, getTodayDateFinnish());
+    if (notBefore==false) {
+            var wantsToReplace = confirm("Olet asettanut valtakirjan p\xE4\xE4ttymisp\xE4iv\xE4ksi menneisyydess\xE4 olevan p\xE4iv\xE4m\xE4\xE4r\xE4n. Haluatko korjata p\xE4iv\xE4m\xE4\xE4r\xE4n (korjaa) vai mit\xE4t\xF6id\xE4 valtakirjan (mit\xE4t\xF6i)");
+        
+    }
+
+}
+
 // USE: checkDateNotBefore(newDATE, getTodayDateFinnish());
 function checkDateNotBefore(dateValue, dateNotBefore) {
    // alert(dateValue);
@@ -343,7 +352,7 @@ function checkDateNotBefore(dateValue, dateNotBefore) {
     
     if (dateObjectValue<dateObjectNotBefore)
       {
-      alert("P" + unescape("%E4") + "iv" + unescape("%E4") + "m" + unescape("%E4%E4") + "r" + unescape("%E4") + " ei voi olla ennen t" + unescape("%E4") + "t" + unescape("%E4") + " p" + unescape("%E4") + "iv" + unescape("%E4%E4"));
+     // alert("P" + unescape("%E4") + "iv" + unescape("%E4") + "m" + unescape("%E4%E4") + "r" + unescape("%E4") + " ei voi olla ennen t" + unescape("%E4") + "t" + unescape("%E4") + " p" + unescape("%E4") + "iv" + unescape("%E4%E4"));
       return false;
       }
     

@@ -249,7 +249,7 @@
                   <object type="jsx3.gui.DatePicker">
                     <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxfirstweekday="1"/>
                     <strings jsxformat="yyyy-MM-dd" jsxname="Tiedot_Voimassa" jsxmargin="0 4 0 0"/>
-                    <events jsxhide="com.intalio.ria.validate(this);" jsxchange="checkDateNotBefore(newDATE, getTodayDateFinnish());"/>
+                    <events jsxhide="com.intalio.ria.validate(this);" jsxchange="checkDate(newDATE);"/>
                   </object>
                 </object>
               </object>
