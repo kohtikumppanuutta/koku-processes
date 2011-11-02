@@ -1044,10 +1044,11 @@ function getInputType() {
     if (form1.getJSXByName("vastausKalenteriVaihtoehdot").getChecked()) {
         input = "CALENDAR";
     }
+    /*
     if (form1.getJSXByName("vastausNumero").getChecked()) {
         input = "NUMBER";
     }
-
+*/
     return input;
 }
 
