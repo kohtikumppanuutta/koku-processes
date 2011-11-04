@@ -263,30 +263,19 @@ function getDomainName() {
     return domain_name;
 }
 
-function getPortNumber() {
+function getDomainName() {
+
     var url = window.location.href;
     var url_parts = url.split("/");
-    var domain_name_parts = url_parts[2].split(":");
-    var port_number = domain_name_parts[1];
-    return port_number;
-}
-
-function getDomainName() {
-    var url, url_parts, domain_name;
-
-    url = window.location.href;
-    url_parts = url.split("/");
-    domain_name = url_parts[2];
+    var domain_name = url_parts[2];
        
     return domain_name;
 
 }
 
-//Getting the domain name and port if available
 function getUrl() {
-    var domin;
-
-    domain = getDomainName();
+    
+    var domain = getDomainName();
     return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }

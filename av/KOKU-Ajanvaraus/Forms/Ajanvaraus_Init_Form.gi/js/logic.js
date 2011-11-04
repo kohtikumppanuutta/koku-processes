@@ -967,30 +967,20 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 // Extra Functions -------------------------------------------------------------------------------------------------------------------------------
 
 function getDomainName() {
-    var url, url_parts, domain_name_parts, domain_name;
 
-    url = window.location.href;
-    url_parts = url.split("/");
-    domain_name_parts = url_parts[2].split(":");
-    domain_name = domain_name_parts[0];
-
-    return domain_name;
-}
-
-function getPortNumber() {
     var url = window.location.href;
     var url_parts = url.split("/");
-    var domain_name_parts = url_parts[2].split(":");
-    var port_number = domain_name_parts[1];
-    return port_number;
+    var domain_name = url_parts[2];
+       
+    return domain_name;
+
 }
 
-
 function getUrl() {
-    var url = "http://" + getDomainName() + ":" + getPortNumber();
-    url = url + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-    url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-    return url;
+    
+    var domain = getDomainName();
+    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
 }
 
 function showDialog (dialogId, text, textTitle, title) {
