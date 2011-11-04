@@ -1,0 +1,178 @@
+<definitions name="KokuTietopyyntoProcessingService" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://soa.tiva.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="getTietoelementit" type="tns:getTietoelementit"/>
+   <xs:element name="getTietoelementitResponse" type="tns:getTietoelementitResponse"/>
+   <xs:element name="hylkaTietopyynto" type="tns:hylkaTietopyynto"/>
+   <xs:element name="hylkaTietopyyntoResponse" type="tns:hylkaTietopyyntoResponse"/>
+   <xs:element name="hyvaksyTietopyynto" type="tns:hyvaksyTietopyynto"/>
+   <xs:element name="hyvaksyTietopyyntoResponse" type="tns:hyvaksyTietopyyntoResponse"/>
+   <xs:element name="luoTietopyynto" type="tns:luoTietopyynto"/>
+   <xs:element name="luoTietopyyntoResponse" type="tns:luoTietopyyntoResponse"/>
+   <xs:element name="record" type="tns:informationCategoryTO"/>
+   <xs:complexType name="getTietoelementit">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getTietoelementitResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="record" type="tns:informationCategoryTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="informationCategoryTO">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="record" type="tns:informationCategoryTO"/>
+    </xs:sequence>
+    <xs:attribute name="jsxid" type="xs:long"/>
+    <xs:attribute name="description" type="xs:string"/>
+    <xs:attribute name="jsxtext" type="xs:string"/>
+   </xs:complexType>
+   <xs:complexType name="luoTietopyynto">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="tietopyynto" type="tns:informationRequestTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="informationRequestTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="additionalInfo" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="category" type="xs:long"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+     <xs:element minOccurs="0" name="legislationInfo" type="xs:string"/>
+     <xs:element minOccurs="0" name="receiverUid" type="xs:string"/>
+     <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+     <xs:element minOccurs="0" name="requestPurpose" type="xs:string"/>
+     <xs:element minOccurs="0" name="senderUid" type="xs:string"/>
+     <xs:element minOccurs="0" name="targetPersonUid" type="xs:string"/>
+     <xs:element minOccurs="0" name="title" type="xs:string"/>
+     <xs:element minOccurs="0" name="validTill" type="xs:anySimpleType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="luoTietopyyntoResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="tietopyyntoId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hyvaksyTietopyynto">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="tietoPynnonVastaus" type="tns:informationRequestReplyTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="informationRequestReplyTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="additionalInfo" type="xs:string"/>
+     <xs:element minOccurs="0" name="attachmentURL" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="categoryIds" nillable="true" type="xs:long"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+     <xs:element minOccurs="0" name="informationAccessType" type="tns:informationAccessType"/>
+     <xs:element minOccurs="0" name="informationDetails" type="xs:string"/>
+     <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+     <xs:element minOccurs="0" name="validTill" type="xs:date"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hyvaksyTietopyyntoResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="hylkaTietopyynto">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="tietopyyntoId" type="xs:long"/>
+     <xs:element minOccurs="0" name="explanation" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hylkaTietopyyntoResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:simpleType name="informationAccessType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="Manual"/>
+     <xs:enumeration value="Portal"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+ </types>
+ <message name="KokuTietopyyntoProcessingService_luoTietopyyntoResponse">
+  <part element="tns:luoTietopyyntoResponse" name="luoTietopyyntoResponse"/>
+ </message>
+ <message name="KokuTietopyyntoProcessingService_hylkaTietopyynto">
+  <part element="tns:hylkaTietopyynto" name="hylkaTietopyynto"/>
+ </message>
+ <message name="KokuTietopyyntoProcessingService_getTietoelementitResponse">
+  <part element="tns:getTietoelementitResponse" name="getTietoelementitResponse"/>
+ </message>
+ <message name="KokuTietopyyntoProcessingService_luoTietopyynto">
+  <part element="tns:luoTietopyynto" name="luoTietopyynto"/>
+ </message>
+ <message name="KokuTietopyyntoProcessingService_hyvaksyTietopyynto">
+  <part element="tns:hyvaksyTietopyynto" name="hyvaksyTietopyynto"/>
+ </message>
+ <message name="KokuTietopyyntoProcessingService_hylkaTietopyyntoResponse">
+  <part element="tns:hylkaTietopyyntoResponse" name="hylkaTietopyyntoResponse"/>
+ </message>
+ <message name="KokuTietopyyntoProcessingService_hyvaksyTietopyyntoResponse">
+  <part element="tns:hyvaksyTietopyyntoResponse" name="hyvaksyTietopyyntoResponse"/>
+ </message>
+ <message name="KokuTietopyyntoProcessingService_getTietoelementit">
+  <part element="tns:getTietoelementit" name="getTietoelementit"/>
+ </message>
+ <portType name="KokuTietopyyntoProcessingService">
+  <operation name="getTietoelementit" parameterOrder="getTietoelementit">
+   <input message="tns:KokuTietopyyntoProcessingService_getTietoelementit"/>
+   <output message="tns:KokuTietopyyntoProcessingService_getTietoelementitResponse"/>
+  </operation>
+  <operation name="hylkaTietopyynto" parameterOrder="hylkaTietopyynto">
+   <input message="tns:KokuTietopyyntoProcessingService_hylkaTietopyynto"/>
+   <output message="tns:KokuTietopyyntoProcessingService_hylkaTietopyyntoResponse"/>
+  </operation>
+  <operation name="hyvaksyTietopyynto" parameterOrder="hyvaksyTietopyynto">
+   <input message="tns:KokuTietopyyntoProcessingService_hyvaksyTietopyynto"/>
+   <output message="tns:KokuTietopyyntoProcessingService_hyvaksyTietopyyntoResponse"/>
+  </operation>
+  <operation name="luoTietopyynto" parameterOrder="luoTietopyynto">
+   <input message="tns:KokuTietopyyntoProcessingService_luoTietopyynto"/>
+   <output message="tns:KokuTietopyyntoProcessingService_luoTietopyyntoResponse"/>
+  </operation>
+ </portType>
+ <binding name="KokuTietopyyntoProcessingServiceBinding" type="tns:KokuTietopyyntoProcessingService">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getTietoelementit">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="hylkaTietopyynto">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="hyvaksyTietopyynto">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="luoTietopyynto">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="KokuTietopyyntoProcessingService">
+  <port binding="tns:KokuTietopyyntoProcessingServiceBinding" name="KokuTietopyyntoProcessingServicePort">
+<!--   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl"/>-->
+   <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl"/>
+  </port>
+ </service>
+</definitions>
