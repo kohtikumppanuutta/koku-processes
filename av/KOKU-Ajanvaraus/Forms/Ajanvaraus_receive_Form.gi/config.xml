@@ -54,6 +54,24 @@
       <record jsxid="load" type="number">0</record>
       <record jsxid="src" type="string">rules/UserSchemaMapping.xml</record>
     </record>
+    <record jsxid="6" type="map">
+      <record jsxid="id" type="string">jquery_min_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="load" type="number">1</record>
+      <record jsxid="src" type="string">js/jquery.min.js</record>
+    </record>
+    <record jsxid="7" type="map">
+      <record jsxid="id" type="string">jquery-ui_min_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="load" type="number">1</record>
+      <record jsxid="src" type="string">js/jquery-ui.min.js</record>
+    </record>
+    <record jsxid="8" type="map">
+      <record jsxid="id" type="string">jquery-ui_css</record>
+      <record jsxid="type" type="string">css</record>
+      <record jsxid="load" type="number">1</record>
+      <record jsxid="src" type="string">css/jquery-ui.css</record>
+    </record>
   </record>
   <record jsxid="addins" type="array">
     <record jsxid="0" type="string">intalioajax-addins</record>

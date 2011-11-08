@@ -595,12 +595,12 @@
       <variants/>
       <strings riaTitleText="Tapaamisten lisääminen" jsxname="tapaamistenLisaaminen" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="320"/>
+        <variants jsxoverflow="2" jsxwidth="720" jsxheight="440"/>
         <strings jsxname="pane" jsxpadding="" jsxbgcolor=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="8%,12%,16%,16%,18%,20%,14%" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+          <strings jsxname="layout (--)" jsxrows="6%,8%,10%,10%,14%,10%,*,10%" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder=""/>
@@ -1080,6 +1080,34 @@
             <variants jsxoverflow="2" jsxwidth="720" jsxheight="260"/>
             <strings jsxname="pane" jsxpadding="" jsxbgcolor=""/>
             <dynamics jsxborder="@No jsxborder"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxrelativeposition="1" jsxoverflow="3"/>
+              <strings jsxname="label" jsxtext="Tarkentava teksti" jsxclassname="FormLabel"/>
+            </object>
+            <object type="jsx3.gui.LayoutGrid">
+              <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+              <dynamics jsxborder="@No jsxborder"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxoverflow="2"/>
+                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+                <dynamics jsxborder="@No jsxborder"/>
+                <object type="com.intalio.ria.Field">
+                  <variants/>
+                  <strings riaLabelText="SlotsInfotext" jsxname="SlotsInfotext-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                  <object type="jsx3.gui.TextBox">
+                    <variants jsxwidth="500" jsxheight="100" jsxtype="1"/>
+                    <strings jsxname="SlotsInfotext" jsxmargin="0 4 0 0" jsxvalue=""/>
+                    <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2" jsxwidth="720" jsxheight="260"/>
+            <strings jsxname="pane" jsxpadding="" jsxbgcolor=""/>
+            <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
               <strings jsxname="layout ( | )" jsxcols="20%,*,44%" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
@@ -1264,12 +1292,16 @@
         <strings jsxname="label" jsxtext="&lt;b&gt;Tapaamiset: &lt;/b&gt;" jsxclassname="FormLabel" jsxpadding="0" jsxmargin="0 0 0 10"/>
       </object>
       <object type="jsx3.gui.Block">
+        <variants jsxrelativeposition="1" jsxoverflow="3"/>
+        <strings jsxname="label" jsxtext="&lt;div id=&quot;dialog&quot; title=&quot;Täyttöohje&quot; style=&quot;display:none;&quot;&gt; &lt;/div&gt;" jsxclassname="FormLabel" jsxpadding="0" jsxmargin="0 0 0 10" jsxdisplay="none"/>
+      </object>
+      <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxheight="0"/>
         <strings jsxname="calendarEntryBlock" jsxpadding="0" jsxbgcolor="" jsxmargin="0"/>
         <dynamics jsxborder="@No jsxborder"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxvalue="87"/>
+        <variants jsxvalue="91"/>
         <strings jsxname="calendarEntryId" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>

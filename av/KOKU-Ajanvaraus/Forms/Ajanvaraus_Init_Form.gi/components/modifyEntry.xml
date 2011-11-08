@@ -5,19 +5,19 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="600" jsxheight="150"/>
+    <variants jsxoverflow="2" jsxwidth="600" jsxheight="280"/>
     <strings jsxname="mod" jsxdisplay=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
       <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-      <strings jsxname="layout (--)" jsxrows="35%,*" jsxwidth="100%" jsxheight="100%"/>
+      <strings jsxname="layout (--)" jsxrows="18%,20%,*" jsxwidth="100%" jsxheight="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
         <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout ( | )" jsxcols="20%,20%,27%,*" jsxwidth="100%" jsxheight="100%"/>
+          <strings jsxname="layout ( | )" jsxcols="20%,20%,32%,*" jsxwidth="100%" jsxheight="100%"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
@@ -109,6 +109,33 @@
               <object type="jsx3.gui.TextBox">
                 <variants jsxwidth="340" jsxmaxlength="40"/>
                 <strings jsxname="modLocation" jsxmargin="0 4 0 0" jsxvalue=""/>
+                <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+          <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
+            <dynamics jsxborder="@No jsxborder"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxrelativeposition="1" jsxoverflow="3"/>
+              <strings jsxname="label" jsxtext="Tarkentava teksti" jsxclassname="FormLabel"/>
+            </object>
+            <object type="com.intalio.ria.Field">
+              <variants/>
+              <strings riaLabelText="modInfotext" jsxname="modInfotext-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxwidth="340" jsxmaxlength="40" jsxheight="110" jsxtype="1"/>
+                <strings jsxname="modInfotext" jsxmargin="0 4 0 0" jsxvalue=""/>
                 <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
               </object>
             </object>

@@ -23,6 +23,10 @@ div[label=IntalioInternal_SpacerBlock] {
     width: 620px !important;
 }
 
+.fieldset .fieldset-padding .jsx30block span[label=tooltipImg] {
+    width: 30px !important;
+}
+
 span[label=IntalioInternal_SaveButton], 
 span[label=IntalioInternal_ClaimButton], 
 span[label=IntalioInternal_RevokeButton] {

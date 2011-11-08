@@ -5,18 +5,19 @@
 function intalioPreStart() {
     var entry;
     
-    if (AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").getValue()) {
+    if (AjanvarausForm.getJSXByName("Lomake_Hylkaa").getChecked()) {
+        if(!confirmation("Olet peruuttamassa tapaaamista")) {
+            return "Lomaketta ei tallenettu";
+        }
+    } else if (checkApprovedSlot()) {
         entry = getEntry();
    
         if (!confirmation("Olet varaamassa tapaamista ajalle: " + entry)) {
             return "Lomaketta ei tallennettu";
         }
-    }
-    else {
-        if(!confirmation("Olet peruuttamassa tapaaamista")) {
-            return "Lomaketta ei tallenettu";
-        }
-    }
+    } else {
+        return "Sinun t\u00E4ytyy joko valita aika tai peruuttaa tapaaminen";
+    } 
     
     changeStatus();
     return null;
@@ -29,6 +30,22 @@ function confirmation(question){
     else {
         return false;
     }
+}
+
+function checkApprovedSlot() {
+    var slots, i, approved;
+
+    slots = AjanvarausForm.getJSXByName("Ajat").getDescendantsOfType("jsx3.gui.CheckBox");
+    approved = false;
+    
+    for (i = 0; i < slots.length; i++) {
+        if (slots[i].getChecked()) {
+            approved = true;
+            break;
+        }
+    }
+    
+    return approved;
 }
 
 function getEntry() {
@@ -69,6 +86,24 @@ function formatDataCache(cache, matrix) {
     }
 }
 
+function uncheckAll(target) {
+    var i, descendants;
+    descendants = target.getDescendantsOfType("jsx3.gui.CheckBox");
+    for (i = 0; i < descendants.length; i++) {
+        descendants[i].setChecked(0);
+    }
+}
+
+function uncheckTheOthers(target, checked) {
+    var i, descendants = target.getDescendantsOfType("jsx3.gui.CheckBox");
+
+    for (i = 0; i < descendants.length; i++)   {
+        if (descendants[i] != checked) {
+            descendants[i].setChecked(0);
+        }
+    }
+}
+
 // Adding appointment entry slots ----------------------------------------------------------------------------------------------------------------------------
 
 function setApprovedNumber(selectBoxName) {
@@ -81,28 +116,18 @@ function setApprovedNumber(selectBoxName) {
 }
 
 function radioSelect(selectBoxName) {   
-        
-    var activeSelection = AjanvarausForm.getJSXByName("activeSelect").getValue();
-    AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
-        
-    // If user has not make any selections yet.
-    if (activeSelection == "noValue") {
-        AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
-        AjanvarausForm.getJSXByName("activeSelect").setValue(selectBoxName);
-    }
+    //var activeSelection = AjanvarausForm.getJSXByName("activeSelect").getValue();
+    //AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
     
-    // If user decides to change his mind --> disable previous selection.
-    else {
+    uncheckTheOthers(AjanvarausForm.getJSXByName("Ajat"), AjanvarausForm.getJSXByName(selectBoxName));
+
+    if (AjanvarausForm.getJSXByName(selectBoxName).getChecked()) {
         AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
-        AjanvarausForm.getJSXByName(activeSelection).setChecked(jsx3.gui.CheckBox.UNCHECKED).repaint();
-        AjanvarausForm.getJSXByName("activeSelect").setValue(selectBoxName);
+    } else {
+        AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue("");
     }
-    
-    // If user unselects his choice --> setting one selection required state
-    if (activeSelection != "noValue" && AjanvarausForm.getJSXByName(selectBoxName).getChecked() == 0) {
-        AjanvarausForm.getJSXByName("activeSelect").setValue("noValue");
-        AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(jsx3.gui.Form.REQUIRED).repaint();
-     }
+     
+     AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(0, true);
 } //radioSelect()
 
 // Preload ---------------------------------------------------------------------------------------------------------------------------------------
@@ -167,14 +192,15 @@ function inputPreload(objXML) {
         alkaa = attributes[i][2].substr(0,5);
         paattyy = attributes[i][3].substr(0,5);
         paikka = attributes[i][4];
+        infotext = attributes[i][5];
               
         //LISATAAN MYOHEMMIN TARKISTUS JOS "LISATIETOJA" -KENTTA ON TYHJA NIIN JATETAAN SE KIRJOITTAMATTA
         entryText = pvm + ", klo: " + alkaa + " - " + paattyy + ", paikka: " + paikka;
-        addNewEntry(entryText, numero);
+        addNewEntry(entryText, infotext, numero);
     }
 }
 
-function addNewEntry(entryText, numero) {
+function addNewEntry(entryText, infotext, numero) {
     var ajankohtaPanel, yesBox, label;
 
     ajankohtaPanel = AjanvarausForm.getJSXByName("Ajat").load("components/calendarEntry.xml",true);
@@ -188,6 +214,11 @@ function addNewEntry(entryText, numero) {
     label = ajankohtaPanel.getFirstChild().getFirstChild().getFirstChild().getLastChild().getFirstChild();
 
     label.setText(entryText).repaint();
+    if (infotext) {
+        ajankohtaPanel.getDescendantOfName("infotext").setValue(infotext);
+    } else {
+        ajankohtaPanel.getDescendantOfName("tooltipImg").setDisplay("none", true);
+    }
 } //addNewEntry()
 
 function getAttributes(objXML) {
@@ -220,12 +251,11 @@ function getAttributes(objXML) {
 
 //Package FormPreFill
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetFormData= function(id, targetPerson) {
+    arc.GetFormData = function(id, targetPerson) {
         var msg, endpoint, url, tout, appointmentId, req, objXML;
     
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointmentForReply><appointmentId>" + id + "</appointmentId><arg1>" + targetPerson + "</arg1></soa:getAppointmentForReply></soapenv:Body></soapenv:Envelope>";
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        //endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        endpoint = getAVEndpoint();
         url = getUrl();
         
         tout = 1000;
@@ -253,25 +283,6 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 // Extra Functions -------------------------------------------------------------------------------------------------------------------------------
 
 function getDomainName() {
-    var url, url_parts, domain_name_parts, domain_name;
-
-    url = window.location.href;
-    url_parts = url.split("/");
-    domain_name_parts = url_parts[2].split(":");
-    domain_name = domain_name_parts[0];
-
-    return domain_name;
-}
-
-function getPortNumber() {
-    var url = window.location.href;
-    var url_parts = url.split("/");
-    var domain_name_parts = url_parts[2].split(":");
-    var port_number = domain_name_parts[1];
-    return port_number;
-}
-
-function getDomainName() {
     var url, url_parts, domain_name;
 
     url = window.location.href;
@@ -284,11 +295,21 @@ function getDomainName() {
 
 //Getting the domain name and port if available
 function getUrl() {
-    var domin;
+    var domain;
 
     domain = getDomainName();
+    alert(domain);
+
     return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
+}
+
+function getAVEndpoint() {
+    var endpoint;
+    
+    endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+
+    return endpoint;
 }
 
 function gup(name) {
@@ -306,6 +327,24 @@ function gup(name) {
         return false;
     else
         return results[1];
+}
+
+function showDialog(dialogId, text, textTitle, title) {
+    var dialog, cssDisplay;
+
+    dialog = $("#" + dialogId);
+
+    cssDisplay = dialog.css('display');
+    if (cssDisplay === 'none') {
+        dialog.dialog({title: title});
+        dialog.dialog("option", "width", 400);
+        dialog.dialog("option", "height", 300);
+        dialog.dialog("option", "position", ['middle', 'middle']);
+        dialog.dialog();
+    } else {
+        dialog.dialog({show: null});
+    }
+    dialog.html("<p style=\"text-align:left;\"><b>" + textTitle + "</b></p><p style=\"margin:0 0 0 0;\">" + text + "</p>");
 }
 
 jsx3.lang.Package.definePackage(

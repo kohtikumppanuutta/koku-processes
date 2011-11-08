@@ -147,14 +147,18 @@
         <variants jsxrelativeposition="1" jsxoverflow="3"/>
         <strings jsxname="label" jsxtext="Klikkaa vapaiden aikojen edellä olevaa valintaruutua valitaksesi ajan itsellesi. Klikkaa &quot;Peru Tapaaminen&quot; peruuttaaksesi tapaamisen." jsxclassname="FormLabel"/>
       </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxrelativeposition="1" jsxoverflow="3"/>
+        <strings jsxname="label" jsxtext="&lt;div id=&quot;dialog&quot; title=&quot;Täyttöohje&quot; style=&quot;display:none;&quot;&gt; &lt;/div&gt;" jsxclassname="FormLabel" jsxdisplay="none"/>
+      </object>
       <object type="jsx3.gui.TextBox">
-        <variants/>
-        <strings jsxvalue="11" jsxwidth="" jsxname="counter" jsxmargin="" jsxdisplay="none"/>
+        <variants jsxvalue="2"/>
+        <strings jsxwidth="" jsxname="counter" jsxmargin="" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxrequired="1"/>
-        <strings jsxwidth="" jsxname="activeSelect" jsxmargin="" jsxvalue="noValue" jsxdisplay="none"/>
+        <variants jsxrequired="1" jsxvalue="2"/>
+        <strings jsxwidth="" jsxname="activeSelect" jsxmargin="" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -180,7 +184,7 @@
             <object type="jsx3.gui.CheckBox">
               <variants jsxheight="18" jsxchecked="0"/>
               <strings jsxname="Lomake_Hylkaa" jsxtext="" jsxmargin="0 4 0 0"/>
-              <events jsxtoggle="if (this.getChecked()) { AjanvarausForm.getJSXByName(&quot;requireApprovedSlotNumber&quot;).setRequired(0); AjanvarausForm.getJSXByName(&quot;Lomake&quot;).setDisplay(&quot;block&quot;,true); } else { AjanvarausForm.getJSXByName(&quot;Lomake&quot;).setDisplay(&quot;none&quot;,true); AjanvarausForm.getJSXByName(&quot;Lomake_Viesti&quot;).setValue(&quot;&quot;);AjanvarausForm.getJSXByName(&quot;requireApprovedSlotNumber&quot;).setRequired(1); }"/>
+              <events jsxtoggle="if (this.getChecked()) { AjanvarausForm.getJSXByName(&quot;requireApprovedSlotNumber&quot;).setRequired(0); AjanvarausForm.getJSXByName(&quot;Lomake&quot;).setDisplay(&quot;block&quot;,true); } else { AjanvarausForm.getJSXByName(&quot;Lomake&quot;).setDisplay(&quot;none&quot;,true); AjanvarausForm.getJSXByName(&quot;Lomake_Viesti&quot;).setValue(&quot;&quot;);AjanvarausForm.getJSXByName(&quot;requireApprovedSlotNumber&quot;).setRequired(1); } uncheckAll(AjanvarausForm.getJSXByName(&quot;Ajat&quot;));"/>
             </object>
           </object>
           <object type="jsx3.gui.Block">
@@ -236,8 +240,8 @@
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants/>
-        <strings jsxname="Lomake_Hyvaksytty_Aika" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+        <variants jsxvalue="2"/>
+        <strings jsxname="Lomake_Hyvaksytty_Aika" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.TextBox">

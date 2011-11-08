@@ -25,6 +25,16 @@
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
               <strings jsxname="entry" jsxtext="Ajankohta" jsxclassname="FormLabel"/>
+              <object type="jsx3.gui.Image">
+                <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                <strings jsxname="tooltipImg" jsxsrc="images/help-button-small.png" jsxcursor="pointer" jsxpadding="0 0 0 6" jsxdisplay=""/>
+                <events jsxclick="showDialog(&quot;dialog&quot;,this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getChild(&quot;infotext&quot;).getValue(),&quot;Tarkennus&quot;,&quot;KOKU-ohjeet&quot;);"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.TextBox">
+              <variants/>
+              <strings jsxname="tooltipText" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+              <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
             </object>
           </object>
           <object type="jsx3.gui.Block">
@@ -33,7 +43,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Button">
               <variants jsxindex="0" jsxheight="18"/>
-              <strings jsxname="button" jsxtext="Muokkaa" jsxmargin="0 4 0 0"/>
+              <strings jsxname="modButton" jsxtext="Muokkaa" jsxmargin="0 4 0 0"/>
               <events jsxexecute="modifyThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());"/>
             </object>
           </object>
@@ -43,7 +53,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Button">
               <variants jsxindex="0" jsxheight="18"/>
-              <strings jsxname="button" jsxtext="Poista" jsxmargin="0 4 0 0"/>
+              <strings jsxname="remButton" jsxtext="Poista" jsxmargin="0 4 0 0"/>
               <events jsxexecute="removeThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());"/>
             </object>
           </object>
@@ -58,6 +68,11 @@
     <object type="jsx3.gui.TextBox">
       <variants/>
       <strings jsxname="entryId" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+      <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+    </object>
+    <object type="jsx3.gui.TextBox">
+      <variants/>
+      <strings jsxname="infotext" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
       <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
     </object>
   </object>

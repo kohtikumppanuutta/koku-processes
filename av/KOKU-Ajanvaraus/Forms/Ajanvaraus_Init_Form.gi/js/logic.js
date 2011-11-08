@@ -1,3 +1,12 @@
+// Global variables ------------------------------------------------------------------------------------------------------------------------------
+
+function setGlobalVariables() {
+    var globalEndpoints, globalUrl;
+
+    window.globalUrl = getUrl();
+    window.globalEndpoints = getKokuServicesEndpoints();
+}
+
 // Prestart --------------------------------------------------------------------------------------------------------------------------------------
 
 function intalioPreStart() {
@@ -151,6 +160,7 @@ function modifyThisSection(id) {
     section.getDescendantOfName("modStartTime").setValue(attributes[1]).repaint();
     section.getDescendantOfName("modEndTime").setValue(attributes[2]).repaint();
     section.getDescendantOfName("modLocation").setValue(attributes[3]).repaint();
+    section.getDescendantOfName("modInfotext").setValue(attributes[4]).repaint();
 }
 
 function saveValues(id) {
@@ -168,12 +178,20 @@ function saveValues(id) {
     startTime = AjanvarausForm.getJSXByName("modStartTime").getValue();
     endTime = AjanvarausForm.getJSXByName("modEndTime").getValue();
     locat = AjanvarausForm.getJSXByName("modLocation").getValue();
+    infotext = AjanvarausForm.getJSXByName("modInfotext").getValue();
     
     nodes.setAttribute("appointmentDate", appDateCache);
     nodes.setAttribute("startTime", startTime + ":00");
     nodes.setAttribute("endTime", endTime + ":00");
     nodes.setAttribute("location", locat);
-    
+    nodes.setAttribute("comment", infotext);
+    if (infotext) {
+        AjanvarausForm.getJSXByName(id).getDescendantOfName("infotext").setValue(infotext);
+        AjanvarausForm.getJSXByName(id).getDescendantOfName("tooltipImg").setDisplay("block", true);
+    } else {
+        AjanvarausForm.getJSXByName(id).getDescendantOfName("tooltipImg").setDisplay("none", true);
+    }
+
     AjanvarausForm.getJSXByName(id).getDescendantOfName("entry").setText(appDateEntry + ", klo: " + startTime + " - " + endTime + ", " + locat, true); 
 }
 
@@ -183,13 +201,13 @@ function removeModSection(id) {
 
 function setValuesForModify(id, multiplier)    {
     if (multiplier > 0) {
-        AjanvarausForm.getJSXByName(id).getDescendantOfName("layout (--)").setRows("20%,*").repaint();
+        AjanvarausForm.getJSXByName(id).getDescendantOfName("layout (--)").setRows("8%,*").repaint();
     }
     else if (multiplier < 0) {
         AjanvarausForm.getJSXByName(id).getDescendantOfName("layout (--)").setRows("*").repaint();
     }
-    AjanvarausForm.getJSXByName("calendarEntryBlock").setHeight(AjanvarausForm.getJSXByName("calendarEntryBlock").getHeight() + (150 * multiplier), true);
-    AjanvarausForm.getJSXByName(id).setHeight(AjanvarausForm.getJSXByName(id).getHeight() + (150 * multiplier), true);
+    AjanvarausForm.getJSXByName("calendarEntryBlock").setHeight(AjanvarausForm.getJSXByName("calendarEntryBlock").getHeight() + (280 * multiplier), true);
+    AjanvarausForm.getJSXByName(id).setHeight(AjanvarausForm.getJSXByName(id).getHeight() + (280 * multiplier), true);
 }
 
 function getSlotAttributes(id) {
@@ -212,6 +230,7 @@ function getSlotAttributes(id) {
     time = time.substr(0,5);
     attributes[2] = time;
     attributes[3] = nodes.getAttribute("location");
+    attributes[4] = nodes.getAttribute("comment");
 
     return attributes;
 }
@@ -345,13 +364,22 @@ function multiSlotsFunc() {
     }
 }
 
-function inputSection(entryDate,entryTime,entryDuration,entryLocation) {
+function inputSection(entryDate, entryTime, entryDuration, entryLocation, infotext) {
     var id, section, helperDate, endTimeHours, endTimeMinutes, entryYear, entryDay, entryMonth, entryHours, entryMinutes;
     id = getSectionID();
     section = AjanvarausForm.getJSXByName("calendarEntryBlock").load("components/calendarEntry.xml", true);
 
     AjanvarausForm.getJSXByName("calendarEntryBlock").setHeight(AjanvarausForm.getJSXByName("calendarEntryBlock").getHeight() + 25).repaint();
     section.setName(id);
+
+    info = section.getDescendantOfName("infotext");
+
+    if (infotext) {
+        info.setValue(infotext);
+    } else {
+        section.getDescendantOfName("tooltipImg").setDisplay("none", true);
+    }
+
     helperDate = new Date();
     helperDate.setHours(entryTime.getHours());
     helperDate.setMinutes(entryTime.getMinutes() + parseInt(entryDuration, 10));
@@ -373,7 +401,7 @@ function inputSection(entryDate,entryTime,entryDuration,entryLocation) {
     endTimeMinutes = parseTimes(endTimeMinutes);
 
     AjanvarausForm.getJSXByName(id).getDescendantOfName("entry").setText(entryDay + "." + entryMonth + "." + entryYear + ", klo: " + entryHours + ":" + entryMinutes + " - " + endTimeHours + ":" + endTimeMinutes + ", " + entryLocation).repaint();
-    mapFieldsToMatrix(id,entryDate,entryHours + ":" + entryMinutes,endTimeHours + ":" + endTimeMinutes,entryLocation);
+    mapFieldsToMatrix(id, entryDate, entryHours + ":" + entryMinutes, endTimeHours + ":" + endTimeMinutes, entryLocation, infotext);
 }
 
 /*
@@ -395,7 +423,8 @@ function inputSingleSection() {
     helperStartTime.setMinutes(startTimeMinutes);
     duration = AjanvarausForm.getJSXByName("kesto").getValue();
     locat = AjanvarausForm.getJSXByName("paikka").getValue();
-    inputSection(startDate,helperStartTime,duration,locat);
+    infotext = AjanvarausForm.getJSXByName("SlotsInfotext").getValue();
+    inputSection(startDate, helperStartTime, duration, locat, infotext);
 }
 
 /*
@@ -422,6 +451,7 @@ function inputMultiSections() {
     endTimeMinutes = endTimeStr.substr(3,2);
 
     locat = AjanvarausForm.getJSXByName("paikka").getValue();
+    infotext = AjanvarausForm.getJSXByName("SlotsInfotext").getValue();
     duration = parseInt(AjanvarausForm.getJSXByName("kesto").getValue(), 10);
     helperStartTime.setHours(startTimeHours);
     helperStartTime.setMinutes(startTimeMinutes);
@@ -434,7 +464,7 @@ function inputMultiSections() {
     for (day = startDate; day <= endDate; day.setDate(day.getDate() + 1)) {
         for (hour = helperStartTime; hour < helperEndTime; hour.setMinutes(hour.getMinutes() + duration)) {
             if (selectedDays[getFinDay(day.getDay())]) {
-                inputSection(day,hour,duration,locat);
+                inputSection(day, hour, duration, locat, infotext);
             }
         }
         helperStartTime = new Date();
@@ -456,7 +486,7 @@ function fixEndTime(start, end, duration) {
     return subtraction.getMinutes().toString();
 }
 
-function mapFieldsToMatrix(id, entryDate, entryStartTime, entryEndTime, entryLocation, prefill) {
+function mapFieldsToMatrix(id, entryDate, entryStartTime, entryEndTime, entryLocation, infotext, prefill) {
     var node, hasEmptyChild, paiva, kuukausi, vuosi, pvm;
 
     hasEmptyChild = formatDataCache("slots-nomap", "slots");
@@ -478,12 +508,13 @@ function mapFieldsToMatrix(id, entryDate, entryStartTime, entryEndTime, entryLoc
 
     node = AjanvarausForm.getCache().getDocument("slots-nomap").getFirstChild().cloneNode();
 
-    node.setAttribute("jsxid",id);
-    node.setAttribute("appointmentDate",pvm);
-    node.setAttribute("startTime",entryStartTime + ":00");
-    node.setAttribute("endTime",entryEndTime + ":00");
-    node.setAttribute("location",entryLocation);
-    node.setAttribute("slotNumber",id);
+    node.setAttribute("jsxid", id);
+    node.setAttribute("appointmentDate", pvm);
+    node.setAttribute("startTime", entryStartTime + ":00");
+    node.setAttribute("endTime", entryEndTime + ":00");
+    node.setAttribute("location", entryLocation);
+    node.setAttribute("comment", infotext);
+    node.setAttribute("slotNumber", id);
     AjanvarausForm.getCache().getDocument("slots-nomap").insertBefore(node);
 
     if (hasEmptyChild == true) {
@@ -590,7 +621,12 @@ function mapAttributes(objXML) {
         }
 
         section.getDescendantOfName("entry").setText(pvm + ", klo: " + attributes[i][2].substr(0,5) + " - " + attributes[i][3].substr(0,5) + ", " + attributes[i][4]).repaint();
-        mapFieldsToMatrix(attributes[i][0], attributes[i][1], attributes[i][2].substr(0,5), attributes[i][3].substr(0,5), attributes[i][4], true);
+        if (attributes[i][5]) {
+            section.getDescendantOfName("infotext").setValue(attributes[i][5]);
+        } else {
+            section.getDescendantOfName("tooltipImg").setDisplay("none", true);
+        }
+        mapFieldsToMatrix(attributes[i][0], attributes[i][1], attributes[i][2].substr(0,5), attributes[i][3].substr(0,5), attributes[i][4], attributes[i][5], true);
 
     }
 }
@@ -618,10 +654,14 @@ function mapFormDataToFields(objXML) {
  */
 function Preload() {
     var username, formData, id;
+
+    setGlobalVariables();
+
     username = Intalio.Internal.Utilities.getUser();
     username = username.substring(username.indexOf("/")+1);
     AjanvarausForm.getJSXByName("User_Sender").setValue(username).repaint();
     AjanvarausForm.getJSXByName("block").setHeight(0, true);
+
     if (gup("FormID")) {
         id = gup("FormID");
         AjanvarausForm.getJSXByName("Lomake_ID").setValue(id);
@@ -717,17 +757,14 @@ function searchNames(searchString) {
         parent2 = parents.get(1);
 
         parent1List = ["firstname", "lastname", "uid"];
-        parent2List = ["firstname", "lastname", "uid"];
-
         parent1Data = parseXML(parent1, "parents", parent1List);
-        parent2Data = parseXML(parent2, "parents", parent2List);
-    
-
         personInfo = userData[0].split(',');
         parent1Info = parent1Data[0].split(',');
+        
+        parent2List = ["firstname", "lastname", "uid"];
+        parent2Data = parseXML(parent2, "parents", parent2List);
         parent2Info = parent2Data[1].split(',');
 
-    
         node = AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
 
         node.setAttribute("jsxid", 0);
@@ -735,8 +772,8 @@ function searchNames(searchString) {
         node.setAttribute("sukunimi", personInfo[1]);
         node.setAttribute("uid", personInfo[2]);
         node.setAttribute("vanhempi1", parent1Info[0] + " " + parent1Info[1]);
-        node.setAttribute("vanhempi2", parent2Info[0] + " " + parent1Info[1]);
         node.setAttribute("vanhempi1Uid", parent1Info[2]);
+        node.setAttribute("vanhempi2", parent2Info[0] + " " + parent1Info[1]);
         node.setAttribute("vanhempi2Uid", parent2Info[2]);
 
         AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
@@ -877,9 +914,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         appointmentId = id;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        //endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        url = getUrl();
+        url = globalUrl + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        endpoint = globalEndpoints.services.KokuAppointmentProcessingService;
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -908,10 +944,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         limit = 100;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
+        url = globalUrl + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        endpoint = globalEndpoints.services.UsersAndGroupsService;
 
-        url = getUrl();
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         req = new jsx3.net.Request();
@@ -940,9 +975,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         limit = 100;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
-        url = getUrl();
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        url = globalUrl + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        endpoint = globalEndpoints.services.UsersAndGroupsService;
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -967,54 +1001,57 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 // Extra Functions -------------------------------------------------------------------------------------------------------------------------------
 
 function getDomainName() {
-    var url, url_parts, domain_name_parts, domain_name;
+    var url, url_parts, domain_name;
 
     url = window.location.href;
     url_parts = url.split("/");
-    domain_name_parts = url_parts[2].split(":");
-    domain_name = domain_name_parts[0];
-
+    domain_name = url_parts[2];
+       
     return domain_name;
+
 }
 
-function getPortNumber() {
-    var url = window.location.href;
-    var url_parts = url.split("/");
-    var domain_name_parts = url_parts[2].split(":");
-    var port_number = domain_name_parts[1];
-    return port_number;
-}
-
-
+//Getting the domain name and port if available
 function getUrl() {
-    var url = "http://" + getDomainName() + ":" + getPortNumber();
-    url = url + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-    url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-    return url;
+    var domain;
+
+    domain = getDomainName();
+    return "http://" + domain;
+
 }
 
-function showDialog (dialogId, text, textTitle, title) {
-    var dialog, cssDisplay, $;
+function showDialog(dialogId, text, textTitle, title) {
+    var dialog, cssDisplay;
 
     dialog = $("#" + dialogId);
 
     cssDisplay = dialog.css('display');
-    if(cssDisplay === 'none') {
-        dialog.dialog({
-            title: title
-        });
-        dialog.dialog( "option", "width", 400 );
-        dialog.dialog( "option", "height", 300 );
-        dialog.dialog( "option", "position", ['middle','middle'] );
+    if (cssDisplay === 'none') {
+        dialog.dialog({title: title});
+        dialog.dialog("option", "width", 400);
+        dialog.dialog("option", "height", 300);
+        dialog.dialog("option", "position", ['middle', 'middle']);
         dialog.dialog();
     } else {
-        //dialog.dialog( {show:blind} );
-        dialog.dialog({
-            show: null
-        });
-
+        dialog.dialog({show: null});
     }
     dialog.html("<p style=\"text-align:left;\"><b>" + textTitle + "</b></p><p style=\"margin:0 0 0 0;\">" + text + "</p>");
+}
+
+function getKokuServicesEndpoints() {
+    var url;
+
+    url = gUrl + "/palvelut-portlet/Services";
+            
+    responseText =  jQuery.ajax( {
+        url: url,  
+        type: "POST", 
+        dataType: "html",
+        async: false 
+    }).responseText;
+
+    return jQuery.parseJSON( responseText );
+
 }
 
 function gup(name) {
