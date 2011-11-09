@@ -92,8 +92,10 @@ function uncheckTheOthers(target, checked) {
 function swapConsentGivers(selection) {
     if (selection == 2) {
         TIVA3Form.getJSXByName("suostuja").getAncestorOfName("pane").setDisplay("block", true);
+        TIVA3Form.getJSXByName("Suostumus2").setDisplay("block", true);
     } else {
         TIVA3Form.getJSXByName("suostuja").getAncestorOfName("pane").setDisplay("none", true);
+        TIVA3Form.getJSXByName("Suostumus2").setDisplay("none", true);
     }
 }
 
@@ -126,13 +128,16 @@ function activateVoimassaoloaikaFields(check) {
 function setSuostujat() {
     var suostuja1, suostuja2, suostuja1Uid, suostuja2Uid, targetPerson;
 
-    suostuja1 = TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().getAttribute("vanhempi1");
-    suostuja1Uid = TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().getAttribute("vanhempi1Uid");
-    suostuja2 = TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().getAttribute("vanhempi2");
-    suostuja2Uid = TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().getAttribute("vanhempi2Uid");
+    suostujat = TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().getAttribute("vanhempi").split(',\u0020');
+    suostujatUid = TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().getAttribute("vanhempiUid").split(',');
     targetPerson = TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().getAttribute("uid");
+    
+    data = "";
 
-    TIVA3Form.getJSXByName("suostuja").setXMLString("<data><record jsxid=\"" + suostuja1Uid + "\" jsxtext=\"" + suostuja1 + "\" targetPerson=\"" + targetPerson + "\"\/><record jsxid=\"" + suostuja2Uid + "\" jsxtext=\"" + suostuja2 + "\" targetPerson=\"" + targetPerson + "\"\/></data>").resetCacheData();
+    for (i = 0; i < suostujat.length; i++) {
+        data += "<record jsxid=\"" + suostujatUid[i] + "\" jsxtext=\"" + suostujat[i] + "\" targetPerson=\"" + targetPerson + "\"\/>";
+    }
+    TIVA3Form.getJSXByName("suostuja").setXMLString("<data>" + data + "<\/data>").resetCacheData();
 }
 
 function clearRecipientsData() {
@@ -360,27 +365,30 @@ function setSuostuja2FieldsRequirements(flag) {
  *
  */
 function mapSelectedRecipientsToMatrix() {
-    var node, childNode, hasEmptyChild, counter, recipient1, recipient2, targetPerson, childIterator;
+    var node, childNode, hasEmptyChild, counter, recipients, targetPerson, childIterator;
+
+    clearDataCache("Vastaanottajat-nomap");
 
     counter = 1;
 
     childIterator = TIVA3Form.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
+
     hasEmptyChild = formatDataCache("Vastaanottajat-nomap", "Vastaanottajat");
 
     while (childIterator.hasNext()) {
         childNode = childIterator.next();
 
-        recipient1 = childNode.getAttribute("receipient1Uid");
-        recipient2 = childNode.getAttribute("receipient2Uid");
+        recipients = childNode.getAttribute("recipientsUid").split(',');
         targetPerson = childNode.getAttribute("targetPerson");
-        node = TIVA3Form.getCache().getDocument("Vastaanottajat-nomap").getFirstChild().cloneNode();
+        for (i = 0; i < recipients.length; i++) {
+            node = TIVA3Form.getCache().getDocument("Vastaanottajat-nomap").getFirstChild().cloneNode();
 
-        node.setAttribute("jsxid", counter);
-        node.setAttribute("Vastaanottajat_Vastaanottaja1", recipient1);
-        node.setAttribute("Vastaanottajat_Vastaanottaja2", recipient2);
-        node.setAttribute("Vastaanottajat_Kohdehenkilo", targetPerson);
-        TIVA3Form.getCache().getDocument("Vastaanottajat-nomap").insertBefore(node);
-        counter++;
+            node.setAttribute("jsxid", counter);
+            node.setAttribute("Vastaanottajat_Vastaanottaja", recipients[i]);
+            node.setAttribute("Vastaanottajat_Kohdehenkilo", targetPerson);
+            TIVA3Form.getCache().getDocument("Vastaanottajat-nomap").insertBefore(node);
+            counter++;
+        }
     }
 
     if (hasEmptyChild) {
@@ -389,7 +397,7 @@ function mapSelectedRecipientsToMatrix() {
 }
 
 function searchNames(searchString) {
-    var node, hasEmptyChild, entryFound, userData, xmlData, personInfo, list, parents, parent1, parent2, parent1Data, parent2Data, parent1List, parent2List, parent1Info, parent2Info;
+    var node, hasAnotherParent = false, hasEmptyChild, entryFound, userData, xmlData, personInfo, list, parents, parentData, parentInfo, parentList, vanhempi, vanhempiUid;
     entryFound = false;
 
     if (searchString == "") {
@@ -405,24 +413,40 @@ function searchNames(searchString) {
     if (userData != "") {
         entryFound = true;
     }
+
     if (entryFound) {
         clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
         hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
 
         parents = xmlData.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+        
+        parentList = ["firstname", "lastname", "uid"];
+        parentData = [];
+        parentInfo = [];
+        parent = [];
 
-        parent1 = parents.get(0);
-        parent2 = parents.get(1);
-
-        parent1List = ["firstname", "lastname", "uid"];
-        parent2List = ["firstname", "lastname", "uid"];
-
-        parent1Data = parseXML(parent1, "parents", parent1List);
-        parent2Data = parseXML(parent2, "parents", parent2List);
+        i = 0;
+        while (parents.get(i)) {
+            parent[i] = parents.get(i);
+            parentList = ["firstname", "lastname", "uid"];
+            parentData = parseXML(parent[i], "parents", parentList);
+            parentInfo[i] = parentData[i].split(',');
+            i++;
+        }
+        
+        vanhempi = "";
+        vanhempiUid = "";
+        
+        for (i = 0; i < parentInfo.length; i++) {
+            if (i != 0) {
+                vanhempi += ", ";
+                vanhempiUid += ",";
+            }
+            vanhempi += parentInfo[i][0] + " " + parentInfo[i][1];
+            vanhempiUid += parentInfo[i][2];
+        }
 
         personInfo = userData[0].split(',');
-        parent1Info = parent1Data[0].split(',');
-        parent2Info = parent2Data[1].split(',');
 
         node = TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
 
@@ -430,10 +454,8 @@ function searchNames(searchString) {
         node.setAttribute("etunimi", personInfo[0]);
         node.setAttribute("sukunimi", personInfo[1]);
         node.setAttribute("uid", personInfo[2]);
-        node.setAttribute("vanhempi1", parent1Info[0] + " " + parent1Info[1]);
-        node.setAttribute("vanhempi2", parent2Info[0] + " " + parent1Info[1]);
-        node.setAttribute("vanhempi1Uid", parent1Info[2]);
-        node.setAttribute("vanhempi2Uid", parent2Info[2]);
+        node.setAttribute("vanhempi", vanhempi);
+        node.setAttribute("vanhempiUid", vanhempiUid);
 
         TIVA3Form.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
 
@@ -482,13 +504,13 @@ function addToRecipientsSingle(id) {
     targetNode = TIVA3Form.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
 
     targetNode.setAttribute("jsxid", "0");
-    targetNode.setAttribute("receipient1", sourceNode.getAttribute("jsxtext"));
-    targetNode.setAttribute("receipient1Uid", sourceNode.getAttribute("jsxid"));
+    targetNode.setAttribute("recipients", sourceNode.getAttribute("jsxtext"));
+    targetNode.setAttribute("recipientsUid", sourceNode.getAttribute("jsxid"));
     targetNode.setAttribute("targetPerson", sourceNode.getAttribute("targetPerson"));
 
     TIVA3Form.getCache().getDocument("receipientsToShow-nomap").insertBefore(targetNode);
 
-    TIVA3Form.getJSXByName("Suostumus1").setTitleText(sourceNode.getAttribute("jsxid"), true);
+    TIVA3Form.getJSXByName("Suostumus1").setTitleText(sourceNode.getAttribute("jsxtext"), true);
 
     setSuostuja2FieldsRequirements(0);
 
@@ -509,25 +531,22 @@ function addToRecipientsMulti(selection) {
         uid = childNode.getAttribute("uid");
         firstname = childNode.getAttribute("etunimi");
         lastname = childNode.getAttribute("sukunimi");
-        vanhempi1 = childNode.getAttribute("vanhempi1");
-        vanhempi1Uid = childNode.getAttribute("vanhempi1Uid");
-        vanhempi2 = childNode.getAttribute("vanhempi2");
-        vanhempi2Uid = childNode.getAttribute("vanhempi2Uid");
+        vanhempi = childNode.getAttribute("vanhempi");
+        vanhempiUid = childNode.getAttribute("vanhempiUid");
         targetPerson = childNode.getAttribute("uid");
 
         node.setAttribute("jsxid", counter);
         if (selection == 1) {
             TIVA3Form.getJSXByName("Suostumus1").setTitleText(firstname + " " + lastname, true);
-            node.setAttribute("receipient1", firstname + " " + lastname);
-            node.setAttribute("receipient1Uid", uid);
+            node.setAttribute("recipients", firstname + " " + lastname);
+            node.setAttribute("recipientsUid", uid);
             setSuostuja2FieldsRequirements(0);
         } else {
-            node.setAttribute("receipient1", vanhempi1);
-            node.setAttribute("receipient1Uid", vanhempi1Uid);
-            node.setAttribute("receipient2", vanhempi2);
-            node.setAttribute("receipient2Uid", vanhempi2Uid);
-            TIVA3Form.getJSXByName("Suostumus1").setTitleText(vanhempi1, true);
-            TIVA3Form.getJSXByName("Suostumus2").setTitleText(vanhempi2, true);
+            node.setAttribute("recipients", vanhempi);
+            node.setAttribute("recipientsUid", vanhempiUid);
+            vanhemmat = vanhempi.split(',\u0020');
+            TIVA3Form.getJSXByName("Suostumus1").setTitleText(vanhemmat[0], true);
+            TIVA3Form.getJSXByName("Suostumus2").setTitleText(vanhemmat[1], true);
             setSuostuja2FieldsRequirements(1);
         }
         node.setAttribute("targetPerson", targetPerson);
@@ -596,8 +615,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
         pohjaId = id;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getConsentTemplateById><pohjaId>" + pohjaId + "</pohjaId></soa:getConsentTemplateById></soapenv:Body></soapenv:Envelope>";
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
         url = getUrl();
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
@@ -625,8 +644,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
         tout = 1000;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaSuostumuspohjat><searchString>" + str + "</searchString><limit>10</limit></soa:selaaSuostumuspohjat></soapenv:Body></soapenv:Envelope>";
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
         url = getUrl();
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
@@ -655,8 +674,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -686,8 +705,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -726,6 +745,7 @@ function getUrl() {
     var domin;
 
     domain = getDomainName();
+
     return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }

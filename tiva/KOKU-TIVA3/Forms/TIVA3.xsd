@@ -50,10 +50,7 @@
 
     <complexType name="Vastaanottajat_Type">
     	<sequence>
-    		<element name="Vastaanottajat_Vastaanottaja1"
-    			type="string">
-    		</element>
-    		<element name="Vastaanottajat_Vastaanottaja2"
+    		<element name="Vastaanottajat_Vastaanottaja"
     			type="string">
     		</element>
     		<element name="Vastaanottajat_Kohdehenkilo" type="string"></element>
