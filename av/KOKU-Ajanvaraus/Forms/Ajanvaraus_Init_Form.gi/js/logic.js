@@ -6,19 +6,8 @@ function intalioPreStart() {
     clearDataCache("Recipients-nomap");
     mapSelectedRecipientsToMatrix();
     
-    if (AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild()) {
-        child = getUserNameByUid(AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().getAttribute("Recipients_TargetPerson"));
-        parent1 = getUserNameByUid(AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().getAttribute("Recipients_Recipient1"));
-        parent2 = getUserNameByUid(AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().getAttribute("Recipients_Recipient2"));
-    } 
-    else {
+    if (!AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild()) {
         return "Lomakkeessa t\u00E4ytyy olla v\u00E4hint\u00E4\u00E4n yksi vastaanottaja!";
-    }
-    
-    if (!AjanvarausForm.getJSXByName("Lomake_ID").getValue()) {
-        if (!confirmation("L\u00E4hetet\u00E4\u00E4n ajanvarauspyynt\u00F6 lapsen " + child + " huoltajille " + parent1 + " ja " + parent2)) {
-            return "Lomaketta ei tallennettu";
-        }
     }
     
     return null;
@@ -554,10 +543,8 @@ function mapRecipients(objXML) {
 
     for (i = 0; i < recipients.length; i++) {
         node = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-        node.setAttribute("receipient1", getUserNameByUid(recipients[i][0]));
-        node.setAttribute("receipient1Uid", recipients[i][0]);
-        node.setAttribute("receipient2", getUserNameByUid(recipients[i][1]));
-        node.setAttribute("receipient2Uid", recipients[i][1]);
+        node.setAttribute("recipients", getUserNameByUid(recipients[i][0]) + ", " + getUserNameByUid(recipients[i][1]));
+        node.setAttribute("recipientsUid", recipients[i][0] + "," + recipients[i][1]);
         node.setAttribute("targetPerson", recipients[i][2]);
         AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
     }
@@ -657,39 +644,39 @@ function setModeModify() {
  *
  */
 function mapSelectedRecipientsToMatrix() {
+    var node, childNode, hasEmptyChild, counter, recipients, targetPerson, childIterator;
 
-    var node, childNode, hasEmptyChild, counter, i, j, recipient1, recipient2, targetPerson, childIterator;
+    clearDataCache("Recipients-nomap");
 
     counter = 1;
 
     childIterator = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
+
     hasEmptyChild = formatDataCache("Recipients-nomap", "Recipients");
 
     while (childIterator.hasNext()) {
         childNode = childIterator.next();
 
-        recipient1 = childNode.getAttribute("receipient1Uid");
-        recipient2 = childNode.getAttribute("receipient2Uid");
-        targetPerson = childNode.getAttribute("targetPerson");
-        node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
+        recipients = childNode.getAttribute("recipientsUid").split(',');
+        targetPerson = childNode.getAttribute("uid");
+        for (i = 0; i < recipients.length; i++) {
+            node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
 
-        node.setAttribute("jsxid", counter);
-        node.setAttribute("Recipients_Recipient1", recipient1);
-        node.setAttribute("Recipients_Recipient2", recipient2);
-        node.setAttribute("Recipients_TargetPerson", targetPerson);
-        AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
-        counter++;
-
+            node.setAttribute("jsxid", counter);
+            node.setAttribute("Recipients_Recipient", recipients[i]);
+            node.setAttribute("Recipients_TargetPerson", targetPerson);
+            AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
+            counter++;
+        }
     }
 
-    if (hasEmptyChild==true) {
+    if (hasEmptyChild) {
         AjanvarausForm.getCache().getDocument("Recipients-nomap").removeChild(AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild());
     }
 }
 
-
 function searchNames(searchString) {
-    var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list, parent1, parent2, paren1Data, parent2Data, parent1Info, parent2Info;
+    var node, hasAnotherParent = false, hasEmptyChild, entryFound, userData, xmlData, personInfo, list, parents, parentData, parentInfo, parentList, vanhempi, vanhempiUid;
     entryFound = false;
 
     if (searchString == "") {
@@ -705,62 +692,71 @@ function searchNames(searchString) {
     if (userData != "") {
         entryFound = true;
     }
-    
+
     if (entryFound) {
-    
         clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
         hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
-    
+
         parents = xmlData.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+        
+        parentList = ["firstname", "lastname", "uid"];
+        parentData = [];
+        parentInfo = [];
+        parent = [];
 
-        parent1 = parents.get(0);
-        parent2 = parents.get(1);
-
-        parent1List = ["firstname", "lastname", "uid"];
-        parent2List = ["firstname", "lastname", "uid"];
-
-        parent1Data = parseXML(parent1, "parents", parent1List);
-        parent2Data = parseXML(parent2, "parents", parent2List);
-    
+        i = 0;
+        while (parents.get(i)) {
+            parent[i] = parents.get(i);
+            parentList = ["firstname", "lastname", "uid"];
+            parentData = parseXML(parent[i], "parents", parentList);
+            parentInfo[i] = parentData[i].split(',');
+            i++;
+        }
+        
+        vanhempi = "";
+        vanhempiUid = "";
+        
+        for (i = 0; i < parentInfo.length; i++) {
+            if (i != 0) {
+                vanhempi += ", ";
+                vanhempiUid += ",";
+            }
+            vanhempi += parentInfo[i][0] + " " + parentInfo[i][1];
+            vanhempiUid += parentInfo[i][2];
+        }
 
         personInfo = userData[0].split(',');
-        parent1Info = parent1Data[0].split(',');
-        parent2Info = parent2Data[1].split(',');
 
-    
         node = AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
 
         node.setAttribute("jsxid", 0);
         node.setAttribute("etunimi", personInfo[0]);
         node.setAttribute("sukunimi", personInfo[1]);
         node.setAttribute("uid", personInfo[2]);
-        node.setAttribute("vanhempi1", parent1Info[0] + " " + parent1Info[1]);
-        node.setAttribute("vanhempi2", parent2Info[0] + " " + parent1Info[1]);
-        node.setAttribute("vanhempi1Uid", parent1Info[2]);
-        node.setAttribute("vanhempi2Uid", parent2Info[2]);
+        node.setAttribute("vanhempi", vanhempi);
+        node.setAttribute("vanhempiUid", vanhempiUid);
 
         AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
 
         if (hasEmptyChild == true) {
             AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").removeChild(AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
         }
+    } else {
+        alert("Valitettavasti antamallasi hakusanalla ei loytynyt tuloksia");
     }
-    
-    else {
-        alert ("Valitettavasti antamallasi hakusanalla ei loytynyt tuloksia");
-    }
-    
-    AjanvarausForm.getJSXByName("searchChildMatrix").repaintData();
 
+    AjanvarausForm.getJSXByName("searchChildMatrix").repaintData();
 }
 
 function addToRecipients() {
-    var counter, node, i = 0, hasEmptyChild, chosen, childIterator, uid, firstname, lastname, childNode, vahnempi1, vanhempi1Uid, vanhempi2, vanhempi2Uid;
+    var counter, node, hasEmptyChild, chosen, childIterator, uid, targetPerson, firstname, lastname, vanhempi1, vanhempi2, vanhempi1Uid, vanhempi2Uid, childNode;
+
+    clearDataCache("receipientsToShow-nomap");
 
     counter = AjanvarausForm.getJSXByName("recipientCounter").getValue();
-    //clearDataCache("receipientsToShow-nomap", "dummyMatrix");
 
     childIterator = AjanvarausForm.getCache().getDocument("HaetutLapset-nomap").getChildIterator();
+
     hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
 
     while (childIterator.hasNext()) {
@@ -776,31 +772,26 @@ function addToRecipients() {
             uid = childNode.getAttribute("uid");
             firstname = childNode.getAttribute("etunimi");
             lastname = childNode.getAttribute("sukunimi");
-            vanhempi1 = childNode.getAttribute("vanhempi1");
-            vanhempi1Uid = childNode.getAttribute("vanhempi1Uid");
-            vanhempi2 = childNode.getAttribute("vanhempi2");
-            vanhempi2Uid = childNode.getAttribute("vanhempi2Uid");
+            vanhemmat = childNode.getAttribute("vanhempi");
+            vanhemmatUid = childNode.getAttribute("vanhempiUid");
             targetPerson = firstname + " " + lastname;
 
             node.setAttribute("jsxid", counter);
-            node.setAttribute("receipient1", vanhempi1);
-            node.setAttribute("receipient1Uid", vanhempi1Uid);
-            node.setAttribute("receipient2", vanhempi2);
-            node.setAttribute("receipient2Uid", vanhempi2Uid);
-            node.setAttribute("targetPerson", uid);
+            node.setAttribute("recipients", vanhemmat);
+            node.setAttribute("recipientsUid", vanhemmatUid);
+
+            node.setAttribute("targetPerson", targetPerson);
             node.setAttribute("uid", uid);
+            node.setAttribute("group", 0);
             AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
             counter++;
-
         }
-
     }
     if (hasEmptyChild == true) {
         AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").removeChild(AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild());
     }
     AjanvarausForm.getJSXByName("dummyMatrix").repaintData();
     AjanvarausForm.getJSXByName("recipientCounter").setValue(counter);
-
 }
 
 /**
@@ -878,7 +869,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        //endpoint="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
         url = getUrl();
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
@@ -979,6 +970,7 @@ function getDomainName() {
 function getUrl() {
     
     var domain = getDomainName();
+    domain = "62.61.65.15:8380"
     return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
