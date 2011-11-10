@@ -897,7 +897,7 @@
                   <variants/>
                   <strings riaLabelText="tarkentavaTeksti" jsxname="tarkentavaTeksti-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="500" jsxheight="100" jsxtype="1" jsxmaxlength="200"/>
+                    <variants jsxwidth="500" jsxheight="100" jsxtype="1"/>
                     <strings jsxname="tarkentavaTeksti" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>

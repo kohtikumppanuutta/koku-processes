@@ -1,4 +1,10 @@
-/* place JavaScript code here */
+function getEndpoint() {
+    
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51x:8080";
+    return endpoint;
+    
+}
 
 // Prestart --------------------------------------------------------------------------------------------------------------------------------------
 
@@ -419,7 +425,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
@@ -447,7 +453,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
         tout = 1000;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaSuostumuspohjat><searchString>" + str + "</searchString><limit>10</limit></soa:selaaSuostumuspohjat></soapenv:Body></soapenv:Envelope>";
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+        //endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
         url = getUrl();
 
@@ -471,21 +478,18 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 // Extra functions -------------------------------------------------------------------------------------------------------------------------------
 
 function getDomainName() {
-    var url, url_parts, domain_name;
 
-    url = window.location.href;
-    url_parts = url.split("/");
-    domain_name = url_parts[2];
+    var url = window.location.href;
+    var url_parts = url.split("/");
+    var domain_name = url_parts[2];
        
     return domain_name;
 
 }
 
-//Getting the domain name and port if available
 function getUrl() {
-    var domin;
-
-    domain = getDomainName();
+    
+    var domain = getDomainName();
     return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
