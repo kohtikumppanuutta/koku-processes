@@ -509,7 +509,7 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Hakusana (henkilötunnus)" jsxclassname="FormLabel"/>
+                  <strings jsxname="label" jsxtext="Lapsen henkilötunnus" jsxclassname="FormLabel"/>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -531,7 +531,7 @@
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
                     <strings jsxname="button" jsxtext="Hae" jsxmargin="14 4 0 0"/>
-                    <events jsxexecute="searchNames(form1.getJSXByName(&quot;searchString&quot;).getValue());"/>
+                    <events jsxexecute="searchNames(KayttajaviestintaForm.getJSXByName(&quot;searchString&quot;).getValue());"/>
                   </object>
                 </object>
               </object>
@@ -556,19 +556,9 @@
                     <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay="" jsxmargin="0 0 0 20"/>
                     <object type="jsx3.gui.Matrix">
                       <variants jsxautorow="0" jsxselectionmodel="0" jsxpagingmodel="1" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
-                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutVastaanottajat-nomap" jsxname="searchMatrix" jsxbgcolor="#efefff" jsxsortpath="uid" jsxsorttype="text" jsxsortdirection="descending"/>
+                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutVastaanottajat-nomap" jsxname="searchMatrix" jsxbgcolor="#efefff" jsxsortpath="huoltajat" jsxsorttype="text" jsxsortdirection="ascending"/>
                       <events jsxaftercommit=""/>
                       <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants jsxwidth="44" jsxsort="0" jsxresize="0"/>
-                        <strings jsxcellpadding="1" jsxpath="valittu" jsxpadding="3" jsxcelltextalign="center" jsxname="Kayttajahaku_Valittu-column" jsxvaluetemplate="@empty" jsxtext="Valinta"/>
-                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-                        <object type="jsx3.gui.CheckBox">
-                          <variants jsxchecked="0" jsxenabled="1"/>
-                          <strings jsxname="Kayttajahaku_Valittu" jsxtext="" jsxtip=""/>
-                          <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
-                        </object>
-                      </object>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="75"/>
                         <strings jsxpath="etunimi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Etunimi-column" jsxtext="Etunimi"/>
@@ -590,32 +580,32 @@
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxpath="puhelin" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_Puhelin-column" jsxtext="Puhelin"/>
+                        <variants jsxwidth="111"/>
+                        <strings jsxpath="huoltajat" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Huoltajat-column" jsxtext="Huoltajat"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">
-                          <variants jsxrelativeposition="0" jsxleft="216" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Puhelin" jsxdisplay="none" jsxvalue=""/>
+                          <variants jsxrelativeposition="0" jsxleft="105" jsxtop="25" jsxwidth="111" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
+                          <strings jsxname="Kayttajahaku_Huoltajat" jsxdisplay="none" jsxvalue=""/>
                           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants/>
-                        <strings jsxpath="sahkoposti" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_Sahkoposti-column" jsxtext="Sahkoposti"/>
+                        <strings jsxpath="parentsUid" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_ParentsUid-column" jsxtext="Sahkoposti" jsxdisplay="none"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">
                           <variants jsxrelativeposition="0" jsxleft="316" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Sahkoposti" jsxdisplay="none" jsxvalue=""/>
+                          <strings jsxname="Kayttajahaku_ParentsUid" jsxdisplay="none" jsxvalue=""/>
                           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants/>
-                        <strings jsxpath="uid" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_Uid-column" jsxtext="Sahkoposti" jsxdisplay="none"/>
+                        <strings jsxpath="childUid" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_ChildUid-column" jsxtext="Sahkoposti" jsxdisplay="none"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">
                           <variants jsxrelativeposition="0" jsxleft="316" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Uid" jsxdisplay="none" jsxvalue=""/>
+                          <strings jsxname="Kayttajahaku_ParentsUid" jsxdisplay="none" jsxvalue=""/>
                           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                         </object>
                       </object>
@@ -641,7 +631,7 @@
                   <strings riaLabelText="LisaaButton" jsxname="LisaaButton-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="addRecipient" jsxtext="Lisää valitut käyttäjät vastaanottajiin" jsxmargin="0 4 0 0"/>
+                    <strings jsxname="addRecipient" jsxtext="Lisää haetun lapsen vanhemmat vastaanottajiksi" jsxmargin="0 4 0 0"/>
                     <events jsxexecute="addToRecipients();"/>
                   </object>
                 </object>

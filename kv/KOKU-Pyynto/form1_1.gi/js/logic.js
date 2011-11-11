@@ -435,23 +435,6 @@ function getDomainName() {
 
 }
 
-
-function getPortNumber() {
-    
-    var url = window.location.href;
-    
-    var url_parts = url.split("/");
-    
-    var domain_name_parts = url_parts[2].split(":");
-    
-    var port_number = domain_name_parts[1];
-    
-    return port_number;
-
-}
-
-
-
 function Preload() {
     /*var username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("/")+1));*/
@@ -1865,24 +1848,24 @@ function addToRecipients() {
     while (childIterator.hasNext()) {
 
         childNode = childIterator.next();
-
-        chosen = childNode.getAttribute("valittu");
-
-        if ((chosen != null) && (chosen != 0)) {
-
-            node = form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
-
-            uid = childNode.getAttribute("uid");
-            firstname = childNode.getAttribute("etunimi");
-            lastname = childNode.getAttribute("sukunimi");
-
-            node.setAttribute("jsxid", counter);
-            node.setAttribute("receipient", firstname + " " + lastname);
-            node.setAttribute("uid", uid);
-            node.setAttribute("group", 0);
-            form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
-            counter++;
-
+  
+              
+            uidlist = childNode.getAttribute("parentsUid");
+            parents = childNode.getAttribute("huoltajat");
+                        
+            uidlist = uidlist.split(',');
+            parents = parents.split(',');
+            
+            for(i = 0; i < uidlist.length; i++) {
+                          
+                node = form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
+                node.setAttribute("jsxid", counter);
+                node.setAttribute("receipient", parents[i]);
+                node.setAttribute("uid", uidlist[i]);
+                node.setAttribute("group", 0);
+                form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+                counter++;
+      
         }
 
     }
@@ -1934,6 +1917,72 @@ function addGroupsToRecipients() {
     form1.getJSXByName("recipientCounter").setValue(counter);
 
 }
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetChildrens = function(searchString) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+
+        tout = 1000;
+        limit = 100;
+
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
+
+        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        url = getUrl();
+
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildrens)" );
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetChildinfo = function(uid) {
+        var tout, msg, endpoint, url, req, objXML;
+
+        tout = 1000;
+
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo><childUid>" + uid + "</childUid></soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
+
+        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        url = getUrl();
+
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildinfo)" );
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetUsers = function(searchString) {
@@ -2042,7 +2091,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
  */
 function parseXML(xmlData, rootName, childlist) {
 
-    var i, j, attributes, node, childNode, childs;
+    var i, j, attributes, node, childNode, childs, retval;
     i = 0;
 
     attributes = [];
@@ -2072,11 +2121,12 @@ function parseXML(xmlData, rootName, childlist) {
         }
         i++;
     }
-
-    return valuesToArray(attributes);
-
+    retval = valuesToArray(attributes);
+    if (checkArrayByGivenAttributes(retval, childlist))
+        return retval;
+    else
+        alert("Haetulla kayttajalla on jarjestelmassa puuttuvia tietoja"); 
 }
-
 /**
  * Compresesses multidimensional array to sigle dimensional
  * Users information comma seperated. One user/node.
@@ -2099,4 +2149,19 @@ function valuesToArray(attributes) {
 
     }
     return tempArray;
+}
+function checkArrayByGivenAttributes(arrayToCheck, attributeList){
+    var nodeCount, i, split;
+    
+    nodeCount = attributeList.length;
+    
+    for(i = 0; i < arrayToCheck.length; i++) {
+        split = arrayToCheck[i].split(',');
+        if (nodeCount != split.length) {
+            
+            return false;
+        }
+    
+    }
+    return true;    
 }
