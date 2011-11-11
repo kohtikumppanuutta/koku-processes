@@ -1,25 +1,18 @@
+function getEndpoint() {
+    
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51x:8080";
+    return endpoint;
+    
+}
+
+
 function intalioPreStart() {
   
    mapSelectedValuesToMatrix();
    
 }
 
-
-function getEndpoint() {
-    
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
-    return endpoint;
-    
-}
-
-function getPortNumber() {
-    var url = window.location.href;
-    var url_parts = url.split("/");
-    var domain_name_parts = url_parts[2].split(":");
-    var port_number = domain_name_parts[1];
-    return port_number;
-}
 
 function getDomainName() {
 
@@ -32,7 +25,6 @@ function getDomainName() {
 }
 
 
-
 function getURL() {
     
     var domain = getDomainName();
@@ -41,6 +33,7 @@ function getURL() {
 }
 
 function mapSelectedValuesToMatrix() {
+
     var rootnode = TivaTietopyyntoForm.getCache().getDocument("Kategoriat-nomap");
     var selected = new Array;
 
@@ -87,6 +80,7 @@ function mapSelectedValuesToMatrix() {
 
 }
 
+
 function getIntalioUser() {
     var username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("/") + 1));
@@ -101,7 +95,6 @@ function preload() {
     var intalioUser = getIntalioUser();
     TivaTietopyyntoForm.getJSXByName("Perustiedot_Lahettaja").setValue(intalioUser);
     preloadCategories();
-    
     
 }
 
@@ -153,7 +146,6 @@ jsx3.lang.Package.definePackage(
   "Intalio.Internal.CustomErrors",
   function(error) {
 
-
     error.getError=function(name){
         var errortext = TivaTietopyyntoForm.getJSXByName(name).getTip();
         errortext = "Puuttuvat tiedot: " + errortext;
@@ -197,11 +189,29 @@ function searchNames(searchString) {
         entryFound = true;
         node = TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild().cloneNode();
 
+        if((personInfo[0] == "undefined") || (personInfo[1] == "undefined")) {
+            alert("Kayttajahaussa tapahtui virhe. Jarjestelmassa ei ole kayttajan nimitietoja.");
+            return;
+        }
+        
         node.setAttribute("jsxid", i);
         node.setAttribute("etunimi", personInfo[0]);
         node.setAttribute("sukunimi", personInfo[1]);
-        node.setAttribute("puhelin", personInfo[2]);
-        node.setAttribute("sahkoposti", personInfo[3]);
+        if(personInfo[2] == "undefined") 
+            node.setAttribute("puhelin", "");
+        else 
+            node.setAttribute("puhelin", personInfo[2]);
+        
+        if(personInfo[3] == "undefined") 
+            node.setAttribute("sahkoposti", "");
+        else 
+           node.setAttribute("sahkoposti", personInfo[3]);
+        
+        if((personInfo[4] == "undefined")) {
+            alert("Kayttajahaussa tapahtui virhe. Kohdehenkilon id puuttuu");
+            return;
+        }
+       
         node.setAttribute("uid", personInfo[4]);
 
         TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
@@ -289,10 +299,8 @@ function addToRecipients() {
 
         childNode = childIterator.next();
 
-        chosen = childNode.getAttribute("valittu");
+        if (counter < 1) {
 
-        if ((chosen != null) && (chosen != 0)) {
-    
             uid = childNode.getAttribute("uid");
             firstname = childNode.getAttribute("etunimi");
             lastname = childNode.getAttribute("sukunimi");
@@ -303,10 +311,13 @@ function addToRecipients() {
            
 
         }
+        else {
+            alert("Vastaavia kohdehenkiloita loytyi useampi kuin yksi. Vain yksi kohdehenkilo voidaan lisata");
+        }
 
     }
     if (counter < 1) {
-        alert("Yht" + unescape("%E4%E4") + "n vastaanottajaa ei ole valittuna");
+        alert("Vastaanottaja tulee hakea ennen lisaamista");
     }
 }
 
@@ -369,7 +380,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelosdsadpe/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchEmployees><!--Optional:--><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchEmployees></soapenv:Body></soapenv:Envelope>";
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getURL();
+        url = getUrlL();
 
         endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
@@ -404,7 +415,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + looraName + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getURL();
+        url = getUrl();
 
         endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
@@ -462,6 +473,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
     };
 });
 
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetChildinfo = function(uid) {
         var tout, msg, endpoint, url, req, objXML;
@@ -494,6 +506,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
     };
 });
+
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetCategories = function(userUid) {
@@ -530,7 +543,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
     };
 });
 
+
 function preloadCategories() {
+    
     var xmlData, xmlString, intalioUserUid, intalioUser;
     
     intalioUserUid = "";
@@ -538,15 +553,17 @@ function preloadCategories() {
     intalioUser = getIntalioUser();
         
     xmlData = Arcusys.Internal.Communication.GetSenderUid(intalioUser);
-       
+           
     //intalioUserUid = xmlData.selectSingleNode("//ns2:getUserUidByLooraNameResponse", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getFirstChild();
     intalioUserUid = xmlData.selectSingleNode("//userUid").getValue();
               
     xmlData = Arcusys.Internal.Communication.GetCategories(intalioUserUid);
     
+    
     xmlData = xmlData.selectSingleNode("//ns2:getTietoelementitResponse", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getFirstChild();
     xmlData = xmlData.toString();
-
+   
+    
     xmlString = "<data jsxid=\"jsxroot\">" + xmlData + "</data>";
 
     TivaTietopyyntoForm.getJSXByName("matrix1").setXMLString(xmlString);

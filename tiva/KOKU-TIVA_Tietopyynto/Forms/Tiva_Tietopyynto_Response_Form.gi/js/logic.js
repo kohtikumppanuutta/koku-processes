@@ -1,15 +1,17 @@
+function getEndpoint() {
+    
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51x:8080";
+    return endpoint;
+    
+}
+
+
 function getTaskSubscribe() {
     Intalio.Internal.Utilities.SERVER.subscribe(
     Intalio.Internal.Utilities.GET_TASK_SUCCESS, preload);
 };
 
-function getPortNumber() {
-    var url = window.location.href;
-    var url_parts = url.split("/");
-    var domain_name_parts = url_parts[2].split(":");
-    var port_number = domain_name_parts[1];
-    return port_number;
-}
 
 function getDomainName() {
 
@@ -21,15 +23,6 @@ function getDomainName() {
 
 }
 
-
-
-function getEndpoint() {
-    
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
-    return endpoint;
-    
-}
 
 function getURL() {
     
@@ -43,6 +36,7 @@ function getIntalioUser() {
     username = username.substring((username.indexOf("/") + 1));
     return username;
 }
+
 
 /**
  * Operations to load before form is shown to user
@@ -76,6 +70,7 @@ function preload() {
     }
 }
 
+
 function preloadCategories() {
     var xmlData, xmlString, intalioUserUid, intalioUser;
     
@@ -85,13 +80,15 @@ function preloadCategories() {
         
     xmlData = Arcusys.Internal.Communication.GetSenderUid(intalioUser);
        
-    //intalioUserUid = xmlData.selectSingleNode("//ns2:getUserUidByLooraNameResponse", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getFirstChild();
     intalioUserUid = xmlData.selectSingleNode("//userUid").getValue();
               
     xmlData = Arcusys.Internal.Communication.GetCategories(intalioUserUid);
     
     xmlData = xmlData.selectSingleNode("//ns2:getTietoelementitResponse", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getFirstChild();
     xmlData = xmlData.toString();
+    if (xmlData == null) {
+        alert("Havannointitietoja ei saatavilla");
+    }
 
     xmlString = "<data jsxid=\"jsxroot\">" + xmlData + "</data>";
 
