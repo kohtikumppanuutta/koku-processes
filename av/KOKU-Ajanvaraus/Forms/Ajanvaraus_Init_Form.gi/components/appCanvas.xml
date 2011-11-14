@@ -170,41 +170,21 @@
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants/>
-                        <strings jsxpath="vanhempi1" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi1-column" jsxtext="Vanhempi1"/>
+                        <strings jsxpath="vanhempi" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi-column" jsxtext="Vanhemmat"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">
                           <variants jsxrelativeposition="0" jsxleft="216" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Vanhempi1" jsxdisplay="none" jsxvalue=""/>
+                          <strings jsxname="Kayttajahaku_Vanhempi" jsxdisplay="none" jsxvalue=""/>
                           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants/>
-                        <strings jsxpath="vanhempi1Uid" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi1Uid-column" jsxtext="Vanhempi1" jsxdisplay="none"/>
+                        <strings jsxpath="vanhempiUid" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_VanhempiUid-column" jsxtext="Vanhempi1" jsxdisplay="none"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">
                           <variants jsxrelativeposition="0" jsxleft="216" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Vanhempi1Uid" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxpath="vanhempi2" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi2-column" jsxtext="Vanhempi2"/>
-                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxrelativeposition="0" jsxleft="316" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Vanhempi2" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxpath="vanhempi2Uid" jsxcellpadding="3" jsxwidth="100" jsxpadding="2" jsxname="Kayttajahaku_Vanhempi2Uid-column" jsxtext="Vanhempi2" jsxdisplay="none"/>
-                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxrelativeposition="0" jsxleft="316" jsxtop="25" jsxwidth="100" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="Kayttajahaku_Vanhempi2Uid" jsxdisplay="none" jsxvalue=""/>
+                          <strings jsxname="Kayttajahaku_VanhempiUid" jsxdisplay="none" jsxvalue=""/>
                           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                         </object>
                       </object>
@@ -383,31 +363,31 @@
                       <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="50"/>
-                        <strings jsxname="deleteButtonColumn" jsxtext="Poista" jsxpadding="2" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxtextalign="center" jsxcelltextalign="center" jsxdisplay="none"/>
+                        <strings jsxname="deleteButtonColumn" jsxtext="Poista" jsxpadding="2" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxtextalign="center" jsxcelltextalign="center" jsxdisplay=""/>
                         <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                         <object type="jsx3.gui.ImageButton">
-                          <variants jsxwidth="16" jsxheight="16" jsxenabled="0" jsxstate="0" jsxprefetch="1" jsxtype="0"/>
+                          <variants jsxwidth="16" jsxheight="16" jsxenabled="1" jsxstate="0" jsxprefetch="1" jsxtype="0"/>
                           <strings jsxname="deleteButtonMask" jsximage="jsx:///images/list/delete.gif"/>
                           <events jsxexecute="this.getParent().getParent().deleteRecord(this.emGetSession().recordId, true);this.getParent().getParent().getParent().getParent().validate(this, objEVENT);"/>
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="124"/>
-                        <strings jsxname="receipient1" jsxtext="Vanhempi 1" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient1"/>
+                        <strings jsxname="recipients" jsxtext="Vanhemmat" jsxpadding="2" jsxcellpadding="3" jsxpath="recipients"/>
                         <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                         <object type="jsx3.gui.TextBox">
                           <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="receipient1" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+                          <strings jsxname="recipients" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
                           <events jsxkeydown="1;"/>
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="124"/>
-                        <strings jsxname="receipient1Uid" jsxtext="Vanhempi 1" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient1Uid" jsxdisplay="none"/>
+                        <strings jsxname="recipientsUid" jsxtext="Vanhempi 1" jsxpadding="2" jsxcellpadding="3" jsxpath="recipientsUid" jsxdisplay="none"/>
                         <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                         <object type="jsx3.gui.TextBox">
                           <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="receipient1Uid" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+                          <strings jsxname="recipientsUid" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
                           <events jsxkeydown="1;"/>
                         </object>
                       </object>
@@ -418,26 +398,6 @@
                         <object type="jsx3.gui.TextBox">
                           <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
                           <strings jsxname="targetPerson" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxname="receipient2" jsxwidth="*" jsxtext="Vanhempi 2" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient2"/>
-                        <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="receipient2" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
-                          <events jsxkeydown="1;"/>
-                        </object>
-                      </object>
-                      <object type="jsx3.gui.Matrix.Column">
-                        <variants/>
-                        <strings jsxname="receipient2Uid" jsxwidth="*" jsxtext="Vanhempi 2" jsxpadding="2" jsxcellpadding="3" jsxpath="receipient2Uid" jsxdisplay="none"/>
-                        <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-                        <object type="jsx3.gui.TextBox">
-                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
-                          <strings jsxname="receipient2Uid" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
                           <events jsxkeydown="1;"/>
                         </object>
                       </object>
@@ -486,21 +446,11 @@
             </object>
             <object type="jsx3.gui.Matrix.Column">
               <variants/>
-              <strings jsxname="Recipients_Recipient1" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="Recipients_Recipient1"/>
+              <strings jsxname="Recipients_Recipient" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="Recipients_Recipient"/>
               <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
               <object type="jsx3.gui.TextBox">
                 <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10"/>
-                <strings jsxname="Recipients_Recipient1" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
-                <events jsxkeydown="1;"/>
-              </object>
-            </object>
-            <object type="jsx3.gui.Matrix.Column">
-              <variants/>
-              <strings jsxname="Recipients_Recipient2" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="Recipients_Recipient2"/>
-              <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
-              <object type="jsx3.gui.TextBox">
-                <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10"/>
-                <strings jsxname="Recipients_Recipient2" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+                <strings jsxname="Recipients_Recipient" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
                 <events jsxkeydown="1;"/>
               </object>
             </object>
@@ -522,8 +472,8 @@
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants/>
-        <strings jsxvalue="15" jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants jsxvalue="21"/>
+        <strings jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
@@ -743,15 +693,20 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Aloitusaika" jsxclassname="FormLabel"/>
+                  <strings jsxname="label" jsxtext="Aloitusaika (hh:mm)" jsxclassname="FormLabel"/>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
                   <strings riaLabelText="hours" jsxname="hours-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
-                    <variants jsxwidth="100" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
-                    <strings jsxname="aloitusAika" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;  &lt;record jsxid=&quot;06:00&quot; jsxtext=&quot;06:00&quot;/&gt;  &lt;record jsxid=&quot;06:15&quot; jsxtext=&quot;06:15&quot;/&gt;  &lt;record jsxid=&quot;06:30&quot; jsxtext=&quot;06:30&quot;/&gt;  &lt;record jsxid=&quot;06:45&quot; jsxtext=&quot;06:45&quot;/&gt;  &lt;record jsxid=&quot;07:00&quot; jsxtext=&quot;07:00&quot;/&gt;  &lt;record jsxid=&quot;07:15&quot; jsxtext=&quot;07:15&quot;/&gt;  &lt;record jsxid=&quot;07:30&quot; jsxtext=&quot;07:30&quot;/&gt;  &lt;record jsxid=&quot;07:45&quot; jsxtext=&quot;07:45&quot;/&gt;  &lt;record jsxid=&quot;08:00&quot; jsxtext=&quot;08:00&quot;/&gt;  &lt;record jsxid=&quot;08:15&quot; jsxtext=&quot;08:15&quot;/&gt;  &lt;record jsxid=&quot;08:30&quot; jsxtext=&quot;08:30&quot;/&gt;  &lt;record jsxid=&quot;08:45&quot; jsxtext=&quot;08:45&quot;/&gt;  &lt;record jsxid=&quot;09:00&quot; jsxtext=&quot;09:00&quot;/&gt;  &lt;record jsxid=&quot;09:15&quot; jsxtext=&quot;09:15&quot;/&gt;  &lt;record jsxid=&quot;09:30&quot; jsxtext=&quot;09:30&quot;/&gt;  &lt;record jsxid=&quot;09:45&quot; jsxtext=&quot;09:45&quot;/&gt;  &lt;record jsxid=&quot;10:00&quot; jsxtext=&quot;10:00&quot;/&gt;  &lt;record jsxid=&quot;10:15&quot; jsxtext=&quot;10:15&quot;/&gt;  &lt;record jsxid=&quot;10:30&quot; jsxtext=&quot;10:30&quot;/&gt;  &lt;record jsxid=&quot;10:45&quot; jsxtext=&quot;10:45&quot;/&gt;  &lt;record jsxid=&quot;11:00&quot; jsxtext=&quot;11:00&quot;/&gt;  &lt;record jsxid=&quot;11:15&quot; jsxtext=&quot;11:15&quot;/&gt;  &lt;record jsxid=&quot;11:30&quot; jsxtext=&quot;11:30&quot;/&gt;  &lt;record jsxid=&quot;11:45&quot; jsxtext=&quot;11:45&quot;/&gt;  &lt;record jsxid=&quot;12:00&quot; jsxtext=&quot;12:00&quot;/&gt;  &lt;record jsxid=&quot;12:15&quot; jsxtext=&quot;12:15&quot;/&gt;  &lt;record jsxid=&quot;12:30&quot; jsxtext=&quot;12:30&quot;/&gt;  &lt;record jsxid=&quot;12:45&quot; jsxtext=&quot;12:45&quot;/&gt;  &lt;record jsxid=&quot;13:00&quot; jsxtext=&quot;13:00&quot;/&gt;  &lt;record jsxid=&quot;13:15&quot; jsxtext=&quot;13:15&quot;/&gt;  &lt;record jsxid=&quot;13:30&quot; jsxtext=&quot;13:30&quot;/&gt;  &lt;record jsxid=&quot;13:45&quot; jsxtext=&quot;13:45&quot;/&gt;  &lt;record jsxid=&quot;14:00&quot; jsxtext=&quot;14:00&quot;/&gt;  &lt;record jsxid=&quot;14:15&quot; jsxtext=&quot;14:15&quot;/&gt;  &lt;record jsxid=&quot;14:30&quot; jsxtext=&quot;14:30&quot;/&gt;  &lt;record jsxid=&quot;14:45&quot; jsxtext=&quot;14:45&quot;/&gt;  &lt;record jsxid=&quot;15:00&quot; jsxtext=&quot;15:00&quot;/&gt;  &lt;record jsxid=&quot;15:15&quot; jsxtext=&quot;15:15&quot;/&gt;  &lt;record jsxid=&quot;15:30&quot; jsxtext=&quot;15:30&quot;/&gt;  &lt;record jsxid=&quot;15:45&quot; jsxtext=&quot;15:45&quot;/&gt;  &lt;record jsxid=&quot;16:00&quot; jsxtext=&quot;16:00&quot;/&gt;  &lt;record jsxid=&quot;16:15&quot; jsxtext=&quot;16:15&quot;/&gt;  &lt;record jsxid=&quot;16:30&quot; jsxtext=&quot;16:30&quot;/&gt;  &lt;record jsxid=&quot;16:45&quot; jsxtext=&quot;16:45&quot;/&gt;  &lt;record jsxid=&quot;17:00&quot; jsxtext=&quot;17:00&quot;/&gt; &lt;/data&gt;" jsxxmlid="" jsxdefaulttext="- Valitse -"/>
-                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
+                    <variants jsxwidth="100" jsxheight="18" jsxtype="0" jsxxmlasync="1" _isfocusing="true"/>
+                    <strings jsxname="aloitusAikaOld" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;  &lt;record jsxid=&quot;06:00&quot; jsxtext=&quot;06:00&quot;/&gt;  &lt;record jsxid=&quot;06:15&quot; jsxtext=&quot;06:15&quot;/&gt;  &lt;record jsxid=&quot;06:30&quot; jsxtext=&quot;06:30&quot;/&gt;  &lt;record jsxid=&quot;06:45&quot; jsxtext=&quot;06:45&quot;/&gt;  &lt;record jsxid=&quot;07:00&quot; jsxtext=&quot;07:00&quot;/&gt;  &lt;record jsxid=&quot;07:15&quot; jsxtext=&quot;07:15&quot;/&gt;  &lt;record jsxid=&quot;07:30&quot; jsxtext=&quot;07:30&quot;/&gt;  &lt;record jsxid=&quot;07:45&quot; jsxtext=&quot;07:45&quot;/&gt;  &lt;record jsxid=&quot;08:00&quot; jsxtext=&quot;08:00&quot;/&gt;  &lt;record jsxid=&quot;08:15&quot; jsxtext=&quot;08:15&quot;/&gt;  &lt;record jsxid=&quot;08:30&quot; jsxtext=&quot;08:30&quot;/&gt;  &lt;record jsxid=&quot;08:45&quot; jsxtext=&quot;08:45&quot;/&gt;  &lt;record jsxid=&quot;09:00&quot; jsxtext=&quot;09:00&quot;/&gt;  &lt;record jsxid=&quot;09:15&quot; jsxtext=&quot;09:15&quot;/&gt;  &lt;record jsxid=&quot;09:30&quot; jsxtext=&quot;09:30&quot;/&gt;  &lt;record jsxid=&quot;09:45&quot; jsxtext=&quot;09:45&quot;/&gt;  &lt;record jsxid=&quot;10:00&quot; jsxtext=&quot;10:00&quot;/&gt;  &lt;record jsxid=&quot;10:15&quot; jsxtext=&quot;10:15&quot;/&gt;  &lt;record jsxid=&quot;10:30&quot; jsxtext=&quot;10:30&quot;/&gt;  &lt;record jsxid=&quot;10:45&quot; jsxtext=&quot;10:45&quot;/&gt;  &lt;record jsxid=&quot;11:00&quot; jsxtext=&quot;11:00&quot;/&gt;  &lt;record jsxid=&quot;11:15&quot; jsxtext=&quot;11:15&quot;/&gt;  &lt;record jsxid=&quot;11:30&quot; jsxtext=&quot;11:30&quot;/&gt;  &lt;record jsxid=&quot;11:45&quot; jsxtext=&quot;11:45&quot;/&gt;  &lt;record jsxid=&quot;12:00&quot; jsxtext=&quot;12:00&quot;/&gt;  &lt;record jsxid=&quot;12:15&quot; jsxtext=&quot;12:15&quot;/&gt;  &lt;record jsxid=&quot;12:30&quot; jsxtext=&quot;12:30&quot;/&gt;  &lt;record jsxid=&quot;12:45&quot; jsxtext=&quot;12:45&quot;/&gt;  &lt;record jsxid=&quot;13:00&quot; jsxtext=&quot;13:00&quot;/&gt;  &lt;record jsxid=&quot;13:15&quot; jsxtext=&quot;13:15&quot;/&gt;  &lt;record jsxid=&quot;13:30&quot; jsxtext=&quot;13:30&quot;/&gt;  &lt;record jsxid=&quot;13:45&quot; jsxtext=&quot;13:45&quot;/&gt;  &lt;record jsxid=&quot;14:00&quot; jsxtext=&quot;14:00&quot;/&gt;  &lt;record jsxid=&quot;14:15&quot; jsxtext=&quot;14:15&quot;/&gt;  &lt;record jsxid=&quot;14:30&quot; jsxtext=&quot;14:30&quot;/&gt;  &lt;record jsxid=&quot;14:45&quot; jsxtext=&quot;14:45&quot;/&gt;  &lt;record jsxid=&quot;15:00&quot; jsxtext=&quot;15:00&quot;/&gt;  &lt;record jsxid=&quot;15:15&quot; jsxtext=&quot;15:15&quot;/&gt;  &lt;record jsxid=&quot;15:30&quot; jsxtext=&quot;15:30&quot;/&gt;  &lt;record jsxid=&quot;15:45&quot; jsxtext=&quot;15:45&quot;/&gt;  &lt;record jsxid=&quot;16:00&quot; jsxtext=&quot;16:00&quot;/&gt;  &lt;record jsxid=&quot;16:15&quot; jsxtext=&quot;16:15&quot;/&gt;  &lt;record jsxid=&quot;16:30&quot; jsxtext=&quot;16:30&quot;/&gt;  &lt;record jsxid=&quot;16:45&quot; jsxtext=&quot;16:45&quot;/&gt;  &lt;record jsxid=&quot;17:00&quot; jsxtext=&quot;17:00&quot;/&gt; &lt;/data&gt;" jsxxmlid="" jsxdefaulttext="- Valitse -" jsxdisplay="none"/>
+                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);" jsxkeyup=""/>
+                  </object>
+                  <object type="jsx3.gui.TextBox">
+                    <variants jsxwidth="100"/>
+                    <strings jsxname="aloitusAika" jsxmargin="0 4 0 0" jsxvalue=""/>
+                    <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);isValidHour(this);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
                 </object>
               </object>
@@ -779,15 +734,20 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                  <strings jsxname="label" jsxtext="Lopetusaika" jsxclassname="FormLabel"/>
+                  <strings jsxname="label" jsxtext="Lopetusaika (hh:mm)" jsxclassname="FormLabel"/>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
                   <strings riaLabelText="hours" jsxname="hours-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                  <object type="jsx3.gui.TextBox">
+                    <variants jsxwidth="100"/>
+                    <strings jsxname="lopetusAika" jsxmargin="0 4 0 0" jsxvalue=""/>
+                    <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);isValidHour(this);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+                  </object>
                   <object type="jsx3.gui.Select">
-                    <variants jsxwidth="100" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
-                    <strings jsxname="lopetusAika" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt; &lt;record jsxid=&quot;07:00&quot; jsxtext=&quot;07:00&quot;/&gt;  &lt;record jsxid=&quot;07:15&quot; jsxtext=&quot;07:15&quot;/&gt;  &lt;record jsxid=&quot;07:30&quot; jsxtext=&quot;07:30&quot;/&gt;  &lt;record jsxid=&quot;07:45&quot; jsxtext=&quot;07:45&quot;/&gt;  &lt;record jsxid=&quot;08:00&quot; jsxtext=&quot;08:00&quot;/&gt;  &lt;record jsxid=&quot;08:15&quot; jsxtext=&quot;08:15&quot;/&gt;  &lt;record jsxid=&quot;08:30&quot; jsxtext=&quot;08:30&quot;/&gt;  &lt;record jsxid=&quot;08:45&quot; jsxtext=&quot;08:45&quot;/&gt;  &lt;record jsxid=&quot;09:00&quot; jsxtext=&quot;09:00&quot;/&gt;  &lt;record jsxid=&quot;09:15&quot; jsxtext=&quot;09:15&quot;/&gt;  &lt;record jsxid=&quot;09:30&quot; jsxtext=&quot;09:30&quot;/&gt;  &lt;record jsxid=&quot;09:45&quot; jsxtext=&quot;09:45&quot;/&gt;  &lt;record jsxid=&quot;10:00&quot; jsxtext=&quot;10:00&quot;/&gt;  &lt;record jsxid=&quot;10:15&quot; jsxtext=&quot;10:15&quot;/&gt;  &lt;record jsxid=&quot;10:30&quot; jsxtext=&quot;10:30&quot;/&gt;  &lt;record jsxid=&quot;10:45&quot; jsxtext=&quot;10:45&quot;/&gt;  &lt;record jsxid=&quot;11:00&quot; jsxtext=&quot;11:00&quot;/&gt;  &lt;record jsxid=&quot;11:15&quot; jsxtext=&quot;11:15&quot;/&gt;  &lt;record jsxid=&quot;11:30&quot; jsxtext=&quot;11:30&quot;/&gt;  &lt;record jsxid=&quot;11:45&quot; jsxtext=&quot;11:45&quot;/&gt;  &lt;record jsxid=&quot;12:00&quot; jsxtext=&quot;12:00&quot;/&gt;  &lt;record jsxid=&quot;12:15&quot; jsxtext=&quot;12:15&quot;/&gt;  &lt;record jsxid=&quot;12:30&quot; jsxtext=&quot;12:30&quot;/&gt;  &lt;record jsxid=&quot;12:45&quot; jsxtext=&quot;12:45&quot;/&gt;  &lt;record jsxid=&quot;13:00&quot; jsxtext=&quot;13:00&quot;/&gt;  &lt;record jsxid=&quot;13:15&quot; jsxtext=&quot;13:15&quot;/&gt;  &lt;record jsxid=&quot;13:30&quot; jsxtext=&quot;13:30&quot;/&gt;  &lt;record jsxid=&quot;13:45&quot; jsxtext=&quot;13:45&quot;/&gt;  &lt;record jsxid=&quot;14:00&quot; jsxtext=&quot;14:00&quot;/&gt;  &lt;record jsxid=&quot;14:15&quot; jsxtext=&quot;14:15&quot;/&gt;  &lt;record jsxid=&quot;14:30&quot; jsxtext=&quot;14:30&quot;/&gt;  &lt;record jsxid=&quot;14:45&quot; jsxtext=&quot;14:45&quot;/&gt;  &lt;record jsxid=&quot;15:00&quot; jsxtext=&quot;15:00&quot;/&gt;  &lt;record jsxid=&quot;15:15&quot; jsxtext=&quot;15:15&quot;/&gt;  &lt;record jsxid=&quot;15:30&quot; jsxtext=&quot;15:30&quot;/&gt;  &lt;record jsxid=&quot;15:45&quot; jsxtext=&quot;15:45&quot;/&gt;  &lt;record jsxid=&quot;16:00&quot; jsxtext=&quot;16:00&quot;/&gt;  &lt;record jsxid=&quot;16:15&quot; jsxtext=&quot;16:15&quot;/&gt;  &lt;record jsxid=&quot;16:30&quot; jsxtext=&quot;16:30&quot;/&gt;  &lt;record jsxid=&quot;16:45&quot; jsxtext=&quot;16:45&quot;/&gt;  &lt;record jsxid=&quot;17:00&quot; jsxtext=&quot;17:00&quot;/&gt;  &lt;record jsxid=&quot;17:15&quot; jsxtext=&quot;17:15&quot;/&gt;  &lt;record jsxid=&quot;17:30&quot; jsxtext=&quot;17:30&quot;/&gt;  &lt;record jsxid=&quot;17:45&quot; jsxtext=&quot;17:45&quot;/&gt;  &lt;record jsxid=&quot;18:00&quot; jsxtext=&quot;18:00&quot;/&gt;  &lt;record jsxid=&quot;18:15&quot; jsxtext=&quot;18:15&quot;/&gt;  &lt;record jsxid=&quot;18:30&quot; jsxtext=&quot;18:30&quot;/&gt;  &lt;record jsxid=&quot;18:45&quot; jsxtext=&quot;18:45&quot;/&gt;  &lt;record jsxid=&quot;19:00&quot; jsxtext=&quot;19:00&quot;/&gt; &lt;/data&gt;" jsxxmlid="" jsxxmlurl="" jsxdefaulttext="- Valitse -"/>
-                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
+                    <variants jsxwidth="100" jsxheight="18" jsxtype="0" jsxxmlasync="1"/>
+                    <strings jsxname="lopetusAikaOld" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt; &lt;record jsxid=&quot;07:00&quot; jsxtext=&quot;07:00&quot;/&gt;  &lt;record jsxid=&quot;07:15&quot; jsxtext=&quot;07:15&quot;/&gt;  &lt;record jsxid=&quot;07:30&quot; jsxtext=&quot;07:30&quot;/&gt;  &lt;record jsxid=&quot;07:45&quot; jsxtext=&quot;07:45&quot;/&gt;  &lt;record jsxid=&quot;08:00&quot; jsxtext=&quot;08:00&quot;/&gt;  &lt;record jsxid=&quot;08:15&quot; jsxtext=&quot;08:15&quot;/&gt;  &lt;record jsxid=&quot;08:30&quot; jsxtext=&quot;08:30&quot;/&gt;  &lt;record jsxid=&quot;08:45&quot; jsxtext=&quot;08:45&quot;/&gt;  &lt;record jsxid=&quot;09:00&quot; jsxtext=&quot;09:00&quot;/&gt;  &lt;record jsxid=&quot;09:15&quot; jsxtext=&quot;09:15&quot;/&gt;  &lt;record jsxid=&quot;09:30&quot; jsxtext=&quot;09:30&quot;/&gt;  &lt;record jsxid=&quot;09:45&quot; jsxtext=&quot;09:45&quot;/&gt;  &lt;record jsxid=&quot;10:00&quot; jsxtext=&quot;10:00&quot;/&gt;  &lt;record jsxid=&quot;10:15&quot; jsxtext=&quot;10:15&quot;/&gt;  &lt;record jsxid=&quot;10:30&quot; jsxtext=&quot;10:30&quot;/&gt;  &lt;record jsxid=&quot;10:45&quot; jsxtext=&quot;10:45&quot;/&gt;  &lt;record jsxid=&quot;11:00&quot; jsxtext=&quot;11:00&quot;/&gt;  &lt;record jsxid=&quot;11:15&quot; jsxtext=&quot;11:15&quot;/&gt;  &lt;record jsxid=&quot;11:30&quot; jsxtext=&quot;11:30&quot;/&gt;  &lt;record jsxid=&quot;11:45&quot; jsxtext=&quot;11:45&quot;/&gt;  &lt;record jsxid=&quot;12:00&quot; jsxtext=&quot;12:00&quot;/&gt;  &lt;record jsxid=&quot;12:15&quot; jsxtext=&quot;12:15&quot;/&gt;  &lt;record jsxid=&quot;12:30&quot; jsxtext=&quot;12:30&quot;/&gt;  &lt;record jsxid=&quot;12:45&quot; jsxtext=&quot;12:45&quot;/&gt;  &lt;record jsxid=&quot;13:00&quot; jsxtext=&quot;13:00&quot;/&gt;  &lt;record jsxid=&quot;13:15&quot; jsxtext=&quot;13:15&quot;/&gt;  &lt;record jsxid=&quot;13:30&quot; jsxtext=&quot;13:30&quot;/&gt;  &lt;record jsxid=&quot;13:45&quot; jsxtext=&quot;13:45&quot;/&gt;  &lt;record jsxid=&quot;14:00&quot; jsxtext=&quot;14:00&quot;/&gt;  &lt;record jsxid=&quot;14:15&quot; jsxtext=&quot;14:15&quot;/&gt;  &lt;record jsxid=&quot;14:30&quot; jsxtext=&quot;14:30&quot;/&gt;  &lt;record jsxid=&quot;14:45&quot; jsxtext=&quot;14:45&quot;/&gt;  &lt;record jsxid=&quot;15:00&quot; jsxtext=&quot;15:00&quot;/&gt;  &lt;record jsxid=&quot;15:15&quot; jsxtext=&quot;15:15&quot;/&gt;  &lt;record jsxid=&quot;15:30&quot; jsxtext=&quot;15:30&quot;/&gt;  &lt;record jsxid=&quot;15:45&quot; jsxtext=&quot;15:45&quot;/&gt;  &lt;record jsxid=&quot;16:00&quot; jsxtext=&quot;16:00&quot;/&gt;  &lt;record jsxid=&quot;16:15&quot; jsxtext=&quot;16:15&quot;/&gt;  &lt;record jsxid=&quot;16:30&quot; jsxtext=&quot;16:30&quot;/&gt;  &lt;record jsxid=&quot;16:45&quot; jsxtext=&quot;16:45&quot;/&gt;  &lt;record jsxid=&quot;17:00&quot; jsxtext=&quot;17:00&quot;/&gt;  &lt;record jsxid=&quot;17:15&quot; jsxtext=&quot;17:15&quot;/&gt;  &lt;record jsxid=&quot;17:30&quot; jsxtext=&quot;17:30&quot;/&gt;  &lt;record jsxid=&quot;17:45&quot; jsxtext=&quot;17:45&quot;/&gt;  &lt;record jsxid=&quot;18:00&quot; jsxtext=&quot;18:00&quot;/&gt;  &lt;record jsxid=&quot;18:15&quot; jsxtext=&quot;18:15&quot;/&gt;  &lt;record jsxid=&quot;18:30&quot; jsxtext=&quot;18:30&quot;/&gt;  &lt;record jsxid=&quot;18:45&quot; jsxtext=&quot;18:45&quot;/&gt;  &lt;record jsxid=&quot;19:00&quot; jsxtext=&quot;19:00&quot;/&gt; &lt;/data&gt;" jsxxmlid="" jsxxmlurl="" jsxdefaulttext="- Valitse -" jsxdisplay="none"/>
+                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);isValidHour(this);"/>
                   </object>
                 </object>
               </object>
@@ -1301,7 +1261,7 @@
         <dynamics jsxborder="@No jsxborder"/>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants jsxvalue="91"/>
+        <variants jsxvalue="92"/>
         <strings jsxname="calendarEntryId" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>

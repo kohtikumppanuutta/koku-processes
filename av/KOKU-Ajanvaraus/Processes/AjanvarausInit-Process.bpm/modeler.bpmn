@@ -4,6 +4,10 @@
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o28IkLE5EeC2x8KNg_tcFQ" source="executablepool">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o28IkbE5EeC2x8KNg_tcFQ" key="poolIsExecutable" value="false"/>
     </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5UOZcArVEeGR5YNtyyw1jQ" source="participant">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5UPAgArVEeGR5YNtyyw1jQ" key="users" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5UPAgQrVEeGR5YNtyyw1jQ" key="roles" value=""/>
+    </eAnnotations>
     <artifacts xmi:type="bpmn:DataObject" xmi:id="_D3A28cmUEeCNbLE3JZ8FWg" iD="_D3A28MmUEeCNbLE3JZ8FWg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D3A28smUEeCNbLE3JZ8FWg" source="attachedDataobject">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D3A288mUEeCNbLE3JZ8FWg" key="isBpelDeclaration" value="true"/>
@@ -44,7 +48,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Fd3gAMmUEeCNbLE3JZ8FWg" key="roles" value="KOKU/virkailija"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HKWP8MmUEeCNbLE3JZ8FWg" source="pipa">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HKjrUMmUEeCNbLE3JZ8FWg" key="description" value="Ajanvaraus - Virkailija"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HKjrUMmUEeCNbLE3JZ8FWg" key="description" value="Ajanvaraus - Virkailija2"/>
       </eAnnotations>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_D2xmYcmUEeCNbLE3JZ8FWg"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_ELTE4cmUEeCNbLE3JZ8FWg"/>

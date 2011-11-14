@@ -30,8 +30,7 @@
     
     <complexType name="Recipients_Type">
     	<sequence>
-    		<element name="Recipients_Recipient1" type="string"></element>
-            <element name="Recipients_Recipient2" type="string"></element>
+    		<element name="Recipients_Recipient" type="string"></element>
             <element name="Recipients_TargetPerson" type="string"></element>
     	</sequence>
     </complexType>    

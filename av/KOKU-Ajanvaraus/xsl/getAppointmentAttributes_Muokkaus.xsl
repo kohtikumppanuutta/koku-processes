@@ -23,11 +23,7 @@
                         	<xsl:element name="receipients">
                         
                         		<xsl:element name="receipients">
-                            		<xsl:value-of select="fe:Recipients_Recipient1/text()"/>
-                        		</xsl:element>
-                        		
-                        		<xsl:element name="receipients">
-                            		<xsl:value-of select="fe:Recipients_Recipient2/text()"/>
+                            		<xsl:value-of select="fe:Recipients_Recipient/text()"/>
                         		</xsl:element>
                         
                         		<xsl:element name="targetPerson">            
