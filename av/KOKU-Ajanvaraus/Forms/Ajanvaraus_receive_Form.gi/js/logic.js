@@ -298,7 +298,6 @@ function getUrl() {
     var domain;
 
     domain = getDomainName();
-    alert(domain);
 
     return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
