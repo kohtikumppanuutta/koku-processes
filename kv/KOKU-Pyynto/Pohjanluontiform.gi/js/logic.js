@@ -367,20 +367,21 @@ function addCalendarChoices(questionName) {
 
 
 // FOR MULTIPLE CHOICE: uncheckTheOthers(this.getParent().getParent().getParent().getParent().getParent().getName(), this.getName());
-function uncheckTheOthers(targetName, checkedName)   {
-   var i = 0;
-   var descendants = form1.getJSXByName(targetName).getDescendantsOfType("jsx3.gui.CheckBox");
-   for (i=0;i<descendants.length;i++)   {
-      if (descendants[i].getName() != checkedName)
-         descendants[i].setChecked(0);
-   }
+function uncheckTheOthers(target, checked) {
+    var i, descendants = target.getDescendantsOfType("jsx3.gui.CheckBox");
+
+    for (i = 0; i < descendants.length; i++)   {
+        if (descendants[i] != checked) {
+            descendants[i].setChecked(0);
+        }
+    }
 }
 
 
 function getEndpoint() {
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51x:8080";
     return endpoint;
     
 }
@@ -564,12 +565,17 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
 
 
-function uncheckTheOthers(targetName, checkedName)   {
-   var descendants = form1.getJSXByName(targetName).getDescendantsOfType("jsx3.gui.CheckBox");
-   for (x in descendants)   {
-      if (descendants[x].getName() != checkedName)
-         descendants[x].setChecked(0);
-   }
+function uncheckTheOthers(target, checked) {
+    //alert(target + " " + checked);
+    var i, descendants = form1.getJSXByName(target).getDescendantsOfType("jsx3.gui.CheckBox");
+    //alert(descendants);
+    for (i = 0; i < descendants.length; i++)   {
+        //alert(descendants[i]);
+        if (descendants[i].getName() != checked) {
+            //alert(descendants[i]);
+            descendants[i].setChecked(0);
+        }
+    }
 }
 
 function addChoice(tempID)

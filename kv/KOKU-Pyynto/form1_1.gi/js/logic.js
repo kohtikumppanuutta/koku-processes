@@ -17,8 +17,8 @@ jsx3.lang.Package.definePackage(
 
 function getEndpoint() {
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51x:8080";
     return endpoint;
     
 }
@@ -887,12 +887,17 @@ function dontUseTemplate() {
 
 
 
-function uncheckTheOthers(targetName, checkedName)   {
-   var descendants = form1.getJSXByName(targetName).getDescendantsOfType("jsx3.gui.CheckBox");
-   for (x in descendants)   {
-      if (descendants[x].getName() != checkedName)
-         descendants[x].setChecked(0);
-   }
+function uncheckTheOthers(target, checked) {
+    //alert(target + " " + checked);
+    var i, descendants = form1.getJSXByName(target).getDescendantsOfType("jsx3.gui.CheckBox");
+    //alert(descendants);
+    for (i = 0; i < descendants.length; i++)   {
+        //alert(descendants[i]);
+        if (descendants[i].getName() != checked) {
+            //alert(descendants[i]);
+            descendants[i].setChecked(0);
+        }
+    }
 }
 
 function addChoice(tempID)
@@ -1798,38 +1803,81 @@ function searchNames(searchString) {
 
     }
 
-    xmlData = Arcusys.Internal.Communication.GetUsers(searchString);
 
-    list = ["firstname", "lastname", "phoneNumber", "email", "uid"];
-    userData = parseXML(xmlData, "user", list);
+    xmlData = Arcusys.Internal.Communication.GetChildrens(searchString);
 
-    for (i = 0; i < userData.length; i++) {
+    list = ["firstname", "lastname", "uid"];
+    userData = parseXML(xmlData, "child", list);
+      
+    // No users found...
+    if ((userData == " ") || (userData == null) || (userData == "")) {
+        alert ("Valitettavasti antamallasi hakusanalla ei l\xF6ytynyt tuloksia");
+        if (hasEmptyChild == true) {
+            form1.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(form1.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
+        }
 
-        personInfo = userData[i].split(',');
+        return;
+    }
 
-        entryFound = true;
-        node = form1.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild().cloneNode();
+    // Multiple nodes found with same ssn 
+    if (userData.lenght > 1) {
+        alert("Hakemallasi henkilotunnukselle loytyi usea esiintyma");
+        if (hasEmptyChild == true) {
+            form1.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(form1.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
+        }
+        return;    
+    }
+    
+    parentsData = parseXML(xmlData, "parents", list);
+    
+    // No quardians found for the child...
+    if (((userData != " " || userData != null)) && ((parentsData == " ") || (parentsData == null))) {
+        alert("Hakemallesi lapselle ei loytynyt jarjestelmaan merkattuja vanhempia");
+        if (hasEmptyChild == true) {
+            form1.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(form1.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
+        }
+        return;
+    }
+       
 
-        node.setAttribute("jsxid", i);
-        node.setAttribute("etunimi", personInfo[0]);
-        node.setAttribute("sukunimi", personInfo[1]);
-        node.setAttribute("puhelin", personInfo[2]);
-        node.setAttribute("sahkoposti", personInfo[3]);
-        node.setAttribute("uid", personInfo[4]);
+    personInfo = userData[0].split(',');
+   
+    entryFound = true;
+    node = form1.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild().cloneNode();
+    
+    node.setAttribute("jsxid", 1);
+    node.setAttribute("etunimi", personInfo[0]);
+    node.setAttribute("sukunimi", personInfo[1]);
+    node.setAttribute("childUid", personInfo[2]);
 
-        form1.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
+    //Listataan lapsen vanhemmat
+    parentList = "";
+    parentUidList = "";
+    
+    for (i = 0; i < parentsData.length; i++) {
+        parentsInfo = parentsData[i].split(',');
+        parentList += (parentsInfo[0] + " " + parentsInfo[1]);
+        parentUidList += parentsInfo[2];
+       
+
+        if ((parentsData.length > 1) && (i < (parentsData.length -1))) {
+            parentUidList += ", ";
+            parentList += ", ";
+        }
 
     }
+   
+    node.setAttribute("huoltajat",parentList);
+    node.setAttribute("parentsUid",parentUidList);
+
+    form1.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
 
     if (hasEmptyChild == true) {
         form1.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(form1.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
     }
 
     form1.getJSXByName("searchMatrix").repaintData();
-    if (entryFound == false) {
-        alert ("Valitettavasti antamallasi hakusanalla ei l\xF6ytynyt tuloksia");
-    }
-
+   
 }
 
 function addToRecipients() {

@@ -531,7 +531,7 @@
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
                     <strings jsxname="button" jsxtext="Hae" jsxmargin="14 4 0 0"/>
-                    <events jsxexecute="searchNames(KayttajaviestintaForm.getJSXByName(&quot;searchString&quot;).getValue());"/>
+                    <events jsxexecute="searchNames(form1.getJSXByName(&quot;searchString&quot;).getValue());"/>
                   </object>
                 </object>
               </object>

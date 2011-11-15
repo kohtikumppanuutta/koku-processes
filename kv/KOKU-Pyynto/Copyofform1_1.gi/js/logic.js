@@ -23,13 +23,17 @@ function resetChoiceSection()
 }
 
 // FOR MULTIPLE CHOICE: uncheckTheOthers(this.getParent().getParent().getParent().getParent().getParent().getName(), this.getName());
-function uncheckTheOthers(targetName, checkedName)   {
-   var i = 0;
-   var descendants = form1.getJSXByName(targetName).getDescendantsOfType("jsx3.gui.CheckBox");
-   for (i=0;i<descendants.length;i++)   {
-      if (descendants[i].getName() != checkedName)
-         descendants[i].setChecked(0);
-   }
+function uncheckTheOthers(target, checked) {
+    //alert(target + " " + checked);
+    var i, descendants = form1.getJSXByName(target).getDescendantsOfType("jsx3.gui.CheckBox");
+    //alert(descendants);
+    for (i = 0; i < descendants.length; i++)   {
+        //alert(descendants[i]);
+        if (descendants[i].getName() != checked) {
+            //alert(descendants[i]);
+            descendants[i].setChecked(0);
+        }
+    }
 }
 
 
