@@ -130,13 +130,6 @@
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_bSPkgPPUEeCcs_3Ae26dPA"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_b7cSgfPUEeCcs_3Ae26dPA"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_3jYe6PPUEeCcs_3Ae26dPA" iD="_3iqGIPPUEeCcs_3Ae26dPA" associations="_6EP5IPPUEeCcs_3Ae26dPA _6UxocPPUEeCcs_3Ae26dPA" name="kirjaaSuostumus" activityType="Task">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3jYe6fPUEeCcs_3Ae26dPA" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3jYe6vPUEeCcs_3Ae26dPA" key="douri" value="project:///Services/KokuSuostumusProcessingServiceImpl.wsdl?wsdloperationbound={http://soa.tiva.koku.arcusys.fi/}KokuSuostumusProcessingService/KokuSuostumusProcessingServicePort/kirjaaSuostumus"/>
-      </eAnnotations>
-      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_6DymIfPUEeCcs_3Ae26dPA"/>
-      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_6UXYwfPUEeCcs_3Ae26dPA"/>
-    </vertices>
   </pools>
   <pools xmi:type="bpmn:Pool" xmi:id="_MK97seQjEeC7QNahpmA8Zg" iD="_MK97sOQjEeC7QNahpmA8Zg" name="Prosessi">
     <artifacts xmi:type="bpmn:DataObject" xmi:id="_QQkfIeQjEeC7QNahpmA8Zg" iD="_QQkfIOQjEeC7QNahpmA8Zg">
@@ -233,35 +226,21 @@
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Qf-NEeQjEeC7QNahpmA8Zg"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_SAY28eQjEeC7QNahpmA8Zg" iD="_SAY28OQjEeC7QNahpmA8Zg" outgoingEdges="_BZJ_gfM4EeCUfuBHBPlb1A" incomingEdges="_TNAbEeQjEeC7QNahpmA8Zg" name="Luo Hakemus" activityType="Task"/>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_X1H1seQjEeC7QNahpmA8Zg" iD="_X1H1sOQjEeC7QNahpmA8Zg" associations="_bSy-IPPUEeCcs_3Ae26dPA _b8SAAPPUEeCcs_3Ae26dPA" outgoingEdges="_ekZxIeQjEeC7QNahpmA8Zg" incomingEdges="_DG2QYfM4EeCUfuBHBPlb1A" name="Kirjaa Hakemus" activityType="EventIntermediateMessage">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_X1H1seQjEeC7QNahpmA8Zg" iD="_X1H1sOQjEeC7QNahpmA8Zg" associations="_bSy-IPPUEeCcs_3Ae26dPA _b8SAAPPUEeCcs_3Ae26dPA" outgoingEdges="_t92t0Q9ZEeGWefk2hZlGRg" incomingEdges="_DG2QYfM4EeCUfuBHBPlb1A" name="Kirjaa Hakemus" activityType="EventIntermediateMessage">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_bSPkgPPUEeCcs_3Ae26dPA"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_b7cSgfPUEeCcs_3Ae26dPA"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_d8LTgeQjEeC7QNahpmA8Zg" iD="_d8LTgOQjEeC7QNahpmA8Zg" outgoingEdges="_fWJCoe2QEeCp1udcO5sf9Q _fsHSoe2QEeCp1udcO5sf9Q" incomingEdges="_ekZxIeQjEeC7QNahpmA8Zg" activityType="GatewayDataBasedExclusive"/>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_fci6EeQjEeC7QNahpmA8Zg" iD="_fci6EOQjEeC7QNahpmA8Zg" associations="_6EH9UPPUEeCcs_3Ae26dPA _6U49MPPUEeCcs_3Ae26dPA" outgoingEdges="_mwJWEe2QEeCp1udcO5sf9Q" incomingEdges="_fsHSoe2QEeCp1udcO5sf9Q" name="Kirjaa Hakemus" activityType="EventIntermediateMessage">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C-r84OQkEeC7QNahpmA8Zg" source="bpelParameters">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C-r84eQkEeC7QNahpmA8Zg" key="outgoingMessageVariableName" value="kokuSuostumusProcessingServiceImplKirjaaSuostumusRequestMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Md1X4OQkEeC7QNahpmA8Zg" key="incomingMessageVariableName" value="kokuSuostumusProcessingServiceImplKirjaaSuostumusResponseMsg"/>
-      </eAnnotations>
-      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_6DymIfPUEeCcs_3Ae26dPA"/>
-      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_6UXYwfPUEeCcs_3Ae26dPA"/>
-    </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_Xr8-IO2QEeCp1udcO5sf9Q" iD="_Xr8XEO2QEeCp1udcO5sf9Q" outgoingEdges="_p06Hke2QEeCp1udcO5sf9Q" incomingEdges="_fWJCoe2QEeCp1udcO5sf9Q _mwJWEe2QEeCp1udcO5sf9Q" activityType="GatewayDataBasedExclusive"/>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_ox_SAe2QEeCp1udcO5sf9Q" iD="_ox_SAO2QEeCp1udcO5sf9Q" incomingEdges="_p06Hke2QEeCp1udcO5sf9Q" name="The End" activityType="EventEndEmpty"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_ox_SAe2QEeCp1udcO5sf9Q" iD="_ox_SAO2QEeCp1udcO5sf9Q" incomingEdges="_t92t0Q9ZEeGWefk2hZlGRg" name="The End" activityType="EventEndEmpty"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_A7sncfM4EeCUfuBHBPlb1A" iD="_A7sncPM4EeCUfuBHBPlb1A" associations="_Iz89IPM4EeCUfuBHBPlb1A _JBHPYPM4EeCUfuBHBPlb1A" outgoingEdges="_C3-G4fM4EeCUfuBHBPlb1A" incomingEdges="_BZJ_gfM4EeCUfuBHBPlb1A" activityType="EventIntermediateMessage">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_IzmX0fM4EeCUfuBHBPlb1A"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_JAkc0fM4EeCUfuBHBPlb1A"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_BqKP8PM4EeCUfuBHBPlb1A" iD="_BqJo4PM4EeCUfuBHBPlb1A" outgoingEdges="_DG2QYfM4EeCUfuBHBPlb1A" incomingEdges="_C3-G4fM4EeCUfuBHBPlb1A" name="Tallenna Lahettaja" activityType="Task"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_TNAbEeQjEeC7QNahpmA8Zg" iD="_TNAbEOQjEeC7QNahpmA8Zg"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_ekZxIeQjEeC7QNahpmA8Zg" iD="_ekZxIOQjEeC7QNahpmA8Zg"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_fWJCoe2QEeCp1udcO5sf9Q" iD="_fWJCoO2QEeCp1udcO5sf9Q" conditionType="Default" isDefault="true"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_fsHSoe2QEeCp1udcO5sf9Q" iD="_fsHSoO2QEeCp1udcO5sf9Q"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_mwJWEe2QEeCp1udcO5sf9Q" iD="_mwJWEO2QEeCp1udcO5sf9Q"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_p06Hke2QEeCp1udcO5sf9Q" iD="_p06HkO2QEeCp1udcO5sf9Q"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_BZJ_gfM4EeCUfuBHBPlb1A" iD="_BZJ_gPM4EeCUfuBHBPlb1A"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_C3-G4fM4EeCUfuBHBPlb1A" iD="_C3-G4PM4EeCUfuBHBPlb1A"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_DG2QYfM4EeCUfuBHBPlb1A" iD="_DG2QYPM4EeCUfuBHBPlb1A"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_t92t0Q9ZEeGWefk2hZlGRg" iD="_t92t0A9ZEeGWefk2hZlGRg"/>
   </pools>
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_QQPvAeQjEeC7QNahpmA8Zg" iD="_QQPvAOQjEeC7QNahpmA8Zg" source="_vjm6-ON4EeC2VbMOni48Jw" target="_OocqweQjEeC7QNahpmA8Zg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QQVOkOQjEeC7QNahpmA8Zg" source="attachedDataobject">
@@ -291,16 +270,6 @@
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_b7cSgfPUEeCcs_3Ae26dPA" iD="_b7cSgPPUEeCcs_3Ae26dPA" source="_Y27YqPPUEeCcs_3Ae26dPA" target="_X1H1seQjEeC7QNahpmA8Zg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b7jnQPPUEeCcs_3Ae26dPA" source="attachedDataobject">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b7jnQfPUEeCcs_3Ae26dPA" key="douri" value="project:///Services/KokuSuostumusProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.tiva.koku.arcusys.fi/}KokuSuostumusProcessingService/KokuSuostumusProcessingServicePort/kirjaaSuostumus/output/kirjaaSuostumusResponse"/>
-    </eAnnotations>
-  </messages>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_6DymIfPUEeCcs_3Ae26dPA" iD="_6DymIPPUEeCcs_3Ae26dPA" source="_fci6EeQjEeC7QNahpmA8Zg" target="_3jYe6PPUEeCcs_3Ae26dPA">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6D7JAPPUEeCcs_3Ae26dPA" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6D7JAfPUEeCcs_3Ae26dPA" key="douri" value="project:///Services/KokuSuostumusProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.tiva.koku.arcusys.fi/}KokuSuostumusProcessingService/KokuSuostumusProcessingServicePort/kirjaaSuostumus/input/kirjaaSuostumusRequest"/>
-    </eAnnotations>
-  </messages>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_6UXYwfPUEeCcs_3Ae26dPA" iD="_6UXYwPPUEeCcs_3Ae26dPA" source="_3jYe6PPUEeCcs_3Ae26dPA" target="_fci6EeQjEeC7QNahpmA8Zg">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6Uhw0PPUEeCcs_3Ae26dPA" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6Uhw0fPUEeCcs_3Ae26dPA" key="douri" value="project:///Services/KokuSuostumusProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.tiva.koku.arcusys.fi/}KokuSuostumusProcessingService/KokuSuostumusProcessingServicePort/kirjaaSuostumus/output/kirjaaSuostumusResponse"/>
     </eAnnotations>
   </messages>
 </bpmn:BpmnDiagram>

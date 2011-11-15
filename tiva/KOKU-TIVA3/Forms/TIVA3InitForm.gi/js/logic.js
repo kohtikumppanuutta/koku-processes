@@ -401,7 +401,7 @@ function searchNames(searchString) {
     entryFound = false;
 
     if (searchString == "") {
-        alert("Syota hakusana");
+        alert("Sy\u00F6t\u00E4 hakusana");
         return;
     }
 
@@ -418,18 +418,18 @@ function searchNames(searchString) {
         clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
         hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
 
-        parents = xmlData.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+        parentsNodes = xmlData.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
         
         parentList = ["firstname", "lastname", "uid"];
         parentData = [];
         parentInfo = [];
-        parent = [];
+        parents = [];
 
         i = 0;
-        while (parents.get(i)) {
-            parent[i] = parents.get(i);
+        while (parentsNodes.get(i)) {
+            parents[i] = parentsNodes.get(i);
             parentList = ["firstname", "lastname", "uid"];
-            parentData = parseXML(parent[i], "parents", parentList);
+            parentData = parseXML(parents[i], "parents", parentList);
             parentInfo[i] = parentData[i].split(',');
             i++;
         }
@@ -463,7 +463,7 @@ function searchNames(searchString) {
             TIVA3Form.getCache().getDocument("HaetutLapset-nomap").removeChild(TIVA3Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
         }
     } else {
-        alert("Valitettavasti antamallasi hakusanalla ei loytynyt tuloksia");
+        alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
     }
 
     setSuostujat();
@@ -745,6 +745,7 @@ function getUrl() {
     var domin;
 
     domain = getDomainName();
+    domain = "62.61.65.15:8380";
 
     return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
