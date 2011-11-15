@@ -111,8 +111,8 @@
  </binding>
  <service name="KokuMessageProcessingService">
   <port binding="tns:KokuMessageProcessingServiceBinding" name="KokuMessageProcessingServicePort">
-<!--   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl"/>-->
-   <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl"/>
+   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl"/>
+   <!-- <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl"/> -->
   </port>
  </service>
 </definitions>
