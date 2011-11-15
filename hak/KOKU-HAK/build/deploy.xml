@@ -1,0 +1,26 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<dd:deploy xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03"><dd:process xmlns:Virkailija="http://arcusys.fi/Processes/Vahvistuspyynto/Virkailija" xmlns:KokuHakProcessingServiceImpl="http://soa.hak.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Vahvistuspyynto_Decision_Form="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi/attachments" xmlns:Palvelut="http://arcusys.fi/Processes/Vahvistuspyynto/Palvelut" xmlns:Vahvistuspyynto_Decision_Form1="http://www.intalio.com/gi/Forms/Vahvistuspyynto_Decision_Form.gi" xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://arcusys.fi/Processes/Vahvistuspyynto" xmlns:tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" xmlns:Kuntalainen="http://arcusys.fi/Processes/Vahvistuspyynto/Kuntalainen" xmlns:Vahvistuspyynto_init_Form="http://www.intalio.com/gi/Forms/Vahvistuspyynto_init_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Vahvistuspyynto_init_Form.gi/attachments" xmlns:this="http://arcusys.fi/Processes/Vahvistuspyynto/Prosessi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Prosessi" fileName="Processes/Vahvistuspyynto-Prosessi.bpel">
+  <dd:property name="PATH">Processes/Vahvistuspyynto</dd:property>
+  <dd:property name="SVG">Processes/Vahvistuspyynto.svg</dd:property>
+  <dd:provide partnerLink="prosessiAndVirkailijaForPortTypeProcessPlkVar">
+    <dd:service name="this:ProsessiAndVirkailijaForPortTypeProcessPlkService" port="Prosessi_for_VirkailijaPort"></dd:service>
+  </dd:provide>
+  <dd:provide partnerLink="wFmagic_OyYG0OjZEeC_j-NSyBsshAPlkVar">
+    <dd:service name="this:WFmagic_OyYG0OjZEeC_j-NSyBsshAService" port="Prosessi_for_KuntalainenForThePortTypeProcessPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_OyYG0OjZEeC_j-NSyBsshAPlkVar">
+    <dd:service name="Vahvistuspyynto_Decision_Form1:WorkflowSoapService" port="Vahvistuspyynto_Decision_FormPort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="palvelutAndProsessiForKokuHakProcessingServicePortPlkVar">
+    <dd:service name="KokuHakProcessingServiceImpl:KokuHakProcessingService" port="KokuHakProcessingServicePort"></dd:service>
+  </dd:invoke>
+</dd:process><dd:process xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:Paivahoitohakemus_init_Form="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi" xmlns:diag="http://arcusys.fi/Processes/Paivahoitohakemus" xmlns:tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" xmlns:Kuntalainen="http://arcusys.fi/Processes/Paivahoitohakemus/Kuntalainen" xmlns:KokuHakProcessingServiceImpl="http://soa.hak.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:attachments="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi/attachments" xmlns:this="http://arcusys.fi/Processes/Paivahoitohakemus/Prosessi" xmlns:Palvelut="http://arcusys.fi/Processes/Paivahoitohakemus/Palvelut" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Prosessi" fileName="Processes/Paivahoitohakemus-Prosessi.bpel">
+  <dd:property name="PATH">Processes/Paivahoitohakemus</dd:property>
+  <dd:property name="SVG">Processes/Paivahoitohakemus.svg</dd:property>
+  <dd:provide partnerLink="prosessiAndKuntalainenForPortTypeProcessPlkVar">
+    <dd:service name="this:ProsessiAndKuntalainenForPortTypeProcessPlkService" port="Prosessi_for_KuntalainenPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="palvelutAndProsessiForKokuHakProcessingServicePortPlkVar">
+    <dd:service name="KokuHakProcessingServiceImpl:KokuHakProcessingService" port="KokuHakProcessingServicePort"></dd:service>
+  </dd:invoke>
+</dd:process></dd:deploy>
