@@ -21,6 +21,9 @@
 		                        		<xsl:when test="fe:TextInput_Type = 'MULTIPLE_CHOICE'">
 		                        			<xsl:value-of select="fe:TextInput_AnswerText" />
 		                        		</xsl:when>
+		                        		<xsl:when test="fe:TextInput_Type = 'CALENDAR'">
+		                        			<xsl:value-of select="fe:TextInput_AnswerText" />
+		                        		</xsl:when>
 		                        		<xsl:otherwise>
 		                        		</xsl:otherwise>
 		                        	</xsl:choose>

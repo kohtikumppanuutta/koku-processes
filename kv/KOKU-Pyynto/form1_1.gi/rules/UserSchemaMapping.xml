@@ -97,12 +97,12 @@
             <mappings jsxid="mi_25">
               <record jsxid="x72366" name="CDF Attribute" value="MultipleChoice_Question"/>
             </mappings>
-          </record><record jsxid="x47041" jsxtext="MultipleChoice_Checked" type="E" datatype="boolean" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']" jsxselected="1">
+          </record><record jsxid="x60483" jsxtext="MultipleChoice_Checked" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']">
             <restrictions>
-              <record jsxid="x87125" name="nillable" value="true"/>
+              <record jsxid="x22337" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_25">
-              <record jsxid="x52077" name="CDF Attribute" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutputMatrix(CDFCONTEXT.getAttribute('MultipleChoice_Checked')));"/>
+              <record jsxid="x55285" name="CDF Attribute" value="MultipleChoice_Checked"/>
             </mappings>
           </record></record><record jsxid="x59652" jsxtext="RequestProcessing" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='RequestProcessing']" tns="http://www.arcusys.fi/DynamicFields" jsxopen="1"><record jsxid="x95626" jsxtext="RequestProcessing_RequestID" type="E" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='RequestProcessing_RequestID']" datatype="string"><mappings jsxid="x78764"><record jsxid="x7865" value="RequestProcessing_RequestID" name="DOM"/></mappings></record></record><record jsxid="x19648" jsxtext="Kommentti" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Kommentti']" tns="http://www.arcusys.fi/DynamicFields" jsxopen="1"><record jsxid="x3681" jsxtext="Kommentti_Kommentti" type="E" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Kommentti_Kommentti']" datatype="string"><mappings jsxid="x78764"><record jsxid="x72582" value="Kommentti_Kommentti" name="DOM"/></mappings></record></record></record>
     </record>
@@ -213,12 +213,12 @@
             <mappings jsxid="mi_59">
               <record jsxid="x60386" name="CDF Attribute" value="MultipleChoice_Question"/>
             </mappings>
-          </record><record jsxid="x56156" jsxtext="MultipleChoice_Checked" type="E" datatype="boolean" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']">
+          </record><record jsxid="x42929" jsxtext="MultipleChoice_Checked" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']" jsxselected="1">
             <restrictions>
-              <record jsxid="x60264" name="nillable" value="true"/>
+              <record jsxid="x19483" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_59">
-              <record jsxid="x31439" name="Script" value="CDFCONTEXT.setAttribute('MultipleChoice_Checked', Intalio.Internal.Utilities.fixCheckboxInputMatrix(MESSAGENODE.getValue()));"/>
+              <record jsxid="x64651" name="CDF Attribute" value="MultipleChoice_Checked"/>
             </mappings>
           </record></record><record jsxid="x28156" jsxtext="RequestProcessing" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='RequestProcessing']" tns="http://www.arcusys.fi/DynamicFields" jsxopen="1"><record jsxid="x65283" jsxtext="RequestProcessing_RequestID" type="E" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='RequestProcessing_RequestID']" datatype="string"><mappings jsxid="x78764"><record jsxid="x10504" value="RequestProcessing_RequestID" name="DOM"/></mappings></record></record><record jsxid="x31675" jsxtext="Kommentti" type="C" jsxopen="1" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Kommentti']" tns="http://www.arcusys.fi/DynamicFields"><record jsxid="x63293" jsxtext="Kommentti_Kommentti" type="E" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Kommentti_Kommentti']" datatype="string"><mappings jsxid="x78764"><record jsxid="x10668" value="Kommentti_Kommentti" name="DOM"/></mappings></record></record></record>
     </record>

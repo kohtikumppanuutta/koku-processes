@@ -1861,7 +1861,7 @@ function searchNames(searchString) {
        
 
         if ((parentsData.length > 1) && (i < (parentsData.length -1))) {
-            parentUidList += ", ";
+            parentUidList += ",";
             parentList += ", ";
         }
 

@@ -61,7 +61,7 @@ function showForm(flag) {
             //alert(fieldsetNumber);
             if (fieldsetNumber!="") {
                 //alert(form1.getJSXByName(fieldsetNumber).getChild("pane").getChild("layout (--)").getLastChild().getChild("layout ( | )").getChild("pane").getChild("button").getDisplay());
-               if (childNode.getAttribute("TextInput_Type") == "MULTIPLE_CHOICE") {
+               if (childNode.getAttribute("TextInput_Type") == "MULTIPLE_CHOICE" || childNode.getAttribute("TextInput_Type") == "CALENDAR") {
                       // alert("MULTIPLE_CHOICE");
                       form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 80).repaint();
                       form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 80).repaint();
@@ -279,7 +279,7 @@ function mapAnswerTextFields() {
                     answerText = "false";
                 }
            }
-           if (type=="MULTIPLE_CHOICE") {
+           if (type=="MULTIPLE_CHOICE" || type=="CALENDAR") {
               // alert("MULTIPLE_CHOICE");
               // NOTE:
               // SOLUTION APPLICAPLE FOR SELECTIONS OF MULTIPLE CHECKBOXES
@@ -302,7 +302,7 @@ function mapAnswerMultipleChoiceFields (sectionNumber) {
        var childNode, childId, question, section, answerText;
        var childIterator = form1.getCache().getDocument("MultipleChoice-nomap").getChildIterator();
        var elementNumber, type;
-       var value;
+       var value = "";
 
        while(childIterator.hasNext()){
 
@@ -312,11 +312,16 @@ function mapAnswerMultipleChoiceFields (sectionNumber) {
                // alert(form1.getJSXByName("choicePane" + sectionNumber + "_" + childNode.getAttribute("MultipleChoice_Number")));
                // alert(form1.getJSXByName("choicePane" + sectionNumber + "_" + childNode.getAttribute("MultipleChoice_Number")).getFirstChild().getFirstChild().getFirstChild().getChecked());
                 if (form1.getJSXByName("choicePane" + sectionNumber + "_" + childNode.getAttribute("MultipleChoice_Number")).getFirstChild().getFirstChild().getFirstChild().getChecked()) {
-                    childNode.setAttribute("MultipleChoice_Checked",true);
-                    value = childNode.getAttribute("MultipleChoice_Question");
+                    childNode.setAttribute("MultipleChoice_Checked","true");
+                    if (value=="") {
+                        value = childNode.getAttribute("MultipleChoice_Question");
+                    }
+                    else {
+                        value = value + ", " + childNode.getAttribute("MultipleChoice_Question");
+                    }
                 }
                 else {
-                    childNode.setAttribute("MultipleChoice_Checked",false);
+                    childNode.setAttribute("MultipleChoice_Checked","false");
                 }
             }
        }
