@@ -1441,7 +1441,7 @@
               <strings jsxname="MultipleChoice_Number" jsxwidth="100" jsxtext="MultipleChoice_Number" jsxpadding="2" jsxcellpadding="3" jsxpath="MultipleChoice_Number"/>
               <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
               <object type="jsx3.gui.TextBox">
-                <variants jsxrelativeposition="0" jsxleft="150" jsxtop="0" jsxwidth="185" jsxheight="20" jsxzindex="10"/>
+                <variants jsxrelativeposition="0" jsxleft="150" jsxtop="0" jsxwidth="100" jsxheight="20" jsxzindex="10"/>
                 <strings jsxname="MultipleChoice_Number" jsxdisplay="none" jsxvalue=""/>
                 <events jsxkeydown="1;"/>
               </object>
@@ -1451,7 +1451,7 @@
               <strings jsxname="MultipleChoice_Question" jsxwidth="100" jsxtext="MultipleChoice_Question" jsxpadding="2" jsxcellpadding="3" jsxpath="MultipleChoice_Question"/>
               <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
               <object type="jsx3.gui.TextBox">
-                <variants jsxrelativeposition="0" jsxleft="150" jsxtop="0" jsxwidth="100" jsxheight="20" jsxzindex="10"/>
+                <variants jsxrelativeposition="0" jsxleft="250" jsxtop="0" jsxwidth="100" jsxheight="20" jsxzindex="10"/>
                 <strings jsxname="MultipleChoice_Question" jsxdisplay="none" jsxvalue=""/>
                 <events jsxkeydown="1;"/>
               </object>
@@ -1460,10 +1460,10 @@
               <variants/>
               <strings jsxcellpadding="1" jsxpath="MultipleChoice_Checked" jsxwidth="100" jsxpadding="3" jsxcelltextalign="center" jsxname="MultipleChoice_Checked" jsxvaluetemplate="@empty" jsxtext="MultipleChoice_Checked"/>
               <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-              <object type="jsx3.gui.CheckBox">
-                <variants jsxchecked="0" jsxenabled="1"/>
-                <strings jsxname="MultipleChoice_Checked" jsxtext=""/>
-                <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxrelativeposition="0" jsxleft="350" jsxtop="0" jsxwidth="100" jsxheight="20" jsxzindex="10"/>
+                <strings jsxname="MultipleChoice_Checked" jsxdisplay="none" jsxvalue=""/>
+                <events jsxkeydown="1;"/>
               </object>
             </object>
           </object>

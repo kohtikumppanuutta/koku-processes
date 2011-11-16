@@ -12,10 +12,10 @@
 				<div class="main">
 
 					<h2 class="old">LÄHETTÄJÄ</h2>
-					<p><xsl:value-of select="//ka:User_Sender/text()"/></p>
+					<p><xsl:value-of select="//ka:User_SenderDisplay/text()"/></p>
 					<div class="innerContent">
 					<h2 class="old">VASTAANOTTAJA</h2>
-							<p><xsl:value-of select="//ka:User_Recipient/text()"/></p>
+							<p><xsl:value-of select="//ka:User_RecipientDisplay/text()"/></p>
 					</div>
 						<h2 class="old"><xsl:value-of select="//ka:Header_Text/text()"/></h2>
 						<div class="innerContent">

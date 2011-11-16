@@ -58,7 +58,7 @@
         </record>
         
         
-        <record jsxid="x41679" jsxtext="MultipleChoice" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice']" jsxopen="1" jsxSelectMask="CDF Attribute">
+        <record jsxid="x41679" jsxtext="MultipleChoice" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice']" jsxopen="1">
           <restrictions>
             <record jsxid="x47406" name="maxoccur" value="unbounded"/>
             <record jsxid="x36928" name="minoccur" value="0"/>
@@ -86,19 +86,19 @@
             <record jsxid="x33855" name="Script" value="if(typeof(this._i_66)=='undefined'){this._i_66=-1;my.getCDFDocument('MultipleChoice-nomap','OUTBOUND');}"/>
             <record jsxid="x38130" name="CDF Record"/>
           </mappings>
-        <record jsxid="x48143" jsxtext="MultipleChoice_Question" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Question']" jsxSelectMask="CDF Attribute">
+        <record jsxid="x48143" jsxtext="MultipleChoice_Question" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Question']">
             <restrictions>
               <record jsxid="x96647" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_15">
               <record jsxid="x58630" name="CDF Attribute" value="MultipleChoice_Question"/>
             </mappings>
-          </record><record jsxid="x88023" jsxtext="MultipleChoice_Checked" type="E" datatype="boolean" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']" jsxSelectMask="Script">
+          </record><record jsxid="x82455" jsxtext="MultipleChoice_Checked" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']">
             <restrictions>
-              <record jsxid="x74533" name="nillable" value="true"/>
+              <record jsxid="x28655" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_15">
-              <record jsxid="x79509" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutputMatrix(CDFCONTEXT.getAttribute('MultipleChoice_Checked')));"/>
+              <record jsxid="x62067" name="CDF Attribute" value="MultipleChoice_Checked"/>
             </mappings>
           </record></record><record jsxid="mi_56" jsxtext="Header" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Header']">
           <restrictions>
@@ -147,7 +147,7 @@
             <mappings jsxid="mi_70">
               <record jsxid="x51691" name="DOM" value="User_SenderDisplay"/>
             </mappings>
-          </record><record jsxid="x62607" jsxtext="User_RecipientDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_RecipientDisplay']" jsxSelectMask="Script" jsxselected="1">
+          </record><record jsxid="x62607" jsxtext="User_RecipientDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='User_RecipientDisplay']" jsxSelectMask="Script">
             <restrictions>
               <record jsxid="x84533" name="nillable" value="true"/>
             </restrictions>
@@ -248,7 +248,7 @@
         </record>
         
         
-        <record jsxid="x81914" jsxtext="MultipleChoice" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice']" jsxSelectMask="CDF Attribute" jsxopen="1">
+        <record jsxid="x81914" jsxtext="MultipleChoice" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice']" jsxopen="1">
           <restrictions>
             <record jsxid="x11910" name="maxoccur" value="unbounded"/>
             <record jsxid="x41615" name="minoccur" value="0"/>
@@ -269,7 +269,7 @@
               <record jsxid="x25988" name="CDF Attribute" value="MultipleChoice_Number"/>
             </mappings>
           </record>
-          <record jsxid="x84619" jsxtext="MultipleChoice_Question" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Question']" jsxSelectMask="Script">
+          <record jsxid="x84619" jsxtext="MultipleChoice_Question" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Question']">
             <restrictions>
               <record jsxid="x77199" name="nillable" value="true"/>
             </restrictions>
@@ -277,20 +277,20 @@
               <record jsxid="x93318" name="CDF Attribute" value="MultipleChoice_Question"/>
             </mappings>
           </record>
-          <record jsxid="x21745" jsxtext="MultipleChoice_Checked" type="E" datatype="boolean" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']" jsxSelectMask="Script">
-            <restrictions>
-              <record jsxid="x45104" name="nillable" value="true"/>
-            </restrictions>
-            <mappings jsxid="mi_97">
-              <record jsxid="x73285" name="Script" value="CDFCONTEXT.setAttribute('MultipleChoice_Checked', Intalio.Internal.Utilities.fixCheckboxInputMatrix(MESSAGENODE.getValue()));"/>
-            </mappings>
-          </record>
+          
           
           <mappings jsxid="mi_103">
             <record jsxid="x79833" name="Script" value="if(typeof(this._i_162)=='undefined'){this._i_162=-1;my.getCDFDocument('MultipleChoice-nomap','INBOUND');}"/>
             <record jsxid="x16286" name="CDF Record"/>
           </mappings>
-        </record><record jsxid="mi_130" jsxtext="Header" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Header']" jsxSelectMask="CDF Attribute">
+        <record jsxid="x2981" jsxtext="MultipleChoice_Checked" type="E" datatype="string" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='MultipleChoice_Checked']" jsxselected="1">
+            <restrictions>
+              <record jsxid="x79017" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_93">
+              <record jsxid="x41770" name="CDF Attribute" value="MultipleChoice_Checked"/>
+            </mappings>
+          </record></record><record jsxid="mi_130" jsxtext="Header" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Header']" jsxSelectMask="CDF Attribute">
           <restrictions>
             <record jsxid="mi_131" name="nillable" value="true"/>
           </restrictions>

@@ -492,10 +492,10 @@
               <variants/>
               <strings jsxcellpadding="1" jsxpath="MultipleChoice_Checked" jsxwidth="100" jsxpadding="3" jsxcelltextalign="center" jsxname="MultipleChoice_Checked" jsxvaluetemplate="@empty" jsxtext="MultipleChoice_Checked"/>
               <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
-              <object type="jsx3.gui.CheckBox">
-                <variants jsxchecked="0" jsxenabled="1"/>
-                <strings jsxname="MultipleChoice_Checked" jsxtext=""/>
-                <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxrelativeposition="0" jsxleft="150" jsxtop="0" jsxwidth="100" jsxheight="20" jsxzindex="10"/>
+                <strings jsxname="MultipleChoice_Checked" jsxdisplay="none" jsxvalue=""/>
+                <events jsxkeydown="1;"/>
               </object>
             </object>
           </object>
