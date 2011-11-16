@@ -107,7 +107,6 @@ function mapSelectedRecipientsToMatrix() {
 
             for (i = 0; i < userData.length; i++) {
                 uid = userData[i];
-                alert(uid);
 
                 try {
 
@@ -126,7 +125,6 @@ function mapSelectedRecipientsToMatrix() {
                 node.setAttribute("jsxid", jsxid);
                 node.setAttribute("receipient", uid);
                 node.setAttribute("receipientDisplay", displayName);
-                //  alert(displayName);
                 KayttajaviestintaForm.getCache().getDocument("receipients-nomap").insertBefore(node);
                 jsxid++;
 
@@ -137,9 +135,7 @@ function mapSelectedRecipientsToMatrix() {
 
             try {
 
-                alert(uid);
                 kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
-                alert(kunpoUsername);
 
                 if(kunpoUsername != null) {
                     displayName = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
