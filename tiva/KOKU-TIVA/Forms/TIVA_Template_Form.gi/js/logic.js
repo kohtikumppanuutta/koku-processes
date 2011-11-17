@@ -481,7 +481,7 @@ function getDomainName() {
 
     var url = window.location.href;
     var url_parts = url.split("/");
-    var domain_name = url_parts[2];
+    var domain_name = url_parts[0] + "//" + url_parts[2];
        
     return domain_name;
 
@@ -490,7 +490,7 @@ function getDomainName() {
 function getUrl() {
     
     var domain = getDomainName();
-    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+    return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
 
