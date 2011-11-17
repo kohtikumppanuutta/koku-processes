@@ -283,11 +283,10 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 // Extra Functions -------------------------------------------------------------------------------------------------------------------------------
 
 function getDomainName() {
-    var url, url_parts, domain_name;
 
-    url = window.location.href;
-    url_parts = url.split("/");
-    domain_name = url_parts[2];
+    var url = window.location.href;
+    var url_parts = url.split("/");
+    var domain_name = url_parts[0] + "//" + url_parts[2];
        
     return domain_name;
 
@@ -306,8 +305,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51x:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51x:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }
