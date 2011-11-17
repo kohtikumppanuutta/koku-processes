@@ -554,6 +554,20 @@ function listGroupUsers() {
 
 }
 
+jsx3.lang.Package.definePackage(
+  "Intalio.Internal.CustomErrors",
+  function(error) {
+
+    error.getError=function(name){
+        var errortext = KayttajaviestintaForm.getJSXByName(name).getTip();
+        errortext = "Puuttuvat tiedot: " + errortext;
+        return errortext;
+    };
+  }
+);
+
+
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetUsers = function(searchString) {
         var tout, msg, endpoint, url, req, objXML, limit;

@@ -699,7 +699,7 @@
                   <strings riaLabelText="" jsxname="Message_Subject-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxwidth="300" jsxrequired="1"/>
-                    <strings jsxname="Message_Subject" jsxmargin="0 4 0 0" jsxvalue=""/>
+                    <strings jsxname="Message_Subject" jsxmargin="0 4 0 0" jsxvalue="" jsxtip="Viestin aihe"/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
                 </object>
@@ -726,7 +726,7 @@
                   <strings riaLabelText="Viesti_Sisalto" jsxname="Message_Content-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxwidth="500" jsxheight="200" jsxtype="1" jsxrequired="1"/>
-                    <strings jsxname="Message_Content" jsxmargin="0 4 0 0" jsxvalue="" jsxstyleoverride="white-space: pre;"/>
+                    <strings jsxname="Message_Content" jsxmargin="0 4 0 0" jsxvalue="" jsxstyleoverride="white-space: pre;" jsxtip="Viesti"/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
                 </object>
