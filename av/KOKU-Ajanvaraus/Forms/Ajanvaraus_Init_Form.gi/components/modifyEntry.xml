@@ -134,7 +134,7 @@
               <variants/>
               <strings riaLabelText="modInfotext" jsxname="modInfotext-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
               <object type="jsx3.gui.TextBox">
-                <variants jsxwidth="340" jsxmaxlength="40" jsxheight="110" jsxtype="1"/>
+                <variants jsxwidth="340" jsxheight="110" jsxtype="1"/>
                 <strings jsxname="modInfotext" jsxmargin="0 4 0 0" jsxvalue=""/>
                 <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
               </object>

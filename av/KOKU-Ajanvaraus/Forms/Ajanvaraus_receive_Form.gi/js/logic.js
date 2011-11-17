@@ -255,7 +255,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var msg, endpoint, url, tout, appointmentId, req, objXML;
     
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointmentForReply><appointmentId>" + id + "</appointmentId><arg1>" + targetPerson + "</arg1></soa:getAppointmentForReply></soapenv:Body></soapenv:Envelope>";
-        endpoint = getAVEndpoint();
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
         url = getUrl();
         
         tout = 1000;
@@ -301,14 +302,6 @@ function getUrl() {
 
     return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
-}
-
-function getAVEndpoint() {
-    var endpoint;
-    
-    endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-
-    return endpoint;
 }
 
 function gup(name) {

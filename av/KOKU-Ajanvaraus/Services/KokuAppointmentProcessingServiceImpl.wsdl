@@ -211,8 +211,8 @@
  </binding>
  <service name="KokuAppointmentProcessingService">
   <port binding="tns:KokuAppointmentProcessingServiceBinding" name="KokuAppointmentProcessingServicePort">
-   <!-- <soap:address location = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl"/> -->
-   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl"/>
+   <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl" />
+   <!-- <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl" /> -->
   </port>
  </service>
 </definitions>

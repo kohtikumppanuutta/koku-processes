@@ -13,6 +13,26 @@ function intalioPreStart() {
     return null;
 }
 
+function isValidHour(node) {
+    var hours, minutes
+    
+    hours = parseInt(node.getValue().substr(0, 2), 10);
+    minutes = parseInt(node.getValue().substr(3, 2), 10);
+
+    if (node.getValue().length != 5 || node.getValue().substr(2, 1) != ":") {
+        alert("Ajan t\u00E4ytyy olla muotoa hh:mm");
+        return false;
+    } else if (hours < 0 || hours > 23) {
+        alert("Tuntien t\u00E4ytyy olla v\u00E4lilt\u00E4 00 - 23");
+        return false;
+    } else if (minutes < 0 || minutes > 59) {
+        alert("Minuuttien t\u00E4ytyy olla v\u00E4lilt\u00E4 00 - 59");
+    } else {
+        return true;
+    }
+}
+    
+
 /* single appointment should be able to be delivered 
 function checkAppointment() {
     var nullError, error, numOfRecipients, numOfSlots;
@@ -165,7 +185,14 @@ function saveValues(id) {
     nodes.setAttribute("endTime", endTime + ":00");
     nodes.setAttribute("location", locat);
     nodes.setAttribute("comment", infotext);
-    AjanvarausForm.getJSXByName(id).getDescendantOfName("infotext").setValue(infotext);
+
+    if (infotext != "") {
+        AjanvarausForm.getJSXByName(id).getDescendantOfName("infotext").setValue(infotext);
+        AjanvarausForm.getJSXByName(id).getDescendantOfName("tooltipImg").setDisplay("block", true);
+    }
+    else {
+        AjanvarausForm.getJSXByName(id).getDescendantOfName("tooltipImg").setDisplay("none", true);
+    }
     
     AjanvarausForm.getJSXByName(id).getDescendantOfName("entry").setText(appDateEntry + ", klo: " + startTime + " - " + endTime + ", " + locat, true); 
 }
@@ -288,10 +315,14 @@ function parseTimes(str) {
 *  Adds an appointment slot or multiple slots
 */
 function addAppointment() {
-    if (AjanvarausForm.getJSXByName("singleSlot").getChecked()) {
-        inputSingleSection();
-    } else if (AjanvarausForm.getJSXByName("multiSlots").getChecked()) {
-        inputMultiSections();
+    if (isValidHour(AjanvarausForm.getJSXByName("aloitusAika"))) {
+        if (AjanvarausForm.getJSXByName("singleSlot").getChecked()) {
+            inputSingleSection();
+        } else if (AjanvarausForm.getJSXByName("multiSlots").getChecked()) {
+            if (isValidHour(AjanvarausForm.getJSXByName("lopetusAika"))) {
+                inputMultiSections();
+            }
+        }
     }
 }
 
@@ -369,6 +400,7 @@ function inputSection(entryDate, entryTime,entryDuration,entryLocation, entryInf
     AjanvarausForm.getJSXByName(id).getDescendantOfName("entry").setText(entryDay + "." + entryMonth + "." + entryYear + ", klo: " + entryHours + ":" + entryMinutes + " - " + endTimeHours + ":" + endTimeMinutes + ", " + entryLocation).repaint();
     if (entryInfotext) {
         AjanvarausForm.getJSXByName(id).getDescendantOfName("infotext").setValue(entryInfotext);
+        //$("#"+AjanvarausForm.getJSXByName(id).getDescendantOfName("tooltipImg").getId()).css("width","30px");
     }
     else {
         AjanvarausForm.getJSXByName(id).getDescendantOfName("tooltipImg").setDisplay("none", true);
@@ -740,7 +772,7 @@ function searchNames(searchString) {
         parents = [];
 
         i = 0;
-        while (parents.get(i)) {
+        while (parentsNodes.get(i)) {
             parents[i] = parentsNodes.get(i);
             parentList = ["firstname", "lastname", "uid"];
             parentData = parseXML(parents[i], "parents", parentList);
@@ -901,8 +933,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         appointmentId = id;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
-        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
         url = getUrl();
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
@@ -934,8 +966,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
 
         url = getUrl();
-        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         req = new jsx3.net.Request();
@@ -965,8 +997,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
-        //endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 

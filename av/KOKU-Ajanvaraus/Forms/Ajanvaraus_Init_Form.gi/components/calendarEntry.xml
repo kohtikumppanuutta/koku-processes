@@ -27,7 +27,7 @@
               <strings jsxname="entry" jsxtext="Ajankohta" jsxclassname="FormLabel"/>
               <object type="jsx3.gui.Image">
                 <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                <strings jsxname="tooltipImg" jsxsrc="images/help-button-small.png" jsxcursor="pointer" jsxpadding="0 0 0 6" jsxdisplay=""/>
+                <strings jsxname="tooltipImg" jsxsrc="images/help-button-small.png" jsxcursor="pointer" jsxpadding="0 0 0 6" jsxdisplay="" jsxwidth=""/>
                 <events jsxclick="showDialog(&quot;dialog&quot;,this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getChild(&quot;infotext&quot;).getValue(),&quot;Tarkennus&quot;,&quot;KOKU-ohjeet&quot;);"/>
               </object>
             </object>
