@@ -23,10 +23,11 @@
             	<xsl:value-of select="//fe:Suostumus1_Suostumustapa/text()" />
             </xsl:element>
             
+            <xsl:element name="kohdehenkilo">
+            	<xsl:value-of select="//fe:Suostumus_Kohdehenkilo/text()" />
+            </xsl:element>
+            
             <xsl:for-each select="//fe:Vastaanottajat">
-            	<xsl:element name="kohdehenkilo">
-            		<xsl:value-of select="fe:Vastaanottajat_Kohdehenkilo/text()" />
-            	</xsl:element>
             	<xsl:element name="vastaanottaja">
             		<xsl:value-of select="fe:Vastaanottajat_Vastaanottaja/text()"/>
             	</xsl:element>

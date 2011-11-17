@@ -67,7 +67,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="block"/>
+      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="300"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -188,8 +188,8 @@
                     <variants jsxheight="140" jsxwidth="540" jsxoverflow="1"/>
                     <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay="" jsxmargin="0 0 0 20"/>
                     <object type="jsx3.gui.Matrix">
-                      <variants jsxautorow="1" jsxselectionmodel="0" jsxpagingmodel="1" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
-                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxname="searchChildMatrix" jsxbgcolor="#efefff" jsxsortpath="sahkoposti" jsxsorttype="text" jsxsortdirection="descending"/>
+                      <variants jsxautorow="1" jsxselectionmodel="0" jsxpagingmodel="3" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
+                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxname="searchChildMatrix" jsxbgcolor="#efefff" jsxsortpath="etunimi" jsxsorttype="text" jsxsortdirection="descending"/>
                       <events jsxaftercommit=""/>
                       <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
                       <object type="jsx3.gui.Matrix.Column">
@@ -401,7 +401,7 @@
                     <variants jsxwidth="350" jsxheight="110" jsxoverflow="1"/>
                     <strings jsxname="matrix-block" jsxrelativeposition="1" jsxmargin="0 0 0 18"/>
                     <object type="jsx3.gui.Matrix">
-                      <variants jsxpagingmodel="1" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1"/>
+                      <variants jsxpagingmodel="3" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1"/>
                       <strings jsxname="dummyMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlid="receipientsToShow-nomap" jsxsortpath="receipient2" jsxsorttype="text" jsxsortdirection="ascending"/>
                       <events jsxaftercommit="this.getParent().getParent().validate(this, objEVENT);"/>
                       <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
@@ -458,7 +458,7 @@
                   <strings riaLabelText="button" jsxname="button-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="showOrHideSearch" jsxtext="Piilota Haku" jsxmargin="12 4 0 0"/>
+                    <strings jsxname="showOrHideSearch" jsxtext="Lisää vastaanottajia" jsxmargin="12 4 0 0"/>
                     <events jsxexecute="if (TIVA3Form.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  TIVA3Form.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;block&quot;).repaint();  TIVA3Form.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;,true);  TIVA3Form.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(TIVA3Form.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  TIVA3Form.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;none&quot;).repaint();  TIVA3Form.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;,true);  TIVA3Form.getJSXByName(&quot;searchVisible&quot;).setChecked(0); } "/>
                   </object>
                 </object>
@@ -522,7 +522,7 @@
         </object>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="1"/>
+        <variants jsxheight="18" jsxchecked="0"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -615,7 +615,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="40%,*" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout ( | )" jsxcols="53%,*" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
@@ -628,7 +628,7 @@
                   <variants/>
                   <strings riaLabelText="HaePohja_Tulokset" jsxname="HaePohja_Tulokset-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
-                    <variants jsxwidth="250" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
+                    <variants jsxwidth="350" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
                     <strings jsxname="HaePohja_Tulokset" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="" jsxxmlid="Pohjat-nomap"/>
                     <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
@@ -745,7 +745,7 @@
                   <variants/>
                   <strings riaLabelText="suostumustapa" jsxname="suostumustapa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
                   <object type="jsx3.gui.Select">
-                    <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" _isfocusing="true" jsxenabled="1" jsxrequired="1"/>
+                    <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" jsxenabled="1" jsxrequired="1" jsxtype="0"/>
                     <strings jsxname="Suostumus1_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Suullinen&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;Paperilla&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;Sähköposti&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
                     <events jsxselect="enabledOnValue(TIVA3Form.getJSXByName(&quot;Suostumus1_Sailytyspaikka&quot;), this.getValue(), &quot;Paperilla&quot;);"/>
                   </object>

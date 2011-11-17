@@ -502,8 +502,8 @@
   </wsdl:binding>
   <wsdl:service name="UsersAndGroupsService">
     <wsdl:port binding="tns:UsersAndGroupsServiceSoapBinding" name="UsersAndGroupsServicePort">
-      <!-- <soap:address location="htto://trelx51x:8080/arcusys-koku-0.1-SNAPHSOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl"/> -->
-      <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" />
+      <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPHSOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl"/>
+      <!-- <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" /> -->
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
