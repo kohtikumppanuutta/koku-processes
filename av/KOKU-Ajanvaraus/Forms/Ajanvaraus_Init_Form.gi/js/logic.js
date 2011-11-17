@@ -1033,19 +1033,18 @@ function getDomainName() {
 
 }
 
-function getUrl() {
-    
-    var domain = getDomainName();
-    //domain = "62.61.65.15:8380"
-    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-
+function getDomainName() {
+    var url = window.location.href;
+    var url_parts = url.split("/");
+    var domain_name = url_parts[0] + "//" + url_parts[2];
+    return domain_name;
 }
 
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51x:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51x:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }
