@@ -726,11 +726,10 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 // Extra functions -------------------------------------------------------------------------------------------------------------------------------
 
 function getDomainName() {
-    var url, url_parts, domain_name;
 
-    url = window.location.href;
-    url_parts = url.split("/");
-    domain_name = url_parts[2];
+    var url = window.location.href;
+    var url_parts = url.split("/");
+    var domain_name = url_parts[0] + "//" + url_parts[2];
        
     return domain_name;
 
@@ -738,20 +737,16 @@ function getDomainName() {
 
 //Getting the domain name and port if available
 function getUrl() {
-    var domin;
-
-    domain = getDomainName();
-    //domain = "62.61.65.15:8380";
-
-    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+    var domain = getDomainName();;
+    return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
 
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51x:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51x:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }
