@@ -1084,7 +1084,7 @@
                   <variants/>
                   <strings jsxname="User_Reminder-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.Select">
-                    <variants jsxwidth="100" jsxheight="18" jsxxmlasync="1" _isfocusing="true"/>
+                    <variants jsxwidth="100" jsxheight="18" jsxxmlasync="1" _isfocusing="true" jsxrequired="1"/>
                     <strings jsxname="User_Reminder" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;2&quot; jsxtext=&quot;2&quot;/&gt;&lt;record jsxid=&quot;5&quot; jsxtext=&quot;5&quot;/&gt;&lt;record jsxid=&quot;7&quot; jsxtext=&quot;7&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
