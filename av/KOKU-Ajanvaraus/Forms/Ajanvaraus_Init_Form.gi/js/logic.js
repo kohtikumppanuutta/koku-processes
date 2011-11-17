@@ -1023,13 +1023,10 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
 // Extra Functions -------------------------------------------------------------------------------------------------------------------------------
 
-function getDomainName() {
-
-    var url = window.location.href;
-    var url_parts = url.split("/");
-    var domain_name = url_parts[2];
-       
-    return domain_name;
+//Getting the domain name and port if available
+function getUrl() {
+    var domain = getDomainName();
+    return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
 
