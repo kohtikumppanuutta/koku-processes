@@ -10,7 +10,7 @@ function getEndpoint() {
 function getUrl() {
 
     var domain = getDomainName();
-    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+    return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
 
