@@ -643,7 +643,11 @@ function mapAttributes(objXML) {
         }
 
         section.getDescendantOfName("entry").setText(pvm + ", klo: " + attributes[i][2].substr(0,5) + " - " + attributes[i][3].substr(0,5) + ", " + attributes[i][4]).repaint();
-        section.getDescendantOfName("infotext").setValue(attributes[i][5]);
+        if (attributes[i][5] != "") {
+            section.getDescendantOfName("infotext").setValue(attributes[i][5]);
+        } else {
+            section.getDescendantOfName("tooltipImg").setDisplay("none", true);
+        }
         mapFieldsToMatrix(attributes[i][0], attributes[i][1], attributes[i][2].substr(0,5), attributes[i][3].substr(0,5), attributes[i][4], attributes[i][5], true);
 
     }
@@ -933,8 +937,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         appointmentId = id;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
         url = getUrl();
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
@@ -966,8 +969,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
 
         url = getUrl();
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         req = new jsx3.net.Request();
@@ -997,8 +999,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -1040,6 +1041,15 @@ function getUrl() {
 
 }
 
+function getEndpoint() {
+    var endpoint;
+
+    endpoint = "http://trelx51x:8080";
+    //endpoint = "http://localhost:8180";
+    
+    return endpoint;
+}
+
 function showDialog(dialogId, text, textTitle, title) {
     var dialog, cssDisplay;
 
@@ -1051,6 +1061,7 @@ function showDialog(dialogId, text, textTitle, title) {
         dialog.dialog("option", "width", 400);
         dialog.dialog("option", "height", 300);
         dialog.dialog("option", "position", ['middle', 'middle']);
+        dialog.parent().css('display', 'block');
         dialog.dialog();
     } else {
         dialog.dialog({show: null});

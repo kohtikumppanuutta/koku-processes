@@ -255,8 +255,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var msg, endpoint, url, tout, appointmentId, req, objXML;
     
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointmentForReply><appointmentId>" + id + "</appointmentId><arg1>" + targetPerson + "</arg1></soa:getAppointmentForReply></soapenv:Body></soapenv:Envelope>";
-        endpoint = "http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        //endpoint = "http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
         url = getUrl();
         
         tout = 1000;
@@ -304,6 +303,15 @@ function getUrl() {
 
 }
 
+function getEndpoint() {
+    var endpoint;
+
+    endpoint = "http://trelx51x:8080";
+    //endpoint = "http://localhost:8180";
+    
+    return endpoint;
+}
+
 function gup(name) {
     var regexS, regex, results;
 
@@ -332,6 +340,7 @@ function showDialog(dialogId, text, textTitle, title) {
         dialog.dialog("option", "width", 400);
         dialog.dialog("option", "height", 300);
         dialog.dialog("option", "position", ['middle', 'middle']);
+        dialog.parent().css('display', 'block');
         dialog.dialog();
     } else {
         dialog.dialog({show: null});
