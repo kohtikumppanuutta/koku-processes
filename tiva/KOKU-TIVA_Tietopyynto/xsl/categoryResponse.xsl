@@ -33,10 +33,12 @@
 				<xsl:value-of select="//ka:Vastaus_Extend01/text()"/>
 			</xsl:element>
 			
-			<xsl:element name="validTill">
-				<xsl:value-of select="//ka:Vastaus_Voimassa/text()"/>
-			</xsl:element>
-					
+			<xsl:if test="//ka:Vastaus_Voimassa/text() != ''">
+                           <xsl:element name="validTill">      
+                            <xsl:value-of select="//ka:Vastaus_Voimassa/text()" />
+                    </xsl:element>
+            </xsl:if>
+						
 		</xsl:element>
 		
 	</xsl:template>

@@ -25,7 +25,7 @@ function getDomainName() {
 }
 
 
-function getURL() {
+function getUrl() {
     
     var domain = getDomainName();
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
@@ -380,7 +380,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelosdsadpe/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchEmployees><!--Optional:--><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchEmployees></soapenv:Body></soapenv:Envelope>";
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getUrlL();
+        url = getUrl();
 
         endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
@@ -449,7 +449,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getURL();
+        url = getUrl();
 
         endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
@@ -483,7 +483,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo><childUid>" + uid + "</childUid></soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-         url = getURL();
+         url = getUrl();
 
         endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
@@ -518,7 +518,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
        
-        url = getURL();
+        url = getUrl();
        
         endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl";
 

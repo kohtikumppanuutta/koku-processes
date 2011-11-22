@@ -3,7 +3,7 @@
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize><![CDATA[preloadCategories();]]></onAfterDeserialize>
+  <onAfterDeserialize>preloadCategories();</onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxoverflow="1" jsxwidth="870"/>
     <strings jsxheight="100%" jsxname="root"/>
@@ -771,7 +771,7 @@
                   <variants/>
                   <strings riaLabelText="Vastaus_Muoto" riaLayoutDirection="vertical" jsxname="Vastaus_Muoto-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="false" jsxenabled="1" jsxdefaultchecked="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="dummyBox3" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="showFreeTextArea(this.getChecked()); if (this.getChecked() == true) {   TivaTietopyyntoForm.getJSXByName(&quot;dummyBox2&quot;).setChecked(false);   } "/>
                   </object>
@@ -804,7 +804,7 @@
                   <strings riaLabelText="Vastaus_Liite" jsxname="Vastaus_Liite-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxtype="1" jsxheight="100" jsxwidth="700" jsxrequired="0"/>
-                    <strings jsxname="Vastaus_Liite" jsxmargin="0 4 0 0" jsxvalue="" jsxpadding=""/>
+                    <strings jsxname="Vastaus_Liite" jsxmargin="0 4 0 0" jsxvalue="" jsxpadding="" jsxtip="Tietopyynnön vastaus (lasta koskevat tiedot)" jsxcursor=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange=""/>
                   </object>
                 </object>
