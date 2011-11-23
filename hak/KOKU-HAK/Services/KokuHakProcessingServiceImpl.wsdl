@@ -1,0 +1,182 @@
+<definitions name="KokuHakProcessingService" targetNamespace="http://soa.hak.koku.arcusys.fi/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.hak.koku.arcusys.fi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://soa.hak.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.hak.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="approveDaycarePlace" type="tns:approveDaycarePlace"/>
+   <xs:element name="approveDaycarePlaceResponse" type="tns:approveDaycarePlaceResponse"/>
+   <xs:element name="getDaycareRequestById" type="tns:getDaycareRequestById"/>
+   <xs:element name="getDaycareRequestByIdResponse" type="tns:getDaycareRequestByIdResponse"/>
+   <xs:element name="processDaycareRequest" type="tns:processDaycareRequest"/>
+   <xs:element name="processDaycareRequestResponse" type="tns:processDaycareRequestResponse"/>
+   <xs:element name="rejectDaycarePlace" type="tns:rejectDaycarePlace"/>
+   <xs:element name="rejectDaycarePlaceResponse" type="tns:rejectDaycarePlaceResponse"/>
+   <xs:element name="requestForDaycare" type="tns:requestForDaycare"/>
+   <xs:element name="requestForDaycareResponse" type="tns:requestForDaycareResponse"/>
+   <xs:complexType name="requestForDaycare">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="request" type="tns:daycareRequest"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="daycareRequest">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="creatorUid" type="xs:string"/>
+     <xs:element minOccurs="0" name="daycareNeededFromDate" type="xs:anySimpleType"/>
+     <xs:element minOccurs="0" name="formContent" type="xs:string"/>
+     <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+     <xs:element minOccurs="0" name="targetPersonUid" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="requestForDaycareResponse">
+    <xs:sequence>
+     <xs:element name="requestId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getDaycareRequestById">
+    <xs:sequence>
+     <xs:element name="request" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getDaycareRequestByIdResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:daycareRequest"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processDaycareRequest">
+    <xs:sequence>
+     <xs:element name="requestId" type="xs:long"/>
+     <xs:element minOccurs="0" name="userUid" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processDaycareRequestResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="rejectDaycarePlace">
+    <xs:sequence>
+     <xs:element name="requestId" type="xs:long"/>
+     <xs:element minOccurs="0" name="userUid" type="xs:string"/>
+     <xs:element minOccurs="0" name="comment" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rejectDaycarePlaceResponse">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="approveDaycarePlace">
+    <xs:sequence>
+     <xs:element name="requestId" type="xs:long"/>
+     <xs:element minOccurs="0" name="userUid" type="xs:string"/>
+     <xs:element minOccurs="0" name="location" type="xs:string"/>
+     <xs:element name="highestPrice" type="xs:boolean"/>
+     <xs:element minOccurs="0" name="comment" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approveDaycarePlaceResponse">
+    <xs:sequence/>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name="KokuHakProcessingService_requestForDaycareResponse">
+  <part element="tns:requestForDaycareResponse" name="requestForDaycareResponse"/>
+ </message>
+ <message name="KokuHakProcessingService_approveDaycarePlaceResponse">
+  <part element="tns:approveDaycarePlaceResponse" name="approveDaycarePlaceResponse"/>
+ </message>
+ <message name="KokuHakProcessingService_requestForDaycare">
+  <part element="tns:requestForDaycare" name="requestForDaycare"/>
+ </message>
+ <message name="KokuHakProcessingService_processDaycareRequest">
+  <part element="tns:processDaycareRequest" name="processDaycareRequest"/>
+ </message>
+ <message name="KokuHakProcessingService_rejectDaycarePlaceResponse">
+  <part element="tns:rejectDaycarePlaceResponse" name="rejectDaycarePlaceResponse"/>
+ </message>
+ <message name="KokuHakProcessingService_processDaycareRequestResponse">
+  <part element="tns:processDaycareRequestResponse" name="processDaycareRequestResponse"/>
+ </message>
+ <message name="KokuHakProcessingService_approveDaycarePlace">
+  <part element="tns:approveDaycarePlace" name="approveDaycarePlace"/>
+ </message>
+ <message name="KokuHakProcessingService_rejectDaycarePlace">
+  <part element="tns:rejectDaycarePlace" name="rejectDaycarePlace"/>
+ </message>
+ <message name="KokuHakProcessingService_getDaycareRequestById">
+  <part element="tns:getDaycareRequestById" name="getDaycareRequestById"/>
+ </message>
+ <message name="KokuHakProcessingService_getDaycareRequestByIdResponse">
+  <part element="tns:getDaycareRequestByIdResponse" name="getDaycareRequestByIdResponse"/>
+ </message>
+ <portType name="KokuHakProcessingService">
+  <operation name="approveDaycarePlace" parameterOrder="approveDaycarePlace">
+   <input message="tns:KokuHakProcessingService_approveDaycarePlace"/>
+   <output message="tns:KokuHakProcessingService_approveDaycarePlaceResponse"/>
+  </operation>
+  <operation name="getDaycareRequestById" parameterOrder="getDaycareRequestById">
+   <input message="tns:KokuHakProcessingService_getDaycareRequestById"/>
+   <output message="tns:KokuHakProcessingService_getDaycareRequestByIdResponse"/>
+  </operation>
+  <operation name="processDaycareRequest" parameterOrder="processDaycareRequest">
+   <input message="tns:KokuHakProcessingService_processDaycareRequest"/>
+   <output message="tns:KokuHakProcessingService_processDaycareRequestResponse"/>
+  </operation>
+  <operation name="rejectDaycarePlace" parameterOrder="rejectDaycarePlace">
+   <input message="tns:KokuHakProcessingService_rejectDaycarePlace"/>
+   <output message="tns:KokuHakProcessingService_rejectDaycarePlaceResponse"/>
+  </operation>
+  <operation name="requestForDaycare" parameterOrder="requestForDaycare">
+   <input message="tns:KokuHakProcessingService_requestForDaycare"/>
+   <output message="tns:KokuHakProcessingService_requestForDaycareResponse"/>
+  </operation>
+ </portType>
+ <binding name="KokuHakProcessingServiceBinding" type="tns:KokuHakProcessingService">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="approveDaycarePlace">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getDaycareRequestById">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="processDaycareRequest">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="rejectDaycarePlace">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="requestForDaycare">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="KokuHakProcessingService">
+  <port binding="tns:KokuHakProcessingServiceBinding" name="KokuHakProcessingServicePort">
+<!--   <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl"/>-->
+   <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl"/>
+  </port>
+ </service>
+</definitions>

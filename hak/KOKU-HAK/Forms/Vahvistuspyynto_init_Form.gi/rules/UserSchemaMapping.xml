@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
+  <record jsxid="mi_1" jxstext="Operation (Transaction)" type="T" jsxopen="1" opname="jsxtransaction">
+    <headers jsxid="mi_2">
+      <record jsxid="mi_3" name="Content-Type" value="text/xml"/>
+    </headers>
+    <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../Vahvistuspyynto.xsd">
+      <record jsxid="mi_5" jsxtext="Vahvistuspyynto_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Vahvistuspyynto_Form']" datatype="" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" jsxopen="1">
+        <record jsxid="mi_6" jsxtext="Tiedot" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_7" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_8" jsxtext="Tiedot_HakijaDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_HakijaDisplay']">
+            <restrictions>
+              <record jsxid="mi_9" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_10">
+              <record jsxid="mi_11" name="DOM" value="Tiedot_HakijaDisplay"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_12" jsxtext="Tiedot_HakijaUid" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_HakijaUid']">
+            <restrictions>
+              <record jsxid="mi_13" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_14">
+              <record jsxid="mi_15" name="DOM" value="Tiedot_HakijaUid"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_16" jsxtext="Tiedot_HoidontarveAlkaa" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_HoidontarveAlkaa']">
+            <restrictions>
+              <record jsxid="mi_17" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_18">
+              <record jsxid="mi_19" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('Tiedot_HoidontarveAlkaa', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_20" jsxtext="Tiedot_HTML" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_HTML']">
+            <restrictions>
+              <record jsxid="mi_21" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_22">
+              <record jsxid="mi_23" name="DOM" value="Tiedot_HTML"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_24" jsxtext="Tiedot_RequestId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_RequestId']">
+            <restrictions>
+              <record jsxid="mi_25" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_26">
+              <record jsxid="mi_27" name="DOM" value="Tiedot_RequestId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_28" jsxtext="Tiedot_Kohdehenkilo" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Kohdehenkilo']">
+            <restrictions>
+              <record jsxid="mi_29" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_30">
+              <record jsxid="mi_31" name="DOM" value="Tiedot_Kohdehenkilo"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_32" jsxtext="Tiedot_Sijainti" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Sijainti']">
+            <restrictions>
+              <record jsxid="mi_33" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_34">
+              <record jsxid="mi_35" name="DOM" value="Tiedot_Sijainti"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_36" jsxtext="Tiedot_KorkeinMaksu" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_KorkeinMaksu']">
+            <restrictions>
+              <record jsxid="mi_37" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_38">
+              <record jsxid="mi_39" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Tiedot_KorkeinMaksu', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_40" jsxtext="Tiedot_Lisatietoja" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Lisatietoja']">
+            <restrictions>
+              <record jsxid="mi_41" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_42">
+              <record jsxid="mi_43" name="DOM" value="Tiedot_Lisatietoja"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_44" jsxtext="Tiedot_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Extend01']">
+            <restrictions>
+              <record jsxid="mi_45" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_46">
+              <record jsxid="mi_47" name="DOM" value="Tiedot_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_48" jsxtext="Tiedot_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Extend02']">
+            <restrictions>
+              <record jsxid="mi_49" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_50">
+              <record jsxid="mi_51" name="DOM" value="Tiedot_Extend02"/>
+            </mappings>
+          </record>
+        <record jsxid="x118" jsxtext="Tiedot_EiKorkeinMaksu" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_EiKorkeinMaksu']">
+            <restrictions>
+              <record jsxid="x15932" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_38">
+              <record jsxid="x26971" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Tiedot_EiKorkeinMaksu', my.getNamespace())));"/>
+            </mappings>
+          </record><record jsxid="x85764" jsxtext="Tiedot_Hyvaksyy" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Hyvaksyy']">
+            <restrictions>
+              <record jsxid="x87821" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_38">
+              <record jsxid="x70637" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Tiedot_Hyvaksyy', my.getNamespace())));"/>
+            </mappings>
+          </record><record jsxid="x1618" jsxtext="Tiedot_Hylkaa" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Hylkaa']">
+            <restrictions>
+              <record jsxid="x7459" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_38">
+              <record jsxid="x23487" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Tiedot_Hylkaa', my.getNamespace())));"/>
+            </mappings>
+          </record></record>
+      </record>
+    </record>
+    <record jsxid="mi_52" jsxtext="Output (response)" type="O" jsxopen="1" src="../Vahvistuspyynto.xsd">
+      <record jsxid="mi_53" jsxtext="Vahvistuspyynto_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Vahvistuspyynto_Form']" datatype="" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" jsxopen="1">
+        <record jsxid="mi_54" jsxtext="Tiedot" type="C" datatype="" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_55" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_56" jsxtext="Tiedot_HakijaDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_HakijaDisplay']">
+            <restrictions>
+              <record jsxid="mi_57" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_58">
+              <record jsxid="mi_59" name="DOM" value="Tiedot_HakijaDisplay"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_60" jsxtext="Tiedot_HakijaUid" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_HakijaUid']">
+            <restrictions>
+              <record jsxid="mi_61" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_62">
+              <record jsxid="mi_63" name="DOM" value="Tiedot_HakijaUid"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_64" jsxtext="Tiedot_HoidontarveAlkaa" type="E" datatype="date" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_HoidontarveAlkaa']">
+            <restrictions>
+              <record jsxid="mi_65" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_66">
+              <record jsxid="mi_67" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('Tiedot_HoidontarveAlkaa', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_68" jsxtext="Tiedot_HTML" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_HTML']">
+            <restrictions>
+              <record jsxid="mi_69" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_70">
+              <record jsxid="mi_71" name="DOM" value="Tiedot_HTML"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_72" jsxtext="Tiedot_RequestId" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_RequestId']">
+            <restrictions>
+              <record jsxid="mi_73" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_74">
+              <record jsxid="mi_75" name="DOM" value="Tiedot_RequestId"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_76" jsxtext="Tiedot_Kohdehenkilo" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Kohdehenkilo']">
+            <restrictions>
+              <record jsxid="mi_77" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_78">
+              <record jsxid="mi_79" name="DOM" value="Tiedot_Kohdehenkilo"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_80" jsxtext="Tiedot_Sijainti" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Sijainti']">
+            <restrictions>
+              <record jsxid="mi_81" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_82">
+              <record jsxid="mi_83" name="DOM" value="Tiedot_Sijainti"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_84" jsxtext="Tiedot_KorkeinMaksu" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_KorkeinMaksu']">
+            <restrictions>
+              <record jsxid="mi_85" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_86">
+              <record jsxid="mi_87" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Tiedot_KorkeinMaksu', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_88" jsxtext="Tiedot_Lisatietoja" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Lisatietoja']">
+            <restrictions>
+              <record jsxid="mi_89" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_90">
+              <record jsxid="mi_91" name="DOM" value="Tiedot_Lisatietoja"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_92" jsxtext="Tiedot_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Extend01']">
+            <restrictions>
+              <record jsxid="mi_93" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_94">
+              <record jsxid="mi_95" name="DOM" value="Tiedot_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_96" jsxtext="Tiedot_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Extend02']">
+            <restrictions>
+              <record jsxid="mi_97" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_98">
+              <record jsxid="mi_99" name="DOM" value="Tiedot_Extend02"/>
+            </mappings>
+          </record>
+        <record jsxid="x25010" jsxtext="Tiedot_EiKorkeinMaksu" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_EiKorkeinMaksu']" jsxselected="1">
+            <restrictions>
+              <record jsxid="x23728" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_86">
+              <record jsxid="x11939" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Tiedot_EiKorkeinMaksu', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record><record jsxid="x12535" jsxtext="Tiedot_Hyvaksyy" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Hyvaksyy']">
+            <restrictions>
+              <record jsxid="x54317" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_86">
+              <record jsxid="x55715" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Tiedot_Hyvaksyy', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record><record jsxid="x35103" jsxtext="Tiedot_Hylkaa" type="E" datatype="boolean" tns="http://www.arcusys.fi/KOKU/Vahvistuspyynto" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/KOKU/Vahvistuspyynto']//jsx1:element[@name='Tiedot_Hylkaa']">
+            <restrictions>
+              <record jsxid="x4484" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_86">
+              <record jsxid="x12032" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Tiedot_Hylkaa', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record></record>
+      </record>
+    </record>
+  </record>
+</data>

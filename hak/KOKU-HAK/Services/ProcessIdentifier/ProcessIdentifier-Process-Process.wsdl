@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:this="http://arcusys.fi/ProcessIdentifier-Process/Process" xmlns:Interface="http://arcusys.fi/ProcessIdentifier-Process/Interface" xmlns:select_next_token_operation="urn:intalio.com:connectors:database:pttk-processidentifier:select_next_token_operationservice" xmlns:tns="http://www.arcusys.fi/PTTK/ProcessIdentifier" xmlns:update_token_operation="urn:intalio.com:connectors:database:pttk-processidentifier:update_token_operationservice" xmlns:insert_process_id_operation="urn:intalio.com:connectors:database:pttk-processidentifier:insert_process_id_operationservice" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://arcusys.fi/ProcessIdentifier-Process" xmlns:ns="urn:intalio.com:connectors:database:pttk-processidentifier:create_table_operationservice" xmlns:Service="http://arcusys.fi/ProcessIdentifier-Process/Service" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://arcusys.fi/ProcessIdentifier-Process/Process">
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://arcusys.fi/ProcessIdentifier-Process/Process">
+            <xs:import namespace="http://www.arcusys.fi/PTTK/ProcessIdentifier" schemaLocation="ProcessIdentifier.xsd"/>
+            <xs:element name="ReceiveRequest" type="tns:id-format"/>
+            <xs:element name="ReceiveResponse" type="xs:string"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="ReceiveRequest">
+        <wsdl:part name="body" element="this:ReceiveRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ReceiveResponse">
+        <wsdl:part name="body" element="this:ReceiveResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ForInterface">
+        <wsdl:operation name="Receive">
+            <wsdl:input message="this:ReceiveRequest" name="Receive"/>
+            <wsdl:output message="this:ReceiveResponse" name="ReceiveResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CanonicBindingForInterface" type="this:ForInterface">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Receive">
+            <soap:operation style="document" soapAction="http://arcusys.fi/ProcessIdentifier-Process/Process/ForInterface/Receive"/>
+            <wsdl:input name="Receive">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="ReceiveResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CanonicServiceForInterface">
+        <wsdl:port name="canonicPort" binding="this:CanonicBindingForInterface">
+            <soap:address location="http://intalio.intra.arcusys.fi:8080/ode/processes/PTTK-ProcessIdentifier/ProcessIdentifier-Process/Process/Interface"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
+  <record jsxid="mi_1" jxstext="Operation (Transaction)" type="T" jsxopen="1" opname="jsxtransaction">
+    <headers jsxid="mi_2">
+      <record jsxid="mi_3" name="Content-Type" value="text/xml"/>
+    </headers>
+    <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../Paivahoitohakemus.xsd">
+      <record jsxid="mi_5" jsxtext="Paivahoitohakemus_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paivahoitohakemus_Form']" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" jsxopen="1">
+        <record jsxid="mi_6" jsxtext="Hakijan_Tunnistetiedot" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakijan_Tunnistetiedot']">
+          <restrictions>
+            <record jsxid="mi_7" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_8" jsxtext="Username" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Username']">
+            <restrictions>
+              <record jsxid="mi_9" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_10">
+              <record jsxid="mi_11" name="DOM" value="Username"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_12" jsxtext="Firstname" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Firstname']">
+            <restrictions>
+              <record jsxid="mi_13" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_14">
+              <record jsxid="mi_15" name="DOM" value="Firstname"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_16" jsxtext="Lastname" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lastname']">
+            <restrictions>
+              <record jsxid="mi_17" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_18">
+              <record jsxid="mi_19" name="DOM" value="Lastname"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_20" jsxtext="SSN" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='SSN']">
+            <restrictions>
+              <record jsxid="mi_21" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_22">
+              <record jsxid="mi_23" name="DOM" value="SSN"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_24" jsxtext="Last_logon" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Last_logon']">
+            <restrictions>
+              <record jsxid="mi_25" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_26">
+              <record jsxid="mi_27" name="DOM" value="Last_logon"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_28" jsxtext="Hakemuksen_Tunnistetiedot" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakemuksen_Tunnistetiedot']">
+          <restrictions>
+            <record jsxid="mi_29" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_30" jsxtext="Status" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Status']">
+            <restrictions>
+              <record jsxid="mi_31" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_32">
+              <record jsxid="mi_33" name="DOM" value="Status"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_34" jsxtext="Name" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Name']">
+            <restrictions>
+              <record jsxid="mi_35" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_36">
+              <record jsxid="mi_37" name="DOM" value="Name"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_38" jsxtext="Category" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Category']">
+            <restrictions>
+              <record jsxid="mi_39" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_40">
+              <record jsxid="mi_41" name="DOM" value="Category"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_42" jsxtext="Created_Date" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Created_Date']">
+            <restrictions>
+              <record jsxid="mi_43" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_44">
+              <record jsxid="mi_45" name="DOM" value="Created_Date"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_46" jsxtext="Changed_Date" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Changed_Date']">
+            <restrictions>
+              <record jsxid="mi_47" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_48">
+              <record jsxid="mi_49" name="DOM" value="Changed_Date"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_50" jsxtext="ID_Number" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='ID_Number']">
+            <restrictions>
+              <record jsxid="mi_51" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_52">
+              <record jsxid="mi_53" name="DOM" value="ID_Number"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_54" jsxtext="Kirjaus_Nro" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Kirjaus_Nro']">
+            <restrictions>
+              <record jsxid="mi_55" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_56">
+              <record jsxid="mi_57" name="DOM" value="Kirjaus_Nro"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_58" jsxtext="Kasittelijan_Tunnistetiedot" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Kasittelijan_Tunnistetiedot']">
+          <restrictions>
+            <record jsxid="mi_59" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_60" jsxtext="Username" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Username']">
+            <restrictions>
+              <record jsxid="mi_61" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_62">
+              <record jsxid="mi_63" name="DOM" value="Username0"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_64" jsxtext="Firstname" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Firstname']">
+            <restrictions>
+              <record jsxid="mi_65" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_66">
+              <record jsxid="mi_67" name="DOM" value="Firstname0"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_68" jsxtext="Lastname" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lastname']">
+            <restrictions>
+              <record jsxid="mi_69" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_70">
+              <record jsxid="mi_71" name="DOM" value="Lastname0"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_72" jsxtext="Authenticated_with" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Authenticated_with']">
+            <restrictions>
+              <record jsxid="mi_73" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_74">
+              <record jsxid="mi_75" name="DOM" value="Authenticated_with"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_76" jsxtext="Date" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Date']">
+            <restrictions>
+              <record jsxid="mi_77" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_78">
+              <record jsxid="mi_79" name="DOM" value="Date"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_80" jsxtext="Rolename" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Rolename']">
+            <restrictions>
+              <record jsxid="mi_81" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_82">
+              <record jsxid="mi_83" name="DOM" value="Rolename"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_84" jsxtext="Email" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Email']">
+            <restrictions>
+              <record jsxid="mi_85" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_86">
+              <record jsxid="mi_87" name="DOM" value="Email"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_88" jsxtext="Paatos" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos']">
+          <restrictions>
+            <record jsxid="mi_89" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_90" jsxtext="Paatos_Paatos" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Paatos']">
+            <restrictions>
+              <record jsxid="mi_91" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_92">
+              <record jsxid="mi_93" name="DOM" value="Paatos_Paatos"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_94" jsxtext="Paatos_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend01']">
+            <restrictions>
+              <record jsxid="mi_95" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_96">
+              <record jsxid="mi_97" name="DOM" value="Paatos_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_98" jsxtext="Paatos_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend02']">
+            <restrictions>
+              <record jsxid="mi_99" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_100">
+              <record jsxid="mi_101" name="DOM" value="Paatos_Extend02"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_102" jsxtext="Paatos_Extend03" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend03']">
+            <restrictions>
+              <record jsxid="mi_103" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_104">
+              <record jsxid="mi_105" name="DOM" value="Paatos_Extend03"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_106" jsxtext="Paatos_Extend04" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend04']">
+            <restrictions>
+              <record jsxid="mi_107" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_108">
+              <record jsxid="mi_109" name="DOM" value="Paatos_Extend04"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_110" jsxtext="Paatos_Extend05" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend05']">
+            <restrictions>
+              <record jsxid="mi_111" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_112">
+              <record jsxid="mi_113" name="DOM" value="Paatos_Extend05"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_114" jsxtext="Lapsi" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_115" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_116" jsxtext="Lapsi_Etunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Etunimi']">
+            <restrictions>
+              <record jsxid="mi_117" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_118">
+              <record jsxid="mi_119" name="DOM" value="Lapsi_Etunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_120" jsxtext="Lapsi_Sukunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Sukunimi']">
+            <restrictions>
+              <record jsxid="mi_121" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_122">
+              <record jsxid="mi_123" name="DOM" value="Lapsi_Sukunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_124" jsxtext="Lapsi_Henkilotunnus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Henkilotunnus']">
+            <restrictions>
+              <record jsxid="mi_125" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_126">
+              <record jsxid="mi_127" name="DOM" value="Lapsi_Henkilotunnus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_128" jsxtext="Lapsi_Lahiosoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Lahiosoite']">
+            <restrictions>
+              <record jsxid="mi_129" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_130">
+              <record jsxid="mi_131" name="DOM" value="Lapsi_Lahiosoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_132" jsxtext="Lapsi_Postinumero" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Postinumero']">
+            <restrictions>
+              <record jsxid="mi_133" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_134">
+              <record jsxid="mi_135" name="DOM" value="Lapsi_Postinumero"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_136" jsxtext="Lapsi_Postitoimipaikka" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Postitoimipaikka']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_137" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_138">
+              <record jsxid="mi_139" name="DOM" value="Lapsi_Postitoimipaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_140" jsxtext="Lapsi_Aidinkieli" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Aidinkieli']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_141" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_142">
+              
+            <record jsxid="jsx_2" value="setEmptyValuesForNullFields();" name="Script"/><record jsxid="jsx_1" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Lapsi_Aidinkieli&quot;).getText());"/></mappings></record>
+          <record jsxid="mi_144" jsxtext="Lapsi_Kotipaikka" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Kotipaikka']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_145" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_146">
+              <record jsxid="mi_147" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Lapsi_Kotipaikka&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_148" jsxtext="Lapsi_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Extend01']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_149" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_150">
+              <record jsxid="mi_151" name="DOM" value="Lapsi_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_152" jsxtext="Lapsi_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Extend02']">
+            <restrictions>
+              <record jsxid="mi_153" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_154">
+              <record jsxid="mi_155" name="DOM" value="Lapsi_Extend02"/>
+            </mappings>
+          </record>
+        <record jsxid="x54922" jsxtext="Lapsi_AidinkieliKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_AidinkieliKoodi']">
+            <restrictions>
+              <record jsxid="x42139" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_966">
+              <record jsxid="x1262" name="DOM" value="Lapsi_AidinkieliKoodi"/>
+            </mappings>
+          </record><record jsxid="x38598" jsxtext="Lapsi_KotipaikkaKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_KotipaikkaKoodi']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x15474" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_966">
+              <record jsxid="x40000" name="DOM" value="Lapsi_KotipaikkaKoodi"/>
+            </mappings>
+          </record><record jsxid="x45003" jsxtext="Lapsi_Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Alue']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="x76247" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_966">
+              <record jsxid="x75814" name="DOM" value="Lapsi_Alue"/>
+            </mappings>
+          </record><record jsxid="x9648" jsxtext="Lapsi_AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_AlueKoodi']">
+            <restrictions>
+              <record jsxid="x26886" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_966">
+              <record jsxid="x69681" name="DOM" value="Lapsi_AlueKoodi"/>
+            </mappings>
+          </record><record jsxid="x20427" jsxtext="Lapsi_Valittu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Valittu']">
+            <restrictions>
+              <record jsxid="x21660" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_966">
+              <record jsxid="x20531" name="DOM" value="Lapsi_Valittu"/>
+            </mappings>
+          </record><record jsxid="x19659" jsxtext="Lapsi_ValittuDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_ValittuDisplay']">
+            <restrictions>
+              <record jsxid="x84895" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_966">
+              <record jsxid="x36423" name="DOM" value="Lapsi_ValittuDisplay"/>
+            </mappings>
+          </record></record>
+        <record jsxid="mi_156" jsxtext="Huoltaja" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja']">
+          <restrictions>
+            <record jsxid="mi_157" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_158" jsxtext="Huoltaja_Etunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Etunimi']">
+            <restrictions>
+              <record jsxid="mi_159" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_160">
+              <record jsxid="mi_161" name="DOM" value="Huoltaja_Etunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_162" jsxtext="Huoltaja_Sukunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Sukunimi']">
+            <restrictions>
+              <record jsxid="mi_163" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_164">
+              <record jsxid="mi_165" name="DOM" value="Huoltaja_Sukunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_166" jsxtext="Huoltaja_Henkilotunnus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Henkilotunnus']" jsxopen="1">
+            <restrictions>
+              <record jsxid="mi_167" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_168">
+              <record jsxid="mi_169" name="DOM" value="Huoltaja_Henkilotunnus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_170" jsxtext="Huoltaja_Puhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Puhelin']">
+            <restrictions>
+              <record jsxid="mi_171" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_172">
+              <record jsxid="mi_173" name="DOM" value="Huoltaja_Puhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_174" jsxtext="Huoltaja_Sahkopostiosoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Sahkopostiosoite']">
+            <restrictions>
+              <record jsxid="mi_175" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_176">
+              <record jsxid="mi_177" name="DOM" value="Huoltaja_Sahkopostiosoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_178" jsxtext="Huoltaja_Matkapuhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Matkapuhelin']">
+            <restrictions>
+              <record jsxid="mi_179" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_180">
+              <record jsxid="mi_181" name="DOM" value="Huoltaja_Matkapuhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_182" jsxtext="Huoltaja_Tyopaikka" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Tyopaikka']">
+            <restrictions>
+              <record jsxid="mi_183" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_184">
+              <record jsxid="mi_185" name="DOM" value="Huoltaja_Tyopaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_186" jsxtext="Huoltaja_TyopaikanOsoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_TyopaikanOsoite']">
+            <restrictions>
+              <record jsxid="mi_187" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_188">
+              <record jsxid="mi_189" name="DOM" value="Huoltaja_TyopaikanOsoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_190" jsxtext="Huoltaja_TyopaikanPuhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_TyopaikanPuhelin']">
+            <restrictions>
+              <record jsxid="mi_191" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_192">
+              <record jsxid="mi_193" name="DOM" value="Huoltaja_TyopaikanPuhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_194" jsxtext="Huoltaja_Ammatti" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Ammatti']">
+            <restrictions>
+              <record jsxid="mi_195" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_196">
+              <record jsxid="mi_197" name="DOM" value="Huoltaja_Ammatti"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_198" jsxtext="Huoltaja_TyoaikaAlkaa" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_TyoaikaAlkaa']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_199" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_200">
+              <record jsxid="mi_201" name="Script" value="setValue(changeTimeFormat(&quot;Huoltaja_TyoaikaAlkaa&quot;));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_202" jsxtext="Huoltaja_TyoaikaLoppuu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_TyoaikaLoppuu']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_203" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_204">
+              <record jsxid="mi_205" name="Script" value="setValue(changeTimeFormat(&quot;Huoltaja_TyoaikaLoppuu&quot;));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_206" jsxtext="Huoltaja_VuorotyoKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_VuorotyoKylla']">
+            <restrictions>
+              <record jsxid="mi_207" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_208">
+              <record jsxid="mi_209" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Huoltaja_VuorotyoKylla', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_210" jsxtext="Huoltaja_VuorotyoEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_VuorotyoEi']">
+            <restrictions>
+              <record jsxid="mi_211" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_212">
+              <record jsxid="mi_213" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Huoltaja_VuorotyoEi', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_214" jsxtext="Huoltaja_Huoltajuus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Huoltajuus']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_215" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_216">
+              <record jsxid="mi_217" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Huoltaja_Huoltajuus&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_218" jsxtext="Huoltaja_Perhesuhde" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Perhesuhde']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_219" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_220">
+              <record jsxid="mi_221" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Huoltaja_Perhesuhde&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_222" jsxtext="Huoltaja_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Extend01']">
+            <restrictions>
+              <record jsxid="mi_223" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_224">
+              <record jsxid="mi_225" name="DOM" value="Huoltaja_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_226" jsxtext="Huoltaja_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Extend02']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_227" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_228">
+              <record jsxid="mi_229" name="DOM" value="Huoltaja_Extend02"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_956" jsxtext="Huoltaja_HuoltajuusKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_HuoltajuusKoodi']">
+            <restrictions>
+              <record jsxid="mi_957" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_958">
+              <record jsxid="mi_959" name="DOM" value="Huoltaja_HuoltajuusKoodi"/>
+            </mappings>
+          </record>
+	  <record jsxid="mi_960" jsxtext="Huoltaja_PerhesuhdeKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_PerhesuhdeKoodi']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_961" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_962">
+              <record jsxid="mi_963" name="DOM" value="Huoltaja_PerhesuhdeKoodi"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_230" jsxtext="Puoliso" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso']" jsxopen="1" jsxSelectMask="Script">
+          <restrictions>
+            <record jsxid="mi_231" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_232" jsxtext="Puoliso_Etunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Etunimi']">
+            <restrictions>
+              <record jsxid="mi_233" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_234">
+              <record jsxid="mi_235" name="DOM" value="Puoliso_Etunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_236" jsxtext="Puoliso_Sukunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Sukunimi']">
+            <restrictions>
+              <record jsxid="mi_237" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_238">
+              <record jsxid="mi_239" name="DOM" value="Puoliso_Sukunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_240" jsxtext="Puoliso_Henkilotunnus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Henkilotunnus']">
+            <restrictions>
+              <record jsxid="mi_241" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_242">
+              <record jsxid="mi_243" name="DOM" value="Puoliso_Henkilotunnus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_244" jsxtext="Puoliso_Puhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Puhelin']">
+            <restrictions>
+              <record jsxid="mi_245" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_246">
+              <record jsxid="mi_247" name="DOM" value="Puoliso_Puhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_248" jsxtext="Puoliso_Sahkopostiosoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Sahkopostiosoite']">
+            <restrictions>
+              <record jsxid="mi_249" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_250">
+              <record jsxid="mi_251" name="DOM" value="Puoliso_Sahkopostiosoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_252" jsxtext="Puoliso_Matkapuhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Matkapuhelin']">
+            <restrictions>
+              <record jsxid="mi_253" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_254">
+              <record jsxid="mi_255" name="DOM" value="Puoliso_Matkapuhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_256" jsxtext="Puoliso_Tyopaikka" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Tyopaikka']">
+            <restrictions>
+              <record jsxid="mi_257" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_258">
+              <record jsxid="mi_259" name="DOM" value="Puoliso_Tyopaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_260" jsxtext="Puoliso_TyopaikanOsoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_TyopaikanOsoite']">
+            <restrictions>
+              <record jsxid="mi_261" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_262">
+              <record jsxid="mi_263" name="DOM" value="Puoliso_TyopaikanOsoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_264" jsxtext="Puoliso_TyopaikanPuhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_TyopaikanPuhelin']">
+            <restrictions>
+              <record jsxid="mi_265" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_266">
+              <record jsxid="mi_267" name="DOM" value="Puoliso_TyopaikanPuhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_268" jsxtext="Puoliso_Ammatti" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Ammatti']">
+            <restrictions>
+              <record jsxid="mi_269" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_270">
+              <record jsxid="mi_271" name="DOM" value="Puoliso_Ammatti"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_272" jsxtext="Puoliso_TyoaikaAlkaa" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_TyoaikaAlkaa']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_273" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_274">
+              <record jsxid="mi_275" name="Script" value="setValue(changeTimeFormat(&quot;Puoliso_TyoaikaAlkaa&quot;));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_276" jsxtext="Puoliso_TyoaikaLoppuu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_TyoaikaLoppuu']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_277" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_278">
+              <record jsxid="mi_279" name="Script" value="setValue(changeTimeFormat(&quot;Puoliso_TyoaikaLoppuu&quot;));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_280" jsxtext="Puoliso_VuorotyoKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_VuorotyoKylla']">
+            <restrictions>
+              <record jsxid="mi_281" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_282">
+              <record jsxid="mi_283" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Puoliso_VuorotyoKylla', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_284" jsxtext="Puoliso_VuorotyoEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_VuorotyoEi']">
+            <restrictions>
+              <record jsxid="mi_285" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_286">
+              <record jsxid="mi_287" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Puoliso_VuorotyoEi', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_288" jsxtext="Puoliso_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Extend01']">
+            <restrictions>
+              <record jsxid="mi_289" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_290">
+              <record jsxid="mi_291" name="DOM" value="Puoliso_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_292" jsxtext="Puoliso_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Extend02']">
+            <restrictions>
+              <record jsxid="mi_293" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_294">
+              <record jsxid="mi_295" name="DOM" value="Puoliso_Extend02"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_296" jsxtext="MuutLapset" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset']">
+          <restrictions>
+            <record jsxid="mi_297" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_298" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_299" jsxtext="MuutLapset_Etunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Etunimi']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_300" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_301">
+              <record jsxid="mi_302" name="CDF Attribute" value="MuutLapset_Etunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_303" jsxtext="MuutLapset_Sukunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Sukunimi']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_304" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_305">
+              <record jsxid="mi_306" name="CDF Attribute" value="MuutLapset_Sukunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_307" jsxtext="MuutLapset_Henkilotunnus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Henkilotunnus']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_308" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_309">
+              <record jsxid="mi_310" name="CDF Attribute" value="MuutLapset_Henkilotunnus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_311" jsxtext="MuutLapset_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Extend01']">
+            <restrictions>
+              <record jsxid="mi_312" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_313">
+              <record jsxid="mi_314" name="CDF Attribute" value="MuutLapset_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_315" jsxtext="MuutLapset_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Extend02']">
+            <restrictions>
+              <record jsxid="mi_316" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_317">
+              <record jsxid="mi_318" name="CDF Attribute" value="MuutLapset_Extend02"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_319">
+            <record jsxid="mi_320" name="Script" value="if(typeof(this._i_320)=='undefined'){this._i_320=-1;my.getCDFDocument('MuutLapset-nomap','OUTBOUND');}"/>
+            <record jsxid="mi_321" name="CDF Record"/>
+          </mappings>
+        </record>
+        <record jsxid="mi_322" jsxtext="HoidonTarve" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_323" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_324" jsxtext="HoidonTarve_Kokopaiva" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Kokopaiva']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_325" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_326">
+              <record jsxid="mi_327" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_Kokopaiva', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_328" jsxtext="HoidonTarve_KokopaivaAlkaa" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_KokopaivaAlkaa']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_329" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_330">
+              <record jsxid="mi_331" name="Script" value="setValue(changeTimeFormat(&quot;HoidonTarve_KokopaivaAlkaa&quot;));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_332" jsxtext="HoidonTarve_KokopaivaLoppuu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_KokopaivaLoppuu']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_333" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_334">
+              <record jsxid="mi_335" name="Script" value="setValue(changeTimeFormat(&quot;HoidonTarve_KokopaivaLoppuu&quot;));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_336" jsxtext="HoidonTarve_Osapaiva" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Osapaiva']">
+            <restrictions>
+              <record jsxid="mi_337" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_338">
+              <record jsxid="mi_339" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_Osapaiva', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_340" jsxtext="HoidonTarve_OsapaivaAlkaa" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_OsapaivaAlkaa']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_341" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_342">
+              <record jsxid="mi_343" name="Script" value="setValue(changeTimeFormat(&quot;HoidonTarve_OsapaivaAlkaa&quot;));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_344" jsxtext="HoidonTarve_OsapaivaLoppuu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_OsapaivaLoppuu']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_345" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_346">
+              <record jsxid="mi_347" name="Script" value="setValue(changeTimeFormat(&quot;HoidonTarve_OsapaivaLoppuu&quot;));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_348" jsxtext="HoidonTarve_VuorohoitoKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoKylla']">
+            <restrictions>
+              <record jsxid="mi_349" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_350">
+              <record jsxid="mi_351" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_VuorohoitoKylla', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_352" jsxtext="HoidonTarve_VuorohoitoEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoEi']">
+            <restrictions>
+              <record jsxid="mi_353" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_354">
+              <record jsxid="mi_355" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_VuorohoitoEi', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_356" jsxtext="HoidonTarve_VuorohoitoLa" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoLa']">
+            <restrictions>
+              <record jsxid="mi_357" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_358">
+              <record jsxid="mi_359" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_VuorohoitoLa', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_360" jsxtext="HoidonTarve_VuorohoitoSu" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoSu']">
+            <restrictions>
+              <record jsxid="mi_361" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_362">
+              <record jsxid="mi_363" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_VuorohoitoSu', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_364" jsxtext="HoidonTarve_VuorohoitoIlta" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoIlta']">
+            <restrictions>
+              <record jsxid="mi_365" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_366">
+              <record jsxid="mi_367" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_VuorohoitoIlta', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_368" jsxtext="HoidonTarve_VuorohoitoYo" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoYo']">
+            <restrictions>
+              <record jsxid="mi_369" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_370">
+              <record jsxid="mi_371" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_VuorohoitoYo', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_372" jsxtext="HoidonTarve_Hoitopaivat" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Hoitopaivat']">
+            <restrictions>
+              <record jsxid="mi_373" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_374">
+              <record jsxid="mi_375" name="DOM" value="HoidonTarve_Hoitopaivat"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_376" jsxtext="HoidonTarve_Alkaen" type="E" datatype="date" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Alkaen']">
+            <restrictions>
+              <record jsxid="mi_377" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_378">
+              <record jsxid="mi_379" name="Script" value="setValue(Intalio.Internal.Utilities.fixDateOutput(jsx3.GO('HoidonTarve_Alkaen', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_380" jsxtext="HoidonTarve_AutoKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_AutoKylla']">
+            <restrictions>
+              <record jsxid="mi_381" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_382">
+              <record jsxid="mi_383" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_AutoKylla', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_384" jsxtext="HoidonTarve_AutoEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_AutoEi']">
+            <restrictions>
+              <record jsxid="mi_385" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_386">
+              <record jsxid="mi_387" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('HoidonTarve_AutoEi', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_388" jsxtext="HoidonTarve_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Extend01']">
+            <restrictions>
+              <record jsxid="mi_389" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_390">
+              <record jsxid="mi_391" name="DOM" value="HoidonTarve_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_392" jsxtext="HoidonTarve_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Extend02']">
+            <restrictions>
+              <record jsxid="mi_393" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_394">
+              <record jsxid="mi_395" name="DOM" value="HoidonTarve_Extend02"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_396" jsxtext="Hakutoive" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive']" jsxopen="1" jsxSelectMask="DOM">
+          <restrictions>
+            <record jsxid="mi_397" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_398" jsxtext="Hakutoive_Kunta" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_Kunta']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_399" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_400">
+              <record jsxid="mi_401" name="DOM" value="Hakutoive_Kunta"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_402" jsxtext="Hakutoive_1Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_1Tyyppi']">
+            <restrictions>
+              <record jsxid="mi_403" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_404">
+              <record jsxid="mi_405" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_1Tyyppi&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_406" jsxtext="Hakutoive_1Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_1Alue']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_407" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_408">
+              <record jsxid="mi_409" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_1Alue&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_410" jsxtext="Hakutoive_2Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_2Tyyppi']">
+            <restrictions>
+              <record jsxid="mi_411" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_412">
+              <record jsxid="mi_413" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_2Tyyppi&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_414" jsxtext="Hakutoive_2Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_2Alue']">
+            <restrictions>
+              <record jsxid="mi_415" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_416">
+              <record jsxid="mi_417" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_2Alue&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_418" jsxtext="Hakutoive_3Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_3Tyyppi']">
+            <restrictions>
+              <record jsxid="mi_419" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_420">
+              <record jsxid="mi_421" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_3Tyyppi&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_422" jsxtext="Hakutoive_3Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_3Alue']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_423" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_424">
+              <record jsxid="mi_425" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_3Alue&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_426" jsxtext="Hakutoive_4Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_4Tyyppi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="mi_427" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_428">
+              <record jsxid="mi_429" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_4Tyyppi&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_430" jsxtext="Hakutoive_4Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_4Alue']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_431" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_432">
+              <record jsxid="mi_433" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_4Alue&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_434" jsxtext="Hakutoive_5Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_5Tyyppi']">
+            <restrictions>
+              <record jsxid="mi_435" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_436">
+              <record jsxid="mi_437" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_5Tyyppi&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_438" jsxtext="Hakutoive_5Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_5Alue']">
+            <restrictions>
+              <record jsxid="mi_439" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_440">
+              <record jsxid="mi_441" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_5Alue&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_442" jsxtext="Hakutoive_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_Extend01']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="mi_443" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_444">
+              <record jsxid="mi_445" name="DOM" value="Hakutoive_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_446" jsxtext="Hakutoive_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_Extend02']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="mi_447" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_448">
+              <record jsxid="mi_449" name="DOM" value="Hakutoive_Extend02"/>
+            </mappings>
+          </record>
+        <record jsxid="x21763" jsxtext="Hakutoive_1AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_1AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x35809" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="jsx_1" name="DOM" value="Hakutoive_1AlueKoodi"/></mappings></record><record jsxid="x70861" jsxtext="Hakutoive_2AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_2AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x26856" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x10162" name="DOM" value="Hakutoive_2AlueKoodi"/></mappings></record><record jsxid="x50296" jsxtext="Hakutoive_3AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_3AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x50413" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x49020" name="DOM" value="Hakutoive_3AlueKoodi"/></mappings></record><record jsxid="x45560" jsxtext="Hakutoive_4AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_4AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x83963" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x82094" name="DOM" value="Hakutoive_4AlueKoodi"/></mappings></record><record jsxid="x61460" jsxtext="Hakutoive_5AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_5AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x64758" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x37280" name="DOM" value="Hakutoive_5AlueKoodi"/></mappings></record><record jsxid="x86312" jsxtext="Hakutoive_1TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_1TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x16408" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x81276" name="DOM" value="Hakutoive_1TyyppiKoodi"/></mappings></record><record jsxid="x93336" jsxtext="Hakutoive_2TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_2TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x89000" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x75009" name="DOM" value="Hakutoive_2TyyppiKoodi"/></mappings></record><record jsxid="x19519" jsxtext="Hakutoive_3TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_3TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x12595" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x37098" name="DOM" value="Hakutoive_3TyyppiKoodi"/></mappings></record><record jsxid="x84197" jsxtext="Hakutoive_4TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_4TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x32" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x43694" name="DOM" value="Hakutoive_4TyyppiKoodi"/></mappings></record><record jsxid="x84670" jsxtext="Hakutoive_5TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_5TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x29263" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x12146" name="DOM" value="Hakutoive_5TyyppiKoodi"/></mappings></record><record jsxid="x54676" jsxtext="Hakutoive_KuntaKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_KuntaKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x25611" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x4691" name="DOM" value="Hakutoive_KuntaKoodi"/></mappings></record></record>
+        <record jsxid="mi_450" jsxtext="Lisatiedot" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot']" jsxSelectMask="Script">
+          <restrictions>
+            <record jsxid="mi_451" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_452" jsxtext="Lisatiedot_Terveydentila" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Terveydentila']">
+            <restrictions>
+              <record jsxid="mi_453" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_454">
+              <record jsxid="mi_455" name="DOM" value="Lisatiedot_Terveydentila"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_456" jsxtext="Lisatiedot_Kotielaimet" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Kotielaimet']">
+            <restrictions>
+              <record jsxid="mi_457" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_458">
+              <record jsxid="mi_459" name="DOM" value="Lisatiedot_Kotielaimet"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_460" jsxtext="Lisatiedot_Lisatietoja" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Lisatietoja']">
+            <restrictions>
+              <record jsxid="mi_461" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_462">
+              <record jsxid="mi_463" name="DOM" value="Lisatiedot_Lisatietoja"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_464" jsxtext="Lisatiedot_MaksuKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_MaksuKylla']">
+            <restrictions>
+              <record jsxid="mi_465" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_466">
+              <record jsxid="mi_467" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Lisatiedot_MaksuKylla', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_468" jsxtext="Lisatiedot_MaksuEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_MaksuEi']">
+            <restrictions>
+              <record jsxid="mi_469" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_470">
+              <record jsxid="mi_471" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Lisatiedot_MaksuEi', my.getNamespace())));"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_472" jsxtext="Lisatiedot_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Extend01']">
+            <restrictions>
+              <record jsxid="mi_473" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_474">
+              <record jsxid="mi_475" name="DOM" value="Lisatiedot_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_476" jsxtext="Lisatiedot_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Extend02']">
+            <restrictions>
+              <record jsxid="mi_477" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_478">
+              <record jsxid="mi_479" name="DOM" value="Lisatiedot_Extend02"/>
+            </mappings>
+          </record>
+        <mappings jsxid="x64787"><record jsxid="jsx_2" value="setEmptyValuesForNullFields(); " name="Script"/></mappings></record>
+      <record jsxid="x98079" jsxtext="Tyyppi" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Tyyppi']" jsxopen="1">
+          <restrictions>
+            <record jsxid="x12969" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="x66494" jsxtext="Tyyppi_Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Tyyppi_Tyyppi']">
+            <restrictions>
+              <record jsxid="x9641" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_92">
+              <record jsxid="x96678" name="DOM" value="Tyyppi_Tyyppi"/>
+            </mappings>
+          </record>
+          
+          
+          
+          
+          
+        </record></record>
+    </record>
+    <record jsxid="mi_480" jsxtext="Output (response)" type="O" jsxopen="1" src="../Paivahoitohakemus.xsd">
+      <record jsxid="mi_481" jsxtext="Paivahoitohakemus_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paivahoitohakemus_Form']" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" jsxopen="1">
+        <record jsxid="mi_482" jsxtext="Hakijan_Tunnistetiedot" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakijan_Tunnistetiedot']">
+          <restrictions>
+            <record jsxid="mi_483" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_484" jsxtext="Username" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Username']">
+            <restrictions>
+              <record jsxid="mi_485" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_486">
+              <record jsxid="mi_487" name="DOM" value="Username"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_488" jsxtext="Firstname" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Firstname']">
+            <restrictions>
+              <record jsxid="mi_489" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_490">
+              <record jsxid="mi_491" name="DOM" value="Firstname"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_492" jsxtext="Lastname" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lastname']">
+            <restrictions>
+              <record jsxid="mi_493" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_494">
+              <record jsxid="mi_495" name="DOM" value="Lastname"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_496" jsxtext="SSN" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='SSN']">
+            <restrictions>
+              <record jsxid="mi_497" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_498">
+              <record jsxid="mi_499" name="DOM" value="SSN"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_500" jsxtext="Last_logon" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Last_logon']">
+            <restrictions>
+              <record jsxid="mi_501" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_502">
+              <record jsxid="mi_503" name="DOM" value="Last_logon"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_504" jsxtext="Hakemuksen_Tunnistetiedot" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakemuksen_Tunnistetiedot']">
+          <restrictions>
+            <record jsxid="mi_505" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_506" jsxtext="Status" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Status']">
+            <restrictions>
+              <record jsxid="mi_507" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_508">
+              <record jsxid="mi_509" name="DOM" value="Status"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_510" jsxtext="Name" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Name']">
+            <restrictions>
+              <record jsxid="mi_511" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_512">
+              <record jsxid="mi_513" name="DOM" value="Name"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_514" jsxtext="Category" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Category']">
+            <restrictions>
+              <record jsxid="mi_515" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_516">
+              <record jsxid="mi_517" name="DOM" value="Category"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_518" jsxtext="Created_Date" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Created_Date']">
+            <restrictions>
+              <record jsxid="mi_519" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_520">
+              <record jsxid="mi_521" name="DOM" value="Created_Date"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_522" jsxtext="Changed_Date" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Changed_Date']">
+            <restrictions>
+              <record jsxid="mi_523" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_524">
+              <record jsxid="mi_525" name="DOM" value="Changed_Date"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_526" jsxtext="ID_Number" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='ID_Number']">
+            <restrictions>
+              <record jsxid="mi_527" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_528">
+              <record jsxid="mi_529" name="DOM" value="ID_Number"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_530" jsxtext="Kirjaus_Nro" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Kirjaus_Nro']">
+            <restrictions>
+              <record jsxid="mi_531" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_532">
+              <record jsxid="mi_533" name="DOM" value="Kirjaus_Nro"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_534" jsxtext="Kasittelijan_Tunnistetiedot" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Kasittelijan_Tunnistetiedot']">
+          <restrictions>
+            <record jsxid="mi_535" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_536" jsxtext="Username" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Username']">
+            <restrictions>
+              <record jsxid="mi_537" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_538">
+              <record jsxid="mi_539" name="DOM" value="Username0"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_540" jsxtext="Firstname" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Firstname']">
+            <restrictions>
+              <record jsxid="mi_541" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_542">
+              <record jsxid="mi_543" name="DOM" value="Firstname0"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_544" jsxtext="Lastname" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lastname']">
+            <restrictions>
+              <record jsxid="mi_545" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_546">
+              <record jsxid="mi_547" name="DOM" value="Lastname0"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_548" jsxtext="Authenticated_with" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Authenticated_with']">
+            <restrictions>
+              <record jsxid="mi_549" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_550">
+              <record jsxid="mi_551" name="DOM" value="Authenticated_with"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_552" jsxtext="Date" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Date']">
+            <restrictions>
+              <record jsxid="mi_553" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_554">
+              <record jsxid="mi_555" name="DOM" value="Date"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_556" jsxtext="Rolename" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Rolename']">
+            <restrictions>
+              <record jsxid="mi_557" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_558">
+              <record jsxid="mi_559" name="DOM" value="Rolename"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_560" jsxtext="Email" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Email']">
+            <restrictions>
+              <record jsxid="mi_561" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_562">
+              <record jsxid="mi_563" name="DOM" value="Email"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_564" jsxtext="Paatos" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos']">
+          <restrictions>
+            <record jsxid="mi_565" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_566" jsxtext="Paatos_Paatos" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Paatos']">
+            <restrictions>
+              <record jsxid="mi_567" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_568">
+              <record jsxid="mi_569" name="DOM" value="Paatos_Paatos"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_570" jsxtext="Paatos_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend01']">
+            <restrictions>
+              <record jsxid="mi_571" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_572">
+              <record jsxid="mi_573" name="DOM" value="Paatos_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_574" jsxtext="Paatos_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend02']">
+            <restrictions>
+              <record jsxid="mi_575" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_576">
+              <record jsxid="mi_577" name="DOM" value="Paatos_Extend02"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_578" jsxtext="Paatos_Extend03" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend03']">
+            <restrictions>
+              <record jsxid="mi_579" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_580">
+              <record jsxid="mi_581" name="DOM" value="Paatos_Extend03"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_582" jsxtext="Paatos_Extend04" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend04']">
+            <restrictions>
+              <record jsxid="mi_583" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_584">
+              <record jsxid="mi_585" name="DOM" value="Paatos_Extend04"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_586" jsxtext="Paatos_Extend05" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Paatos_Extend05']">
+            <restrictions>
+              <record jsxid="mi_587" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_588">
+              <record jsxid="mi_589" name="DOM" value="Paatos_Extend05"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_590" jsxtext="Lapsi" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_591" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_592" jsxtext="Lapsi_Etunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Etunimi']">
+            <restrictions>
+              <record jsxid="mi_593" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_594">
+              <record jsxid="mi_595" name="DOM" value="Lapsi_Etunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_596" jsxtext="Lapsi_Sukunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Sukunimi']">
+            <restrictions>
+              <record jsxid="mi_597" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_598">
+              <record jsxid="mi_599" name="DOM" value="Lapsi_Sukunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_600" jsxtext="Lapsi_Henkilotunnus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Henkilotunnus']">
+            <restrictions>
+              <record jsxid="mi_601" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_602">
+              <record jsxid="mi_603" name="DOM" value="Lapsi_Henkilotunnus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_604" jsxtext="Lapsi_Lahiosoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Lahiosoite']">
+            <restrictions>
+              <record jsxid="mi_605" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_606">
+              <record jsxid="mi_607" name="DOM" value="Lapsi_Lahiosoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_608" jsxtext="Lapsi_Postinumero" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Postinumero']">
+            <restrictions>
+              <record jsxid="mi_609" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_610">
+              <record jsxid="mi_611" name="DOM" value="Lapsi_Postinumero"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_612" jsxtext="Lapsi_Postitoimipaikka" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Postitoimipaikka']">
+            <restrictions>
+              <record jsxid="mi_613" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_614">
+              <record jsxid="mi_615" name="DOM" value="Lapsi_Postitoimipaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_616" jsxtext="Lapsi_Aidinkieli" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Aidinkieli']">
+            <restrictions>
+              <record jsxid="mi_617" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_618">
+              <record jsxid="mi_619" name="DOM" value="Lapsi_Aidinkieli"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_620" jsxtext="Lapsi_Kotipaikka" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Kotipaikka']">
+            <restrictions>
+              <record jsxid="mi_621" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_622">
+              <record jsxid="mi_623" name="DOM" value="Lapsi_Kotipaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_624" jsxtext="Lapsi_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Extend01']">
+            <restrictions>
+              <record jsxid="mi_625" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_626">
+              <record jsxid="mi_627" name="DOM" value="Lapsi_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_628" jsxtext="Lapsi_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Extend02']">
+            <restrictions>
+              <record jsxid="mi_629" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_630">
+              <record jsxid="mi_631" name="DOM" value="Lapsi_Extend02"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_964" jsxtext="Lapsi_AidinkieliKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_AidinkieliKoodi']">
+            <restrictions>
+              <record jsxid="mi_965" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_966">
+              <record jsxid="mi_967" name="DOM" value="Lapsi_AidinkieliKoodi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_968" jsxtext="Lapsi_KotipaikkaKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_KotipaikkaKoodi']">
+            <restrictions>
+              <record jsxid="mi_969" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_970">
+              <record jsxid="mi_971" name="DOM" value="Lapsi_KotipaikkaKoodi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_972" jsxtext="Lapsi_Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Alue']">
+            <restrictions>
+              <record jsxid="mi_973" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_974">
+              <record jsxid="mi_975" name="DOM" value="Lapsi_Alue"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_976" jsxtext="Lapsi_AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_AlueKoodi']">
+            <restrictions>
+              <record jsxid="mi_977" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_978">
+              <record jsxid="mi_979" name="DOM" value="Lapsi_AlueKoodi"/>
+            </mappings>
+          </record>
+        <record jsxid="x88304" jsxtext="Lapsi_Valittu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_Valittu']">
+            <restrictions>
+              <record jsxid="x80295" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_978">
+              <record jsxid="x95819" name="DOM" value="Lapsi_Valittu"/>
+            </mappings>
+          </record><record jsxid="x60153" jsxtext="Lapsi_ValittuDisplay" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lapsi_ValittuDisplay']" jsxselected="1">
+            <restrictions>
+              <record jsxid="x90569" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_978">
+              <record jsxid="x63726" name="DOM" value="Lapsi_ValittuDisplay"/>
+            </mappings>
+          </record></record>
+        <record jsxid="mi_632" jsxtext="Huoltaja" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja']" jsxSelectMask="DOM">
+          <restrictions>
+            <record jsxid="mi_633" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_634" jsxtext="Huoltaja_Etunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Etunimi']">
+            <restrictions>
+              <record jsxid="mi_635" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_636">
+              <record jsxid="mi_637" name="DOM" value="Huoltaja_Etunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_638" jsxtext="Huoltaja_Sukunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Sukunimi']">
+            <restrictions>
+              <record jsxid="mi_639" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_640">
+              <record jsxid="mi_641" name="DOM" value="Huoltaja_Sukunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_642" jsxtext="Huoltaja_Henkilotunnus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Henkilotunnus']">
+            <restrictions>
+              <record jsxid="mi_643" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_644">
+              <record jsxid="mi_645" name="DOM" value="Huoltaja_Henkilotunnus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_646" jsxtext="Huoltaja_Puhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Puhelin']">
+            <restrictions>
+              <record jsxid="mi_647" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_648">
+              <record jsxid="mi_649" name="DOM" value="Huoltaja_Puhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_650" jsxtext="Huoltaja_Sahkopostiosoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Sahkopostiosoite']">
+            <restrictions>
+              <record jsxid="mi_651" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_652">
+              <record jsxid="mi_653" name="DOM" value="Huoltaja_Sahkopostiosoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_654" jsxtext="Huoltaja_Matkapuhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Matkapuhelin']">
+            <restrictions>
+              <record jsxid="mi_655" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_656">
+              <record jsxid="mi_657" name="DOM" value="Huoltaja_Matkapuhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_658" jsxtext="Huoltaja_Tyopaikka" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Tyopaikka']">
+            <restrictions>
+              <record jsxid="mi_659" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_660">
+              <record jsxid="mi_661" name="DOM" value="Huoltaja_Tyopaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_662" jsxtext="Huoltaja_TyopaikanOsoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_TyopaikanOsoite']">
+            <restrictions>
+              <record jsxid="mi_663" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_664">
+              <record jsxid="mi_665" name="DOM" value="Huoltaja_TyopaikanOsoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_666" jsxtext="Huoltaja_TyopaikanPuhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_TyopaikanPuhelin']">
+            <restrictions>
+              <record jsxid="mi_667" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_668">
+              <record jsxid="mi_669" name="DOM" value="Huoltaja_TyopaikanPuhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_670" jsxtext="Huoltaja_Ammatti" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Ammatti']">
+            <restrictions>
+              <record jsxid="mi_671" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_672">
+              <record jsxid="mi_673" name="DOM" value="Huoltaja_Ammatti"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_674" jsxtext="Huoltaja_TyoaikaAlkaa" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_TyoaikaAlkaa']">
+            <restrictions>
+              <record jsxid="mi_675" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_676">
+              <record jsxid="mi_677" name="DOM" value="Huoltaja_TyoaikaAlkaa"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_678" jsxtext="Huoltaja_TyoaikaLoppuu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_TyoaikaLoppuu']">
+            <restrictions>
+              <record jsxid="mi_679" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_680">
+              <record jsxid="mi_681" name="DOM" value="Huoltaja_TyoaikaLoppuu"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_682" jsxtext="Huoltaja_VuorotyoKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_VuorotyoKylla']">
+            <restrictions>
+              <record jsxid="mi_683" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_684">
+              <record jsxid="mi_685" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Huoltaja_VuorotyoKylla', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_686" jsxtext="Huoltaja_VuorotyoEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_VuorotyoEi']">
+            <restrictions>
+              <record jsxid="mi_687" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_688">
+              <record jsxid="mi_689" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Huoltaja_VuorotyoEi', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_690" jsxtext="Huoltaja_Huoltajuus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Huoltajuus']">
+            <restrictions>
+              <record jsxid="mi_691" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_692">
+              <record jsxid="mi_693" name="DOM" value="Huoltaja_Huoltajuus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_694" jsxtext="Huoltaja_Perhesuhde" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Perhesuhde']">
+            <restrictions>
+              <record jsxid="mi_695" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_696">
+              <record jsxid="mi_697" name="DOM" value="Huoltaja_Perhesuhde"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_698" jsxtext="Huoltaja_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Extend01']">
+            <restrictions>
+              <record jsxid="mi_699" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_700">
+              <record jsxid="mi_701" name="DOM" value="Huoltaja_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_702" jsxtext="Huoltaja_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_Extend02']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="mi_703" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_704">
+              <record jsxid="mi_705" name="DOM" value="Huoltaja_Extend02"/>
+            </mappings>
+          </record>
+        <record jsxid="x1972" jsxtext="Huoltaja_HuoltajuusKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_HuoltajuusKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x75728" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_704">
+              <record jsxid="x98493" name="DOM" value="Huoltaja_HuoltajuusKoodi"/>
+            </mappings>
+          </record><record jsxid="x4121" jsxtext="Huoltaja_PerhesuhdeKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Huoltaja_PerhesuhdeKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x87471" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_704">
+              <record jsxid="x68374" name="DOM" value="Huoltaja_PerhesuhdeKoodi"/>
+            </mappings>
+          </record></record>
+        <record jsxid="mi_706" jsxtext="Puoliso" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso']">
+          <restrictions>
+            <record jsxid="mi_707" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_708" jsxtext="Puoliso_Etunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Etunimi']">
+            <restrictions>
+              <record jsxid="mi_709" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_710">
+              <record jsxid="mi_711" name="DOM" value="Puoliso_Etunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_712" jsxtext="Puoliso_Sukunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Sukunimi']">
+            <restrictions>
+              <record jsxid="mi_713" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_714">
+              <record jsxid="mi_715" name="DOM" value="Puoliso_Sukunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_716" jsxtext="Puoliso_Henkilotunnus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Henkilotunnus']">
+            <restrictions>
+              <record jsxid="mi_717" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_718">
+              <record jsxid="mi_719" name="DOM" value="Puoliso_Henkilotunnus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_720" jsxtext="Puoliso_Puhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Puhelin']">
+            <restrictions>
+              <record jsxid="mi_721" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_722">
+              <record jsxid="mi_723" name="DOM" value="Puoliso_Puhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_724" jsxtext="Puoliso_Sahkopostiosoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Sahkopostiosoite']">
+            <restrictions>
+              <record jsxid="mi_725" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_726">
+              <record jsxid="mi_727" name="DOM" value="Puoliso_Sahkopostiosoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_728" jsxtext="Puoliso_Matkapuhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Matkapuhelin']">
+            <restrictions>
+              <record jsxid="mi_729" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_730">
+              <record jsxid="mi_731" name="DOM" value="Puoliso_Matkapuhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_732" jsxtext="Puoliso_Tyopaikka" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Tyopaikka']">
+            <restrictions>
+              <record jsxid="mi_733" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_734">
+              <record jsxid="mi_735" name="DOM" value="Puoliso_Tyopaikka"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_736" jsxtext="Puoliso_TyopaikanOsoite" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_TyopaikanOsoite']">
+            <restrictions>
+              <record jsxid="mi_737" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_738">
+              <record jsxid="mi_739" name="DOM" value="Puoliso_TyopaikanOsoite"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_740" jsxtext="Puoliso_TyopaikanPuhelin" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_TyopaikanPuhelin']">
+            <restrictions>
+              <record jsxid="mi_741" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_742">
+              <record jsxid="mi_743" name="DOM" value="Puoliso_TyopaikanPuhelin"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_744" jsxtext="Puoliso_Ammatti" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Ammatti']">
+            <restrictions>
+              <record jsxid="mi_745" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_746">
+              <record jsxid="mi_747" name="DOM" value="Puoliso_Ammatti"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_748" jsxtext="Puoliso_TyoaikaAlkaa" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_TyoaikaAlkaa']">
+            <restrictions>
+              <record jsxid="mi_749" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_750">
+              <record jsxid="mi_751" name="DOM" value="Puoliso_TyoaikaAlkaa"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_752" jsxtext="Puoliso_TyoaikaLoppuu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_TyoaikaLoppuu']">
+            <restrictions>
+              <record jsxid="mi_753" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_754">
+              <record jsxid="mi_755" name="DOM" value="Puoliso_TyoaikaLoppuu"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_756" jsxtext="Puoliso_VuorotyoKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_VuorotyoKylla']">
+            <restrictions>
+              <record jsxid="mi_757" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_758">
+              <record jsxid="mi_759" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Puoliso_VuorotyoKylla', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_760" jsxtext="Puoliso_VuorotyoEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_VuorotyoEi']">
+            <restrictions>
+              <record jsxid="mi_761" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_762">
+              <record jsxid="mi_763" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Puoliso_VuorotyoEi', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_764" jsxtext="Puoliso_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Extend01']">
+            <restrictions>
+              <record jsxid="mi_765" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_766">
+              <record jsxid="mi_767" name="DOM" value="Puoliso_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_768" jsxtext="Puoliso_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Puoliso_Extend02']">
+            <restrictions>
+              <record jsxid="mi_769" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_770">
+              <record jsxid="mi_771" name="DOM" value="Puoliso_Extend02"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_772" jsxtext="MuutLapset" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset']">
+          <restrictions>
+            <record jsxid="mi_773" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_774" name="minoccur" value="0"/>
+          </restrictions>
+          <record jsxid="mi_775" jsxtext="MuutLapset_Etunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Etunimi']">
+            <restrictions>
+              <record jsxid="mi_776" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_777">
+              <record jsxid="mi_778" name="CDF Attribute" value="MuutLapset_Etunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_779" jsxtext="MuutLapset_Sukunimi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Sukunimi']">
+            <restrictions>
+              <record jsxid="mi_780" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_781">
+              <record jsxid="mi_782" name="CDF Attribute" value="MuutLapset_Sukunimi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_783" jsxtext="MuutLapset_Henkilotunnus" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Henkilotunnus']">
+            <restrictions>
+              <record jsxid="mi_784" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_785">
+              <record jsxid="mi_786" name="CDF Attribute" value="MuutLapset_Henkilotunnus"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_787" jsxtext="MuutLapset_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Extend01']">
+            <restrictions>
+              <record jsxid="mi_788" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_789">
+              <record jsxid="mi_790" name="CDF Attribute" value="MuutLapset_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_791" jsxtext="MuutLapset_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='MuutLapset_Extend02']">
+            <restrictions>
+              <record jsxid="mi_792" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_793">
+              <record jsxid="mi_794" name="CDF Attribute" value="MuutLapset_Extend02"/>
+            </mappings>
+          </record>
+          <mappings jsxid="mi_795">
+            <record jsxid="mi_796" name="Script" value="if(typeof(this._i_796)=='undefined'){this._i_796=-1;my.getCDFDocument('MuutLapset-nomap','INBOUND');}"/>
+            <record jsxid="mi_797" name="CDF Record"/>
+          </mappings>
+        </record>
+        <record jsxid="mi_798" jsxtext="HoidonTarve" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve']">
+          <restrictions>
+            <record jsxid="mi_799" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_800" jsxtext="HoidonTarve_Kokopaiva" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Kokopaiva']">
+            <restrictions>
+              <record jsxid="mi_801" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_802">
+              <record jsxid="mi_803" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_Kokopaiva', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_804" jsxtext="HoidonTarve_KokopaivaAlkaa" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_KokopaivaAlkaa']">
+            <restrictions>
+              <record jsxid="mi_805" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_806">
+              <record jsxid="mi_807" name="DOM" value="HoidonTarve_KokopaivaAlkaa"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_808" jsxtext="HoidonTarve_KokopaivaLoppuu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_KokopaivaLoppuu']">
+            <restrictions>
+              <record jsxid="mi_809" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_810">
+              <record jsxid="mi_811" name="DOM" value="HoidonTarve_KokopaivaLoppuu"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_812" jsxtext="HoidonTarve_Osapaiva" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Osapaiva']">
+            <restrictions>
+              <record jsxid="mi_813" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_814">
+              <record jsxid="mi_815" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_Osapaiva', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_816" jsxtext="HoidonTarve_OsapaivaAlkaa" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_OsapaivaAlkaa']">
+            <restrictions>
+              <record jsxid="mi_817" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_818">
+              <record jsxid="mi_819" name="DOM" value="HoidonTarve_OsapaivaAlkaa"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_820" jsxtext="HoidonTarve_OsapaivaLoppuu" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_OsapaivaLoppuu']">
+            <restrictions>
+              <record jsxid="mi_821" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_822">
+              <record jsxid="mi_823" name="DOM" value="HoidonTarve_OsapaivaLoppuu"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_824" jsxtext="HoidonTarve_VuorohoitoKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoKylla']">
+            <restrictions>
+              <record jsxid="mi_825" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_826">
+              <record jsxid="mi_827" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_VuorohoitoKylla', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_828" jsxtext="HoidonTarve_VuorohoitoEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoEi']">
+            <restrictions>
+              <record jsxid="mi_829" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_830">
+              <record jsxid="mi_831" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_VuorohoitoEi', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_832" jsxtext="HoidonTarve_VuorohoitoLa" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoLa']">
+            <restrictions>
+              <record jsxid="mi_833" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_834">
+              <record jsxid="mi_835" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_VuorohoitoLa', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_836" jsxtext="HoidonTarve_VuorohoitoSu" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoSu']">
+            <restrictions>
+              <record jsxid="mi_837" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_838">
+              <record jsxid="mi_839" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_VuorohoitoSu', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_840" jsxtext="HoidonTarve_VuorohoitoIlta" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoIlta']">
+            <restrictions>
+              <record jsxid="mi_841" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_842">
+              <record jsxid="mi_843" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_VuorohoitoIlta', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_844" jsxtext="HoidonTarve_VuorohoitoYo" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_VuorohoitoYo']">
+            <restrictions>
+              <record jsxid="mi_845" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_846">
+              <record jsxid="mi_847" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_VuorohoitoYo', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_848" jsxtext="HoidonTarve_Hoitopaivat" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Hoitopaivat']">
+            <restrictions>
+              <record jsxid="mi_849" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_850">
+              <record jsxid="mi_851" name="DOM" value="HoidonTarve_Hoitopaivat"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_852" jsxtext="HoidonTarve_Alkaen" type="E" datatype="date" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Alkaen']">
+            <restrictions>
+              <record jsxid="mi_853" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_854">
+              <record jsxid="mi_855" name="Script" value="Intalio.Internal.Utilities.fixDateInput(jsx3.GO('HoidonTarve_Alkaen', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_856" jsxtext="HoidonTarve_AutoKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_AutoKylla']">
+            <restrictions>
+              <record jsxid="mi_857" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_858">
+              <record jsxid="mi_859" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_AutoKylla', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_860" jsxtext="HoidonTarve_AutoEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_AutoEi']">
+            <restrictions>
+              <record jsxid="mi_861" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_862">
+              <record jsxid="mi_863" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('HoidonTarve_AutoEi', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_864" jsxtext="HoidonTarve_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Extend01']">
+            <restrictions>
+              <record jsxid="mi_865" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_866">
+              <record jsxid="mi_867" name="DOM" value="HoidonTarve_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_868" jsxtext="HoidonTarve_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='HoidonTarve_Extend02']">
+            <restrictions>
+              <record jsxid="mi_869" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_870">
+              <record jsxid="mi_871" name="DOM" value="HoidonTarve_Extend02"/>
+            </mappings>
+          </record>
+        </record>
+        <record jsxid="mi_872" jsxtext="Hakutoive" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_873" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_874" jsxtext="Hakutoive_Kunta" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_Kunta']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_875" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_876">
+              <record jsxid="mi_877" name="DOM" value="Hakutoive_Kunta"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_878" jsxtext="Hakutoive_1Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_1Tyyppi']" jsxSelectMask="Script">
+            <restrictions>
+              <record jsxid="mi_879" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_880">
+              <record jsxid="mi_881" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_1Tyyppi&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_882" jsxtext="Hakutoive_1Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_1Alue']">
+            <restrictions>
+              <record jsxid="mi_883" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_884">
+              <record jsxid="mi_885" name="Script" value="setValue(Paivahoitohakemus_Form.getJSXByName(&quot;Hakutoive_1Alue&quot;).getText());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_886" jsxtext="Hakutoive_2Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_2Tyyppi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="mi_887" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_888">
+              <record jsxid="mi_889" name="DOM" value="Hakutoive_2Tyyppi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_890" jsxtext="Hakutoive_2Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_2Alue']">
+            <restrictions>
+              <record jsxid="mi_891" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_892">
+              <record jsxid="mi_893" name="DOM" value="Hakutoive_2Alue"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_894" jsxtext="Hakutoive_3Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_3Tyyppi']">
+            <restrictions>
+              <record jsxid="mi_895" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_896">
+              <record jsxid="mi_897" name="DOM" value="Hakutoive_3Tyyppi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_898" jsxtext="Hakutoive_3Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_3Alue']">
+            <restrictions>
+              <record jsxid="mi_899" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_900">
+              <record jsxid="mi_901" name="DOM" value="Hakutoive_3Alue"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_902" jsxtext="Hakutoive_4Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_4Tyyppi']">
+            <restrictions>
+              <record jsxid="mi_903" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_904">
+              <record jsxid="mi_905" name="DOM" value="Hakutoive_4Tyyppi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_906" jsxtext="Hakutoive_4Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_4Alue']">
+            <restrictions>
+              <record jsxid="mi_907" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_908">
+              <record jsxid="mi_909" name="DOM" value="Hakutoive_4Alue"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_910" jsxtext="Hakutoive_5Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_5Tyyppi']">
+            <restrictions>
+              <record jsxid="mi_911" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_912">
+              <record jsxid="mi_913" name="DOM" value="Hakutoive_5Tyyppi"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_914" jsxtext="Hakutoive_5Alue" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_5Alue']">
+            <restrictions>
+              <record jsxid="mi_915" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_916">
+              <record jsxid="mi_917" name="DOM" value="Hakutoive_5Alue"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_918" jsxtext="Hakutoive_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_Extend01']">
+            <restrictions>
+              <record jsxid="mi_919" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_920">
+              <record jsxid="mi_921" name="DOM" value="Hakutoive_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_922" jsxtext="Hakutoive_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_Extend02']">
+            <restrictions>
+              <record jsxid="mi_923" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_924">
+              <record jsxid="mi_925" name="DOM" value="Hakutoive_Extend02"/>
+            </mappings>
+          </record>
+        <record jsxid="x95953" jsxtext="Hakutoive_1AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_1AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x70707" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x64136" name="DOM" value="Hakutoive_1AlueKoodi"/></mappings></record><record jsxid="x73498" jsxtext="Hakutoive_2AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_2AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x75839" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x31529" name="DOM" value="Hakutoive_2AlueKoodi"/></mappings></record><record jsxid="x96316" jsxtext="Hakutoive_3AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_3AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x17483" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x64062" name="DOM" value="Hakutoive_3AlueKoodi"/></mappings></record><record jsxid="x55799" jsxtext="Hakutoive_4AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_4AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x49823" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x26014" name="DOM" value="Hakutoive_4AlueKoodi"/></mappings></record><record jsxid="x46430" jsxtext="Hakutoive_5AlueKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_5AlueKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x56871" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x62787" name="DOM" value="Hakutoive_5AlueKoodi"/></mappings></record><record jsxid="x15382" jsxtext="Hakutoive_1TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_1TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x81132" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x59200" name="DOM" value="Hakutoive_1TyyppiKoodi"/></mappings></record><record jsxid="x30296" jsxtext="Hakutoive_2TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_2TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x61199" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x25907" name="DOM" value="Hakutoive_2TyyppiKoodi"/></mappings></record><record jsxid="x64133" jsxtext="Hakutoive_3TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_3TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x54989" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x1869" name="DOM" value="Hakutoive_3TyyppiKoodi"/></mappings></record><record jsxid="x12205" jsxtext="Hakutoive_4TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_4TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x67209" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x79803" name="DOM" value="Hakutoive_4TyyppiKoodi"/></mappings></record><record jsxid="x89050" jsxtext="Hakutoive_5TyyppiKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_5TyyppiKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x36302" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x41974" name="DOM" value="Hakutoive_5TyyppiKoodi"/></mappings></record><record jsxid="x59996" jsxtext="Hakutoive_KuntaKoodi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Hakutoive_KuntaKoodi']" jsxSelectMask="DOM">
+            <restrictions>
+              <record jsxid="x76703" name="nillable" value="true"/>
+            </restrictions>
+            
+          <mappings jsxid="mi_404">
+              
+            <record jsxid="x93656" name="DOM" value="Hakutoive_KuntaKoodi"/></mappings></record></record>
+        <record jsxid="mi_926" jsxtext="Lisatiedot" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot']" jsxopen="1">
+          <restrictions>
+            <record jsxid="mi_927" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="mi_928" jsxtext="Lisatiedot_Terveydentila" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Terveydentila']">
+            <restrictions>
+              <record jsxid="mi_929" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_930">
+              <record jsxid="mi_931" name="DOM" value="Lisatiedot_Terveydentila"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_932" jsxtext="Lisatiedot_Kotielaimet" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Kotielaimet']">
+            <restrictions>
+              <record jsxid="mi_933" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_934">
+              <record jsxid="mi_935" name="DOM" value="Lisatiedot_Kotielaimet"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_936" jsxtext="Lisatiedot_Lisatietoja" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Lisatietoja']">
+            <restrictions>
+              <record jsxid="mi_937" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_938">
+              <record jsxid="mi_939" name="DOM" value="Lisatiedot_Lisatietoja"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_940" jsxtext="Lisatiedot_MaksuKylla" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_MaksuKylla']">
+            <restrictions>
+              <record jsxid="mi_941" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_942">
+              <record jsxid="mi_943" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Lisatiedot_MaksuKylla', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_944" jsxtext="Lisatiedot_MaksuEi" type="E" datatype="boolean" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_MaksuEi']">
+            <restrictions>
+              <record jsxid="mi_945" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_946">
+              <record jsxid="mi_947" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Lisatiedot_MaksuEi', my.getNamespace()), MESSAGENODE.getValue());"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_948" jsxtext="Lisatiedot_Extend01" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Extend01']">
+            <restrictions>
+              <record jsxid="mi_949" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_950">
+              <record jsxid="mi_951" name="DOM" value="Lisatiedot_Extend01"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_952" jsxtext="Lisatiedot_Extend02" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Lisatiedot_Extend02']">
+            <restrictions>
+              <record jsxid="mi_953" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_954">
+              <record jsxid="mi_955" name="DOM" value="Lisatiedot_Extend02"/>
+            </mappings>
+          </record>
+        </record>
+      <record jsxid="x20184" jsxtext="Tyyppi" type="C" datatype="" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Tyyppi']" jsxopen="1">
+          <restrictions>
+            <record jsxid="x4576" name="nillable" value="true"/>
+          </restrictions>
+          <record jsxid="x11145" jsxtext="Tyyppi_Tyyppi" type="E" datatype="string" tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/TAMPERE/Paivahoitohakemus']//jsx1:element[@name='Tyyppi_Tyyppi']">
+            <restrictions>
+              <record jsxid="x21175" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_930">
+              <record jsxid="x91031" name="DOM" value="Tyyppi_Tyyppi"/>
+            </mappings>
+          </record>
+          
+          
+          
+          
+          
+          
+        </record></record>
+    </record>
+  </record>
+</data>

@@ -1,0 +1,93 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:attachments="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi/attachments" xmlns:this="http://thisdiagram/Prosessi" xmlns:KokuHakProcessingServiceImpl="http://soa.hak.koku.arcusys.fi/" xmlns:tns="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Kuntalainen="http://thisdiagram/Kuntalainen" xmlns:diag="http://thisdiagram" xmlns:Paivahoitohakemus_init_Form="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.hak.koku.arcusys.fi/" bpdm:prefix="KokuHakProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuHakProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/TAMPERE/Paivahoitohakemus" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Kuntalainen" bpdm:prefix="Kuntalainen" bpdm:comment="contrib=&apos;partner-pool:///_CLxa0ON3EeCy--UdbQo9NQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_CLxa0ON3EeCy--UdbQo9NQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Paivahoitohakemus_init_Form.gi" bpdm:prefix="Paivahoitohakemus_init_Form" bpdm:comment="contrib=&apos;project:///Forms/Paivahoitohakemus_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="ProsessiAndKuntalainenForPortTypeProcessPlkService">
+                <wsdl:port name="Prosessi_for_KuntalainenPort" binding="this:ProsessiAndKuntalainenForPortTypeProcessPlkServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Kuntalainen/ProsessiAndKuntalainenForPortTypeProcessPlk"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="ProsessiAndKuntalainenForPortTypeProcessPlkServiceBinding" type="Paivahoitohakemus_init_Form:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_CLxa0ON3EeCy--UdbQo9NQ" bpdm:label="Kuntalainen"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Paivahoitohakemus_init_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Paivahoitohakemus.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_ETrigON3EeCy--UdbQo9NQ" bpdm:label="Palvelut"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuHakProcessingServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Prosessi" bpdm:ID="_Dq32EON3EeCy--UdbQo9NQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="prosessiAndKuntalainenForPortTypeProcessPlkVar" partnerLinkType="diag:ProsessiAndKuntalainenForPortTypeProcessPlk" myRole="Prosessi_for_Kuntalainen" bpdm:enableSharing="false" bpdm:providedService="this:ProsessiAndKuntalainenForPortTypeProcessPlkService" bpdm:providedPort="Prosessi_for_KuntalainenPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Kuntalainen/ProsessiAndKuntalainenForPortTypeProcessPlk" bpdm:providedIsDefault="true" bpdm:clientTasks="_Dq32EON3EeCy--UdbQo9NQ:_P_-xkON3EeCy--UdbQo9NQ" bpdm:isManaged="true" bpdm:otherPoolId="_CLxa0ON3EeCy--UdbQo9NQ"/>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuHakProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuHakProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Palvelut_for_Prosessi" bpdm:invokedService="KokuHakProcessingServiceImpl:KokuHakProcessingService" bpdm:invokedPort="KokuHakProcessingServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_Dq32EON3EeCy--UdbQo9NQ:_JNUSEOQTEeCYOLilTz62Vg" bpdm:isManaged="true" bpdm:otherPoolId="_ETrigON3EeCy--UdbQo9NQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="paivahoitohakemus_init_FormInitProcessRequestMsg" messageType="Paivahoitohakemus_init_Form:initProcessRequest" bpdm:id="_Q11bgON3EeCy--UdbQo9NQ" bpdm:messageIds="inc:_Q1cZ8ON3EeCy--UdbQo9NQ"/>
+            <bpel:variable name="paivahoitohakemus_init_FormInitProcessResponseMsg" messageType="Paivahoitohakemus_init_Form:initProcessResponse" bpdm:id="_RxcIION3EeCy--UdbQo9NQ" bpdm:messageIds=" out:_RxKbUON3EeCy--UdbQo9NQ">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Paivahoitohakemus_init_Form:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="Paivahoitohakemus_Form" element="tns:Paivahoitohakemus_Form" bpdm:id="_V-y5YON3EeCy--UdbQo9NQ"/>
+            <bpel:variable name="kokuHakProcessingServiceImplRequestForDaycareRequestMsg" messageType="KokuHakProcessingServiceImpl:KokuHakProcessingService_requestForDaycare" binding="KokuHakProcessingServiceImpl:KokuHakProcessingServiceBinding" operation="requestForDaycare" opMsgType="0" bpdm:id="_LReiMOQTEeCYOLilTz62Vg" bpdm:messageIds=" out:_LRM1YOQTEeCYOLilTz62Vg">
+                <bpel:from bpdm:toPart="requestForDaycare">
+                    <bpel:literal bpdm:linkedMessageType="KokuHakProcessingServiceImpl:KokuHakProcessingService_requestForDaycare" bpdm:linkedPart="requestForDaycare" bpdm:binding="KokuHakProcessingServiceImpl:KokuHakProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="requestForDaycare" bpdm:linkedFile="KokuHakProcessingService_requestForDaycare.requestForDaycare-_Dq32EON3EeCy--UdbQo9NQ-0-literal.xml"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuHakProcessingServiceImplRequestForDaycareResponseMsg" messageType="KokuHakProcessingServiceImpl:KokuHakProcessingService_requestForDaycareResponse" binding="KokuHakProcessingServiceImpl:KokuHakProcessingServiceBinding" operation="requestForDaycare" opMsgType="1" bpdm:id="_LjeRIOQTEeCYOLilTz62Vg" bpdm:messageIds="inc:_LjEogOQTEeCYOLilTz62Vg"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="initProcess" partnerLink="prosessiAndKuntalainenForPortTypeProcessPlkVar" portType="Paivahoitohakemus_init_Form:Process" isMyRole="true" enableSharing="false" bpdm:label="Vastaanota tilaus" bpdm:ID="_P_-xkON3EeCy--UdbQo9NQ">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="paivahoitohakemus_init_FormInitProcessRequestMsg" bpdm:msgVarScopeId="_Dq32EON3EeCy--UdbQo9NQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_init_Form:initProcessRequest" bpdm:ID="_Q1cZ8ON3EeCy--UdbQo9NQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="paivahoitohakemus_init_FormInitProcessResponseMsg" bpdm:msgVarScopeId="_Dq32EON3EeCy--UdbQo9NQ" bpdm:variableIsManaged="true" bpdm:messageType="Paivahoitohakemus_init_Form:initProcessResponse" bpdm:ID="_RxKbUON3EeCy--UdbQo9NQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Luo tilaus" bpdm:ID="_TXAXwON3EeCy--UdbQo9NQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$paivahoitohakemus_init_FormInitProcessRequestMsg.root/Paivahoitohakemus_init_Form:taskOutput/tns:Paivahoitohakemus_Form</bpel:from>
+                        <bpel:to>$Paivahoitohakemus_Form</bpel:to><mapper:mapperLink><mapper:vertice id="1835309438" targetPath="$Paivahoitohakemus_Form" targetedBy="2075074886-arg0"></mapper:vertice><mapper:vertice id="2075074886" sourcePath="$paivahoitohakemus_init_FormInitProcessRequestMsg.root/Paivahoitohakemus_init_Form:taskOutput/tns:Paivahoitohakemus_Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Tee HTML" bpdm:ID="_hSpzQON3EeCy--UdbQo9NQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>bpel:doXslTransform("../xsl/Paivahoitohakemus_html.xsl", $Paivahoitohakemus_Form)</bpel:from>
+                        <bpel:to>$Paivahoitohakemus_Form/tns:Paatos/tns:Paatos_Extend01</bpel:to><mapper:mapperLink><mapper:vertice id="1823281727" targetPath="$Paivahoitohakemus_Form/tns:Paatos/tns:Paatos_Extend01" targetedBy="1007074902-arg2"></mapper:vertice><mapper:vertice id="1007074902" dimension="217x85" location="288,108"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="1713176572" dimension="157x37" location="72,48" targetedBy="1007074902-arg0"><mapper:value>"../xsl/Paivahoitohakemus_html.xsl"</mapper:value></mapper:vertice><mapper:vertice id="2147377311" sourcePath="$Paivahoitohakemus_Form" targetedBy="1007074902-arg1"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="requestForDaycare" partnerLink="palvelutAndProsessiForKokuHakProcessingServicePortPlkVar" portType="KokuHakProcessingServiceImpl:KokuHakProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä lomake servicelle" bpdm:ID="_JNUSEOQTEeCYOLilTz62Vg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$Paivahoitohakemus_Form/tns:HoidonTarve/tns:HoidonTarve_Alkaen</bpel:from>
+                        <bpel:to>$kokuHakProcessingServiceImplRequestForDaycareRequestMsg.requestForDaycare/request/daycareNeededFromDate</bpel:to><mapper:mapperLink><mapper:vertice id="2084802127" targetPath="$kokuHakProcessingServiceImplRequestForDaycareRequestMsg.requestForDaycare/request/daycareNeededFromDate" targetedBy="834257308-arg0"></mapper:vertice><mapper:vertice id="834257308" sourcePath="$Paivahoitohakemus_Form/tns:HoidonTarve/tns:HoidonTarve_Alkaen"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Paivahoitohakemus_Form/tns:Paatos/tns:Paatos_Extend01</bpel:from>
+                        <bpel:to>$kokuHakProcessingServiceImplRequestForDaycareRequestMsg.requestForDaycare/request/formContent</bpel:to><mapper:mapperLink><mapper:vertice id="1838767084" targetPath="$kokuHakProcessingServiceImplRequestForDaycareRequestMsg.requestForDaycare/request/formContent" targetedBy="1409656913-arg0"></mapper:vertice><mapper:vertice id="1409656913" sourcePath="$Paivahoitohakemus_Form/tns:Paatos/tns:Paatos_Extend01"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Paivahoitohakemus_Form/tns:Lapsi/tns:Lapsi_Valittu</bpel:from>
+                        <bpel:to>$kokuHakProcessingServiceImplRequestForDaycareRequestMsg.requestForDaycare/request/targetPersonUid</bpel:to><mapper:mapperLink><mapper:vertice id="1912443372" targetPath="$kokuHakProcessingServiceImplRequestForDaycareRequestMsg.requestForDaycare/request/targetPersonUid" targetedBy="223891296-arg0"></mapper:vertice><mapper:vertice id="223891296" sourcePath="$Paivahoitohakemus_Form/tns:Lapsi/tns:Lapsi_Valittu"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Paivahoitohakemus_Form/tns:Paatos/tns:Paatos_Extend02</bpel:from>
+                        <bpel:to>$kokuHakProcessingServiceImplRequestForDaycareRequestMsg.requestForDaycare/request/creatorUid</bpel:to><mapper:mapperLink><mapper:vertice id="1314275910" targetPath="$kokuHakProcessingServiceImplRequestForDaycareRequestMsg.requestForDaycare/request/creatorUid" targetedBy="611470909-arg0"></mapper:vertice><mapper:vertice id="611470909" sourcePath="$Paivahoitohakemus_Form/tns:Paatos/tns:Paatos_Extend02"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuHakProcessingServiceImplRequestForDaycareRequestMsg" bpdm:msgVarScopeId="_Dq32EON3EeCy--UdbQo9NQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuHakProcessingServiceImpl:KokuHakProcessingService_requestForDaycare" bpdm:binding="KokuHakProcessingServiceImpl:KokuHakProcessingServiceBinding" bpdm:ID="_LRM1YOQTEeCYOLilTz62Vg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuHakProcessingServiceImplRequestForDaycareResponseMsg" bpdm:msgVarScopeId="_Dq32EON3EeCy--UdbQo9NQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuHakProcessingServiceImpl:KokuHakProcessingService_requestForDaycareResponse" bpdm:binding="KokuHakProcessingServiceImpl:KokuHakProcessingServiceBinding" bpdm:ID="_LjEogOQTEeCYOLilTz62Vg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="end: empty" bpdm:label="Empty_End_Event" bpdm:ID="_JLIEQOQUEeCYOLilTz62Vg"></bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
