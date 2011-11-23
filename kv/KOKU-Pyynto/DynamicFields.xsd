@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.arcusys.fi/DynamicFields" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/DynamicFields">
+
+    <complexType name="TextInput_Type">
+    	<sequence>
+    		<element name="TextInput_Question" type="string"></element>
+    		<element name="TextInput_Section" type="string"></element>
+    		<element name="TextInput_AnswerText" type="string"></element>
+    		<element name="TextInput_Number" type="string"></element>
+    		<element name="TextInput_Type" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="DynamicFields_Type">
+    	<sequence>
+    		<element name="TextInput" type="tns:TextInput_Type"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="MultipleChoice"
+    			type="tns:MultipleChoice_Type" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    		<element name="Header" type="tns:Header_Type"></element>
+    		<element name="User" type="tns:User_Type"></element>
+    		<element name="HTML" type="tns:HTML_Type"></element>
+    		<element name="Receipients" type="tns:Receipients_Type"
+    			minOccurs="1" maxOccurs="unbounded">
+    		</element>
+    		<element name="RequestProcessing" type="tns:RequestProcessing_Type"></element>
+    		<element name="Kommentti" type="tns:Kommentti_Type"></element>
+    		<element name="PohjaNakyvyys" type="tns:PohjaNakyvyys_Type"></element>
+    	</sequence>
+    </complexType>
+
+    
+    <element name="Dynamic_Fields_Form" type="tns:DynamicFields_Type"></element>
+
+    <complexType name="Header_Type">
+    	<sequence>
+    		<element name="Header_Text" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="User_Type">
+    	<sequence>
+    		<element name="User_Recipient" type="string"></element>
+    		<element name="User_RecipientDisplay" type="string"></element>
+    		<element name="User_Sender" type="string"></element>
+    		<element name="User_SenderDisplay" type="string"></element>
+    		<element name="User_Reminder" type="string"></element>
+    		<element name="User_AnswerUntil" type="date"></element>
+    		<element name="User_PaivitaOlemassaoleva" type="boolean"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PohjaNakyvyys_Type">
+    	<sequence>
+    		<element name="PohjaNakyvyys_Mina" type="boolean"></element>
+    		<element name="PohjaNakyvyys_Organisaatio" type="boolean"></element>
+    		<element name="PohjaNakyvyys_Kaikki" type="boolean"></element>
+    		<element name="PohjaNakyvyys_Arvo" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Receipients_Type">
+    	<sequence>
+    		<element name="Receipients_Receipient" type="string"></element>
+    		<element name="Receipients_ReceipientUid" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Kommentti_Type">
+    	<sequence>
+    		<element name="Kommentti_Kommentti" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="HTML_Type">
+    	<sequence>
+    		<element name="HTML_Sisalto" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="RequestProcessing_Type">
+    	<sequence>
+    		<element name="RequestProcessing_RequestID" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="MultipleChoice_Type">
+    	<sequence>
+    		<element name="MultipleChoice_Section" type="string"></element>
+    		<element name="MultipleChoice_Number" type="string"></element>
+    		<element name="MultipleChoice_Question" type="string"></element>
+    		<element name="MultipleChoice_Checked" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+</schema>

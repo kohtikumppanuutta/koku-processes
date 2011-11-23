@@ -1,0 +1,47 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Prosessi="http://thisdiagram/Prosessi" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:this="http://thisdiagram/Palvelut" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Palvelut">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="Prosessi" bpdm:comment="contrib=&apos;partner-pool:///_hI25kNPKEeCtDPd7kTBk1g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///KokuRequestProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_hI25kNPKEeCtDPd7kTBk1g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Palvelut" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_hI25kNPKEeCtDPd7kTBk1g" bpdm:label="Prosessi"/>
+        <bpdm:namespaceContributor bpdm:url="project:///KokuRequestProcessingServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Palvelut" bpdm:ID="_lWv2UNPKEeCtDPd7kTBk1g">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="palvelutAndProsessiForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:PalvelutAndProsessiForKokuRequestProcessingServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="tns:KokuRequestProcessingService" bpdm:providedPort="KokuRequestProcessingServicePort" bpdm:provideSOAPAddress="http://ip-172-19-1-4:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_lWv2UNPKEeCtDPd7kTBk1g:_3ENrkutNEeCyA7FZBrfxSw, _lWv2UNPKEeCtDPd7kTBk1g:_LI008NVLEeCZoqubtwvOpQ" bpdm:isManaged="true" bpdm:otherPoolId="_hI25kNPKEeCtDPd7kTBk1g"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="tnsCreateRequestTemplateRequestMsg" messageType="tns:KokuRequestProcessingService_createRequestTemplate" binding="tns:KokuRequestProcessingServiceBinding" operation="createRequestTemplate" opMsgType="0" bpdm:id="_O4p8tdVLEeCZoqubtwvOpQ" bpdm:messageIds="inc:_O4RiMNVLEeCZoqubtwvOpQ"/>
+            <bpel:variable name="tnsCreateRequestTemplateResponseMsg" messageType="tns:KokuRequestProcessingService_createRequestTemplateResponse" binding="tns:KokuRequestProcessingServiceBinding" operation="createRequestTemplate" opMsgType="1" bpdm:id="_PQGMUNVLEeCZoqubtwvOpQ" bpdm:messageIds=" out:_PP1toNVLEeCZoqubtwvOpQ">
+                <bpel:from bpdm:toPart="createRequestTemplateResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:KokuRequestProcessingService_createRequestTemplateResponse" bpdm:linkedPart="createRequestTemplateResponse" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="createRequestTemplate"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="tnsUpdateRequestTemplateRequestMsg" messageType="tns:KokuRequestProcessingService_updateRequestTemplate" binding="tns:KokuRequestProcessingServiceBinding" operation="updateRequestTemplate" opMsgType="0" bpdm:id="_6ThgMOtNEeCyA7FZBrfxSw" bpdm:messageIds="inc:_6TBJ4OtNEeCyA7FZBrfxSw"/>
+            <bpel:variable name="tnsUpdateRequestTemplateResponseMsg" messageType="tns:KokuRequestProcessingService_updateRequestTemplateResponse" binding="tns:KokuRequestProcessingServiceBinding" operation="updateRequestTemplate" opMsgType="1" bpdm:id="_6qt4MOtNEeCyA7FZBrfxSw" bpdm:messageIds=" out:_6qa9QOtNEeCyA7FZBrfxSw">
+                <bpel:from bpdm:toPart="updateRequestTemplateResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:KokuRequestProcessingService_updateRequestTemplateResponse" bpdm:linkedPart="updateRequestTemplateResponse" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="updateRequestTemplate"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="createRequestTemplate" partnerLink="palvelutAndProsessiForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="createRequestTemplate" bpdm:ID="_LI008NVLEeCZoqubtwvOpQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsCreateRequestTemplateRequestMsg" bpdm:msgVarScopeId="_lWv2UNPKEeCtDPd7kTBk1g" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuRequestProcessingService_createRequestTemplate" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:ID="_O4RiMNVLEeCZoqubtwvOpQ"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsCreateRequestTemplateResponseMsg" bpdm:msgVarScopeId="_lWv2UNPKEeCtDPd7kTBk1g" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuRequestProcessingService_createRequestTemplateResponse" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:ID="_PP1toNVLEeCZoqubtwvOpQ"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="updateRequestTemplate" partnerLink="palvelutAndProsessiForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="updateRequestTemplate" bpdm:ID="_3ENrkutNEeCyA7FZBrfxSw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsUpdateRequestTemplateRequestMsg" bpdm:msgVarScopeId="_lWv2UNPKEeCtDPd7kTBk1g" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuRequestProcessingService_updateRequestTemplate" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:ID="_6TBJ4OtNEeCyA7FZBrfxSw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsUpdateRequestTemplateResponseMsg" bpdm:msgVarScopeId="_lWv2UNPKEeCtDPd7kTBk1g" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuRequestProcessingService_updateRequestTemplateResponse" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:ID="_6qa9QOtNEeCyA7FZBrfxSw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>
