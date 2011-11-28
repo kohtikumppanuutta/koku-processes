@@ -19,6 +19,7 @@ function getEndpoint() {
 function getUrl() {
     
     var domain = getDomainName();
+    //domain = "http://62.61.65.15:8280"
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -851,6 +852,7 @@ function prepareForm() {
     
     var username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("/")+1));
+    //var username = "kirsi.kuntalainen";
     //alert(username);
 
     
@@ -872,6 +874,7 @@ function prepareForm() {
 
             // Add form preload functions here.
             var childrenData = Arcusys.Internal.Communication.GetChildrenOfUser(Paivahoitohakemus_Form.getJSXByName("Paatos_Extend02").getValue());
+            //alert("childrenData: " + childrenData);
             //Arcusys.Internal.Communication.GerLDAPUser();
             
             if(childrenData != null) {
@@ -1033,68 +1036,31 @@ function valuesToArray(attributes) {
 }
 
 
-
 function mapChildrenNamesToField(data) {
-  //  alert(data);
-    var descendants = data.selectNodeIterator("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
-   // alert(descendants);
-    var personId, personDescription, childAttributes; 
-    var childAttributeList = new Array(); 
-    var xmlForSelectBox = "<data>";
-    var childList = ["displayName", "uid"];
-    while(descendants.hasNext()) {
+    var descendants, i, personId, personDescription, childAttributes, childAttributeList, xmlForSelectBox, childList;
     
-        childNode = descendants.next();
-       // alert(childNode);
-       
-       childAttributes = parseXML(childNode, "child", childList);
-      // alert(childAttributes);
-       childAttributeList = childAttributes[0].split(",");
-       personName = childAttributeList[0];
-       personId = childAttributeList[1];
-       
-       
-       // alert(childNode);
-       // requestTemplateId = childNode.getAttributeNode("return");
-      // personName = childNode.getFirstChild().getValue();
-      // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
-       // alert(personName);
-      //  personId = childNode.getFirstChild().getNextSibling().getNextSibling().getNextSibling().getValue();
-       // alert(personId);
-       // subject = childNode.selectSingleNode("//subject").getValue();
-        //alert(templateDescription);
-        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + personId + "\" jsxtext=\"" + personName + "\"/>";
-        
-       // alert(requestTemplateId + subject);
-        personId = "";
-        personName = "";
-        childNode = null;
-    }
-    xmlForSelectBox = xmlForSelectBox + "</data>";
-   // alert(xmlForSelectBox);
-    /*
-    for (x in descendants)   {
-      alert(descendants[x]);
-    }
-    */
-    
-   // data.selectNodes("//tns:getRequestTemplateSummaryResponse", "xmlns:tns='http://soa.kv.koku.arcusys.fi/'");
-   // alert("mapTemplateNamesToField" + data);
-    /*
-       var childIterator = data.selectSingleNode("//getRequestTemplateSummaryResponse", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'">).getChildIterator();
+    descendants = data.selectNodes("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+    i = 0;
+    personId, personDescription, childAttributes; 
+    childAttributeList = new Array(); 
+    xmlForSelectBox = "<data>";
+    childList = ["displayName", "uid"];
 
-       while(childIterator.hasNext()){
-       
-            childNode = childIterator.next();
-            alert(childNode);
-       }
-    */
-   // var values = "";
+    while (descendants.get(i)) {
+        childAttributes = parseXML(descendants.get(i), "child", childList);
+        childAttributeList = childAttributes[i].split(",");
+        personName = childAttributeList[0];
+        personId = childAttributeList[1];
+        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + personId + "\" jsxtext=\"" + personName + "\"/>";
+        i++;
+    }
+    
+    xmlForSelectBox = xmlForSelectBox + "</data>";
+    
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").setXMLString(xmlForSelectBox);
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").resetXmlCacheData();
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").repaint();
 }
-
 
 
 /*
