@@ -81,6 +81,7 @@
      <xs:element minOccurs="0" name="user" type="xs:string"/>
      <xs:element minOccurs="0" name="requestId" type="xs:long"/>
      <xs:element minOccurs="0" name="answers" type="tns:answers"/>
+     <xs:element minOccurs="0" name="comment" type="xs:string"/>
     </xs:sequence>
    </xs:complexType>
    <xs:complexType name="answers">

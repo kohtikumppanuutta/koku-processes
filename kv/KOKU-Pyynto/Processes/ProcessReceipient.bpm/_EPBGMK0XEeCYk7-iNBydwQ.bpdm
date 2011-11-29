@@ -44,7 +44,7 @@
         <bpel:partnerLinks>
             <bpel:partnerLink name="processAndInterfacePlkVar" partnerLinkType="diag:ProcessAndInterface" myRole="Process_for_Interface" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForInterface" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/Interface" bpdm:providedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Ilq9YK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_7XlLdq0WEeCYk7-iNBydwQ"/>
             <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" bpdm:invokedPort="KokuRequestProcessingServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_MFpxoK0fEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_NEyd8K0gEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
-            <bpel:partnerLink name="wFmagic_hzHqQARsEeGvy6Wfe0A60wPlkVar" partnerLinkType="diag:WFmagic_hzHqQARsEeGvy6Wfe0A60w" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_hzHqQARsEeGvy6Wfe0A60wService" bpdm:providedPort="Process_for_UserForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/WFmagic_hzHqQARsEeGvy6Wfe0A60w" bpdm:providedIsDefault="true" partnerRole="User_for_ProcessForCopyofform1_1Port" bpdm:invokedService="Copyofform1_1:WorkflowSoapService" bpdm:invokedPort="Copyofform1_1Port" bpdm:invokedSOAPAddress="http://trelx28b:8080/fds/workflow/Copyofform1_1" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Yudl4K0XEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_OPIgQK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_CDSOcK0XEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="wFmagic_hzHqQARsEeGvy6Wfe0A60wPlkVar" partnerLinkType="diag:WFmagic_hzHqQARsEeGvy6Wfe0A60w" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_hzHqQARsEeGvy6Wfe0A60wService" bpdm:providedPort="Process_for_UserForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/WFmagic_hzHqQARsEeGvy6Wfe0A60w" bpdm:providedIsDefault="true" partnerRole="User_for_ProcessForCopyofform1_1Port" bpdm:invokedService="Copyofform1_1:WorkflowSoapService" bpdm:invokedPort="Copyofform1_1Port" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/Copyofform1_1" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Yudl4K0XEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_OPIgQK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_CDSOcK0XEeCYk7-iNBydwQ"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="thisVastaanotaRequestMsg" messageType="this:VastaanotaRequest" bpdm:id="_KjyP5a0XEeCYk7-iNBydwQ" bpdm:messageIds="inc:_KjnQwK0XEeCYk7-iNBydwQ"/>
@@ -96,7 +96,17 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>bpel:doXslTransform("../xsl/DynamicFormRecipientReceive.xsl", $Dynamic_Fields_Form)</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to><mapper:mapperLink><mapper:vertice id="1353592755" targetPath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto" targetedBy="44185197-arg2"></mapper:vertice><mapper:vertice id="44185197" dimension="217x85" location="300,84"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="84427736" dimension="157x37" location="84,24" targetedBy="44185197-arg0"><mapper:value>"../xsl/DynamicFormRecipientReceive.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1398817525" sourcePath="$Dynamic_Fields_Form" targetedBy="44185197-arg1"></mapper:vertice></mapper:mapperLink>
+                        <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="256431858" targetPath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto" targetedBy="415225662-arg2"></mapper:vertice>
+  <mapper:vertice id="415225662" dimension="217x85" location="300,84">
+    <mapper:value>bpel:doXslTransform()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1471372062" dimension="313x37" location="84,24" targetedBy="415225662-arg0">
+    <mapper:value>"../xsl/DynamicFormRecipientReceive.xsl"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1226491616" sourcePath="$Dynamic_Fields_Form" targetedBy="415225662-arg1"></mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>
@@ -169,6 +179,10 @@
                     <bpel:copy>
                         <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Recipient</bpel:from>
                         <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestRequestMsg.replyToRequest/user</bpel:to><mapper:mapperLink><mapper:vertice id="270714720" targetPath="$kokuRequestProcessingServiceImplReplyToRequestRequestMsg.replyToRequest/user" targetedBy="766659796-arg0"></mapper:vertice><mapper:vertice id="766659796" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Recipient"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Dynamic_Fields_Form/tns:Kommentti/tns:Kommentti_Kommentti</bpel:from>
+                        <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestRequestMsg.replyToRequest/comment</bpel:to><mapper:mapperLink><mapper:vertice id="653817391" targetPath="$kokuRequestProcessingServiceImplReplyToRequestRequestMsg.replyToRequest/comment" targetedBy="829021858-arg0"></mapper:vertice><mapper:vertice id="829021858" sourcePath="$Dynamic_Fields_Form/tns:Kommentti/tns:Kommentti_Kommentti"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuRequestProcessingServiceImplReplyToRequestRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService_replyToRequest" bpdm:binding="KokuRequestProcessingServiceImpl:KokuRequestProcessingServiceBinding" bpdm:ID="_REf0wK0gEeCYk7-iNBydwQ"></bpdm:linkset>
