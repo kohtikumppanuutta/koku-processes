@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.arcusys.fi/KOKU/TIVA" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/KOKU/TIVA">
+
+
+    <complexType name="TIVA_Type">
+    	<sequence>
+    		<element name="Kayttaja" type="tns:Kayttaja_Type"></element>
+    		<element name="Suostumus" type="tns:Suostumus_Type"></element>
+    		<element name="Vastaanottajat"
+    			type="tns:Vastaanottajat_Type" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="Pohja" type="tns:Pohja_Type"></element>
+    		<element name="Toimenpiteet" type="tns:Toimenpiteet_Type"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    		<element name="Vastaukset" type="tns:Vastaukset_Type" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    
+    <element name="TIVA_Form" type="tns:TIVA_Type"></element>
+
+    
+    <complexType name="Kayttaja_Type">
+    	<sequence>
+    		<element name="Kayttaja_Vastaanottaja" type="string"></element>
+    		<element name="Kayttaja_Lahettaja" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Vastaanottajat_Type">
+    	<sequence>
+    		<element name="Vastaanottajat_Vastaanottaja"
+    			type="string">
+    		</element>
+    		<element name="Vastaanottajat_Kohdehenkilo" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    
+    
+    
+
+    <complexType name="Suostumus_Type">
+    	<sequence>
+    		<element name="Suostumus_SuostumusId" type="string"></element>
+    		<element name="Suostumus_Status" type="string"></element>
+    		<element name="Suostumus_Pvm" type="date"></element>
+    		<element name="Suostumus_Aikaraja" type="date"></element>
+    		<element name="Suostumus_Maara_Aika" type="date"></element>
+    		<element name="Suostumus_Maaraaika_Vakio" type="boolean"></element>
+    		<element name="Suostumus_Kommentti" type="string"></element>
+    		<element name="Suostumus_Suostuja" type="string"></element>
+            <element name="Suostumus_Extend1" type="string"></element>
+    		<element name="Suostumus_Extend2" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Pohja_Type">
+    	<sequence>
+    		<element name="Pohja_PohjaId" type="string"></element>
+    		<element name="Pohja_Otsikko" type="string"></element>
+    		<element name="Pohja_Kuvaus" type="string"></element>
+    		<element name="Pohja_Laatimispvm" type="date"></element>
+    		<element name="Pohja_Laatija" type="string"></element>
+    		<element name="Pohja_Laheta" type="boolean"></element>
+            <element name="Pohja_Aihealue" type="string"></element>
+            <element name="Pohja_Extend1" type="string"></element>
+    		<element name="Pohja_Extend2" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+
+    <complexType name="Toimenpiteet_Type">
+    	<sequence>
+    		<element name="Toimenpiteet_ToimenpideId" type="string"></element>
+    		<element name="Toimenpiteet_Kuvaus" type="string"></element>
+    		<element name="Toimenpiteet_Tarkentava_Teksti" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Vastaukset_Type">
+    	<sequence>
+            <element name="Vastaukset_VastausId" type="string"></element>
+            <element name="Vastaukset_Vastaus" type="boolean"></element>
+    	</sequence>
+    </complexType>
+
+</schema>
