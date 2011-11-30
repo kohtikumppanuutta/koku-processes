@@ -7,13 +7,13 @@ function intalioPreStart() {
     
     if (AjanvarausForm.getJSXByName("Lomake_Hylkaa").getChecked()) {
         if(!confirmation("Olet peruuttamassa tapaaamista")) {
-            return "Lomaketta ei tallenettu";
+            return "Tapaamista ei peruttu";
         }
     } else if (checkApprovedSlot()) {
         entry = getEntry();
    
         if (!confirmation("Olet varaamassa tapaamista ajalle: " + entry)) {
-            return "Lomaketta ei tallennettu";
+            return "Tapaamista ei varattu";
         }
     } else {
         return "Sinun t\u00E4ytyy joko valita aika tai peruuttaa tapaaminen";
@@ -117,11 +117,11 @@ function setApprovedNumber(selectBoxName) {
 
 function radioSelect(selectBoxName) {   
     //var activeSelection = AjanvarausForm.getJSXByName("activeSelect").getValue();
-    //AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
     
     uncheckTheOthers(AjanvarausForm.getJSXByName("Ajat"), AjanvarausForm.getJSXByName(selectBoxName));
 
     if (AjanvarausForm.getJSXByName(selectBoxName).getChecked()) {
+        AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
         AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
     } else {
         AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue("");
@@ -305,8 +305,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }
