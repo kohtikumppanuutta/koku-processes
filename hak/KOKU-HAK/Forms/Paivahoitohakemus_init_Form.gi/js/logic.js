@@ -7,8 +7,8 @@ function intalioPreStart() {
 
 function getEndpoint() {
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51x:8080";
     return endpoint;
     
 }
@@ -19,6 +19,7 @@ function getEndpoint() {
 function getUrl() {
     
     var domain = getDomainName();
+    //domain = "http://62.61.65.15:8280"
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -42,6 +43,55 @@ function preload()  {
     liisa = new Child("Lapsi","Liisa","121212-1212","Testitie 2","33000","Tampere","Ruotsi");
 }
 */
+
+function isBlank(value){
+    if(value == null){
+        return true;
+    }
+    for(var i = 0; i < value.length; i++) {
+        if ((value.charAt(i) != ' ') && (value.charAt(i) != "\t") && (value.charAt(i) != "\n") && (value.charAt(i) != "\r")){
+            return false;
+        }
+    }
+    return true;
+}
+function validatePhone(elem) {
+
+    //Getting value of current element
+    var value = elem.getValue();
+
+    //Value cannot be ampty or space
+    if (isBlank(value)) {
+        alert("Ilmoita puhelinnumero esimerkiksi muodossa: +358501234567 tai 0501234567");
+        elem.setValue("");
+        elem.repaint();
+        return;
+    }
+
+    var firstChar = value.charAt(0);
+
+    //Checking that first is number or '+'
+    if ((isNaN(firstChar)) && (firstChar != "+")) {
+        alert("Ilmoita puhelinnumero esimerkiksi muodossa: +358501234567 tai 0501234567");
+        elem.setValue("");
+        elem.repaint();
+        return;
+
+    }
+
+    if (firstChar == "+") {
+        value = value.substring(1, value.length);
+    }
+
+    if (isNaN(value)) {
+        alert("Ilmoita puhelinnumero esimerkiksi muodossa: +358501234567 tai 0501234567");
+        elem.setValue("");
+        elemt.repaint();
+        return;
+    }
+
+}
+
 function radioSelect(current, group) {
    
     var i;
@@ -390,11 +440,8 @@ function prepareFields() {
         Paivahoitohakemus_Form.getJSXByName("Lapsi_Aidinkieli").setDefaultText(defaultText).repaint();
         Paivahoitohakemus_Form.getJSXByName("Lapsi_Kotipaikka").setDefaultText(defaultText).repaint();
 
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Kunta").setDefaultText(defaultText).repaint();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_2Kunta").setDefaultText(defaultText).repaint();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_3Kunta").setDefaultText(defaultText).repaint();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_4Kunta").setDefaultText(defaultText).repaint();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_5Kunta").setDefaultText(defaultText).repaint();
+   /* 
+        
 
         Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Tyyppi").setDefaultText(defaultText2).repaint();
         Paivahoitohakemus_Form.getJSXByName("Hakutoive_2Tyyppi").setDefaultText(defaultText2).repaint();
@@ -443,23 +490,12 @@ function prepareFields() {
         Paivahoitohakemus_Form.getJSXByName("Hakutoive_3Alue").repaint();
         Paivahoitohakemus_Form.getJSXByName("Hakutoive_4Alue").repaint();
         Paivahoitohakemus_Form.getJSXByName("Hakutoive_5Alue").repaint();
-        
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta1").setXMLString(Paivahoitohakemus_Form.getCache().getDocument("propsTiimi_xml").toString());
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta1").resetXmlCacheData();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta1").repaint();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta2").setXMLString(Paivahoitohakemus_Form.getCache().getDocument("propsTiimi_xml").toString());
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta2").resetXmlCacheData();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta2").repaint();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta3").setXMLString(Paivahoitohakemus_Form.getCache().getDocument("propsTiimi_xml").toString());
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta3").resetXmlCacheData();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta3").repaint();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta4").setXMLString(Paivahoitohakemus_Form.getCache().getDocument("propsTiimi_xml").toString());
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta4").resetXmlCacheData();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta4").repaint();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta5").setXMLString(Paivahoitohakemus_Form.getCache().getDocument("propsTiimi_xml").toString());
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta5").resetXmlCacheData();
-        Paivahoitohakemus_Form.getJSXByName("Hakutoive_Kunta5").repaint();
-        
+        */
+                
+        Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Tyyppi").setXMLString(Paivahoitohakemus_Form.getCache().getDocument("propsHoitomuoto_xml").toString());
+        Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Tyyppi").resetXmlCacheData();
+        Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Tyyppi").repaint();
+      
         Paivahoitohakemus_Form.getJSXByName("Huoltaja_Perhesuhde").setXMLString(Paivahoitohakemus_Form.getCache().getDocument("propsPerhesuhde_xml").toString());
         Paivahoitohakemus_Form.getJSXByName("Huoltaja_Perhesuhde").resetXmlCacheData();
         Paivahoitohakemus_Form.getJSXByName("Huoltaja_Perhesuhde").repaint();
@@ -678,128 +714,23 @@ function checkHetu(variableName3){
 }
 
 
-function fieldValue2Display(townName2,fieldValues2,targetName2){
+function fieldValue2Display(elem,target){
+        var value = elem.getValue();
+        var documentLoad;
         
        
-        if (townName2=="Myllypuro-Reuhari") {
-            if (fieldValues2=="AvoinVarhaiskasvatus") {
-                var nameValue2 = "props" + townName2 + "AvoinVarhaiskasvatus_xml";  
-            }
-            if (fieldValues2=="Perhepaeivaehoito") {
-                var nameValue2 = "props" + townName2 + "Perhepaivahoito_xml";  
-            }
-            if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            }  
-           
+        if (value == "Paeivaekoti") {
+            var documentLoad = "propsPaivakoti_xml";
         }
+        if (value == "Perhepaevaehoito") {
+            var documentLoad = "propsPerhepaivahoito_xml";
+        }
+                                 
+                
+        Paivahoitohakemus_Form.getJSXByName(target).setXMLString(Paivahoitohakemus_Form.getCache().getDocument(documentLoad).toString());
+        Paivahoitohakemus_Form.getJSXByName(target).resetXmlCacheData();
+        Paivahoitohakemus_Form.getJSXByName(target).repaint();
        
-        
-        if (townName2=="Rahola-Pyynikki") {
-            if (fieldValues2=="AvoinVarhaiskasvatus") {
-                var nameValue2 = "props" + townName2 + "AvoinVarhaiskasvatus_xml";  
-            }
-            if (fieldValues2=="Perhepaeivaehoito") {
-                var nameValue2 = "props" + townName2 + "Perhepaivahoito_xml";  
-            }
-            if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            } 
-           
-        }
-        
-        if (townName2=="Tammela-Kauppi") {
-           if (fieldValues2=="AvoinVarhaiskasvatus") {
-                var nameValue2 = "props" + townName2 + "AvoinVarhaiskasvatus_xml";  
-            }
-           if (fieldValues2=="Perhepaeivaehoito") {
-                var nameValue2 = "props" + townName2 + "Perhepaivahoito_xml";  
-            }
-           if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            }
-
-        }
-               
-        if (townName2=="Rantakallio") {
-          if (fieldValues2=="AvoinVarhaiskasvatus") {
-                var nameValue2 = "props" + townName2 + "AvoinVarhaiskasvatus_xml";  
-            }
-          if (fieldValues2=="Perhepaeivaehoito") {
-                var nameValue2 = "props" + townName2 + "Perhepaivahoito_xml";  
-            }
-          if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            }
-            
-        }
-        
-        if (townName2=="Koivisto-Hallila") {
-           if (fieldValues2=="AvoinVarhaiskasvatus") {
-                var nameValue2 = "props" + townName2 + "AvoinVarhaiskasvatus_xml";  
-            } 
-           if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            }
-         
-        }
-        
-        if (townName2=="Kanjoninrotko-Etela-Hervanta") {
-           
-           if (fieldValues2=="AvoinVarhaiskasvatus") {
-                var nameValue2 = "props" + townName2 + "AvoinVarhaiskasvatus_xml";  
-            }
-            if (fieldValues2=="Perhepaeivaehoito") {
-                var nameValue2 = "props" + townName2 + "Perhepaivahoito_xml";  
-            }
-           if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            }
-           
-        }
-       
-        if (townName2=="Rustholli") {
-            if (fieldValues2=="AvoinVarhaiskasvatus") {
-                var nameValue2 = "props" + townName2 + "AvoinVarhaiskasvatus_xml";  
-            }
-            if (fieldValues2=="Perhepaeivaehoito") {
-                var nameValue2 = "props" + townName2 + "Perhepaivahoito_xml";  
-            }
-            if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            } 
-            
-        }
-        
-        if (townName2=="Messu") {
-            if (fieldValues2=="AvoinVarhaiskasvatus") {
-                var nameValue2 = "props" + townName2 + "AvoinVarhaiskasvatus_xml";  
-            }
-            if (fieldValues2=="Perhepaeivaehoito") {
-                var nameValue2 = "props" + townName2 + "Perhepaivahoito_xml";  
-            }
-            if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            } 
-        }   
-         
-        if (townName2=="Haihara") {
-            if (fieldValues2=="Perhepaeivaehoito") {
-                var nameValue2 = "props" + townName2 + "Perhepaivahoito_xml";  
-            }
-            if (fieldValues2=="Paeivaekoti") {
-                var nameValue2 = "props" + townName2 + "Paivakoti_xml";  
-            } 
-       
-        }
-        
-        var defaultText = "- Valitse -";
-        var defaultValue = null;
-        Paivahoitohakemus_Form.getJSXByName(targetName2).setXMLString(Paivahoitohakemus_Form.getCache().getDocument(nameValue2).toString());
-        Paivahoitohakemus_Form.getJSXByName(targetName2).resetXmlCacheData();
-        Paivahoitohakemus_Form.getJSXByName(targetName2).repaint();
-        Paivahoitohakemus_Form.getJSXByName(targetName2).setValue(defaultValue);
-        Paivahoitohakemus_Form.getJSXByName(targetName2).setDefaultText(defaultText).repaint();
                              
         //Paivahoitohakemus_Form.getJSXByName(targetName2).setXMLString(Paivahoitohakemus_Form.getCache().getDocument(nameValue2).toString()).resetXmlCacheData().repaint();
 }
@@ -921,6 +852,7 @@ function prepareForm() {
     
     var username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("/")+1));
+    //var username = "kirsi.kuntalainen";
     //alert(username);
 
     
@@ -942,6 +874,7 @@ function prepareForm() {
 
             // Add form preload functions here.
             var childrenData = Arcusys.Internal.Communication.GetChildrenOfUser(Paivahoitohakemus_Form.getJSXByName("Paatos_Extend02").getValue());
+            //alert("childrenData: " + childrenData);
             //Arcusys.Internal.Communication.GerLDAPUser();
             
             if(childrenData != null) {
@@ -1103,68 +1036,31 @@ function valuesToArray(attributes) {
 }
 
 
-
 function mapChildrenNamesToField(data) {
-  //  alert(data);
-    var descendants = data.selectNodeIterator("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
-   // alert(descendants);
-    var personId, personDescription, childAttributes; 
-    var childAttributeList = new Array(); 
-    var xmlForSelectBox = "<data>";
-    var childList = ["displayName", "uid"];
-    while(descendants.hasNext()) {
+    var descendants, i, personId, personDescription, childAttributes, childAttributeList, xmlForSelectBox, childList;
     
-        childNode = descendants.next();
-       // alert(childNode);
-       
-       childAttributes = parseXML(childNode, "child", childList);
-      // alert(childAttributes);
-       childAttributeList = childAttributes[0].split(",");
-       personName = childAttributeList[0];
-       personId = childAttributeList[1];
-       
-       
-       // alert(childNode);
-       // requestTemplateId = childNode.getAttributeNode("return");
-      // personName = childNode.getFirstChild().getValue();
-      // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
-       // alert(personName);
-      //  personId = childNode.getFirstChild().getNextSibling().getNextSibling().getNextSibling().getValue();
-       // alert(personId);
-       // subject = childNode.selectSingleNode("//subject").getValue();
-        //alert(templateDescription);
-        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + personId + "\" jsxtext=\"" + personName + "\"/>";
-        
-       // alert(requestTemplateId + subject);
-        personId = "";
-        personName = "";
-        childNode = null;
-    }
-    xmlForSelectBox = xmlForSelectBox + "</data>";
-   // alert(xmlForSelectBox);
-    /*
-    for (x in descendants)   {
-      alert(descendants[x]);
-    }
-    */
-    
-   // data.selectNodes("//tns:getRequestTemplateSummaryResponse", "xmlns:tns='http://soa.kv.koku.arcusys.fi/'");
-   // alert("mapTemplateNamesToField" + data);
-    /*
-       var childIterator = data.selectSingleNode("//getRequestTemplateSummaryResponse", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'">).getChildIterator();
+    descendants = data.selectNodes("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+    i = 0;
+    personId, personDescription, childAttributes; 
+    childAttributeList = new Array(); 
+    xmlForSelectBox = "<data>";
+    childList = ["displayName", "uid"];
 
-       while(childIterator.hasNext()){
-       
-            childNode = childIterator.next();
-            alert(childNode);
-       }
-    */
-   // var values = "";
+    while (descendants.get(i)) {
+        childAttributes = parseXML(descendants.get(i), "child", childList);
+        childAttributeList = childAttributes[i].split(",");
+        personName = childAttributeList[0];
+        personId = childAttributeList[1];
+        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + personId + "\" jsxtext=\"" + personName + "\"/>";
+        i++;
+    }
+    
+    xmlForSelectBox = xmlForSelectBox + "</data>";
+    
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").setXMLString(xmlForSelectBox);
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").resetXmlCacheData();
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").repaint();
 }
-
 
 
 /*

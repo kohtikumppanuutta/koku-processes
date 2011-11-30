@@ -9,6 +9,9 @@ function intalioPreStart() {
     if (!AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild()) {
         return "Lomakkeessa t\u00E4ytyy olla v\u00E4hint\u00E4\u00E4n yksi vastaanottaja!";
     }
+    else if (!AjanvarausForm.getCache().getDocument("slots-nomap").getFirstChild()) {
+        return "Lomakkeessa t\u00E4ytyy olla v\u00E4hint\u00E4\u00E4n yksi tapaaminen!";
+    }
     
     return null;
 }
@@ -1040,8 +1043,8 @@ function getDomainName() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51x:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }

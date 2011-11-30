@@ -17,8 +17,8 @@ jsx3.lang.Package.definePackage(
 
 function getEndpoint() {
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51x:8080";
     return endpoint;
     
 }
@@ -1634,7 +1634,20 @@ function mapSelectedRecipientsToMatrix() {
 
 
 function intalioPreStart() {
-
+    
+    if (form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild() == null) {
+        return "Pyynt\xF6\xF6n ei ole lis\xE4tty yht\xE4\xE4n vastaanottajaa. Lis\xE4\xE4 pyynn\xF6lle vastaanottajat.";
+    }
+    if (form1.getJSXByName("User_AnswerUntil").getValue() == "dd.MM.yyyy") {
+        return "Puuttuvat tiedot: Vastauksen m\xE4\xE4r\xE4aika";
+    }
+    if (form1.getJSXByName("User_Reminder").getValue() == null) {
+        return "Puuttuvat tiedot: Vastauksen muistutusraja";
+    }
+    if (form1.getCache().getDocument("TextInput-nomap").getFirstChild() == null) {
+        return "Lomakkeelle ei ole lis\xE4tty yht\xE4\xE4n pyynt\xF6\xE4.";
+    }
+        
     mapSelectedRecipientsToMatrix();
    // alert(form1.getJSXByName("User_AnswerUntil").getValue());
 }
@@ -1808,7 +1821,11 @@ function searchNames(searchString) {
 
     list = ["firstname", "lastname", "uid"];
     userData = parseXML(xmlData, "child", list);
-      
+      function intalioPreStart() {
+  
+   mapSelectedValuesToMatrix();
+   
+}
     // No users found...
     if ((userData == " ") || (userData == null) || (userData == "")) {
         alert ("Valitettavasti antamallasi hakusanalla ei l\xF6ytynyt tuloksia");

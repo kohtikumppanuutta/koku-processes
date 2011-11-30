@@ -27,9 +27,10 @@
 						<h2 class="old"><xsl:value-of select="//ka:Header_Text/text()"/></h2>
 						<div class="innerContent">
 					<xsl:for-each select="//ka:TextInput">
-						
-							<p><xsl:value-of select="ka:TextInput_Question/text()"/></p>
+					<p><xsl:value-of select="ka:TextInput_Question/text()"/></p>
+					
 					</xsl:for-each>
+					<p><a href="javascript:void(0)" onclick="kokuRedirectToRecievedRequests()">Klikkaa tästä siirtyäksesi pyyntöihin</a> </p>
 					</div>
 				</div>
 

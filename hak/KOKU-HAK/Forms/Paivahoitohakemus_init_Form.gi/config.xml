@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version='1.0' encoding='utf-8'?>
 <data>
   <record jsxid="version" type="string">1.0</record>
   <record jsxid="jsxversion" type="string">3.2</record>
@@ -15,9 +15,45 @@
   <record jsxid="overflow" type="number">3</record>
   <record jsxid="eventsvers" type="number">3.1</record>
   <record jsxid="default_locale" type="string">fi_FI</record>
-  <record jsxid="onload" type="string"/>
+  <record jsxid="onload" type="string">Intalio.Internal.Utilities.initApp();</record>
   <record jsxid="objectseturl" type="string">components/appCanvas.xml</record>
   <record jsxid="includes" type="array">
+    <record jsxid="cf_1" type="map">
+      <record jsxid="id" type="string">IntalioInternal_Packages_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="load" type="number">1</record>
+      <record jsxid="src" type="string">IntalioInternal/Packages.js</record>
+    </record>
+    <record jsxid="cf_2" type="map">
+      <record jsxid="id" type="string">IntalioInternal_TaskManagementServicesMapping_xml</record>
+      <record jsxid="type" type="string">services</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">IntalioInternal/TaskManagementServicesMapping.xml</record>
+    </record>
+    <record jsxid="cf_3" type="map">
+      <record jsxid="id" type="string">IntalioInternal_TaskManagerProcessMapping_xml</record>
+      <record jsxid="type" type="string">services</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">IntalioInternal/TaskManagerProcessMapping.xml</record>
+    </record>
+    <record jsxid="cf_4" type="map">
+      <record jsxid="id" type="string">IntalioInternal_TASMapping_xml</record>
+      <record jsxid="type" type="string">services</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">IntalioInternal/TASMapping.xml</record>
+    </record>
+    <record jsxid="cf_5" type="map">
+      <record jsxid="id" type="string">IntalioInternal_Tidy_xsl</record>
+      <record jsxid="type" type="string">xsl</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">IntalioInternal/Tidy.xsl</record>
+    </record>
+    <record jsxid="cf_6" type="map">
+      <record jsxid="id" type="string">IntalioInternal_AttachmentsForm_xml</record>
+      <record jsxid="type" type="string">xml</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">IntalioInternal/AttachmentsForm.xml</record>
+    </record>
     <record jsxid="0" type="map">
       <record jsxid="id" type="string">style_css</record>
       <record jsxid="type" type="string">css</record>
@@ -33,7 +69,7 @@
     <record jsxid="2" type="map">
       <record jsxid="id" type="string">appCanvas_component</record>
       <record jsxid="type" type="string">component</record>
-      <record jsxid="load" type="null"/>
+      <record jsxid="load" type="null"></record>
       <record jsxid="src" type="string">components/appCanvas.xml</record>
     </record>
     <record jsxid="3" type="map">
@@ -50,10 +86,10 @@
     </record>
    
     <record jsxid="5" type="map">
-      <record jsxid="id" type="string">propsTiimi_xml</record>
+      <record jsxid="id" type="string">propsHoitomuoto_xml</record>
       <record jsxid="type" type="string">xml</record>
       <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsTiimi.xml</record>
+      <record jsxid="src" type="string">jss/propsHoitomuoto.xml</record>
     </record> 
     <record jsxid="6" type="map">
       <record jsxid="id" type="string">propsPerhesuhde_xml</record>
@@ -79,210 +115,19 @@
       <record jsxid="load" type="number">1</record>
       <record jsxid="src" type="string">jss/propsHuoltajuus.xml</record>
     </record>
-    <record jsxid="10" type="map">
-      <record jsxid="id" type="string">propsMyllypuro-Reuhari_xml</record>
+	<record jsxid="10" type="map">
+      <record jsxid="id" type="string">propsPaivakoti_xml</record>
       <record jsxid="type" type="string">xml</record>
       <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsMyllypuro-Reuhari.xml</record>
+      <record jsxid="src" type="string">jss/propsPaivakoti.xml</record>
     </record>
-    <record jsxid="11" type="map">
-      <record jsxid="id" type="string">propsMyllypuro-ReuhariPaivakoti_xml</record>
+	<record jsxid="9" type="map">
+      <record jsxid="id" type="string">propsPerhepaivahoito_xml</record>
       <record jsxid="type" type="string">xml</record>
       <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsMyllypuro-ReuhariPaivakoti.xml</record>
-    </record>    
-    <record jsxid="12" type="map">
-      <record jsxid="id" type="string">propsMyllypuro-ReuhariPerhepaivahoito_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsMyllypuro-ReuhariPerhepaivahoito.xml</record>
-    </record> 
-    <record jsxid="13" type="map">
-      <record jsxid="id" type="string">propsMyllypuro-ReuhariAvoinVarhaiskasvatus_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsMyllypuro-ReuhariAvoinVarhaiskasvatus.xml</record>
-    </record> 
-    <record jsxid="14" type="map">
-      <record jsxid="id" type="string">propsHaihara_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsHaihara.xml</record>
+      <record jsxid="src" type="string">jss/propsPerhepaivahoito.xml</record>
     </record>
-    <record jsxid="15" type="map">
-      <record jsxid="id" type="string">propsHaiharaPaivakoti_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsHaiharaPaivakoti.xml</record>
-    </record>    
-    <record jsxid="16" type="map">
-      <record jsxid="id" type="string">propsHaiharaPerhepaivahoito_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsHaiharaPerhepaivahoito.xml</record>
-    </record> 
-    <record jsxid="17" type="map">
-      <record jsxid="id" type="string">propsKanjoninrotko-Etela-Hervanta_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsKanjoninrotko-Etela-Hervanta.xml</record>
-    </record>
-    <record jsxid="18" type="map">
-      <record jsxid="id" type="string">propsKanjoninrotko-Etela-HervantaPaivakoti_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsKanjoninrotko-Etela-HervantaPaivakoti.xml</record>
-    </record>    
-    <record jsxid="19" type="map">
-      <record jsxid="id" type="string">propsKanjoninrotko-Etela-HervantaPerhepaivahoito_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsKanjoninrotko-Etela-HervantaPerhepaivahoito.xml</record>
-    </record> 
-   <record jsxid="20" type="map">
-      <record jsxid="id" type="string">propsKanjoninrotko-Etela-HervantaAvoinVarhaiskasvatus_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsKanjoninrotko-Etela-HervantaAvoinVarhaiskasvatus.xml</record>
-    </record> 
-    <record jsxid="21" type="map">
-      <record jsxid="id" type="string">propsKoivisto-Hallila_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsKoivisto-Hallila.xml</record>
-    </record>
-    <record jsxid="22" type="map">
-      <record jsxid="id" type="string">propsKoivisto-HallilaPaivakoti_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsKoivisto-HallilaPaivakoti.xml</record>
-    </record>    
-    <record jsxid="23" type="map">
-      <record jsxid="id" type="string">propsKoivisto-HallilaAvoinVarhaiskasvatus_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsKoivisto-HallilaAvoinVarhaiskasvatus.xml</record>
-    </record> 
-    <record jsxid="24" type="map">
-      <record jsxid="id" type="string">propsMessu_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsMessu.xml</record>
-    </record> 
-    <record jsxid="25" type="map">
-      <record jsxid="id" type="string">propsMessuPaivakoti_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsMessuPaivakoti.xml</record>
-    </record> 
-    <record jsxid="26" type="map">
-      <record jsxid="id" type="string">propsMessuAvoinVarhaiskasvatus_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsMessuAvoinVarhaiskasvatus.xml</record>
-    </record> 
-    <record jsxid="27" type="map">
-      <record jsxid="id" type="string">propsMessuPerhepaivahoito_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsMessuPerhepaivahoito.xml</record>
-    </record>
-     <record jsxid="28" type="map">
-      <record jsxid="id" type="string">propsRahola-Pyynikki_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRahola-Pyynikki.xml</record>
-    </record> 
-    <record jsxid="29" type="map">
-      <record jsxid="id" type="string">propsRahola-PyynikkiPaivakoti_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRahola-PyynikkiPaivakoti.xml</record>
-    </record> 
-    <record jsxid="30" type="map">
-      <record jsxid="id" type="string">propsRahola-PyynikkiAvoinVarhaiskasvatus_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRahola-PyynikkiAvoinVarhaiskasvatus.xml</record>
-    </record> 
-    <record jsxid="31" type="map">
-      <record jsxid="id" type="string">propsRahola-PyynikkiPerhepaivahoito_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRahola-PyynikkiPerhepaivahoito.xml</record>
-    </record> 
-    <record jsxid="32" type="map">
-      <record jsxid="id" type="string">propsRantakallio_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRantakallio.xml</record>
-    </record> 
-    <record jsxid="33" type="map">
-      <record jsxid="id" type="string">propsRantakallioAvoinVarhaiskasvatus_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRantakallioAvoinVarhaiskasvatus.xml</record>
-    </record> 
-    <record jsxid="34" type="map">
-      <record jsxid="id" type="string">propsRantakallioPaivakoti_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRantakallioPaivakoti.xml</record>
-    </record> 
-    <record jsxid="35" type="map">
-      <record jsxid="id" type="string">propsRantakallioPerhepaivahoito_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRantakallioPerhepaivahoito.xml</record>
-    </record> 
-    <record jsxid="36" type="map">
-      <record jsxid="id" type="string">propsRustholli_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRustholli.xml</record>
-    </record> 
-    <record jsxid="37" type="map">
-      <record jsxid="id" type="string">propsRustholliAvoinVarhaiskasvatus_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRustholliAvoinVarhaiskasvatus.xml</record>
-    </record> 
-    <record jsxid="38" type="map">
-      <record jsxid="id" type="string">propsRustholliPaivakoti_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRustholliPaivakoti.xml</record>
-    </record> 
-    <record jsxid="39" type="map">
-      <record jsxid="id" type="string">propsRustholliPerhepaivahoito_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsRustholliPerhepaivahoito.xml</record>
-    </record> 
-    <record jsxid="40" type="map">
-      <record jsxid="id" type="string">propsTammela-Kauppi_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsTammela-Kauppi.xml</record>
-    </record> 
-    <record jsxid="41" type="map">
-      <record jsxid="id" type="string">propsTammela-KauppiAvoinVarhaiskasvatus_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsTammela-KauppiAvoinVarhaiskasvatus.xml</record>
-    </record> 
-    <record jsxid="42" type="map">
-      <record jsxid="id" type="string">propsTammela-KauppiPaivakoti_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsTammela-KauppiPaivakoti.xml</record>
-    </record> 
-    <record jsxid="43" type="map">
-      <record jsxid="id" type="string">propsTammela-KauppiPerhepaivahoito_xml</record>
-      <record jsxid="type" type="string">xml</record>
-      <record jsxid="load" type="number">1</record>
-      <record jsxid="src" type="string">jss/propsTammela-KauppiPerhepaivahoito.xml</record>
-    </record> 
+    
   </record>
   <record jsxid="addins" type="array">
     <record jsxid="0" type="string">intalioajax-addins</record>

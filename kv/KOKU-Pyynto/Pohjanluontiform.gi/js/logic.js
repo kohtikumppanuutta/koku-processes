@@ -19,7 +19,6 @@ function isNumeric(targetField){
 
 }
 
-
 function checkTimeNotBefore(time, timeNot, errorMsg, type) {
    // alert(dateValue);
    // alert(timeValue);
@@ -380,8 +379,8 @@ function uncheckTheOthers(target, checked) {
 
 function getEndpoint() {
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51x:8080";
     return endpoint;
     
 }
@@ -405,6 +404,10 @@ function getDomainName() {
 }
 
 function intalioPreStart() {
+    if (form1.getCache().getDocument("TextInput-nomap").getFirstChild() == null) {
+        return "Lomakkeelle ei ole lis\xE4tty yht\xE4\xE4n pyynt\xF6\xE4.";
+    }
+        
     //alert(form1.getCache().getDocument("MultipleChoice-nomap"));
     var returnValue = checkTemplateNameAlreadyExisting(form1.getJSXByName("User_Sender").getValue(), form1.getJSXByName("Header_Text").getValue());
     
