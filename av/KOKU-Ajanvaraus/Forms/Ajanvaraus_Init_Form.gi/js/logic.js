@@ -543,26 +543,27 @@ function getRecipients(formData, list) {
 
     while (recipNodes.hasNext()) {
         node = recipNodes.next();
-        if (!node.getFirstChild()) {
-            break;
-        }
-        recipients[i] = [];
-        recipients[i][j] = "";
-        childNode = node.getFirstChild();
-        while (childNode != null && childNode.getNodeName() == list[0]) {
-            if (!firstRow) {
-                recipients[i][j] += ", ";
+        if (node.getFirstChild()) {
+            recipients[i] = [];
+            recipients[i][j] = "";
+            childNode = node.getFirstChild();
+            while (childNode) {
+                if (childNode.getNodeName() == list[0]) {
+                    if (!firstRow) {
+                        recipients[i][0] += ", ";
+                    }
+                    recipients[i][0] += childNode.getValue();
+                    firstRow = false;
+                } else if (childNode.getNodeName() == list[1]) {
+                    recipients[i][1] = childNode.getValue();
+                }
+                childNode = childNode.getNextSibling();
+                j++;
             }
-            recipients[i][j] += childNode.getValue();
-            childNode = childNode.getNextSibling();
-            firstRow = false;
+            firstRow = true;
+            j=0;
+            i++;
         }
-        j++;
-        if (childNode != null && childNode.getNodeName() == list[1]) {
-            recipients[i][j] = childNode.getValue();
-        }
-        j=0;
-        i++;
     }
 
     return recipients;
@@ -599,7 +600,7 @@ function mapRecipients(objXML) {
     list = ["receipients", "targetPerson"];
     recipients = getRecipients(objXML, list);
     hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
-    
+
     recipientsNames = "";
     recipientsUid = "";
 
@@ -616,6 +617,7 @@ function mapRecipients(objXML) {
         node.setAttribute("recipientsUid", recipients[i][0]);
         node.setAttribute("uid", recipients[i][1]);
         AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+        recipientsNames = "";
     }
     if (hasEmptyChild) {
         AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").removeChild(AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild());
@@ -713,12 +715,39 @@ function setModeModify() {
 
 // Functions related to recipients mapping -------------------------------------------------------------------------------------------------------
 
+function switchSearchMode(mode) {
+
+    if (mode == "groups") {
+        AjanvarausForm.getJSXByName("Haku_Lapset").setDisplay("none", true);
+        AjanvarausForm.getJSXByName("Haku_Ryhmat").setDisplay("block", true);
+
+        AjanvarausForm.getJSXByName("HaeKayttajia_Checkbox1").setChecked(0, true);
+        AjanvarausForm.getJSXByName("HaeRyhmia_Checkbox1").setChecked(1, true);
+        AjanvarausForm.getJSXByName("HaeKayttajia_Checkbox2").setChecked(0, true);
+        AjanvarausForm.getJSXByName("HaeRyhmia_Checkbox2").setChecked(1, true);
+
+    }
+
+    if (mode == "users") {
+        AjanvarausForm.getJSXByName("Haku_Lapset").setDisplay("block", true);
+        AjanvarausForm.getJSXByName("Haku_Ryhmat").setDisplay("none", true);
+
+        AjanvarausForm.getJSXByName("HaeKayttajia_Checkbox1").setChecked(1, true);
+        AjanvarausForm.getJSXByName("HaeRyhmia_Checkbox1").setChecked(0, true);
+        AjanvarausForm.getJSXByName("HaeKayttajia_Checkbox2").setChecked(1, true);
+        AjanvarausForm.getJSXByName("HaeRyhmia_Checkbox2").setChecked(0, true);
+    }
+
+}
+
 /**
  * inserts selected users to real matrix that values can be later used in Intalio process.
  *
  */
 function mapSelectedRecipientsToMatrix() {
     var node, childNode, hasEmptyChild, counter, recipients, targetPerson, childIterator;
+    
+    //alert("hop");
 
     clearDataCache("Recipients-nomap");
 
@@ -727,20 +756,66 @@ function mapSelectedRecipientsToMatrix() {
     childIterator = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
 
     hasEmptyChild = formatDataCache("Recipients-nomap", "Recipients");
+    list = ["uid"];
 
     while (childIterator.hasNext()) {
         childNode = childIterator.next();
+        
+        group = childNode.getAttribute("group");
+
+        if (group != 0) {
+
+            groupUid = childNode.getAttribute("recipientsUid");
+
+            xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
+
+            userData = parseXML(xmlData, "user", list);
+
+            for (i = 0; i < userData.length; i++) {
+                uid = userData[i];
+
+                try {
+
+                    childInfo = Arcusys.Internal.Communication.getChildInfo(uid);
+                    
+                    parentsNodes = childInfo.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+        
+                    parentData = [];
+                    parentInfo = [];
+                    parents = [];
+
+                    j = 0;
+                    while (parentsNodes.get(j)) {
+                        parents[j] = parentsNodes.get(j);
+                        parentData[j] = parseXML(parents[j], "parents", list);
+                        parentInfo[j] = parentData[j];
+                        j++;
+                    }
+
+                } catch (e) {
+                    alert(e);
+                }
+
+                for (j = 0; j < parentInfo[0].length; j++) {
+                    node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
+                    node.setAttribute("Recipients_TargetPerson", uid);
+                    node.setAttribute("Recipients_Recipient", parentInfo[0][j]);
+                    AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
+                }
+
+            }
+        } else {
 
         recipients = childNode.getAttribute("recipientsUid").split(',');
         targetPerson = childNode.getAttribute("uid");
         for (i = 0; i < recipients.length; i++) {
             node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
 
-            node.setAttribute("jsxid", counter);
             node.setAttribute("Recipients_Recipient", recipients[i]);
             node.setAttribute("Recipients_TargetPerson", targetPerson);
             AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
-            counter++;
+        }
+        
         }
     }
 
@@ -822,6 +897,121 @@ function searchNames(searchString) {
     AjanvarausForm.getJSXByName("searchChildMatrix").repaintData();
 }
 
+function searchGroup(searchString) {
+
+    var entryFound, node, i, hasEmptyChild, splits, list, xmlData, groupData;
+
+    if (searchString == "") {
+        alert("Syota hakusana");
+        return;
+    }
+
+    searchString = searchString.toLowerCase();
+    entryFound = false;
+
+    if (AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getFirstChild() != null) {
+        AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").removeChildren();
+        AjanvarausForm.getJSXByName("searchGroupMatrix").repaintData();
+
+    }
+
+    hasEmptyChild = false;
+
+    xmlData = Arcusys.Internal.Communication.GetGroups(searchString);
+
+    list = ["groupName", "groupUid"];
+    groupData = parseXML(xmlData, "group", list);
+
+    if (AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getFirstChild() == null) {
+        AjanvarausForm.getJSXByName("searchGroupMatrix").commitAutoRowSession();
+        hasEmptyChild = true;
+
+    }
+
+    for (i = 0; i < groupData.length; i++) {
+
+        splits = groupData[i].split(",");
+
+        entryFound = true;
+
+        node = AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getFirstChild().cloneNode();
+
+        node.setAttribute("jsxid", i);
+        node.setAttribute("nimi", splits[0]);
+        node.setAttribute("uid", splits[1]);
+
+        AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").insertBefore(node);
+
+    }
+
+    if (hasEmptyChild == true) {
+        AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").removeChild(AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getFirstChild());
+    }
+    AjanvarausForm.getJSXByName("searchGroupMatrix").repaintData();
+
+    if (entryFound == false) {
+        alert ("Valitettavasti antamallasi hakusanalla ei l\xF6ytynyt tuloksia");
+    }
+}
+
+function listGroupUsers() {
+
+    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData;
+
+    if (AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
+        AjanvarausForm.getCache().getDocument("GroupUserList-nomap").removeChildren();
+        AjanvarausForm.getJSXByName("listGroupUsersMatrix").repaintData();
+    }
+
+    hasEmptyChild = false;
+
+    if (AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild() == null) {
+        AjanvarausForm.getJSXByName("listGroupUsersMatrix").commitAutoRowSession();
+        hasEmptyChild = true;
+
+    }
+
+    childIterator = AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getChildIterator();
+
+    while (childIterator.hasNext()) {
+        //node = AjanvarausForm.getCache().getDocument("receipients-nomap").getFirstChild().cloneNode();
+
+        childNode = childIterator.next();
+        selected = childNode.getAttribute("valittu");
+
+        if ((selected != 0) && (selected != null)) {
+            groupUid = childNode.getAttribute("uid");
+
+            xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
+
+            list = ["firstname", "lastname", "phoneNumber", "email"];
+            userData = parseXML(xmlData, "user", list);
+
+            for (i = 0; i < userData.length; i++) {
+                personInfo = userData[i].split(',');
+
+                node = AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
+
+                node.setAttribute("jsxid", i);
+                node.setAttribute("etunimi", personInfo[0]);
+                node.setAttribute("sukunimi", personInfo[1]);
+                node.setAttribute("puhelin", personInfo[2]);
+                node.setAttribute("sahkoposti", personInfo[3]);
+                node.setAttribute("valittu", 0);
+                AjanvarausForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
+
+            }
+        }
+
+    }
+
+    if (hasEmptyChild == true) {
+        AjanvarausForm.getCache().getDocument("GroupUserList-nomap").removeChild(AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild());
+    }
+    AjanvarausForm.getJSXByName("listGroupUsersMatrix").repaintData();
+
+}
+
 function addToRecipients() {
     var counter, node, hasEmptyChild, chosen, childIterator, uid, targetPerson, firstname, lastname, vanhempi1, vanhempi2, vanhempi1Uid, vanhempi2Uid, childNode;
 
@@ -865,6 +1055,48 @@ function addToRecipients() {
     AjanvarausForm.getJSXByName("dummyMatrix").repaintData();
     AjanvarausForm.getJSXByName("recipientCounter").setValue(counter);
 }
+
+function addGroupsToRecipients() {
+    var counter, node, hasEmptyChild, valittu, childIterator, groupUid, childNode, groupname;
+    counter = AjanvarausForm.getJSXByName("recipientCounter").getValue();
+    hasEmptyChild = false;
+
+    childIterator = AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getChildIterator();
+    if (AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild() == null) {
+        AjanvarausForm.getJSXByName("dummyMatrix").commitAutoRowSession();
+        hasEmptyChild = true;
+    }
+
+    while (childIterator.hasNext()) {
+        childNode = childIterator.next();
+
+        valittu = childNode.getAttribute("valittu");
+        groupUid = childNode.getAttribute("uid");
+
+        if ((valittu != null) && (valittu != 0)) {
+
+            node = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
+
+            groupname = childNode.getAttribute("nimi");
+            node.setAttribute("jsxid", counter);
+            node.setAttribute("recipients", groupname);
+            node.setAttribute("recipientsUid", groupUid);
+            node.setAttribute("group", 1);
+            AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+            counter++;
+
+        }
+
+    }
+    if (hasEmptyChild == true) {
+        AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").removeChild(AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild());
+    }
+
+    AjanvarausForm.getJSXByName("dummyMatrix").repaintData();
+    AjanvarausForm.getJSXByName("recipientCounter").setValue(counter);
+
+}
+
 
 /**
  * Parses given xml data.
@@ -1024,6 +1256,108 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
     };
 });
 
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.getChildInfo = function(id) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+
+        tout = 1000;
+        limit = 100;
+
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo><childUid>" + id + "</childUid></soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
+        url = getUrl();
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydessa");
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetGroups = function(searchString) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+
+        tout = 1000;
+        limit = 100;
+
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchGroups><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchGroups></soapenv:Body></soapenv:Envelope>";
+
+        url = getUrl();
+
+        // ARCUSYS INTRA PROXY
+        //url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
+
+        // IXONOS DEMO PROXY
+        //url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
+
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetGroupUsers = function(groupUid) {
+
+        var tout, msg, endpoint, url, req, objXML;
+
+        tout = 1000;
+
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUsersByGroupUid><groupUid>" + groupUid + "</groupUid></soa:getUsersByGroupUid></soapenv:Body></soapenv:Envelope>";
+        url = getUrl();
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
+
 // Extra Functions -------------------------------------------------------------------------------------------------------------------------------
 
 //Getting the domain name and port if available
@@ -1043,8 +1377,8 @@ function getDomainName() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }
