@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        version="2.0" xmlns:fe="http://www.arcusys.fi/KOKU/Ajanvaraus">
+        version="1.0" xmlns:fe="http://www.arcusys.fi/KOKU/Ajanvaraus">
         <xsl:output method="xml" indent="yes" />
 
 	<xsl:template match="@* | node()">
@@ -8,6 +8,21 @@
 			<xsl:apply-templates select="@* | node()"/>
 		</xsl:copy>
 	</xsl:template>
+	
+	<xsl:template name="output-tokens">
+    		<xsl:param name="list" />
+        	<!-- <xsl:variable name="newlist" select="concat(normalize-space($list), ',')" /> -->
+        	<xsl:variable name="first" select="substring-before($list, ',')" />
+        	<xsl:variable name="remaining" select="substring-after($list, ',')" />
+        	<xsl:element name="receipients">
+        		<xsl:value-of select="$first" />
+        	</xsl:element>
+        	<xsl:if test="$remaining">
+        		<xsl:call-template name="output-tokens">
+       		 		<xsl:with-param name="list" select="$remaining" />
+        		</xsl:call-template>
+        	</xsl:if>
+        </xsl:template>
 
         <xsl:template match="fe:Ajanvaraus_Form">
 			<xsl:copy>
@@ -16,8 +31,23 @@
                                 <xsl:value-of select="//fe:User_Sender/text()" />
                         </xsl:element>
                         
-                        <xsl:for-each select="//fe:Recipients">
+					<xsl:for-each select="//fe:Recipients">
                         	<xsl:element name="receipients">
+                        		<xsl:call-template name="output-tokens">
+                        			<xsl:with-param name="list">
+                        				<xsl:value-of select="concat(fe:Recipients_Recipient/text(), ',')" />
+                        			</xsl:with-param>
+                        		</xsl:call-template>
+                        		<xsl:element name="targetPerson">
+                        			<xsl:value-of select="fe:Recipients_TargetPerson/text()" />
+                        		</xsl:element>
+                        	</xsl:element>
+                        </xsl:for-each>
+                        
+                        <!--
+                        <xsl:for-each select="//fe:Recipients">
+                        	<xsl:if test = "Recipients_TargetPerson/text() != $tp" >
+                        		<xsl:element name="receipients">
                         
                         		<xsl:element name="receipients">
                             		<xsl:value-of select="fe:Recipients_Recipient/text()"/>
@@ -26,9 +56,14 @@
                         		<xsl:element name="targetPerson">            
                 					<xsl:value-of select="fe:Recipients_TargetPerson/text()"/>
                 				</xsl:element>
-                			  
-                			</xsl:element>
+                				
+                				<xsl:variable name="tp" select="fe:Recipients_TargetPerson/text()"/> 
+                				</xsl:element>
+                			</xsl:if>
+
                 		</xsl:for-each>
+                		
+                		-->
                          
                         <xsl:element name="subject">        
                                 <xsl:value-of select="//fe:Header_Text/text()" />
@@ -65,4 +100,3 @@
 			</xsl:copy>
    	</xsl:template>
 </xsl:stylesheet>
-

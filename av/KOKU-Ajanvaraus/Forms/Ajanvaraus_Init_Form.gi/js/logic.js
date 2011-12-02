@@ -745,7 +745,7 @@ function switchSearchMode(mode) {
  *
  */
 function mapSelectedRecipientsToMatrix() {
-    var node, childNode, hasEmptyChild, counter, recipients, targetPerson, childIterator;
+    var node, childNode, hasEmptyChild, counter, recipients, targetPerson, childIterator, i=0;
     
     //alert("hop");
 
@@ -774,47 +774,41 @@ function mapSelectedRecipientsToMatrix() {
             for (i = 0; i < userData.length; i++) {
                 uid = userData[i];
 
-                try {
-
-                    childInfo = Arcusys.Internal.Communication.getChildInfo(uid);
-                    
-                    parentsNodes = childInfo.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+                childInfo = Arcusys.Internal.Communication.getChildInfo(uid);
+                   
+                parentsNodes = childInfo.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
         
-                    parentData = [];
-                    parentInfo = [];
-                    parents = [];
+                parentData = [];
+                parentInfo = [];
+                parents = [];
 
-                    j = 0;
-                    while (parentsNodes.get(j)) {
-                        parents[j] = parentsNodes.get(j);
-                        parentData[j] = parseXML(parents[j], "parents", list);
-                        parentInfo[j] = parentData[j];
-                        j++;
+                j = 0;
+
+                while (parentsNodes.get(j)) {
+                    parents[j] = parentsNodes.get(j);
+                    parentData[j] = parseXML(parents[j], "parents", list);
+                    if (j == 0) {
+                        parentInfo[j] = "";
+                    } else {
+                        parentInfo[j] += ',';
                     }
-
-                } catch (e) {
-                    alert(e);
+                    parentInfo[j] += parentData[j];
+                    j++;
                 }
-
-                for (j = 0; j < parentInfo[0].length; j++) {
-                    node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
-                    node.setAttribute("Recipients_TargetPerson", uid);
-                    node.setAttribute("Recipients_Recipient", parentInfo[0][j]);
-                    AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
-                }
-
+                    
+                node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
+                node.setAttribute("Recipients_TargetPerson", uid);
+                node.setAttribute("Recipients_Recipient", parentInfo[0]);
+                AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
             }
         } else {
 
-        recipients = childNode.getAttribute("recipientsUid").split(',');
+        recipients = childNode.getAttribute("recipientsUid");
         targetPerson = childNode.getAttribute("uid");
-        for (i = 0; i < recipients.length; i++) {
-            node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
-
-            node.setAttribute("Recipients_Recipient", recipients[i]);
-            node.setAttribute("Recipients_TargetPerson", targetPerson);
-            AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
-        }
+        node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
+        node.setAttribute("Recipients_Recipient", recipients);
+        node.setAttribute("Recipients_TargetPerson", targetPerson);
+        AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
         
         }
     }
@@ -1295,15 +1289,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         limit = 100;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchGroups><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchGroups></soapenv:Body></soapenv:Envelope>";
-
-        url = getUrl();
-
-        // ARCUSYS INTRA PROXY
-        //url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";
-
-        // IXONOS DEMO PROXY
-        //url = "http://62.61.65.16:8380/palvelut-portlet/ajaxforms//WsProxyServlet2";
-
+        url = getUrl()
         endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
@@ -1363,6 +1349,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 //Getting the domain name and port if available
 function getUrl() {
     var domain = getDomainName();
+    //domain = "http://62.61.65.15:8380";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }

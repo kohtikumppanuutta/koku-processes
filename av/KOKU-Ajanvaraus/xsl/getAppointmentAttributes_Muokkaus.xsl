@@ -21,17 +21,16 @@
                         
                       <xsl:for-each select="//fe:Recipients">
                         	<xsl:element name="receipients">
-                        
-                        		<xsl:element name="receipients">
-                            		<xsl:value-of select="fe:Recipients_Recipient/text()"/>
+                        		<xsl:call-template name="output-tokens">
+                        			<xsl:with-param name="list">
+                        				<xsl:value-of select="concat(fe:Recipients_Recipient/text(), ',')" />
+                        			</xsl:with-param>
+                        		</xsl:call-template>
+                        		<xsl:element name="targetPerson">
+                        			<xsl:value-of select="fe:Recipients_TargetPerson/text()" />
                         		</xsl:element>
-                        
-                        		<xsl:element name="targetPerson">            
-                					<xsl:value-of select="fe:Recipients_TargetPerson/text()"/>
-                				</xsl:element>
-                			  
-                			</xsl:element>
-                		</xsl:for-each>
+                        	</xsl:element>
+                        </xsl:for-each>
                          
                         <xsl:element name="subject">        
                                 <xsl:value-of select="//fe:Header_Text/text()" />
