@@ -597,8 +597,6 @@ function getAttributes(formData) {
 function mapRecipients(objXML) {
     var recipients, recipientsArray, hasEmptyChild, i, node, list;
     
-    alert(objXML);
-    
     list = ["receipients", "targetPerson"];
     recipients = getRecipients(objXML, list);
     hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
@@ -618,6 +616,7 @@ function mapRecipients(objXML) {
         node.setAttribute("recipients", recipientsNames);
         node.setAttribute("recipientsUid", recipients[i][0]);
         node.setAttribute("uid", recipients[i][1]);
+        node.setAttribute("group", 0);
         AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
         recipientsNames = "";
     }
@@ -1364,8 +1363,8 @@ function getDomainName() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }

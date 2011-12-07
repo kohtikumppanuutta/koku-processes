@@ -8,6 +8,21 @@
 			<xsl:apply-templates select="@* | node()"/>
 		</xsl:copy>
 	</xsl:template>
+	
+	<xsl:template name="output-tokens">
+    		<xsl:param name="list" />
+        	<!-- <xsl:variable name="newlist" select="concat(normalize-space($list), ',')" /> -->
+        	<xsl:variable name="first" select="substring-before($list, ',')" />
+        	<xsl:variable name="remaining" select="substring-after($list, ',')" />
+        	<xsl:element name="receipients">
+        		<xsl:value-of select="$first" />
+        	</xsl:element>
+        	<xsl:if test="$remaining">
+        		<xsl:call-template name="output-tokens">
+       		 		<xsl:with-param name="list" select="$remaining" />
+        		</xsl:call-template>
+        	</xsl:if>
+        </xsl:template>
 
         <xsl:template match="fe:Ajanvaraus_Form">
 			<xsl:copy>
