@@ -1,11 +1,3 @@
-/* fieldset */
-fieldset {
-  /*margin: 15px 5x;*/
-  margin: 0 0 25 5;
-  border: 1px solid #da251d;
-  width: 600px;
-} 
-
 .fieldset .fieldset-padding .jsx30block {
     width: 570px !important;
 }
@@ -19,22 +11,23 @@ div.jsx30block span.fieldset fieldset.fieldset {
 }
 
 div[label=IntalioInternal_SpacerBlock] {
-    display: inline !important;
     width: 620px !important;
-}
-
-.fieldset .fieldset-padding .jsx30block span[label=tooltipImg] {
-    width: 30px !important;
-}
-
-span[label=IntalioInternal_SaveButton], 
-span[label=IntalioInternal_ClaimButton], 
-span[label=IntalioInternal_RevokeButton] {
-    display: none !important;
 }
 
 div.fieldset, span.fieldset {
   width: 100%;
+}
+
+.fieldset .fieldset-padding .jsx30block span[label="tooltipImg"] {
+    width: 30px !important;
+}
+
+/* fieldset */
+fieldset {
+  /*margin: 15px 5x;*/
+  margin: 0 0 25 5;
+  border: 1px solid #da251d;
+  width: 820px;
 }
 
 #_jsx_0_1{

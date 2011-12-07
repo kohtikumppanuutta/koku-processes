@@ -14,12 +14,6 @@ div[label=IntalioInternal_SpacerBlock] {
     width: 620px !important;
 }
 
-span[label=IntalioInternal_SaveButton], 
-span[label=IntalioInternal_ClaimButton], 
-span[label=IntalioInternal_RevokeButton], {
-    display: none !important;
-}
-
 div.fieldset, span.fieldset {
   width: 100%;
 }
