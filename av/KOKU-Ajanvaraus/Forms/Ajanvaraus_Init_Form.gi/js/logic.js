@@ -597,6 +597,8 @@ function getAttributes(formData) {
 function mapRecipients(objXML) {
     var recipients, recipientsArray, hasEmptyChild, i, node, list;
     
+    alert(objXML);
+    
     list = ["receipients", "targetPerson"];
     recipients = getRecipients(objXML, list);
     hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
@@ -747,8 +749,6 @@ function switchSearchMode(mode) {
 function mapSelectedRecipientsToMatrix() {
     var node, childNode, hasEmptyChild, counter, recipients, targetPerson, childIterator, i=0;
     
-    //alert("hop");
-
     clearDataCache("Recipients-nomap");
 
     counter = 1;
@@ -1364,8 +1364,8 @@ function getDomainName() {
 function getEndpoint() {
     var endpoint;
 
-    //endpoint = "http://trelx51lb:8080";
-    endpoint = "http://localhost:8180";
+    endpoint = "http://trelx51lb:8080";
+    //endpoint = "http://localhost:8180";
     
     return endpoint;
 }
