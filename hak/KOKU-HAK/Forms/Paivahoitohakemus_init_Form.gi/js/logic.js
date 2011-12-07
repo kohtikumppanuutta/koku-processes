@@ -2,18 +2,32 @@
 function intalioPreStart() {
     Paivahoitohakemus_Form.getJSXByName("Lapsi_ValittuDisplay").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getText()).repaint();
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getValue()).repaint();
-    
 }
 
 function getEndpoint() {
     
     //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
+    var endpoint = "http://trelx51lb:8080";
     return endpoint;
     
 }
 
-
+function setParentData() {
+    var username, uid, userdata;
+    
+    /*username = Intalio.Internal.Utilities.getUser();
+    username = username.substring((username.indexOf("/")+1));
+    alert("username: " + username);*/
+    username = "kalle.kuntalainen";
+    
+    uid = Arcusys.Internal.Communication.GetUserUidByUsername(username);
+    alert("uid: " + uid);
+    
+    alert(uid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue());
+    userdata = Arcusys.Internal.Communication.GetUserInfo(uid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue());
+    alert(userdata);
+    
+}
 
 //Getting the domain name and port if available
 function getUrl() {
@@ -846,12 +860,13 @@ Intalio.Internal.Utilities.GET_TASK_SUCCESS, prepareForm);
 
 function prepareForm() {
    // alert("prepareForm");
-   // var username = Intalio.Internal.Utilities.getUser();
+   var username = Intalio.Internal.Utilities.getUser();
     
     // form1.getJSXByName("User_Sender").setValue(Intalio.Internal.Utilities.getUser()).repaint();
     
-    var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));
+    //var username = Intalio.Internal.Utilities.getUser();
+   username = username.substring((username.indexOf("/")+1));
+    //setParentData();
     //var username = "kirsi.kuntalainen";
     //alert(username);
 
@@ -941,6 +956,50 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var searchString = "";
 
         var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUsersChildren><userUid>" + userId + "</userUid></soa:getUsersChildren></soapenv:Body></soapenv:Envelope>";
+       
+        var url = getUrl();
+        
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
+        var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";*/
+
+
+        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);      
+    
+        //req.setRequestHeader("Content-Type","text/xml");
+
+        //req.setRequestHeader("SOAPAction","");
+        
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.send(msg, tout);
+       var objXML = req.getResponseXML();
+       // alert(req.getStatus());
+        
+       // var objXML = req.getResponseXML();
+       // alert("DEBUG - SERVER RESPONSE:" + objXML);
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserInfo= function(userId) {
+        
+        var tout = 1000;   
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + userId + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
        
         var url = getUrl();
         
