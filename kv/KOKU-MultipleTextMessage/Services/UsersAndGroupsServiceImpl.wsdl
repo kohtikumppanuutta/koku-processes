@@ -1,4 +1,4 @@
-<definitions name="UsersAndGroupsService" targetNamespace="http://soa.common.koku.arcusys.fi/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.common.koku.arcusys.fi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <definitions name="UsersAndGroupsService" targetNamespace="http://soa.common.koku.arcusys.fi/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.common.koku.arcusys.fi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  <types>
   <xs:schema targetNamespace="http://soa.common.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.common.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
    <xs:element name="getChildInfo" type="tns:getChildInfo"/>
