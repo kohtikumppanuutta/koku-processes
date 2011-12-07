@@ -30,7 +30,7 @@
 					<p><xsl:value-of select="ka:TextInput_Question/text()"/></p>
 					
 					</xsl:for-each>
-					<p><a href="javascript:void(0)" onclick="kokuRedirectToRecievedRequests()">Klikkaa tästä siirtyäksesi pyyntöihin</a> </p>
+					<p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a> </p>
 					</div>
 				</div>
 
