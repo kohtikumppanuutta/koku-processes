@@ -15,27 +15,16 @@ function intalioPreStart() {
 /* checks for error before sending form to processing
 */
 function checkSuostumukset() {
-    var error;
-
-    if (TIVAForm.getJSXByName("block").getFirstChild() == null) {
-        error = "Lomakkeelle ei ole valittu suostumuspohjaa!";
+   
+    if (TIVAForm.getCache().getDocument("Toimenpiteet-nomap").getFirstChild() == null) {
+       return "Lomakkeelle ei ole valittu suostumuspohjaa!";
     }
-    if (checkRecipients() == false) {
-        error = "Suostumukselta puuttuvat vastaanottajat";
-    } else {
-        error = "";
-    }
-    return error;
-}
-
-function checkRecipients() {
+  
     if (TIVAForm.getCache().getDocument("Vastaanottajat-nomap").getFirstChild() == null) {
-        return false;
-    } else {
-        return true;
-    }
+        return "Suostumukselta puuttuvat vastaanottajat"; 
+    } 
+    return "";
 }
-
 
 // General functions -----------------------------------------------------------------------------------------------------------------------------
 
