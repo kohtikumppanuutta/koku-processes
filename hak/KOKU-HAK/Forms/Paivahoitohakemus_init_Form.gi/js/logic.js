@@ -6,26 +6,9 @@ function intalioPreStart() {
 
 function getEndpoint() {
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51lb:8080";
     return endpoint;
-    
-}
-
-function setParentData() {
-    var username, uid, userdata;
-    
-    /*username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));
-    alert("username: " + username);*/
-    username = "kalle.kuntalainen";
-    
-    uid = Arcusys.Internal.Communication.GetUserUidByUsername(username);
-    alert("uid: " + uid);
-    
-    alert(uid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue());
-    userdata = Arcusys.Internal.Communication.GetUserInfo(uid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue());
-    alert(userdata);
     
 }
 
@@ -57,6 +40,50 @@ function preload()  {
     liisa = new Child("Lapsi","Liisa","121212-1212","Testitie 2","33000","Tampere","Ruotsi");
 }
 */
+
+function setParentData(uid) {
+    var username, uid, userdata;
+    
+    userdata = Arcusys.Internal.Communication.GetUserInfo(uid);
+    
+    firstname = userdata.selectSingleNode("//firstname", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    lastname = userdata.selectSingleNode("//lastname", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    email = userdata.selectSingleNode("//email", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    phoneNumber = userdata.selectSingleNode("//phoneNumber", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    Paivahoitohakemus_Form.getJSXByName("Huoltaja_Etunimi").setValue(firstname).repaint();
+    Paivahoitohakemus_Form.getJSXByName("Huoltaja_Sukunimi").setValue(lastname).repaint();
+    Paivahoitohakemus_Form.getJSXByName("Huoltaja_Sahkopostiosoite").setValue(email).repaint();
+    Paivahoitohakemus_Form.getJSXByName("Huoltaja_Puhelin").setValue(phoneNumber).repaint();
+    
+}
+
+/* This will fetch data according to selected child's parents.
+Problem is that we can't know if a parent belongs to the same household. Not in use. */
+function setParentData2() {
+    var childUid, node, parentArray = [], i = 0, j = 0;
+
+    childUid = Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getValue();
+    //childUid = "6bba3d61-f94f-4195-85b5-b23c839bb641"; // for testing (Kaisa Kuntalainen)
+    childData = Arcusys.Internal.Communication.GetChildInfo(childUid);
+    
+    var parents = childData.selectNodeIterator("//parents", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+    
+    while (parents.hasNext()) {
+        node = parents.next();
+        if (node.getFirstChild()) {
+            childNode = node.getFirstChild();
+            parentArray[i] = [];
+            while (childNode) {
+                if (childNode.getValue()) { 
+                    parentArray[i][j] = childNode.getValue();
+                }
+                childNode = childNode.getNextSibling();
+            }
+            i++;
+            j = 0;
+        }
+    }
+}
 
 function isBlank(value){
     if(value == null){
@@ -866,7 +893,6 @@ function prepareForm() {
     
     //var username = Intalio.Internal.Utilities.getUser();
    username = username.substring((username.indexOf("/")+1));
-    //setParentData();
     //var username = "kirsi.kuntalainen";
     //alert(username);
 
@@ -878,7 +904,9 @@ function prepareForm() {
             //Arcusys.Internal.Communication.GerLDAPUser();
             
             if(userUid != null) {
-                Paivahoitohakemus_Form.getJSXByName("Paatos_Extend02").setValue(userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
+                userUid = userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+                setParentData(userUid);
+                Paivahoitohakemus_Form.getJSXByName("Paatos_Extend02").setValue(userUid).repaint();
             }
         } catch (e) {
             alert(e);
@@ -1000,6 +1028,50 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var searchString = "";
 
         var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + userId + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
+       
+        var url = getUrl();
+        
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
+        var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+        var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";*/
+
+
+        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);      
+    
+        //req.setRequestHeader("Content-Type","text/xml");
+
+        //req.setRequestHeader("SOAPAction","");
+        
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.send(msg, tout);
+       var objXML = req.getResponseXML();
+       // alert(req.getStatus());
+        
+       // var objXML = req.getResponseXML();
+       // alert("DEBUG - SERVER RESPONSE:" + objXML);
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetChildInfo= function(userId) {
+        
+        var tout = 1000;   
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo><childUid>" + userId + "</childUid></soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
        
         var url = getUrl();
         
