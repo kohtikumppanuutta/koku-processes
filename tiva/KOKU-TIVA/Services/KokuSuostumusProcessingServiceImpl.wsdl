@@ -1,396 +1,464 @@
-<definitions name='KokuSuostumusProcessingService' targetNamespace='http://soa.tiva.koku.arcusys.fi/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://soa.tiva.koku.arcusys.fi/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
- <types>
-  <xs:schema targetNamespace='http://soa.tiva.koku.arcusys.fi/' version='1.0' xmlns:tns='http://soa.tiva.koku.arcusys.fi/' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
-   <xs:element name='annaSuostumus' type='tns:annaSuostumus'/>
-   <xs:element name='annaSuostumusResponse' type='tns:annaSuostumusResponse'/>
-   <xs:element name='evaaSuostumus' type='tns:evaaSuostumus'/>
-   <xs:element name='evaaSuostumusResponse' type='tns:evaaSuostumusResponse'/>
-   <xs:element name='getConsentTemplateById' type='tns:getConsentTemplateById'/>
-   <xs:element name='getConsentTemplateByIdResponse' type='tns:getConsentTemplateByIdResponse'/>
-   <xs:element name='getSuostumusForReply' type='tns:getSuostumusForReply'/>
-   <xs:element name='getSuostumusForReplyResponse' type='tns:getSuostumusForReplyResponse'/>
-   <xs:element name='kirjaaSuostumus' type='tns:kirjaaSuostumus'/>
-   <xs:element name='kirjaaSuostumusResponse' type='tns:kirjaaSuostumusResponse'/>
-   <xs:element name='lahetaSuostumus' type='tns:lahetaSuostumus'/>
-   <xs:element name='lahetaSuostumusResponse' type='tns:lahetaSuostumusResponse'/>
-   <xs:element name='luoSuostumuspohja' type='tns:luoSuostumuspohja'/>
-   <xs:element name='luoSuostumuspohjaResponse' type='tns:luoSuostumuspohjaResponse'/>
-   <xs:element name='mitatoiSuostumus' type='tns:mitatoiSuostumus'/>
-   <xs:element name='mitatoiSuostumusResponse' type='tns:mitatoiSuostumusResponse'/>
-   <xs:element name='muokkaaSuostumus' type='tns:muokkaaSuostumus'/>
-   <xs:element name='muokkaaSuostumusResponse' type='tns:muokkaaSuostumusResponse'/>
-   <xs:element name='selaaSuostumuspohjat' type='tns:selaaSuostumuspohjat'/>
-   <xs:element name='selaaSuostumuspohjatResponse' type='tns:selaaSuostumuspohjatResponse'/>
-   <xs:complexType name='luoSuostumuspohja'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='suostumuspohja' type='tns:suostumuspohja'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='suostumuspohja'>
-    <xs:complexContent>
-     <xs:extension base='tns:suostumuspohjaShort'>
-      <xs:sequence>
-       <xs:element minOccurs='0' name='saateteksti' type='xs:string'/>
-       <xs:element minOccurs='0' name='laatija' type='xs:string'/>
-       <xs:element maxOccurs='unbounded' minOccurs='0' name='toimenpiteet' type='tns:toimenpidepyynto'/>
-      </xs:sequence>
-     </xs:extension>
-    </xs:complexContent>
-   </xs:complexType>
-   <xs:complexType name='suostumuspohjaShort'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='suostumuspohjaId' type='xs:long'/>
-     <xs:element minOccurs='0' name='otsikko' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='toimenpidepyynto'>
-    <xs:sequence>
-     <xs:element name='number' type='xs:int'/>
-     <xs:element minOccurs='0' name='name' type='xs:string'/>
-     <xs:element minOccurs='0' name='description' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='luoSuostumuspohjaResponse'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='suostumuspohjaId' type='xs:long'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='selaaSuostumuspohjat'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='searchString' type='xs:string'/>
-     <xs:element name='limit' type='xs:int'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='selaaSuostumuspohjatResponse'>
-    <xs:sequence>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='suostumuspohjat' type='tns:suostumuspohja'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='lahetaSuostumus'>
-    <xs:sequence>
-     <xs:element name='suostumuspohjaId' type='xs:long'/>
-     <xs:element minOccurs='0' name='lahettaja' type='xs:string'/>
-     <xs:element minOccurs='0' name='kohdehenkilo' type='xs:string'/>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='vastaanottaja' type='xs:string'/>
-     <xs:element minOccurs='0' name='antajatyyppi' type='tns:consentReceipientsType'/>
-     <xs:element minOccurs='0' name='replyTillDate' type='xs:anySimpleType'/>
-     <xs:element minOccurs='0' name='maaraaika' type='xs:anySimpleType'/>
-     <xs:element minOccurs='0' name='maaraaikaMandatory' type='xs:boolean'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='lahetaSuostumusResponse'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='suostumusId' type='xs:long'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='annaSuostumus'>
-    <xs:sequence>
-     <xs:element name='suostumusId' type='xs:long'/>
-     <xs:element minOccurs='0' name='suostuja' type='xs:string'/>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='vastaukset' type='tns:toimenpidevastaus'/>
-     <xs:element minOccurs='0' name='maaraaika' type='xs:anySimpleType'/>
-     <xs:element minOccurs='0' name='kommentti' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='toimenpidevastaus'>
-    <xs:sequence>
-     <xs:element name='actionRequestNumber' type='xs:int'/>
-     <xs:element name='permitted' type='xs:boolean'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='annaSuostumusResponse'>
-    <xs:sequence/>
-   </xs:complexType>
-   <xs:complexType name='evaaSuostumus'>
-    <xs:sequence>
-     <xs:element name='suostumusId' type='xs:long'/>
-     <xs:element minOccurs='0' name='suostuja' type='xs:string'/>
-     <xs:element minOccurs='0' name='kommentti' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='evaaSuostumusResponse'>
-    <xs:sequence/>
-   </xs:complexType>
-   <xs:complexType name='muokkaaSuostumus'>
-    <xs:sequence>
-     <xs:element name='suostumusId' type='xs:long'/>
-     <xs:element minOccurs='0' name='suostuja' type='xs:string'/>
-     <xs:element minOccurs='0' name='maaraaika' type='xs:anySimpleType'/>
-     <xs:element minOccurs='0' name='kommentti' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='muokkaaSuostumusResponse'>
-    <xs:sequence/>
-   </xs:complexType>
-   <xs:complexType name='mitatoiSuostumus'>
-    <xs:sequence>
-     <xs:element name='suostumusId' type='xs:long'/>
-     <xs:element minOccurs='0' name='suostuja' type='xs:string'/>
-     <xs:element minOccurs='0' name='kommentti' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='mitatoiSuostumusResponse'>
-    <xs:sequence/>
-   </xs:complexType>
-   <xs:complexType name='getSuostumusForReply'>
-    <xs:sequence>
-     <xs:element name='suostumusId' type='xs:long'/>
-     <xs:element minOccurs='0' name='suostuja' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='getSuostumusForReplyResponse'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='suostumus' type='tns:suostumusForReply'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='suostumusForReply'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='suostumusId' type='xs:long'/>
-     <xs:element name='alreadyReplied' type='xs:boolean'/>
-     <xs:element minOccurs='0' name='suostumuspohja' type='tns:suostumuspohja'/>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='actionReplies' nillable='true' type='tns:toimenpidevastaus'/>
-     <xs:element minOccurs='0' name='vastaanottaja' type='xs:string'/>
-     <xs:element minOccurs='0' name='replyTillDate' type='xs:date'/>
-     <xs:element minOccurs='0' name='maaraaika' type='xs:date'/>
-     <xs:element minOccurs='0' name='endDateMandatory' type='xs:boolean'/>
-     <xs:element minOccurs='0' name='kommentti' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='kirjaaSuostumus'>
-    <xs:sequence>
-     <xs:element name='suostumuspohjaId' type='xs:long'/>
-     <xs:element minOccurs='0' name='lahettaja' type='xs:string'/>
-     <xs:element minOccurs='0' name='suostumustapa' type='xs:string'/>
-     <xs:element minOccurs='0' name='kohdehenkilo' type='xs:string'/>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='vastaanottaja' type='xs:string'/>
-     <xs:element minOccurs='0' name='maaraaika' type='xs:anySimpleType'/>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='vastaukset' type='tns:toimenpidevastaus'/>
-     <xs:element minOccurs='0' name='kommentti' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='kirjaaSuostumusResponse'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='suostumusId' type='xs:long'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='getConsentTemplateById'>
-    <xs:sequence>
-     <xs:element name='pohjaId' type='xs:long'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='getConsentTemplateByIdResponse'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='return' type='tns:suostumuspohja'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:simpleType name='consentReceipientsType'>
-    <xs:restriction base='xs:string'>
-     <xs:enumeration value='Child'/>
-     <xs:enumeration value='AnyParent'/>
-     <xs:enumeration value='BothParents'/>
-    </xs:restriction>
-   </xs:simpleType>
-  </xs:schema>
- </types>
- <message name='KokuSuostumusProcessingService_selaaSuostumuspohjat'>
-  <part element='tns:selaaSuostumuspohjat' name='selaaSuostumuspohjat'></part>
- </message>
- <message name='KokuSuostumusProcessingService_evaaSuostumusResponse'>
-  <part element='tns:evaaSuostumusResponse' name='evaaSuostumusResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_annaSuostumusResponse'>
-  <part element='tns:annaSuostumusResponse' name='annaSuostumusResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_getSuostumusForReply'>
-  <part element='tns:getSuostumusForReply' name='getSuostumusForReply'></part>
- </message>
- <message name='KokuSuostumusProcessingService_mitatoiSuostumusResponse'>
-  <part element='tns:mitatoiSuostumusResponse' name='mitatoiSuostumusResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_lahetaSuostumus'>
-  <part element='tns:lahetaSuostumus' name='lahetaSuostumus'></part>
- </message>
- <message name='KokuSuostumusProcessingService_selaaSuostumuspohjatResponse'>
-  <part element='tns:selaaSuostumuspohjatResponse' name='selaaSuostumuspohjatResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_mitatoiSuostumus'>
-  <part element='tns:mitatoiSuostumus' name='mitatoiSuostumus'></part>
- </message>
- <message name='KokuSuostumusProcessingService_annaSuostumus'>
-  <part element='tns:annaSuostumus' name='annaSuostumus'></part>
- </message>
- <message name='KokuSuostumusProcessingService_getConsentTemplateByIdResponse'>
-  <part element='tns:getConsentTemplateByIdResponse' name='getConsentTemplateByIdResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_kirjaaSuostumus'>
-  <part element='tns:kirjaaSuostumus' name='kirjaaSuostumus'></part>
- </message>
- <message name='KokuSuostumusProcessingService_muokkaaSuostumusResponse'>
-  <part element='tns:muokkaaSuostumusResponse' name='muokkaaSuostumusResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_evaaSuostumus'>
-  <part element='tns:evaaSuostumus' name='evaaSuostumus'></part>
- </message>
- <message name='KokuSuostumusProcessingService_kirjaaSuostumusResponse'>
-  <part element='tns:kirjaaSuostumusResponse' name='kirjaaSuostumusResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_luoSuostumuspohja'>
-  <part element='tns:luoSuostumuspohja' name='luoSuostumuspohja'></part>
- </message>
- <message name='KokuSuostumusProcessingService_muokkaaSuostumus'>
-  <part element='tns:muokkaaSuostumus' name='muokkaaSuostumus'></part>
- </message>
- <message name='KokuSuostumusProcessingService_getConsentTemplateById'>
-  <part element='tns:getConsentTemplateById' name='getConsentTemplateById'></part>
- </message>
- <message name='KokuSuostumusProcessingService_luoSuostumuspohjaResponse'>
-  <part element='tns:luoSuostumuspohjaResponse' name='luoSuostumuspohjaResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_getSuostumusForReplyResponse'>
-  <part element='tns:getSuostumusForReplyResponse' name='getSuostumusForReplyResponse'></part>
- </message>
- <message name='KokuSuostumusProcessingService_lahetaSuostumusResponse'>
-  <part element='tns:lahetaSuostumusResponse' name='lahetaSuostumusResponse'></part>
- </message>
- <portType name='KokuSuostumusProcessingService'>
-  <operation name='annaSuostumus' parameterOrder='annaSuostumus'>
-   <input message='tns:KokuSuostumusProcessingService_annaSuostumus'></input>
-   <output message='tns:KokuSuostumusProcessingService_annaSuostumusResponse'></output>
-  </operation>
-  <operation name='evaaSuostumus' parameterOrder='evaaSuostumus'>
-   <input message='tns:KokuSuostumusProcessingService_evaaSuostumus'></input>
-   <output message='tns:KokuSuostumusProcessingService_evaaSuostumusResponse'></output>
-  </operation>
-  <operation name='getConsentTemplateById' parameterOrder='getConsentTemplateById'>
-   <input message='tns:KokuSuostumusProcessingService_getConsentTemplateById'></input>
-   <output message='tns:KokuSuostumusProcessingService_getConsentTemplateByIdResponse'></output>
-  </operation>
-  <operation name='getSuostumusForReply' parameterOrder='getSuostumusForReply'>
-   <input message='tns:KokuSuostumusProcessingService_getSuostumusForReply'></input>
-   <output message='tns:KokuSuostumusProcessingService_getSuostumusForReplyResponse'></output>
-  </operation>
-  <operation name='kirjaaSuostumus' parameterOrder='kirjaaSuostumus'>
-   <input message='tns:KokuSuostumusProcessingService_kirjaaSuostumus'></input>
-   <output message='tns:KokuSuostumusProcessingService_kirjaaSuostumusResponse'></output>
-  </operation>
-  <operation name='lahetaSuostumus' parameterOrder='lahetaSuostumus'>
-   <input message='tns:KokuSuostumusProcessingService_lahetaSuostumus'></input>
-   <output message='tns:KokuSuostumusProcessingService_lahetaSuostumusResponse'></output>
-  </operation>
-  <operation name='luoSuostumuspohja' parameterOrder='luoSuostumuspohja'>
-   <input message='tns:KokuSuostumusProcessingService_luoSuostumuspohja'></input>
-   <output message='tns:KokuSuostumusProcessingService_luoSuostumuspohjaResponse'></output>
-  </operation>
-  <operation name='mitatoiSuostumus' parameterOrder='mitatoiSuostumus'>
-   <input message='tns:KokuSuostumusProcessingService_mitatoiSuostumus'></input>
-   <output message='tns:KokuSuostumusProcessingService_mitatoiSuostumusResponse'></output>
-  </operation>
-  <operation name='muokkaaSuostumus' parameterOrder='muokkaaSuostumus'>
-   <input message='tns:KokuSuostumusProcessingService_muokkaaSuostumus'></input>
-   <output message='tns:KokuSuostumusProcessingService_muokkaaSuostumusResponse'></output>
-  </operation>
-  <operation name='selaaSuostumuspohjat' parameterOrder='selaaSuostumuspohjat'>
-   <input message='tns:KokuSuostumusProcessingService_selaaSuostumuspohjat'></input>
-   <output message='tns:KokuSuostumusProcessingService_selaaSuostumuspohjatResponse'></output>
-  </operation>
- </portType>
- <binding name='KokuSuostumusProcessingServiceBinding' type='tns:KokuSuostumusProcessingService'>
-  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
-  <operation name='annaSuostumus'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='evaaSuostumus'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='getConsentTemplateById'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='getSuostumusForReply'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='kirjaaSuostumus'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='lahetaSuostumus'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='luoSuostumuspohja'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='mitatoiSuostumus'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='muokkaaSuostumus'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='selaaSuostumuspohjat'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
- </binding>
- <service name='KokuSuostumusProcessingService'>
-  <port binding='tns:KokuSuostumusProcessingServiceBinding' name='KokuSuostumusProcessingServicePort'>
-    <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl"/>
-    <!--  <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl"/> -->
-  </port>
- </service>
-</definitions>
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="KokuSuostumusProcessingService" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://soa.tiva.koku.arcusys.fi/" version="1.0" xmlns:ns1="http://services.koku.fi/entity/tiva/v1" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:import namespace="http://services.koku.fi/entity/tiva/v1" />
+<xs:element name="annaSuostumus" type="tns:annaSuostumus" />
+<xs:element name="annaSuostumusResponse" type="tns:annaSuostumusResponse" />
+<xs:element name="evaaSuostumus" type="tns:evaaSuostumus" />
+<xs:element name="evaaSuostumusResponse" type="tns:evaaSuostumusResponse" />
+<xs:element name="getConsentTemplateById" type="tns:getConsentTemplateById" />
+<xs:element name="getConsentTemplateByIdResponse" type="tns:getConsentTemplateByIdResponse" />
+<xs:element name="getSuostumusForReply" type="tns:getSuostumusForReply" />
+<xs:element name="getSuostumusForReplyResponse" type="tns:getSuostumusForReplyResponse" />
+<xs:element name="kirjaaSuostumus" type="tns:kirjaaSuostumus" />
+<xs:element name="kirjaaSuostumusResponse" type="tns:kirjaaSuostumusResponse" />
+<xs:element name="lahetaSuostumus" type="tns:lahetaSuostumus" />
+<xs:element name="lahetaSuostumusResponse" type="tns:lahetaSuostumusResponse" />
+<xs:element name="luoSuostumuspohja" type="tns:luoSuostumuspohja" />
+<xs:element name="luoSuostumuspohjaResponse" type="tns:luoSuostumuspohjaResponse" />
+<xs:element name="mitatoiSuostumus" type="tns:mitatoiSuostumus" />
+<xs:element name="mitatoiSuostumusResponse" type="tns:mitatoiSuostumusResponse" />
+<xs:element name="muokkaaSuostumus" type="tns:muokkaaSuostumus" />
+<xs:element name="muokkaaSuostumusResponse" type="tns:muokkaaSuostumusResponse" />
+<xs:element name="selaaSuostumuspohjat" type="tns:selaaSuostumuspohjat" />
+<xs:element name="selaaSuostumuspohjatResponse" type="tns:selaaSuostumuspohjatResponse" />
+<xs:complexType name="getSuostumusForReply">
+<xs:sequence>
+<xs:element name="suostumusId" type="xs:long" />
+<xs:element minOccurs="0" name="suostuja" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getSuostumusForReplyResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="suostumus" type="tns:suostumusForReply" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="suostumusForReply">
+<xs:sequence>
+<xs:element minOccurs="0" name="suostumusId" type="xs:long" />
+<xs:element name="alreadyReplied" type="xs:boolean" />
+<xs:element minOccurs="0" name="suostumuspohja" type="tns:suostumuspohja" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="actionReplies" nillable="true" type="tns:toimenpidevastaus" />
+<xs:element minOccurs="0" name="vastaanottaja" type="xs:string" />
+<xs:element minOccurs="0" name="targetPersonUid" type="xs:string" />
+<xs:element minOccurs="0" name="replyTillDate" type="xs:date" />
+<xs:element minOccurs="0" name="maaraaika" type="xs:date" />
+<xs:element minOccurs="0" name="endDateMandatory" type="xs:boolean" />
+<xs:element minOccurs="0" name="kommentti" type="xs:string" />
+<xs:element minOccurs="0" name="informationTarget" type="xs:string" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="givenToParties" nillable="true" type="ns1:givenTo" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="suostumuspohja">
+<xs:complexContent>
+<xs:extension base="tns:suostumuspohjaShort">
+<xs:sequence>
+<xs:element minOccurs="0" name="saateteksti" type="xs:string" />
+<xs:element minOccurs="0" name="laatija" type="xs:string" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="toimenpiteet" type="tns:toimenpidepyynto" />
+<xs:element minOccurs="0" name="templateType" type="tns:valtakirjapohja" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="suostumuspohjaShort">
+<xs:sequence>
+<xs:element minOccurs="0" name="suostumuspohjaId" type="xs:long" />
+<xs:element minOccurs="0" name="otsikko" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="toimenpidepyynto">
+<xs:sequence>
+<xs:element name="number" type="xs:int" />
+<xs:element minOccurs="0" name="name" type="xs:string" />
+<xs:element minOccurs="0" name="description" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="valtakirjapohja">
+<xs:sequence>
+<xs:element name="templateId" type="xs:long" />
+<xs:element minOccurs="0" name="templateName" type="xs:string" />
+<xs:element minOccurs="0" name="description" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="toimenpidevastaus">
+<xs:sequence>
+<xs:element name="actionRequestNumber" type="xs:int" />
+<xs:element name="permitted" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="lahetaSuostumus">
+<xs:sequence>
+<xs:element name="suostumuspohjaId" type="xs:long" />
+<xs:element minOccurs="0" name="lahettaja" type="xs:string" />
+<xs:element minOccurs="0" name="kohdehenkilo" type="xs:string" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="vastaanottaja" type="xs:string" />
+<xs:element minOccurs="0" name="antajatyyppi" type="tns:consentReceipientsType" />
+<xs:element minOccurs="0" name="replyTillDate" type="xs:anySimpleType" />
+<xs:element minOccurs="0" name="maaraaika" type="xs:anySimpleType" />
+<xs:element minOccurs="0" name="maaraaikaMandatory" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="lahetaSuostumusResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="suostumusId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="mitatoiSuostumus">
+<xs:sequence>
+<xs:element name="suostumusId" type="xs:long" />
+<xs:element minOccurs="0" name="suostuja" type="xs:string" />
+<xs:element minOccurs="0" name="kommentti" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="mitatoiSuostumusResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:complexType name="luoSuostumuspohja">
+<xs:sequence>
+<xs:element minOccurs="0" name="suostumuspohja" type="tns:suostumuspohja" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="luoSuostumuspohjaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="suostumuspohjaId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getConsentTemplateById">
+<xs:sequence>
+<xs:element name="pohjaId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getConsentTemplateByIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:suostumuspohja" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="kirjaaSuostumus">
+<xs:sequence>
+<xs:element name="suostumuspohjaId" type="xs:long" />
+<xs:element minOccurs="0" name="lahettaja" type="xs:string" />
+<xs:element minOccurs="0" name="suostumustapa" type="xs:string" />
+<xs:element minOccurs="0" name="kohdehenkilo" type="xs:string" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="vastaanottaja" type="xs:string" />
+<xs:element minOccurs="0" name="maaraaika" type="xs:anySimpleType" />
+<xs:element minOccurs="0" name="suostumusajankohta" type="xs:anySimpleType" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="vastaukset" type="tns:toimenpidevastaus" />
+<xs:element minOccurs="0" name="suostumuksenLisaTiedot" type="tns:consentSourceInfo" />
+<xs:element minOccurs="0" name="kommentti" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consentSourceInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="additionalInfo" type="xs:string" />
+<xs:element minOccurs="0" name="attachmentUrl" type="xs:string" />
+<xs:element minOccurs="0" name="repository" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="kirjaaSuostumusResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="suostumusId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="evaaSuostumus">
+<xs:sequence>
+<xs:element name="suostumusId" type="xs:long" />
+<xs:element minOccurs="0" name="suostuja" type="xs:string" />
+<xs:element minOccurs="0" name="kommentti" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="evaaSuostumusResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:complexType name="selaaSuostumuspohjat">
+<xs:sequence>
+<xs:element minOccurs="0" name="searchString" type="xs:string" />
+<xs:element name="limit" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="selaaSuostumuspohjatResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="suostumuspohjat" type="tns:suostumuspohja" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="muokkaaSuostumus">
+<xs:sequence>
+<xs:element name="suostumusId" type="xs:long" />
+<xs:element minOccurs="0" name="suostuja" type="xs:string" />
+<xs:element minOccurs="0" name="maaraaika" type="xs:anySimpleType" />
+<xs:element minOccurs="0" name="kommentti" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="muokkaaSuostumusResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:complexType name="annaSuostumus">
+<xs:sequence>
+<xs:element name="suostumusId" type="xs:long" />
+<xs:element minOccurs="0" name="suostuja" type="xs:string" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="vastaukset" type="tns:toimenpidevastaus" />
+<xs:element minOccurs="0" name="maaraaika" type="xs:anySimpleType" />
+<xs:element minOccurs="0" name="kommentti" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annaSuostumusResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:simpleType name="consentReceipientsType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Child" />
+<xs:enumeration value="AnyParent" />
+<xs:enumeration value="BothParents" />
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
+<xs:schema targetNamespace="http://services.koku.fi/entity/tiva/v1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:complexType name="givenTo">
+<xs:sequence>
+<xs:element name="partyId" type="xs:string" />
+<xs:element name="partyName" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="selaaSuostumuspohjatResponse">
+    <wsdl:part element="tns:selaaSuostumuspohjatResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="muokkaaSuostumusResponse">
+    <wsdl:part element="tns:muokkaaSuostumusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="lahetaSuostumus">
+    <wsdl:part element="tns:lahetaSuostumus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="luoSuostumuspohjaResponse">
+    <wsdl:part element="tns:luoSuostumuspohjaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="annaSuostumusResponse">
+    <wsdl:part element="tns:annaSuostumusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="muokkaaSuostumus">
+    <wsdl:part element="tns:muokkaaSuostumus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="evaaSuostumusResponse">
+    <wsdl:part element="tns:evaaSuostumusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="lahetaSuostumusResponse">
+    <wsdl:part element="tns:lahetaSuostumusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getConsentTemplateById">
+    <wsdl:part element="tns:getConsentTemplateById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mitatoiSuostumus">
+    <wsdl:part element="tns:mitatoiSuostumus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getConsentTemplateByIdResponse">
+    <wsdl:part element="tns:getConsentTemplateByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="kirjaaSuostumus">
+    <wsdl:part element="tns:kirjaaSuostumus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="luoSuostumuspohja">
+    <wsdl:part element="tns:luoSuostumuspohja" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="evaaSuostumus">
+    <wsdl:part element="tns:evaaSuostumus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mitatoiSuostumusResponse">
+    <wsdl:part element="tns:mitatoiSuostumusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="annaSuostumus">
+    <wsdl:part element="tns:annaSuostumus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSuostumusForReplyResponse">
+    <wsdl:part element="tns:getSuostumusForReplyResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="selaaSuostumuspohjat">
+    <wsdl:part element="tns:selaaSuostumuspohjat" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSuostumusForReply">
+    <wsdl:part element="tns:getSuostumusForReply" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="kirjaaSuostumusResponse">
+    <wsdl:part element="tns:kirjaaSuostumusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="KokuSuostumusProcessingService">
+    <wsdl:operation name="getSuostumusForReply">
+      <wsdl:input message="tns:getSuostumusForReply" name="getSuostumusForReply">
+    </wsdl:input>
+      <wsdl:output message="tns:getSuostumusForReplyResponse" name="getSuostumusForReplyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lahetaSuostumus">
+      <wsdl:input message="tns:lahetaSuostumus" name="lahetaSuostumus">
+    </wsdl:input>
+      <wsdl:output message="tns:lahetaSuostumusResponse" name="lahetaSuostumusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mitatoiSuostumus">
+      <wsdl:input message="tns:mitatoiSuostumus" name="mitatoiSuostumus">
+    </wsdl:input>
+      <wsdl:output message="tns:mitatoiSuostumusResponse" name="mitatoiSuostumusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="luoSuostumuspohja">
+      <wsdl:input message="tns:luoSuostumuspohja" name="luoSuostumuspohja">
+    </wsdl:input>
+      <wsdl:output message="tns:luoSuostumuspohjaResponse" name="luoSuostumuspohjaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConsentTemplateById">
+      <wsdl:input message="tns:getConsentTemplateById" name="getConsentTemplateById">
+    </wsdl:input>
+      <wsdl:output message="tns:getConsentTemplateByIdResponse" name="getConsentTemplateByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kirjaaSuostumus">
+      <wsdl:input message="tns:kirjaaSuostumus" name="kirjaaSuostumus">
+    </wsdl:input>
+      <wsdl:output message="tns:kirjaaSuostumusResponse" name="kirjaaSuostumusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="evaaSuostumus">
+      <wsdl:input message="tns:evaaSuostumus" name="evaaSuostumus">
+    </wsdl:input>
+      <wsdl:output message="tns:evaaSuostumusResponse" name="evaaSuostumusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selaaSuostumuspohjat">
+      <wsdl:input message="tns:selaaSuostumuspohjat" name="selaaSuostumuspohjat">
+    </wsdl:input>
+      <wsdl:output message="tns:selaaSuostumuspohjatResponse" name="selaaSuostumuspohjatResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="muokkaaSuostumus">
+      <wsdl:input message="tns:muokkaaSuostumus" name="muokkaaSuostumus">
+    </wsdl:input>
+      <wsdl:output message="tns:muokkaaSuostumusResponse" name="muokkaaSuostumusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="annaSuostumus">
+      <wsdl:input message="tns:annaSuostumus" name="annaSuostumus">
+    </wsdl:input>
+      <wsdl:output message="tns:annaSuostumusResponse" name="annaSuostumusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KokuSuostumusProcessingServiceSoapBinding" type="tns:KokuSuostumusProcessingService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getSuostumusForReply">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getSuostumusForReply">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getSuostumusForReplyResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lahetaSuostumus">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="lahetaSuostumus">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="lahetaSuostumusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="luoSuostumuspohja">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="luoSuostumuspohja">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="luoSuostumuspohjaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mitatoiSuostumus">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="mitatoiSuostumus">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="mitatoiSuostumusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConsentTemplateById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getConsentTemplateById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getConsentTemplateByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kirjaaSuostumus">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="kirjaaSuostumus">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="kirjaaSuostumusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="evaaSuostumus">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="evaaSuostumus">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="evaaSuostumusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selaaSuostumuspohjat">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="selaaSuostumuspohjat">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="selaaSuostumuspohjatResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="muokkaaSuostumus">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="muokkaaSuostumus">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="muokkaaSuostumusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="annaSuostumus">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="annaSuostumus">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="annaSuostumusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KokuSuostumusProcessingService">
+    <wsdl:port binding="tns:KokuSuostumusProcessingServiceSoapBinding" name="KokuSuostumusProcessingServicePort">
+      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

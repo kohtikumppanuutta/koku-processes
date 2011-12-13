@@ -1,5 +1,4 @@
-﻿<?xml version='1.0' encoding='UTF-8'?>
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.6">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
   <name/>
   <icon/>
   <description/>
@@ -127,7 +126,7 @@
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;>*&lt;/span>)."/>
+                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)."/>
               </object>
             </object>
           </object>
@@ -139,7 +138,7 @@
       <strings riaTitleText="Suostumus" jsxname="Suostumus" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="3" jsxrelativeposition="1"/>
-        <strings jsxdisplay="none" jsxname="label" jsxclassname="FormLabel" jsxtext="&lt;div id=&quot;dialog&quot; title=&quot;Täyttöohje&quot; style=&quot;display:none;&quot;> &lt;/div>"/>
+        <strings jsxdisplay="none" jsxname="label" jsxclassname="FormLabel" jsxtext="&lt;div id=&quot;dialog&quot; title=&quot;Täyttöohje&quot; style=&quot;display:none;&quot;&gt; &lt;/div&gt;"/>
       </object>
       <object type="jsx3.gui.Block">
         <variants jsxheight="30" jsxwidth="720" jsxoverflow="2"/>
@@ -147,7 +146,7 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="3" jsxrelativeposition="1"/>
-          <strings jsxname="targetPersonLabel" jsxmargin="0 12 0 12" jsxclassname="FormLabel" jsxtext="&lt;b>Lapsen nimi: &lt;/b>"/>
+          <strings jsxname="targetPersonLabel" jsxmargin="0 12 0 12" jsxclassname="FormLabel" jsxtext="&lt;b&gt;Lapsen nimi: &lt;/b&gt;"/>
         </object>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="3" jsxrelativeposition="1"/>

@@ -1,0 +1,38 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<dd:deploy xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03"><dd:process xmlns:TIVA_Recipient_Form="http://www.intalio.com/gi/Forms/TIVA_Recipient_Form.gi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Palvelut="http://www.arcusys.fi/Processes/TIVARecipient-Process/Palvelut" xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:KokuSuostumusProcessingServiceImpl1="http://services.koku.fi/entity/tiva/v1" xmlns:diag="http://www.arcusys.fi/Processes/TIVARecipient-Process" xmlns:tns="http://www.arcusys.fi/KOKU/TIVA" xmlns:Kuntalainen="http://www.arcusys.fi/Processes/TIVARecipient-Process/Kuntalainen" xmlns:attachments="http://www.intalio.com/gi/Forms/TIVA_Recipient_Form.gi/attachments" xmlns:KokuSuostumusProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:this="http://www.arcusys.fi/Processes/TIVARecipient-Process/Prosessi" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Prosessi" fileName="Processes/TIVARecipient-Process-Prosessi.bpel">
+  <dd:property name="PATH">Processes/TIVARecipient-Process</dd:property>
+  <dd:property name="SVG">Processes/TIVARecipient-Process.svg</dd:property>
+  <dd:provide partnerLink="prosessiAndKuntalainenForPortTypeProcessPlkVar">
+    <dd:service name="this:ProsessiAndKuntalainenForPortTypeProcessPlkService" port="Prosessi_for_KuntalainenPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar">
+    <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="palvelutAndProsessiForKokuSuostumusProcessingServicePortPlkVar">
+    <dd:service name="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService" port="KokuSuostumusProcessingServicePort"></dd:service>
+  </dd:invoke>
+</dd:process><dd:process xmlns:TIVA_Sending_Form="http://www.intalio.com/gi/Forms/TIVA_Sending_Form.gi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Palvelut="http://www.arcusys.fi/Processes/TIVASending-Process/Palvelut" xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:KokuSuostumusProcessingServiceImpl1="http://services.koku.fi/entity/tiva/v1" xmlns:diag="http://www.arcusys.fi/Processes/TIVASending-Process" xmlns:tns="http://www.arcusys.fi/KOKU/TIVA" xmlns:Kayttaja="http://www.arcusys.fi/Processes/TIVASending-Process/Kayttaja" xmlns:attachments="http://www.intalio.com/gi/Forms/TIVA_Sending_Form.gi/attachments" xmlns:KokuSuostumusProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:this="http://www.arcusys.fi/Processes/TIVASending-Process/Prosessi" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Prosessi" fileName="Processes/TIVASending-Process-Prosessi.bpel">
+  <dd:property name="PATH">Processes/TIVASending-Process</dd:property>
+  <dd:property name="SVG">Processes/TIVASending-Process.svg</dd:property>
+  <dd:provide partnerLink="kayttajaAndProsessiForPortTypeProcessPlkVar">
+    <dd:service name="this:KayttajaAndProsessiForPortTypeProcessPlkService" port="Prosessi_for_KayttajaPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar">
+    <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="prosessiAndPalvelutForKokuSuostumusProcessingServicePortPlkVar">
+    <dd:service name="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService" port="KokuSuostumusProcessingServicePort"></dd:service>
+  </dd:invoke>
+</dd:process><dd:process xmlns:TIVA_Template_Form="http://www.intalio.com/gi/Forms/TIVA_Template_Form.gi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Palvelut="http://www.arcusys.fi/Processes/TIVATemplateCreation-Process/Palvelut" xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:KokuSuostumusProcessingServiceImpl1="http://services.koku.fi/entity/tiva/v1" xmlns:diag="http://www.arcusys.fi/Processes/TIVATemplateCreation-Process" xmlns:tns="http://www.arcusys.fi/KOKU/TIVA" xmlns:Kayttaja="http://www.arcusys.fi/Processes/TIVATemplateCreation-Process/Kayttaja" xmlns:attachments="http://www.intalio.com/gi/Forms/TIVA_Template_Form.gi/attachments" xmlns:KokuSuostumusProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:this="http://www.arcusys.fi/Processes/TIVATemplateCreation-Process/Prosessi" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Prosessi" fileName="Processes/TIVATemplateCreation-Process-Prosessi.bpel">
+  <dd:property name="PATH">Processes/TIVATemplateCreation-Process</dd:property>
+  <dd:property name="SVG">Processes/TIVATemplateCreation-Process.svg</dd:property>
+  <dd:provide partnerLink="prosessiAndKayttajaForPortTypeProcessPlkVar">
+    <dd:service name="this:ProsessiAndKayttajaForPortTypeProcessPlkService" port="Prosessi_for_KayttajaPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar">
+    <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="prosessiAndPalvelutForKokuSuostumusProcessingServicePortPlkVar">
+    <dd:service name="KokuSuostumusProcessingServiceImpl:KokuSuostumusProcessingService" port="KokuSuostumusProcessingServicePort"></dd:service>
+  </dd:invoke>
+</dd:process></dd:deploy>

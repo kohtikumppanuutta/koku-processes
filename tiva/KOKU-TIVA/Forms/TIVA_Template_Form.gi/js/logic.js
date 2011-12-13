@@ -1,5 +1,59 @@
 // Prestart --------------------------------------------------------------------------------------------------------------------------------------
 
+function mapTemplateNamesToField(data) {
+  //  alert(data);
+    var descendants = data.selectNodeIterator("//valtakirjapohjat", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+   // alert(descendants);
+    var templateId, templateName, templateDescription; 
+    var xmlForSelectBox = "<data>";
+    
+    while(descendants.hasNext()) {
+    
+        childNode = descendants.next();
+       // alert(childNode);
+       // alert(childNode);
+       // requestTemplateId = childNode.getAttributeNode("return");
+       templateId = childNode.getFirstChild().getValue();
+      // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
+       // alert(templateId);
+        templateName = childNode.getFirstChild().getNextSibling().getValue();
+        //alert(templateName);
+       // subject = childNode.selectSingleNode("//subject").getValue();
+        templateDescription = childNode.getLastChild().getValue();
+        //alert(templateDescription);
+        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + templateId + "\" jsxtext=\"" + templateName + "\" jsxdesc=\"" + templateDescription + "\"/>";
+        
+       // alert(requestTemplateId + subject);
+        templateId = "";
+        templateName = "";
+        templateDescription = "";
+        childNode = null;
+    }
+    xmlForSelectBox = xmlForSelectBox + "</data>";
+   // alert(xmlForSelectBox);
+    /*
+    for (x in descendants)   {
+      alert(descendants[x]);
+    }
+    */
+    
+   // data.selectNodes("//tns:getRequestTemplateSummaryResponse", "xmlns:tns='http://soa.kv.koku.arcusys.fi/'");
+   // alert("mapTemplateNamesToField" + data);
+    /*
+       var childIterator = data.selectSingleNode("//getRequestTemplateSummaryResponse", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'">).getChildIterator();
+
+       while(childIterator.hasNext()){
+       
+            childNode = childIterator.next();
+            alert(childNode);
+       }
+    */
+   // var values = "";
+    TIVA_Form.getJSXByName("Pohja_Aihealue").setXMLString(xmlForSelectBox);
+    TIVA_Form.getJSXByName("Pohja_Aihealue").resetXmlCacheData();
+    TIVA_Form.getJSXByName("Pohja_Aihealue").repaint();
+}
+
 function setTooltipSpanWidth(id) {
     $("#" + id).css('display', 'inline');
     //$("#" + id).css('float', 'left');
@@ -205,6 +259,12 @@ function preload() {
     username = username.substring((username.indexOf("/") + 1));
 
     TIVA_Form.getJSXByName("Kayttaja_Lahettaja").setValue(username);
+    
+    var templateNamesData = Arcusys.Internal.Communication.GetTemplateNames();
+            
+    if(templateNamesData != null) {
+        mapTemplateNamesToField(templateNamesData);
+    }
 }
 
 // Recipients Mapping ----------------------------------------------------------------------------------------------------------------------------
@@ -488,6 +548,37 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
     };
 });
 
+//Package FormPreFill
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetTemplateNames = function() {
+        
+        var tout = 1000;   
+        var limit = 100;
+        var searchString = "";
+        
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaValtakirjapohjat><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:selaaValtakirjapohjat></soapenv:Body></soapenv:Envelope>";
+        var url = getUrl();
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
+
+
+        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+        var req = new jsx3.net.Request();
+        req.open('POST', url, false);      
+
+        
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.send(msg, tout);
+       var objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+});
+
 // Extra functions -------------------------------------------------------------------------------------------------------------------------------
 
 function getDomainName() {
@@ -504,7 +595,8 @@ function getUrl() {
     var domain;
 
     domain = getDomainName();
-    
+    //domain = "http://62.61.65.15:8380";
+        
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -512,8 +604,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }

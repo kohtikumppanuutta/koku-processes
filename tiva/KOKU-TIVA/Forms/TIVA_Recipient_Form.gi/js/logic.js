@@ -123,6 +123,10 @@ function isValidDate(node) {
     }
 }
 
+function setHeightAccordTextHeight(pane, s, limit, rowH) {
+    pane.setHeight(Math.round(pane.getHeight() + (rowH * (s.length / limit))), true);
+}
+
 // Consent actions -------------------------------------------------------------------------------------------------------------------------------
 
 function mapFieldsToMatrix() {
@@ -279,6 +283,7 @@ function mapFormDataToFields(objXML) {
     TIVAForm.getJSXByName("Pohja_PohjaId").setValue(pohjaId);
     TIVAForm.getJSXByName("Suostumus").setTitleText(otsikko, true);
     TIVAForm.getJSXByName("Suostumus_Kuvaus").setText(saateteksti, true);
+    setHeightAccordTextHeight(TIVAForm.getJSXByName("Suostumus_Kuvaus").getParent(), TIVAForm.getJSXByName("Suostumus_Kuvaus").getText(), 100, 12);
     TIVAForm.getJSXByName("targetPersonLabel").setText("<b>Lapsen nimi: </b>" + targetPerson, true);
 
 }
@@ -440,8 +445,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }
