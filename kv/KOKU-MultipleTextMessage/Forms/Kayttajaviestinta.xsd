@@ -2,12 +2,14 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.kv.koku.arcusys.fi/" xmlns:tns="http://soa.kv.koku.arcusys.fi/" elementFormDefault="qualified">
 <complexType name="Message_Type">
     	<sequence>
-    		<element name="Message_FromUser" type="string"/>
-			<element name="Message_Content" type="string"/>
-			<element name="Message_Subject" type="string"/>
-			
+    		<element name="Message_FromUser" type="string" />
+    		<element name="Message_Content" type="string" />
+    		<element name="Message_Subject" type="string" />
+
+    		<element name="Message_FamilyMembers" type="boolean"></element>
+    		<element name="Message_Website" type="boolean"></element>
     	</sequence>
-    </complexType>
+</complexType>
     <complexType name="Kayttajaviestinta_Type">
 		<sequence>
 			<element name="Message" type="tns:Message_Type" />
