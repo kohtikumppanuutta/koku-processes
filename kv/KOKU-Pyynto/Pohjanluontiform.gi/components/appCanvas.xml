@@ -467,6 +467,28 @@
         </object>
       </object>
     </object>
+    <object type="com.intalio.ria.Section">
+      <variants/>
+      <strings riaTitleText="Roolit" jsxname="Roolit" jsxclassname="fieldset" jsxdisplay="block"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxwidth="720" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
+        <dynamics jsxborder="@No jsxborder"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+          <strings jsxname="layout (--)" jsxrows="*" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+            <dynamics jsxborder="@No jsxborder"/>
+            <object type="jsx3.gui.Select">
+              <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1"/>
+              <strings jsxname="User_Roolit" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Päiväkotijohtaja&quot; jsxtext=&quot;Päiväkotijohtaja&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -"/>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
     <object type="jsx3.gui.Block">
       <variants/>
       <strings jsxwidth="100%" jsxpadding="5 10 0 10" jsxname="header" jsxrelativeposition="1"/>

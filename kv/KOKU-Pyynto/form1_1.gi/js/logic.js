@@ -16,13 +16,11 @@ jsx3.lang.Package.definePackage(
 
 
 function getEndpoint() {
-    
-    var endpoint = "http://localhost:8180";
-    //var endpoint = "http://trelx51lb:8080";
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51lb:8080";
     return endpoint;
     
 }
-
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetKunpoUsernameByUid= function(uid) {
@@ -421,6 +419,7 @@ function addCalendarChoices(questionName) {
 function getUrl() {
     
     var domain = getDomainName();
+    //domain = "http://62.61.65.15:8380";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }

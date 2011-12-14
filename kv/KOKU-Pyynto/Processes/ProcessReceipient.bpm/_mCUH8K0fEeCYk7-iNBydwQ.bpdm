@@ -13,33 +13,33 @@
     </bpdm:dependencies>
     <bpel:scope bpdm:label="Services" bpdm:ID="_mCUH8K0fEeCYk7-iNBydwQ">
         <bpel:partnerLinks>
-            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" myRole="Services_for_Process" bpdm:enableSharing="false" bpdm:providedService="tns:KokuRequestProcessingService" bpdm:providedPort="KokuRequestProcessingServicePort" bpdm:provideSOAPAddress="http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_mCUH8K0fEeCYk7-iNBydwQ:_vBQ_8K0fEeCYk7-iNBydwQ, _mCUH8K0fEeCYk7-iNBydwQ:_Pd4cQK0gEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_EPBGMK0XEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" myRole="Services_for_Process" bpdm:enableSharing="false" bpdm:providedService="tns:KokuRequestProcessingService" bpdm:providedPort="KokuRequestProcessingServicePort" bpdm:provideSOAPAddress="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_mCUH8K0fEeCYk7-iNBydwQ:_9avqACZMEeGZ6qIn2ne6Bw, _mCUH8K0fEeCYk7-iNBydwQ:_wxRoECZMEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_EPBGMK0XEeCYk7-iNBydwQ"/>
         </bpel:partnerLinks>
         <bpel:variables>
-            <bpel:variable name="tnsReceiveRequestRequestMsg" messageType="tns:KokuRequestProcessingService_receiveRequest" binding="tns:KokuRequestProcessingServiceBinding" operation="receiveRequest" opMsgType="0" bpdm:id="_wgc6wK0fEeCYk7-iNBydwQ" bpdm:messageIds="inc:_wgHjkK0fEeCYk7-iNBydwQ"/>
-            <bpel:variable name="tnsReceiveRequestResponseMsg" messageType="tns:KokuRequestProcessingService_receiveRequestResponse" binding="tns:KokuRequestProcessingServiceBinding" operation="receiveRequest" opMsgType="1" bpdm:id="_xPnt4K0fEeCYk7-iNBydwQ" bpdm:messageIds=" out:_xPZrcK0fEeCYk7-iNBydwQ">
-                <bpel:from bpdm:toPart="receiveRequestResponse">
-                    <bpel:literal bpdm:linkedMessageType="tns:KokuRequestProcessingService_receiveRequestResponse" bpdm:linkedPart="receiveRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="receiveRequest"></bpel:literal>
+            <bpel:variable name="tnsReceiveRequestMsg" messageType="tns:receiveRequest" binding="tns:KokuRequestProcessingServiceSoapBinding" operation="receiveRequest" opMsgType="0" bpdm:id="_zpfLUCZMEeGZ6qIn2ne6Bw" bpdm:messageIds="inc:_zpCfYCZMEeGZ6qIn2ne6Bw"/>
+            <bpel:variable name="tnsReceiveRequestResponseMsg" messageType="tns:receiveRequestResponse" binding="tns:KokuRequestProcessingServiceSoapBinding" operation="receiveRequest" opMsgType="1" bpdm:id="_z4Yi8CZMEeGZ6qIn2ne6Bw" bpdm:messageIds=" out:_z4J5cCZMEeGZ6qIn2ne6Bw">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="tns:receiveRequestResponse" bpdm:linkedPart="parameters" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="receiveRequest"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
-            <bpel:variable name="tnsReplyToRequestRequestMsg" messageType="tns:KokuRequestProcessingService_replyToRequest" binding="tns:KokuRequestProcessingServiceBinding" operation="replyToRequest" opMsgType="0" bpdm:id="_RE3BIK0gEeCYk7-iNBydwQ" bpdm:messageIds="inc:_REf0wK0gEeCYk7-iNBydwQ"/>
-            <bpel:variable name="tnsReplyToRequestResponseMsg" messageType="tns:KokuRequestProcessingService_replyToRequestResponse" binding="tns:KokuRequestProcessingServiceBinding" operation="replyToRequest" opMsgType="1" bpdm:id="_R8Nf4K0gEeCYk7-iNBydwQ" bpdm:messageIds=" out:_R78aIK0gEeCYk7-iNBydwQ">
-                <bpel:from bpdm:toPart="replyToRequestResponse">
-                    <bpel:literal bpdm:linkedMessageType="tns:KokuRequestProcessingService_replyToRequestResponse" bpdm:linkedPart="replyToRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:opMsgType="1" bpdm:operation="replyToRequest"></bpel:literal>
+            <bpel:variable name="tnsReplyToRequestMsg" messageType="tns:replyToRequest" binding="tns:KokuRequestProcessingServiceSoapBinding" operation="replyToRequest" opMsgType="0" bpdm:id="_FzCKoCZNEeGZ6qIn2ne6Bw" bpdm:messageIds="inc:_FymFwCZNEeGZ6qIn2ne6Bw"/>
+            <bpel:variable name="tnsReplyToRequestResponseMsg" messageType="tns:replyToRequestResponse" binding="tns:KokuRequestProcessingServiceSoapBinding" operation="replyToRequest" opMsgType="1" bpdm:id="_GFo9kCZNEeGZ6qIn2ne6Bw" bpdm:messageIds=" out:_GFX30CZNEeGZ6qIn2ne6Bw">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="tns:replyToRequestResponse" bpdm:linkedPart="parameters" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="replyToRequest"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
         </bpel:variables>
         <bpel:flow>
             <bpel:sequence>
-                <bpdm:messagingtask operation="receiveRequest" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="receiveRequest" bpdm:ID="_vBQ_8K0fEeCYk7-iNBydwQ">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReceiveRequestRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuRequestProcessingService_receiveRequest" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:ID="_wgHjkK0fEeCYk7-iNBydwQ"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReceiveRequestResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuRequestProcessingService_receiveRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:ID="_xPZrcK0fEeCYk7-iNBydwQ"></bpdm:linkset>
+                <bpdm:messagingtask operation="receiveRequest" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="receiveRequest" bpdm:ID="_wxRoECZMEeGZ6qIn2ne6Bw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReceiveRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveRequest" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_zpCfYCZMEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReceiveRequestResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_z4J5cCZMEeGZ6qIn2ne6Bw"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
             <bpel:sequence>
-                <bpdm:messagingtask operation="replyToRequest" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="replyToRequest" bpdm:ID="_Pd4cQK0gEeCYk7-iNBydwQ">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReplyToRequestRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuRequestProcessingService_replyToRequest" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:ID="_REf0wK0gEeCYk7-iNBydwQ"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReplyToRequestResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:KokuRequestProcessingService_replyToRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceBinding" bpdm:ID="_R78aIK0gEeCYk7-iNBydwQ"></bpdm:linkset>
+                <bpdm:messagingtask operation="replyToRequest" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="replyToRequest" bpdm:ID="_9avqACZMEeGZ6qIn2ne6Bw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReplyToRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:replyToRequest" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_FymFwCZNEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReplyToRequestResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:replyToRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_GFX30CZNEeGZ6qIn2ne6Bw"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
         </bpel:flow>
