@@ -23,6 +23,14 @@
 	 		<xsl:element name="messageContent">
 				<xsl:value-of select="//ka:Message_Content/text()"/>
 			</xsl:element>
+			
+			<xsl:element name="sendToFamilyMembers">
+				<xsl:value-of select="//ka:Message_FamilyMembers/text()" />
+			</xsl:element>
+			
+			<xsl:element name="sendToGroupSite">
+				<xsl:value-of select="//ka:Message_Website/text()" />
+			</xsl:element>
 		</xsl:element>
 	</xsl:template>
 </xsl:stylesheet>
