@@ -1,8 +1,10 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:this="http://thisdiagram/Services" xmlns:Process="http://thisdiagram/Process" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Services">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:TaskManagementSystem="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TokenService="http://tempo.intalio.org/security/tokenService/" xmlns:this="http://thisdiagram/Services" xmlns:Process="http://thisdiagram/Process" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Services">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///KokuRequestProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" bpdm:prefix="TaskManagementSystem" bpdm:comment="contrib=&apos;project:///Services/TaskManagementSystem.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://tempo.intalio.org/security/tokenService/" bpdm:prefix="TokenService" bpdm:comment="contrib=&apos;project:///Services/TokenService.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Services" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Process" bpdm:prefix="Process" bpdm:comment="contrib=&apos;partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
@@ -10,10 +12,14 @@
         <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
         <bpdm:namespaceContributor bpdm:url="partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ" bpdm:label="Process"/>
         <bpdm:namespaceContributor bpdm:url="project:///KokuRequestProcessingServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/TokenService.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/TaskManagementSystem.wsdl"/>
     </bpdm:dependencies>
     <bpel:scope bpdm:label="Services" bpdm:ID="_mCUH8K0fEeCYk7-iNBydwQ">
         <bpel:partnerLinks>
-            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" myRole="Services_for_Process" bpdm:enableSharing="false" bpdm:providedService="tns:KokuRequestProcessingService" bpdm:providedPort="KokuRequestProcessingServicePort" bpdm:provideSOAPAddress="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_mCUH8K0fEeCYk7-iNBydwQ:_9avqACZMEeGZ6qIn2ne6Bw, _mCUH8K0fEeCYk7-iNBydwQ:_wxRoECZMEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_EPBGMK0XEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" myRole="Services_for_Process" bpdm:enableSharing="false" bpdm:providedService="tns:KokuRequestProcessingService" bpdm:providedPort="KokuRequestProcessingServicePort" bpdm:provideSOAPAddress="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_mCUH8K0fEeCYk7-iNBydwQ:_wxRoECZMEeGZ6qIn2ne6Bw, _mCUH8K0fEeCYk7-iNBydwQ:_9avqACZMEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_EPBGMK0XEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="servicesAndProcessForPortServicePlkVar" partnerLinkType="diag:ServicesAndProcessForPortServicePlk" myRole="Services_for_Process" bpdm:enableSharing="false" bpdm:providedService="TokenService:TokenService" bpdm:providedPort="Service" bpdm:provideSOAPAddress="http://localhost:8080/axis2/services/TokenService.Service/" bpdm:providedIsDefault="true" bpdm:clientTasks="_mCUH8K0fEeCYk7-iNBydwQ:_rvw_kCZYEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_EPBGMK0XEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="servicesAndProcessForPortTaskManagementServicesSOAPPlkVar" partnerLinkType="diag:ServicesAndProcessForPortTaskManagementServicesSOAPPlk" myRole="Services_for_Process" bpdm:enableSharing="false" bpdm:providedService="TaskManagementSystem:TaskManagementServices" bpdm:providedPort="TaskManagementServicesSOAP" bpdm:provideSOAPAddress="http://localhost:8080/axis2/services/TaskManagementServices" bpdm:providedIsDefault="true" bpdm:clientTasks="_mCUH8K0fEeCYk7-iNBydwQ:_vCO14CZYEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_EPBGMK0XEeCYk7-iNBydwQ"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="tnsReceiveRequestMsg" messageType="tns:receiveRequest" binding="tns:KokuRequestProcessingServiceSoapBinding" operation="receiveRequest" opMsgType="0" bpdm:id="_zpfLUCZMEeGZ6qIn2ne6Bw" bpdm:messageIds="inc:_zpCfYCZMEeGZ6qIn2ne6Bw"/>
@@ -28,18 +34,42 @@
                     <bpel:literal bpdm:linkedMessageType="tns:replyToRequestResponse" bpdm:linkedPart="parameters" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="replyToRequest"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
+            <bpel:variable name="tokenServiceAuthenticateUserRequestMsg" messageType="TokenService:authenticateUser" binding="TokenService:TokenServiceSOAP" operation="authenticateUser" opMsgType="0" bpdm:id="_t1Bb4CZYEeGZ6qIn2ne6Bw" bpdm:messageIds="inc:_t0nMMCZYEeGZ6qIn2ne6Bw"/>
+            <bpel:variable name="tokenServiceAuthenticateUserResponseMsg" messageType="TokenService:authenticateUserResponse" binding="TokenService:TokenServiceSOAP" operation="authenticateUser" opMsgType="1" bpdm:id="_uJlWoCZYEeGZ6qIn2ne6Bw" bpdm:messageIds=" out:_uJXUMCZYEeGZ6qIn2ne6Bw">
+                <bpel:from bpdm:toPart="payload">
+                    <bpel:literal bpdm:linkedMessageType="TokenService:authenticateUserResponse" bpdm:linkedPart="payload" bpdm:binding="TokenService:TokenServiceSOAP" bpdm:opMsgType="1" bpdm:operation="authenticateUser"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="taskManagementSystemDeleteRequestMsg" messageType="TaskManagementSystem:deleteRequest" binding="TaskManagementSystem:TaskManagementServicesSOAP" operation="delete" opMsgType="0" bpdm:id="_zenhoCZYEeGZ6qIn2ne6Bw" bpdm:messageIds="inc:_zeMD0CZYEeGZ6qIn2ne6Bw"/>
+            <bpel:variable name="taskManagementSystemDeleteResponseMsg" messageType="TaskManagementSystem:okResponse" binding="TaskManagementSystem:TaskManagementServicesSOAP" operation="delete" opMsgType="1" bpdm:id="_ztkjoCZYEeGZ6qIn2ne6Bw" bpdm:messageIds=" out:_ztTd4CZYEeGZ6qIn2ne6Bw">
+                <bpel:from bpdm:toPart="okResponse">
+                    <bpel:literal bpdm:linkedMessageType="TaskManagementSystem:okResponse" bpdm:linkedPart="okResponse" bpdm:binding="TaskManagementSystem:TaskManagementServicesSOAP" bpdm:opMsgType="1" bpdm:operation="delete"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
         </bpel:variables>
         <bpel:flow>
             <bpel:sequence>
-                <bpdm:messagingtask operation="receiveRequest" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="receiveRequest" bpdm:ID="_wxRoECZMEeGZ6qIn2ne6Bw">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReceiveRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveRequest" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_zpCfYCZMEeGZ6qIn2ne6Bw"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReceiveRequestResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_z4J5cCZMEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                <bpdm:messagingtask operation="authenticateUser" partnerLink="servicesAndProcessForPortServicePlkVar" portType="TokenService:TokenServicePortType" isMyRole="true" enableSharing="false" bpdm:label="authenticateUser" bpdm:ID="_rvw_kCZYEeGZ6qIn2ne6Bw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tokenServiceAuthenticateUserRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="TokenService:authenticateUser" bpdm:binding="TokenService:TokenServiceSOAP" bpdm:ID="_t0nMMCZYEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tokenServiceAuthenticateUserResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="TokenService:authenticateUserResponse" bpdm:binding="TokenService:TokenServiceSOAP" bpdm:ID="_uJXUMCZYEeGZ6qIn2ne6Bw"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
             <bpel:sequence>
                 <bpdm:messagingtask operation="replyToRequest" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="replyToRequest" bpdm:ID="_9avqACZMEeGZ6qIn2ne6Bw">
                     <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReplyToRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:replyToRequest" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_FymFwCZNEeGZ6qIn2ne6Bw"></bpdm:linkset>
                     <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReplyToRequestResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:replyToRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_GFX30CZNEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="delete" partnerLink="servicesAndProcessForPortTaskManagementServicesSOAPPlkVar" portType="TaskManagementSystem:TaskManagementServices" isMyRole="true" enableSharing="false" bpdm:label="delete" bpdm:ID="_vCO14CZYEeGZ6qIn2ne6Bw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="taskManagementSystemDeleteRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="TaskManagementSystem:deleteRequest" bpdm:binding="TaskManagementSystem:TaskManagementServicesSOAP" bpdm:ID="_zeMD0CZYEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="taskManagementSystemDeleteResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="TaskManagementSystem:okResponse" bpdm:binding="TaskManagementSystem:TaskManagementServicesSOAP" bpdm:ID="_ztTd4CZYEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="receiveRequest" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="receiveRequest" bpdm:ID="_wxRoECZMEeGZ6qIn2ne6Bw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReceiveRequestMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveRequest" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_zpCfYCZMEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReceiveRequestResponseMsg" bpdm:msgVarScopeId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveRequestResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_z4J5cCZMEeGZ6qIn2ne6Bw"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
         </bpel:flow>
