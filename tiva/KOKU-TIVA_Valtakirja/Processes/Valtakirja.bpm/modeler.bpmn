@@ -7,6 +7,10 @@
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1wWToMflEeCzoqUlxCUkxg" source="inMemoryProcess">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1wWTocflEeCzoqUlxCUkxg" key="InMemoryProcess" value="false"/>
     </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1q9IQCZWEeGZ6qIn2ne6Bw" source="participant">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1q9vUCZWEeGZ6qIn2ne6Bw" key="users" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1q9vUSZWEeGZ6qIn2ne6Bw" key="roles" value=""/>
+    </eAnnotations>
     <artifacts xmi:type="bpmn:DataObject" xmi:id="_D_pq8cfmEeCzoqUlxCUkxg" iD="_D_pq8MfmEeCzoqUlxCUkxg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D_pq8sfmEeCzoqUlxCUkxg" source="attachedDataobject">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D_pq88fmEeCzoqUlxCUkxg" key="isBpelDeclaration" value="true"/>
@@ -47,7 +51,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BBX78MfmEeCzoqUlxCUkxg" key="roles" value="koku/kuntalainen"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BqZDwMfmEeCzoqUlxCUkxg" source="pipa">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BqcHEMfmEeCzoqUlxCUkxg" key="description" value="Valtakirja"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BqcHEMfmEeCzoqUlxCUkxg" key="description" value="Valtakirja2"/>
       </eAnnotations>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_D_cPkcfmEeCzoqUlxCUkxg"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_EOfYMcfmEeCzoqUlxCUkxg"/>
@@ -229,6 +233,78 @@
         </eAnnotations>
       </associations>
     </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_t4jtgSZXEeGZ6qIn2ne6Bw" iD="_t4jtgCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_t4jtgiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t4jtgyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t4sQYSZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="kokuValtakirjaProcessingServiceImplMitatoiValtakirjaRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t4654SZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.tiva.koku.arcusys.fi/}KokuValtakirjaProcessingService_mitatoiValtakirja"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_t4v6wCZXEeGZ6qIn2ne6Bw" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_t43PgCZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t4654CZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_uORe0SZXEeGZ6qIn2ne6Bw" iD="_uORe0CZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uORe0iZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uORe0yZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uOaBuCZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="kokuValtakirjaProcessingServiceImplMitatoiValtakirjaResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uOm2ACZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.tiva.koku.arcusys.fi/}KokuValtakirjaProcessingService_mitatoiValtakirjaResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_uOeTICZXEeGZ6qIn2ne6Bw" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uOikkCZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uOmO8CZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_yWw-MSZXEeGZ6qIn2ne6Bw" iD="_yWw-MCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yWw-MiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yWw-MyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yW6IIiZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="tokenServiceAuthenticateUserRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yXG8cSZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://tempo.intalio.org/security/tokenService/}authenticateUser"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_yW-ZkCZXEeGZ6qIn2ne6Bw" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yXCrACZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yXG8cCZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_ysAOYSZXEeGZ6qIn2ne6Bw" iD="_ysAOYCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ysAOYiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ysAOYyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ysJ_aCZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="tokenServiceAuthenticateUserResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ysYB0SZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://tempo.intalio.org/security/tokenService/}authenticateUserResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_ysO34CZXEeGZ6qIn2ne6Bw" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ysTwYCZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ysYB0CZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_5A-MYSZXEeGZ6qIn2ne6Bw" iD="_5A-MYCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5A-MYiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5A-MYyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5BGvQSZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="taskManagementSystemDeleteRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5BSVcSZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}deleteRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_5BKZoCZXEeGZ6qIn2ne6Bw" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5BOEACZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5BSVcCZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_5TDa4SZXEeGZ6qIn2ne6Bw" iD="_5TDa4CZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5TDa4iZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5TDa4yZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5TWV1yZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="taskManagementSystemDeleteResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5TjKICZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}okResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_5TanQCZXEeGZ6qIn2ne6Bw" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Te4sCZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5TijECZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
     <vertices xmi:type="bpmn:Activity" xmi:id="_CwnE8cfmEeCzoqUlxCUkxg" iD="_CwnE8MfmEeCzoqUlxCUkxg" associations="_D_yN0MfmEeCzoqUlxCUkxg _EOzhQMfmEeCzoqUlxCUkxg" outgoingEdges="_GDWoEcfmEeCzoqUlxCUkxg" name="Vastaanota tilaus" activityType="EventStartMessage">
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_D_cPkcfmEeCzoqUlxCUkxg"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_EOfYMcfmEeCzoqUlxCUkxg"/>
@@ -238,11 +314,11 @@
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_e2WjccftEeCzoqUlxCUkxg"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_fTdWMcftEeCzoqUlxCUkxg"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_kSoNocfnEeCzoqUlxCUkxg" iD="_kSoNoMfnEeCzoqUlxCUkxg" associations="_pCxi4MfnEeCzoqUlxCUkxg _pufZYMfnEeCzoqUlxCUkxg" outgoingEdges="_FTIwcfZnEeC0ybj4-JjvwA" incomingEdges="_qp2nwfMQEeC6aqQJKR8yVQ" name="Lähetä vastaanottajalle" activityType="EventIntermediateMessage">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_kSoNocfnEeCzoqUlxCUkxg" iD="_kSoNoMfnEeCzoqUlxCUkxg" associations="_pCxi4MfnEeCzoqUlxCUkxg _pufZYMfnEeCzoqUlxCUkxg" outgoingEdges="_dF7d0SZXEeGZ6qIn2ne6Bw" incomingEdges="_qp2nwfMQEeC6aqQJKR8yVQ" name="Lähetä vastaanottajalle" activityType="EventIntermediateMessage">
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_pCa9kcfnEeCzoqUlxCUkxg"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_pt_DEMfnEeCzoqUlxCUkxg"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_nHL_8cfnEeCzoqUlxCUkxg" iD="_nHL_8MfnEeCzoqUlxCUkxg" associations="_qBem0MfnEeCzoqUlxCUkxg _qUfCYMfnEeCzoqUlxCUkxg" outgoingEdges="_Wl4UUcfoEeCzoqUlxCUkxg" incomingEdges="_FTIwcfZnEeC0ybj4-JjvwA" name="Vastaanota päätös" activityType="EventIntermediateMessage">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_nHL_8cfnEeCzoqUlxCUkxg" iD="_nHL_8MfnEeCzoqUlxCUkxg" associations="_qBem0MfnEeCzoqUlxCUkxg _qUfCYMfnEeCzoqUlxCUkxg" outgoingEdges="_Wl4UUcfoEeCzoqUlxCUkxg" incomingEdges="_dezQ0SZXEeGZ6qIn2ne6Bw" name="Vastaanota päätös" activityType="EventIntermediateMessage">
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_qA-QgcfnEeCzoqUlxCUkxg"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_qT-sEcfnEeCzoqUlxCUkxg"/>
     </vertices>
@@ -264,6 +340,21 @@
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_krgaAfMQEeC6aqQJKR8yVQ"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_o5-lkfMQEeC6aqQJKR8yVQ" iD="_o5-lkPMQEeC6aqQJKR8yVQ" outgoingEdges="_qp2nwfMQEeC6aqQJKR8yVQ" incomingEdges="_qZR1IPMQEeC6aqQJKR8yVQ" name="Tallenna kunponimi" activityType="Task"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_cZ0lwSZXEeGZ6qIn2ne6Bw" iD="_cZ0lwCZXEeGZ6qIn2ne6Bw" outgoingEdges="_dezQ0SZXEeGZ6qIn2ne6Bw _hIpsYSZXEeGZ6qIn2ne6Bw" incomingEdges="_dF7d0SZXEeGZ6qIn2ne6Bw" activityType="GatewayEventBasedExclusive"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_gmO70SZXEeGZ6qIn2ne6Bw" iD="_gmO70CZXEeGZ6qIn2ne6Bw" outgoingEdges="_l8NiASZXEeGZ6qIn2ne6Bw" incomingEdges="_hIpsYSZXEeGZ6qIn2ne6Bw" activityType="EventIntermediateTimer"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_lh1TISZXEeGZ6qIn2ne6Bw" iD="_lh1TICZXEeGZ6qIn2ne6Bw" associations="_t4v6wCZXEeGZ6qIn2ne6Bw _uOeTICZXEeGZ6qIn2ne6Bw" outgoingEdges="_xysAwSZXEeGZ6qIn2ne6Bw" incomingEdges="_l8NiASZXEeGZ6qIn2ne6Bw" activityType="EventIntermediateMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_t4SnwSZXEeGZ6qIn2ne6Bw"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_uNusQSZXEeGZ6qIn2ne6Bw"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_xbfBsSZXEeGZ6qIn2ne6Bw" iD="_xbfBsCZXEeGZ6qIn2ne6Bw" associations="_yW-ZkCZXEeGZ6qIn2ne6Bw _ysO34CZXEeGZ6qIn2ne6Bw" outgoingEdges="_4uIv8SZXEeGZ6qIn2ne6Bw" incomingEdges="_xysAwSZXEeGZ6qIn2ne6Bw" activityType="EventIntermediateMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_yWfRYSZXEeGZ6qIn2ne6Bw"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_yrZKYSZXEeGZ6qIn2ne6Bw"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_30wQ4SZXEeGZ6qIn2ne6Bw" iD="_30wQ4CZXEeGZ6qIn2ne6Bw" associations="_5BKZoCZXEeGZ6qIn2ne6Bw _5TanQCZXEeGZ6qIn2ne6Bw" outgoingEdges="_6dwTcSZXEeGZ6qIn2ne6Bw" incomingEdges="_4uIv8SZXEeGZ6qIn2ne6Bw" activityType="EventIntermediateMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_5Ar4gSZXEeGZ6qIn2ne6Bw"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_5SdlASZXEeGZ6qIn2ne6Bw"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_5tEdYSZXEeGZ6qIn2ne6Bw" iD="_5tEdYCZXEeGZ6qIn2ne6Bw" incomingEdges="_6dwTcSZXEeGZ6qIn2ne6Bw" activityType="EventEndEmpty"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_GDWoEcfmEeCzoqUlxCUkxg" iD="_GDWoEMfmEeCzoqUlxCUkxg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Nb474cfmEeCzoqUlxCUkxg" iD="_Nb474MfmEeCzoqUlxCUkxg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Wl4UUcfoEeCzoqUlxCUkxg" iD="_Wl4UUMfoEeCzoqUlxCUkxg"/>
@@ -276,8 +367,14 @@
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_gFJS4fMQEeC6aqQJKR8yVQ" iD="_gFJS4PMQEeC6aqQJKR8yVQ"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_qZR1IPMQEeC6aqQJKR8yVQ" iD="_qZROEPMQEeC6aqQJKR8yVQ"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_qp2nwfMQEeC6aqQJKR8yVQ" iD="_qp2nwPMQEeC6aqQJKR8yVQ"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_FTIwcfZnEeC0ybj4-JjvwA" iD="_FTIwcPZnEeC0ybj4-JjvwA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Fu3qMfZnEeC0ybj4-JjvwA" iD="_Fu3qMPZnEeC0ybj4-JjvwA"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_dF7d0SZXEeGZ6qIn2ne6Bw" iD="_dF7d0CZXEeGZ6qIn2ne6Bw"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_dezQ0SZXEeGZ6qIn2ne6Bw" iD="_dezQ0CZXEeGZ6qIn2ne6Bw"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_hIpsYSZXEeGZ6qIn2ne6Bw" iD="_hIpsYCZXEeGZ6qIn2ne6Bw"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_l8NiASZXEeGZ6qIn2ne6Bw" iD="_l8NiACZXEeGZ6qIn2ne6Bw"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_xysAwSZXEeGZ6qIn2ne6Bw" iD="_xysAwCZXEeGZ6qIn2ne6Bw"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_4uIv8SZXEeGZ6qIn2ne6Bw" iD="_4uIv8CZXEeGZ6qIn2ne6Bw"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_6dwTcSZXEeGZ6qIn2ne6Bw" iD="_6dwTcCZXEeGZ6qIn2ne6Bw"/>
   </pools>
   <pools xmi:type="bpmn:Pool" xmi:id="_7mSMQcflEeCzoqUlxCUkxg" iD="_7mSMQMflEeCzoqUlxCUkxg" name="Vastaanottaja">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9WtoEMflEeCzoqUlxCUkxg" source="executablepool">
@@ -331,7 +428,7 @@
         </eAnnotations>
       </associations>
     </artifacts>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_ewZUIMfnEeCzoqUlxCUkxg" iD="_ewNt8sfnEeCzoqUlxCUkxg" associations="_pC3CcMfnEeCzoqUlxCUkxg _puVoYMfnEeCzoqUlxCUkxg" outgoingEdges="_ewc-gMfnEeCzoqUlxCUkxg" name="Vastaanota valtakirja" activityType="Task">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_ewZUIMfnEeCzoqUlxCUkxg" iD="_ewNt8sfnEeCzoqUlxCUkxg" associations="_pC3CcMfnEeCzoqUlxCUkxg _puVoYMfnEeCzoqUlxCUkxg" name="Vastaanota valtakirja" activityType="Task">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ewZUIcfnEeCzoqUlxCUkxg" source="genericFile">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ewZUIsfnEeCzoqUlxCUkxg" key="projectRelativePath" value="Forms/Valtakirja_Decision_Form.gi"/>
       </eAnnotations>
@@ -353,7 +450,7 @@
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_pCa9kcfnEeCzoqUlxCUkxg"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_pt_DEMfnEeCzoqUlxCUkxg"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_ewbJWMfnEeCzoqUlxCUkxg" iD="_ewPjIMfnEeCzoqUlxCUkxg" associations="_qBVc4MfnEeCzoqUlxCUkxg _qUuS8MfnEeCzoqUlxCUkxg" incomingEdges="_ewc-gMfnEeCzoqUlxCUkxg" name="Tee päätös" activityType="Task">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_ewbJWMfnEeCzoqUlxCUkxg" iD="_ewPjIMfnEeCzoqUlxCUkxg" associations="_qBVc4MfnEeCzoqUlxCUkxg _qUuS8MfnEeCzoqUlxCUkxg" name="Tee päätös" activityType="Task">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ewbJWcfnEeCzoqUlxCUkxg" source="genericFile">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ewbJWsfnEeCzoqUlxCUkxg" key="projectRelativePath" value="Forms/Valtakirja_Decision_Form.gi"/>
       </eAnnotations>
@@ -364,7 +461,6 @@
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_qA-QgcfnEeCzoqUlxCUkxg"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_qT-sEcfnEeCzoqUlxCUkxg"/>
     </vertices>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_ewc-gMfnEeCzoqUlxCUkxg" iD="_ewRYUMfnEeCzoqUlxCUkxg" name=""/>
   </pools>
   <pools xmi:type="bpmn:Pool" xmi:id="_ZwRaccftEeCzoqUlxCUkxg" iD="_ZwRacMftEeCzoqUlxCUkxg" name="Palvelut">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bMwmkMftEeCzoqUlxCUkxg" source="executablepool">
@@ -466,6 +562,78 @@
         </eAnnotations>
       </associations>
     </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_t48IASZXEeGZ6qIn2ne6Bw" iD="_t48IACZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_t48IAiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t48IAyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t5BAgiZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="tnsMitatoiValtakirjaRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t5IVQCZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.tiva.koku.arcusys.fi/}KokuValtakirjaProcessingService_mitatoiValtakirja"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_t5DcwCZXEeGZ6qIn2ne6Bw" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_t5F5ACZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t5HuMCZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_uOC1USZXEeGZ6qIn2ne6Bw" iD="_uOC1UCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uOC1UiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uOC1UyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uOIU4iZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="tnsMitatoiValtakirjaResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uOQQsSZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.tiva.koku.arcusys.fi/}KokuValtakirjaProcessingService_mitatoiValtakirjaResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_uOKxICZXEeGZ6qIn2ne6Bw" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uON0cCZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uOQQsCZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_yXIKkSZXEeGZ6qIn2ne6Bw" iD="_yXIKkCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yXIKkiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yXIKkyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yXORMSZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="tokenServiceAuthenticateUserRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yXWNASZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://tempo.intalio.org/security/tokenService/}authenticateUser"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_yXQtcCZXEeGZ6qIn2ne6Bw" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yXTwwCZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yXWNACZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_yrreQSZXEeGZ6qIn2ne6Bw" iD="_yrreQCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yrreQiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yrreQyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yryL8CZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="tokenServiceAuthenticateUserResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yr_AQSZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://tempo.intalio.org/security/tokenService/}authenticateUserResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_yr4SkCZXEeGZ6qIn2ne6Bw" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yr788CZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yr_AQCZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_5BTjkSZXEeGZ6qIn2ne6Bw" iD="_5BTjkCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5BTjkiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5BTjkyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5BZDIiZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="taskManagementSystemDeleteRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5BhmACZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}deleteRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_5BbfYCZXEeGZ6qIn2ne6Bw" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5BeisCZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5Bg-8CZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_5Sy8MSZXEeGZ6qIn2ne6Bw" iD="_5Sy8MCZXEeGZ6qIn2ne6Bw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Sy8MiZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5Sy8MyZXEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5S5C2CZXEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="taskManagementSystemDeleteResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5TCz0CZXEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}okResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_5S8tMCZXEeGZ6qIn2ne6Bw" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5S_JcCZXEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5TCMwCZXEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
     <vertices xmi:type="bpmn:Activity" xmi:id="_dRxLQMftEeCzoqUlxCUkxg" iD="_dRdpQMftEeCzoqUlxCUkxg" associations="_e3BR0MftEeCzoqUlxCUkxg _fT1JoMftEeCzoqUlxCUkxg" name="annaValtakirja" activityType="Task">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dRxLQcftEeCzoqUlxCUkxg" source="attachedDataobject">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dRxyUMftEeCzoqUlxCUkxg" key="douri" value="project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl?wsdloperationbound={http://soa.tiva.koku.arcusys.fi/}KokuValtakirjaProcessingService/KokuValtakirjaProcessingServicePort/annaValtakirja"/>
@@ -493,6 +661,27 @@
       </eAnnotations>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_kRU_cfMQEeC6aqQJKR8yVQ"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_krgaAfMQEeC6aqQJKR8yVQ"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_n8jpICZXEeGZ6qIn2ne6Bw" iD="_n8A2kCZXEeGZ6qIn2ne6Bw" associations="_t5DcwCZXEeGZ6qIn2ne6Bw _uOKxICZXEeGZ6qIn2ne6Bw" name="mitatoiValtakirja" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_n8jpISZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_n8jpIiZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl?wsdloperationbound={http://soa.tiva.koku.arcusys.fi/}KokuValtakirjaProcessingService/KokuValtakirjaProcessingServicePort/mitatoiValtakirja"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_t4SnwSZXEeGZ6qIn2ne6Bw"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_uNusQSZXEeGZ6qIn2ne6Bw"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_vu9OeCZXEeGZ6qIn2ne6Bw" iD="_vusIsCZXEeGZ6qIn2ne6Bw" associations="_yXQtcCZXEeGZ6qIn2ne6Bw _yr4SkCZXEeGZ6qIn2ne6Bw" name="authenticateUser" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vu9OeSZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vu9OeiZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/TokenService.wsdl?wsdloperationbound={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_yWfRYSZXEeGZ6qIn2ne6Bw"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_yrZKYSZXEeGZ6qIn2ne6Bw"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_z_ugGCZXEeGZ6qIn2ne6Bw" iD="_z-ABwCZXEeGZ6qIn2ne6Bw" associations="_5BbfYCZXEeGZ6qIn2ne6Bw _5S8tMCZXEeGZ6qIn2ne6Bw" name="delete" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_z_ugGSZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_z_ugGiZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/TaskManagementSystem.wsdl?wsdloperationbound={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}TaskManagementServices/TaskManagementServicesSOAP/delete"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_5Ar4gSZXEeGZ6qIn2ne6Bw"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_5SdlASZXEeGZ6qIn2ne6Bw"/>
     </vertices>
   </pools>
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_D_cPkcfmEeCzoqUlxCUkxg" iD="_D_cPkMfmEeCzoqUlxCUkxg" source="__GNPwMflEeCzoqUlxCUkxg" target="_CwnE8cfmEeCzoqUlxCUkxg">
@@ -567,6 +756,36 @@
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_krgaAfMQEeC6aqQJKR8yVQ" iD="_krgaAPMQEeC6aqQJKR8yVQ" source="_hKJzIPMQEeC6aqQJKR8yVQ" target="_U6rlkfMQEeC6aqQJKR8yVQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_krnHsPMQEeC6aqQJKR8yVQ" source="attachedDataobject">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_krnHsfMQEeC6aqQJKR8yVQ" key="douri" value="project:///Services/UsersAndGroupsServiceImpl.wsdl?messageForBoundOperation={http://soa.common.koku.arcusys.fi/}UsersAndGroupsService/UsersAndGroupsServicePort/getKunpoNameByUserUid/output/getKunpoNameByUserUidResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_t4SnwSZXEeGZ6qIn2ne6Bw" iD="_t4SnwCZXEeGZ6qIn2ne6Bw" source="_lh1TISZXEeGZ6qIn2ne6Bw" target="_n8jpICZXEeGZ6qIn2ne6Bw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_t4ZVcCZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t4ZVcSZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.tiva.koku.arcusys.fi/}KokuValtakirjaProcessingService/KokuValtakirjaProcessingServicePort/mitatoiValtakirja/input/mitatoiValtakirjaRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_uNusQSZXEeGZ6qIn2ne6Bw" iD="_uNusQCZXEeGZ6qIn2ne6Bw" source="_n8jpICZXEeGZ6qIn2ne6Bw" target="_lh1TISZXEeGZ6qIn2ne6Bw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uN2oECZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uN2oESZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/KokuValtakirjaProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.tiva.koku.arcusys.fi/}KokuValtakirjaProcessingService/KokuValtakirjaProcessingServicePort/mitatoiValtakirja/output/mitatoiValtakirjaResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_yWfRYSZXEeGZ6qIn2ne6Bw" iD="_yWfRYCZXEeGZ6qIn2ne6Bw" source="_xbfBsSZXEeGZ6qIn2ne6Bw" target="_vu9OeCZXEeGZ6qIn2ne6Bw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yWl_ECZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yWl_ESZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/TokenService.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser/input/authenticateUserRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_yrZKYSZXEeGZ6qIn2ne6Bw" iD="_yrZKYCZXEeGZ6qIn2ne6Bw" source="_vu9OeCZXEeGZ6qIn2ne6Bw" target="_xbfBsSZXEeGZ6qIn2ne6Bw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yrgfICZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yrgfISZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/TokenService.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser/output/authenticateUserResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_5Ar4gSZXEeGZ6qIn2ne6Bw" iD="_5Ar4gCZXEeGZ6qIn2ne6Bw" source="_30wQ4SZXEeGZ6qIn2ne6Bw" target="_z_ugGCZXEeGZ6qIn2ne6Bw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5AymMCZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5AymMSZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/TaskManagementSystem.wsdl?messageForBoundOperation={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}TaskManagementServices/TaskManagementServicesSOAP/delete/input/deleteRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_5SdlASZXEeGZ6qIn2ne6Bw" iD="_5SdlACZXEeGZ6qIn2ne6Bw" source="_z_ugGCZXEeGZ6qIn2ne6Bw" target="_30wQ4SZXEeGZ6qIn2ne6Bw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Smu8CZXEeGZ6qIn2ne6Bw" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5Smu8SZXEeGZ6qIn2ne6Bw" key="douri" value="project:///Services/TaskManagementSystem.wsdl?messageForBoundOperation={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}TaskManagementServices/TaskManagementServicesSOAP/delete/output/deleteResponse"/>
     </eAnnotations>
   </messages>
 </bpmn:BpmnDiagram>
