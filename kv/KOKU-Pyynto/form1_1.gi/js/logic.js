@@ -16,11 +16,83 @@ jsx3.lang.Package.definePackage(
 
 
 function getEndpoint() {
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51lb:8080";
     return endpoint;
     
 }
+
+function getRoles(uid ) {
+    var i = 0, j = 0, roleName, roleId;
+
+    //var uid = "415ae6c9-406b-41df-b71e-887b5f0e4f3a";
+    rolesData = Arcusys.Internal.Communication.GetUserRoles(uid);
+    //alert(rolesData);
+    
+    var roles = rolesData.selectNodeIterator("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+    var rolesArray = [];
+    
+    while (roles.hasNext()) {
+        node = roles.next();
+        if (node.getFirstChild()) {
+            childNode = node.getFirstChild();
+            rolesArray[i] = [];
+            while (childNode) {
+                if (childNode.getValue()) { 
+                    rolesArray[i][j] = childNode.getValue();
+                }
+                childNode = childNode.getNextSibling();
+                j++;
+            }
+            i++;
+            j = 0;
+        }
+    }
+    
+    var s = "<data>";
+    
+    for (i = 0; i < rolesArray.length; i++) {
+        s += "<record jsxid=\"" + rolesArray[i][1] + "\" jsxtext=\"" + rolesArray[i][0] + "\"\/>";
+    }
+
+    s += "</data>";
+    
+    form1.getJSXByName("User_Roolit").setXMLString(s).resetCacheData();
+
+}
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserRoles = function(uid) {
+
+        var tout, msg, endpoint, url, req, objXML;
+
+        tout = 1000;
+
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserRoles><userUid>" + uid + "</userUid></soa:getUserRoles></soapenv:Body></soapenv:Envelope>";
+
+        var url = getUrl();
+
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetKunpoUsernameByUid= function(uid) {
@@ -868,6 +940,7 @@ function useTemplate() {
     form1.getJSXByName("headerEdit").setDisplay("none").repaint();
     form1.getJSXByName("Pohja").setDisplay("block").repaint();
     form1.getJSXByName("Kentat").setDisplay("none").repaint();
+    form1.getJSXByName("Roolit").setDisplay("block", true);
 }
 
 function dontUseTemplate() {
@@ -881,6 +954,7 @@ function dontUseTemplate() {
     form1.getJSXByName("header").setDisplay("block").repaint();
     form1.getJSXByName("User").setDisplay("block").repaint();
     form1.getJSXByName("paneBlock").setDisplay("block").repaint();
+    form1.getJSXByName("Roolit").setDisplay("block", true);
 }
 
 
