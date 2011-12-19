@@ -22,6 +22,28 @@ function getEndpoint() {
     
 }
 
+function modfiyForm() {
+    var childNode;
+    var childIterator = form1.getCache().getDocument("TextInput-nomap").getChildIterator();
+    
+    form1.getJSXByName("Kentat").setDisplay("block", true);
+    form1.getJSXByName("User_PaivitaOlemassaoleva").setChecked(1);
+
+    while(childIterator.hasNext()){
+       
+        childNode = childIterator.next();
+
+        fieldsetNumber = childNode.getAttribute("TextInput_Number");
+
+        if (fieldsetNumber!="") {
+
+            descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton",true,false);
+            descendant.setDisplay("block", true);
+
+        }
+    }
+}
+
 function getRoles(uid ) {
     var i = 0, j = 0, roleName, roleId;
 
