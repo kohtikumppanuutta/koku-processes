@@ -694,6 +694,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
 function getTemplate(templateId) {
 
+    form1.getJSXByName("Muokkaus").setDisplay("block", true);
+
         try {
             // Add form preload functions here.
             var formData = Arcusys.Internal.Communication.GetTemplate(templateId);
@@ -803,6 +805,7 @@ function createFormFromTemplateData(data) {
             }
             if (i==1) {
                 questionNumber = childNode1.getValue();
+                alert(questionNumber);
             }
             if (i==2) {
                 questionType = childNode1.getValue();
@@ -1437,6 +1440,7 @@ function mapFieldsToMatrix(title,question,sectionNumber,type) {
     node.setAttribute("TextInput_Question",question);
     node.setAttribute("TextInput_Section",title);
     node.setAttribute("TextInput_Number",sectionNumber);
+    alert(sectionNumber);
     node.setAttribute("TextInput_Type",type);
     form1.getCache().getDocument("TextInput-nomap").insertBefore(node);
     if (hasEmptyChild==true) {
@@ -1486,6 +1490,7 @@ function getAndRaiseSectionNumber() {
 function inputSection(title,question) {
     var sectionNumber = getAndRaiseSectionNumber();
     var inputType = getInputType();
+    alert(sectionNumber);
    // alert(inputType);
     if (inputType=="FREE_TEXT") {
         mapFieldsToMatrix(title,question,sectionNumber,inputType);

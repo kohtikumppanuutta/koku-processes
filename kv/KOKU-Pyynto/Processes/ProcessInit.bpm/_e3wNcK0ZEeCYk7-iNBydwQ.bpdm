@@ -1,19 +1,19 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:form1_1="http://www.intalio.com/gi/form1_1.gi" xmlns:form1_11="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProcessReceipient-Process="http://arcusys.fi/ProcessReceipient/Process" xmlns:Copyofform1_11="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:form1_12="http://www.intalio.com/gi/Forms/form1_1.gi" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:ProcessReceipient-Process1="http://arcusys.fi/Processes/ProcessReceipient/Process" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:attachments="http://www.intalio.com/gi/form1_1.gi/attachments" xmlns:Services="http://thisdiagram/Services" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:this="http://thisdiagram/Process" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Process">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:form1_1="http://www.intalio.com/gi/form1_1.gi" xmlns:form1_11="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" xmlns:User="http://thisdiagram/User" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProcessReceipient-Process="http://arcusys.fi/ProcessReceipient/Process" xmlns:Copyofform1_11="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:form1_12="http://www.intalio.com/gi/Forms/form1_1.gi" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:ProcessReceipient-Process1="http://arcusys.fi/Processes/ProcessReceipient/Process" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:attachments="http://www.intalio.com/gi/form1_1.gi/attachments" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:this="http://thisdiagram/Process" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Process">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/form1_1.gi" bpdm:prefix="form1_1" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" bpdm:prefix="form1_11" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/User" bpdm:prefix="User" bpdm:comment="contrib=&apos;partner-pool:///_ZjUfZK0ZEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://arcusys.fi/ProcessReceipient/Process" bpdm:prefix="ProcessReceipient-Process" bpdm:comment="contrib=&apos;project:///Services/ProcessReceipient-Process.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" bpdm:prefix="Copyofform1_11" bpdm:comment="contrib=&apos;project:///Services/Copyofform1_1.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/form1_1.gi" bpdm:prefix="form1_12" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_ZjUfZK0ZEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/DynamicFields" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///DynamicFields.xsd"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://arcusys.fi/Processes/ProcessReceipient/Process" bpdm:prefix="ProcessReceipient-Process1" bpdm:comment="contrib=&apos;project:///Services/ProcessReceipient-Process.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/DynamicFields" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///DynamicFields.xsd"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuRequestProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///KokuRequestProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/form1_1.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Services" bpdm:prefix="Services" bpdm:comment="contrib=&apos;partner-pool:///_p1rTkK0ZEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi" bpdm:prefix="Copyofform1_1" bpdm:comment="contrib=&apos;project:///Services/ProcessReceipient-Process.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Process" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
@@ -39,7 +39,7 @@
             <bpel:partnerLink name="servicesAndProcessForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:invokedPort="UsersAndGroupsServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_KIczMK0hEeCYk7-iNBydwQ:_aPlVEPMNEeC6aqQJKR8yVQ" bpdm:isManaged="true" bpdm:otherPoolId="_p1rTkK0ZEeCYk7-iNBydwQ"/>
             <bpel:partnerLink name="processAndUserForPortTypeProcessPlkVar" partnerLinkType="diag:ProcessAndUserForPortTypeProcessPlk" myRole="Process_for_User" bpdm:enableSharing="false" bpdm:providedService="this:ProcessAndUserForPortTypeProcessPlkService" bpdm:providedPort="Process_for_UserPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/ProcessAndUserForPortTypeProcessPlk" bpdm:providedIsDefault="true" bpdm:clientTasks="_e3wNcK0ZEeCYk7-iNBydwQ:_9ywGAK0ZEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_ZjUfZK0ZEeCYk7-iNBydwQ"/>
             <bpel:partnerLink name="servicesAndProcessForCanonicPortPlkVar" partnerLinkType="diag:ServicesAndProcessForCanonicPortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="ProcessReceipient-Process1:CanonicServiceForInterface" bpdm:invokedPort="canonicPort" bpdm:invokedSOAPAddress="http://intalio.intra.arcusys.fi:8080/ode/processes/KOKU-Pyynto/Processes/ProcessReceipient/Process/Interface" bpdm:invokedIsDefault="true" bpdm:clientTasks="_KIczMK0hEeCYk7-iNBydwQ:_ON3uQPjBEeC2ENkm3HmsIQ" bpdm:isManaged="true" bpdm:otherPoolId="_p1rTkK0ZEeCYk7-iNBydwQ"/>
-            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" bpdm:invokedPort="KokuRequestProcessingServicePort" bpdm:invokedSOAPAddress="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_e3wNcK0ZEeCYk7-iNBydwQ:_lurX0CfBEeG34O-nVZ604A, _e3wNcK0ZEeCYk7-iNBydwQ:_bRuQwCfBEeG34O-nVZ604A, _e3wNcK0ZEeCYk7-iNBydwQ:_RZbLwNd5EeCU1O2hlInHBA, _e3wNcK0ZEeCYk7-iNBydwQ:_eUWwAK0aEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_p1rTkK0ZEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" bpdm:invokedPort="KokuRequestProcessingServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_e3wNcK0ZEeCYk7-iNBydwQ:_lurX0CfBEeG34O-nVZ604A, _e3wNcK0ZEeCYk7-iNBydwQ:_bRuQwCfBEeG34O-nVZ604A, _e3wNcK0ZEeCYk7-iNBydwQ:_RZbLwNd5EeCU1O2hlInHBA, _e3wNcK0ZEeCYk7-iNBydwQ:_eUWwAK0aEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_p1rTkK0ZEeCYk7-iNBydwQ"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="Dynamic_Fields_Form" element="tns:Dynamic_Fields_Form" bpdm:id="_CoBL0q0aEeCYk7-iNBydwQ"/>
@@ -97,38 +97,40 @@
             </bpdm:messagingtask>
             <bpdm:gateway bpdm:label="Onko pohjaa?" bpdm:ID="_NquFYNd5EeCU1O2hlInHBA" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
                 <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_EI3e0CfBEeG34O-nVZ604A" bpdm:targetDisplayName="[Onko pohjaa? - GatewayDataBasedExclusive]">
-                    <bpel:condition>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID != "-"
-<mapper:mapperLink>
-  <mapper:vertice id="1572652686" targetPath="$condition" targetedBy="418199291-arg2"></mapper:vertice>
-  <mapper:vertice id="418199291" dimension="78x24" location="480,120">
-    <mapper:value>!=</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="174767475" sourcePath="$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID" targetedBy="418199291-arg0"></mapper:vertice>
-  <mapper:vertice id="1215167783" dimension="78x24" location="480,168" targetedBy="418199291-arg1">
-    <mapper:value>"-"</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink></bpel:condition>
+                    <bpel:condition>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID != "-"<mapper:mapperLink><mapper:vertice id="1572652686" targetPath="$condition" targetedBy="418199291-arg2"></mapper:vertice><mapper:vertice id="418199291" dimension="78x24" location="480,120"><mapper:value>!=</mapper:value></mapper:vertice><mapper:vertice id="174767475" sourcePath="$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID" targetedBy="418199291-arg0"></mapper:vertice><mapper:vertice id="1215167783" dimension="78x24" location="480,168" targetedBy="418199291-arg1"><mapper:value>"-"</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_OCaW0CfBEeG34O-nVZ604A" bpdm:targetDisplayName="[Onko pohjaa? - Lähetä HTML]">
-                    <bpel:condition>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID = "-"
-<mapper:mapperLink>
-  <mapper:vertice id="171750656" targetPath="$condition" targetedBy="1432916413-arg2"></mapper:vertice>
-  <mapper:vertice id="1432916413" dimension="78x24" location="432,72">
-    <mapper:value>=</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="595239655" sourcePath="$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID" targetedBy="1432916413-arg0"></mapper:vertice>
-  <mapper:vertice id="1841952007" dimension="78x24" location="432,120" targetedBy="1432916413-arg1">
-    <mapper:value>"-"</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink></bpel:condition>
+                    <bpel:condition>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID = "-"<mapper:mapperLink><mapper:vertice id="171750656" targetPath="$condition" targetedBy="1432916413-arg2"></mapper:vertice><mapper:vertice id="1432916413" dimension="78x24" location="432,72"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="595239655" sourcePath="$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID" targetedBy="1432916413-arg0"></mapper:vertice><mapper:vertice id="1841952007" dimension="78x24" location="432,120" targetedBy="1432916413-arg1"><mapper:value>"-"</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
                 </bpdm:linkset>
                 <bpel:sequence>
                     <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_Dx4iMCfBEeG34O-nVZ604A" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
-                        <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_oda2ACfBEeG34O-nVZ604A" bpdm:targetDisplayName="[GatewayDataBasedExclusive - EventIntermediateMessage]"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_oda2ACfBEeG34O-nVZ604A" bpdm:targetDisplayName="[GatewayDataBasedExclusive - EventIntermediateMessage]">
+                            <bpel:condition>$Dynamic_Fields_Form/tns:User/tns:User_LuoUusi = "true"<mapper:mapperLink><mapper:vertice id="1942009269" targetPath="$condition" targetedBy="2123693067-arg2"></mapper:vertice><mapper:vertice id="2123693067" dimension="78x24" location="403,68"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1909719065" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_LuoUusi" targetedBy="2123693067-arg0"></mapper:vertice><mapper:vertice id="1520919939" dimension="78x24" location="403,122" targetedBy="2123693067-arg1"><mapper:value>"true"</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                        </bpdm:linkset>
                         <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_z7pz4CfBEeG34O-nVZ604A" bpdm:targetDisplayName="default"></bpdm:linkset>
-                        <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_0w1vcCfBEeG34O-nVZ604A" bpdm:targetDisplayName="[GatewayDataBasedExclusive - EventIntermediateMessage]"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_0w1vcCfBEeG34O-nVZ604A" bpdm:targetDisplayName="[GatewayDataBasedExclusive - EventIntermediateMessage]">
+                            <bpel:condition>$Dynamic_Fields_Form/tns:User/tns:User_PaivitaOlemassaoleva = "true"<mapper:mapperLink><mapper:vertice id="449384464" targetPath="$condition" targetedBy="270407296-arg2"></mapper:vertice><mapper:vertice id="270407296" dimension="78x24" location="264,121"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="874241356" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_PaivitaOlemassaoleva" targetedBy="270407296-arg0"></mapper:vertice><mapper:vertice id="1205725045" dimension="78x24" location="264,156" targetedBy="270407296-arg1"><mapper:value>"true"</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                        </bpdm:linkset>
                         <bpel:sequence>
                             <bpdm:messagingtask eventType="intermediate: message" operation="createRequestTemplate" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_bRuQwCfBEeG34O-nVZ604A">
+                                <bpdm:linkset bpdm:type="assignments">
+                                    <bpel:copy>
+                                        <bpel:from>bpel:doXslTransform("../xsl/SendRequestQuestions.xsl", $Dynamic_Fields_Form)</bpel:from>
+                                        <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/questions</bpel:to><mapper:mapperLink><mapper:vertice id="1132663502" targetPath="$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/questions" targetedBy="555041133-arg2"></mapper:vertice><mapper:vertice id="555041133" dimension="217x85" location="420,120"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="1875592378" dimension="253x37" location="204,60" targetedBy="555041133-arg0"><mapper:value>"../xsl/SendRequestQuestions.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1928442470" sourcePath="$Dynamic_Fields_Form" targetedBy="555041133-arg1"></mapper:vertice></mapper:mapperLink>
+                                    </bpel:copy>
+                                    <bpel:copy>
+                                        <bpel:from>bpel:doXslTransform("../xsl/SendRequestMultipleChoice.xsl", $Dynamic_Fields_Form)</bpel:from>
+                                        <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/choices</bpel:to><mapper:mapperLink><mapper:vertice id="714711804" targetPath="$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/choices" targetedBy="663233955-arg2"></mapper:vertice><mapper:vertice id="663233955" dimension="217x85" location="420,228"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="538049813" dimension="265x37" location="96,168" targetedBy="663233955-arg0"><mapper:value>"../xsl/SendRequestMultipleChoice.xsl"</mapper:value></mapper:vertice><mapper:vertice id="368929124" sourcePath="$Dynamic_Fields_Form" targetedBy="663233955-arg1"></mapper:vertice></mapper:mapperLink>
+                                    </bpel:copy>
+                                    <bpel:copy>
+                                        <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Sender</bpel:from>
+                                        <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/creator</bpel:to><mapper:mapperLink><mapper:vertice id="1741375860" targetPath="$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/creator" targetedBy="564882270-arg0"></mapper:vertice><mapper:vertice id="564882270" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice></mapper:mapperLink>
+                                    </bpel:copy>
+                                    <bpel:copy>
+                                        <bpel:from>$Dynamic_Fields_Form/tns:Header/tns:Header_Text</bpel:from>
+                                        <bpel:to>$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/subject</bpel:to><mapper:mapperLink><mapper:vertice id="1595499975" targetPath="$kokuRequestProcessingServiceImplCreateRequestTemplateMsg.parameters/subject" targetedBy="1465896225-arg0"></mapper:vertice><mapper:vertice id="1465896225" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text"></mapper:vertice></mapper:mapperLink>
+                                    </bpel:copy>
+                                </bpdm:linkset>
                                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuRequestProcessingServiceImplCreateRequestTemplateMsg" bpdm:msgVarScopeId="_e3wNcK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuRequestProcessingServiceImpl:createRequestTemplate" bpdm:binding="KokuRequestProcessingServiceImpl:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_BnnNkCfCEeG34O-nVZ604A"></bpdm:linkset>
                                 <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuRequestProcessingServiceImplCreateRequestTemplateResponseMsg" bpdm:msgVarScopeId="_e3wNcK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuRequestProcessingServiceImpl:createRequestTemplateResponse" bpdm:binding="KokuRequestProcessingServiceImpl:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_CCi2ECfCEeG34O-nVZ604A"></bpdm:linkset>
                             </bpdm:messagingtask>
@@ -139,37 +141,15 @@
                                 <bpdm:linkset bpdm:type="assignments">
                                     <bpel:copy>
                                         <bpel:from>$Dynamic_Fields_Form/tns:Header/tns:Header_Text</bpel:from>
-                                        <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/subject</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1336074229" targetPath="$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/subject" targetedBy="1055709784-arg0"></mapper:vertice>
-  <mapper:vertice id="1055709784" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text"></mapper:vertice>
-</mapper:mapperLink>
+                                        <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/subject</bpel:to><mapper:mapperLink><mapper:vertice id="1336074229" targetPath="$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/subject" targetedBy="1055709784-arg0"></mapper:vertice><mapper:vertice id="1055709784" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text"></mapper:vertice></mapper:mapperLink>
                                     </bpel:copy>
                                     <bpel:copy>
-                                        <bpel:from>bpel:doXslTransform("../xsl/SendRequestQuestions.xsl")</bpel:from>
-                                        <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/questions</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1710541516" targetPath="$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/questions" targetedBy="179570403-arg1"></mapper:vertice>
-  <mapper:vertice id="179570403" dimension="217x85" location="360,72">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="391760769" dimension="289x37" location="144,12" targetedBy="179570403-arg0">
-    <mapper:value>"../xsl/SendRequestQuestions.xsl"</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink>
+                                        <bpel:from>bpel:doXslTransform("../xsl/SendRequestQuestions.xsl", $Dynamic_Fields_Form)</bpel:from>
+                                        <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/questions</bpel:to><mapper:mapperLink><mapper:vertice id="1209359081" targetPath="$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/questions" targetedBy="1832567392-arg2"></mapper:vertice><mapper:vertice id="1832567392" dimension="217x85" location="360,72"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="896523798" dimension="289x37" location="144,12" targetedBy="1832567392-arg0"><mapper:value>"../xsl/SendRequestQuestions.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1304753313" sourcePath="$Dynamic_Fields_Form" targetedBy="1832567392-arg1"></mapper:vertice></mapper:mapperLink>
                                     </bpel:copy>
                                     <bpel:copy>
-                                        <bpel:from>bpel:doXslTransform("../xsl/SendRequestMultipleChoice.xsl")</bpel:from>
-                                        <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/choices</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="2098344911" targetPath="$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/choices" targetedBy="1487380692-arg1"></mapper:vertice>
-  <mapper:vertice id="1487380692" dimension="217x85" location="360,180">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="54754291" dimension="289x37" location="48,120" targetedBy="1487380692-arg0">
-    <mapper:value>"../xsl/SendRequestMultipleChoice.xsl"</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink>
+                                        <bpel:from>bpel:doXslTransform("../xsl/SendRequestMultipleChoice.xsl", $Dynamic_Fields_Form)</bpel:from>
+                                        <bpel:to>$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/choices</bpel:to><mapper:mapperLink><mapper:vertice id="2051940741" targetPath="$kokuRequestProcessingServiceImplUpdateRequestTemplateMsg.parameters/choices" targetedBy="831592382-arg2"></mapper:vertice><mapper:vertice id="831592382" dimension="217x85" location="360,180"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="483638658" dimension="289x37" location="48,120" targetedBy="831592382-arg0"><mapper:value>"../xsl/SendRequestMultipleChoice.xsl"</mapper:value></mapper:vertice><mapper:vertice id="101072695" sourcePath="$Dynamic_Fields_Form" targetedBy="831592382-arg1"></mapper:vertice></mapper:mapperLink>
                                     </bpel:copy>
                                 </bpdm:linkset>
                                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuRequestProcessingServiceImplUpdateRequestTemplateMsg" bpdm:msgVarScopeId="_e3wNcK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuRequestProcessingServiceImpl:updateRequestTemplate" bpdm:binding="KokuRequestProcessingServiceImpl:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_BAPrkCfCEeG34O-nVZ604A"></bpdm:linkset>
@@ -184,70 +164,52 @@
                                 <bpel:from>bpel:doXslTransform("../xsl/SendRequestReceipients.xsl", $Dynamic_Fields_Form)</bpel:from>
                                 <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/receipients</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="1321241784" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/receipients" targetedBy="516766789-arg2"></mapper:vertice>
-  <mapper:vertice id="516766789" dimension="217x85" location="348,72">
+  <mapper:vertice id="538936661" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/receipients" targetedBy="719508940-arg2"></mapper:vertice>
+  <mapper:vertice id="719508940" dimension="217x85" location="360,300">
     <mapper:value>bpel:doXslTransform()</mapper:value>
   </mapper:vertice>
-  <mapper:vertice id="828245032" dimension="170x39" location="59,142" targetedBy="516766789-arg0">
+  <mapper:vertice id="724138797" dimension="254x39" location="84,396" targetedBy="719508940-arg0">
     <mapper:value>"../xsl/SendRequestReceipients.xsl"</mapper:value>
   </mapper:vertice>
-  <mapper:vertice id="1180785175" sourcePath="$Dynamic_Fields_Form" targetedBy="516766789-arg1"></mapper:vertice>
+  <mapper:vertice id="1430295548" sourcePath="$Dynamic_Fields_Form" targetedBy="719508940-arg1"></mapper:vertice>
 </mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:Header/tns:Header_Text</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/subject</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="348402652" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/subject" targetedBy="1118182053-arg0"></mapper:vertice>
-  <mapper:vertice id="1118182053" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/subject</bpel:to><mapper:mapperLink><mapper:vertice id="348402652" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/subject" targetedBy="1118182053-arg0"></mapper:vertice><mapper:vertice id="1118182053" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Sender</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/fromUserUid</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1992704292" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/fromUserUid" targetedBy="2050593429-arg0"></mapper:vertice>
-  <mapper:vertice id="2050593429" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice>
-</mapper:mapperLink>
-                            </bpel:copy>
-                            <bpel:copy>
-                                <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Roolit</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/fromRole</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="957085198" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/fromRole" targetedBy="399742516-arg0"></mapper:vertice>
-  <mapper:vertice id="399742516" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Roolit"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/fromUserUid</bpel:to><mapper:mapperLink><mapper:vertice id="1992704292" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/fromUserUid" targetedBy="2050593429-arg0"></mapper:vertice><mapper:vertice id="2050593429" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_AnswerUntil</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/replyTill</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="2053028154" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/replyTill" targetedBy="931096871-arg0"></mapper:vertice>
-  <mapper:vertice id="931096871" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_AnswerUntil"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/replyTill</bpel:to><mapper:mapperLink><mapper:vertice id="2053028154" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/replyTill" targetedBy="931096871-arg0"></mapper:vertice><mapper:vertice id="931096871" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_AnswerUntil"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Reminder</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/notifyBeforeDays</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="279722672" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/notifyBeforeDays" targetedBy="438142392-arg0"></mapper:vertice>
-  <mapper:vertice id="438142392" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Reminder"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/notifyBeforeDays</bpel:to><mapper:mapperLink><mapper:vertice id="279722672" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/notifyBeforeDays" targetedBy="438142392-arg0"></mapper:vertice><mapper:vertice id="438142392" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Reminder"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/content</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1199466876" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/content" targetedBy="734990466-arg0"></mapper:vertice>
-  <mapper:vertice id="734990466" sourcePath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/content</bpel:to><mapper:mapperLink><mapper:vertice id="1199466876" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/content" targetedBy="734990466-arg0"></mapper:vertice><mapper:vertice id="734990466" sourcePath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/requestTemplateId</bpel:to>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/requestTemplateId</bpel:to><mapper:mapperLink><mapper:vertice id="546208121" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/requestTemplateId" targetedBy="1514428961-arg0"></mapper:vertice><mapper:vertice id="1514428961" sourcePath="$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Roolit != "null"</bpel:from>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/fromRole</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="546208121" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/requestTemplateId" targetedBy="1514428961-arg0"></mapper:vertice>
-  <mapper:vertice id="1514428961" sourcePath="$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID"></mapper:vertice>
+  <mapper:vertice id="1813517658" targetPath="$kokuRequestProcessingServiceImplSendRequestWithTemplateNewMsg.parameters/request/fromRole" targetedBy="490491401-arg2"></mapper:vertice>
+  <mapper:vertice id="490491401" dimension="78x24" location="348,180">
+    <mapper:value>!=</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="2098310668" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Roolit" targetedBy="490491401-arg0"></mapper:vertice>
+  <mapper:vertice id="666907625" dimension="78x24" location="396,228" targetedBy="490491401-arg1">
+    <mapper:value>"null"</mapper:value>
+  </mapper:vertice>
 </mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
@@ -268,65 +230,31 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/content</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1578111448" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/content" targetedBy="540553883-arg0"></mapper:vertice>
-  <mapper:vertice id="540553883" sourcePath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/content</bpel:to><mapper:mapperLink><mapper:vertice id="1578111448" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/content" targetedBy="540553883-arg0"></mapper:vertice><mapper:vertice id="540553883" sourcePath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Roolit</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/fromRole</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="302611604" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/fromRole" targetedBy="432779670-arg0"></mapper:vertice>
-  <mapper:vertice id="432779670" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Roolit"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/fromRole</bpel:to><mapper:mapperLink><mapper:vertice id="302611604" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/fromRole" targetedBy="432779670-arg0"></mapper:vertice><mapper:vertice id="432779670" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Roolit"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Sender</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/fromUserUid</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="913549335" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/fromUserUid" targetedBy="332651170-arg0"></mapper:vertice>
-  <mapper:vertice id="332651170" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/fromUserUid</bpel:to><mapper:mapperLink><mapper:vertice id="913549335" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/fromUserUid" targetedBy="332651170-arg0"></mapper:vertice><mapper:vertice id="332651170" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>bpel:doXslTransform("../xsl/SendRequestReceipients.xsl", $Dynamic_Fields_Form)</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/receipients</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1701497742" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/receipients" targetedBy="804092951-arg2"></mapper:vertice>
-  <mapper:vertice id="804092951" dimension="217x85" location="396,312">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="864480347" dimension="170x39" location="132,312" targetedBy="804092951-arg0">
-    <mapper:value>"../xsl/SendRequestReceipients.xsl"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="1584020099" sourcePath="$Dynamic_Fields_Form" targetedBy="804092951-arg1"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/receipients</bpel:to><mapper:mapperLink><mapper:vertice id="1701497742" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/receipients" targetedBy="804092951-arg2"></mapper:vertice><mapper:vertice id="804092951" dimension="217x85" location="396,312"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="864480347" dimension="170x39" location="132,312" targetedBy="804092951-arg0"><mapper:value>"../xsl/SendRequestReceipients.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1584020099" sourcePath="$Dynamic_Fields_Form" targetedBy="804092951-arg1"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_AnswerUntil</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/replyTill</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="508690716" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/replyTill" targetedBy="260719734-arg0"></mapper:vertice>
-  <mapper:vertice id="260719734" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_AnswerUntil"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/replyTill</bpel:to><mapper:mapperLink><mapper:vertice id="508690716" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/replyTill" targetedBy="260719734-arg0"></mapper:vertice><mapper:vertice id="260719734" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_AnswerUntil"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:Header/tns:Header_Text</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/subject</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="692898061" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/subject" targetedBy="1988247596-arg0"></mapper:vertice>
-  <mapper:vertice id="1988247596" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/subject</bpel:to><mapper:mapperLink><mapper:vertice id="692898061" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/subject" targetedBy="1988247596-arg0"></mapper:vertice><mapper:vertice id="1988247596" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Reminder</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/notifyBeforeDays</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1178984041" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/notifyBeforeDays" targetedBy="210126215-arg0"></mapper:vertice>
-  <mapper:vertice id="210126215" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Reminder"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/notifyBeforeDays</bpel:to><mapper:mapperLink><mapper:vertice id="1178984041" targetPath="$kokuRequestProcessingServiceImplSendRequestNewMsg.parameters/request/notifyBeforeDays" targetedBy="210126215-arg0"></mapper:vertice><mapper:vertice id="210126215" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Reminder"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuRequestProcessingServiceImplSendRequestNewMsg" bpdm:msgVarScopeId="_e3wNcK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuRequestProcessingServiceImpl:sendRequestNew" bpdm:binding="KokuRequestProcessingServiceImpl:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_cRMHgCeyEeG34O-nVZ604A"></bpdm:linkset>

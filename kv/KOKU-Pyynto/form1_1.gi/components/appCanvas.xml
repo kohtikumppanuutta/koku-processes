@@ -9,7 +9,7 @@
     <strings jsxheight="100%" jsxname="root" jsxstyleoverride="overflow-x:hidden;   overflow-y:auto;"/>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Lomaketyyppi" jsxname="Lomaketyyppi" jsxclassname="fieldset" jsxdisplay="none"/>
+      <strings riaTitleText="Lomaketyyppi" jsxname="Lomaketyyppi" jsxclassname="fieldset" jsxdisplay=""/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -51,7 +51,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Muokkaus" jsxname="Muokkaus" jsxclassname="fieldset" jsxdisplay=""/>
+      <strings riaTitleText="Muokkaus" jsxname="Muokkaus" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -97,7 +97,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Lomakepohjan valinta" jsxname="Pohja" jsxclassname="fieldset" jsxdisplay="block"/>
+      <strings riaTitleText="Lomakepohjan valinta" jsxname="Pohja" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxheight="50" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -137,7 +137,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Roolit" jsxname="Roolit" jsxclassname="fieldset" jsxdisplay="block"/>
+      <strings riaTitleText="Roolit" jsxname="Roolit" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxheight="50" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -180,7 +180,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Lomakkeen muokkaus" jsxname="Kentat" jsxclassname="fieldset" jsxdisplay=""/>
+      <strings riaTitleText="Lomakkeen muokkaus" jsxname="Kentat" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxheight="300" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -533,8 +533,8 @@
         </object>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants/>
-        <strings jsxvalue="1" jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants jsxvalue="2"/>
+        <strings jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.TextBox">
