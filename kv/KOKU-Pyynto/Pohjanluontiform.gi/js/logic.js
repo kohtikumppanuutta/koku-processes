@@ -409,18 +409,17 @@ function intalioPreStart() {
         return "Lomakkeelle ei ole lis\xE4tty yht\xE4\xE4n pyynt\xF6\xE4.";
     }
         
-    //alert(form1.getCache().getDocument("MultipleChoice-nomap"));
     var returnValue = checkTemplateNameAlreadyExisting(form1.getJSXByName("User_Sender").getValue(), form1.getJSXByName("Header_Text").getValue());
     
     if (returnValue==null) {
         if (form1.getJSXByName("PohjaNakyvyys_Mina").getChecked()) {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Creator").repaint();
-        }
-        else if (form1.getJSXByName("PohjaNakyvyys_Organisaatio").getChecked()) {
+        } else if (form1.getJSXByName("PohjaNakyvyys_Organisaatio").getChecked()) {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Organization").repaint();
-        }
-        else {
+        } else if (form1.getJSXByName("PohjaNakyvyys_Kaikki").getChecked()) {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("All").repaint();
+        } else {
+            return "Pohjalle ei ole valittu n\xE4kyvyytt\xE4!";
         }
         
     }
@@ -1038,11 +1037,10 @@ function getInputType() {
     if (form1.getJSXByName("vastausKalenteriVaihtoehdot").getChecked()) {
         input = "CALENDAR";
     }
-    /*
-    if (form1.getJSXByName("vastausNumero").getChecked()) {
+    if (form1.getJSXByName("vastausNumeroVaihtoehdot").getChecked())    {
         input = "NUMBER";
     }
-*/
+
     return input;
 }
 

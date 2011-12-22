@@ -1717,7 +1717,7 @@ function intalioPreStart() {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Creator").repaint();
         } else if (form1.getJSXByName("PohjaNakyvyys_Organisaatio").getChecked()) {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Organization").repaint();
-        } else {
+        } else if (form1.getJSXByName("Pohjanakyvyys_Kaikki").getChecked()) {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("All").repaint();
         }
     }
