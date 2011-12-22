@@ -12,6 +12,7 @@ function getEndpoint() {
 function getUrl() {
     
     var domain = getDomainName();
+    domain = "http://62.61.65.15:8280";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -46,18 +47,22 @@ function getPortNumber() {
  *
  */
 function Preload() {
-    var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));
+    //var username = Intalio.Internal.Utilities.getUser();
+    //username = username.substring((username.indexOf("/")+1));
     //alert(username);
+    var username = "kirsi.kuntalainen";
     Valtakirja_Form.getJSXByName("Tiedot_LahettajaDisplay").setValue(username);
-    if (gup("FormID")) {
-        var id = gup("FormID");
+    //if (gup("FormID")) {
+    if (1) {
+        //var id = gup("FormID");
+        var id = 9;
         Valtakirja_Form.getJSXByName("Tiedot_ValtakirjaId").setValue(id);
        
         try {
            // alert("1. try");
             // Add form preload functions here.
             var userUid = Arcusys.Internal.Communication.GetUserUidByUsername(username);
+            alert(userUid);
             //Arcusys.Internal.Communication.GerLDAPUser();
            // alert(userUid);
             if(userUid != null) {
@@ -80,11 +85,13 @@ function Preload() {
             alert(e);
         }
         
+        /*
         try {
             //alert("3. try");
             var receipientUid = Valtakirja_Form.getJSXByName("Tiedot_Vastaanottaja").getValue();
             // Add form preload functions here.
             var receipientUsername = Arcusys.Internal.Communication.GetUsernameByUid(receipientUid);
+            alert(receipientUsername);
             //Arcusys.Internal.Communication.GerLDAPUser();
             
             if(receipientUsername != null) {
@@ -106,12 +113,12 @@ function Preload() {
             }
         } catch (e) {
             alert(e);
-        }
+        }*/
     }
 }
 
 function mapFormDataToFields(formData) {
-   // alert(formData);
+    alert(formData);
     var validTill = formData.selectSingleNode("//validTill", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
     var receiverUid = formData.selectSingleNode("//receiverUid", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
     var senderUid = formData.selectSingleNode("//senderUid", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();

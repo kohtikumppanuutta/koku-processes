@@ -14,17 +14,17 @@
   <dd:provide partnerLink="prosessiAndAntajaForPortTypeProcessPlkVar">
     <dd:service name="this:ProsessiAndAntajaForPortTypeProcessPlkService" port="Prosessi_for_AntajaPort"></dd:service>
   </dd:provide>
-  <dd:invoke partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar">
-    <dd:service name="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService" port="KokuValtakirjaProcessingServicePort"></dd:service>
-  </dd:invoke>
-  <dd:invoke partnerLink="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar">
-    <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
-  </dd:invoke>
   <dd:provide partnerLink="wFmagic_ewNt8sfnEeCzoqUlxCUkxgPlkVar">
     <dd:service name="this:WFmagic_ewNt8sfnEeCzoqUlxCUkxgService" port="Prosessi_for_VastaanottajaForThePortTypeProcessPort"></dd:service>
   </dd:provide>
   <dd:invoke partnerLink="wFmagic_ewNt8sfnEeCzoqUlxCUkxgPlkVar">
     <dd:service name="Valtakirja_Decision_Form1:WorkflowSoapService" port="Valtakirja_Decision_FormPort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar">
+    <dd:service name="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService" port="KokuValtakirjaProcessingServicePort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="palvelutAndProsessiForUsersAndGroupsServicePortPlkVar">
+    <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
   </dd:invoke>
   <dd:invoke partnerLink="palvelutAndProsessiForPortServicePlkVar">
     <dd:service name="TokenService:TokenService" port="Service"></dd:service>

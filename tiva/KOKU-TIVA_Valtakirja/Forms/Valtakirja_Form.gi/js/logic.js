@@ -8,9 +8,10 @@ function getEndpoint() {
 
 //Getting the domain name and port if available
 function getUrl() {
-    
+
     var domain = getDomainName();
-    return "http://" + domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+    //domain = "http://62.61.65.15:8380";
+    return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
 
@@ -18,28 +19,11 @@ function getDomainName() {
 
     var url = window.location.href;
     var url_parts = url.split("/");
-    var domain_name = url_parts[2];
+    var domain_name = url_parts[0] + "//" + url_parts[2];
        
     return domain_name;
 
 }
-
-
-function getPortNumber() {
-    
-    var url = window.location.href;
-    
-    var url_parts = url.split("/");
-    
-    var domain_name_parts = url_parts[2].split(":");
-    
-    var port_number = domain_name_parts[1];
-    
-    return port_number;
-
-}
-
-
 
 function intalioPreStart() {
     
@@ -443,65 +427,34 @@ function valuesToArray(attributes) {
 
 
 function mapChildrenNamesToField(data) {
-  //  alert(data);
-    var descendants = data.selectNodeIterator("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
-   // alert(descendants);
-    var personId, personDescription, personName, childAttributes;
-    var childAttributeList = new Array(); 
+    var i = 0, childData = [], childAttributes = [];
+
+    var descendants = data.selectNodes("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+
+    var personId, personName;
     var xmlForSelectBox = "<data>";
     var childList = ["displayName", "uid"];
-    while(descendants.hasNext()) {
     
-        childNode = descendants.next();
-       // alert(childNode);
-       // alert(childNode);
-       // requestTemplateId = childNode.getAttributeNode("return");
-      //  personName = childNode.getFirstChild().getValue();
-       
-       childAttributes = parseXML(childNode, "child", childList);
-      // alert(childAttributes);
-       childAttributeList = childAttributes[0].split(",");
-       personName = childAttributeList[0];
-       personId = childAttributeList[1];
-       // alert(personName + " " + personId);
-      
-       // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
-       // alert(personName);
-      //  personId = childNode.getFirstChild().getNextSibling().getNextSibling().getNextSibling().getValue();
-       // alert(personId);
-       // subject = childNode.selectSingleNode("//subject").getValue();
-       //alert(templateDescription);
+    while(descendants.get(i)) {
+    
+        childNode = descendants.get(i);
+        childData = parseXML(childNode, "child", childList);
+        childAttributes[i] = childData[i].split(',');
+        
+
+        personName = childAttributes[i][0];
+        personId = childAttributes[i][1];
+
         xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + personId + "\" jsxtext=\"" + personName + "\"/>";
         
-       // alert(requestTemplateId + subject);
-        personId = "";
-        personName = "";
-        childNode = null;
+        i++;
     }
     xmlForSelectBox = xmlForSelectBox + "</data>";
-   // alert(xmlForSelectBox);
-    /*
-    for (x in descendants)   {
-      alert(descendants[x]);
-    }
-    */
-    
-   // data.selectNodes("//tns:getRequestTemplateSummaryResponse", "xmlns:tns='http://soa.kv.koku.arcusys.fi/'");
-   // alert("mapTemplateNamesToField" + data);
-    /*
-       var childIterator = data.selectSingleNode("//getRequestTemplateSummaryResponse", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'">).getChildIterator();
 
-       while(childIterator.hasNext()){
-       
-            childNode = childIterator.next();
-            alert(childNode);
-       }
-    */
-   // var values = "";
-  // alert(xmlForSelectBox);
     Valtakirja_Form.getJSXByName("Tiedot_Henkilo").setXMLString(xmlForSelectBox);
     Valtakirja_Form.getJSXByName("Tiedot_Henkilo").resetXmlCacheData();
     Valtakirja_Form.getJSXByName("Tiedot_Henkilo").repaint();
+
 }
 
 function mapTemplateNamesToField(data) {
