@@ -6,7 +6,7 @@ function intalioPreStart() {
     var entry;
     
     if (AjanvarausForm.getJSXByName("Lomake_Hylkaa").getChecked()) {
-        if(!confirmation("Olet peruuttamassa tapaaamista")) {
+        if(!confirmation("Olet peruuttamassa tapaamista")) {
             return "Tapaamista ei peruttu";
         }
     } else if (checkApprovedSlot()) {
