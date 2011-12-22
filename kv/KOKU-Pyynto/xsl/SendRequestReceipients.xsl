@@ -5,12 +5,10 @@
         exclude-result-prefixes="fe arc">
         <xsl:output method="xml" indent="yes" />
         <xsl:template match="fe:Dynamic_Fields_Form">
-        <xsl:element name="receipient">
-			<xsl:for-each select="//fe:Receipients">
-				<xsl:element name="receipient">
-	            	<xsl:value-of select="fe:Receipients_ReceipientUid" />
-				</xsl:element>
-			</xsl:for-each>
-		</xsl:element>
+		<xsl:for-each select="//fe:Receipients">
+			<xsl:element name="receipients">
+	           	<xsl:value-of select="fe:Receipients_ReceipientUid" />
+			</xsl:element>
+		</xsl:for-each>
         </xsl:template>
 </xsl:stylesheet>

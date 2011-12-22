@@ -69,7 +69,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Button">
               <variants jsxindex="0" jsxheight="18"/>
-              <strings jsxname="button" jsxtext="Poista" jsxmargin="0 4 0 0" jsxclassname=""/>
+              <strings jsxname="deleteButton" jsxtext="Poista" jsxmargin="0 4 0 0" jsxclassname="" jsxdisplay=""/>
               <events jsxexecute="removeThisSection(this.getParent().getParent().getParent().getParent().getParent(),&quot;textinputsection&quot;);"/>
             </object>
           </object>

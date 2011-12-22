@@ -14,6 +14,19 @@ jsx3.lang.Package.definePackage(
   }
 );
 
+function bringButtonsBack() {
+    var descendants, blocks, i;
+    
+    blocks = form1.getJSXByName("block").getChildren();
+    //descendants = form1.getJSXByName("block").getDescendantsOfType("jsx3.gui.Button");
+    
+    for (i = 0; i < blocks.length; i++) {
+        blocks[i].setHeight(blocks[i].getHeight() + 23, true);
+        blocks[i].getDescendantOfName("deleteButton").getParent().setDisplay("block", true);
+    }
+
+}
+
 
 function getEndpoint() {
     var endpoint = "http://localhost:8180";
@@ -23,28 +36,30 @@ function getEndpoint() {
 }
 
 function modfiyForm() {
-    var childNode;
+    var childNode, creator, subject;
     var childIterator = form1.getCache().getDocument("TextInput-nomap").getChildIterator();
     
     form1.getJSXByName("Kentat").setDisplay("block", true);
     form1.getJSXByName("User_PaivitaOlemassaoleva").setChecked(1);
-
-    while(childIterator.hasNext()){
-       
-        childNode = childIterator.next();
-
-        fieldsetNumber = childNode.getAttribute("TextInput_Number");
-
-        if (fieldsetNumber!="") {
-
-            descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton",true,false);
-            descendant.setDisplay("block", true);
-
-        }
+    
+    subject = form1.getJSXByName("Header_Text").getValue();
+    creator = form1.getJSXByName("User_Sender").getValue();
+    
+    var templateStatusData = Arcusys.Internal.Communication.DoesReuqestTemplateExist(creator, subject);
+    var templateStatus = templateStatusData.selectSingleNode("//return", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
+    
+    if (templateStatus == "ExistsActive") {
+        form1.getJSXByName("User_PaivitaOlemassaoleva").setChecked(0).setEnabled(0, true);
     }
+    
+    form1.getJSXByName("Muokkaus").setDisplay("none", true);
+    form1.getJSXByName("Nakyvyys").setDisplay("block", true);
+
+    bringButtonsBack();
+
 }
 
-function getRoles(uid ) {
+function getRoles(uid) {
     var i = 0, j = 0, roleName, roleId;
 
     //var uid = "415ae6c9-406b-41df-b71e-887b5f0e4f3a";
@@ -53,33 +68,40 @@ function getRoles(uid ) {
     
     var roles = rolesData.selectNodeIterator("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
     var rolesArray = [];
-    
-    while (roles.hasNext()) {
-        node = roles.next();
-        if (node.getFirstChild()) {
-            childNode = node.getFirstChild();
-            rolesArray[i] = [];
-            while (childNode) {
-                if (childNode.getValue()) { 
-                    rolesArray[i][j] = childNode.getValue();
-                }
-                childNode = childNode.getNextSibling();
-                j++;
-            }
-            i++;
-            j = 0;
-        }
-    }
-    
-    var s = "<data>";
-    
-    for (i = 0; i < rolesArray.length; i++) {
-        s += "<record jsxid=\"" + rolesArray[i][1] + "\" jsxtext=\"" + rolesArray[i][0] + "\"\/>";
-    }
 
-    s += "</data>";
+    var checkRoles = rolesData.selectSingleNode("//role", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
     
-    form1.getJSXByName("User_Roolit").setXMLString(s).resetCacheData();
+    if (checkRoles) {
+        while (roles.hasNext()) {
+            node = roles.next();
+            if (node.getFirstChild()) {
+                childNode = node.getFirstChild();
+                rolesArray[i] = [];
+                while (childNode) {
+                    if (childNode.getValue()) { 
+                        rolesArray[i][j] = childNode.getValue();
+                    }
+                    childNode = childNode.getNextSibling();
+                    j++;
+                }
+                i++;
+                j = 0;
+            }
+        }
+    
+        var s = "<data>";
+    
+        for (i = 0; i < rolesArray.length; i++) {
+            s += "<record jsxid=\"" + rolesArray[i][1] + "\" jsxtext=\"" + rolesArray[i][0] + "\"\/>";
+        }
+
+        s += "</data>";
+    
+        form1.getJSXByName("User_Roolit").setXMLString(s).resetCacheData();
+        
+        form1.getJSXByName("Roolit").setDisplay("block", true);
+        
+    }
 
 }
 
@@ -128,11 +150,6 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var url = getUrl();
         
         var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        
-        /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
-        var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";*/
-
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -451,31 +468,6 @@ function addCalendarChoiceToForm(tempID,choiceText) {
     form1.getJSXByName("choicePane" + id).getChild("choiceUniversalID").setValue(form1.getJSXByName("multipleChoiceCounter").getValue());
     form1.getJSXByName("multipleChoiceCounter").setValue(parseInt(form1.getJSXByName("multipleChoiceCounter").getValue()) + 1);
     form1.getJSXByName(tempID).getChild("choiceCounter").setValue(parseInt(form1.getJSXByName(tempID).getChild("choiceCounter").getValue()) + 1);
-   /*
-   form1.getJSXByName(tempID).getDescendantOfName("choiceBlock").getHeight() + 30,true).repaint();
-   form1.getJSXByName(tempID).setHeight(form1.getJSXByName(tempID).getHeight() + 30);
-   form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30).repaint();
-   
-   form1.getJSXByName("choicePane").setName("choicePane" + id).repaint();
-   
-   
-  // var choice = section.getFirstChild().getFirstChild().getFirstChild();
-  // var label = section.getFirstChild().getFirstChild().getNextSibling().getFirstChild();
-  // var idField = section.getLastChild();
-   
-  // choice.setName(choice.getName() + id);
-  // label.setName(label.getName() + id);
-  // section.setName(section.getName() + id);
-  // label.setText(choiceText,true);
-   
-  // idField.setValue(id);
-   
-   form1.getJSXByName("choicePane" + id).getChild("choiceUniversalID").setValue(form1.getJSXByName("multipleChoiceCounter").getValue());
-   
-   mapMultipleChoiceToMatrix(form1.getJSXByName("multipleChoiceCounter").getValue(),tempID,choiceText,form1.getJSXByName(tempID).getChild("choiceCounter").getValue());
-   form1.getJSXByName("multipleChoiceCounter").setValue(parseInt(form1.getJSXByName("multipleChoiceCounter").getValue()) + 1);
-   form1.getJSXByName(tempID).getChild("choiceCounter").setValue(parseInt(form1.getJSXByName(tempID).getChild("choiceCounter").getValue()) + 1);
-    */
 }
 
 
@@ -493,19 +485,6 @@ function addCalendarChoices(questionName) {
         addHoursToChoices(questionName);
     }
     
-    /*
-    var startDate, helperStartTime, startTimeStr, startTimeHours, startTimeMinutes, duration, locat;
-    startDate = AjanvarausForm.getJSXByName("aloitusPvm").getDate();
-    helperStartTime = new Date();
-    startTimeStr = AjanvarausForm.getJSXByName("aloitusAika").getValue();
-    startTimeHours = startTimeStr.substr(0,2);
-    startTimeMinutes = startTimeStr.substr(3,2);
-    helperStartTime.setHours(startTimeHours);
-    helperStartTime.setMinutes(startTimeMinutes);
-    duration = AjanvarausForm.getJSXByName("kesto").getValue();
-    locat = AjanvarausForm.getJSXByName("paikka").getValue();
-    inputSection(startDate,helperStartTime,duration,locat);
-    */
 }
 
 
@@ -529,20 +508,6 @@ function getDomainName() {
 }
 
 function Preload() {
-    /*var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/")+1));*/
-    //alert(username);
-    //AjanvarausForm.getJSXByName("User_Sender").setValue(username);
-    /*
-    AjanvarausForm.getJSXByName("block").setHeight(0,true);
-    if (AjanvarausForm.getJSXByName("Lomake_Status").getValue() == "New")    {
-        AjanvarausForm.getJSXByName("Lomake_Hylkaa-field").setDisplay("none",true);
-        AjanvarausForm.getJSXByName("Lomake_Hylkaa-label").setDisplay("none",true);
-    }
-    if (gup("FormID")) 
-        var id = gup("FormID");
-        AjanvarausForm.getJSXByName("Lomake_ID").setValue(id);
-       */
         try {
             var id = form1.getJSXByName("User_Sender").getValue();
             // Add form preload functions here.
@@ -572,11 +537,6 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var url = getUrl();
         
         var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
-        
-        /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
-        var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";*/
-
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -616,11 +576,44 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var url = getUrl();
         
         var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
-        
-        /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
-        var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";*/
 
+        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);      
+    
+        //req.setRequestHeader("Content-Type","text/xml");
+
+        //req.setRequestHeader("SOAPAction","");
+        
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.send(msg, tout);
+       var objXML = req.getResponseXML();
+       // alert(req.getStatus());
+        
+       // var objXML = req.getResponseXML();
+       // alert("DEBUG - SERVER RESPONSE:" + objXML);
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.DoesReuqestTemplateExist = function(creator, subject) {
+        
+        var tout = 1000;   
+       // var limit = 100;
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:isRequestTemplateExist><creator>" + creator + "</creator><subject>" + subject + "</subject></soa:isRequestTemplateExist></soapenv:Body></soapenv:Envelope>";
+      
+        var url = getUrl();
+        
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -660,11 +653,6 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var url = getUrl();
         
         var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        
-        /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
-        var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
-        var url = "http://intalio.intra.arcusys.fi:8080/gi/WsProxyServlet2";*/
-
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -805,7 +793,6 @@ function createFormFromTemplateData(data) {
             }
             if (i==1) {
                 questionNumber = childNode1.getValue();
-                alert(questionNumber);
             }
             if (i==2) {
                 questionType = childNode1.getValue();
@@ -815,6 +802,9 @@ function createFormFromTemplateData(data) {
         
         }
        // alert(questionDescription + " " + questionNumber + " " + questionType);
+        if (questionNumber >= form1.getJSXByName("sectionNumber").getValue()) {
+            form1.getJSXByName("sectionNumber").setValue(parseInt(questionNumber) + 1);
+        }
         inputSectionFromTemplate(questionDescription,questionNumber,questionType);
         i = 0;
         
@@ -891,23 +881,11 @@ function mapTemplateNamesToField(data) {
     }
     xmlForSelectBox = xmlForSelectBox + "</data>";
    // alert(xmlForSelectBox);
-    /*
-    for (x in descendants)   {
-      alert(descendants[x]);
-    }
-    */
+
     
    // data.selectNodes("//tns:getRequestTemplateSummaryResponse", "xmlns:tns='http://soa.kv.koku.arcusys.fi/'");
    // alert("mapTemplateNamesToField" + data);
-    /*
-       var childIterator = data.selectSingleNode("//getRequestTemplateSummaryResponse", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'">).getChildIterator();
 
-       while(childIterator.hasNext()){
-       
-            childNode = childIterator.next();
-            alert(childNode);
-       }
-    */
    // var values = "";
     form1.getJSXByName("PohjanValinta").setXMLString(xmlForSelectBox);
     form1.getJSXByName("PohjanValinta").resetXmlCacheData();
@@ -925,13 +903,13 @@ function mapFormDataToFields(objXML) {
     //var replier = objXML.selectSingleNode("//replier", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
    // var subject = objXML.selectSingleNode("//subject", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
    // var description = objXML.selectSingleNode("//description", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-    /*
-    var statusNodes = objXML.selectNodes("//status", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
-    var formStatus = statusNodes.get(1);
-    formStatus = formStatus.getValue();*/
-    /*
+
+    //var statusNodes = objXML.selectNodes("//status", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
+    //var formStatus = statusNodes.get(1);
+    //formStatus = formStatus.getValue();
+
     if (objXML.selectSingleNode("//approvedSlotNumber", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'"))
-       approvedSlotNumber = objXML.selectSingleNode("//approvedSlotNumber", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();*/
+       approvedSlotNumber = objXML.selectSingleNode("//approvedSlotNumber", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
    // var appointmentId = objXML.selectSingleNode("//appointmentId", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
     
    // inputPreload(objXML);
@@ -947,28 +925,30 @@ function mapFormDataToFields(objXML) {
     //AjanvarausForm.getJSXByName("User_Recipient").setValue(replier).repaint();
    // AjanvarausForm.getJSXByName("Header_Text").setValue(subject).repaint();
    // AjanvarausForm.getJSXByName("Lomake_ID").setValue(appointmentId).repaint();
-    /*
-    AjanvarausForm.getJSXByName("Lomake_Status").setValue(formStatus).repaint();
-    if (formStatus == "Approved")    {
-        lockForm();
-    }*/
-    /*if (approvedSlotNumber)
-       AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(approvedSlotNumber).repaint();*/
+
+    //AjanvarausForm.getJSXByName("Lomake_Status").setValue(formStatus).repaint();
+    //if (formStatus == "Approved")    {
+        //lockForm();
+    //}
+    //if (approvedSlotNumber)
+       //AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(approvedSlotNumber).repaint();
 }
 
 
 
-function useTemplate() { 
+function useTemplate() {
+
+    getRoles(form1.getJSXByName("User_Sender").getValue());
     form1.getJSXByName("showFormFlag").setValue("Y").repaint();
 
     form1.getJSXByName("Lomaketyyppi").setDisplay("none").repaint();
     form1.getJSXByName("headerEdit").setDisplay("none").repaint();
     form1.getJSXByName("Pohja").setDisplay("block").repaint();
     form1.getJSXByName("Kentat").setDisplay("none").repaint();
-    form1.getJSXByName("Roolit").setDisplay("block", true);
 }
 
 function dontUseTemplate() {
+    getRoles(form1.getJSXByName("User_Sender").getValue());
     form1.getJSXByName("showFormFlag").setValue("Y").repaint();
 
     form1.getJSXByName("Lomaketyyppi").setDisplay("none").repaint();
@@ -979,7 +959,6 @@ function dontUseTemplate() {
     form1.getJSXByName("header").setDisplay("block").repaint();
     form1.getJSXByName("User").setDisplay("block").repaint();
     form1.getJSXByName("paneBlock").setDisplay("block").repaint();
-    form1.getJSXByName("Roolit").setDisplay("block", true);
 }
 
 
@@ -1031,7 +1010,6 @@ function addChoice(tempID)
    form1.getJSXByName(tempID).getChild("choiceCounter").setValue(parseInt(form1.getJSXByName(tempID).getChild("choiceCounter").getValue()) + 1);
 }
 
-
 function mapMultipleChoiceToMatrix(id,sectionNumber,question,questionNumber) {
   //  alert("mapMultipleChoiceToMatrix(" + sectionNumber + ", " + question + ", " + questionNumber + ")"); 
     var node;
@@ -1071,14 +1049,6 @@ function removeChoice(block,ID)
    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 30).repaint();
   
 }
-/*
-function getID()
-{
-   var templateID = form1.getJSXByName("sectionNumber").getValue();
-   var Id = form1.getJSXByName("ID").getValue();
-   form1.getJSXByName("ID").setValue(parseInt(form1.getJSXByName("ID").getValue()) + 1);
-   return templateID + "_" + Id;
-}*/
 
 function getTemplateID()
 {
@@ -1123,7 +1093,6 @@ function getTaskSubscribe() {
 Intalio.Internal.Utilities.SERVER.subscribe(
 Intalio.Internal.Utilities.GET_TASK_SUCCESS, prepareForm);
 };
-
 
 function prepareForm() {
    // alert("prepareForm");
@@ -1237,7 +1206,6 @@ function prepareFormMatrix() {
     form1.getJSXByName("MultipleChoice").commitAutoRowSession();
 }
 
-
 function showForm(flag) {
   //  alert("showForm param: " + flag);
     var descendant, descendants;
@@ -1277,13 +1245,13 @@ function showForm(flag) {
                        descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneAddChoice",true,false);
                       // alert(descendant);
                        descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
-                       descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton",true,false);
+                       descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton");
                       // alert(descendant);
                        descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                        descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                         for (x=0;x<descendants.length;x=x+1) {
                             // alert(descendants[x]);
-                             descendants[x].setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
+                             descendants[x].setDisplay("block", true);
                        }
                }
                else if (childNode.getAttribute("TextInput_Type") == "CALENDAR") {
@@ -1316,13 +1284,13 @@ function showForm(flag) {
                        descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                         for (x=0;x<descendants.length;x=x+1) {
                             // alert(descendants[x]);
-                             descendants[x].setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
+                             descendants[x].setDisplay("block", true);
                        }
                }
                else {
                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 23).repaint();
                    form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 23).repaint();
-                   form1.getJSXByName(fieldsetNumber).getChild("layout (--)").getLastChild().getChild("layout ( | )").getChild("pane").getChild("button").setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
+                   form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton").setDisplay("block", true);
                }
             }
             descendant = "";
@@ -1366,7 +1334,7 @@ function showForm(flag) {
                        descendant.setDisplay("none").repaint();
                        descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                        for (x=0;x<descendants.length;x=x+1) {
-                             descendants[x].setDisplay("none").repaint();
+                             descendants[x].setDisplay("none", true);
                        }
                }
                else if (childNode.getAttribute("TextInput_Type") == "CALENDAR") {
@@ -1399,13 +1367,13 @@ function showForm(flag) {
                        descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                         for (x=0;x<descendants.length;x=x+1) {
                             // alert(descendants[x]);
-                             descendants[x].setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
+                             descendants[x].setDisplay("none", true);
                        }
                }
                else {
                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 23).repaint();
                    form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 23).repaint();
-                   form1.getJSXByName(fieldsetNumber).getChild("layout (--)").getLastChild().getChild("layout ( | )").getChild("pane").getChild("button").setDisplay("none").repaint();
+                   form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton").getParent().setDisplay("none", true);
                }
             }
             descendant = "";
@@ -1440,7 +1408,6 @@ function mapFieldsToMatrix(title,question,sectionNumber,type) {
     node.setAttribute("TextInput_Question",question);
     node.setAttribute("TextInput_Section",title);
     node.setAttribute("TextInput_Number",sectionNumber);
-    alert(sectionNumber);
     node.setAttribute("TextInput_Type",type);
     form1.getCache().getDocument("TextInput-nomap").insertBefore(node);
     if (hasEmptyChild==true) {
@@ -1490,7 +1457,6 @@ function getAndRaiseSectionNumber() {
 function inputSection(title,question) {
     var sectionNumber = getAndRaiseSectionNumber();
     var inputType = getInputType();
-    alert(sectionNumber);
    // alert(inputType);
     if (inputType=="FREE_TEXT") {
         mapFieldsToMatrix(title,question,sectionNumber,inputType);
@@ -1510,17 +1476,19 @@ function inputSection(title,question) {
         mapFieldsToMatrix(title,question,sectionNumber,inputType);
         inputCalendarSection(title,question,sectionNumber);
     }
+    
+    //bringButtonsBack();
 }
 
-function inputTextSection(title,question,nameSection) {
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 205).repaint();
+function inputTextSection(title, question, nameSection) {
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 205, true);
     var textSection = form1.getJSXByName("block").load("components/textinputsection.xml",true);
-    
-    // textSection.setTitleText(title).repaint();
+    //textSection.setTitleText(title).repaint();
     textSection.setName(nameSection).repaint();
     //alert(textSection.getChild());
     //alert(textSection.getJSXByName("labelKysymys").getText());
     form1.getJSXByName("labelKysymys").setText(question).repaint();
+    //form1.getJSXByName("block").getFirstChild().getDescendantOfName("deleteButton").setDisplay("block", true);
     
 }
 
@@ -1552,7 +1520,6 @@ function inputMultipleChoiceSection(title,question,nameSection) {
     form1.getJSXByName("tempID").setValue(nameSection);
     
 }
-
 
 function inputCalendarSection(title,question,nameSection) {
     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 200).repaint();
@@ -1590,9 +1557,6 @@ function removeThisSection(sectionComponent,type) {
     }
     
 }
-
-
-
 
 function removeChildrenOfThisMultipleChoiceSection(sectionName) {
        var removableChildNodeIds=new Array();
@@ -1746,6 +1710,16 @@ function intalioPreStart() {
     }
     if (form1.getCache().getDocument("TextInput-nomap").getFirstChild() == null) {
         return "Lomakkeelle ei ole lis\xE4tty yht\xE4\xE4n pyynt\xF6\xE4.";
+    }
+    
+    if (form1.getJSXByName("User_PaivitaOlemassaoleva").getChecked() || form1.getJSXByName("User_LuoUusi").getChecked()) {
+        if (form1.getJSXByName("PohjaNakyvyys_Mina").getChecked()) {
+            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Creator").repaint();
+        } else if (form1.getJSXByName("PohjaNakyvyys_Organisaatio").getChecked()) {
+            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Organization").repaint();
+        } else {
+            form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("All").repaint();
+        }
     }
         
     mapSelectedRecipientsToMatrix();
@@ -2329,4 +2303,8 @@ function checkArrayByGivenAttributes(arrayToCheck, attributeList){
     
     }
     return true;    
+}
+
+function helloWorld() {
+    alert("Hello World!");
 }

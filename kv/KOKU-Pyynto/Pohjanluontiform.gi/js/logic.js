@@ -711,7 +711,6 @@ function prepareForm() {
             //Arcusys.Internal.Communication.GerLDAPUser();
             
             if(userUid != null) {
-                getRoles(userUid);
                 form1.getJSXByName("User_Sender").setValue(userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
             }
         } catch (e) {
