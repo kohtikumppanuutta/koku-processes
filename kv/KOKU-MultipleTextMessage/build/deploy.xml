@@ -11,4 +11,7 @@
   <dd:invoke partnerLink="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar">
     <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
   </dd:invoke>
+  <dd:invoke partnerLink="prosessiAndPalvelutForKokuNotificationServicePortPlkVar">
+    <dd:service name="tns:KokuNotificationService" port="KokuNotificationServicePort"></dd:service>
+  </dd:invoke>
 </dd:process></dd:deploy>

@@ -12,11 +12,13 @@
         <bpdm:namespaceContributor bpdm:url="partner-pool:///_sFmN0J1tEeCP0q7AMz-7Hg" bpdm:label="Prosessi"/>
         <bpdm:namespaceContributor bpdm:url="project:///Services/KokuMessageProcessingServiceImpl.wsdl"/>
         <bpdm:namespaceContributor bpdm:url="project:///Services/UsersAndGroupsServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuNotificationServiceImpl.wsdl"/>
     </bpdm:dependencies>
     <bpel:scope bpdm:label="Palvelut" bpdm:ID="_4xX84J1tEeCP0q7AMz-7Hg">
         <bpel:partnerLinks>
             <bpel:partnerLink name="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" partnerLinkType="diag:ProsessiAndPalvelutForKokuMessageProcessingServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="tns:KokuMessageProcessingService" bpdm:providedPort="KokuMessageProcessingServicePort" bpdm:provideSOAPAddress="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_4xX84J1tEeCP0q7AMz-7Hg:_R07XkCY_EeGZ6qIn2ne6Bw, _4xX84J1tEeCP0q7AMz-7Hg:_7LLRkCZAEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_sFmN0J1tEeCP0q7AMz-7Hg"/>
             <bpel:partnerLink name="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ProsessiAndPalvelutForUsersAndGroupsServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:providedPort="UsersAndGroupsServicePort" bpdm:provideSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_4xX84J1tEeCP0q7AMz-7Hg:_R7zEUPVaEeCrauyWyd6Sxg" bpdm:isManaged="true" bpdm:otherPoolId="_sFmN0J1tEeCP0q7AMz-7Hg"/>
+            <bpel:partnerLink name="prosessiAndPalvelutForKokuNotificationServicePortPlkVar" partnerLinkType="diag:ProsessiAndPalvelutForKokuNotificationServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="tns:KokuNotificationService" bpdm:providedPort="KokuNotificationServicePort" bpdm:provideSOAPAddress="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuNotificationServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_4xX84J1tEeCP0q7AMz-7Hg:_SWY9IC1WEeGshrc1tf_wjg" bpdm:isManaged="true" bpdm:otherPoolId="_sFmN0J1tEeCP0q7AMz-7Hg"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserUidByLooraName" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserUidByLooraName" opMsgType="0" bpdm:id="_YUC_0PVaEeCrauyWyd6Sxg" bpdm:messageIds="inc:_YTbUwPVaEeCrauyWyd6Sxg"/>
@@ -37,12 +39,18 @@
                     <bpel:literal bpdm:linkedMessageType="tns:receiveNewMessageResponse" bpdm:linkedPart="parameters" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="receiveNewMessage"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
+            <bpel:variable name="tnsSendNotificationMsg" messageType="tns:sendNotification" binding="tns:KokuNotificationServiceSoapBinding" operation="sendNotification" opMsgType="0" bpdm:id="_TGfkYC1WEeGshrc1tf_wjg" bpdm:messageIds="inc:_TF8KwC1WEeGshrc1tf_wjg"/>
+            <bpel:variable name="tnsSendNotificationResponseMsg" messageType="tns:sendNotificationResponse" binding="tns:KokuNotificationServiceSoapBinding" operation="sendNotification" opMsgType="1" bpdm:id="_TXVcwC1WEeGshrc1tf_wjg" bpdm:messageIds=" out:_TW4JwC1WEeGshrc1tf_wjg">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="tns:sendNotificationResponse" bpdm:linkedPart="parameters" bpdm:binding="tns:KokuNotificationServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="sendNotification"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
         </bpel:variables>
         <bpel:flow>
             <bpel:sequence>
-                <bpdm:messagingtask operation="receiveNewMessage" partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" isMyRole="true" enableSharing="false" bpdm:label="receiveNewMessage" bpdm:ID="_7LLRkCZAEeGZ6qIn2ne6Bw">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReceiveNewMessage" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveNewMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_8cIjICZAEeGZ6qIn2ne6Bw"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReceiveNewMessageResponse" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveNewMessageResponse" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_8tTLoCZAEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                <bpdm:messagingtask operation="sendMessage" partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" isMyRole="true" enableSharing="false" bpdm:label="sendMessage" bpdm:ID="_R07XkCY_EeGZ6qIn2ne6Bw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsSendMessage" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_TS9b0CY_EeGZ6qIn2ne6Bw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsSendMessageResponse" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendMessageResponse" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_TqrYQCY_EeGZ6qIn2ne6Bw"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
             <bpel:sequence>
@@ -52,9 +60,15 @@
                 </bpdm:messagingtask>
             </bpel:sequence>
             <bpel:sequence>
-                <bpdm:messagingtask operation="sendMessage" partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" isMyRole="true" enableSharing="false" bpdm:label="sendMessage" bpdm:ID="_R07XkCY_EeGZ6qIn2ne6Bw">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsSendMessage" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_TS9b0CY_EeGZ6qIn2ne6Bw"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsSendMessageResponse" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendMessageResponse" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_TqrYQCY_EeGZ6qIn2ne6Bw"></bpdm:linkset>
+                <bpdm:messagingtask operation="sendNotification" partnerLink="prosessiAndPalvelutForKokuNotificationServicePortPlkVar" portType="tns:KokuNotificationService" isMyRole="true" enableSharing="false" bpdm:label="sendNotification" bpdm:ID="_SWY9IC1WEeGshrc1tf_wjg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsSendNotificationMsg" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendNotification" bpdm:binding="tns:KokuNotificationServiceSoapBinding" bpdm:ID="_TF8KwC1WEeGshrc1tf_wjg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsSendNotificationResponseMsg" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendNotificationResponse" bpdm:binding="tns:KokuNotificationServiceSoapBinding" bpdm:ID="_TW4JwC1WEeGshrc1tf_wjg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="receiveNewMessage" partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar" portType="tns:KokuMessageProcessingService" isMyRole="true" enableSharing="false" bpdm:label="receiveNewMessage" bpdm:ID="_7LLRkCZAEeGZ6qIn2ne6Bw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsReceiveNewMessage" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveNewMessage" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_8cIjICZAEeGZ6qIn2ne6Bw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsReceiveNewMessageResponse" bpdm:msgVarScopeId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:variableIsManaged="true" bpdm:messageType="tns:receiveNewMessageResponse" bpdm:binding="tns:KokuMessageProcessingServiceSoapBinding" bpdm:ID="_8tTLoCZAEeGZ6qIn2ne6Bw"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
         </bpel:flow>

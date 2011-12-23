@@ -28,11 +28,18 @@
           <wsdl:input message="tns:sendMessage" name="sendMessage" bpdm:canid="_TS9b0CY_EeGZ6qIn2ne6Bw" bpdm:senderId="_4SjS4J1tEeCP0q7AMz-7Hg" bpdm:receiverId="_R07XkCY_EeGZ6qIn2ne6Bw" bpdm:senderName="Viestin lähetys webservicelle" bpdm:receiverName="sendMessage" bpdm:receiverPoolId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:dataobjectPointer="project:///Services/KokuMessageProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuMessageProcessingService/KokuMessageProcessingServicePort/sendMessage/input/sendMessage"></wsdl:input>
           <wsdl:output message="tns:sendMessageResponse" name="sendMessageResponse" bpdm:canid="_TqrYQCY_EeGZ6qIn2ne6Bw" bpdm:senderId="_R07XkCY_EeGZ6qIn2ne6Bw" bpdm:receiverId="_4SjS4J1tEeCP0q7AMz-7Hg" bpdm:senderName="sendMessage" bpdm:receiverName="Viestin lähetys webservicelle" bpdm:receiverPoolId="_sFmN0J1tEeCP0q7AMz-7Hg" bpdm:dataobjectPointer="project:///Services/KokuMessageProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuMessageProcessingService/KokuMessageProcessingServicePort/sendMessage/output/sendMessageResponse"></wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="sendNotification" bpdm:canid="_Nci5UC1WEeGshrc1tf_wjg._SWY9IC1WEeGshrc1tf_wjg." bpdm:dataobjectPointer="project:///Services/KokuNotificationServiceImpl.wsdl?wsdloperationbound={http://soa.kv.koku.arcusys.fi/}KokuNotificationService/KokuNotificationServicePort/sendNotification">
+          <wsdl:input message="tns:sendNotification" name="sendNotification" bpdm:canid="_TF8KwC1WEeGshrc1tf_wjg" bpdm:senderId="_Nci5UC1WEeGshrc1tf_wjg" bpdm:receiverId="_SWY9IC1WEeGshrc1tf_wjg" bpdm:senderName="EventIntermediateMessage" bpdm:receiverName="sendNotification" bpdm:receiverPoolId="_4xX84J1tEeCP0q7AMz-7Hg" bpdm:dataobjectPointer="project:///Services/KokuNotificationServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuNotificationService/KokuNotificationServicePort/sendNotification/input/sendNotification"></wsdl:input>
+          <wsdl:output message="tns:sendNotificationResponse" name="sendNotificationResponse" bpdm:canid="_TW4JwC1WEeGshrc1tf_wjg" bpdm:senderId="_SWY9IC1WEeGshrc1tf_wjg" bpdm:receiverId="_Nci5UC1WEeGshrc1tf_wjg" bpdm:senderName="sendNotification" bpdm:receiverName="EventIntermediateMessage" bpdm:receiverPoolId="_sFmN0J1tEeCP0q7AMz-7Hg" bpdm:dataobjectPointer="project:///Services/KokuNotificationServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuNotificationService/KokuNotificationServicePort/sendNotification/output/sendNotificationResponse"></wsdl:output>
+        </wsdl:operation>
       </wsdl:portType>
     </pnlk:role>
   </pnlk:partnerLinkType>
   <pnlk:partnerLinkType name="ProsessiAndPalvelutForKokuMessageProcessingServicePortPlk" bpdm:canPlkId="_sFmN0J1tEeCP0q7AMz-7Hg-_4xX84J1tEeCP0q7AMz-7Hg">
     <pnlk:role name="Palvelut_for_Prosessi" portType="tns:KokuMessageProcessingService"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="ProsessiAndPalvelutForKokuNotificationServicePortPlk" bpdm:canPlkId="_sFmN0J1tEeCP0q7AMz-7Hg-_4xX84J1tEeCP0q7AMz-7Hg">
+    <pnlk:role name="Palvelut_for_Prosessi" portType="tns:KokuNotificationService"></pnlk:role>
   </pnlk:partnerLinkType>
   <pnlk:partnerLinkType name="ProsessiAndPalvelutForUsersAndGroupsServicePortPlk" bpdm:canPlkId="_sFmN0J1tEeCP0q7AMz-7Hg-_4xX84J1tEeCP0q7AMz-7Hg">
     <pnlk:role name="Palvelut_for_Prosessi" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService"></pnlk:role>

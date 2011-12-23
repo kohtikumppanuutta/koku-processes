@@ -1,7 +1,7 @@
 function getEndpoint() {
 
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51lb:8080";
     return endpoint;
 
 }
@@ -10,6 +10,7 @@ function getEndpoint() {
 function getUrl() {
 
     var domain = getDomainName();
+    domain = "http://62.61.65.15:8380";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -77,6 +78,189 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         }
     };
 });
+
+/*
+function mapSelectedRecipientsToMatrix() {
+    var node, childNode, hasEmptyChild, counter, recipients, targetPerson, childIterator, i=0;
+    
+    clearDataCache("Recipients-nomap");
+
+    counter = 1;
+
+    childIterator = AjanvarausForm.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
+
+    hasEmptyChild = formatDataCache("Recipients-nomap", "Recipients");
+    list = ["uid"];
+
+    while (childIterator.hasNext()) {
+        childNode = childIterator.next();
+        
+        group = childNode.getAttribute("group");
+
+        if (group != 0) {
+
+            groupUid = childNode.getAttribute("recipientsUid");
+
+            xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
+
+            userData = parseXML(xmlData, "user", list);
+
+            for (i = 0; i < userData.length; i++) {
+                uid = userData[i];
+
+                childInfo = Arcusys.Internal.Communication.getChildInfo(uid);
+                   
+                parentsNodes = childInfo.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+        
+                parentData = [];
+                parentInfo = [];
+                parents = [];
+
+                j = 0;
+
+                while (parentsNodes.get(j)) {
+                    parents[j] = parentsNodes.get(j);
+                    parentData[j] = parseXML(parents[j], "parents", list);
+                    if (j == 0) {
+                        parentInfo[j] = "";
+                    } else {
+                        parentInfo[j] += ',';
+                    }
+                    parentInfo[j] += parentData[j];
+                    j++;
+                }
+                    
+                node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
+                node.setAttribute("Recipients_TargetPerson", uid);
+                node.setAttribute("Recipients_Recipient", parentInfo[0]);
+                AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
+            }
+        } else {
+
+        recipients = childNode.getAttribute("recipientsUid");
+        targetPerson = childNode.getAttribute("uid");
+        node = AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild().cloneNode();
+        node.setAttribute("Recipients_Recipient", recipients);
+        node.setAttribute("Recipients_TargetPerson", targetPerson);
+        AjanvarausForm.getCache().getDocument("Recipients-nomap").insertBefore(node);
+        
+        }
+    }
+
+    if (hasEmptyChild) {
+        AjanvarausForm.getCache().getDocument("Recipients-nomap").removeChild(AjanvarausForm.getCache().getDocument("Recipients-nomap").getFirstChild());
+    }
+} */
+
+function mapSelectedRecipientsToMatrix() {
+
+    var node, hasEmptyChild, jsxid, childIterator, group, uid, groupUid, childNode, xmlData, list, userData, i, kunpoUsername, displayName;
+
+    hasEmptyChild = false;
+    jsxid = 0;
+    list = ["uid"];
+    var parentInfo;
+
+    childIterator = KayttajaviestintaForm.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
+
+    if (KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild() == null) {
+        KayttajaviestintaForm.getJSXByName("matrix1").commitAutoRowSession();
+        hasEmptyChild = true;
+    }
+    while (childIterator.hasNext()) {
+
+        childNode = childIterator.next();
+
+        group = childNode.getAttribute("group");
+
+        if (group != 0) {
+
+            groupUid = childNode.getAttribute("uid");
+            //alert(groupUid);
+
+            xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
+            //alert(xmlData);
+
+            userData = parseXML(xmlData, "user", list);
+
+            for (i = 0; i < userData.length; i++) {
+                uid = userData[i];
+
+                childInfo = Arcusys.Internal.Communication.GetChildinfo(uid);
+                   
+                parentsNodes = childInfo.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+                //alert(parentsNodes);
+        
+                parentData = [];
+                //parentInfo = [];
+                parents = [];                
+
+                j = 0;
+
+                while (parentsNodes.get(j)) {
+                    parents[j] = parentsNodes.get(j);
+                    parentData[j] = parseXML(parents[j], "parents", list);
+                    /*
+                    if (j == 0) {
+                        parentInfo[j] = "";
+                    } else {
+                        parentInfo[j] += ',';
+                    }*/
+                    parentInfo = parentData[j];
+                    j++;
+                }
+                
+                //alert("0: " + parentInfo[0] + ", 1: " + parentInfo[1]);
+                    
+                for (j = 0; j < parentInfo.length; j++) {
+                    node = KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild().cloneNode();
+                    uid = parentInfo[j];
+                    try {
+                        kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
+
+                        if(kunpoUsername != null) {
+                            displayName = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+                        }
+                    } catch (e) {
+                        alert(e);
+                    }
+                    node.setAttribute("receipient", uid);
+                    node.setAttribute("receipientDisplay", displayName);
+                    KayttajaviestintaForm.getCache().getDocument("receipients-nomap").insertBefore(node);
+                }
+            }
+        } else {
+            uid = childNode.getAttribute("uid");
+            node = KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild().cloneNode();
+
+            try {
+
+                kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
+
+                if(kunpoUsername != null) {
+                    displayName = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+                }
+            } catch (e) {
+                alert(e);
+            }
+
+            node.setAttribute("jsxid", jsxid);
+            node.setAttribute("receipient", uid);
+            node.setAttribute("receipientDisplay", displayName);
+            KayttajaviestintaForm.getCache().getDocument("receipients-nomap").insertBefore(node);
+            jsxid++;
+
+        }
+
+    }
+
+    if (hasEmptyChild == true) {
+        KayttajaviestintaForm.getCache().getDocument("receipients-nomap").removeChild(KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild());
+    }
+}
+
+/*
+
 function mapSelectedRecipientsToMatrix() {
 
     var node, hasEmptyChild, jsxid, childIterator, group, uid, groupUid, childNode, xmlData, list, userData, i, kunpoUsername, displayName;
@@ -157,7 +341,7 @@ function mapSelectedRecipientsToMatrix() {
     if (hasEmptyChild == true) {
         KayttajaviestintaForm.getCache().getDocument("receipients-nomap").removeChild(KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild());
     }
-}
+} */
 
 function intalioPreStart() {
     if (KayttajaviestintaForm.getCache().getDocument("receipientsToShow-nomap").getFirstChild() == null) {

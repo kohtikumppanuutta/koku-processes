@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="KokuNotificationService" targetNamespace="http://soa.kv.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://soa.kv.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="sendNotification" type="tns:sendNotification"/>
+<xs:element name="sendNotificationResponse" type="tns:sendNotificationResponse"/>
+<xs:complexType name="sendNotification">
+<xs:sequence>
+<xs:element minOccurs="0" name="subject" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="recipients" type="xs:string"/>
+<xs:element minOccurs="0" name="content" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sendNotificationResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sendNotificationResponse">
+    <wsdl:part element="tns:sendNotificationResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendNotification">
+    <wsdl:part element="tns:sendNotification" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="KokuNotificationService">
+    <wsdl:operation name="sendNotification">
+      <wsdl:input message="tns:sendNotification" name="sendNotification">
+    </wsdl:input>
+      <wsdl:output message="tns:sendNotificationResponse" name="sendNotificationResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KokuNotificationServiceSoapBinding" type="tns:KokuNotificationService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendNotification">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendNotification">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendNotificationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KokuNotificationService">
+    <wsdl:port binding="tns:KokuNotificationServiceSoapBinding" name="KokuNotificationServicePort">
+      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuNotificationServiceImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

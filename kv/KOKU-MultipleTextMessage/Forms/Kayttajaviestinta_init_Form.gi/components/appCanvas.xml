@@ -814,12 +814,22 @@
                 <events jsxkeydown="1;"/>
               </object>
             </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="receipientDisplay" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="receipientDisplay"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="0" jsxwidth="232" jsxzindex="10"/>
+                <strings jsxname="receipientDisplay" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue=""/>
+                <events jsxkeydown="1;"/>
+              </object>
+            </object>
           </object>
         </object>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants/>
-        <strings jsxvalue="10" jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants jsxvalue="11"/>
+        <strings jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.CheckBox">
