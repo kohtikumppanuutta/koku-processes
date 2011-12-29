@@ -1933,7 +1933,7 @@
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-          <strings jsxheight="430" jsxwidth="100%" jsxrows="5%,11%,11%,0%,11%,0%,11%,12%,12%,8%,8%,*" jsxname="HoidonTarve_rowLayout" jsxbgcolor=""/>
+          <strings jsxheight="450" jsxwidth="100%" jsxrows="5%,11%,11%,0%,11%,0%,11%,12%,12%,8%,8%,*" jsxname="HoidonTarve_rowLayout" jsxbgcolor=""/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -2263,7 +2263,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="10%,8%,13%,8%,13%,8%,13%,8%,13%" jsxheight="100%" jsxwidth="100%" jsxdisplay="" jsxname="layout ( | )"/>
+              <strings jsxcols="10%,6%,10%,6%,10%,6%,10%,6%,10%" jsxheight="100%" jsxwidth="100%" jsxdisplay="" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="18px" jsxdisplay="" jsxname="pane"/>
@@ -2726,7 +2726,7 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                  <strings jsxname="label" jsxclassname="FormLabel" jsxtext="HUOM! Vähintään yksi haku toive on pakollista täyttää!"/>
+                  <strings jsxname="label" jsxclassname="FormLabel" jsxtext="HUOM! Vähintään yksi hakutoive on pakollista täyttää!"/>
                 </object>
               </object>
               <object type="jsx3.gui.Block">
@@ -2779,7 +2779,7 @@
                   <strings riaLabelText="Hakutoive_1Tyyppi" jsxname="Hakutoive_1Tyyppi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxheight="18" jsxwidth="150" _isfocusing="true" jsxxmlasync="0" jsxrequired="1"/>
-                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;&gt;   &lt;locale&gt;     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/&gt;     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxtip="Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_1Tyyppi" jsxmargin="0 4 0 0"/>
+                    <strings jsxvalue="- Valitse -" jsxxml="&lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&quot;&gt;   &lt;locale&gt;     &lt;record jsxid=&quot;Paeivaekoti&quot; jsxtext=&quot;Päiväkoti&quot; jsxcode=&quot;1&quot;/&gt;     &lt;record jsxid=&quot;Perhepaevaehoito&quot; jsxtext=&quot;Perhepäivähoito&quot; jsxcode=&quot;2&quot;/&gt;   &lt;/locale&gt; &lt;/data&gt;" jsxtip="Hoidon Tyyppi" jsxdefaulttext="- Valitse -" jsxname="Hakutoive_1Tyyppi" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);fieldValue2Display(this,&quot;Hakutoive_1Alue&quot;);"/>
                   </object>
                 </object>

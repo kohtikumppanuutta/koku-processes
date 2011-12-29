@@ -1,13 +1,18 @@
 /* place JavaScript code here */
 function intalioPreStart() {
+    if (Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Tyyppi").getValue() == "- Valitse -") {
+        return "Virheelliset tiedot: Hoidon tyyppi!";
+    } else if (Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Alue").getValue() == "- Valitse -") {
+        return "Virheelliset tiedot: 1. hakutoive!";
+    }
     Paivahoitohakemus_Form.getJSXByName("Lapsi_ValittuDisplay").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getText()).repaint();
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getValue()).repaint();
 }
 
 function getEndpoint() {
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51lb:8080";
     return endpoint;
     
 }
@@ -336,25 +341,27 @@ function setSpouseRequired() {
             if (Paivahoitohakemus_Form.getJSXByName("Puoliso_TyoaikaSaannollinen").getChecked() == true) flag=true;
             
             if (flag == true) {
-                Paivahoitohakemus_Form.getJSXByName("Puoliso_Etunimi").setRequired(jsx3.gui.Form.REQUIRED).repaint();
-                Paivahoitohakemus_Form.getJSXByName("Puoliso_Sukunimi").setRequired(jsx3.gui.Form.REQUIRED).repaint();
-                Paivahoitohakemus_Form.getJSXByName("Puoliso_Henkilotunnus").setRequired(jsx3.gui.Form.REQUIRED).repaint();
-               
+                Paivahoitohakemus_Form.getJSXByName("Puoliso_Etunimi").setRequired(jsx3.gui.Form.REQUIRED);
+                Paivahoitohakemus_Form.getJSXByName("Puoliso_Sukunimi").setRequired(jsx3.gui.Form.REQUIRED);
+                Paivahoitohakemus_Form.getJSXByName("Puoliso_Henkilotunnus").setRequired(jsx3.gui.Form.REQUIRED);
                 
-            }
-            else {
-                Paivahoitohakemus_Form.getJSXByName("Puoliso_Etunimi").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
-                Paivahoitohakemus_Form.getJSXByName("Puoliso_Sukunimi").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
-                Paivahoitohakemus_Form.getJSXByName("Puoliso_Henkilotunnus").setRequired(jsx3.gui.Form.OPTIONAL).repaint();
-               
+            } else {
+                Paivahoitohakemus_Form.getJSXByName("Puoliso_Etunimi").setRequired(jsx3.gui.Form.OPTIONAL);
+                Paivahoitohakemus_Form.getJSXByName("Puoliso_Sukunimi").setRequired(jsx3.gui.Form.OPTIONAL);
+                Paivahoitohakemus_Form.getJSXByName("Puoliso_Henkilotunnus").setRequired(jsx3.gui.Form.OPTIONAL);        
             }
             
+            Paivahoitohakemus_Form.getJSXByName("Puoliso_Etunimi").getParent().repaint();
+            Paivahoitohakemus_Form.getJSXByName("Puoliso_Sukunimi").getParent().repaint();
+            Paivahoitohakemus_Form.getJSXByName("Puoliso_Henkilotunnus").getParent().repaint();
+            
             if ((Paivahoitohakemus_Form.getJSXByName("Puoliso_TyoaikaVuoro").getChecked() == 1) || (Paivahoitohakemus_Form.getJSXByName("Puoliso_TyoaikaSaannollinen").getChecked() == 1) ) {
-                Paivahoitohakemus_Form.getJSXByName("Puoliso_Ammatti").setRequired(jsx3.gui.Form.REQUIRED).repaint();         
+                Paivahoitohakemus_Form.getJSXByName("Puoliso_Ammatti").setRequired(jsx3.gui.Form.REQUIRED);
+            } else {
+                 Paivahoitohakemus_Form.getJSXByName("Puoliso_Ammatti").setRequired(jsx3.gui.Form.OPTIONAL);
             }
-            else {
-                 Paivahoitohakemus_Form.getJSXByName("Puoliso_Ammatti").setRequired(jsx3.gui.Form.OPTIONAL).repaint(); 
-            }
+            
+            Paivahoitohakemus_Form.getJSXByName("Puoliso_Ammatti").getParent().repaint();       
       
             
 }
