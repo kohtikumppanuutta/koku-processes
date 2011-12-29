@@ -760,6 +760,11 @@ function inputSectionFromTemplate(question,sectionNumber,inputType) {
         mapFieldsToMatrix(title,question,sectionNumber,inputType);
         inputCalendarSection(title,question,sectionNumber);
     }
+    if (inputType=="NUMBER") {
+       // alert("MULTIPLE_CHOICE");
+        mapFieldsToMatrix(title,question,sectionNumber,inputType);
+        inputNumberSection(title,question,sectionNumber);
+    }
 }
 
 
@@ -1476,6 +1481,11 @@ function inputSection(title,question) {
         mapFieldsToMatrix(title,question,sectionNumber,inputType);
         inputCalendarSection(title,question,sectionNumber);
     }
+    if (inputType=="NUMBER") {
+       // alert("CALENDAR");
+        mapFieldsToMatrix(title,question,sectionNumber,inputType);
+        inputCalendarSection(title,question,sectionNumber);
+    }
     
     //bringButtonsBack();
 }
@@ -1531,6 +1541,18 @@ function inputCalendarSection(title,question,nameSection) {
     var block = "choiceBlock" + nameSection;
     textSection.getDescendantOfName("choiceBlock").setName(block);
     
+    //alert(textSection.getChild());
+    //alert(textSection.getJSXByName("labelKysymys").getText());
+    form1.getJSXByName("labelKysymys").setText(question).repaint();
+    
+}
+
+function inputNumberSection(title,question,nameSection) {
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 95).repaint();
+    var textSection = form1.getJSXByName("block").load("components/numberinputsection.xml",true);
+    
+    // textSection.setTitleText(title).repaint();
+    textSection.setName(nameSection).repaint();
     //alert(textSection.getChild());
     //alert(textSection.getJSXByName("labelKysymys").getText());
     form1.getJSXByName("labelKysymys").setText(question).repaint();

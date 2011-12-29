@@ -6,6 +6,25 @@ function testAlert() {
     addAdditionalInfoField();
 }
 
+function isNumeric(targetField){
+   var validChars = "0123456789";
+   var isNumber=true;
+   var char;
+   var text2 = targetField.getValue();
+ 
+   for (i = 0; i < text2.length && isNumber == true; i++) 
+      { 
+      char = text2.charAt(i); 
+      if (validChars.indexOf(char) == -1) 
+         {
+         isNumber = false;
+         alert("Syot\xE4 vain positiivisia kokonaislukuja!");
+         targetField.setValue("").repaint();
+         }
+      }
+
+}
+
 
 function addAdditionalInfoField() {
     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 195).repaint();
@@ -138,7 +157,7 @@ function showForm(flag) {
                else {
                    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 23).repaint();
                    form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 23).repaint();
-                   form1.getJSXByName(fieldsetNumber).getChild("layout (--)").getLastChild().getChild("layout ( | )").getChild("pane").getChild("button").setDisplay("none").repaint();
+                   form1.getJSXByName(fieldsetNumber).getChild("layout (--)").getLastChild().getChild("layout ( | )").getChild("pane").getChild("deleteButton").setDisplay("none").repaint();
                }
             }
             descendant = "";
@@ -380,6 +399,9 @@ function inputSection(title,question,fieldsetNumber,type) {
         
             inputMultipleChoiceSection(title,question,fieldsetNumber);
         }
+        if (type=="NUMBER") {
+            inputNumberSection(title,question,fieldsetNumber);
+        }
 }
 
 function inputTextSection(title,question,fieldsetNumber) {
@@ -429,6 +451,18 @@ function inputMultipleChoiceSection(title,question,nameSection) {
     form1.getJSXByName("tempID").setValue(nameSection);
     
     createMultipleChoiceQuestions(nameSection);
+    
+}
+
+function inputNumberSection(title,question,nameSection) {
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 95).repaint();
+    var textSection = form1.getJSXByName("block").load("components/numberinputsection.xml",true);
+    
+    // textSection.setTitleText(title).repaint();
+    textSection.setName(nameSection).repaint();
+    //alert(textSection.getChild());
+    //alert(textSection.getJSXByName("labelKysymys").getText());
+    form1.getJSXByName("labelKysymys").setText(question).repaint();
     
 }
 
