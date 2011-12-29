@@ -16,40 +16,40 @@ function intalioPreStart() {
 
 function setRoles() {
 
-  var roleUsers;
-     var groupUid;
-     var temp;
+    var roleUsers;
+    var groupUid;
+    var temp;
     
-    mapSelectedValuesToMatrix();
-    setRoles();
-
     temp = TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend02").getValue();
+
     if (temp != null) {
         groupUid = TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").getValue();
-        roleUsers = getRoleUsers(groupUId);   
+        roleUsers = getRoleUsers(groupUid);   
         TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend01").setValue(roleUsers);
     }
+    
+    TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue("");
+    
+    //alert(TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend01").getValue());
 
 }
 
 function getRoleUsers(groupUid) {
-    
-    var xmlData, list, userData, users;
+    var xmlData, list, userData, users = "";
     
     users = "";    
     xmlData = Arcusys.Internal.Communication.GetRoleUsers(groupUid);
-    list = ["username"];
-    userData = parseXML(xmlData, "getUsernamesInRoleResponse", list);
+    userNames = xmlData.selectNodeIterator("//username", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
     
-    for(i = 0; i < userData.length; i++) {
-        users += "koku/";
-        users = users + userData[i];
-        if ((userData.length > 1) && (i < userData.length)) {
-            users += ", ";
-            
-        }
-       
-    
+    while(userNames.hasNext()) {
+        
+        node = userNames.next();
+        
+        users += "koku/" + node.getValue();
+        
+        if (userNames.hasNext())
+            users += ",";
+        
     }
     
     return users;
@@ -69,6 +69,7 @@ function getDomainName() {
 function getUrl() {
 
     var domain = getDomainName();
+    //domain = "http://62.61.65.15:8380"
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }

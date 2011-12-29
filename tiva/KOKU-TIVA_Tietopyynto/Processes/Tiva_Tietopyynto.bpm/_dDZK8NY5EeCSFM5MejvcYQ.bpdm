@@ -1,31 +1,31 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Tiva_Tietopyynto_init_Form1="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Tiva_Tietopyynto_Response_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" xmlns:Pyynto="http://thisdiagram/Pyynto" xmlns:attachments="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" xmlns:diag="http://thisdiagram" xmlns:KokuTietopyyntoProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Prosessi" xmlns:Tiva_Tietopyynto_init_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Tiva_Tietopyynto_init_Form1="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Tiva_Tietopyynto_Response_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" xmlns:diag="http://thisdiagram" xmlns:KokuTietopyyntoProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Prosessi" xmlns:Tiva_Tietopyynto_init_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" xmlns:Vastaus="http://thisdiagram/Vastaus" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" bpdm:prefix="Tiva_Tietopyynto_init_Form1" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" bpdm:prefix="Tiva_Tietopyynto_Response_Form" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_Response_Form.gi.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pyynto" bpdm:prefix="Pyynto" bpdm:comment="contrib=&apos;partner-pool:///_izHqwOj5EeCOlapFwgqxBw"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_Response_Form.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_r9qpYOjmEeCIsZBRPARZQg"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://soa.tiva.koku.arcusys.fi/" bpdm:prefix="KokuTietopyyntoProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuTietopyyntoProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///Services/UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" bpdm:prefix="Tiva_Tietopyynto_init_Form" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Vastaus" bpdm:prefix="Vastaus" bpdm:comment="contrib=&apos;partner-pool:///_fyjf4NY5EeCSFM5MejvcYQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/Tiva_Tietopyynto" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto.xsd"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
         <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
-            <wsdl:service name="WFmagic_N3TpQPVcEeCgsf-1346ddAService">
-                <wsdl:port name="Prosessi_for_VastausForThePortTypeProcessPort" binding="this:WFmagic_N3TpQPVcEeCgsf-1346ddAServiceBinding">
-                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Vastaus/WFmagic_N3TpQPVcEeCgsf-1346ddA"/>
-                </wsdl:port>
-            </wsdl:service>
-            <bpel:binding name="WFmagic_N3TpQPVcEeCgsf-1346ddAServiceBinding" type="Tiva_Tietopyynto_Response_Form:Process" bpdm:isSynchronized="true"/>
             <wsdl:service name="PyyntoAndProsessiForPortTypeProcessPlkService">
                 <wsdl:port name="Prosessi_for_PyyntoPort" binding="this:PyyntoAndProsessiForPortTypeProcessPlkServiceBinding">
                     <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Pyynto/PyyntoAndProsessiForPortTypeProcessPlk"/>
                 </wsdl:port>
             </wsdl:service>
             <bpel:binding name="PyyntoAndProsessiForPortTypeProcessPlkServiceBinding" type="Tiva_Tietopyynto_init_Form1:Process" bpdm:isSynchronized="true"/>
+            <wsdl:service name="WFmagic_N3TpQPVcEeCgsf-1346ddAService">
+                <wsdl:port name="Prosessi_for_VastausForThePortTypeProcessPort" binding="this:WFmagic_N3TpQPVcEeCgsf-1346ddAServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Vastaus/WFmagic_N3TpQPVcEeCgsf-1346ddA"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_N3TpQPVcEeCgsf-1346ddAServiceBinding" type="Tiva_Tietopyynto_Response_Form:Process" bpdm:isSynchronized="true"/>
         </bpdm:namespaceContributor>
         <bpdm:namespaceContributor bpdm:url="project:///Forms/Tiva_Tietopyynto_Response_Form.gi.wsdl"/>
         <bpdm:namespaceContributor bpdm:url="project:///Forms/Tiva_Tietopyynto.xsd"/>
@@ -146,7 +146,17 @@
             <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_p28ssCZsEeGQk4N5SW9pEg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
                 <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_ur964CZsEeGQk4N5SW9pEg" bpdm:targetDisplayName="default"></bpdm:linkset>
                 <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_vLQe8CZsEeGQk4N5SW9pEg" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Hae Intaliokäyttäjän tunnus]">
-                    <bpel:condition>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01 = empty()<mapper:mapperLink><mapper:vertice id="387111089" targetPath="$condition" targetedBy="1861037617-arg2"></mapper:vertice><mapper:vertice id="1861037617" dimension="78x24" location="248,78"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1067520348" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1861037617-arg0"></mapper:vertice><mapper:vertice id="196753889" dimension="78x24" location="252,120" targetedBy="1861037617-arg1"><mapper:value>empty()</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                    <bpel:condition>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01 = ""
+<mapper:mapperLink>
+  <mapper:vertice id="454834583" targetPath="$condition" targetedBy="1035033021-arg2"></mapper:vertice>
+  <mapper:vertice id="1035033021" dimension="78x24" location="248,78">
+    <mapper:value>=</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="40457222" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1035033021-arg0"></mapper:vertice>
+  <mapper:vertice id="1359697702" dimension="78x24" location="252,120" targetedBy="1035033021-arg1">
+    <mapper:value>""</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink></bpel:condition>
                 </bpdm:linkset>
                 <bpel:sequence></bpel:sequence>
                 <bpel:sequence>

@@ -29,9 +29,11 @@
 				<xsl:value-of select="//ka:Pyynto_Lainsaadanto/text()"/>
 			</xsl:element>
 			
-			<xsl:element name="receiverUid">
-				<xsl:value-of select="//ka:Perustiedot_Vastaanottaja_UID/text()"/>
-			</xsl:element>
+			<xsl:if test="//ka:Perustiedot_Vastaanottaja_UID/text() != ''">
+				<xsl:element name="receiverUid">
+					<xsl:value-of select="//ka:Perustiedot_Vastaanottaja_UID/text()"/>
+				</xsl:element>
+			</xsl:if>
 			
 			<xsl:element name="requestPurpose">
 				<xsl:value-of select="//ka:Pyynto_Tarkoitus/text()"/>
@@ -49,9 +51,11 @@
 				<xsl:value-of select="//ka:Perustiedot_Otsikko/text()"/>
 			</xsl:element>
 			
-			<xsl:element name="receiverRoleUid">
-				<xsl:value-of select="//ka:Perustiedot_Extend01/text()"/>
-			</xsl:element>
+			<xsl:if test="//ka:Perustiedot_Extend02/text() != ''">
+				<xsl:element name="receiverRoleUid">
+					<xsl:value-of select="//ka:Perustiedot_Extend02/text()"/>
+				</xsl:element>
+			</xsl:if>
 			
 			
 		</xsl:element>

@@ -326,6 +326,13 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_N3hrt_VcEeCgsf-1346ddA" key="partnerLinkTypeKey" value="WFmagic_N3TpQPVcEeCgsf-1346ddA"/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_N3hruPVcEeCgsf-1346ddA" key="douri" value="project:///Forms/Tiva_Tietopyynto_Response_Form.gi.wsdl?wsdloperationbound={http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi}WorkflowSoapService/Tiva_Tietopyynto_Response_FormPort/createTask"/>
       </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VAogMDIUEeGgYvEob3Ma5w" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VA8pQDIUEeGgYvEob3Ma5w" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VBBhwDIUEeGgYvEob3Ma5w" key="roles" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VBTOkDIUEeGgYvEob3Ma5w" source="pipa">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VBdmoDIUEeGgYvEob3Ma5w" key="description" value=""/>
+      </eAnnotations>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_O722gfVcEeCgsf-1346ddA"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_PaU7MfVcEeCgsf-1346ddA"/>
     </vertices>
@@ -516,6 +523,10 @@
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jNQpEOj5EeCOlapFwgqxBw" source="executablepool">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jNQpEej5EeCOlapFwgqxBw" key="poolIsExecutable" value="false"/>
     </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TatEMDIUEeGgYvEob3Ma5w" source="participant">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TatEMTIUEeGgYvEob3Ma5w" key="users" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TatEMjIUEeGgYvEob3Ma5w" key="roles" value=""/>
+    </eAnnotations>
     <artifacts xmi:type="bpmn:DataObject" xmi:id="_9WN1gfVbEeCgsf-1346ddA" iD="_9WN1gPVbEeCgsf-1346ddA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9WN1gvVbEeCgsf-1346ddA" source="attachedDataobject">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9WN1g_VbEeCgsf-1346ddA" key="isBpelDeclaration" value="true"/>
@@ -556,7 +567,7 @@
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jr-2gPVcEeCgsf-1346ddA" source="participant">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jsOuIPVcEeCgsf-1346ddA" key="users" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jsS_kPVcEeCgsf-1346ddA" key="roles" value="tyontekijat/tyontekija"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jsS_kPVcEeCgsf-1346ddA" key="roles" value="koku/virkailija"/>
       </eAnnotations>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_9V_zEfVbEeCgsf-1346ddA"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_-WpXwfVbEeCgsf-1346ddA"/>
