@@ -49,6 +49,10 @@
 				<xsl:value-of select="//ka:Perustiedot_Otsikko/text()"/>
 			</xsl:element>
 			
+			<xsl:element name="receiverRoleUid">
+				<xsl:value-of select="//ka:Perustiedot_Extend01/text()"/>
+			</xsl:element>
+			
 			
 		</xsl:element>
 		
