@@ -217,8 +217,8 @@
                     <variants jsxwidth="350" jsxheight="110" jsxoverflow="1"/>
                     <strings jsxname="matrix-block" jsxrelativeposition="1" jsxmargin="0 0 0 18"/>
                     <object type="jsx3.gui.Matrix">
-                      <variants jsxpagingmodel="1" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1"/>
-                      <strings jsxname="dummyMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlid="receipientsToShow-nomap" jsxsortpath="receipient" jsxsorttype="text" jsxsortdirection="ascending"/>
+                      <variants jsxpagingmodel="3" jsxselectionmodel="0" jsxjsxxmlasync="1" jsxautorow="1"/>
+                      <strings jsxname="dummyMatrix" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlid="receipientsToShow-nomap" jsxsortpath="receipient" jsxsorttype="text" jsxsortdirection="ascending" jsxrenderingmodel="deep"/>
                       <events jsxaftercommit="this.getParent().getParent().validate(this, objEVENT);"/>
                       <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
                       <object type="jsx3.gui.Matrix.Column">
