@@ -27,6 +27,230 @@ function bringButtonsBack() {
 
 }
 
+function setRoles() {
+
+    var roleUsers;
+    var groupUid;
+    var temp;
+    
+    temp = form1.getJSXByName("Perustiedot_Extend02").getValue();
+
+    if (temp != null) {
+        groupUid = form1.getJSXByName("Perustiedot_Vastaanottaja_UID").getValue();
+        roleUsers = getRoleUsers(groupUid);   
+        form1.getJSXByName("Perustiedot_Extend01").setValue(roleUsers);
+    }
+    
+    form1.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue("");
+
+}
+
+function getRoleUsers(groupUid) {
+    var xmlData, list, userData, users = "";
+    
+    users = "";    
+    xmlData = Arcusys.Internal.Communication.GetRoleUsers(groupUid);
+    userNames = xmlData.selectNodeIterator("//username", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+    
+    while(userNames.hasNext()) {
+        
+        node = userNames.next();
+        
+        users += "koku/" + node.getValue();
+        
+        if (userNames.hasNext())
+            users += ",";
+        
+    }
+    
+    return users;
+    
+}
+
+function makeSearch(searchString) {
+    var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
+    entryFound = false;
+    hasEmptyChild = false;
+
+    if (searchString == "") {
+        alert("Sy" + unescape("%F6") + "t" + unescape("%E4") + "hakusana");
+
+    }
+    
+    searchString = searchString.toLowerCase();
+
+    if (searchEmbloyeeNames(searchString) == false) {
+        if (searchRoles(searchString) == false) {
+            alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
+        }
+    }
+}
+
+function searchRoles(searchString) {
+
+    var node, hasEmptyChild, entryFound, rolesData, i, xmlData, roleInfo, list;
+    entryFound = false;
+    hasEmptyChild = false;
+
+    if (searchString == "") {
+        return false;
+    }
+
+    if (form1.getCache().getDocument("HaetutRoolit-nomap").getFirstChild() != null) {
+        form1.getCache().getDocument("HaetutRoolit-nomap").removeChildren();
+        form1.getJSXByName("searchRoleMatrix").repaintData();
+
+    }
+
+    if (form1.getCache().getDocument("HaetutRoolit-nomap").getFirstChild() == null) {
+        form1.getJSXByName("searchRoleMatrix").commitAutoRowSession();
+        hasEmptyChild = true;
+
+    }
+    xmlData = Arcusys.Internal.Communication.GetRoles(searchString);
+    alert(xmlData);
+    list = ["roleName", "roleUid"];
+    rolesData = parseXML(xmlData, "role", list);
+
+    if (rolesData != null || rolesData != "") {
+
+        if (rolesData.length > 1) {
+            form1.getJSXByName("Roolihaku_Valittu-column").setDisplay("block").repaint();
+            form1.getJSXByName("Roolihaku_Roolinimi-column").setDisplay("block").repaint();
+            form1.getJSXByName("Roolihaku_Etunimi-column").setDisplay("none").repaint();
+            form1.getJSXByName("Roolihaku_Sukunimi-column").setDisplay("none").repaint();
+            form1.getJSXByName("Roolihaku_Puhelin-column").setDisplay("none").repaint();
+            form1.getJSXByName("Roolihaku_Sahkoposti-column").setDisplay("none").repaint();
+
+        } else {
+            form1.getJSXByName("Roolihaku_Valittu-column").setDisplay("none").repaint();
+            form1.getJSXByName("Roolihaku_Roolinimi-column").setDisplay("block").repaint();
+            form1.getJSXByName("Roolihaku_Etunimi-column").setDisplay("none").repaint();
+            form1.getJSXByName("Roolihaku_Sukunimi-column").setDisplay("none").repaint();
+            form1.getJSXByName("Roolihaku_Puhelin-column").setDisplay("none").repaint();
+            form1.getJSXByName("Roolihaku_Sahkoposti-column").setDisplay("none").repaint();
+        }
+
+    }
+
+    for (i = 0; i < rolesData.length; i++) {
+        roleInfo = rolesData[i].split(',');
+        
+        entryFound = true;
+        node = form1.getCache().getDocument("HaetutRoolit-nomap").getFirstChild().cloneNode();
+       
+        node.setAttribute("jsxid", i);
+       
+        if(rolesData.length == 1) {
+            node.setAttribute("valittu", 1);
+        }
+
+        node.setAttribute("roolinimi", roleInfo[0]);
+        node.setAttribute("uid", roleInfo[1]);
+        node.setAttribute("rooli", 1);
+
+        form1.getCache().getDocument("HaetutRoolit-nomap").insertBefore(node);
+
+    }
+
+    if (hasEmptyChild == true) {
+        form1.getCache().getDocument("HaetutRoolit-nomap").removeChild(form1.getCache().getDocument("HaetutRoolit-nomap").getFirstChild());
+    }
+
+    form1.getJSXByName("searchMatrix").repaintData();
+    if (entryFound == false) {
+
+        return false;
+    }
+
+}
+
+function searchEmbloyeeNames(searchString) {
+
+    var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
+    entryFound = false;
+    hasEmptyChild = false;
+
+    if(searchString == "") {
+        return false;
+    }
+
+    if(form1.getCache().getDocument("HaetutRoolit-nomap").getFirstChild() != null) {
+        form1.getCache().getDocument("HaetutRoolit-nomap").removeChildren();
+        form1.getJSXByName("searchRoleMatrix").repaintData();
+
+    }
+
+    if(form1.getCache().getDocument("HaetutRoolit-nomap").getFirstChild() == null) {
+        form1.getJSXByName("searchRoleMatrix").commitAutoRowSession();
+        hasEmptyChild = true;
+    }
+
+    xmlData = Arcusys.Internal.Communication.GetEmbloyeeUsers(searchString);
+    alert(xmlData);
+    list = ["firstname", "lastname", "phoneNumber", "email", "uid"];
+    userData = parseXML(xmlData, "user", list);
+
+    if(userData != null) {
+
+        form1.getJSXByName("Roolihaku_Roolinimi-column").setDisplay("none").repaint();
+        form1.getJSXByName("Roolihaku_Valittu-column").setDisplay("none").repaint();
+
+        form1.getJSXByName("Roolihaku_Etunimi-column").setDisplay("block").repaint();
+        form1.getJSXByName("Roolihaku_Sukunimi-column").setDisplay("block").repaint();
+        form1.getJSXByName("Roolihaku_Puhelin-column").setDisplay("block").repaint();
+        form1.getJSXByName("Roolihaku_Sahkoposti-column").setDisplay("block").repaint();
+
+    }
+
+    for( i = 0; i < userData.length; i++) {
+        personInfo = userData[i].split(',');
+        entryFound = true;
+        node = form1.getCache().getDocument("HaetutRoolit-nomap").getFirstChild().cloneNode();
+       
+        node.setAttribute("rooli", 0);
+        node.setAttribute("valittu", 1);
+       
+        node.setAttribute("jsxid", i);
+        if(personInfo[0] == "undefined")
+            node.setAttribute("etunimi", "");
+        else
+            node.setAttribute("etunimi", personInfo[0]);
+        if(personInfo[1] == "undefined")
+            node.setAttribute("sukunimi", "");
+        else
+            node.setAttribute("sukunimi", personInfo[1]);
+        if(personInfo[2] == "undefined")
+            node.setAttribute("puhelin", "");
+        else
+            node.setAttribute("puhelin", personInfo[2]);
+        if(personInfo[3] == "undefined")
+            node.setAttribute("sahkoposti", "");
+        else
+            node.setAttribute("sahkoposti", personInfo[3]);
+        if((personInfo[4] == "undefined")) {
+            alert("Kayttajahaussa tapahtui virhe. Kohdehenkilon id puuttuu");
+            return false;
+        }
+
+        node.setAttribute("uid", personInfo[4]);
+
+        form1.getCache().getDocument("HaetutRoolit-nomap").insertBefore(node);
+
+    }
+
+    if(hasEmptyChild == true) {
+        form1.getCache().getDocument("HaetutRoolit-nomap").removeChild(form1.getCache().getDocument("HaetutRoolit-nomap").getFirstChild());
+    }
+
+    form1.getJSXByName("searchRoleMatrix").repaintData();
+    if(entryFound == false) {
+        //alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
+        return false;
+    }
+
+}
+
 
 function getEndpoint() {
     var endpoint = "http://localhost:8180";
@@ -104,6 +328,37 @@ function getRoles(uid) {
     }
 
 }
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetRoles = function(searchString) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+        tout = 1000;
+        limit = 1000;
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchRoles><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchRoles></soapenv:Body></soapenv:Envelope>";
+
+        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
+        url = getUrl();
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if(objXML == null) {
+            alert("Virhe palvelinyhteydess" + unescape("%E4"));
+        } else {
+
+            return objXML;
+
+        }
+
+    };
+});
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetUserRoles = function(uid) {
@@ -492,7 +747,7 @@ function addCalendarChoices(questionName) {
 function getUrl() {
     
     var domain = getDomainName();
-    //domain = "http://62.61.65.15:8380";
+    domain = "http://62.61.65.15:8380";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -1750,25 +2005,54 @@ function intalioPreStart() {
 
 function switchSearchMode(mode) {
 
+    if (mode == "roles") {
+        form1.getJSXByName("Haku_Kayttajat").setDisplay("none").repaint();
+        form1.getJSXByName("Haku_Ryhmat").setDisplay("none").repaint();
+        form1.getJSxByNAme("Haku_Roolit").setDisplay("block").repaint();
+
+        form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(0).repaint();
+        form1.getJSXByName("HaeRyhmia_Checkbox1").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox1").setChecked(1).repaint();
+        form1.getJSXByName("HaeKayttajia_Checkbox2").setChecked(0).repaint();
+        form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(1).repaint();
+        form1.getJSXByName("HaeKayttajia_Checkbox3").setChecked(0).repaint();
+        form1.getJSXByName("HaeRyhmia_Checkbox3").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(1).repaint();
+        
+    }
+
     if (mode == "groups") {
         form1.getJSXByName("Haku_Kayttajat").setDisplay("none").repaint();
         form1.getJSXByName("Haku_Ryhmat").setDisplay("block").repaint();
+        form1.getJSxByNAme("Haku_Roolit").setDisplay("none").repaint();
 
         form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(0).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox1").setChecked(1).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox1").setChecked(0).repaint();
         form1.getJSXByName("HaeKayttajia_Checkbox2").setChecked(0).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(1).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(0).repaint();
+        form1.getJSXByName("HaeKayttajia_Checkbox3").setChecked(0).repaint();
+        form1.getJSXByName("HaeRyhmia_Checkbox3").setChecked(1).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(0).repaint();
 
     }
 
     if (mode == "users") {
         form1.getJSXByName("Haku_Kayttajat").setDisplay("block").repaint();
         form1.getJSXByName("Haku_Ryhmat").setDisplay("none").repaint();
+        form1.getJSxByNAme("Haku_Roolit").setDisplay("none").repaint();
 
         form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(1).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox1").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(0).repaint();
         form1.getJSXByName("HaeKayttajia_Checkbox2").setChecked(1).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(0).repaint();
+        form1.getJSXByName("HaeKayttajia_Checkbox3").setChecked(1).repaint();
+        form1.getJSXByName("HaeRyhmia_Checkbox3").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(0).repaint();
     }
 
 }
@@ -1921,7 +2205,7 @@ function searchNames(searchString) {
   
    mapSelectedValuesToMatrix();
    
-}
+    }
     // No users found...
     if ((userData == " ") || (userData == null) || (userData == "")) {
         alert ("Valitettavasti antamallasi hakusanalla ei l\xF6ytynyt tuloksia");
@@ -1991,6 +2275,71 @@ function searchNames(searchString) {
 
     form1.getJSXByName("searchMatrix").repaintData();
    
+}
+
+function addRolesToRecipients() {
+    var counter, node, i, hasEmptyChild, chosen, childIterator, uid, firstname, lastname, rolename, childNode;
+    i = 0;
+    hasEmptyChild = false;
+    counter = 0;
+    childIterator = form1.getCache().getDocument("HaetutRoolit-nomap").getChildIterator();
+    var roolit = "";
+    hasEmptyChild = false;
+    
+    if (form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild() == null) {
+        form1.getJSXByName("dummyMatrix").commitAutoRowSession();
+        hasEmptyChild = true;
+    }
+
+    while(childIterator.hasNext()) {
+        childNode = childIterator.next();
+
+        if(childNode.getAttribute("valittu") == 1) {
+
+            if(childNode.getAttribute("rooli") == 0) {
+            
+                alert(childNode);
+                
+                node = form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
+                node.setAttribute("uid", childNode.getAttribute("uid"));
+                node.setAttribute("receipient", childNode.getAttribute("etunimi") + " " + childNode.getAttribute("sukunimi"));
+
+                //uid = childNode.getAttribute("uid");
+                
+                form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
+                //node.setAttribu
+                //firstname = childNode.getAttribute("etunimi");
+                //lastname = childNode.getAttribute("sukunimi");
+                //form1.getJSXByName("tempVastaanottaja").setValue(uid);
+                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").setValue(firstname + " " + lastname);
+                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").repaint();
+                //TivaTietopyyntoForm.getJSXByName("Perustiedot_isRole").setChecked(true);
+                counter++;
+            } else {
+                uid = childNode.getAttribute("uid");
+                //rolename = childNode.getAttribute("roolinimi");
+                //form1.getJSXByName("tempVastaanottaja").setValue(uid);
+                roolit += uid;
+                if (childIterator.hasNext()) {
+                    roolit += ",";
+                }
+                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").setValue(rolename);
+                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").repaint();
+                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend02").setValue(uid);
+                counter++;
+            }
+        }
+
+    }
+    if(counter < 1) {
+        alert("Vastaanottaja tulee hakea ennen lisaamista");
+    }
+    
+    if (hasEmptyChild == true) {
+        form1.getCache().getDocument("receipientsToShow-nomap").removeChild(form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild());
+    }
+    form1.getJSXByName("dummyMatrix").repaintData();
+    form1.getJSXByName("recipientCounter").setValue(counter);
 }
 
 function addToRecipients() {
@@ -2136,6 +2485,35 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         if (objXML == null) {
             alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildinfo)" );
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetEmbloyeeUsers = function(searchString) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+        tout = 1000;
+        limit = 100;
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelosdsadpe/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchEmployees><!--Optional:--><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchEmployees></soapenv:Body></soapenv:Envelope>";
+
+        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        url = getUrl();
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if(objXML == null) {
+            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetUsers)");
         } else {
             return objXML;
 
