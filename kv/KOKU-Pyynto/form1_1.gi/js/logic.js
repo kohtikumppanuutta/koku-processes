@@ -745,7 +745,7 @@ function addCalendarChoices(questionName) {
 function getUrl() {
     
     var domain = getDomainName();
-    //domain = "http://62.61.65.15:8380";
+    domain = "http://62.61.65.15:8380";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -1891,11 +1891,11 @@ jsx3.lang.Package.definePackage(
 
 function mapSelectedRecipientsToMatrix() {
 
-    var node, hasEmptyChild, jsxid, childIterator, group, uid, receipientName, groupUid, childNode, xmlData, list, userData, i, attributeDisplayName, userDataDisplayName, displayName, kunpoUsername, roolit, firstRole;
+    var node, hasEmptyChild, jsxid, childIterator, group, uid, receipientName, groupUid, childNode, xmlData, list, userData, i, attributeDisplayName, userDataDisplayName, displayName, kunpoUsername, roolit, firstRole, usernames;
 
     hasEmptyChild = false;
     jsxid = 0;
-    roolit = "";
+    rooliKayttajat = "";
     firstRole = true;
 
     childIterator = form1.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
@@ -1957,12 +1957,23 @@ function mapSelectedRecipientsToMatrix() {
             }
         } else if (role != 0) {
             uid = childNode.getAttribute("uid");
-            if (!firstRole) {
-                roolit += ",";
-            } else {
-                firstRole = false;
+            
+            usernamesData = Arcusys.Internal.Communication.GetUsernamesInRole(uid);
+            
+            usernames = usernamesData.selectNodeIterator("//username", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+            
+            while (usernames.hasNext()) {
+            
+                node = usernames.next();
+                
+                rooliKayttajat += node.getValue();
+            
+                if (usernames.hasNext()) {
+                    rooliKayttajat += ",";
+                }
             }
-            roolit += uid;
+            node.setAttribute("Receipients_ReceipientUid", uid);
+            node.setAttribute("Receipients_Receipient", rooliKayttajat);
         } else {
             uid = childNode.getAttribute("uid");
             receipientName = childNode.getAttribute("receipient");
@@ -1978,9 +1989,9 @@ function mapSelectedRecipientsToMatrix() {
 
     }
     
-    if (roolit != "") {
+    /*if (roolit != "") {
         form1.getJSXByName("User_VastaanottajaRoolit").setValue(roolit);
-    }
+    }*/
 
     if (hasEmptyChild == true) {
         form1.getCache().getDocument("Receipients-nomapNew").removeChild(form1.getCache().getDocument("Receipients-nomapNew").getFirstChild());
@@ -2410,6 +2421,41 @@ function addGroupsToRecipients() {
     form1.getJSXByName("recipientCounter").setValue(counter);
 
 }
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUsernamesInRole = function(uid) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+
+        tout = 1000;
+        limit = 100;
+
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUsernamesInRole><roleUid>" + uid + "</roleUid></soa:getUsernamesInRole></soapenv:Body></soapenv:Envelope>";
+
+        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+        url = getUrl();
+
+        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildrens)" );
+        } else {
+            return objXML;
+
+        }
+
+    };
+});
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetChildrens = function(searchString) {
         var tout, msg, endpoint, url, req, objXML, limit;
