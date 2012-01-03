@@ -108,7 +108,6 @@ function searchRoles(searchString) {
 
     }
     xmlData = Arcusys.Internal.Communication.GetRoles(searchString);
-    alert(xmlData);
     list = ["roleName", "roleUid"];
     rolesData = parseXML(xmlData, "role", list);
 
@@ -187,7 +186,6 @@ function searchEmbloyeeNames(searchString) {
     }
 
     xmlData = Arcusys.Internal.Communication.GetEmbloyeeUsers(searchString);
-    alert(xmlData);
     list = ["firstname", "lastname", "phoneNumber", "email", "uid"];
     userData = parseXML(xmlData, "user", list);
 
@@ -747,7 +745,7 @@ function addCalendarChoices(questionName) {
 function getUrl() {
     
     var domain = getDomainName();
-    domain = "http://62.61.65.15:8380";
+    //domain = "http://62.61.65.15:8380";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -951,6 +949,7 @@ function getTemplate(templateId) {
                // mapTemplateNamesToField(formData);
                 
                 form1.getJSXByName("Pohja").setDisplay("none").repaint();
+                form1.getJSXByName("Roolit").setDisplay("block").repaint();
             }
         } catch (e) {
             alert(e);
@@ -1892,10 +1891,12 @@ jsx3.lang.Package.definePackage(
 
 function mapSelectedRecipientsToMatrix() {
 
-    var node, hasEmptyChild, jsxid, childIterator, group, uid, receipientName, groupUid, childNode, xmlData, list, userData, i, attributeDisplayName, userDataDisplayName, displayName, kunpoUsername;
+    var node, hasEmptyChild, jsxid, childIterator, group, uid, receipientName, groupUid, childNode, xmlData, list, userData, i, attributeDisplayName, userDataDisplayName, displayName, kunpoUsername, roolit, firstRole;
 
     hasEmptyChild = false;
     jsxid = 0;
+    roolit = "";
+    firstRole = true;
 
     childIterator = form1.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
 
@@ -1908,6 +1909,7 @@ function mapSelectedRecipientsToMatrix() {
         childNode = childIterator.next();
 
         group = childNode.getAttribute("group");
+        role = childNode.getAttribute("role");
 
         if (group != 0) {
 
@@ -1953,6 +1955,14 @@ function mapSelectedRecipientsToMatrix() {
                 jsxid++;
 
             }
+        } else if (role != 0) {
+            uid = childNode.getAttribute("uid");
+            if (!firstRole) {
+                roolit += ",";
+            } else {
+                firstRole = false;
+            }
+            roolit += uid;
         } else {
             uid = childNode.getAttribute("uid");
             receipientName = childNode.getAttribute("receipient");
@@ -1966,6 +1976,10 @@ function mapSelectedRecipientsToMatrix() {
            // alert(node);
         }
 
+    }
+    
+    if (roolit != "") {
+        form1.getJSXByName("User_VastaanottajaRoolit").setValue(roolit);
     }
 
     if (hasEmptyChild == true) {
@@ -2008,14 +2022,8 @@ function switchSearchMode(mode) {
     if (mode == "roles") {
         form1.getJSXByName("Haku_Kayttajat").setDisplay("none").repaint();
         form1.getJSXByName("Haku_Ryhmat").setDisplay("none").repaint();
-        form1.getJSxByNAme("Haku_Roolit").setDisplay("block").repaint();
+        form1.getJSXByName("Haku_Roolit").setDisplay("block").repaint();
 
-        form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(0).repaint();
-        form1.getJSXByName("HaeRyhmia_Checkbox1").setChecked(0).repaint();
-        form1.getJSXByName("HaeRooleja_Checkbox1").setChecked(1).repaint();
-        form1.getJSXByName("HaeKayttajia_Checkbox2").setChecked(0).repaint();
-        form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(0).repaint();
-        form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(1).repaint();
         form1.getJSXByName("HaeKayttajia_Checkbox3").setChecked(0).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox3").setChecked(0).repaint();
         form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(1).repaint();
@@ -2025,34 +2033,22 @@ function switchSearchMode(mode) {
     if (mode == "groups") {
         form1.getJSXByName("Haku_Kayttajat").setDisplay("none").repaint();
         form1.getJSXByName("Haku_Ryhmat").setDisplay("block").repaint();
-        form1.getJSxByNAme("Haku_Roolit").setDisplay("none").repaint();
+        form1.getJSXByName("Haku_Roolit").setDisplay("none").repaint();
 
-        form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(0).repaint();
-        form1.getJSXByName("HaeRyhmia_Checkbox1").setChecked(1).repaint();
-        form1.getJSXByName("HaeRooleja_Checkbox1").setChecked(0).repaint();
         form1.getJSXByName("HaeKayttajia_Checkbox2").setChecked(0).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(1).repaint();
         form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(0).repaint();
-        form1.getJSXByName("HaeKayttajia_Checkbox3").setChecked(0).repaint();
-        form1.getJSXByName("HaeRyhmia_Checkbox3").setChecked(1).repaint();
-        form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(0).repaint();
 
     }
 
     if (mode == "users") {
         form1.getJSXByName("Haku_Kayttajat").setDisplay("block").repaint();
         form1.getJSXByName("Haku_Ryhmat").setDisplay("none").repaint();
-        form1.getJSxByNAme("Haku_Roolit").setDisplay("none").repaint();
+        form1.getJSXByName("Haku_Roolit").setDisplay("none").repaint();
 
         form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(1).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox1").setChecked(0).repaint();
-        form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(0).repaint();
-        form1.getJSXByName("HaeKayttajia_Checkbox2").setChecked(1).repaint();
-        form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(0).repaint();
-        form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(0).repaint();
-        form1.getJSXByName("HaeKayttajia_Checkbox3").setChecked(1).repaint();
-        form1.getJSXByName("HaeRyhmia_Checkbox3").setChecked(0).repaint();
-        form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox1").setChecked(0).repaint();
     }
 
 }
@@ -2295,44 +2291,29 @@ function addRolesToRecipients() {
         childNode = childIterator.next();
 
         if(childNode.getAttribute("valittu") == 1) {
+            node = form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
 
             if(childNode.getAttribute("rooli") == 0) {
-            
-                alert(childNode);
-                
-                node = form1.getCache().getDocument("receipientsToShow-nomap").getFirstChild().cloneNode();
+
                 node.setAttribute("uid", childNode.getAttribute("uid"));
                 node.setAttribute("receipient", childNode.getAttribute("etunimi") + " " + childNode.getAttribute("sukunimi"));
+                node.setAttribute("role", 0);
+                node.setAttribute("group", 0);
 
-                //uid = childNode.getAttribute("uid");
-                
-                form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
-                //node.setAttribu
-                //firstname = childNode.getAttribute("etunimi");
-                //lastname = childNode.getAttribute("sukunimi");
-                //form1.getJSXByName("tempVastaanottaja").setValue(uid);
-                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").setValue(firstname + " " + lastname);
-                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").repaint();
-                //TivaTietopyyntoForm.getJSXByName("Perustiedot_isRole").setChecked(true);
-                counter++;
             } else {
                 uid = childNode.getAttribute("uid");
-                //rolename = childNode.getAttribute("roolinimi");
-                //form1.getJSXByName("tempVastaanottaja").setValue(uid);
-                roolit += uid;
-                if (childIterator.hasNext()) {
-                    roolit += ",";
-                }
-                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").setValue(rolename);
-                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").repaint();
-                //TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend02").setValue(uid);
-                counter++;
+                roolinimi = childNode.getAttribute("roolinimi");
+
+                node.setAttribute("role", 1);
+                node.setAttribute("group", 0);
+                node.setAttribute("uid", uid);
+                node.setAttribute("receipient", roolinimi);
+
             }
+            counter++;
+            form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
         }
 
-    }
-    if(counter < 1) {
-        alert("Vastaanottaja tulee hakea ennen lisaamista");
     }
     
     if (hasEmptyChild == true) {
@@ -2373,6 +2354,7 @@ function addToRecipients() {
                 node.setAttribute("receipient", parents[i]);
                 node.setAttribute("uid", uidlist[i]);
                 node.setAttribute("group", 0);
+                node.setAttribute("role", 0);
                 form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
                 counter++;
       
@@ -2413,6 +2395,7 @@ function addGroupsToRecipients() {
             node.setAttribute("receipient", groupname);
             node.setAttribute("uid", groupUid);
             node.setAttribute("group", 1);
+            node.setAttribute("role", 0);
             form1.getCache().getDocument("receipientsToShow-nomap").insertBefore(node);
             counter++;
 
