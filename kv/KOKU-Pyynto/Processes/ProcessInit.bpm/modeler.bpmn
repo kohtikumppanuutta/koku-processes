@@ -250,19 +250,26 @@
           </eAnnotations>
         </associations>
       </artifacts>
-      <vertices xmi:type="bpmn:Activity" xmi:id="_AdGhsa1BEeCYk7-iNBydwQ" iD="_AdGhsK1BEeCYk7-iNBydwQ" outgoingEdges="_cJ0NIfMNEeC6aqQJKR8yVQ" name="Vastaanottajan muokkaus" activityType="Task"/>
-      <vertices xmi:type="bpmn:Activity" xmi:id="_aPl8IPMNEeC6aqQJKR8yVQ" iD="_aPlVEPMNEeC6aqQJKR8yVQ" associations="_mE59QPMNEeC6aqQJKR8yVQ _mSYYkPMNEeC6aqQJKR8yVQ" outgoingEdges="_Izvo8fMQEeC6aqQJKR8yVQ" incomingEdges="_cJ0NIfMNEeC6aqQJKR8yVQ" name="Hae KunpoTunnus" activityType="EventIntermediateMessage">
+      <vertices xmi:type="bpmn:Activity" xmi:id="_AdGhsa1BEeCYk7-iNBydwQ" iD="_AdGhsK1BEeCYk7-iNBydwQ" outgoingEdges="_cmD30TX2EeGIWfBqWAuhbg" name="Vastaanottajan muokkaus" activityType="Task"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_aPl8IPMNEeC6aqQJKR8yVQ" iD="_aPlVEPMNEeC6aqQJKR8yVQ" associations="_mE59QPMNEeC6aqQJKR8yVQ _mSYYkPMNEeC6aqQJKR8yVQ" outgoingEdges="_Izvo8fMQEeC6aqQJKR8yVQ" incomingEdges="_BE3XMTX3EeGIWfBqWAuhbg" name="Hae KunpoTunnus" activityType="EventIntermediateMessage">
         <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_mEcqQPMNEeC6aqQJKR8yVQ"/>
         <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_mRzw0fMNEeC6aqQJKR8yVQ"/>
       </vertices>
-      <vertices xmi:type="bpmn:Activity" xmi:id="_G9-aIPMQEeC6aqQJKR8yVQ" iD="_G99zEPMQEeC6aqQJKR8yVQ" outgoingEdges="_OkT4UfjBEeC2ENkm3HmsIQ" incomingEdges="_Izvo8fMQEeC6aqQJKR8yVQ" name="Vastaanottajan kunponimen lisäys" activityType="Task"/>
-      <vertices xmi:type="bpmn:Activity" xmi:id="_ON4VUPjBEeC2ENkm3HmsIQ" iD="_ON3uQPjBEeC2ENkm3HmsIQ" associations="_PJ_YQPjBEeC2ENkm3HmsIQ _PnSYQPjBEeC2ENkm3HmsIQ" incomingEdges="_OkT4UfjBEeC2ENkm3HmsIQ" activityType="EventIntermediateMessage">
+      <vertices xmi:type="bpmn:Activity" xmi:id="_G9-aIPMQEeC6aqQJKR8yVQ" iD="_G99zEPMQEeC6aqQJKR8yVQ" outgoingEdges="_BxWCsTX3EeGIWfBqWAuhbg" incomingEdges="_Izvo8fMQEeC6aqQJKR8yVQ" name="Vastaanottajan kunponimen lisäys" activityType="Task"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_ON4VUPjBEeC2ENkm3HmsIQ" iD="_ON3uQPjBEeC2ENkm3HmsIQ" associations="_PJ_YQPjBEeC2ENkm3HmsIQ _PnSYQPjBEeC2ENkm3HmsIQ" incomingEdges="_gkGasTX2EeGIWfBqWAuhbg" activityType="EventIntermediateMessage">
         <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_PJheMfjBEeC2ENkm3HmsIQ"/>
         <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_PmQdgfjBEeC2ENkm3HmsIQ"/>
       </vertices>
-      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_cJ0NIfMNEeC6aqQJKR8yVQ" iD="_cJ0NIPMNEeC6aqQJKR8yVQ"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_a9NDoDX2EeGIWfBqWAuhbg" iD="_a9MckDX2EeGIWfBqWAuhbg" outgoingEdges="__tqTsTX2EeGIWfBqWAuhbg _BE3XMTX3EeGIWfBqWAuhbg" incomingEdges="_cmD30TX2EeGIWfBqWAuhbg" activityType="GatewayDataBasedExclusive"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_ek0qkTX2EeGIWfBqWAuhbg" iD="_ek0qkDX2EeGIWfBqWAuhbg" outgoingEdges="_gkGasTX2EeGIWfBqWAuhbg" incomingEdges="__-08MTX2EeGIWfBqWAuhbg _BxWCsTX3EeGIWfBqWAuhbg" activityType="GatewayDataBasedExclusive"/>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_88o9kTX2EeGIWfBqWAuhbg" iD="_88o9kDX2EeGIWfBqWAuhbg" outgoingEdges="__-08MTX2EeGIWfBqWAuhbg" incomingEdges="__tqTsTX2EeGIWfBqWAuhbg" activityType="Task"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Izvo8fMQEeC6aqQJKR8yVQ" iD="_Izvo8PMQEeC6aqQJKR8yVQ"/>
-      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_OkT4UfjBEeC2ENkm3HmsIQ" iD="_OkT4UPjBEeC2ENkm3HmsIQ"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_cmD30TX2EeGIWfBqWAuhbg" iD="_cmD30DX2EeGIWfBqWAuhbg"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_gkGasTX2EeGIWfBqWAuhbg" iD="_gkGasDX2EeGIWfBqWAuhbg"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="__tqTsTX2EeGIWfBqWAuhbg" iD="__tqTsDX2EeGIWfBqWAuhbg" conditionType="Default" isDefault="true"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="__-08MTX2EeGIWfBqWAuhbg" iD="__-08MDX2EeGIWfBqWAuhbg"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_BE3XMTX3EeGIWfBqWAuhbg" iD="_BE3XMDX3EeGIWfBqWAuhbg"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_BxWCsTX3EeGIWfBqWAuhbg" iD="_BxWCsDX3EeGIWfBqWAuhbg"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_NquscNd5EeCU1O2hlInHBA" iD="_NquFYNd5EeCU1O2hlInHBA" outgoingEdges="_EI3e0SfBEeG34O-nVZ604A _OCaW0SfBEeG34O-nVZ604A" incomingEdges="_PP6hkdd5EeCU1O2hlInHBA" name="Onko pohjaa?" activityType="GatewayDataBasedExclusive"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_RZbLwdd5EeCU1O2hlInHBA" iD="_RZbLwNd5EeCU1O2hlInHBA" associations="_COZUACeyEeG34O-nVZ604A _ChdZ8CeyEeG34O-nVZ604A" outgoingEdges="_XIr0odd5EeCU1O2hlInHBA" incomingEdges="_1yEi8SfBEeG34O-nVZ604A" name="Lähetä HTML (pohja)" activityType="EventIntermediateMessage">
