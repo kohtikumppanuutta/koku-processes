@@ -1,4 +1,4 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Tiva_Tietopyynto_init_Form1="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Tiva_Tietopyynto_Response_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" xmlns:diag="http://thisdiagram" xmlns:KokuTietopyyntoProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Prosessi" xmlns:Tiva_Tietopyynto_init_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" xmlns:Vastaus="http://thisdiagram/Vastaus" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Tiva_Tietopyynto_init_Form1="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Tiva_Tietopyynto_Response_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" xmlns:diag="http://thisdiagram" xmlns:KokuTietopyyntoProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Prosessi" xmlns:Tiva_Tietopyynto_init_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Services="http://thisdiagram/Services" xmlns:tns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" bpdm:prefix="Tiva_Tietopyynto_init_Form1" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
@@ -9,8 +9,8 @@
         <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///Services/UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" bpdm:prefix="Tiva_Tietopyynto_init_Form" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Vastaus" bpdm:prefix="Vastaus" bpdm:comment="contrib=&apos;partner-pool:///_fyjf4NY5EeCSFM5MejvcYQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Services" bpdm:prefix="Services" bpdm:comment="contrib=&apos;partner-pool:///_r9qpYOjmEeCIsZBRPARZQg"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/Tiva_Tietopyynto" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto.xsd"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
         <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
@@ -146,17 +146,7 @@
             <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_p28ssCZsEeGQk4N5SW9pEg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
                 <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_ur964CZsEeGQk4N5SW9pEg" bpdm:targetDisplayName="default"></bpdm:linkset>
                 <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_vLQe8CZsEeGQk4N5SW9pEg" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Hae Intaliokäyttäjän tunnus]">
-                    <bpel:condition>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01 = ""
-<mapper:mapperLink>
-  <mapper:vertice id="454834583" targetPath="$condition" targetedBy="1035033021-arg2"></mapper:vertice>
-  <mapper:vertice id="1035033021" dimension="78x24" location="248,78">
-    <mapper:value>=</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="40457222" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1035033021-arg0"></mapper:vertice>
-  <mapper:vertice id="1359697702" dimension="78x24" location="252,120" targetedBy="1035033021-arg1">
-    <mapper:value>""</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink></bpel:condition>
+                    <bpel:condition>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01 = ""<mapper:mapperLink><mapper:vertice id="454834583" targetPath="$condition" targetedBy="1035033021-arg2"></mapper:vertice><mapper:vertice id="1035033021" dimension="78x24" location="248,78"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="40457222" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1035033021-arg0"></mapper:vertice><mapper:vertice id="1359697702" dimension="78x24" location="252,120" targetedBy="1035033021-arg1"><mapper:value>""</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
                 </bpdm:linkset>
                 <bpel:sequence></bpel:sequence>
                 <bpel:sequence>
@@ -173,8 +163,18 @@
                     <bpdm:messagingtask bpdm:label="Päivitä" bpdm:ID="_E2ifoCZtEeGQk4N5SW9pEg">
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
-                                <bpel:from>$usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername</bpel:from>
-                                <bpel:to>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01</bpel:to><mapper:mapperLink><mapper:vertice id="1527201486" targetPath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1054132078-arg0"></mapper:vertice><mapper:vertice id="1054132078" sourcePath="$usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername"></mapper:vertice></mapper:mapperLink>
+                                <bpel:from>concat("koku/", $usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername)</bpel:from>
+                                <bpel:to>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1698613072" targetPath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="576065547-arg2"></mapper:vertice>
+  <mapper:vertice id="576065547" dimension="78x24" location="732,192">
+    <mapper:value>concat()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="996255211" dimension="78x24" location="636,120" targetedBy="576065547-arg0">
+    <mapper:value>"koku/"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1892026257" sourcePath="$usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername" targetedBy="576065547-arg1"></mapper:vertice>
+</mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                     </bpdm:messagingtask>
