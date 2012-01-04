@@ -10,7 +10,7 @@ function getEndpoint() {
 function getUrl() {
 
     var domain = getDomainName();
-    domain = "http://62.61.65.15:8380";
+    //domain = "http://62.61.65.15:8380";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
