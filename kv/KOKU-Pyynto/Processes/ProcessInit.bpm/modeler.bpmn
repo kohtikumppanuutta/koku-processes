@@ -266,9 +266,9 @@
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Izvo8fMQEeC6aqQJKR8yVQ" iD="_Izvo8PMQEeC6aqQJKR8yVQ"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_cmD30TX2EeGIWfBqWAuhbg" iD="_cmD30DX2EeGIWfBqWAuhbg"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_gkGasTX2EeGIWfBqWAuhbg" iD="_gkGasDX2EeGIWfBqWAuhbg"/>
-      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="__tqTsTX2EeGIWfBqWAuhbg" iD="__tqTsDX2EeGIWfBqWAuhbg" conditionType="Default" isDefault="true"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="__tqTsTX2EeGIWfBqWAuhbg" iD="__tqTsDX2EeGIWfBqWAuhbg" conditionType="None" isDefault="false"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="__-08MTX2EeGIWfBqWAuhbg" iD="__-08MDX2EeGIWfBqWAuhbg"/>
-      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_BE3XMTX3EeGIWfBqWAuhbg" iD="_BE3XMDX3EeGIWfBqWAuhbg"/>
+      <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_BE3XMTX3EeGIWfBqWAuhbg" iD="_BE3XMDX3EeGIWfBqWAuhbg" conditionType="Default" isDefault="true"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_BxWCsTX3EeGIWfBqWAuhbg" iD="_BxWCsDX3EeGIWfBqWAuhbg"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_NquscNd5EeCU1O2hlInHBA" iD="_NquFYNd5EeCU1O2hlInHBA" outgoingEdges="_EI3e0SfBEeG34O-nVZ604A _OCaW0SfBEeG34O-nVZ604A" incomingEdges="_PP6hkdd5EeCU1O2hlInHBA" name="Onko pohjaa?" activityType="GatewayDataBasedExclusive"/>
