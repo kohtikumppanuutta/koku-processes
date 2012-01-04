@@ -745,7 +745,7 @@ function addCalendarChoices(questionName) {
 function getUrl() {
     
     var domain = getDomainName();
-    domain = "http://62.61.65.15:8380";
+    //domain = "http://62.61.65.15:8380";
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
@@ -1891,11 +1891,12 @@ jsx3.lang.Package.definePackage(
 
 function mapSelectedRecipientsToMatrix() {
 
-    var node, hasEmptyChild, jsxid, childIterator, group, uid, receipientName, groupUid, childNode, xmlData, list, userData, i, attributeDisplayName, userDataDisplayName, displayName, kunpoUsername, roolit, firstRole, usernames;
+    var node, userNamesNode, userIds, hasEmptyChild, jsxid, childIterator, group, uid, receipientName, groupUid, childNode, xmlData, list, userData, i, attributeDisplayName, userDataDisplayName, displayName, kunpoUsername, roolit, firstRole, usernames;
 
     hasEmptyChild = false;
     jsxid = 0;
     rooliKayttajat = "";
+    userIds = "";
     firstRole = true;
 
     childIterator = form1.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
@@ -1956,6 +1957,7 @@ function mapSelectedRecipientsToMatrix() {
 
             }
         } else if (role != 0) {
+            node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
             uid = childNode.getAttribute("uid");
             
             usernamesData = Arcusys.Internal.Communication.GetUsernamesInRole(uid);
@@ -1964,16 +1966,23 @@ function mapSelectedRecipientsToMatrix() {
             
             while (usernames.hasNext()) {
             
-                node = usernames.next();
+                userNamesNode = usernames.next();
                 
-                rooliKayttajat += node.getValue();
+                rooliKayttajat += "koku/" + userNamesNode.getValue();
+                userIdsData = Arcusys.Internal.Communication.GetUserUidByUsername(userNamesNode.getValue());
+                userIds += userIdsData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
             
                 if (usernames.hasNext()) {
                     rooliKayttajat += ",";
+                    userIds += ",";
                 }
             }
-            node.setAttribute("Receipients_ReceipientUid", uid);
+
+            node.setAttribute("jsxid", jsxid);
+            node.setAttribute("Receipients_ReceipientUid", userIds);
             node.setAttribute("Receipients_Receipient", rooliKayttajat);
+            form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
+            jsxid++;
         } else {
             uid = childNode.getAttribute("uid");
             receipientName = childNode.getAttribute("receipient");
