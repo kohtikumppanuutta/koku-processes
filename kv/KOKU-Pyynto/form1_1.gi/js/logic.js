@@ -251,8 +251,8 @@ function searchEmbloyeeNames(searchString) {
 
 
 function getEndpoint() {
-    var endpoint = "http://localhost:8180";
-    //var endpoint = "http://trelx51lb:8080";
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51lb:8080";
     return endpoint;
     
 }
@@ -2028,7 +2028,7 @@ function intalioPreStart() {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Creator").repaint();
         } else if (form1.getJSXByName("PohjaNakyvyys_Organisaatio").getChecked()) {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("Organization").repaint();
-        } else if (form1.getJSXByName("Pohjanakyvyys_Kaikki").getChecked()) {
+        } else if (form1.getJSXByName("PohjaNakyvyys_Kaikki").getChecked()) {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("All").repaint();
         }
     }
@@ -2044,6 +2044,10 @@ function switchSearchMode(mode) {
         form1.getJSXByName("Haku_Ryhmat").setDisplay("none").repaint();
         form1.getJSXByName("Haku_Roolit").setDisplay("block").repaint();
 
+        form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(0).repaint();
+        form1.getJSXByName("HaeRyhmia_Checkbox1").setChecked(0).repaint();
+        form1.getJSXByName("HaeKayttajia_Checkbox2").setChecked(0).repaint();
+        form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(0).repaint();
         form1.getJSXByName("HaeKayttajia_Checkbox3").setChecked(0).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox3").setChecked(0).repaint();
         form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(1).repaint();
@@ -2055,6 +2059,10 @@ function switchSearchMode(mode) {
         form1.getJSXByName("Haku_Ryhmat").setDisplay("block").repaint();
         form1.getJSXByName("Haku_Roolit").setDisplay("none").repaint();
 
+        form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox1").setChecked(0).repaint();
+        form1.getJSXByName("HaeKayttajia_Checkbox3").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(0).repaint();
         form1.getJSXByName("HaeKayttajia_Checkbox2").setChecked(0).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(1).repaint();
         form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(0).repaint();
@@ -2066,6 +2074,10 @@ function switchSearchMode(mode) {
         form1.getJSXByName("Haku_Ryhmat").setDisplay("none").repaint();
         form1.getJSXByName("Haku_Roolit").setDisplay("none").repaint();
 
+        form1.getJSXByName("HaeRyhmia_Checkbox2").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox2").setChecked(0).repaint();
+        form1.getJSXByName("HaeRyhmia_Checkbox3").setChecked(0).repaint();
+        form1.getJSXByName("HaeRooleja_Checkbox3").setChecked(0).repaint();
         form1.getJSXByName("HaeKayttajia_Checkbox1").setChecked(1).repaint();
         form1.getJSXByName("HaeRyhmia_Checkbox1").setChecked(0).repaint();
         form1.getJSXByName("HaeRooleja_Checkbox1").setChecked(0).repaint();
