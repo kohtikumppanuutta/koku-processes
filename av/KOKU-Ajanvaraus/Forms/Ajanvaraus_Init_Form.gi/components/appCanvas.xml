@@ -67,7 +67,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="none"/>
+      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="block"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="300"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -300,7 +300,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1"/>
+                    <variants jsxheight="18" jsxchecked="0"/>
                     <strings jsxname="HaeKayttajia_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
                   </object>
@@ -323,7 +323,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="0"/>
+                    <variants jsxheight="18" jsxchecked="1" jsxenabled="0"/>
                     <strings jsxname="HaeRyhmia_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);switchSearchMode(&quot;groups&quot;);"/>
                   </object>
@@ -667,8 +667,8 @@
                   <strings riaLabelText="button" jsxname="button-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18" jsxenabled="1"/>
-                    <strings jsxname="showOrHideSearch" jsxtext="Lisää vastaanottajia" jsxmargin="12 4 0 0" jsxdisplay=""/>
-                    <events jsxexecute="if (AjanvarausForm.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  AjanvarausForm.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;block&quot;).repaint();  AjanvarausForm.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;,true);  AjanvarausForm.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(AjanvarausForm.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  AjanvarausForm.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;none&quot;).repaint();   AjanvarausForm.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;,true);  AjanvarausForm.getJSXByName(&quot;searchVisible&quot;).setChecked(0); } "/>
+                    <strings jsxname="showOrHideSearch" jsxtext="Piilota Haku" jsxmargin="12 4 0 0" jsxdisplay=""/>
+                    <events jsxexecute="if(AjanvarausForm.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  if (AjanvarausForm.getJSXByName(&quot;HaeKayttajia_Checkbox1&quot;).getChecked()) {   AjanvarausForm.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;block&quot;).repaint();  }  else if (AjanvarausForm.getJSXByName(&quot;HaeRyhmia_Checkbox2&quot;).getChecked()) {   AjanvarausForm.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;block&quot;).repaint();  }  AjanvarausForm.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;, true);  AjanvarausForm.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(AjanvarausForm.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  AjanvarausForm.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;none&quot;).repaint();  AjanvarausForm.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;none&quot;).repaint();  AjanvarausForm.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;, true);  AjanvarausForm.getJSXByName(&quot;searchVisible&quot;).setChecked(0); }"/>
                   </object>
                 </object>
               </object>
@@ -721,7 +721,7 @@
         </object>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="0"/>
+        <variants jsxheight="18" jsxchecked="1"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
