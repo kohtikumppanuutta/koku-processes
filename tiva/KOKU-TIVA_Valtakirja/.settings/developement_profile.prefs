@@ -1,7 +1,7 @@
-#Wed Nov 30 12:40:30 EET 2011
+#Tue Dec 27 11:39:21 EET 2011
 behind_proxy=false
 bundleExportPath=/home/henril/intalio_workspace/KOKU-TIVA_Valtakirja
-deploy.fileRuntimeSelection=Forms\:Forms/Valtakirja.xsd\:Forms/Valtakirja_Decision_Form.gi\:Forms/Valtakirja_Edit_Form.gi\:Forms/Valtakirja_Form.gi\:Processes/MuokkaaValtakirjaa.bpm\:Processes/Valtakirja.bpm\:Services\:Services/KokuValtakirjaProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl\:
+deploy.fileRuntimeSelection=Forms\:Forms/Valtakirja.xsd\:Forms/Valtakirja_Decision_Form.gi\:Forms/Valtakirja_Edit_Form.gi\:Forms/Valtakirja_Form.gi\:Processes/MuokkaaValtakirjaa.bpm\:Processes/Valtakirja.bpm\:Services\:Services/KokuValtakirjaProcessingServiceImpl.wsdl\:Services/TaskManagementSystem.wsdl\:Services/TokenService.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl\:xsl\:xsl/annaValtakirja.xsl\:
 deploy_bundleShouldBeArchived=false
 deploy_bundleShouldBeDeployed=true
 deploy_gi_serverUrl=http\://localhost\:8080/gi

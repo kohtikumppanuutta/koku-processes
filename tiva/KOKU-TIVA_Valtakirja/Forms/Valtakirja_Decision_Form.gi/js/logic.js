@@ -1,8 +1,8 @@
 /* place JavaScript code here */
 function getEndpoint() {
     
-    var endpoint = "http://localhost:8180";
-    //var endpoint = "http://trelx51lb:8080";
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51lb:8080";
     return endpoint;
     
 }
@@ -120,15 +120,11 @@ function mapValtakirjaDataToFields(valtakirjaData) {
     
     var array = validTill.split("-");
     array[2] = array[2].charAt(0) + array[2].charAt(1);
-    
-  //  alert(array);
+
     var d = new Date();
-    
-    d.setDate(array[2]);
-    d.setMonth(array[1]);
-    d.setFullYear(array[0]);
-  //  alert(d);
-  //  alert(validTill);
+
+    d.setFullYear(parseInt(array[0]), parseInt(array[1]) - 1, parseInt(array[2]));
+
     Valtakirja_Form.getJSXByName("Tiedot_Voimassa").setValue(d);
     
 }

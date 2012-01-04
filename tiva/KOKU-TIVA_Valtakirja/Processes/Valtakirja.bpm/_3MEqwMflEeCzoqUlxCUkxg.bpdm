@@ -71,7 +71,7 @@
             </bpel:variable>
             <bpel:variable name="kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg" messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirja" binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" operation="annaValtakirja" opMsgType="0" bpdm:id="_e2l0AMftEeCzoqUlxCUkxg" bpdm:messageIds=" out:_e2WjcMftEeCzoqUlxCUkxg">
                 <bpel:from bpdm:toPart="annaValtakirja">
-                    <bpel:literal bpdm:linkedMessageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirja" bpdm:linkedPart="annaValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="annaValtakirja"></bpel:literal>
+                    <bpel:literal bpdm:linkedMessageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirja" bpdm:linkedPart="annaValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:opMsgType="0" bpdm:operation="annaValtakirja" bpdm:linkedFile="KokuValtakirjaProcessingService_annaValtakirja.annaValtakirja-_3MEqwMflEeCzoqUlxCUkxg-0-literal.xml"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
             <bpel:variable name="kokuValtakirjaProcessingServiceImplAnnaValtakirjaResponseMsg" messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirjaResponse" binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" operation="annaValtakirja" opMsgType="1" bpdm:id="_fT3l4MftEeCzoqUlxCUkxg" bpdm:messageIds="inc:_fTdWMMftEeCzoqUlxCUkxg"/>
@@ -128,28 +128,18 @@
             <bpdm:messagingtask eventType="intermediate: message" operation="annaValtakirja" partnerLink="palvelutAndProsessiForKokuValtakirjaProcessingServicePortPlkVar" portType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä valtakirja webservicelle" bpdm:ID="_LkG64MfmEeCzoqUlxCUkxg">
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
-                        <bpel:from>$Valtakirja_Form/tns:Valtakirjapohja/tns:Valtakirjapohja_Id</bpel:from>
-                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/valtakirjapohjaId</bpel:to><mapper:mapperLink><mapper:vertice id="1647563551" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/valtakirjapohjaId" targetedBy="1271067166-arg0"></mapper:vertice><mapper:vertice id="1271067166" sourcePath="$Valtakirja_Form/tns:Valtakirjapohja/tns:Valtakirjapohja_Id"></mapper:vertice></mapper:mapperLink>
-                    </bpel:copy>
-                    <bpel:copy>
-                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Lahettaja</bpel:from>
-                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/lahettaja</bpel:to><mapper:mapperLink><mapper:vertice id="2142606056" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/lahettaja" targetedBy="1542653809-arg0"></mapper:vertice><mapper:vertice id="1542653809" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Lahettaja"></mapper:vertice></mapper:mapperLink>
-                    </bpel:copy>
-                    <bpel:copy>
-                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja</bpel:from>
-                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/vastaanottaja</bpel:to><mapper:mapperLink><mapper:vertice id="734896782" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/vastaanottaja" targetedBy="201646673-arg0"></mapper:vertice><mapper:vertice id="201646673" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Vastaanottaja"></mapper:vertice></mapper:mapperLink>
-                    </bpel:copy>
-                    <bpel:copy>
-                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Henkilo</bpel:from>
-                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/kohdehenkilo</bpel:to><mapper:mapperLink><mapper:vertice id="1929620582" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/kohdehenkilo" targetedBy="2124019122-arg0"></mapper:vertice><mapper:vertice id="2124019122" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Henkilo"></mapper:vertice></mapper:mapperLink>
-                    </bpel:copy>
-                    <bpel:copy>
-                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastausMennessa</bpel:from>
-                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/vastausmennessa</bpel:to><mapper:mapperLink><mapper:vertice id="464539639" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/vastausmennessa" targetedBy="1231542283-arg0"></mapper:vertice><mapper:vertice id="1231542283" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_VastausMennessa"></mapper:vertice></mapper:mapperLink>
-                    </bpel:copy>
-                    <bpel:copy>
-                        <bpel:from>$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Voimassa</bpel:from>
-                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/maaraaika</bpel:to><mapper:mapperLink><mapper:vertice id="2098366959" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja/maaraaika" targetedBy="921554411-arg0"></mapper:vertice><mapper:vertice id="921554411" sourcePath="$Valtakirja_Form/tns:Tiedot/tns:Tiedot_Voimassa"></mapper:vertice></mapper:mapperLink>
+                        <bpel:from>bpel:doXslTransform("../xsl/annaValtakirja.xsl", $Valtakirja_Form)</bpel:from>
+                        <bpel:to>$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="2130130545" targetPath="$kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg.annaValtakirja" targetedBy="758553195-arg2"></mapper:vertice>
+  <mapper:vertice id="758553195" dimension="224x39" location="216,120">
+    <mapper:value>bpel:doXslTransform()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1658301313" dimension="252x24" location="168,48" targetedBy="758553195-arg0">
+    <mapper:value>"../xsl/annaValtakirja.xsl"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1689915895" sourcePath="$Valtakirja_Form" targetedBy="758553195-arg1"></mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuValtakirjaProcessingServiceImplAnnaValtakirjaRequestMsg" bpdm:msgVarScopeId="_3MEqwMflEeCzoqUlxCUkxg" bpdm:variableIsManaged="true" bpdm:messageType="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingService_annaValtakirja" bpdm:binding="KokuValtakirjaProcessingServiceImpl:KokuValtakirjaProcessingServiceBinding" bpdm:ID="_e2WjcMftEeCzoqUlxCUkxg"></bpdm:linkset>

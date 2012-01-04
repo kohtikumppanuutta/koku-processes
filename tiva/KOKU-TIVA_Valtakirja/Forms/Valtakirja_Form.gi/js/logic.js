@@ -458,57 +458,44 @@ function mapChildrenNamesToField(data) {
 }
 
 function mapTemplateNamesToField(data) {
-  //  alert(data);
-    var descendants = data.selectNodeIterator("//valtakirjapohjat", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
-   // alert(descendants);
-    var templateId, templateName, templateDescription; 
-    var xmlForSelectBox = "<data>";
-    
-    while(descendants.hasNext()) {
-    
-        childNode = descendants.next();
-       // alert(childNode);
-       // alert(childNode);
-       // requestTemplateId = childNode.getAttributeNode("return");
-       templateId = childNode.getFirstChild().getValue();
-      // requestTemplateId = childNode.selectSingleNode("//requestTemplateId").getValue();
-       // alert(templateId);
-        templateName = childNode.getFirstChild().getNextSibling().getValue();
-        //alert(templateName);
-       // subject = childNode.selectSingleNode("//subject").getValue();
-        templateDescription = childNode.getLastChild().getValue();
-        //alert(templateDescription);
-        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + templateId + "\" jsxtext=\"" + templateName + "\" jsxdesc=\"" + templateDescription + "\"/>";
-        
-       // alert(requestTemplateId + subject);
-        templateId = "";
-        templateName = "";
-        templateDescription = "";
-        childNode = null;
-    }
-    xmlForSelectBox = xmlForSelectBox + "</data>";
-   // alert(xmlForSelectBox);
-    /*
-    for (x in descendants)   {
-      alert(descendants[x]);
-    }
-    */
-    
-   // data.selectNodes("//tns:getRequestTemplateSummaryResponse", "xmlns:tns='http://soa.kv.koku.arcusys.fi/'");
-   // alert("mapTemplateNamesToField" + data);
-    /*
-       var childIterator = data.selectSingleNode("//getRequestTemplateSummaryResponse", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'">).getChildIterator();
+    var xmlForSelectBox, templates, i;
 
-       while(childIterator.hasNext()){
-       
-            childNode = childIterator.next();
-            alert(childNode);
-       }
-    */
-   // var values = "";
+    xmlForSelectBox = "<data>";
+    
+    templates = returnArray(data, "valtakirjapohjat");
+    
+    for (i = 0; i < templates.length; i++) {
+        xmlForSelectBox += "<record jsxid=\"" + templates[i]["templateId"] + "\" jsxtext=\"" + templates[i]["templateName"] + "\" jsxdesc=\"" + templates[i]["description"] + "\" jsxvalid=\"" + templates[i]["validTillMandatory"] + "\" jsxconsent=\"" + templates[i]["consentsOnly"] + "\" jsxguardian=\"" + templates[i]["toSecondGuardianOnly"] + "\"\/>";
+    }
+
+    xmlForSelectBox += "</data>";
+
     Valtakirja_Form.getJSXByName("Valtakirjapohja_Valinta").setXMLString(xmlForSelectBox);
     Valtakirja_Form.getJSXByName("Valtakirjapohja_Valinta").resetXmlCacheData();
     Valtakirja_Form.getJSXByName("Valtakirjapohja_Valinta").repaint();
+}
+
+function returnArray(data, nodeName) {
+    var nodeIterator, nodeArray = [], i = 0;
+    
+    nodeIterator = data.selectNodeIterator("//" + nodeName, "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+    
+    while (nodeIterator.hasNext()) {
+        node = nodeIterator.next();
+        if (node.getFirstChild()) {
+            childNode = node.getFirstChild();
+            nodeArray[i] = [childNode.getNodeName()];
+            while (childNode) {
+                if (childNode.getValue()) { 
+                    nodeArray[i][childNode.getNodeName()] = childNode.getValue();
+                }
+                childNode = childNode.getNextSibling();
+            }
+            i++;
+        }
+    }
+    
+    return nodeArray;
 }
 
 
@@ -517,7 +504,13 @@ function changeMandateTemplate() {
     var templateName = Valtakirja_Form.getJSXByName("Valtakirjapohja_Valinta").getText();
     var templateDesc = Valtakirja_Form.getJSXByName("Valtakirjapohja_Valinta").getXML().getFirstChild().selectSingleNode("//record[@jsxid='" + templateID + "']").getAttribute("jsxdesc");
     
-    // alert(templateID + " " + templateName + " " + templateDesc);
+    if (Valtakirja_Form.getJSXByName("Valtakirjapohja_Valinta").getXML().getFirstChild().selectSingleNode("//record[@jsxid='" + templateID + "']").getAttribute("jsxvalid") == "true") {
+        Valtakirja_Form.getJSXByName("Tiedot_Voimassa").setRequired(1);
+    } else {
+        Valtakirja_Form.getJSXByName("Tiedot_Voimassa").setRequired(0);
+    }
+    
+    Valtakirja_Form.getJSXByName("Tiedot_Voimassa").getParent().repaint();
     
     Valtakirja_Form.getJSXByName("labelValtakirjaKuvaus").setText(templateDesc).repaint();
     

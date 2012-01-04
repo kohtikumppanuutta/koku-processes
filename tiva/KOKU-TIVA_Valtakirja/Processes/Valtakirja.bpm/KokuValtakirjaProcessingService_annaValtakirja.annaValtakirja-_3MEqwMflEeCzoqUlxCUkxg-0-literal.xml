@@ -1,0 +1,25 @@
+﻿<bpel:literal xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:TaskManagementSystem="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/"
+    xmlns:attachments="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi/attachments"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:TokenService="http://tempo.intalio.org/security/tokenService/"
+    xmlns:Valtakirja_Decision_Form="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi/attachments"
+    xmlns:tns="http://www.arcusys.fi/Valtakirja"
+    xmlns:KokuValtakirjaProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/"
+    xmlns:diag="http://thisdiagram"
+    xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/"
+    xmlns:this="http://thisdiagram/Prosessi"
+    xmlns:Valtakirja_Form="http://www.intalio.com/gi/Forms/Valtakirja_Form.gi"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:Valtakirja_Decision_Form1="http://www.intalio.com/gi/Forms/Valtakirja_Decision_Form.gi"
+    xmlns:Antaja="http://thisdiagram/Antaja"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace">
+<KokuValtakirjaProcessingServiceImpl:annaValtakirja>
+    <valtakirjapohjaId></valtakirjapohjaId>
+    <vastausmennessa></vastausmennessa>
+    <maaraaika></maaraaika>
+    <lahettaja></lahettaja>
+    <vastaanottaja></vastaanottaja>
+    <kohdehenkilo></kohdehenkilo>
+</KokuValtakirjaProcessingServiceImpl:annaValtakirja>
+</bpel:literal>
