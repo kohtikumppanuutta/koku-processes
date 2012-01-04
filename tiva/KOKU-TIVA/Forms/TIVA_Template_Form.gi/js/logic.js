@@ -154,6 +154,17 @@ function formatDataCache(cache, matrix) {
 
 // Form functionality ----------------------------------------------------------------------------------------------------------------------------
 
+function KKSKoodi() {
+
+    if (TIVA_Form.getJSXByName("KKSKoodi-pane").getDisplay() == "none") {
+        TIVA_Form.getJSXByName("KKSKoodi-pane").setDisplay("block", true);
+        TIVA_Form.getJSXByName("KKSKoodiButton").setText("Piilota").repaint();
+    } else if (TIVA_Form.getJSXByName("KKSKoodi-pane").getDisplay() == "block") {
+        TIVA_Form.getJSXByName("KKSKoodi-pane").setDisplay("none", true);
+        TIVA_Form.getJSXByName("KKSKoodiButton").setText("KKS-koodi", true).repaint();
+    }
+}
+
 function swapConsentGivers(selection) {
     if (selection == 1) {
         TIVA_Form.getJSXByName("Suostumus_Extend1").setValue("Child");
