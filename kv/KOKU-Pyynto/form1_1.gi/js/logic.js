@@ -1,5 +1,22 @@
 /* place JavaScript code here */
+function isNumeric(targetField){
+   var validChars = "0123456789";
+   var isNumber=true;
+   var char;
+   var text2 = targetField.getValue();
+ 
+   for (i = 0; i < text2.length && isNumber == true; i++) 
+      { 
+      char = text2.charAt(i); 
+      if (validChars.indexOf(char) == -1) 
+         {
+         isNumber = false;
+         alert("Syot\xE4 vain positiivisia kokonaislukuja!");
+         targetField.setValue("").repaint();
+         }
+      }
 
+}
 
 jsx3.lang.Package.definePackage(
   "Intalio.Internal.CustomErrors",
@@ -1704,6 +1721,9 @@ function getInputType() {
     if (form1.getJSXByName("vastausKalenteriVaihtoehdot").getChecked()) {
         input = "CALENDAR";
     }
+    if (form1.getJSXByName("vastausNumeroVaihtoehdot").getChecked()) {
+        input = "NUMBER";
+    }
     
     return input;
 }
@@ -1739,7 +1759,7 @@ function inputSection(title,question) {
     if (inputType=="NUMBER") {
        // alert("CALENDAR");
         mapFieldsToMatrix(title,question,sectionNumber,inputType);
-        inputCalendarSection(title,question,sectionNumber);
+        inputNumberSection(title,question,sectionNumber);
     }
     
     //bringButtonsBack();

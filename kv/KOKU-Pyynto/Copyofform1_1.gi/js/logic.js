@@ -292,9 +292,8 @@ function mapAnswerTextFields() {
            // section = childNode.getAttribute("TextInput_Answer");
             
            // if (question!="" && section!="") {
-           if (type=="FREE_TEXT") {
+           if (type=="FREE_TEXT" || type=="NUMBER") {
                 answerText = form1.getJSXByName("textbox" + elementNumber).getValue();
-
            }
            if (type=="YES_NO") {
                 if (form1.getJSXByName("yes" + elementNumber).getChecked()) {
