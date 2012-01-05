@@ -3,7 +3,7 @@
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize/>
+  <onAfterDeserialize>preload();</onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxoverflow="1" jsxwidth="900"/>
     <strings jsxheight="100%" jsxname="root" jsxstyleoverride="overflow-x:hidden;   overflow-y:auto;"/>

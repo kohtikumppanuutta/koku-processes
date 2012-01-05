@@ -1213,6 +1213,7 @@ function dontUseTemplate() {
     form1.getJSXByName("Lomaketyyppi").setDisplay("none").repaint();
     form1.getJSXByName("headerEdit").setDisplay("block").repaint();
     form1.getJSXByName("Pohja").setDisplay("none").repaint();
+    form1.getJSXByName("muokkausValinnat-pane").setDisplay("none").repaint();
     form1.getJSXByName("Kentat").setDisplay("block").repaint();
     
     form1.getJSXByName("header").setDisplay("block").repaint();

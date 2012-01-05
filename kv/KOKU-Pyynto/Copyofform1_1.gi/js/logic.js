@@ -6,6 +6,12 @@ function testAlert() {
     addAdditionalInfoField();
 }
 
+function preload() {
+    username = Intalio.Internal.Utilities.getUser();
+    username = username.substring(username.indexOf("/")+1);
+    form1.getJSXByName("User_Recipient").setValue(username);
+}
+
 function isNumeric(targetField){
    var validChars = "0123456789";
    var isNumber=true;
