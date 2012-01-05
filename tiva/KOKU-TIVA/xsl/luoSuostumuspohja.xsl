@@ -25,11 +25,13 @@
                	<xsl:value-of select="//fe:Kayttaja_Lahettaja/text()" />
             </xsl:element>
             
-            <xsl:element name="templateType">
-            	<xsl:element name="templateId">
-            		<xsl:value-of select="//fe:Pohja_Aihealue/text()" />
+            <xsl:if test="//fe:Pohja_Aihealue/text() != 'null'">
+            	<xsl:element name="templateType">
+            		<xsl:element name="templateId">
+            			<xsl:value-of select="//fe:Pohja_Aihealue/text()" />
+            		</xsl:element>
             	</xsl:element>
-            </xsl:element>
+            </xsl:if>
             
             <xsl:for-each select="//fe:Toimenpiteet">
             	<xsl:element name="toimenpiteet">
