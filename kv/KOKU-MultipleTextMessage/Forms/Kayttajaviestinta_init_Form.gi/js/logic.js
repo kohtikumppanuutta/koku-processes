@@ -1,7 +1,7 @@
 function getEndpoint() {
 
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51lb:8080";
     return endpoint;
 
 }
@@ -253,11 +253,50 @@ function mapSelectedRecipientsToMatrix() {
         }
 
     }
+    
 
     if (hasEmptyChild == true) {
         KayttajaviestintaForm.getCache().getDocument("receipients-nomap").removeChild(KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getFirstChild());
     }
+    // Delete dupes from the matrix
+    deleteDupes();
 }
+
+function deleteDupes() {
+    var childIterator, childNode, sibling, temp, targetUid, currentUid;
+    
+    
+    childIterator = KayttajaviestintaForm.getCache().getDocument("receipients-nomap").getChildIterator();
+    
+    while (childIterator.hasNext()) {
+
+        childNode = childIterator.next();
+
+        targetUid = childNode.getAttribute("receipient");
+        
+        if (childNode.getNextSibling() != null) {
+            sibling = childNode.getNextSibling();
+        }
+        
+        while(sibling != null) {
+                        
+            currentUid = sibling.getAttribute("receipient");
+            
+            if (currentUid == targetUid) {
+                temp = sibling;
+                sibling = sibling.getNextSibling();
+                KayttajaviestintaForm.getCache().getDocument("receipients-nomap").removeChild(temp);
+                
+            }
+            else {
+                sibling = sibling.getNextSibling();
+            }
+            
+    
+        }
+    }   
+}
+
 
 /*
 
