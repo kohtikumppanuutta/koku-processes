@@ -38,10 +38,10 @@
   <dd:invoke partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar">
     <dd:service name="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" port="KokuRequestProcessingServicePort"></dd:service>
   </dd:invoke>
-  <dd:invoke partnerLink="servicesAndProcessForCanonicPortPlkVar">
-    <dd:service name="ProcessReceipient-Process1:CanonicServiceForInterface" port="canonicPort"></dd:service>
-  </dd:invoke>
   <dd:invoke partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar">
     <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="servicesAndProcessForCanonicPortPlkVar">
+    <dd:service name="ProcessReceipient-Process1:CanonicServiceForInterface" port="canonicPort"></dd:service>
   </dd:invoke>
 </dd:process></dd:deploy>
