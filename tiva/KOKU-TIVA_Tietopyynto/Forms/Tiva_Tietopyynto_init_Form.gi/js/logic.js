@@ -1,7 +1,7 @@
 function getEndpoint() {
 
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51lb:8080";
     return endpoint;
 
 }
@@ -17,20 +17,16 @@ function intalioPreStart() {
 function setRoles() {
 
     var roleUsers;
-    var groupUid;
+    var roleUid;
     var temp;
     
     temp = TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend02").getValue();
 
     if (temp != null) {
-        groupUid = TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").getValue();
-        roleUsers = getRoleUsers(groupUid);   
+        roleUid = TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").getValue();
+        roleUsers = getRoleUsers(roleUid);   
         TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend01").setValue(roleUsers);
     }
-    
-    TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue("");
-    
-    //alert(TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend01").getValue());
 
 }
 

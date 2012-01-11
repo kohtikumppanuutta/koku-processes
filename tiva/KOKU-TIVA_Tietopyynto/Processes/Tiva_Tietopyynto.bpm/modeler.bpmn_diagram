@@ -300,15 +300,6 @@
         <element xmi:type="bpmn:DataObject" href="modeler.bpmn#_2ZKQgejpEeCIsZBRPARZQg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2ZVPoejpEeCIsZBRPARZQg" x="-1" y="-1"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_sDbtJPP9EeCaoK6-NKuILQ" type="2005">
-        <children xmi:type="notation:Node" xmi:id="_sDcUMPP9EeCaoK6-NKuILQ" type="4004"/>
-        <styles xmi:type="notation:FontStyle" xmi:id="_sDbtJfP9EeCaoK6-NKuILQ" fontName="Arial"/>
-        <styles xmi:type="notation:DescriptionStyle" xmi:id="_sDbtJvP9EeCaoK6-NKuILQ"/>
-        <styles xmi:type="notation:FillStyle" xmi:id="_sDbtJ_P9EeCaoK6-NKuILQ"/>
-        <styles xmi:type="notation:LineStyle" xmi:id="_sDbtKPP9EeCaoK6-NKuILQ" lineColor="0"/>
-        <element xmi:type="bpmn:DataObject" href="modeler.bpmn#_sDbtIfP9EeCaoK6-NKuILQ"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sDcUMfP9EeCaoK6-NKuILQ" x="-1" y="-1"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_yVG_MPZxEeCFYo0HI_wcRg" type="2005">
         <children xmi:type="notation:Node" xmi:id="_yVG_MfZxEeCFYo0HI_wcRg" type="4004"/>
         <styles xmi:type="notation:FontStyle" xmi:id="_yVG_MvZxEeCFYo0HI_wcRg" fontName="Arial"/>
@@ -317,6 +308,15 @@
         <styles xmi:type="notation:LineStyle" xmi:id="_yVG_NfZxEeCFYo0HI_wcRg" lineColor="0"/>
         <element xmi:type="bpmn:DataObject" href="modeler.bpmn#_yVG_N_ZxEeCFYo0HI_wcRg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yVG_NvZxEeCFYo0HI_wcRg" x="84" y="158"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_sDbtJPP9EeCaoK6-NKuILQ" type="2005">
+        <children xmi:type="notation:Node" xmi:id="_sDcUMPP9EeCaoK6-NKuILQ" type="4004"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_sDbtJfP9EeCaoK6-NKuILQ" fontName="Arial"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_sDbtJvP9EeCaoK6-NKuILQ"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_sDbtJ_P9EeCaoK6-NKuILQ"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_sDbtKPP9EeCaoK6-NKuILQ" lineColor="0"/>
+        <element xmi:type="bpmn:DataObject" href="modeler.bpmn#_sDbtIfP9EeCaoK6-NKuILQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sDcUMfP9EeCaoK6-NKuILQ" x="-1" y="-1"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_dDgfsdY5EeCSFM5MejvcYQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_dDgfstY5EeCSFM5MejvcYQ"/>

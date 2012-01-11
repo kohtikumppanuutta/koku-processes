@@ -166,14 +166,14 @@
                                 <bpel:from>concat("koku/", $usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername)</bpel:from>
                                 <bpel:to>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="1698613072" targetPath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="576065547-arg2"></mapper:vertice>
-  <mapper:vertice id="576065547" dimension="78x24" location="732,192">
+  <mapper:vertice id="922891801" targetPath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="895793548-arg2"></mapper:vertice>
+  <mapper:vertice id="895793548" dimension="78x24" location="624,156">
     <mapper:value>concat()</mapper:value>
   </mapper:vertice>
-  <mapper:vertice id="996255211" dimension="78x24" location="636,120" targetedBy="576065547-arg0">
+  <mapper:vertice id="427355987" dimension="78x24" location="552,72" targetedBy="895793548-arg0">
     <mapper:value>"koku/"</mapper:value>
   </mapper:vertice>
-  <mapper:vertice id="1892026257" sourcePath="$usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername" targetedBy="576065547-arg1"></mapper:vertice>
+  <mapper:vertice id="600693496" sourcePath="$usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername" targetedBy="895793548-arg1"></mapper:vertice>
 </mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
@@ -189,7 +189,21 @@
                     </bpel:copy>
                     <bpel:copy>
                         <bpel:from>concat("Uusi tietopyyntö:  ", $Tiva_Tietopyynto_Form/tns:Pyynto/tns:Pyynto_Kohde, " - ", $Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Otsikko)</bpel:from>
-                        <bpel:to>$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskMetaData/Tiva_Tietopyynto_Response_Form:description</bpel:to><mapper:mapperLink><mapper:vertice id="1212583179" targetPath="$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskMetaData/Tiva_Tietopyynto_Response_Form:description" targetedBy="148951471-arg2"></mapper:vertice><mapper:vertice id="148951471" dimension="78x24" location="408,156"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="655560248" dimension="78x24" location="248,122" targetedBy="148951471-arg0"><mapper:value>"Uusi tietopyyntö:  "</mapper:value></mapper:vertice><mapper:vertice id="35445337" sourcePath="$Tiva_Tietopyynto_Form/tns:Pyynto/tns:Pyynto_Kohde" targetedBy="148951471-arg1"></mapper:vertice><mapper:vertice id="592202951" dimension="78x24" location="240,156" targetedBy="148951471-arg3"><mapper:value>" - "</mapper:value></mapper:vertice><mapper:vertice id="2060207812" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Otsikko" targetedBy="148951471-arg4"></mapper:vertice></mapper:mapperLink>
+                        <bpel:to>$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskMetaData/Tiva_Tietopyynto_Response_Form:description</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="747777221" targetPath="$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskMetaData/Tiva_Tietopyynto_Response_Form:description" targetedBy="257726372-arg2"></mapper:vertice>
+  <mapper:vertice id="257726372" dimension="78x24" location="408,156">
+    <mapper:value>concat()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="8185277" dimension="78x24" location="264,48" targetedBy="257726372-arg0">
+    <mapper:value><![CDATA["Uusi tietopyyntö:  "]]></mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="498042542" sourcePath="$Tiva_Tietopyynto_Form/tns:Pyynto/tns:Pyynto_Kohde" targetedBy="257726372-arg1"></mapper:vertice>
+  <mapper:vertice id="807196100" dimension="78x24" location="228,108" targetedBy="257726372-arg3">
+    <mapper:value>" - "</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1270859417" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Otsikko" targetedBy="257726372-arg4"></mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                     <bpel:copy>
                         <bpel:from>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01</bpel:from>
