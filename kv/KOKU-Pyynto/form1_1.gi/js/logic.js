@@ -1,5 +1,22 @@
 /* place JavaScript code here */
+function isNumeric(targetField){
+   var validChars = "0123456789";
+   var isNumber=true;
+   var char;
+   var text2 = targetField.getValue();
+ 
+   for (i = 0; i < text2.length && isNumber == true; i++) 
+      { 
+      char = text2.charAt(i); 
+      if (validChars.indexOf(char) == -1) 
+         {
+         isNumber = false;
+         alert("Syot\xE4 vain positiivisia kokonaislukuja!");
+         targetField.setValue("").repaint();
+         }
+      }
 
+}
 
 jsx3.lang.Package.definePackage(
   "Intalio.Internal.CustomErrors",
@@ -935,7 +952,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
 function getTemplate(templateId) {
 
-    form1.getJSXByName("Muokkaus").setDisplay("block", true);
+    //form1.getJSXByName("Muokkaus").setDisplay("block", true);
 
         try {
             // Add form preload functions here.
@@ -1213,6 +1230,7 @@ function dontUseTemplate() {
     form1.getJSXByName("Lomaketyyppi").setDisplay("none").repaint();
     form1.getJSXByName("headerEdit").setDisplay("block").repaint();
     form1.getJSXByName("Pohja").setDisplay("none").repaint();
+    form1.getJSXByName("muokkausValinnat-pane").setDisplay("none").repaint();
     form1.getJSXByName("Kentat").setDisplay("block").repaint();
     
     form1.getJSXByName("header").setDisplay("block").repaint();
@@ -1703,6 +1721,9 @@ function getInputType() {
     if (form1.getJSXByName("vastausKalenteriVaihtoehdot").getChecked()) {
         input = "CALENDAR";
     }
+    if (form1.getJSXByName("vastausNumeroVaihtoehdot").getChecked()) {
+        input = "NUMBER";
+    }
     
     return input;
 }
@@ -1738,7 +1759,7 @@ function inputSection(title,question) {
     if (inputType=="NUMBER") {
        // alert("CALENDAR");
         mapFieldsToMatrix(title,question,sectionNumber,inputType);
-        inputCalendarSection(title,question,sectionNumber);
+        inputNumberSection(title,question,sectionNumber);
     }
     
     //bringButtonsBack();
@@ -1888,7 +1909,138 @@ jsx3.lang.Package.definePackage(
 
 // RECEIPIENTCOMPONENT-SCRIPT
 
+function mapSelectedRecipientsToMatrix() {
 
+    var node, hasEmptyChild, jsxid, childIterator, group, uid, groupUid, childNode, xmlData, list, userData, i, kunpoUsername, displayName;
+
+    hasEmptyChild = false;
+    jsxid = 0;
+    list = ["uid"];
+    rooliKayttajat = "";
+    userIds = "";
+    var parentInfo;
+
+    childIterator = form1.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
+
+    if (form1.getCache().getDocument("Receipients-nomapNew").getFirstChild() == null) {
+        form1.getJSXByName("Receipients").commitAutoRowSession();
+        hasEmptyChild = true;
+    }
+    while (childIterator.hasNext()) {
+
+        childNode = childIterator.next();
+
+        group = childNode.getAttribute("group");
+        role = childNode.getAttribute("role");
+
+        if (group != 0) {
+
+            groupUid = childNode.getAttribute("uid");
+            //alert(groupUid);
+
+            xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
+            //alert(xmlData);
+
+            userData = parseXML(xmlData, "user", list);
+
+            for (i = 0; i < userData.length; i++) {
+                uid = userData[i];
+
+                childInfo = Arcusys.Internal.Communication.GetChildinfo(uid);
+                   
+                parentsNodes = childInfo.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+                //alert(parentsNodes);
+        
+                parentData = [];
+                //parentInfo = [];
+                parents = [];                
+
+                j = 0;
+
+                while (parentsNodes.get(j)) {
+                    parents[j] = parentsNodes.get(j);
+                    parentData[j] = parseXML(parents[j], "parents", list);
+                    /*
+                    if (j == 0) {
+                        parentInfo[j] = "";
+                    } else {
+                        parentInfo[j] += ',';
+                    }*/
+                    parentInfo = parentData[j];
+                    j++;
+                }
+                
+                //alert("0: " + parentInfo[0] + ", 1: " + parentInfo[1]);
+                    
+                for (j = 0; j < parentInfo.length; j++) {
+                    node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
+                    uid = parentInfo[j];
+                    try {
+                        kunpoUsername = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid);
+
+                        if(kunpoUsername != null) {
+                            displayName = kunpoUsername.selectSingleNode("//kunpoUsername", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+                        }
+                    } catch (e) {
+                        alert(e);
+                    }
+                    node.setAttribute("Receipients_ReceipientUid", uid);
+                    node.setAttribute("Receipients_Receipient", displayName);
+                    form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
+                }
+            }
+        }
+        else if (role != 0) {
+            node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
+            uid = childNode.getAttribute("uid");
+            
+            usernamesData = Arcusys.Internal.Communication.GetUsernamesInRole(uid);
+            
+            usernames = usernamesData.selectNodeIterator("//username", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+            
+            while (usernames.hasNext()) {
+            
+                userNamesNode = usernames.next();
+                
+                rooliKayttajat += "koku/" + userNamesNode.getValue();
+                userIdsData = Arcusys.Internal.Communication.GetUserUidByUsername(userNamesNode.getValue());
+                userIds += userIdsData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+            
+                if (usernames.hasNext()) {
+                    rooliKayttajat += ",";
+                    userIds += ",";
+                }
+            }
+
+            node.setAttribute("jsxid", jsxid);
+            node.setAttribute("Receipients_ReceipientUid", userIds);
+            node.setAttribute("Receipients_Receipient", rooliKayttajat);
+            form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
+            jsxid++;
+        } else {
+            uid = childNode.getAttribute("uid");
+            receipientName = childNode.getAttribute("receipient");
+            node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
+
+            node.setAttribute("jsxid", jsxid);
+            node.setAttribute("Receipients_ReceipientUid", uid);
+            node.setAttribute("Receipients_Receipient", receipientName);
+            form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
+            jsxid++;
+           // alert(node);
+        }
+
+    }
+    
+
+    if (hasEmptyChild == true) {
+        form1.getCache().getDocument("Receipients-nomapNew").removeChild(form1.getCache().getDocument("Receipients-nomapNew").getFirstChild());
+    }
+    // Delete dupes from the matrix
+    //deleteDupes();
+}
+
+/*
 function mapSelectedRecipientsToMatrix() {
 
     var node, userNamesNode, userIds, hasEmptyChild, jsxid, childIterator, group, uid, receipientName, groupUid, childNode, xmlData, list, userData, i, attributeDisplayName, userDataDisplayName, displayName, kunpoUsername, roolit, firstRole, usernames;
@@ -1998,14 +2150,14 @@ function mapSelectedRecipientsToMatrix() {
 
     }
     
-    /*if (roolit != "") {
-        form1.getJSXByName("User_VastaanottajaRoolit").setValue(roolit);
-    }*/
+    //if (roolit != "") {
+    //    form1.getJSXByName("User_VastaanottajaRoolit").setValue(roolit);
+    //}
 
     if (hasEmptyChild == true) {
         form1.getCache().getDocument("Receipients-nomapNew").removeChild(form1.getCache().getDocument("Receipients-nomapNew").getFirstChild());
     }
-}
+}*/
 
 
 function intalioPreStart() {

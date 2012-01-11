@@ -18,6 +18,9 @@
 		                        		<xsl:when test="fe:TextInput_Type = 'FREE_TEXT'">
 		                        			<xsl:value-of select="fe:TextInput_AnswerText" />
 		                        		</xsl:when>
+		                        		<xsl:when test="fe:TextInput_Type = 'NUMBER'">
+		                        			<xsl:value-of select="fe:TextInput_AnswerText" />
+		                        		</xsl:when>
 		                        		<xsl:when test="fe:TextInput_Type = 'MULTIPLE_CHOICE'">
 		                        			<xsl:value-of select="fe:TextInput_AnswerText" />
 		                        		</xsl:when>

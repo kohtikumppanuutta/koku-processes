@@ -4,7 +4,84 @@ function testAlert() {
     form1.getJSXByName("formHeaderLabel").setText(form1.getJSXByName("Header_Text").getValue()).repaint();
     showForm("Y");
     addAdditionalInfoField();
+    preload();
 }
+
+function getEndpoint() {
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51lb:8080";
+    return endpoint;
+    
+}
+
+//Getting the domain name and port if available
+function getUrl() {
+    
+    var domain = getDomainName();
+    //domain = "http://62.61.65.15:8380";
+    return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
+}
+
+function getDomainName() {
+
+    var url = window.location.href;
+    var url_parts = url.split("/");
+    var domain_name = url_parts[0] + "//" + url_parts[2];
+       
+    return domain_name;
+
+}
+
+function preload() {
+
+    var username = Intalio.Internal.Utilities.getUser();
+    username = username.substring(username.indexOf("/") + 1);
+    
+    var recipientDisplayName;
+
+    var recipients = form1.getJSXByName("User_Recipient").getValue().split(',');
+
+    for (i = 0; i < recipients.length; i++) {
+        recipientDisplayName = Arcusys.Internal.Communication.GetUserInfo(recipients[i]).selectSingleNode("//displayName", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+        if (recipientDisplayName = username) {
+            form1.getJSXByName("User_Recipient").setValue(recipients[i]);
+            break;
+        }
+    }
+}
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserInfo = function(uid) {
+        
+        var tout = 1000;   
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + uid + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
+       
+        var url = getUrl();
+        
+        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);      
+        
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.send(msg, tout);
+       var objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+});
 
 function isNumeric(targetField){
    var validChars = "0123456789";
@@ -55,7 +132,6 @@ function uncheckTheOthers(target, checked) {
     }
 }
 
-
 function showForm(flag) {
   //  alert("showForm param: " + flag);
     var descendant, descendants;
@@ -97,7 +173,7 @@ function showForm(flag) {
                        descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                        descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton",true,false);
                       // alert(descendant);
-                       descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
+                       descendant.setDisplay("none").repaint();
                        descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                         for (x=0;x<descendants.length;x=x+1) {
                             // alert(descendants[x]);
@@ -166,7 +242,6 @@ function showForm(flag) {
       // form1.getJSXByName("showFormFlag").setValue("N").repaint();
     }
 }
-
 
 function createFields() {
        //alert(form1.getCache());
@@ -263,7 +338,6 @@ function intalioPreComplete() {
 
 }
 
-
 function mapAnswerTextFields() {
        //alert(form1.getCache());
        var childNode, childId, question, section, answerText;
@@ -286,9 +360,8 @@ function mapAnswerTextFields() {
            // section = childNode.getAttribute("TextInput_Answer");
             
            // if (question!="" && section!="") {
-           if (type=="FREE_TEXT") {
+           if (type=="FREE_TEXT" || type=="NUMBER") {
                 answerText = form1.getJSXByName("textbox" + elementNumber).getValue();
-
            }
            if (type=="YES_NO") {
                 if (form1.getJSXByName("yes" + elementNumber).getChecked()) {
@@ -304,8 +377,7 @@ function mapAnswerTextFields() {
               // SOLUTION APPLICAPLE FOR SELECTIONS OF MULTIPLE CHECKBOXES
               // IF ONLY ONE CHOSEN: BETTER TO RETURN ANSWER AND MAP IT TO answerText 
                answerText = mapAnswerMultipleChoiceFields(elementNumber);
-           }
-           
+           }         
            
               //  alert(answerText);
            childNode.setAttribute("TextInput_AnswerText",answerText);
@@ -454,12 +526,13 @@ function inputMultipleChoiceSection(title,question,nameSection) {
     
 }
 
-function inputNumberSection(title,question,nameSection) {
+function inputNumberSection(title,question,fieldsetNumber) {
     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 95).repaint();
     var textSection = form1.getJSXByName("block").load("components/numberinputsection.xml",true);
     
     // textSection.setTitleText(title).repaint();
-    textSection.setName(nameSection).repaint();
+    textSection.setName(fieldsetNumber).repaint();
+    form1.getJSXByName("textbox").setName("textbox" + fieldsetNumber);
     //alert(textSection.getChild());
     //alert(textSection.getJSXByName("labelKysymys").getText());
     form1.getJSXByName("labelKysymys").setText(question).repaint();

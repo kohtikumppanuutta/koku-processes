@@ -109,7 +109,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Roolit" jsxname="Roolit" jsxclassname="fieldset" jsxdisplay="none"/>
+      <strings riaTitleText="Viestin näkyvyys" jsxname="Roolit" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxheight="50" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -183,7 +183,7 @@
       <strings jsxwidth="100%" jsxpadding="5 10 0 10" jsxname="header" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxrelativeposition="1"/>
-        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title-new" jsxtext="test"/>
+        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title-new" jsxtext="pyyntö"/>
       </object>
     </object>
     <object type="com.intalio.ria.Section">
@@ -1276,12 +1276,12 @@
       <variants/>
       <strings riaTitleText="Lomakkeen muokkaus" jsxname="Kentat" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="300" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <variants jsxoverflow="2" jsxwidth="720" jsxheight="340" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="0%,16%,16%,16%,0%,45%,*" jsxwidth="100%" jsxheight="100%"/>
+          <strings jsxname="layout (--)" jsxrows="0%,16%,12%,16%,0%,50%,*" jsxwidth="100%" jsxheight="100%"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="none"/>
@@ -1333,7 +1333,7 @@
                   <variants/>
                   <strings jsxname="Header_Text-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="400"/>
+                    <variants jsxwidth="400" jsxenabled="1"/>
                     <strings jsxname="Header_Text" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);setValueToText(this.getValue(),&quot;formHeaderLabel&quot;);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
@@ -1474,7 +1474,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout (--)" jsxrows="20%,20%,20%,*" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout (--)" jsxrows="18%,18%,18%,18%,*" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
@@ -1603,6 +1603,38 @@
                   </object>
                 </object>
               </object>
+              <object type="jsx3.gui.Block">
+                <variants jsxoverflow="2"/>
+                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+                <dynamics jsxborder="@No jsxborder"/>
+                <object type="jsx3.gui.LayoutGrid">
+                  <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
+                  <strings jsxname="layout ( | )" jsxcols="6%,*" jsxwidth="100%" jsxheight="100%"/>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="com.intalio.ria.Field">
+                      <variants/>
+                      <strings jsxname="vastausNumeroVaihtoehdot-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
+                      <object type="jsx3.gui.CheckBox">
+                        <variants jsxheight="18" jsxchecked="0"/>
+                        <strings jsxname="vastausNumeroVaihtoehdot" jsxmargin="0 4 0 0"/>
+                        <events jsxtoggle="uncheckTheOthers(&quot;Valinnat-pane&quot;, this.getName()); this.setChecked(1, true);"/>
+                      </object>
+                    </object>
+                  </object>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxoverflow="2"/>
+                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
+                    <dynamics jsxborder="@No jsxborder"/>
+                    <object type="jsx3.gui.Block">
+                      <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                      <strings jsxname="label" jsxtext="Numero" jsxclassname="FormLabel"/>
+                    </object>
+                  </object>
+                </object>
+              </object>
             </object>
           </object>
           <object type="jsx3.gui.Block">
@@ -1627,8 +1659,8 @@
         </object>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants/>
-        <strings jsxvalue="3" jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants jsxvalue="4"/>
+        <strings jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -1762,7 +1794,7 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="1" jsxheight="275"/>
+      <variants jsxoverflow="1" jsxheight="370"/>
       <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="com.intalio.ria.Section">
         <variants/>
