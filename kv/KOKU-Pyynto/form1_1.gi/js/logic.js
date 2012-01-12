@@ -268,8 +268,8 @@ function searchEmbloyeeNames(searchString) {
 
 
 function getEndpoint() {
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
+    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://trelx51lb:8080";
     return endpoint;
     
 }
@@ -2037,7 +2037,42 @@ function mapSelectedRecipientsToMatrix() {
         form1.getCache().getDocument("Receipients-nomapNew").removeChild(form1.getCache().getDocument("Receipients-nomapNew").getFirstChild());
     }
     // Delete dupes from the matrix
-    //deleteDupes();
+    deleteDupes();
+}
+
+function deleteDupes() {
+    var childIterator, childNode, sibling, temp, targetUid, currentUid;
+    
+    
+    childIterator = form1.getCache().getDocument("Receipients-nomapNew").getChildIterator();
+    
+    while (childIterator.hasNext()) {
+
+        childNode = childIterator.next();
+
+        targetUid = childNode.getAttribute("Receipients_ReceipientUid");
+        
+        if (childNode.getNextSibling() != null) {
+            sibling = childNode.getNextSibling();
+        }
+        
+        while(sibling != null) {
+                        
+            currentUid = sibling.getAttribute("Receipients_ReceipientUid");
+            
+            if (currentUid == targetUid) {
+                temp = sibling;
+                sibling = sibling.getNextSibling();
+                form1.getCache().getDocument("Receipients-nomapNew").removeChild(temp);
+                
+            }
+            else {
+                sibling = sibling.getNextSibling();
+            }
+            
+    
+        }
+    }   
 }
 
 /*
