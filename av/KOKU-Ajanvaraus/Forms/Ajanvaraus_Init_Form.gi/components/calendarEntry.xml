@@ -5,19 +5,19 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxwidth="600" jsxheight="25"/>
+    <variants jsxoverflow="2" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxwidth="680" jsxheight="25"/>
     <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
       <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
       <strings jsxname="layout (--)" jsxrows="*" jsxwidth="100%" jsxheight="100%"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxheight="25" jsxwidth="600"/>
+        <variants jsxoverflow="2" jsxheight="25" jsxwidth="570"/>
         <strings jsxname="rootpane"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout ( | )" jsxcols="75%,10%,*" jsxwidth="100%" jsxheight="100%"/>
+          <strings jsxname="layout ( | )" jsxcols="68%,10%,*" jsxwidth="100%" jsxheight="100%"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>

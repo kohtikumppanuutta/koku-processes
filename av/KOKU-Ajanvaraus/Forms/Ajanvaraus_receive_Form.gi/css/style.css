@@ -1,5 +1,17 @@
-.fieldset .fieldset-padding .jsx30block {
+/* fieldset */
+fieldset {
+  /*margin: 15px 5x;*/
+  margin: 0 0 25 5;
+  border: 1px solid #da251d;
+  width: 600px;
+} 
+
+.fieldset .fieldset-padding, .span.fieldset {
     width: 570px !important;
+}
+
+.jsx30block.field {
+    width: 100% !important;
 }
 
 .fieldset .fieldset-padding .jsx30block.FormLabel {
@@ -11,6 +23,7 @@ div.jsx30block span.fieldset fieldset.fieldset {
 }
 
 div[label=IntalioInternal_SpacerBlock] {
+    display: inline !important;
     width: 620px !important;
 }
 
@@ -26,14 +39,6 @@ span[label=IntalioInternal_RevokeButton] {
 
 div.fieldset, span.fieldset {
   width: 100%;
-}
-
-/* fieldset */
-fieldset {
-  /*margin: 15px 5x;*/
-  margin: 0 0 25 5;
-  border: 1px solid #da251d;
-  width: 820px;
 }
 
 #_jsx_0_1{
@@ -247,7 +252,7 @@ text-transform:uppercase;
   width: 25em;
 }
 
-span.FormLabel{
+span.FormLabel, .choiceLabel{
   margin-left:10px;
   padding-left: 10px;
   font: Helvetica,Arial,Verdana,sans-serif;

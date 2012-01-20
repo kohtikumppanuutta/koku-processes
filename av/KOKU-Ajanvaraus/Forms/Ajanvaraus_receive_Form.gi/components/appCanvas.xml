@@ -69,7 +69,7 @@
       <variants/>
       <strings riaTitleText="TAPAAMISEN PERUSTIEDOT" jsxname="Viesti" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="100" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <variants jsxoverflow="2" jsxwidth="570" jsxheight="100" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -171,12 +171,12 @@
       <variants/>
       <strings riaTitleText="Peruuta Tapaaminen" jsxname="Peruuta_Ajanvaraus" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <variants jsxoverflow="2" jsxwidth="570" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility="" jsxmargin="0 0 0 8"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout ( | )" jsxcols="3%,*" jsxwidth="100%" jsxheight="100%"/>
+          <strings jsxname="layout ( | )" jsxcols="5%,*" jsxwidth="100%" jsxheight="100%"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
             <strings jsxwidth="100%" jsxheight="100%" jsxname="pane" jsxdisplay="" jsxvisibility="" jsxpadding="0 0 0 8"/>
@@ -203,7 +203,7 @@
       <variants/>
       <strings riaTitleText="VIESTI KÄSITTELIJÄLLE" jsxname="Lomake" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="120" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <variants jsxoverflow="2" jsxwidth="570" jsxheight="120" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">

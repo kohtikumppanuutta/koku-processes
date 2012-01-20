@@ -5,7 +5,7 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="600" jsxheight="280"/>
+    <variants jsxoverflow="2" jsxwidth="570" jsxheight="280"/>
     <strings jsxname="mod" jsxdisplay=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
@@ -13,11 +13,11 @@
       <strings jsxname="layout (--)" jsxrows="18%,20%,*" jsxwidth="100%" jsxheight="100%"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2"/>
-        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0 0 0 12"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout ( | )" jsxcols="20%,20%,32%,*" jsxwidth="100%" jsxheight="100%"/>
+          <strings jsxname="layout ( | )" jsxcols="20%,20%,37%,*" jsxwidth="100%" jsxheight="100%"/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="6px"/>

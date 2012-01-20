@@ -6,8 +6,12 @@ fieldset {
   width: 600px;
 } 
 
-.fieldset .fieldset-padding .jsx30block {
+.fieldset .fieldset-padding, .span.fieldset {
     width: 570px !important;
+}
+
+.jsx30block.field {
+    width: 100% !important;
 }
 
 .fieldset .fieldset-padding .jsx30block.FormLabel {
@@ -248,7 +252,7 @@ text-transform:uppercase;
   width: 25em;
 }
 
-span.FormLabel{
+span.FormLabel, .choiceLabel{
   margin-left:10px;
   padding-left: 10px;
   font: Helvetica,Arial,Verdana,sans-serif;
