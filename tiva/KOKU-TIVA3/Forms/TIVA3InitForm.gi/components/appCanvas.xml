@@ -3,7 +3,7 @@
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize>preload();</onAfterDeserialize>
+  <onAfterDeserialize><![CDATA[preload();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxoverflow="1" jsxwidth="850"/>
     <strings jsxheight="100%" jsxname="root"/>
@@ -276,7 +276,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1" jsxenabled="0"/>
+                    <variants jsxheight="18" jsxchecked="1" jsxenabled="0" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeLapsia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;childrens&quot;);"/>
                   </object>
@@ -299,7 +299,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeKayttajia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
                   </object>
@@ -322,7 +322,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRyhmia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;groups&quot;);"/>
                   </object>
@@ -522,7 +522,7 @@
         </object>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="0"/>
+        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -711,7 +711,7 @@
       <variants/>
       <strings riaTitleText="KAYTTAJA" jsxname="Kayttaja" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="0"/>
+        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
         <strings jsxname="Kayttaja_UseampiVastaanottaja" jsxtext="" jsxmargin="0 4 0 0"/>
       </object>
     </object>
@@ -746,7 +746,7 @@
                   <strings riaLabelText="suostumustapa" jsxname="suostumustapa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
                   <object type="jsx3.gui.Select">
                     <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" jsxenabled="1" jsxrequired="1" jsxtype="0"/>
-                    <strings jsxname="Suostumus1_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Suullinen&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;Paperilla&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;Sähköposti&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
+                    <strings jsxname="Suostumus1_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Verbal&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;PaperBased&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;EmailBased&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff" jsxxmlurl=""/>
                     <events jsxselect="enabledOnValue(TIVA3Form.getJSXByName(&quot;Suostumus1_Sailytyspaikka&quot;), this.getValue(), &quot;Paperilla&quot;);"/>
                   </object>
                 </object>
@@ -923,7 +923,7 @@
                   <strings riaLabelText="suostumustapa" jsxname="suostumustapa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
                   <object type="jsx3.gui.Select">
                     <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" _isfocusing="true" jsxenabled="1" jsxrequired="0"/>
-                    <strings jsxname="Suostumus2_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Suullinen&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;Paperilla&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;Sähköposti&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
+                    <strings jsxname="Suostumus2_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Verbal&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;PapeBased&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;EmailBased&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
                     <events jsxselect="enabledOnValue(TIVA3Form.getJSXByName(&quot;Suostumus2_Sailytyspaikka&quot;), this.getValue(), &quot;Paperilla&quot;);"/>
                   </object>
                 </object>
@@ -1265,7 +1265,7 @@
             <strings jsxcellpadding="1" jsxpath="Vastaukset_Vastaus" jsxwidth="100" jsxpadding="3" jsxcelltextalign="center" jsxname="Vastaukset_Vastaus" jsxvaluetemplate="@empty" jsxtext="Vastaukset_Vastaus"/>
             <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
             <object type="jsx3.gui.CheckBox">
-              <variants jsxchecked="0" jsxenabled="1"/>
+              <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
               <strings jsxname="Vastaukset_Vastaus" jsxtext=""/>
               <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
             </object>
