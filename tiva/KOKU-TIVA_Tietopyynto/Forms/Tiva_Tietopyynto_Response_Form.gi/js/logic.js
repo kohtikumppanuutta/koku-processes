@@ -107,7 +107,7 @@ function getParents() {
     userData = parseXML(xmlData, "parents", list);
 
     + unescape("%E4")
-    label = "<strong>J" + unescape("%E4") + "rjestelm" + unescape("%E4") + unescape("%E4") + "n merkatut huoltajat:</strong> ";
+    label = "<strong>J" + unescape("%E4") + "rjestelm" + unescape("%E4") + unescape("%E4") + "n merkityt huoltajat:</strong> ";
 
     for(i = 0; i < userData.length; i++) {
         parents = userData[i].split(",");

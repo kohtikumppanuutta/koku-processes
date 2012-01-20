@@ -26,6 +26,7 @@ function setRoles() {
         roleUid = TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").getValue();
         roleUsers = getRoleUsers(roleUid);   
         TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend01").setValue(roleUsers);
+        TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue("");
     }
 
 }
