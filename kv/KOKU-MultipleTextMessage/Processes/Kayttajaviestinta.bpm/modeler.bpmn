@@ -101,6 +101,16 @@
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_w_bqkZ1tEeCP0q7AMz-7Hg"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_WVdXcaOxEeCEJ9RUjchR7A" iD="_WVdXcKOxEeCEJ9RUjchR7A" incomingEdges="_8s0MgaO0EeC8OdMz1v1xzQ" activityType="EventEndEmpty"/>
+    <vertices xmi:type="bpmn:SubProcess" xmi:id="_LZKFQS1WEeGshrc1tf_wjg" iD="_LZKFQC1WEeGshrc1tf_wjg" incomingEdges="_MJof8S1WEeGshrc1tf_wjg" activityType="SubProcess">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_thN6QC1XEeGshrc1tf_wjg" source="odeFailureHandlingSource">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_thN6QS1XEeGshrc1tf_wjg" key="odeFailureRetryDelay" value="-1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uIq70C1XEeGshrc1tf_wjg" key="odeFailureFaultOnFailure" value="true"/>
+      </eAnnotations>
+      <vertices xmi:type="bpmn:Activity" xmi:id="_Nci5US1WEeGshrc1tf_wjg" iD="_Nci5UC1WEeGshrc1tf_wjg" activityType="EventIntermediateMessage">
+        <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_TF8KwS1WEeGshrc1tf_wjg"/>
+        <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_TW4JwS1WEeGshrc1tf_wjg"/>
+      </vertices>
+    </vertices>
     <vertices xmi:type="bpmn:SubProcess" xmi:id="_Ih_q4S1WEeGshrc1tf_wjg" iD="_Ih_q4C1WEeGshrc1tf_wjg" outgoingEdges="_8s0MgaO0EeC8OdMz1v1xzQ" incomingEdges="_08of8Z1tEeCP0q7AMz-7Hg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_srIm0C1XEeGshrc1tf_wjg" source="odeFailureHandlingSource">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_srIm0S1XEeGshrc1tf_wjg" key="odeFailureFaultOnFailure" value="true"/>
@@ -112,32 +122,8 @@
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-pjmAKO0EeC8OdMz1v1xzQ" source="forEachSource">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-pjmAaO0EeC8OdMz1v1xzQ" key="loopTypeDetailsKey" value="loopTypeForEach"/>
         </eAnnotations>
-        <artifacts xmi:type="bpmn:DataObject" xmi:id="_8cZB0SZAEeGZ6qIn2ne6Bw" iD="_8cZB0CZAEeGZ6qIn2ne6Bw">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8cZB0iZAEeGZ6qIn2ne6Bw" source="attachedDataobject">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8cZB0yZAEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8ca3AiZAEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="tnsReceiveNewMessage"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8ccsMSZAEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}receiveNewMessage"/>
-          </eAnnotations>
-          <associations xmi:type="bpmn:Association" xmi:id="_8cbeECZAEeGZ6qIn2ne6Bw" direction="To">
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8ccFICZAEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8ccsMCZAEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
-            </eAnnotations>
-          </associations>
-        </artifacts>
-        <artifacts xmi:type="bpmn:DataObject" xmi:id="_8tyT1iZAEeGZ6qIn2ne6Bw" iD="_8tyT1SZAEeGZ6qIn2ne6Bw">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8tyT1yZAEeGZ6qIn2ne6Bw" source="attachedDataobject">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8tyT2CZAEeGZ6qIn2ne6Bw" key="isBpelDeclaration" value="true"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8t1XICZAEeGZ6qIn2ne6Bw" key="defaultDeclarationName" value="tnsReceiveNewMessageResponse"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8t3zYSZAEeGZ6qIn2ne6Bw" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}receiveNewMessageResponse"/>
-          </eAnnotations>
-          <associations xmi:type="bpmn:Association" xmi:id="_8t1-MCZAEeGZ6qIn2ne6Bw" direction="From">
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8t2lQCZAEeGZ6qIn2ne6Bw" source="dataObjectAssociationTypeSource">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8t3zYCZAEeGZ6qIn2ne6Bw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
-            </eAnnotations>
-          </associations>
-        </artifacts>
         <vertices xmi:type="bpmn:Activity" xmi:id="_aCs7YNhNEeCSRsHQfFlgvA" iD="_aCsUUNhNEeCSRsHQfFlgvA" outgoingEdges="_niZkQdhZEeCTGP94aNb78w" name="Tee HTML vastaanottajalle" activityType="Task"/>
-        <vertices xmi:type="bpmn:Activity" xmi:id="_lP7yYNhZEeCTGP94aNb78w" iD="_lP7LUNhZEeCTGP94aNb78w" associations="_8cbeECZAEeGZ6qIn2ne6Bw _8t1-MCZAEeGZ6qIn2ne6Bw" incomingEdges="_niZkQdhZEeCTGP94aNb78w" name="Lähetä vastaanottajalle" activityType="EventIntermediateMessage">
+        <vertices xmi:type="bpmn:Activity" xmi:id="_lP7yYNhZEeCTGP94aNb78w" iD="_lP7LUNhZEeCTGP94aNb78w" incomingEdges="_niZkQdhZEeCTGP94aNb78w" name="Lähetä vastaanottajalle" activityType="EventIntermediateMessage">
           <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_8cIjISZAEeGZ6qIn2ne6Bw"/>
           <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_8tTLoSZAEeGZ6qIn2ne6Bw"/>
         </vertices>
@@ -157,40 +143,6 @@
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_8R8OYKO0EeC8OdMz1v1xzQ" iD="_8R7nUKO0EeC8OdMz1v1xzQ"/>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_ax0CwfVaEeCrauyWyd6Sxg" iD="_ax0CwPVaEeCrauyWyd6Sxg"/>
       <eventHandlers xmi:type="bpmn:Activity" xmi:id="_K68fQS1WEeGshrc1tf_wjg" iD="_K68fQC1WEeGshrc1tf_wjg" outgoingEdges="_MJof8S1WEeGshrc1tf_wjg" activityType="EventIntermediateError"/>
-    </vertices>
-    <vertices xmi:type="bpmn:SubProcess" xmi:id="_LZKFQS1WEeGshrc1tf_wjg" iD="_LZKFQC1WEeGshrc1tf_wjg" incomingEdges="_MJof8S1WEeGshrc1tf_wjg" activityType="SubProcess">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_thN6QC1XEeGshrc1tf_wjg" source="odeFailureHandlingSource">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_thN6QS1XEeGshrc1tf_wjg" key="odeFailureRetryDelay" value="-1"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uIq70C1XEeGshrc1tf_wjg" key="odeFailureFaultOnFailure" value="true"/>
-      </eAnnotations>
-      <artifacts xmi:type="bpmn:DataObject" xmi:id="_TGXokS1WEeGshrc1tf_wjg" iD="_TGXokC1WEeGshrc1tf_wjg">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TGXoki1WEeGshrc1tf_wjg" source="attachedDataobject">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TGXoky1WEeGshrc1tf_wjg" key="isBpelDeclaration" value="true"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TGar4i1WEeGshrc1tf_wjg" key="defaultDeclarationName" value="tnsSendNotificationMsg"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TGeWQC1WEeGshrc1tf_wjg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}sendNotification"/>
-        </eAnnotations>
-        <associations xmi:type="bpmn:Association" xmi:id="_TGb6AC1WEeGshrc1tf_wjg" direction="To">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TGchEC1WEeGshrc1tf_wjg" source="dataObjectAssociationTypeSource">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TGdvMC1WEeGshrc1tf_wjg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
-          </eAnnotations>
-        </associations>
-      </artifacts>
-      <artifacts xmi:type="bpmn:DataObject" xmi:id="_TXwTgS1WEeGshrc1tf_wjg" iD="_TXwTgC1WEeGshrc1tf_wjg">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TXwTgi1WEeGshrc1tf_wjg" source="attachedDataobject">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TXwTgy1WEeGshrc1tf_wjg" key="isBpelDeclaration" value="true"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TXz94i1WEeGshrc1tf_wjg" key="defaultDeclarationName" value="tnsSendNotificationResponseMsg"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TX42YC1WEeGshrc1tf_wjg" key="douri2" value="builtin:///diagram?wsdlmessage={http://soa.kv.koku.arcusys.fi/}sendNotificationResponse"/>
-        </eAnnotations>
-        <associations xmi:type="bpmn:Association" xmi:id="_TX1zEC1WEeGshrc1tf_wjg" direction="From">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TX3BMC1WEeGshrc1tf_wjg" source="dataObjectAssociationTypeSource">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TX4PUC1WEeGshrc1tf_wjg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
-          </eAnnotations>
-        </associations>
-      </artifacts>
-      <vertices xmi:type="bpmn:Activity" xmi:id="_Nci5US1WEeGshrc1tf_wjg" iD="_Nci5UC1WEeGshrc1tf_wjg" associations="_TGb6AC1WEeGshrc1tf_wjg _TX1zEC1WEeGshrc1tf_wjg" activityType="EventIntermediateMessage">
-        <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_TF8KwS1WEeGshrc1tf_wjg"/>
-        <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_TW4JwS1WEeGshrc1tf_wjg"/>
-      </vertices>
     </vertices>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_08of8Z1tEeCP0q7AMz-7Hg" iD="_08of8J1tEeCP0q7AMz-7Hg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_8s0MgaO0EeC8OdMz1v1xzQ" iD="_8s0MgKO0EeC8OdMz1v1xzQ"/>

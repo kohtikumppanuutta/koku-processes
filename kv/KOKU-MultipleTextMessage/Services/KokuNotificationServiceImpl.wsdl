@@ -46,7 +46,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuNotificationService">
     <wsdl:port binding="tns:KokuNotificationServiceSoapBinding" name="KokuNotificationServicePort">
-      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuNotificationServiceImpl"/>
+      <soap:address location="http://trelx51lb:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuNotificationServiceImpl"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

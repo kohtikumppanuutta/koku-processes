@@ -68,7 +68,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" riaTitleText="Hae Käyttäjiä tai ryhmiä" jsxname="Haku_Kayttajat" jsxclassname="fieldset" jsxdisplay="none"/>
+      <strings jsxheight="" riaTitleText="Hae Käyttäjiä tai ryhmiä" jsxname="Haku_Kayttajat" jsxclassname="fieldset" jsxdisplay="block"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="280"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -658,7 +658,7 @@
                   <strings riaLabelText="button" jsxname="button-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="showOrHideSearch" jsxtext="Lisää vastaanottajia" jsxmargin="12 4 0 0"/>
+                    <strings jsxname="showOrHideSearch" jsxtext="Piilota Haku" jsxmargin="12 4 0 0"/>
                     <events jsxexecute="if (KayttajaviestintaForm.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) { KayttajaviestintaForm.getJSXByName(&quot;Haku_Kayttajat&quot;).setDisplay(&quot;block&quot;).repaint();  KayttajaviestintaForm.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;,true);  KayttajaviestintaForm.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(KayttajaviestintaForm.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  KayttajaviestintaForm.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;none&quot;).repaint();  KayttajaviestintaForm.getJSXByName(&quot;Haku_Kayttajat&quot;).setDisplay(&quot;none&quot;).repaint();  KayttajaviestintaForm.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;,true);  KayttajaviestintaForm.getJSXByName(&quot;searchVisible&quot;).setChecked(0); }"/>
                   </object>
                 </object>
@@ -833,7 +833,7 @@
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="0"/>
+        <variants jsxheight="18" jsxchecked="1"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
     </object>
