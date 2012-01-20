@@ -225,9 +225,9 @@ function showForm(flag) {
                        descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton",true,false);
                       // alert(descendant);
                        descendant.setDisplay("none").repaint();
-                       descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
+                       descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button");
                        for (x=0;x<descendants.length;x=x+1) {
-                             descendants[x].setDisplay("none").repaint();
+                             descendants[x].setDisplay("none", true);
                        }
                }
                else {

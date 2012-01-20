@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version='1.0' encoding='UTF-8'?>
 <data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
   <record jsxid="mi_1" jxstext="Operation (Transaction)" type="T" jsxopen="1" opname="jsxtransaction">
     <headers jsxid="mi_2">
       <record jsxid="mi_3" name="Content-Type" value="text/xml"/>
     </headers>
     <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../DynamicFields.xsd">
-      <record jsxid="mi_5" jsxtext="Dynamic_Fields_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Dynamic_Fields_Form']" datatype="" tns="http://www.arcusys.fi/DynamicFields" jsxopen="1">
+      <record jsxid="mi_5" jsxtext="Dynamic_Fields_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Dynamic_Fields_Form']" datatype="" tns="http://www.arcusys.fi/DynamicFields">
         <record jsxid="mi_6" jsxtext="TextInput" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput']">
           <restrictions>
             <record jsxid="mi_7" name="maxoccur" value="unbounded"/>
@@ -209,7 +209,7 @@
             </mappings>
           </record>
         </record>
-        <record jsxid="mi_108" jsxtext="Receipients" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Receipients']" jsxselected="1">
+        <record jsxid="mi_108" jsxtext="Receipients" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Receipients']">
           <restrictions>
             <record jsxid="mi_109" name="maxoccur" value="unbounded"/>
             <record jsxid="mi_110" name="nillable" value="true"/>
@@ -239,7 +239,7 @@
             </mappings>
           </record>
           <mappings jsxid="mi_123">
-            <record jsxid="mi_124" name="Script" value="if(typeof(this._i_124)=='undefined'){this._i_124=-1;my.getCDFDocument('Receipients-nomapNew','OUTBOUND');}"/>
+            <record jsxid="mi_124" name="Script" value="if(typeof(this._i_124)=='undefined'){this._i_124=-1;my.getCDFDocument('Receipients-nomap','OUTBOUND');}"/>
             <record jsxid="mi_125" name="CDF Record"/>
           </mappings>
         </record>
@@ -309,7 +309,7 @@
       </record>
     </record>
     <record jsxid="mi_156" jsxtext="Output (response)" type="O" jsxopen="1" src="../DynamicFields.xsd">
-      <record jsxid="mi_157" jsxtext="Dynamic_Fields_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Dynamic_Fields_Form']" datatype="" tns="http://www.arcusys.fi/DynamicFields" jsxopen="1">
+      <record jsxid="mi_157" jsxtext="Dynamic_Fields_Form" type="C" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='Dynamic_Fields_Form']" datatype="" tns="http://www.arcusys.fi/DynamicFields">
         <record jsxid="mi_158" jsxtext="TextInput" type="C" datatype="" tns="http://www.arcusys.fi/DynamicFields" path="//jsx1:schema[@targetNamespace='http://www.arcusys.fi/DynamicFields']//jsx1:element[@name='TextInput']">
           <restrictions>
             <record jsxid="mi_159" name="maxoccur" value="unbounded"/>
@@ -543,7 +543,7 @@
             </mappings>
           </record>
           <mappings jsxid="mi_275">
-            <record jsxid="mi_276" name="Script" value="if(typeof(this._i_276)=='undefined'){this._i_276=-1;my.getCDFDocument('Receipients-nomapNew','INBOUND');}"/>
+            <record jsxid="mi_276" name="Script" value="if(typeof(this._i_276)=='undefined'){this._i_276=-1;my.getCDFDocument('Receipients-nomap','INBOUND');}"/>
             <record jsxid="mi_277" name="CDF Record"/>
           </mappings>
         </record>

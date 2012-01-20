@@ -67,15 +67,21 @@
         </bpel:variables>
         <bpel:flow>
             <bpel:sequence>
-                <bpdm:messagingtask operation="getKunpoNameByUserUid" partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="true" enableSharing="false" bpdm:label="getKunpoNameByUserUid" bpdm:ID="_i_RCAPMNEeC6aqQJKR8yVQ">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUid" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_gK7HkDdoEeGWsLc5JL_Ygg"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUidResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_hX7GMDdoEeGWsLc5JL_Ygg"></bpdm:linkset>
+                <bpdm:messagingtask operation="sendRequestWithTemplateNew" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="sendRequestWithTemplateNew" bpdm:ID="_4tovcCexEeG34O-nVZ604A">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsSendRequestWithTemplateNewMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendRequestWithTemplateNew" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_CNxB4CeyEeG34O-nVZ604A"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsSendRequestWithTemplateNewResponseMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendRequestWithTemplateNewResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_CgYb4CeyEeG34O-nVZ604A"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
             <bpel:sequence>
                 <bpdm:messagingtask operation="updateRequestTemplate" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="updateRequestTemplate" bpdm:ID="_46NYkCfBEeG34O-nVZ604A">
                     <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsUpdateRequestTemplateMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:updateRequestTemplate" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_BAPrkCfCEeG34O-nVZ604A"></bpdm:linkset>
                     <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsUpdateRequestTemplateResponseMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:updateRequestTemplateResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_BN-lkCfCEeG34O-nVZ604A"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="createRequestTemplate" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="createRequestTemplate" bpdm:ID="_46RqACfBEeG34O-nVZ604A">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsCreateRequestTemplateMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:createRequestTemplate" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_BnnNkCfCEeG34O-nVZ604A"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsCreateRequestTemplateResponseMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:createRequestTemplateResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_CCi2ECfCEeG34O-nVZ604A"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
             <bpel:sequence>
@@ -91,15 +97,9 @@
                 </bpdm:messagingtask>
             </bpel:sequence>
             <bpel:sequence>
-                <bpdm:messagingtask operation="sendRequestWithTemplateNew" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="sendRequestWithTemplateNew" bpdm:ID="_4tovcCexEeG34O-nVZ604A">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsSendRequestWithTemplateNewMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendRequestWithTemplateNew" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_CNxB4CeyEeG34O-nVZ604A"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsSendRequestWithTemplateNewResponseMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:sendRequestWithTemplateNewResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_CgYb4CeyEeG34O-nVZ604A"></bpdm:linkset>
-                </bpdm:messagingtask>
-            </bpel:sequence>
-            <bpel:sequence>
-                <bpdm:messagingtask operation="createRequestTemplate" partnerLink="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" portType="tns:KokuRequestProcessingService" isMyRole="true" enableSharing="false" bpdm:label="createRequestTemplate" bpdm:ID="_46RqACfBEeG34O-nVZ604A">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsCreateRequestTemplateMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:createRequestTemplate" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_BnnNkCfCEeG34O-nVZ604A"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsCreateRequestTemplateResponseMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="tns:createRequestTemplateResponse" bpdm:binding="tns:KokuRequestProcessingServiceSoapBinding" bpdm:ID="_CCi2ECfCEeG34O-nVZ604A"></bpdm:linkset>
+                <bpdm:messagingtask operation="getKunpoNameByUserUid" partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="true" enableSharing="false" bpdm:label="getKunpoNameByUserUid" bpdm:ID="_i_RCAPMNEeC6aqQJKR8yVQ">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidRequestMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUid" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_gK7HkDdoEeGWsLc5JL_Ygg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="usersAndGroupsServiceImplGetKunpoNameByUserUidResponseMsg" bpdm:msgVarScopeId="_p1rTkK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getKunpoNameByUserUidResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_hX7GMDdoEeGWsLc5JL_Ygg"></bpdm:linkset>
                 </bpdm:messagingtask>
             </bpel:sequence>
         </bpel:flow>

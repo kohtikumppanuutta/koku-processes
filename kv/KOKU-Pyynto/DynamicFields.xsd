@@ -53,7 +53,6 @@
     		<element name="User_Roolit" type="string"></element>
     		<element name="User_LuoUusi" type="boolean"></element>
     		<element name="User_VastaanottajaRoolit" type="string"></element>
-    		<element name="User_Realm" type="string"></element>
     	</sequence>
     </complexType>
     
@@ -70,6 +69,7 @@
     	<sequence>
     		<element name="Receipients_Receipient" type="string"></element>
     		<element name="Receipients_ReceipientUid" type="string"></element>
+    		<element name="Receipients_Realm" type="string"></element>
     	</sequence>
     </complexType>
     

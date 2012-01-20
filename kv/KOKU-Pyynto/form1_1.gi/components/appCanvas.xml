@@ -444,7 +444,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
                     <strings jsxname="HaeKayttajia_Checkbox3" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
                   </object>
@@ -696,7 +696,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="1" jsxenabled="1"/>
                     <strings jsxname="HaeKayttajia_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
                   </object>
@@ -1063,6 +1063,16 @@
                           <events jsxkeydown="1;"/>
                         </object>
                       </object>
+                      <object type="jsx3.gui.Matrix.Column">
+                        <variants/>
+                        <strings jsxname="realm" jsxwidth="*" jsxtext="Nimi" jsxpadding="2" jsxcellpadding="3" jsxpath="realm" jsxdisplay="none"/>
+                        <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+                        <object type="jsx3.gui.TextBox">
+                          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="40" jsxwidth="232" jsxzindex="10" jsxenabled="0"/>
+                          <strings jsxname="realm" jsxmargin="0 4 0 0" jsxdisplay="none" jsxvalue="Kerttu Kuntalainen"/>
+                          <events jsxkeydown="1;"/>
+                        </object>
+                      </object>
                     </object>
                   </object>
                 </object>
@@ -1213,6 +1223,16 @@
                         <object type="jsx3.gui.TextBox">
                           <variants jsxrelativeposition="0" jsxleft="47" jsxtop="60" jsxwidth="100" jsxheight="20" jsxzindex="10"/>
                           <strings jsxname="Receipients_ReceipientUid" jsxdisplay="none"/>
+                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Matrix.Column">
+                        <variants/>
+                        <strings jsxwidth="*" jsxpath="Receipients_Realm" jsxcellpadding="3" jsxpadding="2" jsxname="Receipients_Realm" jsxtext="Vastaanottaja"/>
+                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                        <object type="jsx3.gui.TextBox">
+                          <variants jsxrelativeposition="0" jsxleft="47" jsxtop="60" jsxwidth="100" jsxheight="20" jsxzindex="10"/>
+                          <strings jsxname="Receipients_Realm" jsxdisplay="none"/>
                           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                         </object>
                       </object>

@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="KOKU-Pyynto" resourceRoot="" soapui-version="4.0.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="KokuRequestProcessingServiceSoapBinding" type="wsdl" bindingName="{http://soa.kv.koku.arcusys.fi/}KokuRequestProcessingServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl?wsdl"><con:part><con:url>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="KokuRequestProcessingService" targetNamespace="http://soa.kv.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://soa.kv.koku.arcusys.fi/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="createRequestTemplate" type="tns:createRequestTemplate"/>
+      <xs:element name="createRequestTemplateResponse" type="tns:createRequestTemplateResponse"/>
+      <xs:element name="getRequestTemplateById" type="tns:getRequestTemplateById"/>
+      <xs:element name="getRequestTemplateByIdResponse" type="tns:getRequestTemplateByIdResponse"/>
+      <xs:element name="getRequestTemplateSummary" type="tns:getRequestTemplateSummary"/>
+      <xs:element name="getRequestTemplateSummaryResponse" type="tns:getRequestTemplateSummaryResponse"/>
+      <xs:element name="isRequestTemplateExist" type="tns:isRequestTemplateExist"/>
+      <xs:element name="isRequestTemplateExistResponse" type="tns:isRequestTemplateExistResponse"/>
+      <xs:element name="receiveRequest" type="tns:receiveRequest"/>
+      <xs:element name="receiveRequestResponse" type="tns:receiveRequestResponse"/>
+      <xs:element name="replyToRequest" type="tns:replyToRequest"/>
+      <xs:element name="replyToRequestResponse" type="tns:replyToRequestResponse"/>
+      <xs:element name="sendRequest" type="tns:sendRequest"/>
+      <xs:element name="sendRequestNew" type="tns:sendRequestNew"/>
+      <xs:element name="sendRequestNewResponse" type="tns:sendRequestNewResponse"/>
+      <xs:element name="sendRequestResponse" type="tns:sendRequestResponse"/>
+      <xs:element name="sendRequestWithTemplate" type="tns:sendRequestWithTemplate"/>
+      <xs:element name="sendRequestWithTemplateNew" type="tns:sendRequestWithTemplateNew"/>
+      <xs:element name="sendRequestWithTemplateNewResponse" type="tns:sendRequestWithTemplateNewResponse"/>
+      <xs:element name="sendRequestWithTemplateResponse" type="tns:sendRequestWithTemplateResponse"/>
+      <xs:element name="updateRequestTemplate" type="tns:updateRequestTemplate"/>
+      <xs:element name="updateRequestTemplateResponse" type="tns:updateRequestTemplateResponse"/>
+      <xs:complexType name="receiveRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="toUser" type="xs:string"/>
+          <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+          <xs:element minOccurs="0" name="content" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="receiveRequestResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="sendRequestNew">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="requestTemplate" type="tns:requestTemplateTO"/>
+          <xs:element minOccurs="0" name="request" type="tns:requestProcessing"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="requestTemplateTO">
+        <xs:complexContent>
+          <xs:extension base="tns:requestTemplateSummary">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="choices" nillable="true" type="tns:multipleChoice"/>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="questions" nillable="true" type="tns:question"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="requestTemplateSummary">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="creatorUid" type="xs:string"/>
+          <xs:element minOccurs="0" name="requestTemplateId" type="xs:long"/>
+          <xs:element minOccurs="0" name="subject" type="xs:string"/>
+          <xs:element minOccurs="0" name="visibility" type="tns:requestTemplateVisibility"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="multipleChoice">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element name="number" type="xs:int"/>
+          <xs:element name="questionNumber" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="question">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element name="number" type="xs:int"/>
+          <xs:element minOccurs="0" name="type" type="tns:questionType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="requestProcessing">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="content" type="xs:string"/>
+          <xs:element minOccurs="0" name="fromRole" type="xs:string"/>
+          <xs:element minOccurs="0" name="fromUserUid" type="xs:string"/>
+          <xs:element minOccurs="0" name="notifyBeforeDays" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="receipients" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="replyTill" type="xs:date"/>
+          <xs:element minOccurs="0" name="subject" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendRequestNewResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendRequestWithTemplate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fromUser" type="xs:string"/>
+          <xs:element name="requestTemplateId" type="xs:long"/>
+          <xs:element minOccurs="0" name="subject" type="xs:string"/>
+          <xs:element minOccurs="0" name="receipients" type="tns:receipients"/>
+          <xs:element minOccurs="0" name="requestContent" type="xs:string"/>
+          <xs:element minOccurs="0" name="replyTill" type="xs:anySimpleType"/>
+          <xs:element minOccurs="0" name="notifyBeforeDays" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="receipients">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="receipient" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendRequestWithTemplateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateRequestTemplate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="creator" type="xs:string"/>
+          <xs:element minOccurs="0" name="subject" type="xs:string"/>
+          <xs:element minOccurs="0" name="questions" type="tns:questions"/>
+          <xs:element minOccurs="0" name="choices" type="tns:multipleChoices"/>
+          <xs:element minOccurs="0" name="visibility" type="tns:requestTemplateVisibility"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="questions">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="question" type="tns:question"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="multipleChoices">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="choice" type="tns:multipleChoice"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateRequestTemplateResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="sendRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fromUser" type="xs:string"/>
+          <xs:element minOccurs="0" name="subject" type="xs:string"/>
+          <xs:element minOccurs="0" name="receipients" type="tns:receipients"/>
+          <xs:element minOccurs="0" name="questions" type="tns:questions"/>
+          <xs:element minOccurs="0" name="choices" type="tns:multipleChoices"/>
+          <xs:element minOccurs="0" name="visibility" type="tns:requestTemplateVisibility"/>
+          <xs:element minOccurs="0" name="requestContent" type="xs:string"/>
+          <xs:element minOccurs="0" name="replyTill" type="xs:anySimpleType"/>
+          <xs:element minOccurs="0" name="notifyBeforeDays" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendRequestResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isRequestTemplateExist">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="creator" type="xs:string"/>
+          <xs:element minOccurs="0" name="subject" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isRequestTemplateExistResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:requestTemplateExistenceStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getRequestTemplateById">
+        <xs:sequence>
+          <xs:element name="requestTemplateId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getRequestTemplateByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:requestTemplateTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendRequestWithTemplateNew">
+        <xs:sequence>
+          <xs:element name="requestTemplateId" type="xs:long"/>
+          <xs:element minOccurs="0" name="request" type="tns:requestProcessing"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendRequestWithTemplateNewResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="replyToRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="user" type="xs:string"/>
+          <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+          <xs:element minOccurs="0" name="answers" type="tns:answers"/>
+          <xs:element minOccurs="0" name="comment" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="answers">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="answer" type="tns:answer"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="answer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comment" type="xs:string"/>
+          <xs:element name="questionNumber" type="xs:int"/>
+          <xs:element minOccurs="0" name="textValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="yesNoValue" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="replyToRequestResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getRequestTemplateSummary">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="user" type="xs:string"/>
+          <xs:element minOccurs="0" name="subjectPrefix" type="xs:string"/>
+          <xs:element name="limit" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getRequestTemplateSummaryResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:requestTemplateSummary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createRequestTemplate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="creator" type="xs:string"/>
+          <xs:element minOccurs="0" name="subject" type="xs:string"/>
+          <xs:element minOccurs="0" name="questions" type="tns:questions"/>
+          <xs:element minOccurs="0" name="choices" type="tns:multipleChoices"/>
+          <xs:element minOccurs="0" name="visibility" type="tns:requestTemplateVisibility"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createRequestTemplateResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:simpleType name="questionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="YES_NO"/>
+          <xs:enumeration value="FREE_TEXT"/>
+          <xs:enumeration value="MULTIPLE_CHOICE"/>
+          <xs:enumeration value="CALENDAR"/>
+          <xs:enumeration value="NUMBER"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="requestTemplateVisibility">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Creator"/>
+          <xs:enumeration value="Organization"/>
+          <xs:enumeration value="All"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="requestTemplateExistenceStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NotExists"/>
+          <xs:enumeration value="ExistsNotActive"/>
+          <xs:enumeration value="ExistsActive"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getRequestTemplateByIdResponse">
+    <wsdl:part element="tns:getRequestTemplateByIdResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveRequest">
+    <wsdl:part element="tns:receiveRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createRequestTemplate">
+    <wsdl:part element="tns:createRequestTemplate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequest">
+    <wsdl:part element="tns:sendRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRequestTemplateSummaryResponse">
+    <wsdl:part element="tns:getRequestTemplateSummaryResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestWithTemplateNew">
+    <wsdl:part element="tns:sendRequestWithTemplateNew" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestWithTemplate">
+    <wsdl:part element="tns:sendRequestWithTemplate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isRequestTemplateExist">
+    <wsdl:part element="tns:isRequestTemplateExist" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isRequestTemplateExistResponse">
+    <wsdl:part element="tns:isRequestTemplateExistResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRequestTemplate">
+    <wsdl:part element="tns:updateRequestTemplate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createRequestTemplateResponse">
+    <wsdl:part element="tns:createRequestTemplateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRequestTemplateSummary">
+    <wsdl:part element="tns:getRequestTemplateSummary" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestNew">
+    <wsdl:part element="tns:sendRequestNew" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRequestTemplateResponse">
+    <wsdl:part element="tns:updateRequestTemplateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestWithTemplateResponse">
+    <wsdl:part element="tns:sendRequestWithTemplateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="replyToRequest">
+    <wsdl:part element="tns:replyToRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRequestTemplateById">
+    <wsdl:part element="tns:getRequestTemplateById" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="replyToRequestResponse">
+    <wsdl:part element="tns:replyToRequestResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestWithTemplateNewResponse">
+    <wsdl:part element="tns:sendRequestWithTemplateNewResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestResponse">
+    <wsdl:part element="tns:sendRequestResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestNewResponse">
+    <wsdl:part element="tns:sendRequestNewResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveRequestResponse">
+    <wsdl:part element="tns:receiveRequestResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="KokuRequestProcessingService">
+    <wsdl:operation name="receiveRequest">
+      <wsdl:input message="tns:receiveRequest" name="receiveRequest"></wsdl:input>
+      <wsdl:output message="tns:receiveRequestResponse" name="receiveRequestResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestNew">
+      <wsdl:input message="tns:sendRequestNew" name="sendRequestNew"></wsdl:input>
+      <wsdl:output message="tns:sendRequestNewResponse" name="sendRequestNewResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestWithTemplate">
+      <wsdl:input message="tns:sendRequestWithTemplate" name="sendRequestWithTemplate"></wsdl:input>
+      <wsdl:output message="tns:sendRequestWithTemplateResponse" name="sendRequestWithTemplateResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRequestTemplate">
+      <wsdl:input message="tns:updateRequestTemplate" name="updateRequestTemplate"></wsdl:input>
+      <wsdl:output message="tns:updateRequestTemplateResponse" name="updateRequestTemplateResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequest">
+      <wsdl:input message="tns:sendRequest" name="sendRequest"></wsdl:input>
+      <wsdl:output message="tns:sendRequestResponse" name="sendRequestResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isRequestTemplateExist">
+      <wsdl:input message="tns:isRequestTemplateExist" name="isRequestTemplateExist"></wsdl:input>
+      <wsdl:output message="tns:isRequestTemplateExistResponse" name="isRequestTemplateExistResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestTemplateById">
+      <wsdl:input message="tns:getRequestTemplateById" name="getRequestTemplateById"></wsdl:input>
+      <wsdl:output message="tns:getRequestTemplateByIdResponse" name="getRequestTemplateByIdResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestWithTemplateNew">
+      <wsdl:input message="tns:sendRequestWithTemplateNew" name="sendRequestWithTemplateNew"></wsdl:input>
+      <wsdl:output message="tns:sendRequestWithTemplateNewResponse" name="sendRequestWithTemplateNewResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="replyToRequest">
+      <wsdl:input message="tns:replyToRequest" name="replyToRequest"></wsdl:input>
+      <wsdl:output message="tns:replyToRequestResponse" name="replyToRequestResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestTemplateSummary">
+      <wsdl:input message="tns:getRequestTemplateSummary" name="getRequestTemplateSummary"></wsdl:input>
+      <wsdl:output message="tns:getRequestTemplateSummaryResponse" name="getRequestTemplateSummaryResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRequestTemplate">
+      <wsdl:input message="tns:createRequestTemplate" name="createRequestTemplate"></wsdl:input>
+      <wsdl:output message="tns:createRequestTemplateResponse" name="createRequestTemplateResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KokuRequestProcessingServiceSoapBinding" type="tns:KokuRequestProcessingService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="receiveRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestNew">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendRequestNew">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendRequestNewResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestWithTemplate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendRequestWithTemplate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendRequestWithTemplateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRequestTemplate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateRequestTemplate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateRequestTemplateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isRequestTemplateExist">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="isRequestTemplateExist">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isRequestTemplateExistResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestTemplateById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRequestTemplateById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRequestTemplateByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestWithTemplateNew">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendRequestWithTemplateNew">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendRequestWithTemplateNewResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="replyToRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="replyToRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="replyToRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestTemplateSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRequestTemplateSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRequestTemplateSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRequestTemplate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createRequestTemplate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createRequestTemplateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KokuRequestProcessingService">
+    <wsdl:port binding="tns:KokuRequestProcessingServiceSoapBinding" name="KokuRequestProcessingServicePort">
+      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="createRequestTemplate" bindingOperationName="createRequestTemplate" type="Request-Response" outputName="createRequestTemplateResponse" inputName="createRequestTemplate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:createRequestTemplate>
+         <!--Optional:-->
+         <creator>?</creator>
+         <!--Optional:-->
+         <subject>?</subject>
+         <!--Optional:-->
+         <questions>
+            <!--Zero or more repetitions:-->
+            <question>
+               <!--Optional:-->
+               <description>?</description>
+               <number>?</number>
+               <!--Optional:-->
+               <type>?</type>
+            </question>
+         </questions>
+         <!--Optional:-->
+         <choices>
+            <!--Zero or more repetitions:-->
+            <choice>
+               <!--Optional:-->
+               <description>?</description>
+               <number>?</number>
+               <questionNumber>?</questionNumber>
+            </choice>
+         </choices>
+         <!--Optional:-->
+         <visibility>?</visibility>
+      </soa:createRequestTemplate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/createRequestTemplate"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getRequestTemplateById" bindingOperationName="getRequestTemplateById" type="Request-Response" outputName="getRequestTemplateByIdResponse" inputName="getRequestTemplateById" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:getRequestTemplateById>
+         <requestTemplateId>?</requestTemplateId>
+      </soa:getRequestTemplateById>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/getRequestTemplateById"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getRequestTemplateSummary" bindingOperationName="getRequestTemplateSummary" type="Request-Response" outputName="getRequestTemplateSummaryResponse" inputName="getRequestTemplateSummary" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:getRequestTemplateSummary>
+         <!--Optional:-->
+         <user>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</user>
+         <!--Optional:-->
+         <subjectPrefix>createRq</subjectPrefix>
+         <limit>1</limit>
+      </soa:getRequestTemplateSummary>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/getRequestTemplateSummary"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="isRequestTemplateExist" bindingOperationName="isRequestTemplateExist" type="Request-Response" outputName="isRequestTemplateExistResponse" inputName="isRequestTemplateExist" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:isRequestTemplateExist>
+         <!--Optional:-->
+         <creator>?</creator>
+         <!--Optional:-->
+         <subject>?</subject>
+      </soa:isRequestTemplateExist>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/isRequestTemplateExist"/></con:call></con:operation><con:operation isOneWay="false" action="" name="receiveRequest" bindingOperationName="receiveRequest" type="Request-Response" outputName="receiveRequestResponse" inputName="receiveRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:receiveRequest>
+         <!--Optional:-->
+         <toUser>?</toUser>
+         <!--Optional:-->
+         <requestId>?</requestId>
+         <!--Optional:-->
+         <content>?</content>
+      </soa:receiveRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/receiveRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="replyToRequest" bindingOperationName="replyToRequest" type="Request-Response" outputName="replyToRequestResponse" inputName="replyToRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:replyToRequest>
+         <!--Optional:-->
+         <user>?</user>
+         <!--Optional:-->
+         <requestId>?</requestId>
+         <!--Optional:-->
+         <answers>
+            <!--Zero or more repetitions:-->
+            <answer>
+               <!--Optional:-->
+               <comment>?</comment>
+               <questionNumber>?</questionNumber>
+               <!--Optional:-->
+               <textValue>?</textValue>
+               <!--Optional:-->
+               <yesNoValue>?</yesNoValue>
+            </answer>
+         </answers>
+         <!--Optional:-->
+         <comment>?</comment>
+      </soa:replyToRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/replyToRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="sendRequest" bindingOperationName="sendRequest" type="Request-Response" outputName="sendRequestResponse" inputName="sendRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:sendRequest>
+         <!--Optional:-->
+         <fromUser>?</fromUser>
+         <!--Optional:-->
+         <subject>?</subject>
+         <!--Optional:-->
+         <receipients>
+            <!--Zero or more repetitions:-->
+            <receipient>?</receipient>
+         </receipients>
+         <!--Optional:-->
+         <questions>
+            <!--Zero or more repetitions:-->
+            <question>
+               <!--Optional:-->
+               <description>?</description>
+               <number>?</number>
+               <!--Optional:-->
+               <type>?</type>
+            </question>
+         </questions>
+         <!--Optional:-->
+         <choices>
+            <!--Zero or more repetitions:-->
+            <choice>
+               <!--Optional:-->
+               <description>?</description>
+               <number>?</number>
+               <questionNumber>?</questionNumber>
+            </choice>
+         </choices>
+         <!--Optional:-->
+         <visibility>?</visibility>
+         <!--Optional:-->
+         <requestContent>?</requestContent>
+         <!--Optional:-->
+         <replyTill>?</replyTill>
+         <!--Optional:-->
+         <notifyBeforeDays>?</notifyBeforeDays>
+      </soa:sendRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/sendRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="sendRequestNew" bindingOperationName="sendRequestNew" type="Request-Response" outputName="sendRequestNewResponse" inputName="sendRequestNew" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:sendRequestNew>
+         <!--Optional:-->
+         <requestTemplate>
+            <!--Optional:-->
+            <creatorUid>?</creatorUid>
+            <!--Optional:-->
+            <requestTemplateId>?</requestTemplateId>
+            <!--Optional:-->
+            <subject>?</subject>
+            <!--Optional:-->
+            <visibility>?</visibility>
+            <!--Zero or more repetitions:-->
+            <choices>
+               <!--Optional:-->
+               <description>?</description>
+               <number>?</number>
+               <questionNumber>?</questionNumber>
+            </choices>
+            <!--Zero or more repetitions:-->
+            <questions>
+               <!--Optional:-->
+               <description>?</description>
+               <number>?</number>
+               <!--Optional:-->
+               <type>?</type>
+            </questions>
+         </requestTemplate>
+         <!--Optional:-->
+         <request>
+            <!--Optional:-->
+            <content>?</content>
+            <!--Optional:-->
+            <fromRole>?</fromRole>
+            <!--Optional:-->
+            <fromUserUid>?</fromUserUid>
+            <!--Optional:-->
+            <notifyBeforeDays>?</notifyBeforeDays>
+            <!--Zero or more repetitions:-->
+            <receipients>?</receipients>
+            <!--Optional:-->
+            <replyTill>?</replyTill>
+            <!--Optional:-->
+            <subject>?</subject>
+         </request>
+      </soa:sendRequestNew>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/sendRequestNew"/></con:call></con:operation><con:operation isOneWay="false" action="" name="sendRequestWithTemplate" bindingOperationName="sendRequestWithTemplate" type="Request-Response" outputName="sendRequestWithTemplateResponse" inputName="sendRequestWithTemplate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:sendRequestWithTemplate>
+         <!--Optional:-->
+         <fromUser>?</fromUser>
+         <requestTemplateId>?</requestTemplateId>
+         <!--Optional:-->
+         <subject>?</subject>
+         <!--Optional:-->
+         <receipients>
+            <!--Zero or more repetitions:-->
+            <receipient>?</receipient>
+         </receipients>
+         <!--Optional:-->
+         <requestContent>?</requestContent>
+         <!--Optional:-->
+         <replyTill>?</replyTill>
+         <!--Optional:-->
+         <notifyBeforeDays>?</notifyBeforeDays>
+      </soa:sendRequestWithTemplate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/sendRequestWithTemplate"/></con:call></con:operation><con:operation isOneWay="false" action="" name="sendRequestWithTemplateNew" bindingOperationName="sendRequestWithTemplateNew" type="Request-Response" outputName="sendRequestWithTemplateNewResponse" inputName="sendRequestWithTemplateNew" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:sendRequestWithTemplateNew>
+         <requestTemplateId>?</requestTemplateId>
+         <!--Optional:-->
+         <request>
+            <!--Optional:-->
+            <content>?</content>
+            <!--Optional:-->
+            <fromRole>?</fromRole>
+            <!--Optional:-->
+            <fromUserUid>?</fromUserUid>
+            <!--Optional:-->
+            <notifyBeforeDays>?</notifyBeforeDays>
+            <!--Zero or more repetitions:-->
+            <receipients>?</receipients>
+            <!--Optional:-->
+            <replyTill>?</replyTill>
+            <!--Optional:-->
+            <subject>?</subject>
+         </request>
+      </soa:sendRequestWithTemplateNew>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/sendRequestWithTemplateNew"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateRequestTemplate" bindingOperationName="updateRequestTemplate" type="Request-Response" outputName="updateRequestTemplateResponse" inputName="updateRequestTemplate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:updateRequestTemplate>
+         <!--Optional:-->
+         <creator>?</creator>
+         <!--Optional:-->
+         <subject>?</subject>
+         <!--Optional:-->
+         <questions>
+            <!--Zero or more repetitions:-->
+            <question>
+               <!--Optional:-->
+               <description>?</description>
+               <number>?</number>
+               <!--Optional:-->
+               <type>?</type>
+            </question>
+         </questions>
+         <!--Optional:-->
+         <choices>
+            <!--Zero or more repetitions:-->
+            <choice>
+               <!--Optional:-->
+               <description>?</description>
+               <number>?</number>
+               <questionNumber>?</questionNumber>
+            </choice>
+         </choices>
+         <!--Optional:-->
+         <visibility>?</visibility>
+      </soa:updateRequestTemplate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.kv.koku.arcusys.fi/KokuRequestProcessingService/updateRequestTemplate"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="TokenServiceSOAP" type="wsdl" bindingName="{http://tempo.intalio.org/security/tokenService/}TokenServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/axis2/services/TokenService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/axis2/services/TokenService?wsdl"><con:part><con:url>http://localhost:8080/axis2/services/TokenService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempo.intalio.org/security/tokenService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://tempo.intalio.org/security/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://tempo.intalio.org/security/tokenService/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>TokenService</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://tempo.intalio.org/security/tokenService/">
+      <xsd:complexType name="PropertyType">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="value" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Properties">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="property" type="tns:PropertyType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="authenticateUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="user" type="xsd:string"/>
+            <xsd:element name="password" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateUserWithCredentials">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="user" type="xsd:string"/>
+            <xsd:element name="credentials" type="tns:Properties"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authenticateUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTokenProperties">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTokenPropertiesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="credentials" type="tns:Properties"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTokenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="proxyTicket">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ticket" type="xsd:string"/>
+            <xsd:element name="serviceURL" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="openssoTicket">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="openssoToken" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="authenticateUser">
+    <wsdl:part name="payload" element="tns:authenticateUser"/>
+  </wsdl:message>
+  <wsdl:message name="authenticateUserResponse">
+    <wsdl:part name="payload" element="tns:authenticateUserResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getTokenFromOpenSSOTokenRequest">
+    <wsdl:part name="payload" element="tns:openssoTicket"/>
+  </wsdl:message>
+  <wsdl:message name="getTokenFromOpenSSOTokenResponse">
+    <wsdl:part name="payload" element="tns:authenticateUserResponse"/>
+  </wsdl:message>
+  <wsdl:message name="authenticateUserWithCredentials">
+    <wsdl:part name="payload" element="tns:authenticateUserWithCredentials"/>
+  </wsdl:message>
+  <wsdl:message name="getTokenProperties">
+    <wsdl:part name="payload" element="tns:getTokenProperties"/>
+  </wsdl:message>
+  <wsdl:message name="getTokenPropertiesResponse">
+    <wsdl:part name="payload" element="tns:getTokenPropertiesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getTokenFromTicketRequest">
+    <wsdl:part name="payload" element="tns:proxyTicket"/>
+  </wsdl:message>
+  <wsdl:message name="getTokenFromTicketResponse">
+    <wsdl:part name="payload" element="tns:authenticateUserResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="TokenServicePortType">
+    <wsdl:operation name="authenticateUser">
+      <wsdl:input message="tns:authenticateUser" wsaw:Action="authenticateUser"/>
+      <wsdl:output message="tns:authenticateUserResponse" wsaw:Action="http://tempo.intalio.org/security/tokenService/TokenService/authenticateUserResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenFromOpenSSOToken">
+      <wsdl:input message="tns:getTokenFromOpenSSOTokenRequest" wsaw:Action="getTokenFromOpenSSOToken"/>
+      <wsdl:output message="tns:getTokenFromOpenSSOTokenResponse" wsaw:Action="http://tempo.intalio.org/security/tokenService/TokenService/getTokenFromOpenSSOTokenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateUserWithCredentials">
+      <wsdl:input message="tns:authenticateUserWithCredentials" wsaw:Action="authenticateUserWithCredentials"/>
+      <wsdl:output message="tns:authenticateUserResponse" wsaw:Action="http://tempo.intalio.org/security/tokenService/TokenService/authenticateUserWithCredentialsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenProperties">
+      <wsdl:input message="tns:getTokenProperties" wsaw:Action="getTokenProperties"/>
+      <wsdl:output message="tns:getTokenPropertiesResponse" wsaw:Action="http://tempo.intalio.org/security/tokenService/TokenService/getTokenPropertiesResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenFromTicket">
+      <wsdl:input message="tns:getTokenFromTicketRequest" wsaw:Action="getTokenFromTicket"/>
+      <wsdl:output message="tns:getTokenFromTicketResponse" wsaw:Action="http://tempo.intalio.org/security/tokenService/TokenService/getTokenFromTicketResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TokenServiceSOAP" type="tns:TokenServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="authenticateUser">
+      <soap:operation soapAction="authenticateUser" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenFromOpenSSOToken">
+      <soap:operation soapAction="getTokenFromOpenSSOToken" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateUserWithCredentials">
+      <soap:operation soapAction="authenticateUserWithCredentials" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenProperties">
+      <soap:operation soapAction="getTokenProperties" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenFromTicket">
+      <soap:operation soapAction="getTokenFromTicket" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TokenService">
+    <wsdl:port name="Service" binding="tns:TokenServiceSOAP">
+      <soap:address location="http://localhost:8080/axis2/services/TokenService.Service/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="authenticateUser" name="authenticateUser" bindingOperationName="authenticateUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tok:authenticateUser>
+         <tok:user>?</tok:user>
+         <tok:password>?</tok:password>
+      </tok:authenticateUser>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="authenticateUser"/></con:call></con:operation><con:operation isOneWay="false" action="authenticateUserWithCredentials" name="authenticateUserWithCredentials" bindingOperationName="authenticateUserWithCredentials" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tok:authenticateUserWithCredentials>
+         <tok:user>?</tok:user>
+         <tok:credentials>
+            <!--Zero or more repetitions:-->
+            <tok:property>
+               <tok:name>?</tok:name>
+               <tok:value>?</tok:value>
+            </tok:property>
+         </tok:credentials>
+      </tok:authenticateUserWithCredentials>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="authenticateUserWithCredentials"/></con:call></con:operation><con:operation isOneWay="false" action="getTokenFromOpenSSOToken" name="getTokenFromOpenSSOToken" bindingOperationName="getTokenFromOpenSSOToken" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tok:openssoTicket>
+         <tok:openssoToken>?</tok:openssoToken>
+      </tok:openssoTicket>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getTokenFromOpenSSOToken"/></con:call></con:operation><con:operation isOneWay="false" action="getTokenFromTicket" name="getTokenFromTicket" bindingOperationName="getTokenFromTicket" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tok:proxyTicket>
+         <tok:ticket>?</tok:ticket>
+         <tok:serviceURL>?</tok:serviceURL>
+      </tok:proxyTicket>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getTokenFromTicket"/></con:call></con:operation><con:operation isOneWay="false" action="getTokenProperties" name="getTokenProperties" bindingOperationName="getTokenProperties" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tok:getTokenProperties>
+         <tok:token>?</tok:token>
+      </tok:getTokenProperties>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getTokenProperties"/></con:call></con:operation></con:interface><con:testSuite name="KOKU-Pyyntö testitapaukset"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi pyyntö/vastaanota pyyntö(service)" searchProperties="true"><con:settings/><con:testStep type="request" name="Lähetä uusi pyyntö"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>sendRequestNew</con:operation><con:request name="Lähetä uusi pyyntö"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:sendRequestNew>
+         <requestTemplate>
+            <creatorUid>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</creatorUid>
+            <subject>Service test</subject>
+            <questions>
+               <description>Toimiiko service?</description>
+               <number>1</number>
+               <type>FREE_TEXT</type>
+            </questions>
+	    <questions>
+              <description>Oletko ihminen?</description>
+              <number>2</number>
+              <type>YES_NO</type>
+            </questions>
+         </requestTemplate>
+         <request>
+            <content>&lt;h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"&gt;&lt;/h1&gt; &lt;div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1"&gt;    &lt;h1&gt;KÄYTTÄJÄVIESTINTÄ&lt;/h1&gt; &lt;/div&gt; &lt;div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main"&gt;    &lt;h2 class="old"&gt;LÄHETTÄJÄ&lt;/h2&gt;    &lt;p&gt;nelli.neuvola&lt;/p&gt;    &lt;div class="innerContent"&gt;       &lt;h2 class="old"&gt;VASTAANOTTAJA&lt;/h2&gt;       &lt;p&gt;Kalle Kuntalainen&lt;br&gt; Kirsi Kuntalainen&lt;br&gt;&lt;/p&gt;    &lt;/div&gt;    &lt;h2 class="old"&gt;Kysymyksiä&lt;/h2&gt;    &lt;div class="innerContent"&gt;       &lt;p&gt;Toimiiko service?&lt;/p&gt;       &lt;p&gt;Oletko ihminen??&lt;/p&gt;       &lt;p&gt;&lt;a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()"&gt;Klikkaa tästä siirtyäksesi pyyntöihin&lt;/a&gt;&lt;/p&gt;    &lt;/div&gt; &lt;/div&gt;</content>
+            <fromRole>Neuvolantyöntekija</fromRole>
+            <fromUserUid>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</fromUserUid>
+            <notifyBeforeDays>2</notifyBeforeDays>
+            <receipients>6e6be87e-f059-4154-b943-441190fc7908</receipients>
+ 	    <receipients>30c7970a-30c2-4110-b1b7-894cda70c98a</receipients>
+            <replyTill>2012-02-21</replyTill>
+            <subject>Palvelun testausta</subject>
+         </request>
+      </soa:sendRequestNew>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyRequestId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>requestid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Lähetä uusi pyyntö</con:sourceStep><con:sourcePath>declare namespace namikuukkelis='http://soa.kv.koku.arcusys.fi/';
+//namikuukkelis:sendRequestNewResponse/requestId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Lähetä pyyntöilmoitus/eka vastaanottaja</con:targetStep><con:targetPath>declare namespace namikuukkelis='http://soa.kv.koku.arcusys.fi/';
+//namikuukkelis:receiveRequest/requestId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false"><con:name>requestId2</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Lähetä uusi pyyntö</con:sourceStep><con:sourcePath>declare namespace namikuukkelis='http://soa.kv.koku.arcusys.fi/';
+//namikuukkelis:sendRequestNewResponse/requestId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>replyToRequest eka</con:targetStep><con:targetPath>declare namespace namikuukkelis='http://soa.kv.koku.arcusys.fi/';
+//namikuukkelis:replyToRequest/requestId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferChildNodes="false" entitize="false" transferToAll="false" ignoreEmpty="false"><con:name>requestId3</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Lähetä uusi pyyntö</con:sourceStep><con:sourcePath>declare namespace namikuukkelis='http://soa.kv.koku.arcusys.fi/';
+//namikuukkelis:sendRequestNewResponse/requestId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Copy of replyToRequest toka</con:targetStep><con:targetPath>declare namespace namikuukkelis='http://soa.kv.koku.arcusys.fi/';
+//namikuukkelis:replyToRequest/requestId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="Lähetä pyyntöilmoitus/eka vastaanottaja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>receiveRequest</con:operation><con:request name="Lähetä pyyntöilmoitus/eka vastaanottaja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:receiveRequest>
+         <toUser>6e6be87e-f059-4154-b943-441190fc7908</toUser>
+         <requestId>95</requestId>
+         <content><![CDATA[<h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"></h1> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1">    <h1>KÄYTTÄJÄVIESTINTÄ</h1> </div> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main">    <h2 class="old">LÄHETTÄJÄ</h2>    <p>nelli.neuvola</p>    <div class="innerContent">       <h2 class="old">VASTAANOTTAJA</h2>       <p>Kalle Kuntalainen<br> Kirsi Kuntalainen<br></p>    </div>    <h2 class="old">Kysymyksiä</h2>    <div class="innerContent">       <p>Toimiiko service?</p>       <p>Oletko ihminen??</p>       <p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a></p>    </div> </div>]]]]>><![CDATA[</content>
+      </soa:receiveRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Lähetä pyyntöilmoitus/toka vastaanottaja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>receiveRequest</con:operation><con:request name="Lähetä pyyntöilmoitus/toka vastaanottaja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:receiveRequest>
+         <toUser>30c7970a-30c2-4110-b1b7-894cda70c98a</toUser>
+         <requestId>93</requestId>
+         <content>&lt;h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"&gt;&lt;/h1&gt; &lt;div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1"&gt;    &lt;h1&gt;KÄYTTÄJÄVIESTINTÄ&lt;/h1&gt; &lt;/div&gt; &lt;div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main"&gt;    &lt;h2 class="old"&gt;LÄHETTÄJÄ&lt;/h2&gt;    &lt;p&gt;nelli.neuvola&lt;/p&gt;    &lt;div class="innerContent"&gt;       &lt;h2 class="old"&gt;VASTAANOTTAJA&lt;/h2&gt;       &lt;p&gt;Kalle Kuntalainen&lt;br&gt; Kirsi Kuntalainen&lt;br&gt;&lt;/p&gt;    &lt;/div&gt;    &lt;h2 class="old"&gt;Kysymyksiä&lt;/h2&gt;    &lt;div class="innerContent"&gt;       &lt;p&gt;Toimiiko service?&lt;/p&gt;       &lt;p&gt;Oletko ihminen??&lt;/p&gt;       &lt;p&gt;&lt;a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()"&gt;Klikkaa tästä siirtyäksesi pyyntöihin&lt;/a&gt;&lt;/p&gt;    &lt;/div&gt; &lt;/div&gt;</content>
+      </soa:receiveRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="replyToRequest eka"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>replyToRequest</con:operation><con:request name="replyToRequest eka"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:replyToRequest>
+         <!--Optional:-->
+         <user>6e6be87e-f059-4154-b943-441190fc7908</user>
+         <!--Optional:-->
+         <requestId>95</requestId>
+         <!--Optional:-->
+         <answers>
+            <!--Zero or more repetitions:-->
+            <answer>
+               <!--Optional:-->
+              <!-- <comment>?</comment>-->
+               <questionNumber>1</questionNumber>
+               <!--Optional:-->
+               <textValue>Kaipa se toimii..</textValue>
+               <!--Optional:-->
+              <!-- <yesNoValue>?</yesNoValue>-->
+            </answer>
+<answer>
+               <!--Optional:-->
+              <!-- <comment>?</comment>-->
+               <questionNumber>2</questionNumber>
+               <!--Optional:-->
+               <textValue>Enpä taida olla</textValue>
+               <!--Optional:-->
+               <yesNoValue>false</yesNoValue>
+            </answer>
+         </answers>
+         <!--Optional:-->
+         <comment>Jaaaa juuu</comment>
+      </soa:replyToRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Copy of replyToRequest toka"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>replyToRequest</con:operation><con:request name="Copy of replyToRequest toka"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:replyToRequest>
+         <!--Optional:-->
+         <user>30c7970a-30c2-4110-b1b7-894cda70c98a</user>
+         <!--Optional:-->
+         <requestId>95</requestId>
+         <!--Optional:-->
+         <answers>
+            <!--Zero or more repetitions:-->
+            <answer>
+               <!--Optional:-->
+              <!-- <comment>?</comment>-->
+               <questionNumber>1</questionNumber>
+               <!--Optional:-->
+               <textValue>Kaipa se toimii..</textValue>
+               <!--Optional:-->
+              <!-- <yesNoValue>?</yesNoValue>-->
+            </answer>
+	    <answer>
+               <!--Optional:-->
+              <!-- <comment>?</comment>-->
+               <questionNumber>2</questionNumber>
+               <!--Optional:-->
+               <textValue>Enpä taida olla</textValue>
+               <!--Optional:-->
+               <yesNoValue>false</yesNoValue>
+            </answer>
+         </answers>
+         <!--Optional:-->
+         <comment>Jaaaa juuu</comment>
+      </soa:replyToRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi pyyntö/uusiTemplate" searchProperties="true" id="a350c3fb-a1a1-4717-953b-5398f46682ba"><con:settings/><con:testStep type="request" name="Uusi template"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>createRequestTemplate</con:operation><con:request name="Uusi template"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:createRequestTemplate>
+         <!--Optional:-->
+         <creator>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</creator>
+         <!--Optional:-->
+         <subject>createRquestTemplate service</subject>
+         <!--Optional:-->
+         <questions>
+            <!--Zero or more repetitions:-->
+            <question>
+               <!--Optional:-->
+               <description>Toimiiko tämä:Luodaan uusi template ja sen pohjalta uusi pyyntö testi</description>
+               <number>1</number>
+               <!--Optional:-->
+               <type>FREE_TEXT</type>
+            </question>
+	    <question>
+               <!--Optional:-->
+               <description>Miten menee?</description>
+               <number>2</number>
+               <!--Optional:-->
+               <type>YES_NO</type>
+            </question>
+         </questions>
+         <visibility>true</visibility>
+      </soa:createRequestTemplate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getRequestTemplateSummary"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>getRequestTemplateSummary</con:operation><con:request name="getRequestTemplateSummary"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:getRequestTemplateSummary>
+         <!--Optional:-->
+         <user>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</user>
+         <!--Optional:-->
+         <subjectPrefix>createRq</subjectPrefix>
+         <limit>1</limit>
+      </soa:getRequestTemplateSummary>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyTemplateId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>templateId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getRequestTemplateSummary</con:sourceStep><con:sourcePath>//requestTemplateId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Uusi pyyntö</con:targetStep><con:targetPath>//requestTemplateId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="Uusi pyyntö"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>sendRequestWithTemplateNew</con:operation><con:request name="Uusi pyyntö"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:sendRequestWithTemplateNew>
+         <requestTemplateId>45</requestTemplateId>
+         <request>
+            <content><![CDATA[<h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"></h1> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1">    <h1>KÄYTTÄJÄVIESTINTÄ</h1> </div> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main">    <h2 class="old">LÄHETTÄJÄ</h2>    <p>nelli.neuvola</p>    <div class="innerContent">       <h2 class="old">VASTAANOTTAJA</h2>       <p>Kalle Kuntalainen<br> Kirsi Kuntalainen<br></p>    </div>    <h2 class="old">Kysymyksiä</h2>    <div class="innerContent">       <p>Toimiiko tämä:Luodaan uusi template ja sen pohjalta uusi pyyntö testi</p>       <p>Miten menee?</p>       <p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a></p>    </div> </div>]]]]>><![CDATA[</content>
+            <fromRole>Neuvolantyontekija</fromRole>
+            <fromUserUid>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</fromUserUid>
+            <notifyBeforeDays>2</notifyBeforeDays>
+            <receipients>6e6be87e-f059-4154-b943-441190fc7908</receipients>
+	    <receipients>30c7970a-30c2-4110-b1b7-894cda70c98a</receipients>
+            <replyTill>2015-01-01</replyTill>
+            <subject>Testataan palvelua->createRequestTemplate->sendRequestWithTemplateNew</subject>
+         </request>
+      </soa:sendRequestWithTemplateNew>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyRequestId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>requestId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Uusi pyyntö</con:sourceStep><con:sourcePath>//requestId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Copy of Lähetä pyyntöilmoitus/eka vastaanottaja</con:targetStep><con:targetPath>//requestId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" entitize="false" transferToAll="false" useXQuery="false" transferChildNodes="false"><con:name>requestId2</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Uusi pyyntö</con:sourceStep><con:sourcePath>//requestId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Copy of Lähetä pyyntöilmoitus/toka vastaanottaja</con:targetStep><con:targetPath>//requestId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false"><con:name>requestIdtoReply</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Uusi pyyntö</con:sourceStep><con:sourcePath>//requestId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Copy of replyToRequest eka</con:targetStep><con:targetPath>//requestId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" useXQuery="false" transferToAll="false" ignoreEmpty="false" entitize="false" transferChildNodes="false"><con:name>requestIdtoReply2</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Uusi pyyntö</con:sourceStep><con:sourcePath>//requestId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Copy of Copy of replyToRequest toka</con:targetStep><con:targetPath>//requestId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="Copy of Lähetä pyyntöilmoitus/eka vastaanottaja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>receiveRequest</con:operation><con:request name="Copy of Lähetä pyyntöilmoitus/eka vastaanottaja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:receiveRequest>
+         <toUser>6e6be87e-f059-4154-b943-441190fc7908</toUser>
+         <requestId>99</requestId>
+         <content><![CDATA[<h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"></h1> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1">    <h1>KÄYTTÄJÄVIESTINTÄ</h1> </div> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main">    <h2 class="old">LÄHETTÄJÄ</h2>    <p>nelli.neuvola</p>    <div class="innerContent">       <h2 class="old">VASTAANOTTAJA</h2>       <p>Kalle Kuntalainen<br> Kirsi Kuntalainen<br></p>    </div>    <h2 class="old">Kysymyksiä</h2>    <div class="innerContent">       <p>Toimiiko tämä:Luodaan uusi template ja sen pohjalta uusi pyyntö testi</p>       <p>Miten menee?</p>       <p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a></p>    </div> </div>]]]]>><![CDATA[</content>
+      </soa:receiveRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Copy of Lähetä pyyntöilmoitus/toka vastaanottaja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>receiveRequest</con:operation><con:request name="Copy of Lähetä pyyntöilmoitus/toka vastaanottaja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:receiveRequest>
+         <toUser>30c7970a-30c2-4110-b1b7-894cda70c98a</toUser>
+         <requestId>99</requestId>
+         <content><![CDATA[<h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"></h1> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1">    <h1>KÄYTTÄJÄVIESTINTÄ</h1> </div> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main">    <h2 class="old">LÄHETTÄJÄ</h2>    <p>nelli.neuvola</p>    <div class="innerContent">       <h2 class="old">VASTAANOTTAJA</h2>       <p>Kalle Kuntalainen<br> Kirsi Kuntalainen<br></p>    </div>    <h2 class="old">Kysymyksiä</h2>    <div class="innerContent">       <p>Toimiiko service?</p>       <p>Oletko ihminen??</p>       <p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a></p>    </div> </div>]]]]>><![CDATA[</content>
+      </soa:receiveRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Copy of replyToRequest eka"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>replyToRequest</con:operation><con:request name="Copy of replyToRequest eka"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:replyToRequest>
+         <!--Optional:-->
+         <user>6e6be87e-f059-4154-b943-441190fc7908</user>
+         <!--Optional:-->
+         <requestId>99</requestId>
+         <!--Optional:-->
+         <answers>
+            <!--Zero or more repetitions:-->
+            <answer>
+               <!--Optional:-->
+              <!-- <comment>?</comment>-->
+               <questionNumber>1</questionNumber>
+               <!--Optional:-->
+               <textValue>Tottakai toimii</textValue>
+               <!--Optional:-->
+              <!-- <yesNoValue>?</yesNoValue>-->
+            </answer>
+	    
+	    <answer>
+               <!--Optional:-->
+              <!-- <comment>?</comment>-->
+               <questionNumber>2</questionNumber>
+               <!--Optional:-->
+               <!--Optional:-->
+               <yesNoValue>true</yesNoValue>
+            </answer>
+         </answers>
+         <!--Optional:-->
+         <comment>Jaaaa juuu</comment>
+      </soa:replyToRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Copy of Copy of replyToRequest toka"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuRequestProcessingServiceSoapBinding</con:interface><con:operation>replyToRequest</con:operation><con:request name="Copy of Copy of replyToRequest toka"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.kv.koku.arcusys.fi/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soa:replyToRequest>
+         <!--Optional:-->
+         <user>30c7970a-30c2-4110-b1b7-894cda70c98a</user>
+         <!--Optional:-->
+         <requestId>99</requestId>
+         <!--Optional:-->
+         <answers>
+            <!--Zero or more repetitions:-->
+            <answer>
+               <!--Optional:-->
+              <!-- <comment>?</comment>-->
+               <questionNumber>2</questionNumber>
+               <!--Optional:-->
+               <textValue>Jepajeee vastaus</textValue>
+               <!--Optional:-->
+              <!-- <yesNoValue>?</yesNoValue>-->
+            </answer>
+	    <answer>
+               <!--Optional:-->
+              <!-- <comment>?</comment>-->
+               <questionNumber>2</questionNumber>
+               <!--Optional:-->
+               <!--Optional:-->
+               <yesNoValue>false</yesNoValue>
+            </answer>
+         </answers>
+         <!--Optional:-->
+         <comment>Jaaaa juuu</comment>
+      </soa:replyToRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>
