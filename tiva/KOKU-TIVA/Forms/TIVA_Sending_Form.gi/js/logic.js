@@ -125,6 +125,9 @@ function mapFormDataToFields(objXML) {
     saateteksti = objXML.selectSingleNode("//saateteksti", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
     laatijaUid = objXML.selectSingleNode("//laatija", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
     laatijaData = Arcusys.Internal.Communication.getUserInfo(laatijaUid);
+    
+    otsikko = removeQuotes(otsikko);
+    saateteksti = removeQuotes(saateteksti);
 
     attributes = getAttributes(objXML);
 
@@ -266,13 +269,14 @@ function mapSelectedRecipientsToMatrix() {
         recipients = childNode.getAttribute("recipientsUid").split(',');
         targetPerson = childNode.getAttribute("uid");
         for (i = 0; i < recipients.length; i++) {
-            node = TIVAForm.getCache().getDocument("Vastaanottajat-nomap").getFirstChild().cloneNode();
-
-            node.setAttribute("jsxid", counter);
-            node.setAttribute("Vastaanottajat_Vastaanottaja", recipients[i]);
-            node.setAttribute("Vastaanottajat_Kohdehenkilo", targetPerson);
-            TIVAForm.getCache().getDocument("Vastaanottajat-nomap").insertBefore(node);
-            counter++;
+            if (recipients[i]) {
+                node = TIVAForm.getCache().getDocument("Vastaanottajat-nomap").getFirstChild().cloneNode();
+                node.setAttribute("jsxid", counter);
+                node.setAttribute("Vastaanottajat_Vastaanottaja", recipients[i]);
+                node.setAttribute("Vastaanottajat_Kohdehenkilo", targetPerson);
+                TIVAForm.getCache().getDocument("Vastaanottajat-nomap").insertBefore(node);
+                counter++;
+            }
         }
     }
 
@@ -612,8 +616,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    //endpoint = "http://trelx51lb:8080";
-    endpoint = "http://localhost:8180";
+    endpoint = "http://trelx51lb:8080";
+    //endpoint = "http://localhost:8180";
     
     return endpoint;
 }
@@ -642,4 +646,10 @@ function showDialog(dialogId, text, textTitle, title) {
     }
 
     dialog.html("<p style=\"text-align:left;\"><b>" + textTitle + "</b></p><p style=\"margin:0 0 0 0;\">" + text + "</p>");
+}
+
+function removeQuotes(str) {
+  str =  str.replace(/['"]/g,'');
+
+  return str;
 }

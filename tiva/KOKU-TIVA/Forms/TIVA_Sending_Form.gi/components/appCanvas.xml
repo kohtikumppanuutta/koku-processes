@@ -1,5 +1,4 @@
-﻿<?xml version='1.0' encoding='UTF-8'?>
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.6">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
   <name/>
   <icon/>
   <description/>
@@ -127,7 +126,7 @@
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;>*&lt;/span>)."/>
+                <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)."/>
               </object>
             </object>
           </object>
@@ -139,7 +138,7 @@
       <strings jsxheight="" jsxdisplay="none" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
         <variants jsxtop="0" jsxleft="0" jsxheight="280" jsxwidth="720" jsxoverflow="2" jsxrelativeposition="1"/>
-        <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
+        <strings jsxdisplay="" jsxname="pane" jsxvisibility="" jsxpadding=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
@@ -205,7 +204,7 @@
                   <strings riaLabelText="Viesti_SuostumuksenAntajat" jsxname="Viesti_SuostumuksenAntajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Select">
                     <variants jsxheight="18" jsxwidth="250" _isfocusing="true" jsxxmlasync="1" jsxrequired="0"/>
-                    <strings jsxvalue="" jsxxml="&lt;data>&lt;record jsxid=&quot;1&quot; jsxtext=&quot;Lapsi itse&quot;/>&lt;record jsxid=&quot;2&quot; jsxtext=&quot;Toinen Huoltajista&quot;/>&lt;record jsxid=&quot;3&quot; jsxtext=&quot;Molemmat huoltajista&quot;/>&lt;/data>" jsxdefaulttext="- Valitse -" jsxname="suostumuksenAntajat" jsxmargin="0 4 0 0"/>
+                    <strings jsxvalue="" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;1&quot; jsxtext=&quot;Lapsi itse&quot;/&gt;&lt;record jsxid=&quot;2&quot; jsxtext=&quot;Toinen Huoltajista&quot;/&gt;&lt;record jsxid=&quot;3&quot; jsxtext=&quot;Molemmat huoltajista&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxname="suostumuksenAntajat" jsxmargin="0 4 0 0"/>
                     <events jsxselect="com.intalio.ria.validate(this, objEVENT);swapConsentGivers(this.getValue());"/>
                   </object>
                 </object>
@@ -219,21 +218,21 @@
           </object>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
+            <strings jsxheight="100%" jsxwidth="100%" jsxname="pane" jsxpadding=""/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
               <strings jsxcols="100%" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
-                <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
+                <strings jsxheight="100%" jsxwidth="100%" jsxname="pane" jsxpadding=""/>
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="com.intalio.ria.Field">
                   <variants/>
                   <strings riaHelpImageTip="" riaLabelText="kayttajatLista" jsxdisplay="block" jsxname="kayttajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Block">
                     <variants jsxheight="140" jsxwidth="540" jsxoverflow="1"/>
-                    <strings jsxdisplay="" jsxname="matrix-block" jsxmargin="0 0 0 20" jsxrelativeposition="1"/>
+                    <strings jsxdisplay="" jsxname="matrix-block" jsxmargin="" jsxrelativeposition="1"/>
                     <object type="jsx3.gui.Matrix">
                       <variants jsxheaderheight="22" jsxautorow="0" jsxselectionmodel="0" jsxpagingmodel="1" jsxjsxxmlasync="1" jsxrowheight="20"/>
                       <strings jsxsortdirection="descending" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxsortpath="sahkoposti" jsxsorttype="text" jsxname="searchChildMatrix" jsxbgcolor="#efefff"/>
@@ -456,7 +455,7 @@
                   <strings riaLabelText="receipients" jsxname="receipients-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Block">
                     <variants jsxheight="110" jsxwidth="350" jsxoverflow="1"/>
-                    <strings jsxname="matrix-block" jsxmargin="0 0 0 18" jsxrelativeposition="1"/>
+                    <strings jsxname="matrix-block" jsxmargin="" jsxrelativeposition="1"/>
                     <object type="jsx3.gui.Matrix">
                       <variants jsxautorow="1" jsxselectionmodel="0" jsxpagingmodel="3" jsxjsxxmlasync="1"/>
                       <strings jsxsortdirection="descending" jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="receipientsToShow-nomap" jsxsortpath="receipient2" jsxsorttype="text" jsxname="dummyMatrix" jsxbgcolor="#efefff"/>
@@ -772,7 +771,7 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                  <strings jsxname="laatija_label" jsxclassname="FormLabel" jsxtext="&lt;b>Laatija: &lt;/b>"/>
+                  <strings jsxname="laatija_label" jsxclassname="FormLabel" jsxtext="&lt;b&gt;Laatija: &lt;/b&gt;"/>
                 </object>
               </object>
             </object>
@@ -1002,11 +1001,11 @@
       </object>
     </object>
     <object type="com.intalio.ria.Section">
-      <variants jsxwidth="600"/>
-      <strings jsxheight="" riaTitleText="Suostumus" jsxname="Suostumus" jsxclassname="fieldset"/>
+      <variants/>
+      <strings jsxwidth="" jsxheight="" riaTitleText="Suostumus" jsxname="Suostumus" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="3" jsxrelativeposition="1"/>
-        <strings jsxdisplay="none" jsxname="label" jsxmargin="" jsxclassname="" jsxtext="&lt;div id=&quot;dialog&quot; title=&quot;Täyttöohje&quot; style=&quot;display:none;&quot;> &lt;/div>"/>
+        <strings jsxdisplay="none" jsxname="label" jsxmargin="" jsxclassname="" jsxtext="&lt;div id=&quot;dialog&quot; title=&quot;Täyttöohje&quot; style=&quot;display:none;&quot;&gt; &lt;/div&gt;"/>
       </object>
       <object type="com.intalio.ria.Field">
         <variants/>
@@ -1017,7 +1016,7 @@
         </object>
       </object>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="0" jsxwidth="720" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="0" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="block" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
       </object>

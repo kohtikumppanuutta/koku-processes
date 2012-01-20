@@ -13,14 +13,14 @@
       <strings jsxname="layout ( | )" jsxcols="5%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
-        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0" jsxdisplay="" jsxvisibility=""/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0 -2 0 0" jsxdisplay="" jsxvisibility="" jsxmargin=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="com.intalio.ria.Field">
           <variants/>
           <strings jsxname="vastaus-field" jsxclassname="field" riaLabelText="vastaus" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
           <object type="jsx3.gui.CheckBox">
             <variants jsxheight="18" jsxchecked="0"/>
-            <strings jsxname="vastaus" jsxtext="" jsxmargin="0 4 0 0"/>
+            <strings jsxname="vastaus" jsxtext="" jsxmargin="0"/>
             <events jsxtoggle="TIVAForm.getJSXByName(&quot;Suostumus_Hylkaa&quot;).setChecked(0,true);"/>
           </object>
         </object>
