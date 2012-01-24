@@ -499,23 +499,17 @@ function inputMultiSections() {
     startDate = AjanvarausForm.getJSXByName("aloitusPvm").getDate();
     endDate = AjanvarausForm.getJSXByName("lopetusPvm").getDate();
     selectedDays = getDaySelections();
-    helperStartTime = new Date(1970, 1, 1, 0, 0, 0);
-    helperEndTime = new Date(1970, 1, 1, 0, 0, 0);
+    
+    
     startTimeStr = AjanvarausForm.getJSXByName("aloitusAika").getValue();
-    startTimeHours = startTimeStr.substr(0, 2);
-    startTimeMinutes = startTimeStr.substr(3, 2);
     endTimeStr = AjanvarausForm.getJSXByName("lopetusAika").getValue();
-    endTimeHours = endTimeStr.substr(0, 2);
-    endTimeMinutes = endTimeStr.substr(3, 2);
+    helperStartTime = new Date(1970, 1, 1, startTimeStr.substr(0, 2), startTimeStr.substr(3, 2), 0);
+    helperEndTime = new Date(1970, 1, 1, endTimeStr.substr(0, 2), endTimeStr.substr(3, 2), 0);
+
     locat = AjanvarausForm.getJSXByName("paikka").getValue();
     infotext = AjanvarausForm.getJSXByName("SlotsInfotext").getValue();
     duration = parseInt(AjanvarausForm.getJSXByName("kesto").getValue(), 10);
-    helperStartTime.setHours(startTimeHours);
-    helperStartTime.setMinutes(startTimeMinutes);
-    helperEndTime.setHours(endTimeHours);
-    helperEndTime.setMinutes(endTimeMinutes);
-    subtraction = fixEndTime(helperStartTime, helperEndTime, duration);
-    helperEndTime.setTime(helperEndTime.getTime() - subtraction);
+    helperEndTime.setTime(helperEndTime.getTime() - fixEndTime(helperStartTime, helperEndTime, duration));
 
     for( day = startDate; day <= endDate; day.setDate(day.getDate() + 1)) {
         if(escapeGenerate) {
@@ -535,15 +529,12 @@ function inputMultiSections() {
 }
 
 function fixEndTime(start, end, duration) {
-    var x, tempEnd, tempStart;
-    tempEnd = new Date(end.getTime());
-    tempStart = new Date();
-
-    for( x = new Date(start.getTime()); x <= tempEnd; x.setMinutes(x.getMinutes() + duration)) {
-        tempStart.setTime(x.getTime());
-    }
-
-    return parseInt(tempEnd.getTime() % tempStart.getTime());
+    var x, tempEnd;
+    
+    tempEnd = new Date(end.getTime() - start.getTime());
+	x = parseInt(tempEnd.getTime()) / (1000 * 60) % duration;
+	
+	return x * 60 * 1000;
 }
 
 function mapFieldsToMatrix(id, entryDate, entryStartTime, entryEndTime, entryLocation, entryInfoText, prefill) {
