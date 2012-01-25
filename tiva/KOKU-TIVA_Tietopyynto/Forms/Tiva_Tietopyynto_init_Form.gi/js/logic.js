@@ -1,133 +1,138 @@
 function getEndpoint() {
 
-    var endpoint = "http://localhost:8180";
-    //var endpoint = "http://trelx51lb:8080";
-    return endpoint;
+	var endpoint = "http://localhost:8180";
+	//var endpoint = "http://trelx51lb:8080";
+	return endpoint;
 
 }
 
 function intalioPreStart() {
-       
-    mapSelectedValuesToMatrix();
-    setRoles();
 
-       
+	mapSelectedValuesToMatrix();
+	setRoles();
+
 }
 
 function setRoles() {
 
-    var roleUsers;
-    var roleUid;
-    var temp;
-    
-    temp = TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend02").getValue();
+	var roleUsers;
+	var roleUid;
+	var temp;
+	temp = TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend02").getValue();
 
-    if (temp != null) {
-        roleUid = TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").getValue();
-        roleUsers = getRoleUsers(roleUid);   
-        TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend01").setValue(roleUsers);
-        TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue("");
-    }
+	if(temp) {
+		roleUid = TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").getValue();
+		roleData = getRoleUsers(roleUid, "username");
+		TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend01").setValue(roleData[0]);
+		TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend03").setValue(roleData[1]);
+		TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue("");
+	}
 
 }
 
-function getRoleUsers(groupUid) {
-    var xmlData, list, userData, users = "";
-    
-    users = "";    
-    xmlData = Arcusys.Internal.Communication.GetRoleUsers(groupUid);
-    userNames = xmlData.selectNodeIterator("//username", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
-    
-    while(userNames.hasNext()) {
-        
-        node = userNames.next();
-        
-        users += "koku/" + node.getValue();
-        
-        if (userNames.hasNext())
-            users += ",";
-        
-    }
-    
-    return users;
-    
+function getRoleUsers(roleUid, nodeName) {
+	var xmlData, list, userData, users = [];
+
+	users[0] = "";
+	users[1] = "";
+	xmlData = Arcusys.Internal.Communication.GetRoleUsers(roleUid);
+	userNames = xmlData.selectNodeIterator("//username", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
+
+	while(userNames.hasNext()) {
+		node = userNames.next();
+
+		users[0] += "koku/" + node.getValue();
+		userIdData = Arcusys.Internal.Communication.GetSenderUid(node.getValue());
+
+		users[1] += userIdData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+
+		if(userNames.hasNext()) {
+			users[0] += ",";
+			users[1] += ",";
+		}
+
+	}
+
+	return users;
+
 }
 
 function getDomainName() {
 
-    var url = window.location.href;
-    var url_parts = url.split("/");
-    var domain_name = url_parts[0] + "//" + url_parts[2];
+	var url = window.location.href;
+	var url_parts = url.split("/");
+	var domain_name = url_parts[0] + "//" + url_parts[2];
 
-    return domain_name;
+	return domain_name;
 
 }
 
 function getUrl() {
-
-    var domain = getDomainName();
-    //domain = "http://62.61.65.15:8380"
-    return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+	var domain = getDomainName();
+	if(domain.search("file") != -1) {
+		domain = "http://62.61.65.15:8380"
+	}
+	return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
 
 function mapSelectedValuesToMatrix() {
 
-    var rootnode = TivaTietopyyntoForm.getCache().getDocument("Kategoriat-nomap");
-    var selected = new Array;
+	var rootnode = TivaTietopyyntoForm.getCache().getDocument("Kategoriat-nomap");
+	var selected = new Array;
 
-    traverse(rootnode, selected);
+	traverse(rootnode, selected);
 
-    if(selected.length != 0) {
-        var node, i = 0;
-        var hasEmptyChild = false;
+	if(selected.length != 0) {
+		var node, i = 0;
+		var hasEmptyChild = false;
 
-        if(TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild() == null) {
-            TivaTietopyyntoForm.getJSXByName("Havannointitiedot").commitAutoRowSession();
-            hasEmptyChild = true;
+		if(TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild() == null) {
+			TivaTietopyyntoForm.getJSXByName("Havannointitiedot").commitAutoRowSession();
+			hasEmptyChild = true;
 
-        }
+		}
 
-        for( i = 0; i < selected.length; i++) {
-            node = TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild().cloneNode();
+		for( i = 0; i < selected.length; i++) {
+			node = TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild().cloneNode();
 
-            //node.setAttribute("jsxid",i);
-            if((selected[i].getAttribute("jsxselected") != null) && (selected[i].getAttribute("jsxopen") == null)) {
-                node.setAttribute("Havannointitiedot_Valitut", selected[i].getAttribute("jsxid"));
-                TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").insertBefore(node);
-            } else if((selected[i].getAttribute("jsxselected") == null) && (selected[i].getAttribute("jsxopen") != null)) {
-                node.setAttribute("Havannointitiedot_Avattu", selected[i].getAttribute("jsxid"));
-                TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").insertBefore(node);
-            } else {
-                node.setAttribute("Havannointitiedot_Valitut", selected[i].getAttribute("jsxid"));
-                node.setAttribute("Havannointitiedot_Avattu", selected[i].getAttribute("jsxid"));
-                TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").insertBefore(node);
-            }
+			//node.setAttribute("jsxid",i);
+			if((selected[i].getAttribute("jsxselected") != null) && (selected[i].getAttribute("jsxopen") == null)) {
+				node.setAttribute("Havannointitiedot_Valitut", selected[i].getAttribute("jsxid"));
+				TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").insertBefore(node);
+			} else if((selected[i].getAttribute("jsxselected") == null) && (selected[i].getAttribute("jsxopen") != null)) {
+				node.setAttribute("Havannointitiedot_Avattu", selected[i].getAttribute("jsxid"));
+				TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").insertBefore(node);
+			} else {
+				node.setAttribute("Havannointitiedot_Valitut", selected[i].getAttribute("jsxid"));
+				node.setAttribute("Havannointitiedot_Avattu", selected[i].getAttribute("jsxid"));
+				TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").insertBefore(node);
+			}
 
-            //TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").insertBefore(node);
+			//TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").insertBefore(node);
 
-        }
+		}
 
-        if(hasEmptyChild == true) {
-            TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild());
-        }
-    }
+		if(hasEmptyChild == true) {
+			TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("Havannointitiedot-nomap").getFirstChild());
+		}
+	}
 
 }
 
 function getIntalioUser() {
-    var username = Intalio.Internal.Utilities.getUser();
-    username = username.substring((username.indexOf("/") + 1));
-    return username;
+	var username = Intalio.Internal.Utilities.getUser();
+	username = username.substring((username.indexOf("/") + 1));
+	return username;
 }
 
 /**
  * Operations to load before form is shown to user
  */
 function preload() {
-    var intalioUser = getIntalioUser();
-    TivaTietopyyntoForm.getJSXByName("Perustiedot_Lahettaja").setValue(intalioUser);
-    preloadCategories();
+	var intalioUser = getIntalioUser();
+	TivaTietopyyntoForm.getJSXByName("Perustiedot_Lahettaja").setValue(intalioUser);
+	preloadCategories();
 
 }
 
@@ -138,16 +143,16 @@ function preload() {
  */
 function showFreeTextArea(checked) {
 
-    if(checked == true) {
-        TivaTietopyyntoForm.getJSXByName("vastausLayout (--)").setRows("20%,20%,3%,5%,7%,3%,5%,5%,19%,3%,5%,5%", true);
-        TivaTietopyyntoForm.getJSXByName("vastausPanel").setHeight("700", true);
-        TivaTietopyyntoForm.getJSXByName("paneFreeText").setDisplay("block").repaint();
-    } else {
-        TivaTietopyyntoForm.getJSXByName("vastausLayout (--)").setRows("24.5%,24.5%,4%,6%,7%,4%,6%,6%,2%,4%,6%,6%", true);
-        TivaTietopyyntoForm.getJSXByName("vastausPanel").setHeight("600", true);
-        TivaTietopyyntoForm.getJSXByName("paneFreeText").setDisplay("none").repaint();
+	if(checked == true) {
+		TivaTietopyyntoForm.getJSXByName("vastausLayout (--)").setRows("20%,20%,3%,5%,7%,3%,5%,5%,19%,3%,5%,5%", true);
+		TivaTietopyyntoForm.getJSXByName("vastausPanel").setHeight("700", true);
+		TivaTietopyyntoForm.getJSXByName("paneFreeText").setDisplay("block").repaint();
+	} else {
+		TivaTietopyyntoForm.getJSXByName("vastausLayout (--)").setRows("24.5%,24.5%,4%,6%,7%,4%,6%,6%,2%,4%,6%,6%", true);
+		TivaTietopyyntoForm.getJSXByName("vastausPanel").setHeight("600", true);
+		TivaTietopyyntoForm.getJSXByName("paneFreeText").setDisplay("none").repaint();
 
-    }
+	}
 }
 
 /**
@@ -157,571 +162,595 @@ function showFreeTextArea(checked) {
  *
  */
 function traverse(parentNode, selected) {
-    var node;
-    for( node = parentNode.getFirstChild(); node != null; node = node.getNextSibling()) {
-        //alert(node.getAttribute("jsxid"));
-        var select = node.getAttribute("jsxselected");
-        var open = node.getAttribute("jsxopen");
-        //node has "selected" attribute --> node will pushed at the end of array.
-        if((select != null) || (open != null)) {
-            selected.push(node);
+	var node;
+	for( node = parentNode.getFirstChild(); node != null; node = node.getNextSibling()) {
+		//alert(node.getAttribute("jsxid"));
+		var select = node.getAttribute("jsxselected");
+		var open = node.getAttribute("jsxopen");
+		//node has "selected" attribute --> node will pushed at the end of array.
+		if((select != null) || (open != null)) {
+			selected.push(node);
 
-        }
-        traverse(node, selected);
+		}
+		traverse(node, selected);
 
-    }
+	}
 
 }
 
 jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error) {
 
-    error.getError = function(name) {
-        var errortext = TivaTietopyyntoForm.getJSXByName(name).getTip();
-        errortext = "Puuttuvat tiedot: " + errortext;
-        return errortext;
-    };
+	error.getError = function(name) {
+		var errortext = TivaTietopyyntoForm.getJSXByName(name).getTip();
+		errortext = "Puuttuvat tiedot: " + errortext;
+		return errortext;
+	};
 });
 function makeSearch(searchString) {
-    var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
-    entryFound = false;
-    hasEmptyChild = false;
+	var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
+	entryFound = false;
+	hasEmptyChild = false;
 
-    if(searchString == "") {
-        alert("Sy" + unescape("%F6") + "t" + unescape("%E4") + "hakusana");
+	if(searchString == "") {
+		alert("Sy" + unescape("%F6") + "t" + unescape("%E4") + "hakusana");
 
-    }
-    //searchString = searchString.toLowerCase();
+	}
+	//searchString = searchString.toLowerCase();
 
-    if(searchNames(searchString) == false) {
-        if(searchRoles(searchString) == false) {
-            alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
-        }
-    }
+	if(searchNames(searchString) == false) {
+		if(searchRoles(searchString) == false) {
+			alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
+		}
+	}
 }
 
 function searchRoles(searchString) {
 
-    var node, hasEmptyChild, entryFound, rolesData, i, xmlData, roleInfo, list;
-    entryFound = false;
-    hasEmptyChild = false;
+	var node, hasEmptyChild, entryFound, rolesData, i, xmlData, roleInfo, list;
+	entryFound = false;
+	hasEmptyChild = false;
 
-    if(searchString == "") {
-        return false;
-    }
+	if(searchString == "") {
+		return false;
+	}
 
-    if(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild() != null) {
-        TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChildren();
-        TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
+	if(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild() != null) {
+		TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChildren();
+		TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
 
-    }
+	}
 
-    if(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild() == null) {
-        TivaTietopyyntoForm.getJSXByName("searchMatrix").commitAutoRowSession();
-        hasEmptyChild = true;
+	if(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild() == null) {
+		TivaTietopyyntoForm.getJSXByName("searchMatrix").commitAutoRowSession();
+		hasEmptyChild = true;
 
-    }
-    xmlData = Arcusys.Internal.Communication.GetRoles(searchString);
-    list = ["roleName", "roleUid"];
-    rolesData = parseXML(xmlData, "role", list);
+	}
+	xmlData = Arcusys.Internal.Communication.GetRoles(searchString);
+	status = xmlData.selectSingleNode("//status", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
 
-    if(rolesData != null || rolesData != "") {
+	if(status == "error") {
+		error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+		alert("Vastaanottajan hakemisessa tapahtui virhe! Virheviesti: " + error);
+	} else {
+		list = ["roleName", "roleUid"];
+		rolesData = parseXML(xmlData, "role", list);
 
-        if(rolesData.length > 1) {
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Valittu-column").setDisplay("block").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Roolinimi-column").setDisplay("block").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Etunimi-column").setDisplay("none").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sukunimi-column").setDisplay("none").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Puhelin-column").setDisplay("none").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sahkoposti-column").setDisplay("none").repaint();
+		if(rolesData != null || rolesData != "") {
 
-        } else {
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Valittu-column").setDisplay("none").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Roolinimi-column").setDisplay("block").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Etunimi-column").setDisplay("none").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sukunimi-column").setDisplay("none").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Puhelin-column").setDisplay("none").repaint();
-            TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sahkoposti-column").setDisplay("none").repaint();
-        }
+			if(rolesData.length > 1) {
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Valittu-column").setDisplay("block").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Roolinimi-column").setDisplay("block").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Etunimi-column").setDisplay("none").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sukunimi-column").setDisplay("none").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Puhelin-column").setDisplay("none").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sahkoposti-column").setDisplay("none").repaint();
 
-    }
+			} else {
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Valittu-column").setDisplay("none").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Roolinimi-column").setDisplay("block").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Etunimi-column").setDisplay("none").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sukunimi-column").setDisplay("none").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Puhelin-column").setDisplay("none").repaint();
+				TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sahkoposti-column").setDisplay("none").repaint();
+			}
 
-    for( i = 0; i < rolesData.length; i++) {
-        roleInfo = rolesData[i].split(',');
-        
-        entryFound = true;
-        node = TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild().cloneNode();
-       
-        node.setAttribute("jsxid", i);
-       
-        if(rolesData.length == 1) {
-            node.setAttribute("valittu", 1);
-        }
+		}
 
-        node.setAttribute("roolinimi", roleInfo[0]);
-        node.setAttribute("uid", roleInfo[1]);
-        node.setAttribute("rooli", 1);
+		for( i = 0; i < rolesData.length; i++) {
+			roleInfo = rolesData[i].split(',');
+			entryFound = true;
+			node = TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild().cloneNode();
 
-        TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
+			node.setAttribute("jsxid", i);
 
-    }
+			if(rolesData.length == 1) {
+				node.setAttribute("valittu", 1);
+			}
 
-    if(hasEmptyChild == true) {
-        TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
-    }
+			node.setAttribute("roolinimi", roleInfo[0]);
+			node.setAttribute("uid", roleInfo[1]);
+			node.setAttribute("rooli", 1);
 
-    TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
-    if(entryFound == false) {
+			TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
 
-        return false;
-    }
+		}
+
+		if(hasEmptyChild == true) {
+			TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
+		}
+
+		TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
+		if(entryFound == false) {
+
+			return false;
+		}
+	}
 
 }
 
 function searchNames(searchString) {
 
-    var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
-    entryFound = false;
-    hasEmptyChild = false;
+	var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
+	entryFound = false;
+	hasEmptyChild = false;
 
-    if(searchString == "") {
-        return false;
-    }
+	if(searchString == "") {
+		return false;
+	}
 
-    if(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild() != null) {
-        TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChildren();
-        TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
+	if(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild() != null) {
+		TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChildren();
+		TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
 
-    }
+	}
 
-    if(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild() == null) {
-        TivaTietopyyntoForm.getJSXByName("searchMatrix").commitAutoRowSession();
-        hasEmptyChild = true;
+	if(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild() == null) {
+		TivaTietopyyntoForm.getJSXByName("searchMatrix").commitAutoRowSession();
+		hasEmptyChild = true;
 
-    }
-    xmlData = Arcusys.Internal.Communication.GetUsers(searchString);
-    list = ["firstname", "lastname", "phoneNumber", "email", "uid"];
-    userData = parseXML(xmlData, "user", list);
+	}
+	xmlData = Arcusys.Internal.Communication.GetUsers(searchString);
+	status = xmlData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
-    if(userData != null) {
+	if(status == "error") {
+		error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+		if(error.search("Creation of the user by UID '' - should be used for test purposes only") != -1) {
+			alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
+		} else {
+			alert("Vastaanottajan hakemisessa tapahtui virhe! Virheviesti: " + error);
+		}
+	} else {
+		list = ["firstname", "lastname", "phoneNumber", "email", "uid"];
+		userData = parseXML(xmlData, "user", list);
 
-        TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Roolinimi-column").setDisplay("none").repaint();
-        TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Valittu-column").setDisplay("none").repaint();
+		if(userData != null) {
 
-        TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Etunimi-column").setDisplay("block").repaint();
-        TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sukunimi-column").setDisplay("block").repaint();
-        TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Puhelin-column").setDisplay("block").repaint();
-        TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sahkoposti-column").setDisplay("block").repaint();
+			TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Roolinimi-column").setDisplay("none").repaint();
+			TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Valittu-column").setDisplay("none").repaint();
 
-    }
+			TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Etunimi-column").setDisplay("block").repaint();
+			TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sukunimi-column").setDisplay("block").repaint();
+			TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Puhelin-column").setDisplay("block").repaint();
+			TivaTietopyyntoForm.getJSXByName("Kayttajahaku_Sahkoposti-column").setDisplay("block").repaint();
 
-    for( i = 0; i < userData.length; i++) {
-        personInfo = userData[i].split(',');
-        entryFound = true;
-        node = TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild().cloneNode();
-       
-        node.setAttribute("rooli", 0);
-        node.setAttribute("valittu", 1);
-       
-        node.setAttribute("jsxid", i);
-        if(personInfo[0] == "undefined")
-            node.setAttribute("etunimi", "");
-        else
-            node.setAttribute("etunimi", personInfo[0]);
-        if(personInfo[1] == "undefined")
-            node.setAttribute("sukunimi", "");
-        else
-            node.setAttribute("sukunimi", personInfo[1]);
-        if(personInfo[2] == "undefined")
-            node.setAttribute("puhelin", "");
-        else
-            node.setAttribute("puhelin", personInfo[2]);
-        if(personInfo[3] == "undefined")
-            node.setAttribute("sahkoposti", "");
-        else
-            node.setAttribute("sahkoposti", personInfo[3]);
-        if((personInfo[4] == "undefined")) {
-            alert("Kayttajahaussa tapahtui virhe. Kohdehenkilon id puuttuu");
-            return false;
-        }
+		}
 
-        node.setAttribute("uid", personInfo[4]);
+		for( i = 0; i < userData.length; i++) {
+			personInfo = userData[i].split(',');
+			entryFound = true;
+			node = TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild().cloneNode();
 
-        TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
+			node.setAttribute("rooli", 0);
+			node.setAttribute("valittu", 1);
 
-    }
+			node.setAttribute("jsxid", i);
+			if(personInfo[0] == "undefined")
+				node.setAttribute("etunimi", "");
+			else
+				node.setAttribute("etunimi", personInfo[0]);
+			if(personInfo[1] == "undefined")
+				node.setAttribute("sukunimi", "");
+			else
+				node.setAttribute("sukunimi", personInfo[1]);
+			if(personInfo[2] == "undefined")
+				node.setAttribute("puhelin", "");
+			else
+				node.setAttribute("puhelin", personInfo[2]);
+			if(personInfo[3] == "undefined")
+				node.setAttribute("sahkoposti", "");
+			else
+				node.setAttribute("sahkoposti", personInfo[3]);
+			if((personInfo[4] == "undefined")) {
+				alert("Kayttajahaussa tapahtui virhe. Kohdehenkilon id puuttuu");
+				return false;
+			}
 
-    if(hasEmptyChild == true) {
-        TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
-    }
+			node.setAttribute("uid", personInfo[4]);
 
-    TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
-    if(entryFound == false) {
-        //alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
-        return false;
-    }
+			TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").insertBefore(node);
+
+		}
+
+		if(hasEmptyChild == true) {
+			TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getFirstChild());
+		}
+
+		TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
+		if(entryFound == false) {
+			//alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
+			return false;
+		}
+	}
 
 }
 
 function searchChildrens(searchString) {
-    var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
-    entryFound = false;
-    hasEmptyChild = false;
+	var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
+	entryFound = false;
+	hasEmptyChild = false;
 
-    if(searchString == "") {
-        alert("Sy" + unescape("%F6") + "t" + unescape("%E4") + "hakusana");
-        return;
-    }
-    searchString = searchString.toLowerCase();
-    if(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild() != null) {
-        TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").removeChildren();
-        TivaTietopyyntoForm.getJSXByName("searchChildMatrix").repaintData();
+	if(searchString == "") {
+		alert("Sy" + unescape("%F6") + "t" + unescape("%E4") + "hakusana");
+		return;
+	}
+	searchString = searchString.toLowerCase();
+	if(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild() != null) {
+		TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").removeChildren();
+		TivaTietopyyntoForm.getJSXByName("searchChildMatrix").repaintData();
 
-    }
+	}
 
-    if(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild() == null) {
-        TivaTietopyyntoForm.getJSXByName("searchChildMatrix").commitAutoRowSession();
-        hasEmptyChild = true;
+	if(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild() == null) {
+		TivaTietopyyntoForm.getJSXByName("searchChildMatrix").commitAutoRowSession();
+		hasEmptyChild = true;
 
-    }
-    xmlData = Arcusys.Internal.Communication.GetChildrens(searchString);
-    list = ["firstname", "lastname", "uid"];
-    userData = parseXML(xmlData, "child", list);
+	}
+	xmlData = Arcusys.Internal.Communication.GetChildrens(searchString);
+	status = xmlData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+	
+	if(status == "error") {
+		error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+		if(error.search("Creation of the user by UID '' - should be used for test purposes only") != -1) {
+			alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
+		} else {
+			alert("Vastaanottajan hakemisessa tapahtui virhe! Virheviesti: " + error);
+		}
+	} else {
+		list = ["firstname", "lastname", "uid"];
+		userData = parseXML(xmlData, "child", list);
 
-    for( i = 0; i < userData.length; i++) {
-        personInfo = userData[i].split(',');
-        entryFound = true;
-        node = TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
+		for( i = 0; i < userData.length; i++) {
+			personInfo = userData[i].split(',');
+			entryFound = true;
+			node = TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
 
-        node.setAttribute("jsxid", i);
-        node.setAttribute("etunimi", personInfo[0]);
-        node.setAttribute("sukunimi", personInfo[1]);
-        node.setAttribute("uid", personInfo[2]);
+			node.setAttribute("jsxid", i);
+			node.setAttribute("etunimi", personInfo[0]);
+			node.setAttribute("sukunimi", personInfo[1]);
+			node.setAttribute("uid", personInfo[2]);
 
-        TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
+			TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
 
-    }
+		}
 
-    if(hasEmptyChild == true) {
-        TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
-    }
+		if(hasEmptyChild == true) {
+			TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").removeChild(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
+		}
 
-    TivaTietopyyntoForm.getJSXByName("searchChildMatrix").repaintData();
-    if(entryFound == false) {
-        alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
-    }
+		TivaTietopyyntoForm.getJSXByName("searchChildMatrix").repaintData();
+		if(entryFound == false) {
+			alert("Valitettavasti antamallasi hakusanalla ei l" + unescape("%F6") + "ytynyt tuloksia");
+		}
+	}
 
 }
 
 function addToRecipients() {
-    var counter, node, i, hasEmptyChild, chosen, childIterator, uid, firstname, lastname, rolename, childNode;
-    i = 0;
-    hasEmptyChild = false;
-    counter = 0;
-    childIterator = TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getChildIterator();
+	var counter, node, i, hasEmptyChild, chosen, childIterator, uid, firstname, lastname, rolename, childNode;
+	i = 0;
+	hasEmptyChild = false;
+	counter = 0;
+	childIterator = TivaTietopyyntoForm.getCache().getDocument("HaetutVastaanottajat-nomap").getChildIterator();
 
-    while(childIterator.hasNext()) {
-        childNode = childIterator.next();
+	while(childIterator.hasNext()) {
+		childNode = childIterator.next();
 
-        if(childNode.getAttribute("valittu") == 1) {
+		if(childNode.getAttribute("valittu") == 1) {
 
-            if(childNode.getAttribute("rooli") == 0) {
+			if(childNode.getAttribute("rooli") == 0) {
 
-                if(counter < 1) {
-                    uid = childNode.getAttribute("uid");
-                    firstname = childNode.getAttribute("etunimi");
-                    lastname = childNode.getAttribute("sukunimi");
-                    TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue(uid);
-                    TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").setValue(firstname + " " + lastname);
-                    TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").repaint();
-                    TivaTietopyyntoForm.getJSXByName("Perustiedot_isRole").setChecked(true);
-                    counter++;
+				if(counter < 1) {
+					uid = childNode.getAttribute("uid");
+					firstname = childNode.getAttribute("etunimi");
+					lastname = childNode.getAttribute("sukunimi");
+					TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue(uid);
+					TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").setValue(firstname + " " + lastname);
+					TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").repaint();
+					TivaTietopyyntoForm.getJSXByName("Perustiedot_isRole").setChecked(true);
+					counter++;
 
-                } else {
-                    alert("Vastaavia kohdehenkiloita loytyi useampi kuin yksi. Vain yksi kohdehenkilo voidaan lisata");
-                }
-            } else {
-                uid = childNode.getAttribute("uid");
-                rolename = childNode.getAttribute("roolinimi");
-                TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue(uid);
-                TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").setValue(rolename);
-                TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").repaint();
-                TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend02").setValue(uid);
-                counter++;
-            }
-        }
+				} else {
+					alert("Vastaavia kohdehenkiloita loytyi useampi kuin yksi. Vain yksi kohdehenkilo voidaan lisata");
+				}
+			} else {
+				uid = childNode.getAttribute("uid");
+				rolename = childNode.getAttribute("roolinimi");
+				TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja_UID").setValue(uid);
+				TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").setValue(rolename);
+				TivaTietopyyntoForm.getJSXByName("Perustiedot_Vastaanottaja").repaint();
+				TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend02").setValue(uid);
+				counter++;
+			}
+		}
 
-    }
-    if(counter < 1) {
-        alert("Vastaanottaja tulee hakea ennen lisaamista");
-    }
+	}
+	if(counter < 1) {
+		alert("Vastaanottaja tulee hakea ennen lisaamista");
+	}
 }
 
 function addToTarget() {
-    var counter, node, i, hasEmptyChild, chosen, childIterator, uid, firstname, lastname, childNode, label, parents;
-    i = 0;
-    hasEmptyChild = false;
-    counter = 0;
-    childIterator = TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getChildIterator();
+	var counter, node, i, hasEmptyChild, chosen, childIterator, uid, firstname, lastname, childNode, label, parents;
+	i = 0;
+	hasEmptyChild = false;
+	counter = 0;
+	childIterator = TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getChildIterator();
 
-    while(childIterator.hasNext()) {
-        childNode = childIterator.next();
-        chosen = childNode.getAttribute("valittu");
+	while(childIterator.hasNext()) {
+		childNode = childIterator.next();
+		chosen = childNode.getAttribute("valittu");
 
-        if((chosen != null) && (chosen != 0)) {
-            uid = childNode.getAttribute("uid");
-            firstname = childNode.getAttribute("etunimi");
-            lastname = childNode.getAttribute("sukunimi");
-            TivaTietopyyntoForm.getJSXByName("Pyynto_Kohde_UID").setValue(uid);
-            TivaTietopyyntoForm.getJSXByName("Pyynto_Kohde").setValue(firstname + " " + lastname);
-            counter++;
-            break;
-        }
+		if((chosen != null) && (chosen != 0)) {
+			uid = childNode.getAttribute("uid");
+			firstname = childNode.getAttribute("etunimi");
+			lastname = childNode.getAttribute("sukunimi");
+			TivaTietopyyntoForm.getJSXByName("Pyynto_Kohde_UID").setValue(uid);
+			TivaTietopyyntoForm.getJSXByName("Pyynto_Kohde").setValue(firstname + " " + lastname);
+			counter++;
+			break;
+		}
 
-    }
-    if(counter < 1) {
-        alert("Yht" + unescape("%E4%E4") + "n kohdehenkil" + unescape("%F6%E4") + "ei ole valittuna");
-        return;
-    }
-    xmlData = Arcusys.Internal.Communication.GetChildinfo(uid);
-    list = ["firstname", "lastname"];
-    userData = parseXML(xmlData, "parents", list);
-    label = "<strong>J" + unescape("%E4") + "rjestelm" + unescape("%E4") + unescape("%E4") + "n merkatut huoltajat:</strong> ";
+	}
+	if(counter < 1) {
+		alert("Yht" + unescape("%E4%E4") + "n kohdehenkil" + unescape("%F6%E4") + "ei ole valittuna");
+		return;
+	}
+	xmlData = Arcusys.Internal.Communication.GetChildinfo(uid);
+	list = ["firstname", "lastname"];
+	userData = parseXML(xmlData, "parents", list);
+	label = "<strong>J" + unescape("%E4") + "rjestelm" + unescape("%E4") + unescape("%E4") + "n merkatut huoltajat:</strong> ";
 
-    for( i = 0; i < userData.length; i++) {
-        parents = userData[i].split(",");
-        label = label + parents[0] + " " + parents[1];
-        if(i < (userData.length - 1)) {
-            label = label + ", ";
-        }
-    }
-    TivaTietopyyntoForm.getJSXByName("ParentsLabel").setText(label).repaint();
+	for( i = 0; i < userData.length; i++) {
+		parents = userData[i].split(",");
+		label = label + parents[0] + " " + parents[1];
+		if(i < (userData.length - 1)) {
+			label = label + ", ";
+		}
+	}
+	TivaTietopyyntoForm.getJSXByName("ParentsLabel").setText(label).repaint();
 }
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetUsers = function(searchString) {
-        var tout, msg, endpoint, url, req, objXML, limit;
-        tout = 1000;
-        limit = 100;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelosdsadpe/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchEmployees><!--Optional:--><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchEmployees></soapenv:Body></soapenv:Envelope>";
+	arc.GetUsers = function(searchString) {
+		var tout, msg, endpoint, url, req, objXML, limit;
+		tout = 1000;
+		limit = 100;
+		msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelosdsadpe/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchEmployees><!--Optional:--><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchEmployees></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
+		//url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+		url = getUrl();
+		endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+		msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+		req = new jsx3.net.Request();
 
-        req.open('POST', url, false);
+		req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
+		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		req.send(msg, tout);
+		objXML = req.getResponseXML();
 
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetUsers)");
-        } else {
-            return objXML;
+		if(objXML == null) {
+			alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetUsers)");
+		} else {
+			return objXML;
 
-        }
+		}
 
-    };
+	};
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetSenderUid = function(looraName) {
-        var tout, msg, endpoint, url, req, objXML, limit;
-        tout = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + looraName + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
+	arc.GetSenderUid = function(looraName) {
+		var tout, msg, endpoint, url, req, objXML, limit;
+		tout = 1000;
+		msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + looraName + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
+		//url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+		url = getUrl();
+		endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+		msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+		req = new jsx3.net.Request();
 
-        req.open('POST', url, false);
+		req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
+		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		req.send(msg, tout);
+		objXML = req.getResponseXML();
 
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetUsers)");
-        } else {
-            return objXML;
+		if(objXML == null) {
+			alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetUsers)");
+		} else {
+			return objXML;
 
-        }
+		}
 
-    };
+	};
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetChildrens = function(searchString) {
-        var tout, msg, endpoint, url, req, objXML, limit;
-        tout = 1000;
-        limit = 100;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
+	arc.GetChildrens = function(searchString) {
+		var tout, msg, endpoint, url, req, objXML, limit;
+		tout = 1000;
+		limit = 100;
+		msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
+		//url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+		url = getUrl();
+		endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+		msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+		req = new jsx3.net.Request();
 
-        req.open('POST', url, false);
+		req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
+		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		req.send(msg, tout);
+		objXML = req.getResponseXML();
 
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildrens)");
-        } else {
-            return objXML;
+		if(objXML == null) {
+			alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildrens)");
+		} else {
+			return objXML;
 
-        }
+		}
 
-    };
+	};
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetChildinfo = function(uid) {
-        var tout, msg, endpoint, url, req, objXML;
-        tout = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo><childUid>" + uid + "</childUid></soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
+	arc.GetChildinfo = function(uid) {
+		var tout, msg, endpoint, url, req, objXML;
+		tout = 1000;
+		msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getChildInfo><childUid>" + uid + "</childUid></soa:getChildInfo></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-        url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
+		//url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+		url = getUrl();
+		endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+		msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+		req = new jsx3.net.Request();
 
-        req.open('POST', url, false);
+		req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
+		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		req.send(msg, tout);
+		objXML = req.getResponseXML();
 
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildinfo)");
-        } else {
-            return objXML;
+		if(objXML == null) {
+			alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetChildinfo)");
+		} else {
+			return objXML;
 
-        }
+		}
 
-    };
+	};
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetCategories = function(userUid) {
-        var tout, msg, endpoint, url, req, objXML;
-        tout = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getTietoelementit><userUid>" + userUid + "</userUid></soa:getTietoelementit></soapenv:Body></soapenv:Envelope>";
+	arc.GetCategories = function(userUid) {
+		var tout, msg, endpoint, url, req, objXML;
+		tout = 1000;
+		msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getTietoelementit><userUid>" + userUid + "</userUid></soa:getTietoelementit></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+		//url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
-        url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
+		url = getUrl();
+		endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl";
+		msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+		req = new jsx3.net.Request();
 
-        req.open('POST', url, false);
+		req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
+		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		req.send(msg, tout);
+		objXML = req.getResponseXML();
 
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetCategories)");
-        } else {
+		if(objXML == null) {
+			alert("Virhe palvelinyhteydess" + unescape("%E4") + " (GetCategories)");
+		} else {
 
-            return objXML;
+			return objXML;
 
-        }
+		}
 
-    };
-});
-
-
-
-
-jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetRoles = function(searchString) {
-        var tout, msg, endpoint, url, req, objXML, limit;
-        tout = 1000;
-        limit = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchRoles><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchRoles></soapenv:Body></soapenv:Envelope>";
-
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
-
-        url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
-
-        req.open('POST', url, false);
-
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
-
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4"));
-        } else {
-
-            return objXML;
-
-        }
-
-    };
+	};
 });
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
-    arc.GetRoleUsers = function(roleUid) {
-        var tout, msg, endpoint, url, req, objXML, limit;
-        tout = 1000;
-        limit = 1000;
-        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUsernamesInRole><roleUid>" + roleUid + "</roleUid></soa:getUsernamesInRole></soapenv:Body></soapenv:Envelope>";
+	arc.GetRoles = function(searchString) {
+		var tout, msg, endpoint, url, req, objXML, limit;
+		tout = 1000;
+		limit = 1000;
+		msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchRoles><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchRoles></soapenv:Body></soapenv:Envelope>";
 
-        //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+		//url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
-        url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
-        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
-        req = new jsx3.net.Request();
+		url = getUrl();
+		endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+		msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+		req = new jsx3.net.Request();
 
-        req.open('POST', url, false);
+		req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        req.send(msg, tout);
-        objXML = req.getResponseXML();
+		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		req.send(msg, tout);
+		objXML = req.getResponseXML();
 
-        if(objXML == null) {
-            alert("Virhe palvelinyhteydess" + unescape("%E4"));
-        } else {
+		if(objXML == null) {
+			alert("Virhe palvelinyhteydess" + unescape("%E4"));
+		} else {
 
-            return objXML;
+			return objXML;
 
-        }
+		}
 
-    };
+	};
 });
 
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+	arc.GetRoleUsers = function(roleUid) {
+		var tout, msg, endpoint, url, req, objXML, limit;
+		tout = 1000;
+		limit = 1000;
+		msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUsernamesInRole><roleUid>" + roleUid + "</roleUid></soa:getUsernamesInRole></soapenv:Body></soapenv:Envelope>";
+
+		//url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
+
+		url = getUrl();
+		endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+		msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+		req = new jsx3.net.Request();
+
+		req.open('POST', url, false);
+
+		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		req.send(msg, tout);
+		objXML = req.getResponseXML();
+
+		if(objXML == null) {
+			alert("Virhe palvelinyhteydess" + unescape("%E4"));
+		} else {
+
+			return objXML;
+
+		}
+
+	};
+});
 function preloadCategories() {
 
-    var xmlData, xmlString, intalioUserUid, intalioUser;
-    intalioUserUid = "";
-    intalioUser = getIntalioUser();
-    xmlData = Arcusys.Internal.Communication.GetSenderUid(intalioUser);
+	var xmlData, xmlString, intalioUserUid, intalioUser;
+	intalioUserUid = "";
+	intalioUser = getIntalioUser();
+	xmlData = Arcusys.Internal.Communication.GetSenderUid(intalioUser);
 
-    //intalioUserUid = xmlData.selectSingleNode("//ns2:getUserUidByLooraNameResponse", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getFirstChild();
-    intalioUserUid = xmlData.selectSingleNode("//userUid").getValue();
-    xmlData = Arcusys.Internal.Communication.GetCategories(intalioUserUid);
-    xmlData = xmlData.selectSingleNode("//ns2:getTietoelementitResponse", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getFirstChild();
-    xmlData = xmlData.toString();
-    xmlString = "<data jsxid=\"jsxroot\">" + xmlData + "</data>";
+	//intalioUserUid = xmlData.selectSingleNode("//ns2:getUserUidByLooraNameResponse", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getFirstChild();
+	intalioUserUid = xmlData.selectSingleNode("//userUid").getValue();
+	xmlData = Arcusys.Internal.Communication.GetCategories(intalioUserUid);
+	xmlData = xmlData.selectSingleNode("//ns2:getTietoelementitResponse", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getFirstChild();
+	xmlData = xmlData.toString();
+	xmlString = "<data jsxid=\"jsxroot\">" + xmlData + "</data>";
 
-    TivaTietopyyntoForm.getJSXByName("matrix1").setXMLString(xmlString);
-    TivaTietopyyntoForm.getJSXByName("matrix1").repaintData();
+	TivaTietopyyntoForm.getJSXByName("matrix1").setXMLString(xmlString);
+	TivaTietopyyntoForm.getJSXByName("matrix1").repaintData();
 
 }
 
@@ -736,37 +765,37 @@ function preloadCategories() {
  */
 function parseXML(xmlData, rootName, childlist) {
 
-    var i, j, attributes, node, childNode, childs;
-    i = 0;
-    attributes = [];
-    childs = xmlData.selectNodeIterator("/\/" + rootName);
+	var i, j, attributes, node, childNode, childs;
+	i = 0;
+	attributes = [];
+	childs = xmlData.selectNodeIterator("/\/" + rootName);
 
-    while(childs.hasNext()) {
+	while(childs.hasNext()) {
 
-        attributes[i] = [];
-        node = childs.next();
-        if(node == null) {
-            Arcusys.Internal.Communication.GetCategories();
-            break;
-        }
+		attributes[i] = [];
+		node = childs.next();
+		if(node == null) {
+			Arcusys.Internal.Communication.GetCategories();
+			break;
+		}
 
-        for( j = 0; j < childlist.length; j++) {
-            childNode = node.getFirstChild();
-            while(childNode != null) {
+		for( j = 0; j < childlist.length; j++) {
+			childNode = node.getFirstChild();
+			while(childNode != null) {
 
-                if(childNode.getNodeName() == childlist[j]) {
-                    attributes[i][j] = childNode.getValue();
-                    break;
-                }
-                childNode = childNode.getNextSibling();
+				if(childNode.getNodeName() == childlist[j]) {
+					attributes[i][j] = childNode.getValue();
+					break;
+				}
+				childNode = childNode.getNextSibling();
 
-            }
+			}
 
-        }
-        i++;
-    }
+		}
+		i++;
+	}
 
-    return valuesToArray(attributes);
+	return valuesToArray(attributes);
 
 }
 
@@ -775,21 +804,21 @@ function parseXML(xmlData, rootName, childlist) {
  * Users information comma seperated. One user/node.
  */
 function valuesToArray(attributes) {
-    var tempArray, i, j, line;
-    tempArray = [];
+	var tempArray, i, j, line;
+	tempArray = [];
 
-    for( i = 0; i < attributes.length; i++) {
-        line = "";
-        for( j = 0; j < attributes[i].length; j++) {
-            line = line + attributes[i][j];
-            if(j < (attributes[i].length - 1 )) {
-                line = line + ",";
+	for( i = 0; i < attributes.length; i++) {
+		line = "";
+		for( j = 0; j < attributes[i].length; j++) {
+			line = line + attributes[i][j];
+			if(j < (attributes[i].length - 1 )) {
+				line = line + ",";
 
-            }
+			}
 
-        }
-        tempArray[i] = line;
+		}
+		tempArray[i] = line;
 
-    }
-    return tempArray;
+	}
+	return tempArray;
 }

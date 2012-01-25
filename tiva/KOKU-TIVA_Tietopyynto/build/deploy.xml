@@ -1,20 +1,23 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<dd:deploy xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03"><dd:process xmlns:Pyynto="http://arcusys.fi/Processes/Tiva_Tietopyynto/Pyynto" xmlns:KokuTietopyyntoProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Tiva_Tietopyynto_init_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://arcusys.fi/Processes/Tiva_Tietopyynto" xmlns:Services="http://arcusys.fi/Processes/Tiva_Tietopyynto/Services" xmlns:tns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:Tiva_Tietopyynto_init_Form1="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" xmlns:Tiva_Tietopyynto_Response_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" xmlns:this="http://arcusys.fi/Processes/Tiva_Tietopyynto/Prosessi" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:Vastaus="http://arcusys.fi/Processes/Tiva_Tietopyynto/Vastaus" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Prosessi" fileName="Processes/Tiva_Tietopyynto-Prosessi.bpel">
+<dd:deploy xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03"><dd:process xmlns:KokuNotificationServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:Pyynto="http://arcusys.fi/Processes/Tiva_Tietopyynto/Pyynto" xmlns:KokuTietopyyntoProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Tiva_Tietopyynto_init_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://arcusys.fi/Processes/Tiva_Tietopyynto" xmlns:Services="http://arcusys.fi/Processes/Tiva_Tietopyynto/Services" xmlns:tns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:Tiva_Tietopyynto_init_Form1="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" xmlns:Tiva_Tietopyynto_Response_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" xmlns:this="http://arcusys.fi/Processes/Tiva_Tietopyynto/Prosessi" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Vastaus="http://arcusys.fi/Processes/Tiva_Tietopyynto/Vastaus" name="this:Prosessi" fileName="Processes/Tiva_Tietopyynto-Prosessi.bpel">
   <dd:property name="PATH">Processes/Tiva_Tietopyynto</dd:property>
   <dd:property name="SVG">Processes/Tiva_Tietopyynto.svg</dd:property>
-  <dd:provide partnerLink="pyyntoAndProsessiForPortTypeProcessPlkVar">
-    <dd:service name="this:PyyntoAndProsessiForPortTypeProcessPlkService" port="Prosessi_for_PyyntoPort"></dd:service>
-  </dd:provide>
   <dd:invoke partnerLink="servicesAndProsessiForUsersAndGroupsServicePortPlkVar">
     <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
   </dd:invoke>
-  <dd:invoke partnerLink="servicesAndProsessiForKokuTietopyyntoProcessingServicePortPlkVar">
-    <dd:service name="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingService" port="KokuTietopyyntoProcessingServicePort"></dd:service>
-  </dd:invoke>
+  <dd:provide partnerLink="pyyntoAndProsessiForPortTypeProcessPlkVar">
+    <dd:service name="this:PyyntoAndProsessiForPortTypeProcessPlkService" port="Prosessi_for_PyyntoPort"></dd:service>
+  </dd:provide>
   <dd:provide partnerLink="wFmagic_N3TpQPVcEeCgsf-1346ddAPlkVar">
     <dd:service name="this:WFmagic_N3TpQPVcEeCgsf-1346ddAService" port="Prosessi_for_VastausForThePortTypeProcessPort"></dd:service>
   </dd:provide>
   <dd:invoke partnerLink="wFmagic_N3TpQPVcEeCgsf-1346ddAPlkVar">
     <dd:service name="Tiva_Tietopyynto_Response_Form:WorkflowSoapService" port="Tiva_Tietopyynto_Response_FormPort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="servicesAndProsessiForKokuTietopyyntoProcessingServicePortPlkVar">
+    <dd:service name="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingService" port="KokuTietopyyntoProcessingServicePort"></dd:service>
+  </dd:invoke>
+  <dd:invoke partnerLink="servicesAndProsessiForKokuNotificationServicePortPlkVar">
+    <dd:service name="KokuNotificationServiceImpl:KokuNotificationService" port="KokuNotificationServicePort"></dd:service>
   </dd:invoke>
 </dd:process></dd:deploy>
