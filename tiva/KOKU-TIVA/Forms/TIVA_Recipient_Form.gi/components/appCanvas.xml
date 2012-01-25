@@ -134,7 +134,7 @@
       </object>
     </object>
     <object type="com.intalio.ria.Section">
-      <variants jsxwidth="600"/>
+      <variants jsxwidth="570"/>
       <strings riaTitleText="Suostumus" jsxname="Suostumus" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="3" jsxrelativeposition="1"/>
@@ -154,23 +154,23 @@
         </object>
       </object>
       <object type="jsx3.gui.Block">
-        <variants jsxheight="0" jsxwidth="720" jsxoverflow="2"/>
-        <strings jsxname="suostumukset_block"/>
+        <variants jsxheight="0" jsxwidth="570" jsxoverflow="2"/>
+        <strings jsxname="suostumukset_block" jsxpadding="0 0 0 11"/>
         <dynamics jsxborder="@No jsxborder"/>
       </object>
       <object type="jsx3.gui.Block">
-        <variants jsxheight="40" jsxwidth="720" jsxoverflow="2"/>
-        <strings jsxname="block" jsxrelativeposition="1"/>
+        <variants jsxheight="40" jsxwidth="570" jsxoverflow="2"/>
+        <strings jsxname="block" jsxrelativeposition="1" jsxpadding="0 0 0 10"/>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="2"/>
           <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
           <dynamics jsxborder="@No jsxborder"/>
           <object type="jsx3.gui.LayoutGrid">
             <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="1"/>
-            <strings jsxcols="5%,*" jsxheight="100%" jsxwidth="100%" jsxdisplay="" jsxname="layout ( | )"/>
+            <strings jsxcols="6%,*" jsxheight="100%" jsxwidth="100%" jsxdisplay="" jsxname="layout ( | )"/>
             <object type="jsx3.gui.Block">
               <variants jsxoverflow="2"/>
-              <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
+              <strings jsxheight="100%" jsxwidth="100%" jsxname="pane" jsxpadding="0" jsxmargin="0"/>
               <dynamics jsxborder="@No jsxborder"/>
               <object type="com.intalio.ria.Field">
                 <variants/>
@@ -184,7 +184,7 @@
             </object>
             <object type="jsx3.gui.Block">
               <variants jsxoverflow="2"/>
-              <strings jsxheight="100%" jsxwidth="100%" jsxpadding="6px" jsxname="pane"/>
+              <strings jsxheight="100%" jsxwidth="100%" jsxpadding="6" jsxname="pane" jsxmargin="0"/>
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="3" jsxrelativeposition="1"/>

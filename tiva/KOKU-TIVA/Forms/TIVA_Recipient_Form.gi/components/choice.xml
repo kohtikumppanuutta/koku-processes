@@ -5,7 +5,7 @@
   <onBeforeDeserialize/>
   <onAfterDeserialize/>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="2" jsxwidth="680" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+    <variants jsxoverflow="2" jsxwidth="570" jsxheight="30" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
     <strings jsxname="choicePane" jsxdisplay="" jsxvisibility=""/>
     <dynamics jsxborder="@No jsxborder"/>
     <object type="jsx3.gui.LayoutGrid">
@@ -13,7 +13,7 @@
       <strings jsxname="layout ( | )" jsxcols="5%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
-        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0 -2 0 0" jsxdisplay="" jsxvisibility="" jsxmargin=""/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="0" jsxdisplay="" jsxvisibility="" jsxmargin="0"/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="com.intalio.ria.Field">
           <variants/>

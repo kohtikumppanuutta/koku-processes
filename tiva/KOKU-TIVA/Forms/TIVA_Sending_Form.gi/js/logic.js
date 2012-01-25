@@ -87,6 +87,59 @@ function removeChoice(node, id) {
     TIVAForm.getJSXByName("block").setHeight(TIVAForm.getJSXByName("block").getHeight() - 30, true).repaint();
 }
 
+function getData(nodeIterator) {
+	var attributes = [], i = 0, nodes, node;
+
+	while(nodeIterator.hasNext()) {
+		node = nodeIterator.next();
+		attributes[i] = [];
+		childNode = node.getFirstChild();
+		while(childNode) {
+			attributes[i][childNode.getNodeName()] = childNode.getValue();
+			childNode = childNode.getNextSibling();
+		}
+		i++;
+	}
+
+	return attributes;
+}
+
+function getDataString(nodeIterator) {
+	var attributes = [], i = 0, nodes, node, childNode, nodeName, depth = 0;
+
+	while(nodeIterator.hasNext()) {
+		node = nodeIterator.next();
+		attributes[i] = [];
+		childNode = node.getFirstChild();
+		while(childNode) {
+			if(childNode.getFirstChild()) {
+				childNode = childNode.getFirstChild();
+				depth++;
+			}
+			nodeName = childNode.getNodeName();
+			if(depth > 0) {
+				nodeName = childNode.getParent().getNodeName() + "_" + nodeName;
+			}
+
+			if(attributes[i][nodeName]) {
+				attributes[i][nodeName] += ",";
+			} else {
+				attributes[i][nodeName] = "";
+			}
+			attributes[i][nodeName] += childNode.getValue();
+
+			while(!childNode.getNextSibling() && depth > 0) {
+				childNode = childNode.getParent();
+				depth--;
+			}
+			childNode = childNode.getNextSibling();
+		}
+		i++;
+	}
+
+	return attributes;
+}
+
 // Inserting a template --------------------------------------------------------------------------------------------------------------------------
 
 function addChoice(id, description, infotext, prefill) {
@@ -296,66 +349,54 @@ function searchNames(searchString) {
 
     searchString = searchString.toLowerCase();
 
-    xmlData = Arcusys.Internal.Communication.GetChildren(searchString);
-    list = ["firstname", "lastname", "uid"];
-    userData = parseXML(xmlData, "child", list);
-    if (userData != "") {
-        entryFound = true;
-    }
+    childData = Arcusys.Internal.Communication.GetChildren(searchString);
+	status = childData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
-    if (entryFound) {
-        clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
-        hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
+	if(status == "error") {
+		error = childData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+		if(error.search("Creation of the user by UID '' - should be used for test purposes only") != -1) {
+			alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
+		} else {
+			alert("Vastaanottajan hakemisessa tapahtui virhe! Virheviesti: " + error);
+		}
+	} else {
 
-        parentsNodes = xmlData.selectNodes("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
-        
-        parentList = ["firstname", "lastname", "uid"];
-        parentData = [];
-        parentInfo = [];
-        parents = [];
+		if(childData.selectSingleNode("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
+			entryFound = true;
+		}
 
-        i = 0;
-        while (parentsNodes.get(i)) {
-            parents[i] = parentsNodes.get(i);
-            parentList = ["firstname", "lastname", "uid"];
-            parentData = parseXML(parents[i], "parents", parentList);
-            parentInfo[i] = parentData[i].split(',');
-            i++;
-        }
-        
-        vanhempi = "";
-        vanhempiUid = "";
-        
-        for (i = 0; i < parentInfo.length; i++) {
-            if (i != 0) {
-                vanhempi += ", ";
-                vanhempiUid += ",";
-            }
-            vanhempi += parentInfo[i][0] + " " + parentInfo[i][1];
-            vanhempiUid += parentInfo[i][2];
-        }
+		if(entryFound) {
 
-        personInfo = userData[0].split(',');
+			clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
+			hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
+			nodeIterator = childData.selectNodes("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+			childArray = getDataString(nodeIterator);
 
-        node = TIVAForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
+			for( i = 0; i < childArray.length; i++) {
+				if(childArray[i]["parents_uid"]) {
+					node = TIVAForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
+					node.setAttribute("jsxid", 0);
+					node.setAttribute("etunimi", childArray[i]["firstname"]);
+					node.setAttribute("sukunimi", childArray[i]["lastname"]);
+					node.setAttribute("uid", childArray[i]["uid"]);
+					node.setAttribute("vanhempi", childArray[i]["parents_displayName"]);
+					node.setAttribute("vanhempiUid", childArray[i]["parents_uid"]);
+					TIVAForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
+				}
+			}
 
-        node.setAttribute("jsxid", 0);
-        node.setAttribute("etunimi", personInfo[0]);
-        node.setAttribute("sukunimi", personInfo[1]);
-        node.setAttribute("uid", personInfo[2]);
-        node.setAttribute("vanhempi", vanhempi);
-        node.setAttribute("vanhempiUid", vanhempiUid);
+			TIVAForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
 
-        TIVAForm.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
+			if(hasEmptyChild == true) {
+				TIVAForm.getCache().getDocument("HaetutLapset-nomap").removeChild(TIVAForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
+			}
 
-        if (hasEmptyChild == true) {
-            TIVAForm.getCache().getDocument("HaetutLapset-nomap").removeChild(TIVAForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
-        }
-    } else {
-        alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
-    }
+			TIVAForm.getJSXByName("searchChildMatrix").repaintData();
 
-    TIVAForm.getJSXByName("searchChildMatrix").repaintData();
+		} else {
+			alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
+		}
+	}
 }
 
 function addToRecipients(selection) {
@@ -606,18 +647,19 @@ function getDomainName() {
 }
 
 function getUrl() {
-    
-    var domain = getDomainName();
-    //domain = "http://62.61.65.15:8380"
-    return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
+	var domain = getDomainName();
+	if(domain.search("file") != -1) {
+		domain = "http://62.61.65.15:8380"
+	}
+	return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
 }
 
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }

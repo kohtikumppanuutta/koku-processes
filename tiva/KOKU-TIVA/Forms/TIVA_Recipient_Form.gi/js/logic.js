@@ -52,7 +52,7 @@ function confirmation(question){
 
 function cancelConsent(check) {
     if (check) {
-        if (TIVAForm.getJSXByName("Suostumus_Status").getValue() == "Vastattu") {
+        if (TIVAForm.getJSXByName("Suostumus_Status").getValue() != "Vastattu") {
             uncheckAll(TIVAForm.getJSXByName("suostumukset_block"));
         }
     }
@@ -83,7 +83,7 @@ function uncheckAll(target) {
     var i, descendants;
     descendants = target.getDescendantsOfType("jsx3.gui.CheckBox");
     for (i = 0; i < descendants.length; i++) {
-        descendants[i].setChecked(0);
+        descendants[i].setChecked(0, true);
     }
 }
 
@@ -220,6 +220,7 @@ function preload() {
 
 function mapFormDataToFields(objXML) {
     var i, pohjaId, otsikko, saateteksti, laatija, actionReplies, vastattu, attributes, vastaanottaja, maaraaika, maaraaika1, maaraaika2, maaraaika3, aikaraja, aikaraja1, aikaraja2, aikaraja3, kommentti, targetPersonUid;
+    var vastattu, vakioMaaraaika;
     // Get basic information from xml document
 
     pohjaId = objXML.selectSingleNode("//suostumuspohjaId", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -232,10 +233,14 @@ function mapFormDataToFields(objXML) {
 
     if (objXML.selectSingleNode("//alreadyReplied", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
         vastattu = objXML.selectSingleNode("//alreadyReplied", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    } else {
+        vastattu = 0;
     }
     attributes = getAttributes(objXML);
     if (objXML.selectSingleNode("//endDateMandatory", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
         vakioMaaraaika = objXML.selectSingleNode("//endDateMandatory", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    } else {
+        vakioMaaraika = 0;
     }
 
     if (objXML.selectSingleNode("//maaraaika", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
@@ -276,10 +281,12 @@ function mapFormDataToFields(objXML) {
     if (vakioMaaraaika == "true") {
         TIVAForm.getJSXByName("Suostumus_Maara_Aika").setEnabled(0, true);
     }
+
     if (vastattu == "true") {
         TIVAForm.getJSXByName("Suostumus_Status").setValue("Vastattu");
         disableAll(TIVAForm.getJSXByName("suostumukset_block"));
     }
+
     TIVAForm.getJSXByName("Pohja_PohjaId").setValue(pohjaId);
     TIVAForm.getJSXByName("Suostumus").setTitleText(otsikko, true);
     TIVAForm.getJSXByName("Suostumus_Kuvaus").setText(saateteksti, true);
@@ -445,8 +452,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }
