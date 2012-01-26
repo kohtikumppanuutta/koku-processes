@@ -361,7 +361,7 @@ function searchNames(searchString) {
 		}
 	} else {
 
-		if(childData.selectSingleNode("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
+		if(childData.selectSingleNode("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")  && childData.selectSingleNode("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
 			entryFound = true;
 		}
 
@@ -658,8 +658,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    //endpoint = "http://trelx51lb:8080";
-    endpoint = "http://localhost:8180";
+    endpoint = "http://trelx51lb:8080";
+    //endpoint = "http://localhost:8180";
     
     return endpoint;
 }

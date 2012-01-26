@@ -452,8 +452,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    //endpoint = "http://trelx51lb:8080";
-    endpoint = "http://localhost:8180";
+    endpoint = "http://trelx51lb:8080";
+    //endpoint = "http://localhost:8180";
     
     return endpoint;
 }
