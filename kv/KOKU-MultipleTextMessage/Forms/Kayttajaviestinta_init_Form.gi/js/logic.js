@@ -433,7 +433,7 @@ function searchNames(searchString) {
 		}
 	} else {
 
-		if(childData.selectSingleNode("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
+		if(childData.selectSingleNode("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'") && childData.selectSingleNode("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
 			entryFound = true;
 		}
 
