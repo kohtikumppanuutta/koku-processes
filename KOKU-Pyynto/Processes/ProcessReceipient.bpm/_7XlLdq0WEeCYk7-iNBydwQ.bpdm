@@ -1,0 +1,36 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:this="http://thisdiagram/Interface" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attachments="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:Process="http://thisdiagram/Process" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Interface">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Interface" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/DynamicFields" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///DynamicFields.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Copyofform1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Process" bpdm:prefix="Process" bpdm:comment="contrib=&apos;partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi" bpdm:prefix="Copyofform1_1" bpdm:comment="contrib=&apos;project:///Copyofform1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Copyofform1_1.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///DynamicFields.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ" bpdm:label="Process"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Interface" bpdm:ID="_7XlLdq0WEeCYk7-iNBydwQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="processAndInterfacePlkVar" partnerLinkType="diag:ProcessAndInterface" initializePartnerRole="yes" partnerRole="Process_for_Interface" bpdm:invokedService="Process:CanonicServiceForInterface" bpdm:invokedPort="canonicPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/Interface" bpdm:invokedIsDefault="true" bpdm:clientTasks="_7XlLdq0WEeCYk7-iNBydwQ:_Fe29cK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_EPBGMK0XEeCYk7-iNBydwQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="processVastaanotaRequestMsg" messageType="Process:VastaanotaRequest" bpdm:id="_KjvMkK0XEeCYk7-iNBydwQ" bpdm:messageIds=" out:_KjnQwK0XEeCYk7-iNBydwQ">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="Process:VastaanotaRequest" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="processVastaanotaResponseMsg" messageType="Process:VastaanotaResponse" bpdm:id="_dx64ta0XEeCYk7-iNBydwQ" bpdm:messageIds="inc:_dxroIK0XEeCYk7-iNBydwQ"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="Vastaanota" partnerLink="processAndInterfacePlkVar" portType="Process:ForInterface" isMyRole="false" enableSharing="false" bpdm:label="Vastaanota kutsu" bpdm:ID="_Fe29cK0XEeCYk7-iNBydwQ">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="processVastaanotaRequestMsg" bpdm:msgVarScopeId="_7XlLdq0WEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Process:VastaanotaRequest" bpdm:ID="_KjnQwK0XEeCYk7-iNBydwQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="processVastaanotaResponseMsg" bpdm:msgVarScopeId="_7XlLdq0WEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Process:VastaanotaResponse" bpdm:ID="_dxroIK0XEeCYk7-iNBydwQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

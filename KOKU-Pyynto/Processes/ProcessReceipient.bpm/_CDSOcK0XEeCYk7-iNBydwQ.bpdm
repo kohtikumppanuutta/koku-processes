@@ -1,0 +1,46 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:this="http://thisdiagram/User" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attachments="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:Process="http://thisdiagram/Process" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/User">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/DynamicFields" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///DynamicFields.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/User" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Copyofform1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Process" bpdm:prefix="Process" bpdm:comment="contrib=&apos;partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi" bpdm:prefix="Copyofform1_1" bpdm:comment="contrib=&apos;project:///Copyofform1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Copyofform1_1.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///DynamicFields.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_EPBGMK0XEeCYk7-iNBydwQ" bpdm:label="Process"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="User" bpdm:ID="_CDSOcK0XEeCYk7-iNBydwQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="wFmagic_hzHqQARsEeGvy6Wfe0A60wPlkVar" partnerLinkType="diag:WFmagic_hzHqQARsEeGvy6Wfe0A60w" initializePartnerRole="no" myRole="User_for_ProcessForCopyofform1_1Port" bpdm:enableSharing="false" bpdm:providedService="Copyofform1_1:WorkflowSoapService" bpdm:providedPort="Copyofform1_1Port" bpdm:provideSOAPAddress="http://trelx28b:8080/fds/workflow/Copyofform1_1" bpdm:providedIsDefault="true" partnerRole="Process_for_UserForThePortTypeProcess" bpdm:invokedService="Process:WFmagic_hzHqQARsEeGvy6Wfe0A60wService" bpdm:invokedPort="Process_for_UserForThePortTypeProcessPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/WFmagic_hzHqQARsEeGvy6Wfe0A60w" bpdm:invokedIsDefault="true" bpdm:clientTasks="_CDSOcK0XEeCYk7-iNBydwQ:_hzHqQARsEeGvy6Wfe0A60w, _CDSOcK0XEeCYk7-iNBydwQ:_hzJfcwRsEeGvy6Wfe0A60w" bpdm:isManaged="true" bpdm:otherPoolId="_EPBGMK0XEeCYk7-iNBydwQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="copyofform1_1CreateTaskRequestMsg" messageType="Copyofform1_1:createTaskRequest" binding="Copyofform1_1:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_iT2_0ARsEeGvy6Wfe0A60w" bpdm:messageIds="inc:_iTa68ARsEeGvy6Wfe0A60w"/>
+            <bpel:variable name="copyofform1_1CreateTaskResponseMsg" messageType="Copyofform1_1:createTaskResponse" binding="Copyofform1_1:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_inWjkARsEeGvy6Wfe0A60w" bpdm:messageIds=" out:_inFd0ARsEeGvy6Wfe0A60w">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Copyofform1_1:createTaskResponse" bpdm:linkedPart="root" bpdm:binding="Copyofform1_1:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="copyofform1_1NotifyTaskCompletionRequestMsg" messageType="Copyofform1_1:notifyTaskCompletionRequest" bpdm:id="_jDH5kARsEeGvy6Wfe0A60w" bpdm:messageIds=" out:_jCzJcARsEeGvy6Wfe0A60w">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Copyofform1_1:notifyTaskCompletionRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="copyofform1_1NotifyTaskCompletionResponseMsg" messageType="Copyofform1_1:notifyTaskCompletionResponse" bpdm:id="_jVnXwARsEeGvy6Wfe0A60w" bpdm:messageIds="inc:_jVHogARsEeGvy6Wfe0A60w"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_hzHqQARsEeGvy6Wfe0A60wPlkVar" portType="Copyofform1_1:Workflow" isMyRole="true" enableSharing="false" bpdm:label="Copyofform1_1-create" bpdm:ID="_hzHqQARsEeGvy6Wfe0A60w">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="copyofform1_1CreateTaskRequestMsg" bpdm:msgVarScopeId="_CDSOcK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:createTaskRequest" bpdm:binding="Copyofform1_1:WorkflowSoapBinding" bpdm:ID="_iTa68ARsEeGvy6Wfe0A60w"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="copyofform1_1CreateTaskResponseMsg" bpdm:msgVarScopeId="_CDSOcK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:createTaskResponse" bpdm:binding="Copyofform1_1:WorkflowSoapBinding" bpdm:ID="_inFd0ARsEeGvy6Wfe0A60w"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_hzHqQARsEeGvy6Wfe0A60wPlkVar" portType="Copyofform1_1:Process" isMyRole="false" enableSharing="false" bpdm:label="Copyofform1_1-complete" bpdm:ID="_hzJfcwRsEeGvy6Wfe0A60w">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="copyofform1_1NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_CDSOcK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:notifyTaskCompletionRequest" bpdm:ID="_jCzJcARsEeGvy6Wfe0A60w"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="copyofform1_1NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_CDSOcK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:notifyTaskCompletionResponse" bpdm:ID="_jVHogARsEeGvy6Wfe0A60w"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

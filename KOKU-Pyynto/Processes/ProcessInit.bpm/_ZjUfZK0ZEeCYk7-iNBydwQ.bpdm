@@ -1,0 +1,38 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:form1_1="http://www.intalio.com/gi/form1_1.gi" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:form1_11="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" xmlns:this="http://thisdiagram/User" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attachments="http://www.intalio.com/gi/form1_1.gi/attachments" xmlns:form1_12="http://www.intalio.com/gi/Forms/form1_1.gi" xmlns:Process="http://thisdiagram/Process" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/User">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/form1_1.gi" bpdm:prefix="form1_1" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/DynamicFields" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///DynamicFields.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" bpdm:prefix="form1_11" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/User" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/form1_1.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/form1_1.gi" bpdm:prefix="form1_12" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Process" bpdm:prefix="Process" bpdm:comment="contrib=&apos;partner-pool:///_e3wNcK0ZEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_e3wNcK0ZEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///form1_1.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///DynamicFields.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_e3wNcK0ZEeCYk7-iNBydwQ" bpdm:label="Process"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="User" bpdm:ID="_ZjUfZK0ZEeCYk7-iNBydwQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="processAndUserForPortTypeProcessPlkVar" partnerLinkType="diag:ProcessAndUserForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="Process_for_User" bpdm:invokedService="Process:ProcessAndUserForPortTypeProcessPlkService" bpdm:invokedPort="Process_for_UserPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/ProcessAndUserForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_ZjUfZK0ZEeCYk7-iNBydwQ:_dAlZAPP9EeC37vdtVMGnEw" bpdm:isManaged="true" bpdm:otherPoolId="_e3wNcK0ZEeCYk7-iNBydwQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="form1_1InitProcessRequestMsg" messageType="form1_1:initProcessRequest" bpdm:id="_dYsXAPP9EeC37vdtVMGnEw" bpdm:messageIds=" out:_dYgw0PP9EeC37vdtVMGnEw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form1_1:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="form1_1InitProcessResponseMsg" messageType="form1_1:initProcessResponse" bpdm:id="_dnvfpfP9EeC37vdtVMGnEw" bpdm:messageIds="inc:_dnUB0PP9EeC37vdtVMGnEw"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="processAndUserForPortTypeProcessPlkVar" portType="form1_1:Process" isMyRole="false" enableSharing="false" bpdm:label="Lähetä hakemus" bpdm:ID="_dAlZAPP9EeC37vdtVMGnEw">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="form1_1InitProcessRequestMsg" bpdm:msgVarScopeId="_ZjUfZK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="form1_1:initProcessRequest" bpdm:ID="_dYgw0PP9EeC37vdtVMGnEw"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="form1_1InitProcessResponseMsg" bpdm:msgVarScopeId="_ZjUfZK0ZEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="form1_1:initProcessResponse" bpdm:ID="_dnUB0PP9EeC37vdtVMGnEw"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

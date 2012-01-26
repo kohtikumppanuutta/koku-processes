@@ -1,0 +1,518 @@
+<wsdl:definitions name="KokuRequestProcessingService" targetNamespace="http://soa.kv.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://soa.kv.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="createRequestTemplate" type="tns:createRequestTemplate" />
+<xs:element name="createRequestTemplateResponse" type="tns:createRequestTemplateResponse" />
+<xs:element name="getRequestTemplateById" type="tns:getRequestTemplateById" />
+<xs:element name="getRequestTemplateByIdResponse" type="tns:getRequestTemplateByIdResponse" />
+<xs:element name="getRequestTemplateSummary" type="tns:getRequestTemplateSummary" />
+<xs:element name="getRequestTemplateSummaryResponse" type="tns:getRequestTemplateSummaryResponse" />
+<xs:element name="isRequestTemplateExist" type="tns:isRequestTemplateExist" />
+<xs:element name="isRequestTemplateExistResponse" type="tns:isRequestTemplateExistResponse" />
+<xs:element name="receiveRequest" type="tns:receiveRequest" />
+<xs:element name="receiveRequestResponse" type="tns:receiveRequestResponse" />
+<xs:element name="replyToRequest" type="tns:replyToRequest" />
+<xs:element name="replyToRequestResponse" type="tns:replyToRequestResponse" />
+<xs:element name="sendRequest" type="tns:sendRequest" />
+<xs:element name="sendRequestNew" type="tns:sendRequestNew" />
+<xs:element name="sendRequestNewResponse" type="tns:sendRequestNewResponse" />
+<xs:element name="sendRequestResponse" type="tns:sendRequestResponse" />
+<xs:element name="sendRequestWithTemplate" type="tns:sendRequestWithTemplate" />
+<xs:element name="sendRequestWithTemplateNew" type="tns:sendRequestWithTemplateNew" />
+<xs:element name="sendRequestWithTemplateNewResponse" type="tns:sendRequestWithTemplateNewResponse" />
+<xs:element name="sendRequestWithTemplateResponse" type="tns:sendRequestWithTemplateResponse" />
+<xs:element name="updateRequestTemplate" type="tns:updateRequestTemplate" />
+<xs:element name="updateRequestTemplateResponse" type="tns:updateRequestTemplateResponse" />
+<xs:complexType name="receiveRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="toUser" type="xs:string" />
+<xs:element minOccurs="0" name="requestId" type="xs:long" />
+<xs:element minOccurs="0" name="content" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="receiveRequestResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:complexType name="sendRequestNew">
+<xs:sequence>
+<xs:element minOccurs="0" name="requestTemplate" type="tns:requestTemplateTO" />
+<xs:element minOccurs="0" name="request" type="tns:requestProcessing" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="requestTemplateTO">
+<xs:complexContent>
+<xs:extension base="tns:requestTemplateSummary">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="choices" nillable="true" type="tns:multipleChoice" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="questions" nillable="true" type="tns:question" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="requestTemplateSummary">
+<xs:sequence>
+<xs:element minOccurs="0" name="creatorUid" type="xs:string" />
+<xs:element minOccurs="0" name="requestTemplateId" type="xs:long" />
+<xs:element minOccurs="0" name="subject" type="xs:string" />
+<xs:element minOccurs="0" name="visibility" type="tns:requestTemplateVisibility" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="multipleChoice">
+<xs:sequence>
+<xs:element minOccurs="0" name="description" type="xs:string" />
+<xs:element name="number" type="xs:int" />
+<xs:element name="questionNumber" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="question">
+<xs:sequence>
+<xs:element minOccurs="0" name="description" type="xs:string" />
+<xs:element name="number" type="xs:int" />
+<xs:element minOccurs="0" name="type" type="tns:questionType" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="requestProcessing">
+<xs:sequence>
+<xs:element minOccurs="0" name="content" type="xs:string" />
+<xs:element minOccurs="0" name="fromRole" type="xs:string" />
+<xs:element minOccurs="0" name="fromUserUid" type="xs:string" />
+<xs:element minOccurs="0" name="notifyBeforeDays" type="xs:int" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="receipients" nillable="true" type="xs:string" />
+<xs:element minOccurs="0" name="replyTill" type="xs:date" />
+<xs:element minOccurs="0" name="subject" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sendRequestNewResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="requestId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sendRequestWithTemplate">
+<xs:sequence>
+<xs:element minOccurs="0" name="fromUser" type="xs:string" />
+<xs:element name="requestTemplateId" type="xs:long" />
+<xs:element minOccurs="0" name="subject" type="xs:string" />
+<xs:element minOccurs="0" name="receipients" type="tns:receipients" />
+<xs:element minOccurs="0" name="requestContent" type="xs:string" />
+<xs:element minOccurs="0" name="replyTill" type="xs:anySimpleType" />
+<xs:element minOccurs="0" name="notifyBeforeDays" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="receipients">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="receipient" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sendRequestWithTemplateResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateRequestTemplate">
+<xs:sequence>
+<xs:element minOccurs="0" name="creator" type="xs:string" />
+<xs:element minOccurs="0" name="subject" type="xs:string" />
+<xs:element minOccurs="0" name="questions" type="tns:questions" />
+<xs:element minOccurs="0" name="choices" type="tns:multipleChoices" />
+<xs:element minOccurs="0" name="visibility" type="tns:requestTemplateVisibility" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="questions">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="question" type="tns:question" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="multipleChoices">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="choice" type="tns:multipleChoice" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateRequestTemplateResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:complexType name="sendRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="fromUser" type="xs:string" />
+<xs:element minOccurs="0" name="subject" type="xs:string" />
+<xs:element minOccurs="0" name="receipients" type="tns:receipients" />
+<xs:element minOccurs="0" name="questions" type="tns:questions" />
+<xs:element minOccurs="0" name="choices" type="tns:multipleChoices" />
+<xs:element minOccurs="0" name="visibility" type="tns:requestTemplateVisibility" />
+<xs:element minOccurs="0" name="requestContent" type="xs:string" />
+<xs:element minOccurs="0" name="replyTill" type="xs:anySimpleType" />
+<xs:element minOccurs="0" name="notifyBeforeDays" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sendRequestResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="requestId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="isRequestTemplateExist">
+<xs:sequence>
+<xs:element minOccurs="0" name="creator" type="xs:string" />
+<xs:element minOccurs="0" name="subject" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="isRequestTemplateExistResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:requestTemplateExistenceStatus" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRequestTemplateById">
+<xs:sequence>
+<xs:element name="requestTemplateId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRequestTemplateByIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:requestTemplateTO" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sendRequestWithTemplateNew">
+<xs:sequence>
+<xs:element name="requestTemplateId" type="xs:long" />
+<xs:element minOccurs="0" name="request" type="tns:requestProcessing" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sendRequestWithTemplateNewResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="requestId" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="replyToRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string" />
+<xs:element minOccurs="0" name="requestId" type="xs:long" />
+<xs:element minOccurs="0" name="answers" type="tns:answers" />
+<xs:element minOccurs="0" name="comment" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="answers">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="answer" type="tns:answer" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="answer">
+<xs:sequence>
+<xs:element minOccurs="0" name="comment" type="xs:string" />
+<xs:element name="questionNumber" type="xs:int" />
+<xs:element minOccurs="0" name="textValue" type="xs:string" />
+<xs:element minOccurs="0" name="yesNoValue" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="replyToRequestResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:complexType name="getRequestTemplateSummary">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string" />
+<xs:element minOccurs="0" name="subjectPrefix" type="xs:string" />
+<xs:element name="limit" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRequestTemplateSummaryResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:requestTemplateSummary" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="createRequestTemplate">
+<xs:sequence>
+<xs:element minOccurs="0" name="creator" type="xs:string" />
+<xs:element minOccurs="0" name="subject" type="xs:string" />
+<xs:element minOccurs="0" name="questions" type="tns:questions" />
+<xs:element minOccurs="0" name="choices" type="tns:multipleChoices" />
+<xs:element minOccurs="0" name="visibility" type="tns:requestTemplateVisibility" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="createRequestTemplateResponse">
+<xs:sequence />
+</xs:complexType>
+<xs:simpleType name="questionType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="YES_NO" />
+<xs:enumeration value="FREE_TEXT" />
+<xs:enumeration value="MULTIPLE_CHOICE" />
+<xs:enumeration value="CALENDAR" />
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="requestTemplateVisibility">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Creator" />
+<xs:enumeration value="Organization" />
+<xs:enumeration value="All" />
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="requestTemplateExistenceStatus">
+<xs:restriction base="xs:string">
+<xs:enumeration value="NotExists" />
+<xs:enumeration value="ExistsNotActive" />
+<xs:enumeration value="ExistsActive" />
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getRequestTemplateByIdResponse">
+    <wsdl:part element="tns:getRequestTemplateByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveRequest">
+    <wsdl:part element="tns:receiveRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createRequestTemplate">
+    <wsdl:part element="tns:createRequestTemplate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequest">
+    <wsdl:part element="tns:sendRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRequestTemplateSummaryResponse">
+    <wsdl:part element="tns:getRequestTemplateSummaryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestWithTemplateNew">
+    <wsdl:part element="tns:sendRequestWithTemplateNew" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestWithTemplate">
+    <wsdl:part element="tns:sendRequestWithTemplate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isRequestTemplateExist">
+    <wsdl:part element="tns:isRequestTemplateExist" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isRequestTemplateExistResponse">
+    <wsdl:part element="tns:isRequestTemplateExistResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRequestTemplate">
+    <wsdl:part element="tns:updateRequestTemplate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createRequestTemplateResponse">
+    <wsdl:part element="tns:createRequestTemplateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRequestTemplateSummary">
+    <wsdl:part element="tns:getRequestTemplateSummary" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestNew">
+    <wsdl:part element="tns:sendRequestNew" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRequestTemplateResponse">
+    <wsdl:part element="tns:updateRequestTemplateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestWithTemplateResponse">
+    <wsdl:part element="tns:sendRequestWithTemplateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="replyToRequest">
+    <wsdl:part element="tns:replyToRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRequestTemplateById">
+    <wsdl:part element="tns:getRequestTemplateById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="replyToRequestResponse">
+    <wsdl:part element="tns:replyToRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestWithTemplateNewResponse">
+    <wsdl:part element="tns:sendRequestWithTemplateNewResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestResponse">
+    <wsdl:part element="tns:sendRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendRequestNewResponse">
+    <wsdl:part element="tns:sendRequestNewResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveRequestResponse">
+    <wsdl:part element="tns:receiveRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="KokuRequestProcessingService">
+    <wsdl:operation name="receiveRequest">
+      <wsdl:input message="tns:receiveRequest" name="receiveRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveRequestResponse" name="receiveRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestNew">
+      <wsdl:input message="tns:sendRequestNew" name="sendRequestNew">
+    </wsdl:input>
+      <wsdl:output message="tns:sendRequestNewResponse" name="sendRequestNewResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestWithTemplate">
+      <wsdl:input message="tns:sendRequestWithTemplate" name="sendRequestWithTemplate">
+    </wsdl:input>
+      <wsdl:output message="tns:sendRequestWithTemplateResponse" name="sendRequestWithTemplateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRequestTemplate">
+      <wsdl:input message="tns:updateRequestTemplate" name="updateRequestTemplate">
+    </wsdl:input>
+      <wsdl:output message="tns:updateRequestTemplateResponse" name="updateRequestTemplateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequest">
+      <wsdl:input message="tns:sendRequest" name="sendRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:sendRequestResponse" name="sendRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isRequestTemplateExist">
+      <wsdl:input message="tns:isRequestTemplateExist" name="isRequestTemplateExist">
+    </wsdl:input>
+      <wsdl:output message="tns:isRequestTemplateExistResponse" name="isRequestTemplateExistResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestTemplateById">
+      <wsdl:input message="tns:getRequestTemplateById" name="getRequestTemplateById">
+    </wsdl:input>
+      <wsdl:output message="tns:getRequestTemplateByIdResponse" name="getRequestTemplateByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestWithTemplateNew">
+      <wsdl:input message="tns:sendRequestWithTemplateNew" name="sendRequestWithTemplateNew">
+    </wsdl:input>
+      <wsdl:output message="tns:sendRequestWithTemplateNewResponse" name="sendRequestWithTemplateNewResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="replyToRequest">
+      <wsdl:input message="tns:replyToRequest" name="replyToRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:replyToRequestResponse" name="replyToRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestTemplateSummary">
+      <wsdl:input message="tns:getRequestTemplateSummary" name="getRequestTemplateSummary">
+    </wsdl:input>
+      <wsdl:output message="tns:getRequestTemplateSummaryResponse" name="getRequestTemplateSummaryResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRequestTemplate">
+      <wsdl:input message="tns:createRequestTemplate" name="createRequestTemplate">
+    </wsdl:input>
+      <wsdl:output message="tns:createRequestTemplateResponse" name="createRequestTemplateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KokuRequestProcessingServiceSoapBinding" type="tns:KokuRequestProcessingService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="receiveRequest">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="receiveRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="receiveRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestNew">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendRequestNew">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendRequestNewResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestWithTemplate">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendRequestWithTemplate">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendRequestWithTemplateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRequestTemplate">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateRequestTemplate">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateRequestTemplateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequest">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isRequestTemplateExist">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="isRequestTemplateExist">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="isRequestTemplateExistResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestTemplateById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getRequestTemplateById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRequestTemplateByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestWithTemplateNew">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendRequestWithTemplateNew">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendRequestWithTemplateNewResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="replyToRequest">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="replyToRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="replyToRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestTemplateSummary">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getRequestTemplateSummary">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRequestTemplateSummaryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRequestTemplate">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createRequestTemplate">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createRequestTemplateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KokuRequestProcessingService">
+    <wsdl:port binding="tns:KokuRequestProcessingServiceSoapBinding" name="KokuRequestProcessingServicePort">
+      <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
