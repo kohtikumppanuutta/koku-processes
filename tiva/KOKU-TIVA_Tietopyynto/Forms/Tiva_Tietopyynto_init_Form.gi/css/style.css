@@ -1,3 +1,6 @@
+@media all
+{
+
 /* fieldset */
 fieldset {
   /*margin: 15px 5x;*/
@@ -255,6 +258,19 @@ span.CheckboxLabel{
 
 div.jsx30tabbedpane_controlbox{
     height: 30px !important;
+}
+
+}
+
+@media print
+{
+fieldset {
+  margin: 0 0 25 5;
+  border: 1px solid #da251d;
+  width: 820px;
+  page-break-after: always;
+}
+
 }
 
 

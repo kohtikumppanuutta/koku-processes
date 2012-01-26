@@ -1,3 +1,6 @@
+@media all
+{
+
 /* fieldset */
 fieldset {
   /*margin: 15px 5x;*/
@@ -267,4 +270,16 @@ span[label=IntalioInternal_RevokeButton] {
     display: none !important;
 }
 
+}
+
+@media print
+{
+fieldset {
+  margin: 0 0 25 5;
+  border: 1px solid #da251d;
+  width: 820px;
+  page-break-after: always;
+}
+
+}
 

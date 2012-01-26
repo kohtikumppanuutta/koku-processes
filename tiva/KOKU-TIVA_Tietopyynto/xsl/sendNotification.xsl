@@ -37,10 +37,12 @@
 			<xsl:element name="content">
 				<xsl:choose>
 					<xsl:when test="//fe:Vastaus_Paatos/text() = 'true'">
-						<xsl:text>Tietopyyntö on hyväksytty.</xsl:text>
+						<xsl:text>Tietopyyntö "</xsl:text><xsl:value-of select="//fe:Perustiedot_Otsikko/text()"/><xsl:text>" on hyväksytty käyttäjän </xsl:text>
+						<xsl:value-of select="//fe:Perustiedot_Extend04/text()"/><xsl:text> toimesta.</xsl:text>
 					</xsl:when>
 					<xsl:when test="//fe:Vastaus_Paatos/text() = 'false'">
-						<xsl:text>Tietopyyntö on hylätty.</xsl:text>
+						<xsl:text>Tietopyyntö "</xsl:text><xsl:value-of select="//fe:Perustiedot_Otsikko/text()"/><xsl:text>" on hylätty käyttäjän </xsl:text>
+						<xsl:value-of select="//fe:Perustiedot_Extend04/text()"/><xsl:text> toimesta.</xsl:text>
 					</xsl:when>
 				</xsl:choose>
 			</xsl:element>

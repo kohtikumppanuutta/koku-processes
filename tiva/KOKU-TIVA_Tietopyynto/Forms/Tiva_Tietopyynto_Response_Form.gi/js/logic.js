@@ -1,7 +1,7 @@
 function getEndpoint() {
     
-    var endpoint = "http://localhost:8180";
-    //var endpoint = "http://trelx51lb:8080";
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51lb:8080";
     return endpoint;
     
 }
@@ -47,6 +47,8 @@ function preload() {
     selectActiveTreeNodes();
     var rootnode = TivaTietopyyntoForm.getCache().getDocument("Kategoriat-nomap");
     var selected = new Array;
+    var user = getIntalioUser();
+    TivaTietopyyntoForm.getJSXByName("Perustiedot_Extend04").setValue(user);
 
     traverse(rootnode, selected);
 

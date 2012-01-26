@@ -173,17 +173,7 @@
                         <bpdm:linkset bpdm:type="assignments">
                             <bpel:copy>
                                 <bpel:from>concat("koku/", $usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername)</bpel:from>
-                                <bpel:to>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="800645658" targetPath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1794348101-arg2"></mapper:vertice>
-  <mapper:vertice id="1794348101" dimension="78x24" location="492,120">
-    <mapper:value>concat()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="2018097616" dimension="78x24" location="360,60" targetedBy="1794348101-arg0">
-    <mapper:value>"koku/"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="1429444272" sourcePath="$usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername" targetedBy="1794348101-arg1"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01</bpel:to><mapper:mapperLink><mapper:vertice id="800645658" targetPath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1794348101-arg2"></mapper:vertice><mapper:vertice id="1794348101" dimension="78x24" location="492,120"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="2018097616" dimension="78x24" location="360,60" targetedBy="1794348101-arg0"><mapper:value>"koku/"</mapper:value></mapper:vertice><mapper:vertice id="1429444272" sourcePath="$usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername" targetedBy="1794348101-arg1"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
                     </bpdm:messagingtask>
@@ -255,26 +245,36 @@
                 </bpel:sequence>
             </bpdm:gateway>
             <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_E6xxwOjoEeCIsZBRPARZQg" bpdm:gatewayType="data_xor" bpdm:isMerge="true"></bpdm:gateway>
-            <bpdm:messagingtask eventType="intermediate: message" operation="sendNotification" partnerLink="servicesAndProsessiForKokuNotificationServicePortPlkVar" portType="KokuNotificationServiceImpl:KokuNotificationService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_IS5x0EZ3EeGXwNyjUmVfxA">
-                <bpdm:linkset bpdm:type="assignments">
-                    <bpel:copy>
-                        <bpel:from>bpel:doXslTransform("../xsl/sendNotification.xsl", $Tiva_Tietopyynto_Form)</bpel:from>
-                        <bpel:to>$kokuNotificationServiceImplSendNotificationMsg.parameters</bpel:to>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_d6mJUEfzEeGDqbpIdToGUw" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
+                <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_jYShEEfzEeGDqbpIdToGUw" bpdm:targetDisplayName="default"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_jnokoEfzEeGDqbpIdToGUw" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Lähetä ilmoitus roolin jäsenille vastauksesta]">
+                    <bpel:condition>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend03 != ""
 <mapper:mapperLink>
-  <mapper:vertice id="1046707189" targetPath="$kokuNotificationServiceImplSendNotificationMsg.parameters" targetedBy="1565139319-arg2"></mapper:vertice>
-  <mapper:vertice id="1565139319" dimension="217x37" location="360,120">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
+  <mapper:vertice id="1455470766" targetPath="$condition" targetedBy="325041096-arg2"></mapper:vertice>
+  <mapper:vertice id="325041096" dimension="78x24" location="528,48">
+    <mapper:value>!=</mapper:value>
   </mapper:vertice>
-  <mapper:vertice id="296197217" dimension="217x37" location="264,48" targetedBy="1565139319-arg0">
-    <mapper:value>"../xsl/sendNotification.xsl"</mapper:value>
+  <mapper:vertice id="1966313036" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend03" targetedBy="325041096-arg0"></mapper:vertice>
+  <mapper:vertice id="1517475417" dimension="78x24" location="530,89" targetedBy="325041096-arg1">
+    <mapper:value>""</mapper:value>
   </mapper:vertice>
-  <mapper:vertice id="1983352038" sourcePath="$Tiva_Tietopyynto_Form" targetedBy="1565139319-arg1"></mapper:vertice>
-</mapper:mapperLink>
-                    </bpel:copy>
+</mapper:mapperLink></bpel:condition>
                 </bpdm:linkset>
-                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuNotificationServiceImplSendNotificationMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuNotificationServiceImpl:sendNotification" bpdm:binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" bpdm:ID="_J8dwoEZ3EeGXwNyjUmVfxA"></bpdm:linkset>
-                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuNotificationServiceImplSendNotificationResponseMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuNotificationServiceImpl:sendNotificationResponse" bpdm:binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" bpdm:ID="_KR-toEZ3EeGXwNyjUmVfxA"></bpdm:linkset>
-            </bpdm:messagingtask>
+                <bpel:sequence></bpel:sequence>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="sendNotification" partnerLink="servicesAndProsessiForKokuNotificationServicePortPlkVar" portType="KokuNotificationServiceImpl:KokuNotificationService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä ilmoitus roolin jäsenille vastauksesta" bpdm:ID="_IS5x0EZ3EeGXwNyjUmVfxA">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>bpel:doXslTransform("../xsl/sendNotification.xsl", $Tiva_Tietopyynto_Form)</bpel:from>
+                                <bpel:to>$kokuNotificationServiceImplSendNotificationMsg.parameters</bpel:to><mapper:mapperLink><mapper:vertice id="1046707189" targetPath="$kokuNotificationServiceImplSendNotificationMsg.parameters" targetedBy="1565139319-arg2"></mapper:vertice><mapper:vertice id="1565139319" dimension="217x37" location="360,120"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="296197217" dimension="217x37" location="264,48" targetedBy="1565139319-arg0"><mapper:value>"../xsl/sendNotification.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1983352038" sourcePath="$Tiva_Tietopyynto_Form" targetedBy="1565139319-arg1"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuNotificationServiceImplSendNotificationMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuNotificationServiceImpl:sendNotification" bpdm:binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" bpdm:ID="_J8dwoEZ3EeGXwNyjUmVfxA"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuNotificationServiceImplSendNotificationResponseMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuNotificationServiceImpl:sendNotificationResponse" bpdm:binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" bpdm:ID="_KR-toEZ3EeGXwNyjUmVfxA"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpdm:gateway>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_h_PqgEfzEeGDqbpIdToGUw" bpdm:gatewayType="data_xor" bpdm:isMerge="true"></bpdm:gateway>
             <bpdm:messagingtask eventType="end: empty" bpdm:label="Empty_End_Event" bpdm:ID="_1MkKYNY5EeCSFM5MejvcYQ"></bpdm:messagingtask>
         </bpel:sequence>
     </bpel:scope>
