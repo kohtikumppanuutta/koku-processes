@@ -281,6 +281,11 @@ div.jsx30tabbedpane_controlbox{
 
 @media print
 {
+
+#JSX .jsx30button {
+  display: none !important;
+}
+
 /* fieldset */
 fieldset {
   margin: 0 0 25 5;
