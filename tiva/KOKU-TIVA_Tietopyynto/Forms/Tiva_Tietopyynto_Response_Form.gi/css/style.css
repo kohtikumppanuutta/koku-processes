@@ -274,6 +274,11 @@ span[label=IntalioInternal_RevokeButton] {
 
 @media print
 {
+
+#JSX .jsx30button {
+  display: none !important;
+}
+
 fieldset {
   margin: 0 0 25 5;
   border: 1px solid #da251d;
