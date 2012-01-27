@@ -153,56 +153,56 @@ function formatDataCache(cache, matrix) {
 }
 
 function getData(nodeIterator) {
-	var attributes = [], i = 0, nodes, node;
+    var attributes = [], i = 0, nodes, node;
 
-	while(nodeIterator.hasNext()) {
-		node = nodeIterator.next();
-		attributes[i] = [];
-		childNode = node.getFirstChild();
-		while(childNode) {
-			attributes[i][childNode.getNodeName()] = childNode.getValue();
-			childNode = childNode.getNextSibling();
-		}
-		i++;
-	}
+    while(nodeIterator.hasNext()) {
+        node = nodeIterator.next();
+        attributes[i] = [];
+        childNode = node.getFirstChild();
+        while(childNode) {
+            attributes[i][childNode.getNodeName()] = childNode.getValue();
+            childNode = childNode.getNextSibling();
+        }
+        i++;
+    }
 
-	return attributes;
+    return attributes;
 }
 
 function getDataString(nodeIterator) {
-	var attributes = [], i = 0, nodes, node, childNode, nodeName, depth = 0;
+    var attributes = [], i = 0, nodes, node, childNode, nodeName, depth = 0;
 
-	while(nodeIterator.hasNext()) {
-		node = nodeIterator.next();
-		attributes[i] = [];
-		childNode = node.getFirstChild();
-		while(childNode) {
-			if(childNode.getFirstChild()) {
-				childNode = childNode.getFirstChild();
-				depth++;
-			}
-			nodeName = childNode.getNodeName();
-			if(depth > 0) {
-				nodeName = childNode.getParent().getNodeName() + "_" + nodeName;
-			}
+    while(nodeIterator.hasNext()) {
+        node = nodeIterator.next();
+        attributes[i] = [];
+        childNode = node.getFirstChild();
+        while(childNode) {
+            if(childNode.getFirstChild()) {
+                childNode = childNode.getFirstChild();
+                depth++;
+            }
+            nodeName = childNode.getNodeName();
+            if(depth > 0) {
+                nodeName = childNode.getParent().getNodeName() + "_" + nodeName;
+            }
 
-			if(attributes[i][nodeName]) {
-				attributes[i][nodeName] += ",";
-			} else {
-				attributes[i][nodeName] = "";
-			}
-			attributes[i][nodeName] += childNode.getValue();
+            if(attributes[i][nodeName]) {
+                attributes[i][nodeName] += ",";
+            } else {
+                attributes[i][nodeName] = "";
+            }
+            attributes[i][nodeName] += childNode.getValue();
 
-			while(!childNode.getNextSibling() && depth > 0) {
-				childNode = childNode.getParent();
-				depth--;
-			}
-			childNode = childNode.getNextSibling();
-		}
-		i++;
-	}
+            while(!childNode.getNextSibling() && depth > 0) {
+                childNode = childNode.getParent();
+                depth--;
+            }
+            childNode = childNode.getNextSibling();
+        }
+        i++;
+    }
 
-	return attributes;
+    return attributes;
 }
 
 // Form functionality ----------------------------------------------------------------------------------------------------------------------------
@@ -388,53 +388,53 @@ function searchNames(searchString) {
     }
 
     childData = Arcusys.Internal.Communication.GetChildren(searchString);
-	status = childData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    status = childData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
-	if(status == "error") {
-		error = childData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
-		if(error.search("Creation of the user by UID '' - should be used for test purposes only") != -1) {
-			alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
-		} else {
-			alert("Vastaanottajan hakemisessa tapahtui virhe! Virheviesti: " + error);
-		}
-	} else {
+    if(status == "error") {
+        error = childData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+        if(error.search("Creation of the user by UID '' - should be used for test purposes only") != -1) {
+            alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
+        } else {
+            alert("Vastaanottajan hakemisessa tapahtui virhe! Virheviesti: " + error);
+        }
+    } else {
 
-		if(childData.selectSingleNode("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'") && childData.selectSingleNode("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
-			entryFound = true;
-		}
+        if(childData.selectSingleNode("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'") && childData.selectSingleNode("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
+            entryFound = true;
+        }
 
-		if(entryFound) {
+        if(entryFound) {
 
-			clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
-			hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
-			nodeIterator = childData.selectNodes("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
-			childArray = getDataString(nodeIterator);
+            clearDataCache("HaetutLapset-nomap", "searchChildMatrix");
+            hasEmptyChild = formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
+            nodeIterator = childData.selectNodes("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'");
+            childArray = getDataString(nodeIterator);
 
-			for( i = 0; i < childArray.length; i++) {
-				if(childArray[i]["parents_uid"]) {
-					node = TIVA_Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
-					node.setAttribute("jsxid", 0);
-					node.setAttribute("etunimi", childArray[i]["firstname"]);
-					node.setAttribute("sukunimi", childArray[i]["lastname"]);
-					node.setAttribute("uid", childArray[i]["uid"]);
-					node.setAttribute("vanhempi", childArray[i]["parents_displayName"]);
-					node.setAttribute("vanhempiUid", childArray[i]["parents_uid"]);
-					TIVA_Form.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
-				}
-			}
+            for( i = 0; i < childArray.length; i++) {
+                if(childArray[i]["parents_uid"]) {
+                    node = TIVA_Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
+                    node.setAttribute("jsxid", 0);
+                    node.setAttribute("etunimi", childArray[i]["firstname"]);
+                    node.setAttribute("sukunimi", childArray[i]["lastname"]);
+                    node.setAttribute("uid", childArray[i]["uid"]);
+                    node.setAttribute("vanhempi", childArray[i]["parents_displayName"]);
+                    node.setAttribute("vanhempiUid", childArray[i]["parents_uid"]);
+                    TIVA_Form.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
+                }
+            }
 
-			TIVA_Form.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
+            TIVA_Form.getCache().getDocument("HaetutLapset-nomap").insertBefore(node);
 
-			if(hasEmptyChild == true) {
-				TIVA_Form.getCache().getDocument("HaetutLapset-nomap").removeChild(TIVA_Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
-			}
+            if(hasEmptyChild == true) {
+                TIVA_Form.getCache().getDocument("HaetutLapset-nomap").removeChild(TIVA_Form.getCache().getDocument("HaetutLapset-nomap").getFirstChild());
+            }
 
-			TIVA_Form.getJSXByName("searchChildMatrix").repaintData();
+            TIVA_Form.getJSXByName("searchChildMatrix").repaintData();
 
-		} else {
-			alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
-		}
-	}
+        } else {
+            alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
+        }
+    }
 }
 
 function addToRecipients(selection) {
@@ -662,8 +662,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
     
     return endpoint;
 }
