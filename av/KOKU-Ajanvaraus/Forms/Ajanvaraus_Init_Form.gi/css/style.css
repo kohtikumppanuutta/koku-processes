@@ -281,18 +281,25 @@ span.CheckboxLabel{
 div.jsx30tabbedpane_controlbox{
     height: 30px !important;
 }
+
 }
 
 @media print
 {
+
+#JSX .jsx30button {
+  display: none !important;
+}
 
 fieldset {
   margin: 0 0 25 5;
   border: 1px solid #da251d;
   width: 600px;
   display: block;
-  page-break-after:always;
+  page-break-after: always;
 }
+
+
 
 }
     
