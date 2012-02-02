@@ -402,7 +402,7 @@
       <variants/>
       <strings riaTitleText="Vastaanottajat" jsxname="Message" jsxclassname="fieldset hiddenSection"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="250" jsxwidth="720" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="250" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -441,7 +441,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="55%, *" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="70%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -581,7 +581,7 @@
       <variants/>
       <strings jsxheight="" jsxdisplay="" riaTitleText="Suostumuksen Voimassaoloaika" jsxname="voimassaoloaika" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="100" jsxwidth="720" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="100" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -593,7 +593,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="1"/>
-              <strings jsxcols="22%,*" jsxheight="100%" jsxwidth="100%" jsxdisplay="" jsxname="layout ( | )"/>
+              <strings jsxcols="30%,*" jsxheight="100%" jsxwidth="100%" jsxdisplay="" jsxname="layout ( | )"/>
               <dynamics jsxborder="@No jsxborder"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
@@ -619,7 +619,7 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.LayoutGrid">
                   <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxcols="3%,*" jsxheight="100%" jsxwidth="100%" jsxdisplay="" jsxname="layout ( | )"/>
+                  <strings jsxcols="5%,*" jsxheight="100%" jsxwidth="100%" jsxdisplay="" jsxname="layout ( | )"/>
                   <dynamics jsxborder="@No jsxborder"/>
                   <object type="jsx3.gui.Block">
                     <variants jsxoverflow="2"/>
@@ -678,7 +678,7 @@
       <variants/>
       <strings jsxheight="" jsxdisplay="" riaTitleText="Pohjien hakeminen" jsxname="Hae_Pohjat" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="70" jsxwidth="720" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="70" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -717,7 +717,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="60%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="75%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
