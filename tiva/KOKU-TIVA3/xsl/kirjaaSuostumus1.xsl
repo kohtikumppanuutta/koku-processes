@@ -33,9 +33,11 @@
             	</xsl:element>
             </xsl:for-each>
             
-            <xsl:element name="maaraaika">        
-            	<xsl:value-of select="//fe:Suostumus_Maaraaika/text()" />
-            </xsl:element>
+            <xsl:if test="//fe:Suostumus_Maaraaika/text() != ''">
+            	<xsl:element name="maaraaika">        
+            		<xsl:value-of select="//fe:Suostumus_Maaraaika/text()" />
+            	</xsl:element>
+            </xsl:if>
             
             <xsl:element name="suostumusajankohta">        
             	<xsl:value-of select="//fe:Suostumus1_Suostumusajankohta/text()" />

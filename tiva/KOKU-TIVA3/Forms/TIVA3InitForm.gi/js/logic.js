@@ -3,9 +3,14 @@
 function intalioPreStart() {
     clearDataCache("Vastaanottajat-nomap");
     mapSelectedRecipientsToMatrix();
-    if (TIVA3Form.getCache().getDocument("Vastaanottajat-nomap").getFirstChild().getAttribute("Vastaanottajat_Vastaanottaja2") != "") {
-        TIVA3Form.getJSXByName("Kayttaja_UseampiVastaanottaja").setChecked(1);
+    if (TIVA3Form.getCache().getDocument("Vastaanottajat-nomap").getFirstChild() == null) {
+        return "Lomakkeelle ei ole valittu suostujaa!";
     }
+    if (TIVA3Form.getJSXByName("Pohja_PohjaId").getValue() == null || TIVA3Form.getJSXByName("Pohja_PohjaId").getValue() == "") {
+        return "Kirjaukselle ei ole valittu pohjaa!";
+    }
+    
+    return null;
 }
 
 // General functions -----------------------------------------------------------------------------------------------------------------------------
@@ -789,8 +794,8 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    //endpoint = "http://trelx51lb:8080";
-    endpoint = "http://localhost:8180";
+    endpoint = "http://trelx51lb:8080";
+    //endpoint = "http://localhost:8180";
     
     return endpoint;
 }
@@ -830,3 +835,11 @@ function showDialog(dialogId, text, textTitle, title) {
     }
     dialog.html("<p style=\"text-align:left;\"><b>" + textTitle + "</b></p><p style=\"margin:0 0 0 0;\">" + text + "</p>");
 }
+
+jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error) {
+    error.getError = function(name) {
+        var errortext = TIVA3Form.getJSXByName(name).getTip();
+        errortext = "Puuttuvat tiedot: " + errortext;
+        return errortext;
+    };
+});
