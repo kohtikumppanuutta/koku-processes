@@ -291,8 +291,8 @@ function searchEmbloyeeNames(searchString) {
 }
 
 function getEndpoint() {
-    var endpoint = "http://localhost:8180";
-    //var endpoint = "http://trelx51lb:8080";
+    //var endpoint = "http://localhost:8180";
+    var endpoint = "http://trelx51lb:8080";
     return endpoint;
 
 }
@@ -380,7 +380,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -797,17 +797,11 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        //req.setRequestHeader("Content-Type","text/xml");
-
-        //req.setRequestHeader("SOAPAction","");
-
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
-        // alert(req.getStatus());
 
         // var objXML = req.getResponseXML();
-        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if(objXML == null) {
             alert("Virhe palvelinyhteydess\xE4");
         } else {
@@ -834,17 +828,10 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        //req.setRequestHeader("Content-Type","text/xml");
-
-        //req.setRequestHeader("SOAPAction","");
-
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
-        // alert(req.getStatus());
 
-        // var objXML = req.getResponseXML();
-        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if(objXML == null) {
             alert("Virhe palvelinyhteydess\xE4");
         } else {
@@ -871,17 +858,10 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        //req.setRequestHeader("Content-Type","text/xml");
-
-        //req.setRequestHeader("SOAPAction","");
-
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
-        // alert(req.getStatus());
 
-        // var objXML = req.getResponseXML();
-        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if(objXML == null) {
             alert("Virhe palvelinyhteydess\xE4");
         } else {
@@ -909,17 +889,10 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        //req.setRequestHeader("Content-Type","text/xml");
-
-        //req.setRequestHeader("SOAPAction","");
-
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
-        // alert(req.getStatus());
 
-        // var objXML = req.getResponseXML();
-        // alert("DEBUG - SERVER RESPONSE:" + objXML);
         if(objXML == null) {
             alert("Virhe palvelinyhteydess\xE4");
         } else {
@@ -935,8 +908,6 @@ function getTemplate(templateId) {
     try {
         // Add form preload functions here.
         var formData = Arcusys.Internal.Communication.GetTemplate(templateId);
-        // alert(formData);
-        //Arcusys.Internal.Communication.GerLDAPUser();
 
         if(formData != null) {
             createFormFromTemplateData(formData);
@@ -953,9 +924,6 @@ function getTemplate(templateId) {
 }
 
 function inputMultipleChoiceQuestion(tempID, question, questionNumber) {
-    //alert("addChoice, parameter: " + tempID);
-    // var id = getID();
-    // alert("id: " + id);
     var block = "choiceBlock" + tempID;
     var choiceTextField = "choiceTextField" + tempID;
     var id = tempID + "_" + questionNumber;
@@ -986,7 +954,6 @@ function inputMultipleChoiceQuestion(tempID, question, questionNumber) {
 }
 
 function inputSectionFromTemplate(question, sectionNumber, inputType) {
-    // alert(inputType);
     var title = "";
     if(inputType == "FREE_TEXT") {
         mapFieldsToMatrix(title, question, sectionNumber, inputType);
@@ -997,17 +964,14 @@ function inputSectionFromTemplate(question, sectionNumber, inputType) {
         inputYesNoSection(title, question, sectionNumber);
     }
     if(inputType == "MULTIPLE_CHOICE") {
-        // alert("MULTIPLE_CHOICE");
         mapFieldsToMatrix(title, question, sectionNumber, inputType);
         inputMultipleChoiceSection(title, question, sectionNumber);
     }
     if(inputType == "CALENDAR") {
-        // alert("MULTIPLE_CHOICE");
         mapFieldsToMatrix(title, question, sectionNumber, inputType);
         inputCalendarSection(title, question, sectionNumber);
     }
     if(inputType == "NUMBER") {
-        // alert("MULTIPLE_CHOICE");
         mapFieldsToMatrix(title, question, sectionNumber, inputType);
         inputNumberSection(title, question, sectionNumber);
     }
@@ -1030,12 +994,10 @@ function createFormFromTemplateData(data) {
 
     while(questions.hasNext()) {
         childNode = questions.next();
-        // alert(childNode);
         childIte = childNode.getChildIterator();
 
         while(childIte.hasNext()) {
             childNode1 = childIte.next();
-            // alert(childNode1);
             if(i == 0) {
                 questionDescription = childNode1.getValue();
             }
@@ -1045,11 +1007,9 @@ function createFormFromTemplateData(data) {
             if(i == 2) {
                 questionType = childNode1.getValue();
             }
-            // alert(childNode1.getValue());
             i = i + 1;
 
         }
-        // alert(questionDescription + " " + questionNumber + " " + questionType);
         if(questionNumber >= form1.getJSXByName("sectionNumber").getValue()) {
             form1.getJSXByName("sectionNumber").setValue(parseInt(questionNumber) + 1);
         }
@@ -1065,13 +1025,10 @@ function createFormFromTemplateData(data) {
     while(descendants.hasNext()) {
         childNode = descendants.next();
 
-        // alert(childNode);
-
         childIte = childNode.getChildIterator();
 
         while(childIte.hasNext()) {
             childNode1 = childIte.next();
-            // alert(childNode1);
             if(i == 0) {
                 choiceDescription = childNode1.getValue();
             }
@@ -1081,12 +1038,9 @@ function createFormFromTemplateData(data) {
             if(i == 2) {
                 choiceQuestionNumber = childNode1.getValue();
             }
-            // alert(childNode1.getValue());
-
             i = i + 1;
 
         }
-        // alert(choiceQuestionNumber + " " + choiceDescription + " " + choiceNumber);
         inputMultipleChoiceQuestion(choiceQuestionNumber, choiceDescription, choiceNumber);
         i = 0;
 
@@ -1121,42 +1075,9 @@ function mapTemplateNamesToField(data) {
 function mapFormDataToFields(objXML) {
 
     var value = objXML.selectNodes("//tns:return", "xmlns:tns='http://soa.kv.koku.arcusys.fi/'");
-    // alert(value);
-
-    //var approvedSlotNumber = "";
-    // var sender = objXML.selectSingleNode("//sender", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-    //var replier = objXML.selectSingleNode("//replier", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-    // var subject = objXML.selectSingleNode("//subject", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-    // var description = objXML.selectSingleNode("//description", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-
-    //var statusNodes = objXML.selectNodes("//status", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'");
-    //var formStatus = statusNodes.get(1);
-    //formStatus = formStatus.getValue();
 
     if(objXML.selectSingleNode("//approvedSlotNumber", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'"))
         approvedSlotNumber = objXML.selectSingleNode("//approvedSlotNumber", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-    // var appointmentId = objXML.selectSingleNode("//appointmentId", "xmlns:ns2='http://soa.kv.koku.arcusys.fi/'").getValue();
-
-    // inputPreload(objXML);
-
-    // var username = Intalio.Internal.Utilities.getUser();
-    // username = username.substring((username.indexOf("/")+1));
-    // AjanvarausForm.getJSXByName("User_Recipient").setValue(username);
-
-    // Map values to the form fields
-
-    //alert("Replier: " + replier);
-    // AjanvarausForm.getJSXByName("User_Sender").setValue(sender).repaint();
-    //AjanvarausForm.getJSXByName("User_Recipient").setValue(replier).repaint();
-    // AjanvarausForm.getJSXByName("Header_Text").setValue(subject).repaint();
-    // AjanvarausForm.getJSXByName("Lomake_ID").setValue(appointmentId).repaint();
-
-    //AjanvarausForm.getJSXByName("Lomake_Status").setValue(formStatus).repaint();
-    //if (formStatus == "Approved")    {
-    //lockForm();
-    //}
-    //if (approvedSlotNumber)
-    //AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(approvedSlotNumber).repaint();
 }
 
 function useTemplate() {
@@ -1187,22 +1108,16 @@ function dontUseTemplate() {
 }
 
 function uncheckTheOthers(target, checked) {
-    //alert(target + " " + checked);
     var i, descendants = form1.getJSXByName(target).getDescendantsOfType("jsx3.gui.CheckBox");
-    //alert(descendants);
+
     for( i = 0; i < descendants.length; i++) {
-        //alert(descendants[i]);
         if(descendants[i].getName() != checked) {
-            //alert(descendants[i]);
             descendants[i].setChecked(0);
         }
     }
 }
 
 function addChoice(tempID) {
-    // alert("addChoice, parameter: " + tempID);
-    // var id = getID();
-    // alert("id: " + id);
     var block = "choiceBlock" + tempID;
     var choiceTextField = "choiceTextField" + tempID;
     var id = form1.getJSXByName(tempID).getChild("tempID").getValue() + "_" + form1.getJSXByName(tempID).getChild("choiceCounter").getValue();
@@ -1232,7 +1147,6 @@ function addChoice(tempID) {
 }
 
 function mapMultipleChoiceToMatrix(id, sectionNumber, question, questionNumber) {
-    //  alert("mapMultipleChoiceToMatrix(" + sectionNumber + ", " + question + ", " + questionNumber + ")");
     var node;
     var hasEmptyChild = false;
     if(form1.getCache().getDocument("MultipleChoice-nomap").getFirstChild() == null) {
@@ -1240,7 +1154,6 @@ function mapMultipleChoiceToMatrix(id, sectionNumber, question, questionNumber) 
         hasEmptyChild = true;
     }
     node = form1.getCache().getDocument("MultipleChoice-nomap").getFirstChild().cloneNode();
-    // alert(node);
     node.setAttribute("jsxid", id);
     node.setAttribute("MultipleChoice_Section", sectionNumber);
     node.setAttribute("MultipleChoice_Question", question);
@@ -1253,11 +1166,8 @@ function mapMultipleChoiceToMatrix(id, sectionNumber, question, questionNumber) 
 }
 
 function removeChoice(block, ID) {
-    // alert("block " + block + " ID " + ID);
-    // var pane = "choicePane" + id;
-    // var block = "choiceBlock" + tempID;
     var choiceID1 = ID.getChild("choiceUniversalID").getValue();
-    // alert("choiceID1 " + choiceID1);
+
     form1.getCache().getDocument("MultipleChoice-nomap").removeChild(form1.getCache().getDocument("MultipleChoice-nomap").selectSingleNode("//record[@jsxid='" + choiceID1 + "']"));
     form1.getJSXByName(block).removeChild(ID);
     form1.getJSXByName(block).setHeight(form1.getJSXByName(block).getHeight() - 30, true).repaint();
@@ -1303,14 +1213,9 @@ function getTaskSubscribe() {
 };
 
 function prepareForm() {
-    // alert("prepareForm");
-    // var username = Intalio.Internal.Utilities.getUser();
-
-    // form1.getJSXByName("User_Sender").setValue(Intalio.Internal.Utilities.getUser()).repaint();
-
     var username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("/") + 1));
-    //alert(username);
+
     form1.getJSXByName("User_SenderDisplay").setValue(username);
     form1.getJSXByName("User_SenderDisplay").setEnabled(jsx3.gui.Form.STATEDISABLED).repaint();
 
@@ -1350,8 +1255,7 @@ function(service) {//name the argument of this function
     };
 
     service.onhaeOrganisaatiotSuccess = function(objEvent) {
-        //var responseXML = objEvent.target.getInboundDocument();
-        // objEvent.target.getServer().alert("Success","The service call was successful.");
+
     };
 
     service.onhaeOrganisaatiotError = function(objEvent) {
@@ -1404,14 +1308,10 @@ function prepareFormMatrix() {
 }
 
 function showForm(flag) {
-    //  alert("showForm param: " + flag);
     var descendant, descendants;
     if(flag == "N") {
-        // alert("N");
-        // if (form1.getJSXByName("Kentat").getDisplay()=="none")
         form1.getJSXByName("showFormButton").setText("N\xE4yt\xE4 lomake").repaint();
         form1.getJSXByName("Kentat").setDisplay("block").repaint();
-        // form1.getJSXByName("Header").setDisplay("block").repaint();
 
         var childNode;
         var childIterator = form1.getCache().getDocument("TextInput-nomap").getChildIterator();
@@ -1421,60 +1321,38 @@ function showForm(flag) {
         while(childIterator.hasNext()) {
             childNode = childIterator.next();
             fieldsetNumber = childNode.getAttribute("TextInput_Number");
-            // alert(fieldsetNumber);
-            //alert(fieldsetNumber);
             if(fieldsetNumber != "") {
-                //alert(form1.getJSXByName(fieldsetNumber).getChild("pane").getChild("layout (--)").getLastChild().getChild("layout ( | )").getChild("pane").getChild("button").getDisplay());
                 if(childNode.getAttribute("TextInput_Type") == "MULTIPLE_CHOICE") {
-                    // alert("MULTIPLE_CHOICE");
                     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 80).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 80).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneOption", true, false);
-                    // alert(descendant);
-                    // descendant.setHeight(descendant.getHeight() + 25).repaint();
-                    //  descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("rootpane",true,false);
-                    //  alert(descendant);
                     descendant.setHeight(descendant.getHeight() + 40).repaint();
-                    //alert(descendant.getHeight());
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneAddChoice", true, false);
-                    // alert(descendant);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton");
-                    // alert(descendant);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                     descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                     for( x = 0; x < descendants.length; x = x + 1) {
-                        // alert(descendants[x]);
                         descendants[x].setDisplay("block", true);
                     }
                 } else if(childNode.getAttribute("TextInput_Type") == "CALENDAR") {
-                    // alert("MULTIPLE_CHOICE");
                     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 150).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 150).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneEdit", true, false);
-                    // alert(descendant);
-                    // descendant.setHeight(descendant.getHeight() + 25).repaint();
-                    //  descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("rootpane",true,false);
-                    //  alert(descendant);
-                    // descendant.setHeight(descendant.getHeight() + 40).repaint();
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
 
                     if(form1.getJSXByName(fieldsetNumber).getDescendantOfName("aikataso").getValue() == "Tunti") {
                         form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 50).repaint();
                         form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() + 50).repaint();
                         descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneHours", true, false);
-                        // alert(descendant);
                         descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                     }
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneAddButton", true, false);
-                    // alert(descendant);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneDelete", true, false);
-                    // alert(descendant);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYBLOCK).repaint();
                     descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                     for( x = 0; x < descendants.length; x = x + 1) {
-                        // alert(descendants[x]);
                         descendants[x].setDisplay("block", true);
                     }
                 } else {
@@ -1491,7 +1369,6 @@ function showForm(flag) {
     } else {
         form1.getJSXByName("showFormButton").setText("N\xE4yt\xE4 muokkausn\xE4kym\xE4").repaint();
         form1.getJSXByName("Kentat").setDisplay("none").repaint();
-        // form1.getJSXByName("Header").setDisplay("none").repaint();
 
         var childNode;
         var childIterator = form1.getCache().getDocument("TextInput-nomap").getChildIterator();
@@ -1500,57 +1377,38 @@ function showForm(flag) {
         while(childIterator.hasNext()) {
             childNode = childIterator.next();
             fieldsetNumber = childNode.getAttribute("TextInput_Number");
-            // alert(fieldsetNumber);
             if(fieldsetNumber != "") {
                 if(childNode.getAttribute("TextInput_Type") == "MULTIPLE_CHOICE") {
-                    // alert("MULTIPLE_CHOICE");
                     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 80).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 80).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneOption", true, false);
-                    // alert(descendant);
-                    //descendant.setHeight(descendant.getHeight() - 25).repaint();
-                    // descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("rootpane",true,false);
-                    // alert(descendant);
                     descendant.setHeight(descendant.getHeight() - 40).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneAddChoice", true, false);
-                    // alert(descendant);
                     descendant.setDisplay("none").repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("deleteButton", true, false);
-                    // alert(descendant);
                     descendant.setDisplay("none").repaint();
                     descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                     for( x = 0; x < descendants.length; x = x + 1) {
                         descendants[x].setDisplay("none", true);
                     }
                 } else if(childNode.getAttribute("TextInput_Type") == "CALENDAR") {
-                    // alert("MULTIPLE_CHOICE");
                     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 150).repaint();
                     form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 150).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneEdit", true, false);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
-                    // alert(descendant);
-                    // descendant.setHeight(descendant.getHeight() + 25).repaint();
-                    //  descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("rootpane",true,false);
-                    //  alert(descendant);
-                    // descendant.setHeight(descendant.getHeight() + 40).repaint();
                     if(form1.getJSXByName(fieldsetNumber).getDescendantOfName("aikataso").getValue() == "Tunti") {
                         form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() - 50).repaint();
                         form1.getJSXByName(fieldsetNumber).setHeight(form1.getJSXByName(fieldsetNumber).getHeight() - 50).repaint();
                         descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneHours", true, false);
-                        // alert(descendant);
                         descendant.setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
                     }
-                    // alert(descendant);
 
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneAddButton", true, false);
-                    // alert(descendant);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
                     descendant = form1.getJSXByName(fieldsetNumber).getDescendantOfName("paneDelete", true, false);
-                    // alert(descendant);
                     descendant.setDisplay(jsx3.gui.Block.DISPLAYNONE).repaint();
                     descendants = form1.getJSXByName("choiceBlock" + fieldsetNumber).getDescendantsOfType("jsx3.gui.Button")
                     for( x = 0; x < descendants.length; x = x + 1) {
-                        // alert(descendants[x]);
                         descendants[x].setDisplay("none", true);
                     }
                 } else {
@@ -1583,7 +1441,6 @@ function mapFieldsToMatrix(title, question, sectionNumber, type) {
         hasEmptyChild = true;
     }
     node = form1.getCache().getDocument("TextInput-nomap").getFirstChild().cloneNode();
-    // alert(node);
     node.setAttribute("jsxid", sectionNumber);
     node.setAttribute("TextInput_Question", question);
     node.setAttribute("TextInput_Section", title);
@@ -1611,7 +1468,6 @@ function json() {
 
 function getInputType() {
     var input;
-    // alert("getInputType");
     if(form1.getJSXByName("vastausVapaa").getChecked()) {
         input = "FREE_TEXT";
     }
@@ -1649,7 +1505,6 @@ function inputSection(title, question) {
         inputYesNoSection(title, question, sectionNumber);
     }
     if(inputType == "MULTIPLE_CHOICE") {
-        // alert("MULTIPLE_CHOICE");
         mapFieldsToMatrix(title, question, sectionNumber, inputType);
         inputMultipleChoiceSection(title, question, sectionNumber);
     }
@@ -1659,23 +1514,17 @@ function inputSection(title, question) {
         inputCalendarSection(title, question, sectionNumber);
     }
     if(inputType == "NUMBER") {
-        // alert("CALENDAR");
         mapFieldsToMatrix(title, question, sectionNumber, inputType);
         inputNumberSection(title, question, sectionNumber);
     }
 
-    //bringButtonsBack();
 }
 
 function inputTextSection(title, question, nameSection) {
     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 205, true);
     var textSection = form1.getJSXByName("block").load("components/textinputsection.xml", true);
-    //textSection.setTitleText(title).repaint();
     textSection.setName(nameSection).repaint();
-    //alert(textSection.getChild());
-    //alert(textSection.getJSXByName("labelKysymys").getText());
     form1.getJSXByName("labelKysymys").setText(question).repaint();
-    //form1.getJSXByName("block").getFirstChild().getDescendantOfName("deleteButton").setDisplay("block", true);
 
 }
 
@@ -1683,10 +1532,7 @@ function inputYesNoSection(title, question, nameSection) {
     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 213, true);
     var textSection = form1.getJSXByName("block").load("components/yesnosection.xml", true);
 
-    // textSection.setTitleText(title).repaint();
     textSection.setName(nameSection).repaint();
-    //alert(textSection.getChild());
-    //alert(textSection.getJSXByName("labelKysymys").getText());
     form1.getJSXByName("labelKysymys").setText(question).repaint();
 
 }
@@ -1711,14 +1557,11 @@ function inputCalendarSection(title, question, nameSection) {
     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 200).repaint();
     var textSection = form1.getJSXByName("block").load("components/multiplecalendarsection.xml", true);
 
-    // textSection.setTitleText(title).repaint();
     textSection.setName(nameSection).repaint();
 
     var block = "choiceBlock" + nameSection;
     textSection.getDescendantOfName("choiceBlock").setName(block);
 
-    //alert(textSection.getChild());
-    //alert(textSection.getJSXByName("labelKysymys").getText());
     form1.getJSXByName("labelKysymys").setText(question).repaint();
 
 }
@@ -1727,20 +1570,15 @@ function inputNumberSection(title, question, nameSection) {
     form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 95).repaint();
     var textSection = form1.getJSXByName("block").load("components/numberinputsection.xml", true);
 
-    // textSection.setTitleText(title).repaint();
     textSection.setName(nameSection).repaint();
-    //alert(textSection.getChild());
-    //alert(textSection.getJSXByName("labelKysymys").getText());
     form1.getJSXByName("labelKysymys").setText(question).repaint();
 
 }
 
 function removeThisSection(sectionComponent, type) {
-    // alert("removeThisSection(" + sectionComponent + ", " + type + ")");
     var sectionName = sectionComponent.getName();
-    // alert("sectionName" + sectionName + ".");
+
     form1.getJSXByName("block").removeChild(sectionComponent);
-    //  alert(form1.getCache().getDocument("TextInput-nomap").selectSingleNode("//record[@jsxid='" + sectionName + "']"));
     form1.getCache().getDocument("TextInput-nomap").removeChild(form1.getCache().getDocument("TextInput-nomap").selectSingleNode("//record[@TextInput_Number='" + sectionName + "']"));
 
     if(type == "textinputsection") {
@@ -1766,7 +1604,6 @@ function removeChildrenOfThisMultipleChoiceSection(sectionName) {
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
         fieldsetNumber = childNode.getAttribute("MultipleChoice_Section");
-        // alert(fieldsetNumber);
         if(fieldsetNumber == sectionName) {
 
             removableChildNodeIds[removeIndex] = childNode.getAttribute("jsxid");
@@ -1776,11 +1613,8 @@ function removeChildrenOfThisMultipleChoiceSection(sectionName) {
     }
     var index1 = 0;
     for(key in removableChildNodeIds) {
-        // alert(index1);
-        // alert(removableChildNodeIds[index1]);
         node1 = form1.getCache().getDocument("MultipleChoice-nomap").selectSingleNode("//record[@jsxid='" + removableChildNodeIds[index1] + "']");
         if(node1 != null) {
-            // alert(node1);
             form1.getCache().getDocument("MultipleChoice-nomap").removeChild(node1);
             index1 = index1 + 1;
             form1.getJSXByName("block").setHeight(form1.getJSXByName("block").getHeight() - 30).repaint();
@@ -1892,7 +1726,6 @@ function mapSelectedRecipientsToMatrix() {
             node.setAttribute("Receipients_Realm", realm);
             form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
             jsxid++;
-            // alert(node);
         }
 
     }
@@ -2194,7 +2027,6 @@ function searchNames(searchString) {
 
     }
     childData = Arcusys.Internal.Communication.GetChildrens(searchString);
-    alert(childData);
     status = childData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
     if(status == "error") {
