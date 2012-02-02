@@ -935,10 +935,10 @@ function searchGroup(searchString) {
     hasEmptyChild = false;
     xmlData = Arcusys.Internal.Communication.GetGroups(searchString);
     groupData = getData(xmlData.selectNodeIterator("//group", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
-    status = groupData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+    status = xmlData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
     if(status == "error") {
-        error = groupData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+        error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
         alert("Ryhm\u00E4n hakemisessa tapahtui virhe! Virheviesti: " + error);
     } else {
 
@@ -1277,8 +1277,8 @@ function getDomainName() {
 function getEndpoint() {
     var endpoint;
 
-    //endpoint = "http://trelx51lb:8080";
-    endpoint = "http://localhost:8180";
+    endpoint = "http://trelx51lb:8080";
+    //endpoint = "http://localhost:8180";
 
     return endpoint;
 }
