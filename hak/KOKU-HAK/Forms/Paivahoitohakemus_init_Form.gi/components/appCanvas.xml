@@ -635,7 +635,7 @@
       <variants/>
       <strings riaTitleText="Hakemuksen Tiedot" jsxname="Tyyppi" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="50" jsxwidth="720" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="50" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -693,7 +693,7 @@
       <variants/>
       <strings jsxdisplay="" riaTitleText="Lapsen tiedot" jsxname="Lapsi" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="50" jsxwidth="720" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="50" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -976,7 +976,7 @@
       <variants/>
       <strings riaTitleText="Huoltajan tiedot" jsxname="Huoltaja" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="450" jsxwidth="650" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="450" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -988,7 +988,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1033,7 +1033,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1078,7 +1078,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1123,7 +1123,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1168,7 +1168,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1200,7 +1200,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1208,10 +1208,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Huoltajuus"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0 0 0 10" jsxdisplay="" jsxtip="Perheessä kaksi huoltajaa: huoltajat asuvat samassa osoitteessa. Yhteishuoltajuus: huoltajat asuvat eri osoitteissa." jsxname="HuoltajaHuoltajuus_tooltip" jsxmargin="0 0 0 0" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0 0 0 10" jsxdisplay="" jsxtip="Perheessä kaksi huoltajaa: huoltajat asuvat samassa osoitteessa. Yhteishuoltajuus: huoltajat asuvat eri osoitteissa." jsxname="HuoltajaHuoltajuus_tooltip" jsxmargin="0 0 0 0" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -1249,7 +1249,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="6px" jsxname="pane"/>
@@ -1272,7 +1272,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="6%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="8%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1304,7 +1304,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="6%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="8%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="" jsxname="pane"/>
@@ -1336,7 +1336,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1344,10 +1344,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Työaika alkaa"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="hh:mm" jsxname="HuoltajaAlkaa_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="hh:mm" jsxname="HuoltajaAlkaa_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -1366,10 +1366,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Työaika päättyy"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="hh:mm" jsxname="HuoltajaLoppuu_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="hh:mm" jsxname="HuoltajaLoppuu_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -1426,7 +1426,7 @@
       <variants/>
       <strings jsxdisplay="" riaTitleText="Ruokakunnan toisen vanhemman / aikuisen tiedot" jsxname="Puoliso" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="420" jsxwidth="650" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="420" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -1438,7 +1438,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxdisplay="none" jsxname="pane"/>
@@ -1456,7 +1456,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1501,7 +1501,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1546,7 +1546,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1591,7 +1591,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1636,7 +1636,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1668,7 +1668,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="6px" jsxname="pane"/>
@@ -1691,7 +1691,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="6%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="8%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1723,7 +1723,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="6%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="8%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="" jsxname="pane"/>
@@ -1755,7 +1755,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -1763,10 +1763,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Työaika alkaa"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="hh:mm" jsxname="PuolisoAlkaa_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="hh:mm" jsxname="PuolisoAlkaa_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -1785,10 +1785,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Työaika päättyy"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="hh:mm" jsxname="PuolisoLoppuu_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="hh:mm" jsxname="PuolisoLoppuu_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -1827,7 +1827,7 @@
       <variants/>
       <strings riaTitleText="Perheen muut kotona asuvat alle 18-vuotiaat lapset" jsxname="MuutLapset" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="130" jsxwidth="650" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="130" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -1928,7 +1928,7 @@
       <variants/>
       <strings riaTitleText="Hoidon tarve" jsxname="HoidonTarve" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="460" jsxwidth="720" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="460" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="hoidonTarvePanel" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -2386,15 +2386,15 @@
               </object>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
-                <strings jsxheight="100%" jsxwidth="100%" jsxpadding="13px" jsxname="pane"/>
+                <strings jsxheight="100%" jsxwidth="100%" jsxpadding="14 0 0 0" jsxname="pane"/>
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                  <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Osapäivähoito"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Enintään 5h/pv. Kellonajat ovat viitteellisiä eikä niitä välttämättä voida toteuttaa." jsxname="Osapaivahoito_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Osapäivähoito" jsxstyleoverride="" jsxpadding=""/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0 0 0 6" jsxtip="Enintään 5h/pv. Kellonajat ovat viitteellisiä eikä niitä välttämättä voida toteuttaa." jsxname="tooltipImg" jsxmargin="0" jsxclassname="" jsxwidth="" jsxstyleoverride=""/>
+                  </object>
                 </object>
               </object>
               <object type="jsx3.gui.Block">
@@ -2707,7 +2707,7 @@
       <variants/>
       <strings riaTitleText="Hakutoive" jsxname="Hakutoive" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="350" jsxwidth="650" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="350" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -2719,7 +2719,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="6px" jsxname="pane"/>
@@ -2742,7 +2742,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="45%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="50%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="6px" jsxname="pane"/>
@@ -2765,7 +2765,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="30%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="35%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="" jsxname="pane" jsxmargin="5 0 0 0"/>
@@ -2791,10 +2791,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="1. Hakutoive"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -2814,7 +2814,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="30%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="35%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="" jsxname="pane" jsxmargin="5 0 0 0"/>
@@ -2840,10 +2840,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="2. Hakutoive"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -2863,7 +2863,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="30%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="35%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="" jsxname="pane" jsxmargin="5 0 0 0"/>
@@ -2889,10 +2889,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="3. Hakutoive"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -2912,7 +2912,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="30%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="35%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="" jsxname="pane" jsxmargin="5 0 0 0"/>
@@ -2938,10 +2938,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="4. Hakutoive"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -2961,7 +2961,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="30%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="35%,30%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxpadding="" jsxname="pane" jsxmargin="5 0 0 0"/>
@@ -2987,10 +2987,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="5. Hakutoive"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="Perhepäivähuolto haetaan aluueelle koordinoivan yksikön (päiväkodin) mukaan." jsxname="Hoitopaikka_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
@@ -3313,7 +3313,7 @@
       <variants/>
       <strings riaTitleText="Lisätiedot" jsxname="Lisatiedot" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxtop="0" jsxleft="0" jsxheight="150" jsxwidth="650" jsxoverflow="2" jsxrelativeposition="1"/>
+        <variants jsxtop="0" jsxleft="0" jsxheight="150" jsxwidth="570" jsxoverflow="2" jsxrelativeposition="1"/>
         <strings jsxdisplay="" jsxname="pane" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -3333,10 +3333,10 @@
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Lapsen terveydentila ja erityistarpeet"/>
-                </object>
-                <object type="jsx3.gui.Image">
-                  <variants jsxoverflow="2" jsxrelativeposition="1"/>
-                  <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="allergiat, sairaudet, vammat yms. päivähoitoon vaikuttavat asiat" jsxname="Terveydentila_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  <object type="jsx3.gui.Image">
+                    <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                    <strings jsxsrc="images/help.gif" jsxpadding="0,0,0,0" jsxtip="allergiat, sairaudet, vammat yms. päivähoitoon vaikuttavat asiat" jsxname="Terveydentila_tooltip" jsxmargin="0,0,0,10" jsxclassname="tooltipIcon"/>
+                  </object>
                 </object>
                 <object type="com.intalio.ria.Field">
                   <variants/>
