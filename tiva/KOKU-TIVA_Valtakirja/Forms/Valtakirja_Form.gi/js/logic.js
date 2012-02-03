@@ -92,7 +92,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //req.setRequestHeader("SOAPAction","");
         
-       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
        req.send(msg, tout);
        var objXML = req.getResponseXML();
        // alert(req.getStatus());
@@ -139,7 +139,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //req.setRequestHeader("SOAPAction","");
         
-       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
        req.send(msg, tout);
        var objXML = req.getResponseXML();
        // alert(req.getStatus());
@@ -184,7 +184,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //req.setRequestHeader("SOAPAction","");
         
-       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
        req.send(msg, tout);
        var objXML = req.getResponseXML();
        // alert(req.getStatus());
@@ -229,7 +229,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //req.setRequestHeader("SOAPAction","");
         
-       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
        req.send(msg, tout);
        var objXML = req.getResponseXML();
        // alert(req.getStatus());
