@@ -17,13 +17,14 @@
 					<h2 class="old">VASTAANOTTAJA</h2>
 							<p><xsl:value-of select="//ka:User_RecipientDisplay/text()"/></p>
 					</div>
-						<h2 class="old"><xsl:value-of select="//ka:Header_Text/text()"/></h2>
+						<h2 class="old"><p>Uusi pyyntö</p></h2>
 						<div class="innerContent">
+					<!-- 
 					<xsl:for-each select="//ka:TextInput">
 						
 							<p><xsl:value-of select="ka:TextInput_Question/text()"/></p>
-					</xsl:for-each>
-					<p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a> </p>
+					</xsl:for-each> -->
+					<p>Sinulle on uusi pyyntö. <a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()"><xsl:value-of select="//ka:Header_Text/text()"/></a> </p>
 					</div>
 				</div>
 			
