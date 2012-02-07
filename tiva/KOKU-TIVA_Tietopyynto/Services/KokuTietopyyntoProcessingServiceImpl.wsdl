@@ -193,7 +193,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuTietopyyntoProcessingService">
     <wsdl:port binding="tns:KokuTietopyyntoProcessingServiceSoapBinding" name="KokuTietopyyntoProcessingServicePort">
-      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl"/>
+      <soap:address location="http://trelx51lb:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

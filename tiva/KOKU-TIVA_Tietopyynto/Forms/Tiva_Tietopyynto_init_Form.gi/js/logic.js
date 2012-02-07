@@ -551,7 +551,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -579,7 +579,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -608,7 +608,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -636,7 +636,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -665,7 +665,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -696,7 +696,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -727,7 +727,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
