@@ -1,16 +1,10 @@
 function getEndpoint() {
 
-<<<<<<< .mine
     //var endpoint = "http://localhost:8180";
     //var endpoint = "http://trelx51lb:8080";
     //var endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
     var endpoint = "http://koku-salo-app3.ec.dmz:8280";
     
-=======
-    var endpoint = "http://localhost:8180";
-    // var endpoint = "http://trelx51lb:8080";
-    // var endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
->>>>>>> .r17404
     return endpoint;
 
 }
@@ -54,8 +48,10 @@ function clearDataCache(cacheName, matrixName) {
 }
 
 function prepareForm() {
+
     var username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("/") + 1));
+
     KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(username);
     KayttajaviestintaForm.getJSXByName("Message_FromUser").setEnabled(jsx3.gui.Form.STATEDISABLED).repaint();
 }
@@ -102,10 +98,6 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         }
     };
 });
-
-
-
-
 function mapSelectedRecipientsToMatrix() {
 
     var node, hasEmptyChild, jsxid, childIterator, group, uid, groupUid, childNode, groupData, userData, i, kunpoUsername, displayName;
@@ -184,7 +176,6 @@ function mapSelectedRecipientsToMatrix() {
 
     deleteDupes();
 }
-
 
 function convertArrayToNodesString(array, index, wrapper) {
     var nodes = "";
@@ -314,7 +305,7 @@ function switchSearchMode(mode) {
 function searchGroup(searchString) {
 
     var entryFound, node, i, hasEmptyChild, splits, list, xmlData, groupData;
-    clearDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
+
     if(searchString == "") {
         alert("Syota hakusana");
         return;
@@ -325,6 +316,7 @@ function searchGroup(searchString) {
     if(KayttajaviestintaForm.getCache().getDocument("HaetutRyhmat-nomap").getFirstChild() != null) {
         KayttajaviestintaForm.getCache().getDocument("HaetutRyhmat-nomap").removeChildren();
         KayttajaviestintaForm.getJSXByName("searchGroupMatrix").repaintData();
+
     }
     hasEmptyChild = false;
     xmlData = Arcusys.Internal.Communication.GetGroups(searchString);
@@ -341,14 +333,13 @@ function searchGroup(searchString) {
         }
 
         for( i = 0; i < groupData.length; i++) {
-                
             entryFound = true;
-                       
             node = KayttajaviestintaForm.getCache().getDocument("HaetutRyhmat-nomap").getFirstChild().cloneNode();
 
             node.setAttribute("jsxid", i);
             node.setAttribute("nimi", groupData[i]["groupName"]);
             node.setAttribute("uid", groupData[i]["groupUid"]);
+
             KayttajaviestintaForm.getCache().getDocument("HaetutRyhmat-nomap").insertBefore(node);
 
         }
@@ -362,23 +353,18 @@ function searchGroup(searchString) {
             alert("Valitettavasti antamallasi hakusanalla ei l\xF6ytynyt tuloksia");
         }
     }
-
 }
-
-
 
 function listGroupUsers() {
 
-    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData, fetched;
+    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData;
 
-/*
     if(KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
         KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").removeChildren();
         KayttajaviestintaForm.getJSXByName("listGroupUsersMatrix").repaintData();
     }
-*/ 
-
     hasEmptyChild = false;
+
     if(KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").getFirstChild() == null) {
         KayttajaviestintaForm.getJSXByName("listGroupUsersMatrix").commitAutoRowSession();
         hasEmptyChild = true;
@@ -389,75 +375,40 @@ function listGroupUsers() {
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
         selected = childNode.getAttribute("valittu");
-        fetched = childNode.getAttribute("haettu");
-        groupUid = childNode.getAttribute("uid");
-        
-        if (selected == 0 && fetched == 1){
-            childNode.setAttribute("haettu", 0);
-            removefromCache(groupUid);
-        }
-      
-        
-            if((selected != 0) && (selected != null) && (fetched != 1)) {
-            childNode.setAttribute("haettu", 1);
+
+        if((selected != 0) && (selected != null)) {
+            groupUid = childNode.getAttribute("uid");
             groupName = childNode.getAttribute("nimi");
             xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
             status = xmlData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
             if(status == "error") {
                 error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
                 alert("Ryhm\u00E4n " + groupName + " k\u00E4ytt\u00E4jien hakemisessa tapahtui virhe. Virheviesti: " + error);
-                childNode.setAttribute("valittu", 0);
-                childNode.setAttribute("haettu", 0);
-                KayttajaviestintaForm.getJSXByName("searchGroupMatrix").repaintData();            
             } else {
                 userData = getData(xmlData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
-                
+
                 for( i = 0; i < userData.length; i++) {
                     node = KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
+
                     node.setAttribute("jsxid", i);
                     node.setAttribute("etunimi", userData[i]["firstname"]);
                     node.setAttribute("sukunimi", userData[i]["lastname"]);
                     node.setAttribute("puhelin", userData[i]["phoneNumber"]);
                     node.setAttribute("sahkoposti", userData[i]["email"]);
-                    node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
                     node.setAttribute("valittu", 0);
                     KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
 
                 }
             }
         }
+
     }
     if(hasEmptyChild == true) {
         KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").removeChild(KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").getFirstChild());
     }
     KayttajaviestintaForm.getJSXByName("listGroupUsersMatrix").repaintData();
+
 }
-
-
-function removefromCache(removable) {
-    var tempNode, i, ryhma, node, ryhma, vertaus, taulukko = [];
-    i = 0;
- 
-        while(KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
-            tempNode = KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
-            ryhma = tempNode.getAttribute("ryhmanimi");
-            
-                if (ryhma != removable){
-                    taulukko[i] = tempNode;
-                    i++;
-                }
-            KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").removeChild(KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").getFirstChild());     
-            } // while
-            i = 0;
-            // clearDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
-            while(taulukko[i] != null){
-                node = taulukko[i];
-                KayttajaviestintaForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
-                i++;
-           }
-           KayttajaviestintaForm.getJSXByName("listGroupUsersMatrix").repaintData();
-}
-
 
 function searchNames(searchString) {
 
@@ -570,10 +521,7 @@ function addGroupsToRecipients() {
         KayttajaviestintaForm.getJSXByName("dummyMatrix").commitAutoRowSession();
         hasEmptyChild = true;
     }
-    // TODO: ks. tarkastukset, voiko valittu-arvon katsoa ennen kuin paivittaa?
-    
-    
-    
+
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
         valittu = childNode.getAttribute("valittu");
@@ -601,8 +549,6 @@ function addGroupsToRecipients() {
 
 }
 
-
-/*
 function listGroupUsers() {
 
     var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData;
@@ -651,7 +597,6 @@ function listGroupUsers() {
     KayttajaviestintaForm.getJSXByName("listGroupUsersMatrix").repaintData();
 
 }
-*/
 
 jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function(error) {
 

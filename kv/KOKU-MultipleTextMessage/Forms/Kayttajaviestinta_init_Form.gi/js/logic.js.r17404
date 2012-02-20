@@ -1,16 +1,8 @@
 function getEndpoint() {
 
-<<<<<<< .mine
-    //var endpoint = "http://localhost:8180";
-    //var endpoint = "http://trelx51lb:8080";
-    //var endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
-    var endpoint = "http://koku-salo-app3.ec.dmz:8280";
-    
-=======
     var endpoint = "http://localhost:8180";
     // var endpoint = "http://trelx51lb:8080";
     // var endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
->>>>>>> .r17404
     return endpoint;
 
 }

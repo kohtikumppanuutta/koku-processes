@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://62.61.65.15:8380/" />
+<title>KOKU-MultipleTextMessage</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">KOKU-MultipleTextMessage</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://62.61.65.15:8380/portal/auth/portal/default/Message/NewMessage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>nelli.neuvola</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=login-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=jsxforcestart_span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_1h</td>
+	<td>444444-4444</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_25 &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_51</td>
+	<td>Selenium testiviesti</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_57</td>
+	<td>Selenium viestin sisältö. Toimiiko?<br /><br />T: Nelli Neuvola</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#_jsx_0_5k &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://62.61.65.15:8280/portal/public/classic/Message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>kalle.kuntalainen</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#UIPortalLoginFormAction &gt; div.ButtonLeft &gt; div.ButtonRight &gt; div.ButtonMiddle &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.DropDownArrowIcon &gt; a.TabLabel.DefaultPageIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li &gt; input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Selenium testiviesti</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td.messageItem</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>nelli.neuvola</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>kalle.kuntalainen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Selenium viestin sisältö. Toimiiko?<br /><br />T: Nelli Neuvola</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Poista valitut']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getConfirmation</td>
+	<td>Oletko varma, että haluat poistaa viestin?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>kirsi.kuntalainen</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#UIPortalLoginFormAction &gt; div.ButtonLeft &gt; div.ButtonRight &gt; div.ButtonMiddle &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.DropDownArrowIcon &gt; a.TabLabel.DefaultPageIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li &gt; input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Selenium testiviesti</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td.messageItem</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>nelli.neuvola</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>kirsi.kuntalainen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Selenium viestin sisältö. Toimiiko?<br /><br />T: Nelli Neuvola</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Poista valitut']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getConfirmation</td>
+	<td>Oletko varma, että haluat poistaa viestin?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
