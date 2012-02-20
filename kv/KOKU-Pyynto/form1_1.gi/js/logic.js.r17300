@@ -292,14 +292,10 @@ function searchEmbloyeeNames(searchString) {
 
 function getEndpoint() {
 
-    var endpoint = "http://localhost:8180";
+    //var endpoint = "http://localhost:8180";
     //var endpoint = "http://trelx51lb:8080";
     //var endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
-<<<<<<< .mine
-    //var endpoint = "http://koku-salo-app3.ec.dmz:8280";
-=======
-    // var endpoint = "http://koku-salo-app3.ec.dmz:8280";
->>>>>>> .r17404
+    var endpoint = "http://koku-salo-app3.ec.dmz:8280";
     
     return endpoint;
 
@@ -776,7 +772,6 @@ function getDomainName() {
 function Preload() {
     try {
         var id = form1.getJSXByName("User_Sender").getValue();
-        id = "0e77f56a-bea0-465c-b9cc-bd77e799d24a";
         var formData = Arcusys.Internal.Communication.GetTemplateNames(id);
 
         if(formData != null) {
@@ -1071,8 +1066,7 @@ function mapTemplateNamesToField(data) {
         requestTemplateId = childNode.getFirstChild().getValue();
         subject = childNode.getLastChild().getValue();
         subject = removeQuotes(subject);
-        if (subject != "")
-            xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + requestTemplateId + "\" jsxtext=\"" + subject + "\"/>";
+        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + requestTemplateId + "\" jsxtext=\"" + subject + "\"/>";
     }
     xmlForSelectBox = xmlForSelectBox + "</data>";
 
@@ -1550,7 +1544,7 @@ function inputYesNoSection(title, question, nameSection) {
 function inputMultipleChoiceSection(title, question, nameSection) {
 
     // var id = getTemplateID();
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 215, true).repaint();
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 133, true).repaint();
     var textSection = form1.getJSXByName("block").load("components/multiplechoicesection.xml", true);
     textSection.setName(nameSection).repaint();
     //textSection.setTitleText(title).repaint();
@@ -1564,7 +1558,7 @@ function inputMultipleChoiceSection(title, question, nameSection) {
 }
 
 function inputCalendarSection(title, question, nameSection) {
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 275).repaint();
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 200).repaint();
     var textSection = form1.getJSXByName("block").load("components/multiplecalendarsection.xml", true);
 
     textSection.setName(nameSection).repaint();
@@ -1676,7 +1670,6 @@ function mapSelectedRecipientsToMatrix() {
                 userData = getData(groupData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
                 nodes = convertArrayToNodesString(userData, "uid", "childUid");
                 childData = Arcusys.Internal.Communication.GetChildinfo(nodes);
-                alert(childData);
                 status = childData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
                 if(status == "error") {
                     error = childData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -1686,7 +1679,6 @@ function mapSelectedRecipientsToMatrix() {
 
                     for( i = 0; i < parentData.length; i++) {
                         if(parentData[i]["uid"]) {
-                            alert(parentData[i]["displayName"]);
                             node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
                             node.setAttribute("Receipients_ReceipientUid", parentData[i]["uid"]);
                             node.setAttribute("Receipients_Receipient", "koku/" + parentData[i]["displayName"]);
@@ -1733,13 +1725,9 @@ function mapSelectedRecipientsToMatrix() {
             node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
             
             if (realm == "Loora") {
-<<<<<<< .mine
-                displayName = Arcusys.Internal.Communication.GetLooraUsernameByUid(uid).selectSingleNode("//looraUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
-=======
-                displayName = Arcusys.Internal.Communication.GetLooraUsernameByUid(uid).selectSingleNode("//looraUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+            	displayName = Arcusys.Internal.Communication.GetLooraUsernameByUid(uid).selectSingleNode("//looraUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
             } else if (realm == "Kunpo") {
-                displayName = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid).selectSingleNode("//kunpoUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
->>>>>>> .r17404
+            	displayName = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid).selectSingleNode("//kunpoUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
             }
 
             node.setAttribute("jsxid", jsxid);
@@ -1981,16 +1969,14 @@ function searchGroup(searchString) {
 
 function listGroupUsers() {
 
-    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData, fetched;
+    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData;
 
-/*
     if(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
         form1.getCache().getDocument("GroupUserList-nomap").removeChildren();
         form1.getJSXByName("listGroupUsersMatrix").repaintData();
     }
-*/ 
-
     hasEmptyChild = false;
+
     if(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild() == null) {
         form1.getJSXByName("listGroupUsersMatrix").commitAutoRowSession();
         hasEmptyChild = true;
@@ -2001,75 +1987,33 @@ function listGroupUsers() {
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
         selected = childNode.getAttribute("valittu");
-        fetched = childNode.getAttribute("haettu");
-        groupUid = childNode.getAttribute("uid");
-        
-        if (selected == 0 && fetched == 1){
-            childNode.setAttribute("haettu", 0);
-            removefromCache(groupUid);
-        }
-      
-        
-            if((selected != 0) && (selected != null) && (fetched != 1)) {
-            childNode.setAttribute("haettu", 1);
-            groupName = childNode.getAttribute("nimi");
-            xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
-            status = xmlData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
-            if(status == "error") {
-                error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
-                alert("Ryhm\u00E4n " + groupName + " k\u00E4ytt\u00E4jien hakemisessa tapahtui virhe. Virheviesti: " + error);
-                childNode.setAttribute("valittu", 0);
-                childNode.setAttribute("haettu", 0);
-                form1.getJSXByName("searchGroupMatrix").repaintData();
-            } else {
-                userData = getData(xmlData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
-                
-                for( i = 0; i < userData.length; i++) {
-                    node = form1.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
-                    node.setAttribute("jsxid", i);
-                    node.setAttribute("etunimi", userData[i]["firstname"]);
-                    node.setAttribute("sukunimi", userData[i]["lastname"]);
-                    node.setAttribute("puhelin", userData[i]["phoneNumber"]);
-                    node.setAttribute("sahkoposti", userData[i]["email"]);
-                    node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
-                    node.setAttribute("valittu", 0);
-                    form1.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
 
-                }
+        if((selected != 0) && (selected != null)) {
+            groupUid = childNode.getAttribute("uid");
+            xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
+            userData = getData(xmlData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
+
+            for( i = 0; i < userData.length; i++) {
+                node = form1.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
+
+                node.setAttribute("jsxid", i);
+                node.setAttribute("etunimi", userData[i]["firstname"]);
+                node.setAttribute("sukunimi", userData[i]["lastname"]);
+                node.setAttribute("puhelin", userData[i]["phoneNumber"]);
+                node.setAttribute("sahkoposti", userData[i]["email"]);
+                node.setAttribute("valittu", 0);
+                form1.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
+
             }
         }
+
     }
     if(hasEmptyChild == true) {
         form1.getCache().getDocument("GroupUserList-nomap").removeChild(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild());
     }
     form1.getJSXByName("listGroupUsersMatrix").repaintData();
+
 }
-
-
-function removefromCache(removable) {
-    var tempNode, i, ryhma, node, ryhma, vertaus, taulukko = [];
-    i = 0;
- 
-        while(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
-            tempNode = form1.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
-            ryhma = tempNode.getAttribute("ryhmanimi");
-            
-                if (ryhma != removable){
-                    taulukko[i] = tempNode;
-                    i++;
-                }
-            form1.getCache().getDocument("GroupUserList-nomap").removeChild(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild());     
-            } // while
-            i = 0;
-            // clearDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
-            while(taulukko[i] != null){
-                node = taulukko[i];
-                form1.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
-                i++;
-           }
-           form1.getJSXByName("listGroupUsersMatrix").repaintData();
-}
-
 
 function searchNames(searchString) {
     var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;

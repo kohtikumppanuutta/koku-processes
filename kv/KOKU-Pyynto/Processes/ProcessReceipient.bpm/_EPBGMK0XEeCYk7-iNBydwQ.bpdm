@@ -114,7 +114,17 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>bpel:doXslTransform("../xsl/DynamicFormRecipientReceive.xsl", $Dynamic_Fields_Form)</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to><mapper:mapperLink><mapper:vertice id="256431858" targetPath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto" targetedBy="415225662-arg2"></mapper:vertice><mapper:vertice id="415225662" dimension="217x85" location="300,84"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="1471372062" dimension="313x37" location="84,24" targetedBy="415225662-arg0"><mapper:value>"../xsl/DynamicFormRecipientReceive.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1226491616" sourcePath="$Dynamic_Fields_Form" targetedBy="415225662-arg1"></mapper:vertice></mapper:mapperLink>
+                        <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="242651778" targetPath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto" targetedBy="1545588963-arg2"></mapper:vertice>
+  <mapper:vertice id="1545588963" dimension="217x85" location="300,84">
+    <mapper:value>bpel:doXslTransform()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="358901656" dimension="313x37" location="84,24" targetedBy="1545588963-arg0">
+    <mapper:value>"../xsl/DynamicFormRecipientReceive.xsl"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="2128498881" sourcePath="$Dynamic_Fields_Form" targetedBy="1545588963-arg1"></mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>
@@ -148,17 +158,7 @@
                     </bpel:copy>
                     <bpel:copy>
                         <bpel:from>concat("Uusi pyyntö: ", $Dynamic_Fields_Form/tns:Header/tns:Header_Text)</bpel:from>
-                        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:description</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="869073037" targetPath="$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:description" targetedBy="1905050367-arg2"></mapper:vertice>
-  <mapper:vertice id="1905050367" dimension="78x24" location="528,48">
-    <mapper:value>concat()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="1829053240" dimension="121x24" location="312,48" targetedBy="1905050367-arg0">
-    <mapper:value>"Uusi pyyntö: "</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="1811934627" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text" targetedBy="1905050367-arg1"></mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:description</bpel:to><mapper:mapperLink><mapper:vertice id="869073037" targetPath="$copyofform1_1CreateTaskRequestMsg.root/Copyofform1_1:taskMetaData/Copyofform1_1:description" targetedBy="1905050367-arg2"></mapper:vertice><mapper:vertice id="1905050367" dimension="78x24" location="528,48"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="1829053240" dimension="121x24" location="312,48" targetedBy="1905050367-arg0"><mapper:value>"Uusi pyyntö: "</mapper:value></mapper:vertice><mapper:vertice id="1811934627" sourcePath="$Dynamic_Fields_Form/tns:Header/tns:Header_Text" targetedBy="1905050367-arg1"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="copyofform1_1CreateTaskRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="Copyofform1_1:createTaskRequest" bpdm:binding="Copyofform1_1:WorkflowSoapBinding" bpdm:ID="_iTa68ARsEeGvy6Wfe0A60w"></bpdm:linkset>

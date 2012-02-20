@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://62.61.65.15:8380/" />
+<title>KOKU-Pyynto</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">KOKU-Pyynto</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/portal/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>nelli.neuvola</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=login-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Uusi pyyntö</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=jsxforcestart_span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[2]/span/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>//html/body/div[2]/div/div/div/span/span[5]/fieldset/div/span/div/div/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>//html/body/div[2]/div/div/div/span/span[5]/fieldset/div/span/div/div/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td>\40</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_1n_Neuvolantyöntekija &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_72 &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//span[@id='_jsx_0_2c']/table/tbody/tr/td[3]/span/input</td>
+	<td>444444-4444</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[2]/span/table/tbody/tr/td[3]/span/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_31 &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#_jsx_0_78 &gt; div &gt; input[type=&quot;text&quot;]</td>
+	<td>12.12.2015</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_7e &gt; div.jsx30select_display &gt; div.jsx30select_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>//html/body/div[2]/div/div/div/span/span[9]/fieldset/div/span/div/div[4]/div/div/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>//html/body/div[2]/div/div/div/span/span[9]/fieldset/div/span/div/div[4]/div/div/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td>\40</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_7e_5 &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_8p</td>
+	<td>Selenium testitapaus</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_9b</td>
+	<td>Suostutko pyyntöön?</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_am &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_9v']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_9b</td>
+	<td>Tuletko tapaamiseen?</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_am &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_a2']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_9b</td>
+	<td>Tarinoi tähän</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_am &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[2]/div/div/div/div/span/table/tbody/tr/td[3]/span/input</td>
+	<td>Tarinoi tähän</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_f1 &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[2]/div/div/div/div/span/table/tbody/tr/td[3]/span/input</td>
+	<td>Lisää tarinoita</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_f1 &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_a9']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_am &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>//html/body/div[2]/div/div/div/span/div[5]/span/fieldset/div/div/span[2]/div/div/div/div/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>//html/body/div[2]/div/div/div/span/div[5]/span/fieldset/div/div/span[2]/div/div/div/div/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td>\40</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=_jsx_0_g8_Paiva</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[2]/div/div/span[2]/table/tbody/tr/td[3]/span/span/div/input</td>
+	<td>12-12-2015</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[2]/span[2]/table/tbody/tr/td[3]/span/span/div/input</td>
+	<td>13-12-2015</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_h0 &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_ag']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_9b</td>
+	<td>Laita tähän numero</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_am &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_d9 &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://62.61.65.15:8280/portal/public/classic/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>kalle.kuntalainen</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#UIPortalLoginFormAction &gt; div.ButtonLeft &gt; div.ButtonRight &gt; div.ButtonMiddle &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.DropDownArrowIcon &gt; a.TabLabel.DefaultPageIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#req_valid_request &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li &gt; input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Uusi pyyntö: Selenium testitapaus</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Uusi pyyntö: Selenium testitapaus</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>taskform</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=jsxforcestart_span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_47</td>
+	<td>Suostun pyyntöön</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_4q']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_5v']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_65']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_73']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_7d']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_7v</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_8b</td>
+	<td>Tässä vähän lisätietoja</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_3v &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=up</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

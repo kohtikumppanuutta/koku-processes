@@ -295,11 +295,7 @@ function getEndpoint() {
     var endpoint = "http://localhost:8180";
     //var endpoint = "http://trelx51lb:8080";
     //var endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
-<<<<<<< .mine
-    //var endpoint = "http://koku-salo-app3.ec.dmz:8280";
-=======
     // var endpoint = "http://koku-salo-app3.ec.dmz:8280";
->>>>>>> .r17404
     
     return endpoint;
 
@@ -776,7 +772,6 @@ function getDomainName() {
 function Preload() {
     try {
         var id = form1.getJSXByName("User_Sender").getValue();
-        id = "0e77f56a-bea0-465c-b9cc-bd77e799d24a";
         var formData = Arcusys.Internal.Communication.GetTemplateNames(id);
 
         if(formData != null) {
@@ -1676,7 +1671,6 @@ function mapSelectedRecipientsToMatrix() {
                 userData = getData(groupData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
                 nodes = convertArrayToNodesString(userData, "uid", "childUid");
                 childData = Arcusys.Internal.Communication.GetChildinfo(nodes);
-                alert(childData);
                 status = childData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
                 if(status == "error") {
                     error = childData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
@@ -1686,7 +1680,6 @@ function mapSelectedRecipientsToMatrix() {
 
                     for( i = 0; i < parentData.length; i++) {
                         if(parentData[i]["uid"]) {
-                            alert(parentData[i]["displayName"]);
                             node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
                             node.setAttribute("Receipients_ReceipientUid", parentData[i]["uid"]);
                             node.setAttribute("Receipients_Receipient", "koku/" + parentData[i]["displayName"]);
@@ -1733,13 +1726,9 @@ function mapSelectedRecipientsToMatrix() {
             node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
             
             if (realm == "Loora") {
-<<<<<<< .mine
-                displayName = Arcusys.Internal.Communication.GetLooraUsernameByUid(uid).selectSingleNode("//looraUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
-=======
                 displayName = Arcusys.Internal.Communication.GetLooraUsernameByUid(uid).selectSingleNode("//looraUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
             } else if (realm == "Kunpo") {
                 displayName = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid).selectSingleNode("//kunpoUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
->>>>>>> .r17404
             }
 
             node.setAttribute("jsxid", jsxid);

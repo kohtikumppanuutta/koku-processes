@@ -512,7 +512,8 @@
   </wsdl:binding>
   <wsdl:service name="KokuRequestProcessingService">
     <wsdl:port binding="tns:KokuRequestProcessingServiceSoapBinding" name="KokuRequestProcessingServicePort">
-      <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" />
+      <!-- <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" /> -->
+      <soap:address location="http://koku-salo-app3.ec.dmz:8280/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

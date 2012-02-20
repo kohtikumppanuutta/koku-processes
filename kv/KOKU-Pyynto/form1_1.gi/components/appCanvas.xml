@@ -153,7 +153,7 @@
       <strings jsxwidth="100%" jsxpadding="5 10 0 10" jsxname="header" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
         <variants jsxrelativeposition="1"/>
-        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title-new" jsxtext="pyyntö"/>
+        <strings jsxwidth="100%" jsxname="formHeaderLabel" jsxclassname="form-title-new" jsxtext=""/>
       </object>
     </object>
     <object type="com.intalio.ria.Section">
@@ -833,6 +833,16 @@
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
+                        <variants jsxwidth="44" jsxsort="0" jsxresize="0"/>
+                        <strings jsxcellpadding="1" jsxpath="haettu" jsxpadding="3" jsxcelltextalign="center" jsxname="Haettu" jsxvaluetemplate="@empty" jsxtext="Valinta" jsxdisplay="none"/>
+                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                        <object type="jsx3.gui.CheckBox">
+                          <variants jsxchecked="0" jsxenabled="1"/>
+                          <strings jsxname="haettu" jsxtext="" jsxtip="" jsxdisplay="none"/>
+                          <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED); listGroupUsers();"/>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="75"/>
                         <strings jsxpath="nimi" jsxcellpadding="3" jsxpadding="2" jsxname="Nimi" jsxtext="Nimi"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
@@ -915,6 +925,16 @@
                         <object type="jsx3.gui.TextBox">
                           <variants jsxrelativeposition="0" jsxleft="119" jsxtop="40" jsxwidth="111" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
                           <strings jsxname="sukunimi" jsxdisplay="none" jsxvalue="Kuntalainen"/>
+                          <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
+                        </object>
+                      </object>
+                      <object type="jsx3.gui.Matrix.Column">
+                        <variants jsxwidth="111"/>
+                        <strings jsxpath="ryhmanimi" jsxcellpadding="3" jsxpadding="2" jsxname="Ryhmanimi" jsxtext="Sukunimi" jsxdisplay="none"/>
+                        <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
+                        <object type="jsx3.gui.TextBox">
+                          <variants jsxrelativeposition="0" jsxleft="119" jsxtop="40" jsxwidth="111" jsxheight="20" jsxzindex="10" jsxenabled="0"/>
+                          <strings jsxname="ryhmanimi" jsxdisplay="none" jsxvalue=""/>
                           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxkeydown="1;"/>
                         </object>
                       </object>
@@ -1680,12 +1700,12 @@
       </object>
       <object type="jsx3.gui.TextBox">
         <variants/>
-        <strings jsxvalue="4" jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <strings jsxvalue="7" jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.TextBox">
         <variants/>
-        <strings jsxvalue="0" jsxname="multipleChoiceCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <strings jsxvalue="6" jsxname="multipleChoiceCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -1815,9 +1835,9 @@
     </object>
     <object type="jsx3.gui.Block">
       <variants jsxoverflow="1" jsxheight="0"/>
-      <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay="none"/>
+      <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay=""/>
       <object type="com.intalio.ria.Section">
-        <variants/>
+        <variants jsxheight="0"/>
         <strings riaTitleText="Viesti" jsxname="block" jsxclassname="fieldset" jsxdisplay="block"/>
       </object>
     </object>

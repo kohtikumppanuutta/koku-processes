@@ -21,9 +21,11 @@
        					<xsl:value-of select="//fe:HTML_Sisalto/text()" />
        				</xsl:element>
        				<xsl:if test="//fe:User_Roolit/text() != ''">
+       					<xsl:if test="//fe:User_Roolit/text() != null">
        					<xsl:element name="fromRole">
        						<xsl:value-of select="//fe:User_Roolit/text()" />
        					</xsl:element>
+       					</xsl:if>
        				</xsl:if>
 					<xsl:element name="fromUserUid">
 						<xsl:value-of select="//fe:User_Sender/text()" />
