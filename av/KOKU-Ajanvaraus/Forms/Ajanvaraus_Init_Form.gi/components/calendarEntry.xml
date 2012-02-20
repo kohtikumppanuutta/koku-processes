@@ -54,7 +54,7 @@
             <object type="jsx3.gui.Button">
               <variants jsxindex="0" jsxheight="18"/>
               <strings jsxname="remButton" jsxtext="Poista" jsxmargin="0 4 0 0"/>
-              <events jsxexecute="removeThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());"/>
+              <events jsxexecute="removeThisSection(this.getAncestorOfName(&quot;rootpane&quot;).getParent().getParent().getName());checkSlotMatrix();"/>
             </object>
           </object>
         </object>

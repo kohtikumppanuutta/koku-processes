@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://62.61.65.15:8380/" />
+<title>KOKU-Ajanvaraus</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">KOKU-Ajanvaraus</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://62.61.65.15:8380/portal/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_username</td>
+	<td>nelli.neuvola</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=j_password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=login-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Uusi tapaaminen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=jsxforcestart_span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_4j &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_1h</td>
+	<td>444444-4444</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_1s']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_25 &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_51</td>
+	<td>Selenium terveystarkastus</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_55</td>
+	<td>Perustarkastus</td>
+</tr>
+<!--Tapaamisen perustiedot ----->
+<tr>
+	<td>click</td>
+	<td>//span[@id='_jsx_0_5k']/div/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#_jsx_0_5z &gt; div &gt; input[type=&quot;text&quot;]</td>
+	<td>12-12-2015</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.jsx30combo_text</td>
+	<td>06:00</td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>//html/body/div[2]/div/div/div/span/span[6]/fieldset/div/span/div/div[5]/div/div[2]/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>//html/body/div[2]/div/div/div/span/span[6]/fieldset/div/span/div/div[5]/div/div[2]/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td>\40</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=_jsx_0_6d_30</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_6n</td>
+	<td>Selenium terveysasema</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[9]/div/div/span/span</td>
+	<td></td>
+</tr>
+<!--Seuraava uusi tapaaminen --->
+<tr>
+	<td>type</td>
+	<td>css=#_jsx_0_5z &gt; div &gt; input[type=&quot;text&quot;]</td>
+	<td>13-12-2015</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.jsx30combo_text</td>
+	<td>12:00</td>
+</tr>
+<tr>
+	<td>focus</td>
+	<td>//html/body/div[2]/div/div/div/span/span[6]/fieldset/div/span/div/div[5]/div/div[2]/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>//html/body/div[2]/div/div/div/span/span[6]/fieldset/div/span/div/div[5]/div/div[2]/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td>\40</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>//html/body/div[2]/div/div/div/span/span[6]/fieldset/div/span/div/div[5]/div/div[2]/span[2]/table/tbody/tr/td[3]/span/span/div</td>
+	<td>\40</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=_jsx_0_6d_45</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=_jsx_0_6n</td>
+	<td>Selenium sairaala</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_8f &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+<!--Seuraava uusi tapaaminen --->
+<!--Vastaus tapaamiseen-->
+<tr>
+	<td>open</td>
+	<td>http://62.61.65.15:8280/portal/public/classic/Message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Vastausta odottavat</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>kalle.kuntalainen</td>
+</tr>
+<tr>
+	<td>typeAndWait</td>
+	<td>name=password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.MiddleButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td.messageItem</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=jsxforcestart_span</td>
+	<td></td>
+</tr>
+<!--Hyväksy-->
+<tr>
+	<td>click</td>
+	<td>css=#_jsx_0_2w &gt; span.jsx30button_text</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

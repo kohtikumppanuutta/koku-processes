@@ -864,6 +864,20 @@ function setModeModify() {
     AjanvarausForm.getJSXByName("Haku_Lapset").setDisplay("none", true);
     AjanvarausForm.getJSXByName("dummyMatrix").getChild("deleteButtonColumn").setDisplay("none", true);
     AjanvarausForm.getJSXByName("showOrHideSearch").setDisplay("none", true);
+    
+    AjanvarausForm.getJSXByName("aloitusPvm").setRequired(0);
+    AjanvarausForm.getJSXByName("aloitusPvm").getParent().repaint();
+    AjanvarausForm.getJSXByName("lopetusPvm").setRequired(0);
+    AjanvarausForm.getJSXByName("lopetusPvm").getParent().repaint();
+    AjanvarausForm.getJSXByName("aloitusAika").setRequired(0);
+    AjanvarausForm.getJSXByName("aloitusAika").getParent().repaint();
+    AjanvarausForm.getJSXByName("kesto").setRequired(0);
+    AjanvarausForm.getJSXByName("kesto").getParent().repaint();
+    AjanvarausForm.getJSXByName("lopetusAika").setRequired(0);
+    AjanvarausForm.getJSXByName("lopetusAika").getParent().repaint();
+    AjanvarausForm.getJSXByName("paikka").setRequired(0);
+    AjanvarausForm.getJSXByName("paikka").getParent().repaint();
+    
 }
 
 // Functions related to recipients mapping -------------------------------------------------------------------------------------------------------
@@ -1060,6 +1074,7 @@ function searchGroup(searchString) {
     if(status == "error") {
         error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
         alert("Ryhm\u00E4n hakemisessa tapahtui virhe! Virheviesti: " + error);
+       
     } else {
 
         if(AjanvarausForm.getCache().getDocument("HaetutRyhmat-nomap").getFirstChild() == null) {
@@ -1092,14 +1107,16 @@ function searchGroup(searchString) {
 
 function listGroupUsers() {
 
-    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData;
+    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData, fetched;
 
+/*
     if(AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
         AjanvarausForm.getCache().getDocument("GroupUserList-nomap").removeChildren();
         AjanvarausForm.getJSXByName("listGroupUsersMatrix").repaintData();
     }
-    hasEmptyChild = false;
+*/ 
 
+    hasEmptyChild = false;
     if(AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild() == null) {
         AjanvarausForm.getJSXByName("listGroupUsersMatrix").commitAutoRowSession();
         hasEmptyChild = true;
@@ -1110,33 +1127,75 @@ function listGroupUsers() {
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
         selected = childNode.getAttribute("valittu");
-
-        if((selected != 0) && (selected != null)) {
-            groupUid = childNode.getAttribute("uid");
+        fetched = childNode.getAttribute("haettu");
+        groupUid = childNode.getAttribute("uid");
+        
+        if (selected == 0 && fetched == 1){
+            childNode.setAttribute("haettu", 0);
+            removefromCache(groupUid);
+        }
+      
+        
+            if((selected != 0) && (selected != null) && (fetched != 1)) {
+            childNode.setAttribute("haettu", 1);
+            groupName = childNode.getAttribute("nimi");
             xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
-            userData = getData(xmlData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
+            
+            status = xmlData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+            if(status == "error") {
+                error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+                alert("Ryhm\u00E4n " + groupName + " k\u00E4ytt\u00E4jien hakemisessa tapahtui virhe. Virheviesti: " + error);
+                childNode.setAttribute("valittu", 0);
+                childNode.setAttribute("haettu", 0);
+                AjanvarausForm.getJSXByName("searchGroupMatrix").repaintData();
 
-            for( i = 0; i < userData.length; i++) {
-                node = AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
+            } else {
+                userData = getData(xmlData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
+                
+                for( i = 0; i < userData.length; i++) {
+                    node = AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
+                    node.setAttribute("jsxid", i);
+                    node.setAttribute("etunimi", userData[i]["firstname"]);
+                    node.setAttribute("sukunimi", userData[i]["lastname"]);
+                    node.setAttribute("puhelin", userData[i]["phoneNumber"]);
+                    node.setAttribute("sahkoposti", userData[i]["email"]);
+                    node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
+                    node.setAttribute("valittu", 0);
+                    AjanvarausForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
 
-                node.setAttribute("jsxid", i);
-                node.setAttribute("etunimi", userData[i]["firstname"]);
-                node.setAttribute("sukunimi", userData[i]["lastname"]);
-                node.setAttribute("puhelin", userData[i]["phoneNumber"]);
-                node.setAttribute("sahkoposti", userData[i]["email"]);
-                node.setAttribute("valittu", 0);
-                AjanvarausForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
-
+                }
             }
         }
-
     }
-
     if(hasEmptyChild == true) {
         AjanvarausForm.getCache().getDocument("GroupUserList-nomap").removeChild(AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild());
     }
     AjanvarausForm.getJSXByName("listGroupUsersMatrix").repaintData();
+}
 
+
+function removefromCache(removable) {
+    var tempNode, i, ryhma, node, ryhma, vertaus, taulukko = [];
+    i = 0;
+ 
+        while(AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
+            tempNode = AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
+            ryhma = tempNode.getAttribute("ryhmanimi");
+            
+                if (ryhma != removable){
+                    taulukko[i] = tempNode;
+                    i++;
+                }
+            AjanvarausForm.getCache().getDocument("GroupUserList-nomap").removeChild(AjanvarausForm.getCache().getDocument("GroupUserList-nomap").getFirstChild());     
+            } // while
+            i = 0;
+            // clearDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
+            while(taulukko[i] != null){
+                node = taulukko[i];
+                AjanvarausForm.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
+                i++;
+           }
+           AjanvarausForm.getJSXByName("listGroupUsersMatrix").repaintData();
 }
 
 function addToRecipients() {
@@ -2181,6 +2240,7 @@ function searchGroup(searchString) {
     }
 }
 
+/* 
 function listGroupUsers() {
 
     var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData;
@@ -2229,6 +2289,8 @@ function listGroupUsers() {
     AjanvarausForm.getJSXByName("listGroupUsersMatrix").repaintData();
 
 }
+
+*/ 
 
 function addToRecipients() {
     var counter, node, hasEmptyChild, chosen, childIterator, uid, targetPerson, firstname, lastname, vanhempi1, vanhempi2, vanhempi1Uid, vanhempi2Uid, childNode;
@@ -2320,7 +2382,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2346,7 +2408,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2373,7 +2435,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2399,7 +2461,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2453,7 +2515,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2483,15 +2545,6 @@ function getDomainName() {
     var url_parts = url.split("/");
     var domain_name = url_parts[0] + "//" + url_parts[2];
     return domain_name;
-}
-
-function getEndpoint() {
-    var endpoint;
-
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
-
-    return endpoint;
 }
 
 function showDialog(dialogId, text, textTitle, title) {
@@ -2605,7 +2658,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2631,7 +2684,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2658,7 +2711,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2684,7 +2737,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2738,7 +2791,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2773,8 +2826,10 @@ function getDomainName() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
+    //endpoint = "http://koku-salo-app3.ec.dmz:8280";
 
     return endpoint;
 }

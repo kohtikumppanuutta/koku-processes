@@ -267,7 +267,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);      
         
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -305,8 +305,10 @@ function getUrl() {
 function getEndpoint() {
     var endpoint;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
+    //endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
+    //endpoint = "http://trelx51lb:8080";
+    endpoint = "http://localhost:8180";
+    // endpoint = "http://koku-salo-app3.ec.dmz:8280";
     
     return endpoint;
 }
