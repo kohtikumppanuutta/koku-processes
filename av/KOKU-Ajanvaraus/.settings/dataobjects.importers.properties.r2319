@@ -1,0 +1,14 @@
+# index of importer -> set(imports)
+Forms/Ajanvaraus_receive_Form.gi=Forms/Ajanvaraus.xsd
+Forms/Ajanvaraus_Init_Form.gi=Forms/Ajanvaraus.xsd
+Processes/AjanvarausInit-Process.bpm/_4uyZMLgXEeC2_YanFZTrQA.bpdm=Services/KokuAppointmentProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl
+Processes/AjanvarausInit-Process.bpm/_G5qKwLE5EeC2x8KNg_tcFQ.bpdm=Forms/Ajanvaraus_Init_Form.gi.wsdl\:Forms/Ajanvaraus.xsd
+Processes/AjanvarausInit-Process.bpm/_miG_MLE5EeC2x8KNg_tcFQ.bpdm=Forms/Ajanvaraus.xsd\:Forms/Ajanvaraus_Init_Form.gi.wsdl\:Services/KokuAppointmentProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl
+Processes/AjanvarausInit-Process.bpm/modeler.bpmn=Forms/Ajanvaraus_Init_Form.gi.wsdl\:Forms/Ajanvaraus.xsd\:Services/KokuAppointmentProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl
+Processes/AjanvarausRecipient-process.bpm/_Qp5UkLOQEeCelp0oJjnelQ.bpdm=Forms/Ajanvaraus.xsd\:Services/KokuAppointmentProcessingServiceImpl.wsdl\:Forms/Ajanvaraus_receive_Form.gi.wsdl
+Processes/AjanvarausRecipient-process.bpm/_c5Bj4LOQEeCelp0oJjnelQ.bpdm=Forms/Ajanvaraus.xsd\:Services/KokuAppointmentProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl
+Processes/AjanvarausRecipient-process.bpm/_cWxLYLOQEeCelp0oJjnelQ.bpdm=Forms/Ajanvaraus.xsd\:Forms/Ajanvaraus_receive_Form.gi.wsdl\:Services/KokuAppointmentProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl
+Processes/AjanvarausRecipient-process.bpm/modeler.bpmn=Forms/Ajanvaraus_receive_Form.gi.wsdl\:Forms/Ajanvaraus.xsd\:Services/KokuAppointmentProcessingServiceImpl.wsdl\:Services/UsersAndGroupsServiceImpl.wsdl
+Forms/Ajanvaraus_Init_Form.gi.wsdl=Forms/Ajanvaraus.xsd
+Processes/AjanvarausInit-Process.bpm/modeler.bpmn_diagram=xsl/getAppointmentAttributes_Muokkaus.xsl\:xsl/getAppointmentAttributes.xsl
+Forms/Ajanvaraus_receive_Form.gi.wsdl=Forms/Ajanvaraus.xsd

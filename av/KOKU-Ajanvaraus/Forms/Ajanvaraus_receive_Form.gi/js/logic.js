@@ -20,7 +20,29 @@ function intalioPreStart() {
     } 
     
     changeStatus();
+    throughTextfields();
     return null;
+}
+
+function escapeHTML(value) {
+                if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
+                        return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                } else {
+                        return value;
+                }
+}
+
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = AjanvarausForm.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
+    
+    for( i = 0; i < descendants.length; i++) {
+        value = AjanvarausForm.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        AjanvarausForm.getJSXByName(descendants[i].getName()).setValue(temp);
+        AjanvarausForm.getJSXByName(descendants[i].getName()).repaint();
+    }
 }
 
 function confirmation(question){
@@ -34,7 +56,6 @@ function confirmation(question){
 
 function checkApprovedSlot() {
     var slots, i, approved;
-
     slots = AjanvarausForm.getJSXByName("Ajat").getDescendantsOfType("jsx3.gui.CheckBox");
     approved = false;
     
@@ -43,8 +64,7 @@ function checkApprovedSlot() {
             approved = true;
             break;
         }
-    }
-    
+    }   
     return approved;
 }
 
@@ -114,21 +134,33 @@ function setApprovedNumber(selectBoxName) {
       AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue("");
    }
 }
-
-function radioSelect(selectBoxName) {   
-    //var activeSelection = AjanvarausForm.getJSXByName("activeSelect").getValue();
+function radioSelect(selectBoxName) {
     
-    uncheckTheOthers(AjanvarausForm.getJSXByName("Ajat"), AjanvarausForm.getJSXByName(selectBoxName));
-
-    if (AjanvarausForm.getJSXByName(selectBoxName).getChecked()) {
+    var activeSelection = AjanvarausForm.getJSXByName("activeSelect").getValue();    
+        
+    if (activeSelection != "") {
+        if ((selectBoxName == activeSelection) && (AjanvarausForm.getJSXByName("selectBoxName").getChecked() == false)) {
+            AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
+            AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
+         }
+         else {     
+            AjanvarausForm.getJSXByName("activeSelect").setValue(selectBoxName);        
+            AjanvarausForm.getJSXByName(activeSelection).setChecked(false);
+                
+            AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
+            AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
+        }
+    }    
+    else {
+        AjanvarausForm.getJSXByName("activeSelect").setValue(selectBoxName); 
         AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
         AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
-    } else {
-        AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue("");
-    }
-     
-     AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(0, true);
-} //radioSelect()
+    }    
+    AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(false);
+    AjanvarausForm.getJSXByName("calendarEntryBlock").repaint();
+    
+    
+}//radioSelect()
 
 // Preload ---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -151,7 +183,7 @@ function Preload() {
         catch (e) {
             alert(e);
         }
-    }
+    }   
 }
 
 function mapFormDataToFields(objXML) {
@@ -176,48 +208,96 @@ function mapFormDataToFields(objXML) {
 
 function inputPreload(objXML) {
     var attributes, i, j, pvm, pvm1, pvm2, pvm3, numero, alkaa, paattyy, paikka, entryText;
-
     attributes = getAttributes(objXML);
 
     for (i=0;i<attributes.length;i++) {       
+       
         pvm = attributes[i][1];
         pvm = pvm.replace("Z", "");
         pvm1 = pvm.substr(8,2);
         pvm2 = pvm.substr(5,2);
         pvm3 = pvm.substr(0,4);
         pvm = pvm1 + "." + pvm2 + "." + pvm3;
-
-        
+                        
         numero = attributes[i][0];       
         alkaa = attributes[i][2].substr(0,5);
         paattyy = attributes[i][3].substr(0,5);
         paikka = attributes[i][4];
         infotext = attributes[i][5];
-              
-        //LISATAAN MYOHEMMIN TARKISTUS JOS "LISATIETOJA" -KENTTA ON TYHJA NIIN JATETAAN SE KIRJOITTAMATTA
+               
         entryText = pvm + ", klo: " + alkaa + " - " + paattyy + ", paikka: " + paikka;
+        
         addNewEntry(entryText, infotext, numero);
+        refreshBlock();
     }
 }
 
+//refreshes the block and sets new height.
+function refreshBlock() {
+    var newHeight, child;
+    //currentHeigh = AjanvarausForm.getJSXByName("calendarEntryBlock").getHeight();
+
+    if(AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild() != null) {
+        child = AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild();
+        newHeight += child.getHeight();
+        while(child.getNextSibling() != null) {
+            child = child.getNextSibling();
+            newHeight += child.getHeight();
+        }
+    }
+    else {
+        newHeight = 0;
+    }
+    AjanvarausForm.getJSXByName("calendarEntryBlock").setHeight(newHeight);
+    AjanvarausForm.getJSXByName("calendarEntryBlock").repaint();
+}
+
 function addNewEntry(entryText, infotext, numero) {
+    
     var ajankohtaPanel, yesBox, label;
-
-    ajankohtaPanel = AjanvarausForm.getJSXByName("Ajat").load("components/calendarEntry.xml",true);
-
-    ajankohtaPanel.setName("ajankohtaPanel" + numero);
-    yesBox = ajankohtaPanel.getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild();
-
+    if(AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild() != null) {
+        var lastChild = AjanvarausForm.getJSXByName("calendarEntryBlock").getLastChild();
+        var previousLabel = lastChild.getDescendantOfName("label");
+        var splitted = previousLabel.getText().split(",");
+    
+        if (splitted[0] != "ajankohta" ) {
+            var entryTextSplit = entryText.split(",");
+            if (splitted[0] != entryTextSplit[0]) {
+                lastChild.setHeight(45);
+        
+            }   
+    
+        }       
+    }
+     
+    // When first slot is created. --> load()-operation is slow, so that's why used only once.
+    if(AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild() == null) {
+        ajankohtaPanel = AjanvarausForm.getJSXByName("calendarEntryBlock").load("components/calendarEntry.xml", true);
+        
+    }
+    // For rest of the slots. --> a bit faster than load().
+    else {
+        ajankohtaPanel = AjanvarausForm.getJSXByName("calendarEntryBlock").getFirstChild().doClone();
+       
+    }
+ 
+    ajankohtaPanel.setName("panel" + numero);
+     
+       
+    parentNode = AjanvarausForm.getJSXByName("panel" + numero);
+             
+    yesBox = parentNode.getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild().getFirstChild();
+       
     yesBox.setName(numero);
+    label = parentNode.getDescendantOfName("label");
+    label.setText(entryText).repaint();
 
     AjanvarausForm.getJSXByName("counter").setValue(numero);
-    label = ajankohtaPanel.getFirstChild().getFirstChild().getFirstChild().getLastChild().getFirstChild();
 
-    label.setText(entryText).repaint();
-    if (infotext) {
-        ajankohtaPanel.getDescendantOfName("infotext").setValue(infotext);
+    if(infotext) {
+        parentNode.getDescendantOfName("infotext").setValue(infotext);
     } else {
-        ajankohtaPanel.getDescendantOfName("tooltipImg").setDisplay("none", true);
+        parentNode.getDescendantOfName("tooltipImg").setDisplay("none", true);
     }
 } //addNewEntry()
 
@@ -255,7 +335,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var msg, endpoint, url, tout, appointmentId, req, objXML;
     
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.av.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointmentForReply><appointmentId>" + id + "</appointmentId><arg1>" + targetPerson + "</arg1></soa:getAppointmentForReply></soapenv:Body></soapenv:Envelope>";
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
+
+        endpoint = getEndpoint("KokuAppointmentProcessingService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
         url = getUrl();
         
         tout = 1000;
@@ -267,7 +349,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);      
         
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -302,13 +384,14 @@ function getUrl() {
 
 }
 
-function getEndpoint() {
-    var endpoint;
+kokuServiceEndpoints = null;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
-    
-    return endpoint;
+function getEndpoint(serviceName) {
+        if (kokuServiceEndpoints == null) {
+                kokuServiceEndpoints = this.parent.getKokuServicesEndpoints();
+        }
+        
+        return kokuServiceEndpoints.services[serviceName];
 }
 
 function gup(name) {
