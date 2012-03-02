@@ -67,7 +67,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="none"/>
+      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Lapset" jsxclassname="fieldset" jsxdisplay="block"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="300"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
@@ -150,7 +150,7 @@
                   <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
                   <object type="jsx3.gui.Block">
                     <variants jsxoverflow="2"/>
-                    <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="none"/>
+                    <strings jsxname="valittu_suostuja" jsxwidth="100%" jsxheight="100%" jsxdisplay="none"/>
                     <dynamics jsxborder="@No jsxborder"/>
                     <object type="jsx3.gui.Block">
                       <variants jsxrelativeposition="1" jsxoverflow="3"/>
@@ -161,8 +161,8 @@
                       <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                       <object type="jsx3.gui.Select">
                         <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" _isfocusing="true"/>
-                        <strings jsxname="suostuja" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;6e6be87e-f059-4154-b943-441190fc7908&quot; jsxtext=&quot;Kalle Kuntalainen&quot; targetPerson=&quot;6bba3d61-f94f-4195-85b5-b23c839bb641&quot;/&gt;&lt;record jsxid=&quot;30c7970a-30c2-4110-b1b7-894cda70c98a&quot; jsxtext=&quot;Kirsi Kuntalainen&quot; targetPerson=&quot;6bba3d61-f94f-4195-85b5-b23c839bb641&quot;/&gt;&lt;/data&gt;" jsxxmlid="suostuja-nomap" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay=""/>
-                        <events jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
+                        <strings jsxname="suostuja" jsxmargin="0 4 0 0" jsxxml="" jsxxmlid="suostuja-nomap" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay=""/>
+                        <events jsxselect="com.intalio.ria.validate(this, objEVENT); getTitle();"/>
                       </object>
                     </object>
                   </object>
@@ -189,7 +189,7 @@
                     <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay="" jsxmargin="0 0 0 20"/>
                     <object type="jsx3.gui.Matrix">
                       <variants jsxautorow="1" jsxselectionmodel="0" jsxpagingmodel="3" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
-                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxname="searchChildMatrix" jsxbgcolor="#efefff" jsxsortpath="etunimi" jsxsorttype="text" jsxsortdirection="descending"/>
+                      <strings jsxheaderborder="1px solid #dfdfef" jsxbodyborder="1px solid #dfdfef" jsxxmlid="HaetutLapset-nomap" jsxname="searchChildMatrix" jsxbgcolor="#efefff" jsxsortpath="sukunimi" jsxsorttype="text" jsxsortdirection="ascending"/>
                       <events jsxaftercommit=""/>
                       <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
                       <object type="jsx3.gui.Matrix.Column">
@@ -458,7 +458,7 @@
                   <strings riaLabelText="button" jsxname="button-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="showOrHideSearch" jsxtext="Lisää vastaanottajia" jsxmargin="12 4 0 0"/>
+                    <strings jsxname="showOrHideSearch" jsxtext="Piilota Haku" jsxmargin="12 4 0 0"/>
                     <events jsxexecute="if (TIVA3Form.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  TIVA3Form.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;block&quot;).repaint();  TIVA3Form.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;,true);  TIVA3Form.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(TIVA3Form.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  TIVA3Form.getJSXByName(&quot;Haku_Lapset&quot;).setDisplay(&quot;none&quot;).repaint();  TIVA3Form.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;,true);  TIVA3Form.getJSXByName(&quot;searchVisible&quot;).setChecked(0); } "/>
                   </object>
                 </object>
@@ -522,7 +522,7 @@
         </object>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
+        <variants jsxheight="18" jsxchecked="1" jsxdefaultchecked="0"/>
         <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -717,7 +717,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Kalle Kuntalainen,Kirsi Kuntalainen" jsxname="Suostumus1" jsxclassname="fieldset"/>
+      <strings riaTitleText="" jsxname="Suostumus1" jsxclassname="fieldset" jsxdisplay="block"/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxheight="300" jsxwidth="720"/>
         <strings jsxname="pane"/>
@@ -747,7 +747,7 @@
                   <object type="jsx3.gui.Select">
                     <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" jsxenabled="1" jsxrequired="1" jsxtype="0" _isfocusing="true"/>
                     <strings jsxname="Suostumus1_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Verbal&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;PaperBased&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;EmailBased&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff" jsxxmlurl="" jsxtip="Suostumustapa"/>
-                    <events jsxselect="enabledOnValue(TIVA3Form.getJSXByName(&quot;Suostumus1_Sailytyspaikka&quot;), this.getValue(), &quot;Paperilla&quot;);"/>
+                    <events jsxselect="enablePaperStorage(this.getValue(), &quot;Suostumus1_Sailytyspaikka&quot;);"/>
                   </object>
                 </object>
               </object>
@@ -763,7 +763,7 @@
                   <variants/>
                   <strings riaLabelText="Suostumus_Suostumusajankohta" jsxname="Suostumus_Suostumusajankohta-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
                   <object type="jsx3.gui.DatePicker">
-                    <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxenabled="1" jsxrequired="1"/>
+                    <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxenabled="1" jsxrequired="1" jsxyear="2012" jsxmonth="2" jsxdate="3"/>
                     <strings jsxformat="dd-MM-yyyy" jsxname="Suostumus1_Suostumusajankohta" jsxmargin="0 4 0 0" jsxdisabledbgcolor="#ffffff" jsxtip="Suostumusajankohta"/>
                     <events jsxhide="com.intalio.ria.validate(this);" jsxblur="isValidDate(this, 0);"/>
                   </object>
@@ -791,7 +791,7 @@
                   <variants/>
                   <strings riaLabelText="Suostumus_Sailytyspaikka" jsxname="Suostumus_Sailytyspaikka-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxenabled="0" jsxwidth="390"/>
+                    <variants jsxwidth="390" jsxenabled="0"/>
                     <strings jsxname="Suostumus1_Sailytyspaikka" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
@@ -894,7 +894,7 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxname="Suostumus2" jsxclassname="fieldset" jsxdisplay="none"/>
+      <strings jsxname="Suostumus2" jsxclassname="fieldset" jsxdisplay="none" riaTitleText=""/>
       <object type="jsx3.gui.Block">
         <variants jsxoverflow="2" jsxheight="300" jsxwidth="720"/>
         <strings jsxname="pane"/>
@@ -923,8 +923,8 @@
                   <strings riaLabelText="suostumustapa" jsxname="suostumustapa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
                   <object type="jsx3.gui.Select">
                     <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" _isfocusing="true" jsxenabled="1" jsxrequired="0"/>
-                    <strings jsxname="Suostumus2_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Verbal&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;PapeBased&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;EmailBased&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
-                    <events jsxselect="enabledOnValue(TIVA3Form.getJSXByName(&quot;Suostumus2_Sailytyspaikka&quot;), this.getValue(), &quot;Paperilla&quot;);"/>
+                    <strings jsxname="Suostumus2_Suostumustapa" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;Verbal&quot; jsxtext=&quot;Suullinen&quot;/&gt;&lt;record jsxid=&quot;PaperBased&quot; jsxtext=&quot;Paperilla&quot;/&gt;&lt;record jsxid=&quot;Fax&quot; jsxtext=&quot;Fax&quot;/&gt;&lt;record jsxid=&quot;EmailBased&quot; jsxtext=&quot;Sähköposti&quot;/&gt; &lt;/data&gt;" jsxdefaulttext="-Valitse-" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
+                    <events jsxselect="enablePaperStorage(this.getValue(), &quot;Suostumus2_Sailytyspaikka&quot;);"/>
                   </object>
                 </object>
               </object>
