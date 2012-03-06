@@ -53,6 +53,10 @@
     		<element name="User_Roolit" type="string"></element>
     		<element name="User_LuoUusi" type="boolean"></element>
     		<element name="User_VastaanottajaRoolit" type="string"></element>
+    		<element name="User_SenderFirstname" type="string"></element>
+    		<element name="User_SenderLastname" type="string"></element>
+    		<element name="User_RecipientFirstname" type="string"></element>
+    		<element name="User_RecipientLastname" type="string"></element>
     	</sequence>
     </complexType>
     

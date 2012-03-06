@@ -7,11 +7,14 @@ function testAlert() {
     preload();
 }
 
-function getEndpoint() {
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
-    return endpoint;
-    
+kokuServiceEndpoints = null;
+
+function getEndpoint(serviceName) {
+        if (kokuServiceEndpoints == null) {
+                kokuServiceEndpoints = this.parent.getKokuServicesEndpoints();
+        }
+        
+        return kokuServiceEndpoints.services[serviceName];
 }
 
 //Getting the domain name and port if available
@@ -62,7 +65,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -70,7 +74,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         req.open('POST', url, false);      
         
-       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
        req.send(msg, tout);
        var objXML = req.getResponseXML();
 

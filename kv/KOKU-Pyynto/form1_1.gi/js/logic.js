@@ -290,11 +290,14 @@ function searchEmbloyeeNames(searchString) {
 
 }
 
-function getEndpoint() {
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
-    return endpoint;
+kokuServiceEndpoints = null;
 
+function getEndpoint(serviceName) {
+        if (kokuServiceEndpoints == null) {
+                kokuServiceEndpoints = this.parent.getKokuServicesEndpoints();
+        }
+        
+        return kokuServiceEndpoints.services[serviceName];
 }
 
 function modfiyForm() {
@@ -354,6 +357,7 @@ function getRoles(uid) {
         for( i = 0; i < rolesArray.length; i++) {
             s += "<record jsxid=\"" + rolesArray[i][1] + "\" jsxtext=\"" + rolesArray[i][0] + "\"\/>";
         }
+        s += "<record jsxid=\"\" jsxtext=\"Ei valintaa\"/>";
         s += "</data>";
 
         form1.getJSXByName("User_Roolit").setXMLString(s).resetCacheData();
@@ -374,7 +378,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
 
         url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+     
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
@@ -403,13 +409,17 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserRoles><userUid>" + uid + "</userUid></soa:getUserRoles></soapenv:Body></soapenv:Envelope>";
 
         var url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -434,14 +444,17 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         var url = getUrl();
 
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        endpoint = getEndpoint("UsersAndGroupsService");
+        //  var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+        
 
         var req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
 
@@ -464,15 +477,17 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getLooraNameByUserUid><userUid>" + uid + "</userUid></soa:getLooraNameByUserUid></soapenv:Body></soapenv:Envelope>";
 
         var url = getUrl();
-
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         var req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
 
@@ -790,14 +805,15 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         var url = getUrl();
 
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
+        endpoint = getEndpoint("KokuRequestProcessingService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         var req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
 
@@ -821,14 +837,16 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         var url = getUrl();
 
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
+        endpoint = getEndpoint("KokuRequestProcessingService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
+        
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         var req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
 
@@ -850,15 +868,16 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:isRequestTemplateExist><creator>" + creator + "</creator><subject>" + subject + "</subject></soa:isRequestTemplateExist></soapenv:Body></soapenv:Envelope>";
 
         var url = getUrl();
-
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
+        
+        endpoint = getEndpoint("KokuRequestProcessingService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         var req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
 
@@ -881,15 +900,16 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByLooraName><looraUsername>" + username + "</looraUsername></soa:getUserUidByLooraName></soapenv:Body></soapenv:Envelope>";
 
         var url = getUrl();
-
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
         var req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         var objXML = req.getResponseXML();
 
@@ -1062,7 +1082,8 @@ function mapTemplateNamesToField(data) {
         requestTemplateId = childNode.getFirstChild().getValue();
         subject = childNode.getLastChild().getValue();
         subject = removeQuotes(subject);
-        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + requestTemplateId + "\" jsxtext=\"" + subject + "\"/>";
+        if (subject != "")
+            xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + requestTemplateId + "\" jsxtext=\"" + subject + "\"/>";
     }
     xmlForSelectBox = xmlForSelectBox + "</data>";
 
@@ -1124,9 +1145,9 @@ function addChoice(tempID) {
 
     var section = form1.getJSXByName(block).load("components/choicesection.xml", true);
 
-    form1.getJSXByName(block).setHeight(form1.getJSXByName(block).getHeight() + 30, true).repaint();
-    form1.getJSXByName(block).getParent().setHeight(form1.getJSXByName(block).getParent().getHeight() + 30);
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30).repaint();
+    form1.getJSXByName(block).setHeight(form1.getJSXByName(block).getHeight() + 30, true);
+    form1.getJSXByName(block).getParent().setHeight(form1.getJSXByName(block).getParent().getHeight() + 30, true);
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 30, true);
 
     var choice = section.getFirstChild().getFirstChild().getFirstChild();
     var label = section.getFirstChild().getFirstChild().getNextSibling().getFirstChild();
@@ -1540,7 +1561,7 @@ function inputYesNoSection(title, question, nameSection) {
 function inputMultipleChoiceSection(title, question, nameSection) {
 
     // var id = getTemplateID();
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 143).repaint();
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 215, true).repaint();
     var textSection = form1.getJSXByName("block").load("components/multiplechoicesection.xml", true);
     textSection.setName(nameSection).repaint();
     //textSection.setTitleText(title).repaint();
@@ -1554,7 +1575,7 @@ function inputMultipleChoiceSection(title, question, nameSection) {
 }
 
 function inputCalendarSection(title, question, nameSection) {
-    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 200).repaint();
+    form1.getJSXByName("paneBlock").setHeight(form1.getJSXByName("paneBlock").getHeight() + 275).repaint();
     var textSection = form1.getJSXByName("block").load("components/multiplecalendarsection.xml", true);
 
     textSection.setName(nameSection).repaint();
@@ -1677,7 +1698,7 @@ function mapSelectedRecipientsToMatrix() {
                         if(parentData[i]["uid"]) {
                             node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
                             node.setAttribute("Receipients_ReceipientUid", parentData[i]["uid"]);
-                            node.setAttribute("Receipients_Receipient", parentData[i]["displayName"]);
+                            node.setAttribute("Receipients_Receipient", "koku/" + parentData[i]["displayName"]);
                             node.setAttribute("Receipients_Realm", realm);
                             form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
                         }
@@ -1719,10 +1740,16 @@ function mapSelectedRecipientsToMatrix() {
             uid = childNode.getAttribute("uid");
             receipientName = childNode.getAttribute("receipient");
             node = form1.getCache().getDocument("Receipients-nomapNew").getFirstChild().cloneNode();
+            
+            if (realm == "Loora") {
+                displayName = Arcusys.Internal.Communication.GetLooraUsernameByUid(uid).selectSingleNode("//looraUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+            } else if (realm == "Kunpo") {
+                displayName = Arcusys.Internal.Communication.GetKunpoUsernameByUid(uid).selectSingleNode("//kunpoUsername","xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+            }
 
             node.setAttribute("jsxid", jsxid);
             node.setAttribute("Receipients_ReceipientUid", uid);
-            node.setAttribute("Receipients_Receipient", receipientName);
+            node.setAttribute("Receipients_Receipient", "koku/" + displayName);
             node.setAttribute("Receipients_Realm", realm);
             form1.getCache().getDocument("Receipients-nomapNew").insertBefore(node);
             jsxid++;
@@ -1852,10 +1879,32 @@ function intalioPreStart() {
             form1.getJSXByName("PohjaNakyvyys_Arvo").setValue("All").repaint();
         }
     }
-
     mapSelectedRecipientsToMatrix();
-
+    throughTextfields();
 }
+
+// Removes HTML-tags.
+function escapeHTML(value) {
+                if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
+                        return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                } else {
+                        return value;
+                }
+}
+
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = form1.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
+    
+    for( i = 0; i < descendants.length; i++) {
+        value = form1.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        form1.getJSXByName(descendants[i].getName()).setValue(temp);
+        form1.getJSXByName(descendants[i].getName()).repaint();
+    }
+}
+
 
 function switchSearchMode(mode) {
 
@@ -1959,14 +2008,16 @@ function searchGroup(searchString) {
 
 function listGroupUsers() {
 
-    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData;
+    var node, i, hasEmptyChild, childIterator, childNode, selected, groupUid, personInfo, xmlData, list, userData, fetched;
 
+/*
     if(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
         form1.getCache().getDocument("GroupUserList-nomap").removeChildren();
         form1.getJSXByName("listGroupUsersMatrix").repaintData();
     }
-    hasEmptyChild = false;
+*/ 
 
+    hasEmptyChild = false;
     if(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild() == null) {
         form1.getJSXByName("listGroupUsersMatrix").commitAutoRowSession();
         hasEmptyChild = true;
@@ -1977,33 +2028,75 @@ function listGroupUsers() {
     while(childIterator.hasNext()) {
         childNode = childIterator.next();
         selected = childNode.getAttribute("valittu");
-
-        if((selected != 0) && (selected != null)) {
-            groupUid = childNode.getAttribute("uid");
+        fetched = childNode.getAttribute("haettu");
+        groupUid = childNode.getAttribute("uid");
+        
+        if (selected == 0 && fetched == 1){
+            childNode.setAttribute("haettu", 0);
+            removefromCache(groupUid);
+        }
+      
+        
+            if((selected != 0) && (selected != null) && (fetched != 1)) {
+            childNode.setAttribute("haettu", 1);
+            groupName = childNode.getAttribute("nimi");
             xmlData = Arcusys.Internal.Communication.GetGroupUsers(groupUid);
-            userData = getData(xmlData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
+            status = xmlData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+            if(status == "error") {
+                error = xmlData.selectSingleNode("//message", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
+                alert("Ryhm\u00E4n " + groupName + " k\u00E4ytt\u00E4jien hakemisessa tapahtui virhe. Virheviesti: " + error);
+                childNode.setAttribute("valittu", 0);
+                childNode.setAttribute("haettu", 0);
+                form1.getJSXByName("searchGroupMatrix").repaintData();
+            } else {
+                userData = getData(xmlData.selectNodeIterator("//user", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'"));
+                
+                for( i = 0; i < userData.length; i++) {
+                    node = form1.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
+                    node.setAttribute("jsxid", i);
+                    node.setAttribute("etunimi", userData[i]["firstname"]);
+                    node.setAttribute("sukunimi", userData[i]["lastname"]);
+                    node.setAttribute("puhelin", userData[i]["phoneNumber"]);
+                    node.setAttribute("sahkoposti", userData[i]["email"]);
+                    node.setAttribute("ryhmanimi", childNode.getAttribute("uid"));
+                    node.setAttribute("valittu", 0);
+                    form1.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
 
-            for( i = 0; i < userData.length; i++) {
-                node = form1.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
-
-                node.setAttribute("jsxid", i);
-                node.setAttribute("etunimi", userData[i]["firstname"]);
-                node.setAttribute("sukunimi", userData[i]["lastname"]);
-                node.setAttribute("puhelin", userData[i]["phoneNumber"]);
-                node.setAttribute("sahkoposti", userData[i]["email"]);
-                node.setAttribute("valittu", 0);
-                form1.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
-
+                }
             }
         }
-
     }
     if(hasEmptyChild == true) {
         form1.getCache().getDocument("GroupUserList-nomap").removeChild(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild());
     }
     form1.getJSXByName("listGroupUsersMatrix").repaintData();
-
 }
+
+
+function removefromCache(removable) {
+    var tempNode, i, ryhma, node, ryhma, vertaus, taulukko = [];
+    i = 0;
+ 
+        while(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild() != null) {
+            tempNode = form1.getCache().getDocument("GroupUserList-nomap").getFirstChild().cloneNode();
+            ryhma = tempNode.getAttribute("ryhmanimi");
+            
+                if (ryhma != removable){
+                    taulukko[i] = tempNode;
+                    i++;
+                }
+            form1.getCache().getDocument("GroupUserList-nomap").removeChild(form1.getCache().getDocument("GroupUserList-nomap").getFirstChild());     
+            } // while
+            i = 0;
+            // clearDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
+            while(taulukko[i] != null){
+                node = taulukko[i];
+                form1.getCache().getDocument("GroupUserList-nomap").insertBefore(node);
+                i++;
+           }
+           form1.getJSXByName("listGroupUsersMatrix").repaintData();
+}
+
 
 function searchNames(searchString) {
     var node, hasEmptyChild, entryFound, userData, i, xmlData, personInfo, list;
@@ -2217,13 +2310,14 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2246,13 +2340,14 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2273,13 +2368,15 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2302,13 +2399,14 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2330,13 +2428,14 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchUsers><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchUsers></soapenv:Body></soapenv:Envelope>";
 
         var url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
@@ -2357,7 +2456,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchGroups><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchGroups></soapenv:Body></soapenv:Envelope>";
 
         var url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
@@ -2384,13 +2484,15 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUsersByGroupUid><groupUid>" + groupUid + "</groupUid></soa:getUsersByGroupUid></soapenv:Body></soapenv:Envelope>";
 
         var url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
         req = new jsx3.net.Request();
 
         req.open('POST', url, false);
 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         req.send(msg, tout);
         objXML = req.getResponseXML();
 
