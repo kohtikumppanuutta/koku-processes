@@ -16,9 +16,16 @@
 			</p>
 			<div class="innerContent">
 				<h2 class="old">VASTAANOTTAJA</h2>
-				<p>
-				<xsl:value-of select="//ka:User_RecipientFirstname/text()" /><xsl:text> </xsl:text><xsl:value-of select="//ka:User_RecipientLastname/text()" />
-				</p>
+				<xsl:if test="//ka:User_RecipientFirstname/text() != ' '">
+					<p>
+					<xsl:value-of select="//ka:User_RecipientFirstname/text()" /><xsl:text> </xsl:text><xsl:value-of select="//ka:User_RecipientLastname/text()" />
+					</p>
+				</xsl:if>
+				<xsl:if test="//ka:User_RecipientFirstname/text() = ' '">
+					<p>
+					<xsl:value-of select="//ka:User_SenderDisplay/text()" />
+					</p>
+				</xsl:if>		
 			</div>
 			<h2 class="old">
 				<p>Uusi pyyntö</p>

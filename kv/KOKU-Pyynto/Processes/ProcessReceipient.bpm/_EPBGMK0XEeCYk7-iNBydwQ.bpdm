@@ -123,11 +123,7 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Sender</bpel:from>
-                        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1564133843" targetPath="$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid" targetedBy="93279827-arg0"></mapper:vertice>
-  <mapper:vertice id="93279827" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to><mapper:mapperLink><mapper:vertice id="1564133843" targetPath="$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid" targetedBy="93279827-arg0"></mapper:vertice><mapper:vertice id="93279827" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_bjNQQGdlEeGD74mpnm3lrQ"></bpdm:linkset>
@@ -137,19 +133,11 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1602122994" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname" targetedBy="1603038927-arg0"></mapper:vertice>
-  <mapper:vertice id="1603038927" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname"></mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname</bpel:to><mapper:mapperLink><mapper:vertice id="1602122994" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname" targetedBy="1603038927-arg0"></mapper:vertice><mapper:vertice id="1603038927" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                     <bpel:copy>
                         <bpel:from>$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="526165022" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname" targetedBy="655769561-arg0"></mapper:vertice>
-  <mapper:vertice id="655769561" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname"></mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname</bpel:to><mapper:mapperLink><mapper:vertice id="526165022" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname" targetedBy="655769561-arg0"></mapper:vertice><mapper:vertice id="655769561" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>
@@ -157,11 +145,7 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Recipient</bpel:from>
-                        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1607003170" targetPath="$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid" targetedBy="1806439925-arg0"></mapper:vertice>
-  <mapper:vertice id="1806439925" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Recipient"></mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to><mapper:mapperLink><mapper:vertice id="1607003170" targetPath="$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid" targetedBy="1806439925-arg0"></mapper:vertice><mapper:vertice id="1806439925" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Recipient"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
                 <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_oHNbAGdzEeGD74mpnm3lrQ"></bpdm:linkset>
@@ -170,19 +154,31 @@
             <bpdm:messagingtask bpdm:label="Hae vastottaja" bpdm:ID="_qxYiQGdzEeGD74mpnm3lrQ">
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
-                        <bpel:from>$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname</bpel:from>
+                        <bpel:from>concat($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname, " ")</bpel:from>
                         <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="422039342" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname" targetedBy="1551112393-arg0"></mapper:vertice>
-  <mapper:vertice id="1551112393" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname"></mapper:vertice>
+  <mapper:vertice id="1495186623" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname" targetedBy="1643617085-arg2"></mapper:vertice>
+  <mapper:vertice id="1643617085" dimension="78x24" location="324,84">
+    <mapper:value>concat()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="376425129" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname" targetedBy="1643617085-arg0"></mapper:vertice>
+  <mapper:vertice id="219801610" dimension="78x24" location="240,36" targetedBy="1643617085-arg1">
+    <mapper:value>" "</mapper:value>
+  </mapper:vertice>
 </mapper:mapperLink>
                     </bpel:copy>
                     <bpel:copy>
-                        <bpel:from>$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname</bpel:from>
+                        <bpel:from>concat($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname, " ")</bpel:from>
                         <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="1481294313" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname" targetedBy="716998135-arg0"></mapper:vertice>
-  <mapper:vertice id="716998135" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname"></mapper:vertice>
+  <mapper:vertice id="1230032413" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname" targetedBy="1187348603-arg2"></mapper:vertice>
+  <mapper:vertice id="1187348603" dimension="78x24" location="360,240">
+    <mapper:value>concat()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1049673769" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname" targetedBy="1187348603-arg0"></mapper:vertice>
+  <mapper:vertice id="1789043887" dimension="78x24" location="252,288" targetedBy="1187348603-arg1">
+    <mapper:value>" "</mapper:value>
+  </mapper:vertice>
 </mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
@@ -191,17 +187,7 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>bpel:doXslTransform("../xsl/DynamicFormRecipientReceive.xsl", $Dynamic_Fields_Form)</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1942846804" targetPath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto" targetedBy="1501955843-arg2"></mapper:vertice>
-  <mapper:vertice id="1501955843" dimension="217x85" location="156,84">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="642483359" dimension="313x37" location="84,24" targetedBy="1501955843-arg0">
-    <mapper:value>"../xsl/DynamicFormRecipientReceive.xsl"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="2065131558" sourcePath="$Dynamic_Fields_Form" targetedBy="1501955843-arg1"></mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto</bpel:to><mapper:mapperLink><mapper:vertice id="1942846804" targetPath="$Dynamic_Fields_Form/tns:HTML/tns:HTML_Sisalto" targetedBy="1501955843-arg2"></mapper:vertice><mapper:vertice id="1501955843" dimension="217x85" location="156,84"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="642483359" dimension="313x37" location="84,24" targetedBy="1501955843-arg0"><mapper:value>"../xsl/DynamicFormRecipientReceive.xsl"</mapper:value></mapper:vertice><mapper:vertice id="2065131558" sourcePath="$Dynamic_Fields_Form" targetedBy="1501955843-arg1"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>
