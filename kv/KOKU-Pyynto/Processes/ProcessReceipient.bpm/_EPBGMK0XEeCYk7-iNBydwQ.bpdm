@@ -155,31 +155,11 @@
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>concat($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname, " ")</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1495186623" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname" targetedBy="1643617085-arg2"></mapper:vertice>
-  <mapper:vertice id="1643617085" dimension="78x24" location="324,84">
-    <mapper:value>concat()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="376425129" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname" targetedBy="1643617085-arg0"></mapper:vertice>
-  <mapper:vertice id="219801610" dimension="78x24" location="240,36" targetedBy="1643617085-arg1">
-    <mapper:value>" "</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname</bpel:to><mapper:mapperLink><mapper:vertice id="1495186623" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname" targetedBy="1643617085-arg2"></mapper:vertice><mapper:vertice id="1643617085" dimension="78x24" location="324,84"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="376425129" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname" targetedBy="1643617085-arg0"></mapper:vertice><mapper:vertice id="219801610" dimension="78x24" location="240,36" targetedBy="1643617085-arg1"><mapper:value>" "</mapper:value></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                     <bpel:copy>
                         <bpel:from>concat($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname, " ")</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1230032413" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname" targetedBy="1187348603-arg2"></mapper:vertice>
-  <mapper:vertice id="1187348603" dimension="78x24" location="360,240">
-    <mapper:value>concat()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="1049673769" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname" targetedBy="1187348603-arg0"></mapper:vertice>
-  <mapper:vertice id="1789043887" dimension="78x24" location="252,288" targetedBy="1187348603-arg1">
-    <mapper:value>" "</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink>
+                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname</bpel:to><mapper:mapperLink><mapper:vertice id="1230032413" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname" targetedBy="1187348603-arg2"></mapper:vertice><mapper:vertice id="1187348603" dimension="78x24" location="360,240"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="1049673769" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname" targetedBy="1187348603-arg0"></mapper:vertice><mapper:vertice id="1789043887" dimension="78x24" location="252,288" targetedBy="1187348603-arg1"><mapper:value>" "</mapper:value></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>
@@ -257,7 +237,17 @@
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>bpel:doXslTransform("../xsl/ReplyToRequestAnswers.xsl", $Dynamic_Fields_Form)</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers</bpel:to><mapper:mapperLink><mapper:vertice id="537651821" targetPath="$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers" targetedBy="1749176720-arg2"></mapper:vertice><mapper:vertice id="1749176720" dimension="217x85" location="384,108"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="1191494879" dimension="157x37" location="168,48" targetedBy="1749176720-arg0"><mapper:value>"../xsl/ReplyToRequestAnswers.xsl"</mapper:value></mapper:vertice><mapper:vertice id="2077839671" sourcePath="$Dynamic_Fields_Form" targetedBy="1749176720-arg1"></mapper:vertice></mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="826673632" targetPath="$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers" targetedBy="2013958077-arg2"></mapper:vertice>
+  <mapper:vertice id="2013958077" dimension="217x85" location="348,96">
+    <mapper:value>bpel:doXslTransform()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="149374181" dimension="157x37" location="168,48" targetedBy="2013958077-arg0">
+    <mapper:value>"../xsl/ReplyToRequestAnswers.xsl"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="804097266" sourcePath="$Dynamic_Fields_Form" targetedBy="2013958077-arg1"></mapper:vertice>
+</mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID</bpel:from>

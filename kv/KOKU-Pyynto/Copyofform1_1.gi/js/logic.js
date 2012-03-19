@@ -39,19 +39,43 @@ function getDomainName() {
 function preload() {
 
     var username = Intalio.Internal.Utilities.getUser();
+    var recipientfirstname, recipientlastname, senderfirstname, senderlastname;
     username = username.substring(username.indexOf("/") + 1);
     
-    var recipientDisplayName;
+    var recipientDisplayName ="", rolereceiver;
 
     var recipients = form1.getJSXByName("User_Recipient").getValue().split(',');
 
     for (i = 0; i < recipients.length; i++) {
-        recipientDisplayName = Arcusys.Internal.Communication.GetUserInfo(recipients[i]).selectSingleNode("//displayName", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
-        if (recipientDisplayName = username) {
+        if (i != 0)
+        recipientDisplayName = recipientDisplayName + ", ";
+        rolereceiver = Arcusys.Internal.Communication.GetUserInfo(recipients[i]).selectSingleNode("//displayName", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+        recipientDisplayName = recipientDisplayName + Arcusys.Internal.Communication.GetUserInfo(recipients[i]).selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+        recipientDisplayName = recipientDisplayName + " " + Arcusys.Internal.Communication.GetUserInfo(recipients[i]).selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+
+        if (rolereceiver == username) {
             form1.getJSXByName("User_Recipient").setValue(recipients[i]);
-            break;
+            // break;
         }
+    }    
+    // Changedate: 14.3.12
+    // Inserts correct name, instead of the userid, for the recipient. Note: original process did not have first- or lastname fields, needs
+    // to be corrected and cleaned up during possible process refactoring.
+    if (form1.getJSXByName("User_RecipientFirstname").getValue() != " ") {
+        recipientfirstname = form1.getJSXByName("User_RecipientFirstname").getValue();
+        recipientlastname = form1.getJSXByName("User_RecipientLastname").getValue();    
+        form1.getJSXByName("RecipientName").setValue(recipientfirstname + " " + recipientlastname); 
+    // If no name is found, the recipient is likely to be a role and the list of users fetched earlier is used.    
+    } else { form1.getJSXByName("RecipientName").setValue(recipientDisplayName);}    
+    
+    // Changedate: 15.3.12
+    // Added the above for sender as well.
+    if (form1.getJSXByName("User_SenderFirstname").getValue() != null) {
+        senderfirstname = form1.getJSXByName("User_SenderFirstname").getValue();
+        senderlastname = form1.getJSXByName("User_SenderLastname").getValue();   
+        form1.getJSXByName("SenderName").setValue(senderfirstname + " " + senderlastname); 
     }
+    
 }
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {

@@ -786,7 +786,8 @@ function Preload() {
         var formData = Arcusys.Internal.Communication.GetTemplateNames(id);
 
         if(formData != null) {
-            mapTemplateNamesToField(formData);
+            mapTemplateNamesToField(formData);           
+            
         }
     } catch (e) {
         alert(e);
@@ -940,6 +941,8 @@ function getTemplate(templateId) {
     } catch (e) {
         alert(e);
     }
+
+    
 
 }
 
@@ -1235,25 +1238,39 @@ function getTaskSubscribe() {
 
 function prepareForm() {
     var username = Intalio.Internal.Utilities.getUser();
+    var firstname, lastname;
     username = username.substring((username.indexOf("/") + 1));
 
     form1.getJSXByName("User_SenderDisplay").setValue(username);
     form1.getJSXByName("User_SenderDisplay").setEnabled(jsx3.gui.Form.STATEDISABLED).repaint();
+    
 
     try {
-
         // Add form preload functions here.
         var userUid = Arcusys.Internal.Communication.GetUserUidByUsername(username);
+        id = userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
         //Arcusys.Internal.Communication.GerLDAPUser();
 
         if(userUid != null) {
             form1.getJSXByName("User_Sender").setValue(userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue()).repaint();
         }
+        
     } catch (e) {
         alert(e);
     }
-
+    data = Arcusys.Internal.Communication.getUserInfo(id);
+    form1.getJSXByName("User_SenderDisplay").setValue(parseName(data));
 }
+
+// Changedate: 15.3.12. Added the function below to parse user's real name instead of using username.
+function parseName(input) {
+    firstname = data.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+    lastname = data.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+wholename = firstname + " " + lastname;
+return(wholename);
+}
+
+
 
 jsx3.lang.Package.definePackage("koku.service", //the full name of the package to create
 function(service) {//name the argument of this function
@@ -2360,6 +2377,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
     };
 });
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetChildinfo = function(nodes) {
         var tout, msg, endpoint, url, req, objXML;
@@ -2389,6 +2407,36 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
     };
 });
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.getUserInfo = function(id) {
+        var tout, msg, endpoint, url, req, objXML, limit;
+        tout = 1000;
+        limit = 100;
+        msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
+        url = getUrl();
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+        req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        req.send(msg, tout);
+        objXML = req.getResponseXML();
+
+        if(objXML == null) {
+            alert("Virhe palvelinyhteydessa");
+        } else {
+            return objXML;
+        }
+
+    };
+});
+
+
+
 
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetEmbloyeeUsers = function(searchString) {
@@ -2476,6 +2524,20 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
     };
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetGroupUsers = function(groupUid) {
 
