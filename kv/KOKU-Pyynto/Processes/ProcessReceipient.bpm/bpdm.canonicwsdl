@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<wsdl:definitions xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:TokenService="http://tempo.intalio.org/security/tokenService/" xmlns:diag="http://thisdiagram" xmlns:Process="http://thisdiagram/Process" xmlns:Services="http://thisdiagram/Services" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:TaskManagementSystem="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:attachments="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_7XlLcK0WEeCYk7-iNBydwQ" bpdm:displayName="diag">
+<wsdl:definitions xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:TokenService="http://tempo.intalio.org/security/tokenService/" xmlns:diag="http://thisdiagram" xmlns:Process="http://thisdiagram/Process" xmlns:User="http://thisdiagram/User" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:TaskManagementSystem="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:attachments="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_7XlLcK0WEeCYk7-iNBydwQ" bpdm:displayName="diag">
   <pnlk:partnerLinkType name="ProcessAndInterface" bpdm:poolOneId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Process" bpdm:poolTwoId="_7XlLdq0WEeCYk7-iNBydwQ" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Interface">
     <pnlk:role name="Process_for_Interface" portType="Process:ForInterface" bpdm:thisPoolId="_EPBGMK0XEeCYk7-iNBydwQ">
       <wsdl:portType name="ForInterface">
@@ -10,7 +10,7 @@
       </wsdl:portType>
     </pnlk:role>
   </pnlk:partnerLinkType>
-  <pnlk:partnerLinkType name="ProcessAndUser" bpdm:poolOneId="_CDSOcK0XEeCYk7-iNBydwQ" bpdm:poolOneIsExecutable="false" bpdm:poolOneName="User" bpdm:poolTwoId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:poolTwoIsExecutable="true" bpdm:poolTwoName="Process">
+  <pnlk:partnerLinkType name="ProcessAndUser" bpdm:poolOneId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Process" bpdm:poolTwoId="_CDSOcK0XEeCYk7-iNBydwQ" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="User">
     <pnlk:role name="Process_for_User" portType="Process:ForUser" bpdm:thisPoolId="_EPBGMK0XEeCYk7-iNBydwQ">
       <wsdl:portType name="ForUser">
         <wsdl:operation name="Käsittele" bpdm:canid="_Yudl4K0XEeCYk7-iNBydwQ._hzJfcwRsEeGvy6Wfe0A60w." bpdm:dataobjectPointer="project:///Copyofform1_1.gi.wsdl?wsdloperation={http://www.intalio.com/gi/Copyofform1_1.gi}Process/notifyTaskCompletion">
@@ -19,7 +19,7 @@
         </wsdl:operation>
       </wsdl:portType>
     </pnlk:role>
-    <pnlk:role name="User_for_Process" portType="{http://thisdiagram/User}ForProcess" bpdm:thisPoolId="_CDSOcK0XEeCYk7-iNBydwQ">
+    <pnlk:role name="User_for_Process" portType="User:ForProcess" bpdm:thisPoolId="_CDSOcK0XEeCYk7-iNBydwQ">
       <wsdl:portType name="ForProcess">
         <wsdl:operation name="Copyofform1_1-create" bpdm:canid="_OPIgQK0XEeCYk7-iNBydwQ._hzHqQARsEeGvy6Wfe0A60w." bpdm:dataobjectPointer="project:///Copyofform1_1.gi.wsdl?wsdloperationbound={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask">
           <wsdl:input message="Copyofform1_1:createTaskRequest" name="Copyofform1_1-create" bpdm:canid="_iTa68ARsEeGvy6Wfe0A60w" bpdm:senderId="_OPIgQK0XEeCYk7-iNBydwQ" bpdm:receiverId="_hzHqQARsEeGvy6Wfe0A60w" bpdm:senderName="Lähetä lomake vastaanottajalle" bpdm:receiverName="Copyofform1_1-create" bpdm:receiverPoolId="_CDSOcK0XEeCYk7-iNBydwQ" bpdm:dataobjectPointer="project:///Copyofform1_1.gi.wsdl?messageForBoundOperation={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask/input/createTaskRequest" bpdm:plnkTypeKey="WFmagic_hzHqQARsEeGvy6Wfe0A60w" bpdm:plnkVarKey="WFmagic_hzHqQARsEeGvy6Wfe0A60w"></wsdl:input>
@@ -29,7 +29,7 @@
     </pnlk:role>
   </pnlk:partnerLinkType>
   <pnlk:partnerLinkType name="ServicesAndProcess" bpdm:poolOneId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:poolOneIsExecutable="false" bpdm:poolOneName="Services" bpdm:poolTwoId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:poolTwoIsExecutable="true" bpdm:poolTwoName="Process">
-    <pnlk:role name="Services_for_Process" portType="Services:ForProcess" bpdm:thisPoolId="_mCUH8K0fEeCYk7-iNBydwQ">
+    <pnlk:role name="Services_for_Process" portType="{http://thisdiagram/Services}ForProcess" bpdm:thisPoolId="_mCUH8K0fEeCYk7-iNBydwQ">
       <wsdl:portType name="ForProcess">
         <wsdl:operation name="authenticateUser" bpdm:canid="_m9MocCZYEeGZ6qIn2ne6Bw._rvw_kCZYEeGZ6qIn2ne6Bw." bpdm:dataobjectPointer="project:///Services/TokenService.wsdl?wsdloperationbound={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser">
           <wsdl:input message="TokenService:authenticateUserRequest" name="authenticateUser" bpdm:canid="_t0nMMCZYEeGZ6qIn2ne6Bw" bpdm:senderId="_m9MocCZYEeGZ6qIn2ne6Bw" bpdm:receiverId="_rvw_kCZYEeGZ6qIn2ne6Bw" bpdm:senderName="EventIntermediateMessage" bpdm:receiverName="authenticateUser" bpdm:receiverPoolId="_mCUH8K0fEeCYk7-iNBydwQ" bpdm:dataobjectPointer="project:///Services/TokenService.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser/input/authenticateUserRequest"></wsdl:input>

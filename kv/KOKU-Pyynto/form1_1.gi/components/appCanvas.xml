@@ -1373,7 +1373,7 @@
                   <variants/>
                   <strings jsxname="Header_Text-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="400" jsxenabled="1"/>
+                    <variants jsxwidth="400" jsxenabled="1" jsxmaxlength="180"/>
                     <strings jsxname="Header_Text" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);setValueToText(this.getValue(),&quot;formHeaderLabel&quot;);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
@@ -1500,7 +1500,7 @@
                   <variants/>
                   <strings jsxname="tekstikentanOtsikko-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif" jsxdisplay="none"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="400" jsxenabled="0"/>
+                    <variants jsxwidth="400" jsxenabled="0" jsxmaxlength="254"/>
                     <strings jsxname="tekstikentanOtsikko" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>

@@ -48,7 +48,7 @@
               <variants/>
               <strings jsxname="Kommentti_Kommentti-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
               <object type="jsx3.gui.TextBox">
-                <variants jsxwidth="500" jsxheight="100" jsxtype="1" jsxenabled="1"/>
+                <variants jsxwidth="500" jsxheight="100" jsxtype="1" jsxenabled="1" jsxmaxlength="254"/>
                 <strings jsxname="Kommentti_Kommentti" jsxmargin="0 4 0 0" jsxvalue=""/>
                 <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
               </object>

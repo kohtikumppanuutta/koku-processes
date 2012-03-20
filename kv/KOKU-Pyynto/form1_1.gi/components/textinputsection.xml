@@ -48,7 +48,7 @@
               <variants/>
               <strings jsxname="textinput-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
               <object type="jsx3.gui.TextBox">
-                <variants jsxheight="100" jsxtype="1" jsxenabled="0" jsxwidth="500"/>
+                <variants jsxheight="100" jsxtype="1" jsxenabled="0" jsxwidth="500" jsxmaxlength="254"/>
                 <strings jsxname="textbox" jsxmargin="0 4 0 0" jsxvalue=""/>
                 <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
               </object>
