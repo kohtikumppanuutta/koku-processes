@@ -18,6 +18,33 @@ function startUp(){
 
 }
 
+function intalioPreStart(){
+throughTextfields();
+}
+
+// Removes HTML-tags.
+function escapeHTML(value) {
+                if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
+                        return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                } else {
+                        return value;
+                }
+}
+
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = Paivahoitohakemus_Form.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
+    
+    for( i = 0; i < descendants.length; i++) {
+        value = Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).setValue(temp);
+        Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).repaint();
+    }
+}
+
+
 function setDisplayForDecision(){
 //alert(Paivahoitohakemus_Form.getJSXByName("HoidonTarve_Osapaiva").getChecked());
 //alert(Paivahoitohakemus_Form.getJSXByName("HoidonTarve_Kokopaiva").getChecked());

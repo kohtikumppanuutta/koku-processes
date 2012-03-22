@@ -7,23 +7,50 @@ function intalioPreStart() {
     }
     Paivahoitohakemus_Form.getJSXByName("Lapsi_ValittuDisplay").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getText()).repaint();
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").setValue(Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getValue()).repaint();
+    throughTextfields();
 }
 
-function getEndpoint() {
+// Removes HTML-tags.
+function escapeHTML(value) {
+                if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
+                        return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                } else {
+                        return value;
+                }
+}
+
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = Paivahoitohakemus_Form.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
-    return endpoint;
-    
+    for( i = 0; i < descendants.length; i++) {
+        value = Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).setValue(temp);
+        Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).repaint();
+    }
+}
+
+
+kokuServiceEndpoints = null;
+
+function getEndpoint(serviceName) {
+        if (kokuServiceEndpoints == null) {
+                kokuServiceEndpoints = this.parent.getKokuServicesEndpoints();
+        }
+        
+        return kokuServiceEndpoints.services[serviceName];
 }
 
 //Getting the domain name and port if available
 function getUrl() {
     
-    var domain = getDomainName();
-    //domain = "http://62.61.65.15:8280"
+var domain = getDomainName();
+    if(domain.search("file") != -1) {
+        domain = "http://62.61.65.15:8380"
+    }
     return domain + "/palvelut-portlet/ajaxforms/WsProxyServlet2";
-
 }
 
  function getDomainName() {
@@ -33,7 +60,6 @@ function getUrl() {
     var domain_name = url_parts[0] + "//" + url_parts[2];
        
     return domain_name;
-
 }
 
 /*
@@ -50,7 +76,7 @@ function setParentData(uid) {
     var username, uid, userdata;
     
     userdata = Arcusys.Internal.Communication.GetUserInfo(uid);
-    
+    // alert(userdata);
     firstname = userdata.selectSingleNode("//firstname", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     lastname = userdata.selectSingleNode("//lastname", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     email = userdata.selectSingleNode("//email", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
@@ -58,8 +84,7 @@ function setParentData(uid) {
     Paivahoitohakemus_Form.getJSXByName("Huoltaja_Etunimi").setValue(firstname).repaint();
     Paivahoitohakemus_Form.getJSXByName("Huoltaja_Sukunimi").setValue(lastname).repaint();
     Paivahoitohakemus_Form.getJSXByName("Huoltaja_Sahkopostiosoite").setValue(email).repaint();
-    Paivahoitohakemus_Form.getJSXByName("Huoltaja_Puhelin").setValue(phoneNumber).repaint();
-    
+    Paivahoitohakemus_Form.getJSXByName("Huoltaja_Puhelin").setValue(phoneNumber).repaint();   
 }
 
 /* This will fetch data according to selected child's parents.
@@ -68,8 +93,8 @@ function setParentData2() {
     var childUid, node, parentArray = [], i = 0, j = 0;
 
     childUid = Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getValue();
-    //childUid = "6bba3d61-f94f-4195-85b5-b23c839bb641"; // for testing (Kaisa Kuntalainen)
-    childData = Arcusys.Internal.Communication.GetChildInfo(childUid);
+    // childUid = "6bba3d61-f94f-4195-85b5-b23c839bb641"; // for testing (Kaisa Kuntalainen)
+    childData = Arcusys.Internal.Communication.GetChildInfo(childUid); 
     
     var parents = childData.selectNodeIterator("//parents", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
     
@@ -362,8 +387,7 @@ function setSpouseRequired() {
             }
             
             Paivahoitohakemus_Form.getJSXByName("Puoliso_Ammatti").getParent().repaint();       
-      
-            
+         
 }
 
 function checkChildrenSsn(fieldName) {
@@ -626,6 +650,7 @@ function checkDate(yyyy,mm,dd) {
     return false;
 }
 
+
 /***
 * Check given ssn. Gives focus back to field if ssn incorrect. Transforms letters to upper case if correct. 
 * @param  fieldName2 item that contains the ssn field to be checked
@@ -654,14 +679,21 @@ function checkSsn(fieldName2, notify) {
 * @param  ssnCheck    ssn
 * @return             is ssn correct
 */
+// Tarkastaa hetun, lisaa julkaisuun jos tarvitsee
+
 function checkStringSsn(ssnCheck, notify) {
+
+/*
     if (notify == ''){
         notify = true;
     }
+    
+    
     //TESTAUSHETUn hyvaksyva ehto, poista julkaisusta:
     if (ssnCheck=="121212-1212") {
         return true;
     }
+    
     ssnCheck = ssnCheck.toUpperCase();
     var aMarks = new Array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','H','J','K','L','M','N','P','R','S','T','U','V','W','X','Y');
     var aGender = new Array('N','M');
@@ -723,6 +755,7 @@ function checkStringSsn(ssnCheck, notify) {
         }
         return false;
     }
+    */ 
     return true;
 }
 
@@ -895,14 +928,15 @@ Intalio.Internal.Utilities.GET_TASK_SUCCESS, prepareForm);
 
 function prepareForm() {
    // alert("prepareForm");
-   var username = Intalio.Internal.Utilities.getUser();
+    var username = Intalio.Internal.Utilities.getUser();
+    // TODO: poista kommentit ylemmalta rivilta
     
     // form1.getJSXByName("User_Sender").setValue(Intalio.Internal.Utilities.getUser()).repaint();
     
     //var username = Intalio.Internal.Utilities.getUser();
-   username = username.substring((username.indexOf("/")+1));
-    //var username = "kirsi.kuntalainen";
-    //alert(username);
+    username = username.substring((username.indexOf("/")+1));
+    // var username = "kirsi.kuntalainen"; // TODO: kommentoi tama ja poista kommentit ylemmalta kun testattu
+    // alert(username);
 
     
         try {
@@ -925,12 +959,17 @@ function prepareForm() {
 
             // Add form preload functions here.
             var childrenData = Arcusys.Internal.Communication.GetChildrenOfUser(Paivahoitohakemus_Form.getJSXByName("Paatos_Extend02").getValue());
-            //alert("childrenData: " + childrenData);
+            // alert("childrenData: " + childrenData);
             //Arcusys.Internal.Communication.GerLDAPUser();
             
             if(childrenData != null) {
+                Paivahoitohakemus_Form.getJSXByName("Lapsi_layout (--)").setRows("33%, 33%, 33%").repaint()
+                // alert(childrenData);
                 mapChildrenNamesToField(childrenData);
-            }
+            }  
+
+            
+             
         } catch (e) {
             alert(e);
         }
@@ -950,7 +989,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
@@ -995,7 +1035,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
@@ -1039,7 +1080,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
@@ -1083,7 +1125,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
@@ -1164,42 +1207,93 @@ function valuesToArray(attributes) {
             line = line + attributes[i][j];
             if (j < (attributes[i].length - 1 )) {
                 line = line + ",";
-
             }
-
         }
         tempArray[i] = line;
-
     }
     return tempArray;
 }
 
 
 function mapChildrenNamesToField(data) {
-    var descendants, i, personId, personDescription, childAttributes, childAttributeList, xmlForSelectBox, childList;
+    var descendants, i, personId, personSSN, personDescription, childAttributes, childAttributeList, xmlForSelectBox, childList;
     
     descendants = data.selectNodes("//child", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'");
     i = 0;
     personId, personDescription, childAttributes; 
     childAttributeList = new Array(); 
     xmlForSelectBox = "<data>";
-    childList = ["displayName", "uid"];
+    childList = ["displayName", "uid", "hetu"];
 
     while (descendants.get(i)) {
         childAttributes = parseXML(descendants.get(i), "child", childList);
         childAttributeList = childAttributes[i].split(",");
         personName = childAttributeList[0];
         personId = childAttributeList[1];
-        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + personId + "\" jsxtext=\"" + personName + "\"/>";
+        personSsn = childAttributeList[2];
+        xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"" + personId + "\" jsxtext=\"" + personName + "\" ssn=\"" + personSsn + "\"/>";
         i++;
     }
-    
+    // Removes the top dropbox if no children are found.
+    if (i == 0){
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_layout (--)").setRows("0%,50%,50%").repaint();
+        }
+           
+    xmlForSelectBox = xmlForSelectBox + "<record jsxid=\"Uusi\" jsxtext=\"Uusi\" ssn=\"\"/>";            
     xmlForSelectBox = xmlForSelectBox + "</data>";
+       
     
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").setXMLString(xmlForSelectBox);
+    Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").setDefaultText("Valitse lapsi").repaint();
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").resetXmlCacheData();
     Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").repaint();
 }
+
+function setChildFields() {
+var childUid, sourceNode, hetu, firstname, lastname;
+
+childUid = Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").getValue();
+
+sourceNode = Paivahoitohakemus_Form.getCache().getDocument("Lapsi_Valittu-nomap").selectSingleNode("//record [@jsxid='" + childUid + "']");
+hetu = sourceNode.getAttribute("ssn");
+
+if (childUid != "Uusi") {
+    childData = Arcusys.Internal.Communication.GetChildInfo(childUid);
+    firstname = childData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    lastname = childData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    Paivahoitohakemus_Form.getJSXByName("Lapsi_Etunimi").setValue(firstname).repaint();
+    Paivahoitohakemus_Form.getJSXByName("Lapsi_Sukunimi").setValue(lastname).repaint();
+    Paivahoitohakemus_Form.getJSXByName("Lapsi_Henkilotunnus").setValue(hetu).repaint();
+    unlockFields();
+    } else {
+        lockFields();
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Etunimi").setValue("").repaint();
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Sukunimi").setValue("").repaint();
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Henkilotunnus").setValue("").repaint();
+    } // else
+    }
+
+function unlockFields() {
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Etunimi").setRequired(false);
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Sukunimi").setRequired(false);
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Henkilotunnus").setRequired(false);
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Etunimi").getParent().repaint();
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Sukunimi").getParent().repaint();
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Henkilotunnus").getParent().repaint();
+}
+
+function lockFields() {
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Etunimi").setRequired(true);
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Sukunimi").setRequired(true);
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Henkilotunnus").setRequired(true);
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Etunimi").getParent().repaint();
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Sukunimi").getParent().repaint();
+        Paivahoitohakemus_Form.getJSXByName("Lapsi_Henkilotunnus").getParent().repaint();
+}
+
+
+// Paivahoitohakemus_Form.getJSXByName("Lapsi_Valittu").repaint();
+
 
 
 /*

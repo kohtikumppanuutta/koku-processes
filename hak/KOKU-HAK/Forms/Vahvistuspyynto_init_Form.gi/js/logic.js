@@ -3,15 +3,40 @@
 function intalioPreStart() {
     
     Vahvistuspyynto_Form.getJSXByName("Tiedot_Sijainti").setValue(Vahvistuspyynto_Form.getJSXByName("Tiedot_Sijainti").getText()).repaint();
+    throughTextfields();
     return null;
 }
 
-function getEndpoint() {
+// Removes HTML-tags.
+function escapeHTML(value) {
+                if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
+                        return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                } else {
+                        return value;
+                }
+}
+
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = Paivahoitohakemus_Form.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51x:8080";
-    return endpoint;
-    
+    for( i = 0; i < descendants.length; i++) {
+        value = Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).setValue(temp);
+        Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).repaint();
+    }
+}
+
+kokuServiceEndpoints = null;
+
+function getEndpoint(serviceName) {
+        if (kokuServiceEndpoints == null) {
+                kokuServiceEndpoints = this.parent.getKokuServicesEndpoints();
+        }
+        
+        return kokuServiceEndpoints.services[serviceName];
 }
 
 //Getting the domain name and port if available
@@ -111,7 +136,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl";
+        endpoint = getEndpoint("KokuHakProcessingService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-hak-model-0.1-SNAPSHOT/KokuHakProcessingServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
@@ -156,7 +182,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
