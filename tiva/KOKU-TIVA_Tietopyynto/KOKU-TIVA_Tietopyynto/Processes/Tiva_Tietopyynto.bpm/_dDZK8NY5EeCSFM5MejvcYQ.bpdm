@@ -1,0 +1,281 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Tiva_Tietopyynto_init_Form1="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Tiva_Tietopyynto_Response_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" xmlns:attachments="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" xmlns:diag="http://thisdiagram" xmlns:KokuTietopyyntoProcessingServiceImpl="http://soa.tiva.koku.arcusys.fi/" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:this="http://thisdiagram/Prosessi" xmlns:KokuNotificationServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:Tiva_Tietopyynto_init_Form="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Services="http://thisdiagram/Services" xmlns:tns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Prosessi">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi" bpdm:prefix="Tiva_Tietopyynto_init_Form1" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi" bpdm:prefix="Tiva_Tietopyynto_Response_Form" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_Response_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_Response_Form.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_Response_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_r9qpYOjmEeCIsZBRPARZQg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.tiva.koku.arcusys.fi/" bpdm:prefix="KokuTietopyyntoProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuTietopyyntoProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///Services/UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Prosessi" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuNotificationServiceImpl" bpdm:comment="contrib=&apos;project:///Services/KokuNotificationServiceImpl.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/Tiva_Tietopyynto_init_Form.gi/attachments" bpdm:prefix="Tiva_Tietopyynto_init_Form" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto_init_Form.gi.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Services" bpdm:prefix="Services" bpdm:comment="contrib=&apos;partner-pool:///_r9qpYOjmEeCIsZBRPARZQg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/Tiva_Tietopyynto" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Forms/Tiva_Tietopyynto.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="PyyntoAndProsessiForPortTypeProcessPlkService">
+                <wsdl:port name="Prosessi_for_PyyntoPort" binding="this:PyyntoAndProsessiForPortTypeProcessPlkServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Pyynto/PyyntoAndProsessiForPortTypeProcessPlk"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="PyyntoAndProsessiForPortTypeProcessPlkServiceBinding" type="Tiva_Tietopyynto_init_Form1:Process" bpdm:isSynchronized="true"/>
+            <wsdl:service name="WFmagic_N3TpQPVcEeCgsf-1346ddAService">
+                <wsdl:port name="Prosessi_for_VastausForThePortTypeProcessPort" binding="this:WFmagic_N3TpQPVcEeCgsf-1346ddAServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Vastaus/WFmagic_N3TpQPVcEeCgsf-1346ddA"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_N3TpQPVcEeCgsf-1346ddAServiceBinding" type="Tiva_Tietopyynto_Response_Form:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Tiva_Tietopyynto_Response_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Tiva_Tietopyynto.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Forms/Tiva_Tietopyynto_init_Form.gi.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_r9qpYOjmEeCIsZBRPARZQg" bpdm:label="Services"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuTietopyyntoProcessingServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/UsersAndGroupsServiceImpl.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_izHqwOj5EeCOlapFwgqxBw" bpdm:label="Pyynto"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_fyjf4NY5EeCSFM5MejvcYQ" bpdm:label="Vastaus"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/KokuNotificationServiceImpl.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Prosessi" bpdm:ID="_dDZK8NY5EeCSFM5MejvcYQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="servicesAndProsessiForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProsessiForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Prosessi" bpdm:invokedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:invokedPort="UsersAndGroupsServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_dDZK8NY5EeCSFM5MejvcYQ:_zNMDwOjpEeCIsZBRPARZQg, _dDZK8NY5EeCSFM5MejvcYQ:_8iMbEPP8EeCaoK6-NKuILQ" bpdm:isManaged="true" bpdm:otherPoolId="_r9qpYOjmEeCIsZBRPARZQg"/>
+            <bpel:partnerLink name="pyyntoAndProsessiForPortTypeProcessPlkVar" partnerLinkType="diag:PyyntoAndProsessiForPortTypeProcessPlk" myRole="Prosessi_for_Pyynto" bpdm:enableSharing="false" bpdm:providedService="this:PyyntoAndProsessiForPortTypeProcessPlkService" bpdm:providedPort="Prosessi_for_PyyntoPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Pyynto/PyyntoAndProsessiForPortTypeProcessPlk" bpdm:providedIsDefault="true" bpdm:clientTasks="_dDZK8NY5EeCSFM5MejvcYQ:_ywFBQOj6EeCUHqHy8KWrzQ" bpdm:isManaged="true" bpdm:otherPoolId="_izHqwOj5EeCOlapFwgqxBw"/>
+            <bpel:partnerLink name="wFmagic_N3TpQPVcEeCgsf-1346ddAPlkVar" partnerLinkType="diag:WFmagic_N3TpQPVcEeCgsf-1346ddA" initializePartnerRole="no" myRole="Prosessi_for_VastausForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_N3TpQPVcEeCgsf-1346ddAService" bpdm:providedPort="Prosessi_for_VastausForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Prosessi/Vastaus/WFmagic_N3TpQPVcEeCgsf-1346ddA" bpdm:providedIsDefault="true" partnerRole="Vastaus_for_ProsessiForTiva_Tietopyynto_Response_FormPort" bpdm:invokedService="Tiva_Tietopyynto_Response_Form:WorkflowSoapService" bpdm:invokedPort="Tiva_Tietopyynto_Response_FormPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/Tiva_Tietopyynto_Response_Form" bpdm:invokedIsDefault="true" bpdm:clientTasks="_dDZK8NY5EeCSFM5MejvcYQ:_osKk4NY5EeCSFM5MejvcYQ, _dDZK8NY5EeCSFM5MejvcYQ:_pYzBYNY5EeCSFM5MejvcYQ" bpdm:isManaged="true" bpdm:otherPoolId="_fyjf4NY5EeCSFM5MejvcYQ"/>
+            <bpel:partnerLink name="servicesAndProsessiForKokuTietopyyntoProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProsessiForKokuTietopyyntoProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Prosessi" bpdm:invokedService="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingService" bpdm:invokedPort="KokuTietopyyntoProcessingServicePort" bpdm:invokedSOAPAddress="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_dDZK8NY5EeCSFM5MejvcYQ:__KlUwOjnEeCIsZBRPARZQg, _dDZK8NY5EeCSFM5MejvcYQ:_F1s-YOjnEeCIsZBRPARZQg, _dDZK8NY5EeCSFM5MejvcYQ:__mvFQOjnEeCIsZBRPARZQg" bpdm:isManaged="true" bpdm:otherPoolId="_r9qpYOjmEeCIsZBRPARZQg"/>
+            <bpel:partnerLink name="servicesAndProsessiForKokuNotificationServicePortPlkVar" partnerLinkType="diag:ServicesAndProsessiForKokuNotificationServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Prosessi" bpdm:invokedService="KokuNotificationServiceImpl:KokuNotificationService" bpdm:invokedPort="KokuNotificationServicePort" bpdm:invokedSOAPAddress="http://trelx51lb:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuNotificationServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_dDZK8NY5EeCSFM5MejvcYQ:_IS5x0EZ3EeGXwNyjUmVfxA" bpdm:isManaged="true" bpdm:otherPoolId="_r9qpYOjmEeCIsZBRPARZQg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserUidByLooraName" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserUidByLooraName" opMsgType="0" bpdm:id="_sDbtIPP9EeCaoK6-NKuILQ" bpdm:messageIds=" out:_sDXbsPP9EeCaoK6-NKuILQ">
+                <bpel:from bpdm:toPart="getUserUidByLooraName">
+                    <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserUidByLooraName" bpdm:linkedPart="getUserUidByLooraName" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:opMsgType="0" bpdm:operation="getUserUidByLooraName"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserUidByLooraNameResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserUidByLooraName" opMsgType="1" bpdm:id="_sw86cPP9EeCaoK6-NKuILQ" bpdm:messageIds="inc:_swzwgPP9EeCaoK6-NKuILQ"/>
+            <bpel:variable name="tiva_Tietopyynto_init_Form1InitProcessRequestMsg" messageType="Tiva_Tietopyynto_init_Form1:initProcessRequest" bpdm:id="_9WSuAPVbEeCgsf-1346ddA" bpdm:messageIds="inc:_9V_zEPVbEeCgsf-1346ddA"/>
+            <bpel:variable name="tiva_Tietopyynto_init_Form1InitProcessResponseMsg" messageType="Tiva_Tietopyynto_init_Form1:initProcessResponse" bpdm:id="_-W8SsPVbEeCgsf-1346ddA" bpdm:messageIds=" out:_-WpXwPVbEeCgsf-1346ddA">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Tiva_Tietopyynto_init_Form1:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="tiva_Tietopyynto_Response_FormCreateTaskRequestMsg" messageType="Tiva_Tietopyynto_Response_Form:createTaskRequest" binding="Tiva_Tietopyynto_Response_Form:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_O8FgAPVcEeCgsf-1346ddA" bpdm:messageIds=" out:_O722gPVcEeCgsf-1346ddA">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Tiva_Tietopyynto_Response_Form:createTaskRequest" bpdm:linkedPart="root" bpdm:binding="Tiva_Tietopyynto_Response_Form:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="tiva_Tietopyynto_Response_FormCreateTaskResponseMsg" messageType="Tiva_Tietopyynto_Response_Form:createTaskResponse" binding="Tiva_Tietopyynto_Response_Form:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_PasuoPVcEeCgsf-1346ddA" bpdm:messageIds="inc:_PaU7MPVcEeCgsf-1346ddA"/>
+            <bpel:variable name="tiva_Tietopyynto_Response_FormNotifyTaskCompletionRequestMsg" messageType="Tiva_Tietopyynto_Response_Form:notifyTaskCompletionRequest" bpdm:id="_P0IiVfVcEeCgsf-1346ddA" bpdm:messageIds="inc:_Pzx9APVcEeCgsf-1346ddA"/>
+            <bpel:variable name="tiva_Tietopyynto_Response_FormNotifyTaskCompletionResponseMsg" messageType="Tiva_Tietopyynto_Response_Form:notifyTaskCompletionResponse" bpdm:id="_QkIb4PVcEeCgsf-1346ddA" bpdm:messageIds=" out:_QjxPgPVcEeCgsf-1346ddA">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Tiva_Tietopyynto_Response_Form:notifyTaskCompletionResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="Tiva_Tietopyynto_Form" element="tns:Tiva_Tietopyynto_Form" bpdm:id="_yU-cUPZxEeCFYo0HI_wcRg"/>
+            <bpel:variable name="usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getLooraNameByUserUidResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getLooraNameByUserUid" opMsgType="0" bpdm:id="_2ZKQgOjpEeCIsZBRPARZQg" bpdm:messageIds="inc:_2Ye7EOjpEeCIsZBRPARZQg"/>
+            <bpel:variable name="usersAndGroupsServiceImplGetLooraNameByUserUidRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getLooraNameByUserUid" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getLooraNameByUserUid" opMsgType="0" bpdm:id="_19MGMOjpEeCIsZBRPARZQg" bpdm:messageIds=" out:_183WEOjpEeCIsZBRPARZQg">
+                <bpel:from bpdm:toPart="getLooraNameByUserUid">
+                    <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getLooraNameByUserUid" bpdm:linkedPart="getLooraNameByUserUid" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:opMsgType="0" bpdm:operation="getLooraNameByUserUid"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuTietopyyntoProcessingServiceImplLuoTietopyyntoMsg" messageType="KokuTietopyyntoProcessingServiceImpl:luoTietopyynto" binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" operation="luoTietopyynto" opMsgType="0" bpdm:id="_9NgHICZrEeGQk4N5SW9pEg" bpdm:messageIds=" out:_9MpykCZrEeGQk4N5SW9pEg">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="KokuTietopyyntoProcessingServiceImpl:luoTietopyynto" bpdm:linkedPart="parameters" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:opMsgType="0" bpdm:operation="luoTietopyynto"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuTietopyyntoProcessingServiceImplLuoTietopyyntoResponseMsg" messageType="KokuTietopyyntoProcessingServiceImpl:luoTietopyyntoResponse" binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" operation="luoTietopyynto" opMsgType="1" bpdm:id="_-gbHkCZrEeGQk4N5SW9pEg" bpdm:messageIds="inc:_-d3i0CZrEeGQk4N5SW9pEg"/>
+            <bpel:variable name="kokuTietopyyntoProcessingServiceImplHyvaksyTietopyyntoMsg" messageType="KokuTietopyyntoProcessingServiceImpl:hyvaksyTietopyynto" binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" operation="hyvaksyTietopyynto" opMsgType="0" bpdm:id="_Gn-dgCZsEeGQk4N5SW9pEg" bpdm:messageIds=" out:_GnTIECZsEeGQk4N5SW9pEg">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="KokuTietopyyntoProcessingServiceImpl:hyvaksyTietopyynto" bpdm:linkedPart="parameters" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:opMsgType="0" bpdm:operation="hyvaksyTietopyynto"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuTietopyyntoProcessingServiceImplHyvaksyTietopyyntoResponseMsg" messageType="KokuTietopyyntoProcessingServiceImpl:hyvaksyTietopyyntoResponse" binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" operation="hyvaksyTietopyynto" opMsgType="1" bpdm:id="_HGHyECZsEeGQk4N5SW9pEg" bpdm:messageIds="inc:_HDLy0CZsEeGQk4N5SW9pEg"/>
+            <bpel:variable name="kokuTietopyyntoProcessingServiceImplHylkaTietopyyntoMsg" messageType="KokuTietopyyntoProcessingServiceImpl:hylkaTietopyynto" binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" operation="hylkaTietopyynto" opMsgType="0" bpdm:id="_KJQL4CZsEeGQk4N5SW9pEg" bpdm:messageIds=" out:_KIsyQCZsEeGQk4N5SW9pEg">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="KokuTietopyyntoProcessingServiceImpl:hylkaTietopyynto" bpdm:linkedPart="parameters" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:opMsgType="0" bpdm:operation="hylkaTietopyynto"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuTietopyyntoProcessingServiceImplHylkaTietopyyntoResponseMsg" messageType="KokuTietopyyntoProcessingServiceImpl:hylkaTietopyyntoResponse" binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" operation="hylkaTietopyynto" opMsgType="1" bpdm:id="_LH9P0CZsEeGQk4N5SW9pEg" bpdm:messageIds="inc:_LGugwCZsEeGQk4N5SW9pEg"/>
+            <bpel:variable name="kokuNotificationServiceImplSendNotificationMsg" messageType="KokuNotificationServiceImpl:sendNotification" binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" operation="sendNotification" opMsgType="0" bpdm:id="_J82LIEZ3EeGXwNyjUmVfxA" bpdm:messageIds=" out:_J8dwoEZ3EeGXwNyjUmVfxA">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="KokuNotificationServiceImpl:sendNotification" bpdm:linkedPart="parameters" bpdm:binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" bpdm:opMsgType="0" bpdm:operation="sendNotification"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="kokuNotificationServiceImplSendNotificationResponseMsg" messageType="KokuNotificationServiceImpl:sendNotificationResponse" binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" operation="sendNotification" opMsgType="1" bpdm:id="_KSoN4EZ3EeGXwNyjUmVfxA" bpdm:messageIds="inc:_KR-toEZ3EeGXwNyjUmVfxA"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="initProcess" partnerLink="pyyntoAndProsessiForPortTypeProcessPlkVar" portType="Tiva_Tietopyynto_init_Form1:Process" isMyRole="true" enableSharing="false" bpdm:label="Message_Start_Event" bpdm:ID="_ywFBQOj6EeCUHqHy8KWrzQ">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tiva_Tietopyynto_init_Form1InitProcessRequestMsg" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_init_Form1:initProcessRequest" bpdm:ID="_9V_zEPVbEeCgsf-1346ddA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tiva_Tietopyynto_init_Form1InitProcessResponseMsg" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_init_Form1:initProcessResponse" bpdm:ID="_-WpXwPVbEeCgsf-1346ddA"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Päivitä" bpdm:ID="_q1CV4NY5EeCSFM5MejvcYQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$tiva_Tietopyynto_init_Form1InitProcessRequestMsg.root/Tiva_Tietopyynto_init_Form1:taskOutput/tns:Tiva_Tietopyynto_Form</bpel:from>
+                        <bpel:to>$Tiva_Tietopyynto_Form</bpel:to><mapper:mapperLink><mapper:vertice id="1528886271" targetPath="$Tiva_Tietopyynto_Form" targetedBy="325952900-arg0"></mapper:vertice><mapper:vertice id="325952900" sourcePath="$tiva_Tietopyynto_init_Form1InitProcessRequestMsg.root/Tiva_Tietopyynto_init_Form1:taskOutput/tns:Tiva_Tietopyynto_Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="getUserUidByLooraName" partnerLink="servicesAndProsessiForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_8iMbEPP8EeCaoK6-NKuILQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Lahettaja</bpel:from>
+                        <bpel:to>$usersAndGroupsServiceImplGetUserUidByLooraNameRequestMsg.getUserUidByLooraName/looraUsername</bpel:to><mapper:mapperLink><mapper:vertice id="1476427112" targetPath="$usersAndGroupsServiceImplGetUserUidByLooraNameRequestMsg.getUserUidByLooraName/looraUsername" targetedBy="1427562524-arg0"></mapper:vertice><mapper:vertice id="1427562524" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Lahettaja"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByLooraNameRequestMsg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserUidByLooraName" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_sDXbsPP9EeCaoK6-NKuILQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserUidByLooraNameResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_swzwgPP9EeCaoK6-NKuILQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Päivitä" bpdm:ID="_9pmIAPP8EeCaoK6-NKuILQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg.getUserUidByLooraNameResponse/userUid</bpel:from>
+                        <bpel:to>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Lahettaja_UID</bpel:to><mapper:mapperLink><mapper:vertice id="1299726575" targetPath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Lahettaja_UID" targetedBy="39083061-arg0"></mapper:vertice><mapper:vertice id="39083061" sourcePath="$usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg.getUserUidByLooraNameResponse/userUid"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="luoTietopyynto" partnerLink="servicesAndProsessiForKokuTietopyyntoProcessingServicePortPlkVar" portType="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä tietopyyntö" bpdm:ID="_F1s-YOjnEeCIsZBRPARZQg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>bpel:doXslTransform("../xsl/category.xsl", $Tiva_Tietopyynto_Form)</bpel:from>
+                        <bpel:to>$kokuTietopyyntoProcessingServiceImplLuoTietopyyntoMsg.parameters/tietopyynto</bpel:to><mapper:mapperLink><mapper:vertice id="790245578" targetPath="$kokuTietopyyntoProcessingServiceImplLuoTietopyyntoMsg.parameters/tietopyynto" targetedBy="120746819-arg2"></mapper:vertice><mapper:vertice id="120746819" dimension="217x85" location="264,144"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="356675016" dimension="157x37" location="144,24" targetedBy="120746819-arg0"><mapper:value>"../xsl/category.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1482984410" sourcePath="$Tiva_Tietopyynto_Form" targetedBy="120746819-arg1"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuTietopyyntoProcessingServiceImplLuoTietopyyntoMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuTietopyyntoProcessingServiceImpl:luoTietopyynto" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:ID="_9MpykCZrEeGQk4N5SW9pEg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuTietopyyntoProcessingServiceImplLuoTietopyyntoResponseMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuTietopyyntoProcessingServiceImpl:luoTietopyyntoResponse" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:ID="_-d3i0CZrEeGQk4N5SW9pEg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Päivitä" bpdm:ID="_mbgcUPZjEeCe1YzMi35Hmg">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$kokuTietopyyntoProcessingServiceImplLuoTietopyyntoResponseMsg.parameters/tietopyyntoId</bpel:from>
+                        <bpel:to>$Tiva_Tietopyynto_Form/tns:Vastaus/tns:Vastaus_Extend01</bpel:to><mapper:mapperLink><mapper:vertice id="815458128" targetPath="$Tiva_Tietopyynto_Form/tns:Vastaus/tns:Vastaus_Extend01" targetedBy="1040947351-arg0"></mapper:vertice><mapper:vertice id="1040947351" sourcePath="$kokuTietopyyntoProcessingServiceImplLuoTietopyyntoResponseMsg.parameters/tietopyyntoId"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_p28ssCZsEeGQk4N5SW9pEg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
+                <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_ur964CZsEeGQk4N5SW9pEg" bpdm:targetDisplayName="default"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_vLQe8CZsEeGQk4N5SW9pEg" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Hae Intaliokäyttäjän tunnus]">
+                    <bpel:condition>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01 = ""<mapper:mapperLink><mapper:vertice id="454834583" targetPath="$condition" targetedBy="1035033021-arg2"></mapper:vertice><mapper:vertice id="1035033021" dimension="78x24" location="248,78"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="40457222" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1035033021-arg0"></mapper:vertice><mapper:vertice id="1359697702" dimension="78x24" location="252,120" targetedBy="1035033021-arg1"><mapper:value>""</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpel:sequence></bpel:sequence>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="getLooraNameByUserUid" partnerLink="servicesAndProsessiForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Hae Intaliokäyttäjän tunnus" bpdm:ID="_zNMDwOjpEeCIsZBRPARZQg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Vastaanottaja_UID</bpel:from>
+                                <bpel:to>$usersAndGroupsServiceImplGetLooraNameByUserUidRequestMsg.getLooraNameByUserUid/userUid</bpel:to><mapper:mapperLink><mapper:vertice id="889476715" targetPath="$usersAndGroupsServiceImplGetLooraNameByUserUidRequestMsg.getLooraNameByUserUid/userUid" targetedBy="1606684224-arg0"></mapper:vertice><mapper:vertice id="1606684224" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Vastaanottaja_UID"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetLooraNameByUserUidRequestMsg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getLooraNameByUserUid" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_183WEOjpEeCIsZBRPARZQg"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getLooraNameByUserUidResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_2Ye7EOjpEeCIsZBRPARZQg"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                    <bpdm:messagingtask bpdm:label="Päivitä" bpdm:ID="_E2ifoCZtEeGQk4N5SW9pEg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>concat("koku/", $usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername)</bpel:from>
+                                <bpel:to>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01</bpel:to><mapper:mapperLink><mapper:vertice id="800645658" targetPath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01" targetedBy="1794348101-arg2"></mapper:vertice><mapper:vertice id="1794348101" dimension="78x24" location="492,120"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="2018097616" dimension="78x24" location="360,60" targetedBy="1794348101-arg0"><mapper:value>"koku/"</mapper:value></mapper:vertice><mapper:vertice id="1429444272" sourcePath="$usersAndGroupsServiceImplGetLooraNameByUserUidResponseMsg.getLooraNameByUserUidResponse/looraUsername" targetedBy="1794348101-arg1"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpdm:gateway>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_r387ICZsEeGQk4N5SW9pEg" bpdm:gatewayType="data_xor" bpdm:isMerge="true"></bpdm:gateway>
+            <bpdm:messagingtask eventType="intermediate: message" operation="createTask" partnerLink="wFmagic_N3TpQPVcEeCgsf-1346ddAPlkVar" portType="Tiva_Tietopyynto_Response_Form:Workflow" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_osKk4NY5EeCSFM5MejvcYQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$Tiva_Tietopyynto_Form</bpel:from>
+                        <bpel:to>$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskInput/tns:Tiva_Tietopyynto_Form</bpel:to><mapper:mapperLink><mapper:vertice id="1164147511" targetPath="$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskInput/tns:Tiva_Tietopyynto_Form" targetedBy="1556987591-arg0"></mapper:vertice><mapper:vertice id="1556987591" sourcePath="$Tiva_Tietopyynto_Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>concat("Uusi tietopyyntö:  ", $Tiva_Tietopyynto_Form/tns:Pyynto/tns:Pyynto_Kohde, " - ", $Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Otsikko)</bpel:from>
+                        <bpel:to>$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskMetaData/Tiva_Tietopyynto_Response_Form:description</bpel:to><mapper:mapperLink><mapper:vertice id="1342095067" targetPath="$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskMetaData/Tiva_Tietopyynto_Response_Form:description" targetedBy="451129968-arg2"></mapper:vertice><mapper:vertice id="451129968" dimension="78x24" location="408,156"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="1269236931" dimension="145x24" location="264,48" targetedBy="451129968-arg0"><mapper:value>"Uusi tietopyyntö:  "</mapper:value></mapper:vertice><mapper:vertice id="1145382973" sourcePath="$Tiva_Tietopyynto_Form/tns:Pyynto/tns:Pyynto_Kohde" targetedBy="451129968-arg1"></mapper:vertice><mapper:vertice id="1815190403" dimension="78x24" location="228,108" targetedBy="451129968-arg3"><mapper:value>" - "</mapper:value></mapper:vertice><mapper:vertice id="1437359237" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Otsikko" targetedBy="451129968-arg4"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01</bpel:from>
+                        <bpel:to>$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskMetaData/Tiva_Tietopyynto_Response_Form:userOwner</bpel:to><mapper:mapperLink><mapper:vertice id="1375008248" targetPath="$tiva_Tietopyynto_Response_FormCreateTaskRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskMetaData/Tiva_Tietopyynto_Response_Form:userOwner" targetedBy="769836687-arg0"></mapper:vertice><mapper:vertice id="769836687" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend01"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tiva_Tietopyynto_Response_FormCreateTaskRequestMsg" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_Response_Form:createTaskRequest" bpdm:binding="Tiva_Tietopyynto_Response_Form:WorkflowSoapBinding" bpdm:ID="_O722gPVcEeCgsf-1346ddA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="tiva_Tietopyynto_Response_FormCreateTaskResponseMsg" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_Response_Form:createTaskResponse" bpdm:binding="Tiva_Tietopyynto_Response_Form:WorkflowSoapBinding" bpdm:ID="_PaU7MPVcEeCgsf-1346ddA"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="intermediate: message" operation="notifyTaskCompletion" partnerLink="wFmagic_N3TpQPVcEeCgsf-1346ddAPlkVar" portType="Tiva_Tietopyynto_Response_Form:Process" isMyRole="true" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_pYzBYNY5EeCSFM5MejvcYQ">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tiva_Tietopyynto_Response_FormNotifyTaskCompletionRequestMsg" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_Response_Form:notifyTaskCompletionRequest" bpdm:ID="_Pzx9APVcEeCgsf-1346ddA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tiva_Tietopyynto_Response_FormNotifyTaskCompletionResponseMsg" bpdm:variableIsManaged="true" bpdm:messageType="Tiva_Tietopyynto_Response_Form:notifyTaskCompletionResponse" bpdm:ID="_QjxPgPVcEeCgsf-1346ddA"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="Päivitä" bpdm:ID="_zLK6YNY5EeCSFM5MejvcYQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$tiva_Tietopyynto_Response_FormNotifyTaskCompletionRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskOutput/tns:Tiva_Tietopyynto_Form</bpel:from>
+                        <bpel:to>$Tiva_Tietopyynto_Form</bpel:to><mapper:mapperLink><mapper:vertice id="954005646" targetPath="$Tiva_Tietopyynto_Form" targetedBy="404635941-arg0"></mapper:vertice><mapper:vertice id="404635941" sourcePath="$tiva_Tietopyynto_Response_FormNotifyTaskCompletionRequestMsg.root/Tiva_Tietopyynto_Response_Form:taskOutput/tns:Tiva_Tietopyynto_Form"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_CndEQOjoEeCIsZBRPARZQg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_Hquw4OjoEeCIsZBRPARZQg" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Hylkää]">
+                    <bpel:condition>$Tiva_Tietopyynto_Form/tns:Vastaus/tns:Vastaus_Paatos = false()<mapper:mapperLink><mapper:vertice id="1823821392" targetPath="$condition" targetedBy="1994277875-arg2"></mapper:vertice><mapper:vertice id="1994277875" dimension="78x24" location="305,97"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1655504532" sourcePath="$Tiva_Tietopyynto_Form/tns:Vastaus/tns:Vastaus_Paatos" targetedBy="1994277875-arg0"></mapper:vertice><mapper:vertice id="213224901" dimension="78x24" location="312,132" targetedBy="1994277875-arg1"><mapper:value>false()</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_KdQi4OjoEeCIsZBRPARZQg" bpdm:targetDisplayName="default"></bpdm:linkset>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="hylkaTietopyynto" partnerLink="servicesAndProsessiForKokuTietopyyntoProcessingServicePortPlkVar" portType="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Hylkää" bpdm:ID="__KlUwOjnEeCIsZBRPARZQg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$Tiva_Tietopyynto_Form/tns:Vastaus/tns:Vastaus_Perustelut</bpel:from>
+                                <bpel:to>$kokuTietopyyntoProcessingServiceImplHylkaTietopyyntoMsg.parameters/explanation</bpel:to><mapper:mapperLink><mapper:vertice id="2024352763" targetPath="$kokuTietopyyntoProcessingServiceImplHylkaTietopyyntoMsg.parameters/explanation" targetedBy="963936531-arg0"></mapper:vertice><mapper:vertice id="963936531" sourcePath="$Tiva_Tietopyynto_Form/tns:Vastaus/tns:Vastaus_Perustelut"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$kokuTietopyyntoProcessingServiceImplLuoTietopyyntoResponseMsg.parameters/tietopyyntoId</bpel:from>
+                                <bpel:to>$kokuTietopyyntoProcessingServiceImplHylkaTietopyyntoMsg.parameters/tietopyyntoId</bpel:to><mapper:mapperLink><mapper:vertice id="390100705" targetPath="$kokuTietopyyntoProcessingServiceImplHylkaTietopyyntoMsg.parameters/tietopyyntoId" targetedBy="222536717-arg0"></mapper:vertice><mapper:vertice id="222536717" sourcePath="$kokuTietopyyntoProcessingServiceImplLuoTietopyyntoResponseMsg.parameters/tietopyyntoId"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuTietopyyntoProcessingServiceImplHylkaTietopyyntoMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuTietopyyntoProcessingServiceImpl:hylkaTietopyynto" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:ID="_KIsyQCZsEeGQk4N5SW9pEg"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuTietopyyntoProcessingServiceImplHylkaTietopyyntoResponseMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuTietopyyntoProcessingServiceImpl:hylkaTietopyyntoResponse" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:ID="_LGugwCZsEeGQk4N5SW9pEg"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="hyvaksyTietopyynto" partnerLink="servicesAndProsessiForKokuTietopyyntoProcessingServicePortPlkVar" portType="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingService" isMyRole="false" enableSharing="false" bpdm:label="Hyväksy" bpdm:ID="__mvFQOjnEeCIsZBRPARZQg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>bpel:doXslTransform("../xsl/categoryResponse.xsl", $Tiva_Tietopyynto_Form)</bpel:from>
+                                <bpel:to>$kokuTietopyyntoProcessingServiceImplHyvaksyTietopyyntoMsg.parameters/tietoPynnonVastaus</bpel:to><mapper:mapperLink><mapper:vertice id="2125427151" targetPath="$kokuTietopyyntoProcessingServiceImplHyvaksyTietopyyntoMsg.parameters/tietoPynnonVastaus" targetedBy="1962527934-arg2"></mapper:vertice><mapper:vertice id="1962527934" dimension="217x85" location="240,132"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="935303932" dimension="157x37" location="144,60" targetedBy="1962527934-arg0"><mapper:value>"../xsl/categoryResponse.xsl"</mapper:value></mapper:vertice><mapper:vertice id="981155998" sourcePath="$Tiva_Tietopyynto_Form" targetedBy="1962527934-arg1"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuTietopyyntoProcessingServiceImplHyvaksyTietopyyntoMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuTietopyyntoProcessingServiceImpl:hyvaksyTietopyynto" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:ID="_GnTIECZsEeGQk4N5SW9pEg"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuTietopyyntoProcessingServiceImplHyvaksyTietopyyntoResponseMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuTietopyyntoProcessingServiceImpl:hyvaksyTietopyyntoResponse" bpdm:binding="KokuTietopyyntoProcessingServiceImpl:KokuTietopyyntoProcessingServiceSoapBinding" bpdm:ID="_HDLy0CZsEeGQk4N5SW9pEg"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpdm:gateway>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_E6xxwOjoEeCIsZBRPARZQg" bpdm:gatewayType="data_xor" bpdm:isMerge="true"></bpdm:gateway>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_d6mJUEfzEeGDqbpIdToGUw" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
+                <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_jYShEEfzEeGDqbpIdToGUw" bpdm:targetDisplayName="default"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_jnokoEfzEeGDqbpIdToGUw" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Lähetä ilmoitus roolin jäsenille vastauksesta]">
+                    <bpel:condition>$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend03 != ""
+<mapper:mapperLink>
+  <mapper:vertice id="1455470766" targetPath="$condition" targetedBy="325041096-arg2"></mapper:vertice>
+  <mapper:vertice id="325041096" dimension="78x24" location="528,48">
+    <mapper:value>!=</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1966313036" sourcePath="$Tiva_Tietopyynto_Form/tns:Perustiedot/tns:Perustiedot_Extend03" targetedBy="325041096-arg0"></mapper:vertice>
+  <mapper:vertice id="1517475417" dimension="78x24" location="530,89" targetedBy="325041096-arg1">
+    <mapper:value>""</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpel:sequence></bpel:sequence>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="sendNotification" partnerLink="servicesAndProsessiForKokuNotificationServicePortPlkVar" portType="KokuNotificationServiceImpl:KokuNotificationService" isMyRole="false" enableSharing="false" bpdm:label="Lähetä ilmoitus roolin jäsenille vastauksesta" bpdm:ID="_IS5x0EZ3EeGXwNyjUmVfxA">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>bpel:doXslTransform("../xsl/sendNotification.xsl", $Tiva_Tietopyynto_Form)</bpel:from>
+                                <bpel:to>$kokuNotificationServiceImplSendNotificationMsg.parameters</bpel:to><mapper:mapperLink><mapper:vertice id="1046707189" targetPath="$kokuNotificationServiceImplSendNotificationMsg.parameters" targetedBy="1565139319-arg2"></mapper:vertice><mapper:vertice id="1565139319" dimension="217x37" location="360,120"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="296197217" dimension="217x37" location="264,48" targetedBy="1565139319-arg0"><mapper:value>"../xsl/sendNotification.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1983352038" sourcePath="$Tiva_Tietopyynto_Form" targetedBy="1565139319-arg1"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="kokuNotificationServiceImplSendNotificationMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuNotificationServiceImpl:sendNotification" bpdm:binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" bpdm:ID="_J8dwoEZ3EeGXwNyjUmVfxA"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="kokuNotificationServiceImplSendNotificationResponseMsg" bpdm:msgVarScopeId="_dDZK8NY5EeCSFM5MejvcYQ" bpdm:variableIsManaged="true" bpdm:messageType="KokuNotificationServiceImpl:sendNotificationResponse" bpdm:binding="KokuNotificationServiceImpl:KokuNotificationServiceSoapBinding" bpdm:ID="_KR-toEZ3EeGXwNyjUmVfxA"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpdm:gateway>
+            <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_h_PqgEfzEeGDqbpIdToGUw" bpdm:gatewayType="data_xor" bpdm:isMerge="true"></bpdm:gateway>
+            <bpdm:messagingtask eventType="end: empty" bpdm:label="Empty_End_Event" bpdm:ID="_1MkKYNY5EeCSFM5MejvcYQ"></bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
