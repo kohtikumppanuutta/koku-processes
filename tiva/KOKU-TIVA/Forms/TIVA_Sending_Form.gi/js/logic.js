@@ -9,7 +9,30 @@ function intalioPreStart() {
     if (error != "") {
         return error;
     }
+    throughTextfields();
     return null;
+}
+
+// Removes HTML-tags.
+function escapeHTML(value) {
+                if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
+                        return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                } else {
+                        return value;
+                }
+}
+
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = TIVAForm.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
+    
+    for( i = 0; i < descendants.length; i++) {
+        value = TIVAForm.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        TIVAForm.getJSXByName(descendants[i].getName()).setValue(temp);
+        TIVAForm.getJSXByName(descendants[i].getName()).repaint();
+    }
 }
 
 /* checks for error before sending form to processing
@@ -517,7 +540,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
         pohjaId = id;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getConsentTemplateById><pohjaId>" + pohjaId + "</pohjaId></soa:getConsentTemplateById></soapenv:Body></soapenv:Envelope>";
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+
+        endpoint = getEndpoint("KokuSuostumusProcessingService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
         url = getUrl();
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
@@ -548,7 +573,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
         tout = 1000;
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.tiva.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:selaaSuostumuspohjat><searchString>" + str + "</searchString><limit>100</limit></soa:selaaSuostumuspohjat></soapenv:Body></soapenv:Envelope>";
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
+
+        endpoint = getEndpoint("KokuSuostumusProcessingService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl";
         url = getUrl();
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
@@ -581,7 +608,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + id + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -614,7 +643,9 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 
         msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:searchChildren><searchString>" + searchString + "</searchString><limit>" + limit + "</limit></soa:searchChildren></soapenv:Body></soapenv:Envelope>";
         url = getUrl();
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -655,13 +686,14 @@ function getUrl() {
 
 }
 
-function getEndpoint() {
-    var endpoint;
+kokuServiceEndpoints = null;
 
-    endpoint = "http://trelx51lb:8080";
-    //endpoint = "http://localhost:8180";
-    
-    return endpoint;
+function getEndpoint(serviceName) {
+        if (kokuServiceEndpoints == null) {
+                kokuServiceEndpoints = this.parent.getKokuServicesEndpoints();
+        }
+        
+        return kokuServiceEndpoints.services[serviceName];
 }
 
 jsx3.lang.Package.definePackage("Intalio.Internal.CustomErrors", function (error) {
