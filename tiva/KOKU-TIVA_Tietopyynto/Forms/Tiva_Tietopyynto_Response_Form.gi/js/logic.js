@@ -1,11 +1,45 @@
-function getEndpoint() {
+kokuServiceEndpoints = null;
+
+function getEndpoint(serviceName) {
+    if (kokuServiceEndpoints == null) {
+        kokuServiceEndpoints = this.parent.getKokuServicesEndpoints();
+    }
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
-    return endpoint;
-    
+    return kokuServiceEndpoints.services[serviceName];
+
+    //endpoint = "http://kohtikumppanuutta-qa-5.dmz:8080";
+    //endpoint = "http://trelx51lb:8080";
+    //endpoint = "http://localhost:8180";
+    //endpoint = "http://koku-salo-app3.ec.dmz:8280";
+
+    //return endpoint;
 }
 
+function intalioPreStart() {
+throughTextfields();
+}
+
+// Removes HTML-tags.
+function escapeHTML(value) {
+                if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
+                        return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                } else {
+                        return value;
+                }
+}
+
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = TivaTietopyyntoForm.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
+    
+    for( i = 0; i < descendants.length; i++) {
+        value = TivaTietopyyntoForm.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        TivaTietopyyntoForm.getJSXByName(descendants[i].getName()).setValue(temp);
+        TivaTietopyyntoForm.getJSXByName(descendants[i].getName()).repaint();
+    }
+}
 
 function getTaskSubscribe() {
     Intalio.Internal.Utilities.SERVER.subscribe(
@@ -252,7 +286,7 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getUrl();
 
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -286,7 +320,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         url = getUrl();
        
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl";
+        endpoint = getEndpoint("KokuTietopyyntoProcessingService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuTietopyyntoProcessingServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 
@@ -321,7 +356,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
         //url = "http://62.61.65.15:8380/palvelut-portlet/ajaxforms/WsProxyServlet2";
         url = getUrl();
 
-        endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
 
         msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
 

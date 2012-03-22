@@ -3,16 +3,16 @@
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize>preload();</onAfterDeserialize>
+  <onAfterDeserialize><![CDATA[preload();]]></onAfterDeserialize>
   <object type="jsx3.gui.Block">
-    <variants jsxoverflow="1"/>
-    <strings jsxwidth="100%" jsxheight="100%" jsxname="root"/>
+    <variants jsxoverflow="1" jsxwidth="680"/>
+    <strings jsxheight="100%" jsxname="root"/>
     <object type="jsx3.gui.Block">
-      <variants jsxheight="90" jsxwidth="820"/>
+      <variants jsxheight="90" jsxwidth="590"/>
       <strings jsxpadding="5,0,5,5" jsxname="header" jsxrelativeposition="1" jsxbgcolor="" jsxtextalign="left" jsxclassname="header" jsxmargin="0,0,0,5"/>
       <object type="jsx3.gui.LayoutGrid">
         <variants jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-        <strings jsxname="layout (--)" jsxrows="85%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+        <strings jsxname="layout (--)" jsxrows="65%,*" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
         <object type="jsx3.gui.Block">
           <variants jsxoverflow="2"/>
           <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder=""/>
@@ -23,6 +23,10 @@
             <object type="jsx3.gui.Block">
               <variants jsxoverflow="2"/>
               <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
+              <object type="jsx3.gui.Block">
+                <variants jsxrelativeposition="1"/>
+                <strings jsxname="form-title" jsxclassname="form-title-new2" jsxtext="TIETOPYYNTÖ&lt;br&gt;&lt;small&gt;&lt;small&gt;&lt;/small&gt;&lt;/small&gt;" jsxfontweight="normal" jsxpadding="12px" jsxtextalign="right"/>
+              </object>
             </object>
             <object type="jsx3.gui.Block">
               <variants jsxoverflow="2"/>
@@ -33,10 +37,6 @@
               <variants jsxoverflow="2"/>
               <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
               <dynamics jsxborder="@No jsxborder"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxrelativeposition="1"/>
-                <strings jsxname="form-title" jsxclassname="form-title-new2" jsxtext="TIETOPYYNTÖ&lt;br&gt;&lt;small&gt;&lt;small&gt;&lt;/small&gt;&lt;/small&gt;" jsxfontweight="normal" jsxpadding="12px" jsxtextalign="right"/>
-              </object>
             </object>
           </object>
         </object>
@@ -51,15 +51,15 @@
               <variants jsxoverflow="2"/>
               <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
               <dynamics jsxborder="@No jsxborder"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                <strings jsxname="label" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)." jsxclassname="FormLabel"/>
+              </object>
             </object>
             <object type="jsx3.gui.Block">
               <variants jsxoverflow="2"/>
               <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="" jsxbgcolor=""/>
               <dynamics jsxborder="@No jsxborder"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxrelativeposition="1" jsxoverflow="3"/>
-                <strings jsxname="label" jsxtext="Huom! Pakolliset kentät on merkitty tähdellä. (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)." jsxclassname="FormLabel"/>
-              </object>
             </object>
           </object>
         </object>
@@ -67,10 +67,10 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Kayttajat" jsxclassname="fieldset" jsxdisplay="block"/>
+      <strings jsxheight="" riaTitleText="Hae Käyttäjiä" jsxname="Haku_Kayttajat" jsxclassname="fieldset" jsxdisplay="block" jsxwidth=""/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="240"/>
-        <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
+        <variants jsxoverflow="2" jsxwidth="600" jsxrelativeposition="1" jsxheight="240"/>
+        <strings jsxleft="" jsxtop="" jsxname="pane" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
@@ -81,7 +81,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="40%,40%,*" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout ( | )" jsxcols="50%,40%,*" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
@@ -122,16 +122,16 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="100%" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout ( | )" jsxcols="" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxvisibility=""/>
               <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+                <variants jsxoverflow="2" jsxwidth="600"/>
+                <strings jsxname="pane" jsxheight="100%"/>
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="com.intalio.ria.Field">
-                  <variants/>
+                  <variants jsxwidth="600"/>
                   <strings riaLabelText="kayttajatLista" jsxname="kayttajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="block" riaHelpImageTip=""/>
                   <object type="jsx3.gui.Block">
-                    <variants jsxheight="140" jsxwidth="540" jsxoverflow="1"/>
+                    <variants jsxheight="140" jsxwidth="550" jsxoverflow="1"/>
                     <strings jsxname="matrix-block" jsxrelativeposition="1" jsxdisplay="" jsxmargin=""/>
                     <object type="jsx3.gui.Matrix">
                       <variants jsxautorow="0" jsxselectionmodel="0" jsxpagingmodel="1" jsxjsxxmlasync="1" jsxheaderheight="22" jsxrowheight="20"/>
@@ -143,7 +143,7 @@
                         <strings jsxname="Kayttajahaku_Valittu-column" jsxtext="Valinta" jsxpath="valittu" jsxcelltextalign="center" jsxpadding="3" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxdisplay="none"/>
                         <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                         <object type="jsx3.gui.CheckBox">
-                          <variants jsxchecked="0" jsxenabled="1"/>
+                          <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                           <strings jsxname="Kayttajahaku_Valittu" jsxtext=""/>
                         </object>
                       </object>
@@ -241,9 +241,9 @@
     </object>
     <object type="com.intalio.ria.Section">
       <variants/>
-      <strings riaTitleText="Perustiedot" jsxname="Perustiedot" jsxclassname="fieldset"/>
+      <strings riaTitleText="Perustiedot" jsxname="Perustiedot" jsxclassname="fieldset" jsxwidth=""/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="280" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <variants jsxoverflow="2" jsxwidth="600" jsxheight="280" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -282,7 +282,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="38%,20%, *" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout ( | )" jsxcols="48%,20%, *" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
@@ -377,7 +377,7 @@
                   <variants/>
                   <strings riaLabelText="Perustiedot_Lisatietoa" jsxname="Perustiedot_Lisatietoa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxtype="1" jsxheight="100" jsxwidth="700"/>
+                    <variants jsxtype="1" jsxheight="100" jsxwidth="550"/>
                     <strings jsxname="Perustiedot_Lisatietoa" jsxmargin="0 4 0 0" jsxvalue="" jsxpadding=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange=""/>
                   </object>
@@ -442,7 +442,7 @@
         </object>
       </object>
       <object type="jsx3.gui.CheckBox">
-        <variants jsxheight="18" jsxchecked="0"/>
+        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
         <strings jsxname="Perustiedot_isRole" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
       </object>
       <object type="jsx3.gui.CheckBox">
@@ -454,7 +454,7 @@
       <variants/>
       <strings jsxheight="" riaTitleText="Hae Kohdehenkilö" jsxname="Haku_Lapsi" jsxclassname="fieldset" jsxdisplay="block"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="240"/>
+        <variants jsxoverflow="2" jsxwidth="600" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxheight="240"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
@@ -466,7 +466,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="40%,40%,*" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout ( | )" jsxcols="50%,40%,*" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
@@ -604,19 +604,19 @@
       <variants/>
       <strings riaTitleText="Pyyntö" jsxname="Pyynto" jsxclassname="fieldset"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxheight="750" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <variants jsxoverflow="2" jsxwidth="600" jsxheight="750" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxname="pane" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
           <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-          <strings jsxname="layout (--)" jsxrows="7%,8%,5%,20%,20%,20%,%" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
+          <strings jsxname="layout (--)" jsxrows="7%,8%,5%,20%,20%,20%, *" jsxwidth="100%" jsxheight="100%" jsxbgcolor=""/>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
             <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="38%,20%, *" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout ( | )" jsxcols="50%,15%, *" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
@@ -703,14 +703,14 @@
           </object>
           <object type="jsx3.gui.Block">
             <variants jsxoverflow="2"/>
-            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+            <strings jsxname="pane" jsxwidth="85%" jsxheight="100%"/>
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="100%" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout ( | )" jsxcols="95%" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
-                <strings jsxwidth="100%" jsxname="pane" jsxheight="100%" jsxpadding="8" jsxmargin="0, 4, 0, 16" jsxclassname=""/>
+                <strings jsxwidth="90%" jsxname="pane" jsxheight="100%" jsxpadding="8" jsxmargin="0, 4, 0, 16" jsxclassname=""/>
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Matrix">
                   <variants jsxheaderheight="0" jsxjsxxmlasync="1" jsxdrag="0" jsxdrop="0" jsxselectionmodel="2" jsxresize="0" jsxsort="0" jsxxmlasync="0"/>
@@ -745,7 +745,7 @@
                   <variants/>
                   <strings riaLabelText="Perustiedot_Tarkoitus" jsxname="Pyynto_Tarkoitus-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxtype="1" jsxheight="100" jsxwidth="700" jsxrequired="1"/>
+                    <variants jsxtype="1" jsxheight="100" jsxwidth="550" jsxrequired="1"/>
                     <strings jsxname="Pyynto_Tarkoitus" jsxmargin="0 4 0 0" jsxvalue="" jsxpadding="" jsxtip="Tietopyynnön tarkoitus"/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange=""/>
                   </object>
@@ -772,7 +772,7 @@
                   <variants/>
                   <strings riaLabelText="Pyynto_Lainsaadanto" jsxname="Pyynto_Lainsaadanto-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxtype="1" jsxheight="100" jsxwidth="700"/>
+                    <variants jsxtype="1" jsxheight="100" jsxwidth="550"/>
                     <strings jsxname="Pyynto_Lainsaadanto" jsxmargin="0 4 0 0" jsxvalue="" jsxpadding=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange=""/>
                   </object>
@@ -799,7 +799,7 @@
                   <variants/>
                   <strings riaLabelText="Pyynto_Lisatieto" jsxname="Pyynto_Lisatieto-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxtype="1" jsxheight="100" jsxwidth="700"/>
+                    <variants jsxtype="1" jsxheight="100" jsxwidth="550"/>
                     <strings jsxname="Pyynto_Lisatieto" jsxmargin="0 4 0 0" jsxvalue="" jsxpadding=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange=""/>
                   </object>
@@ -887,7 +887,7 @@
       <variants/>
       <strings riaTitleText="Vastaus" jsxname="Vastaus" jsxclassname="fieldset" jsxdisplay="none"/>
       <object type="jsx3.gui.Block">
-        <variants jsxoverflow="2" jsxwidth="720" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
+        <variants jsxoverflow="2" jsxwidth="590" jsxrelativeposition="1" jsxleft="0" jsxtop="0"/>
         <strings jsxheight="600" jsxname="vastausPanel" jsxdisplay="" jsxvisibility=""/>
         <dynamics jsxborder="@No jsxborder"/>
         <object type="jsx3.gui.LayoutGrid">
