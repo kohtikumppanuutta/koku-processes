@@ -1,10 +1,39 @@
 /* place JavaScript code here */
-function getEndpoint() {
+kokuServiceEndpoints = null;
+
+function intalioPreStart() {
+throughTextfields();
+}
+
+// Removes HTML-tags.
+function escapeHTML(value) {
+                if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
+                        return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                } else {
+                        return value;
+                }
+}
+
+// Goes through textfields in order to check XSS-vulnerabilities.
+function throughTextfields() {
+    var temp, value, descendants = [];
+    descendants = Valtakirja_Form.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
     
-    //var endpoint = "http://localhost:8180";
-    var endpoint = "http://trelx51lb:8080";
-    return endpoint;
-    
+    for( i = 0; i < descendants.length; i++) {
+        value = Valtakirja_Form.getJSXByName(descendants[i].getName()).getValue();
+        temp = escapeHTML(value);
+        Valtakirja_Form.getJSXByName(descendants[i].getName()).setValue(temp);
+        Valtakirja_Form.getJSXByName(descendants[i].getName()).repaint();
+    }
+}
+
+
+function getEndpoint(serviceName) {
+        if (kokuServiceEndpoints == null) {
+                kokuServiceEndpoints = this.parent.getKokuServicesEndpoints();
+        }
+        
+        return kokuServiceEndpoints.services[serviceName];
 }
 
 //Getting the domain name and port if available
@@ -80,7 +109,8 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
        
         var url = getUrl();
         
-        var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
+        endpoint = getEndpoint("KokuValtakirjaProcessingService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl";
         
         /*var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.kv.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getAppointment><appointmentId>" + appointmentId + "</appointmentId></soa:getAppointment></soapenv:Body></soapenv:Envelope>";
         var endpoint = "http://gatein.intra.arcusys.fi:8080/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl";
