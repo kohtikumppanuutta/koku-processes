@@ -20,13 +20,13 @@ function escapeHTML(value) {
 // Goes through textfields in order to check XSS-vulnerabilities.
 function throughTextfields() {
     var temp, value, descendants = [];
-    descendants = Paivahoitohakemus_Form.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
+    descendants = Vahvistuspyynto_Form.getJSXByName("root").getDescendantsOfType("jsx3.gui.TextBox");
     
     for( i = 0; i < descendants.length; i++) {
-        value = Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).getValue();
+        value = Vahvistuspyynto_Form.getJSXByName(descendants[i].getName()).getValue();
         temp = escapeHTML(value);
-        Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).setValue(temp);
-        Paivahoitohakemus_Form.getJSXByName(descendants[i].getName()).repaint();
+        Vahvistuspyynto_Form.getJSXByName(descendants[i].getName()).setValue(temp);
+        Vahvistuspyynto_Form.getJSXByName(descendants[i].getName()).repaint();
     }
 }
 
