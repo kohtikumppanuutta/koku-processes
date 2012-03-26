@@ -134,16 +134,17 @@ function setApprovedNumber(selectBoxName) {
       AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue("");
    }
 }
+
 function radioSelect(selectBoxName) {
-    
-    var activeSelection = AjanvarausForm.getJSXByName("activeSelect").getValue();    
-        
+
+    AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(false).repaint();
+    var activeSelection = AjanvarausForm.getJSXByName("activeSelect").getValue();      
     if (activeSelection != "") {
         if ((selectBoxName == activeSelection) && (AjanvarausForm.getJSXByName("selectBoxName").getChecked() == false)) {
             AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
             AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
          }
-         else {     
+         else {    
             AjanvarausForm.getJSXByName("activeSelect").setValue(selectBoxName);        
             AjanvarausForm.getJSXByName(activeSelection).setChecked(false);
                 
@@ -156,7 +157,6 @@ function radioSelect(selectBoxName) {
         AjanvarausForm.getJSXByName("requireApprovedSlotNumber").setRequired(0);
         AjanvarausForm.getJSXByName("Lomake_Hyvaksytty_Aika").setValue(selectBoxName);
     }    
-    AjanvarausForm.getJSXByName("Lomake_Hylkaa").setChecked(false);
     AjanvarausForm.getJSXByName("calendarEntryBlock").repaint();
     
     

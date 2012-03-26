@@ -35,6 +35,10 @@ function throughTextfields() {
     }
 }
 
+function prepareForm() {
+
+}
+
 
 function isValidHour(node) {
     var hours, minutes
