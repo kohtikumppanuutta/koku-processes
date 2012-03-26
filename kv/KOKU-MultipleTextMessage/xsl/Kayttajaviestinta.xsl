@@ -43,7 +43,11 @@
 				</div>
 				<div class="main">
 					<h2 class="old">LÄHETTÄJÄ</h2>
-					<p><xsl:value-of select="//ka:Message_FromUser/text()"/></p>
+					<p>				
+					<xsl:value-of select="//ka:Message_FromFirstName/text()" /><xsl:text> </xsl:text><xsl:value-of select="//ka:Message_FromLastName/text()" />
+					</p>
+					
+					
 					<h2 class="old">VASTAANOTTAJA</h2>
 							<p>
 							<xsl:for-each select="//ka:receipients">

@@ -80,12 +80,19 @@ function prepareForm() {
         alert(e);
     }
     getRoles(uid);
-       
+    getRealUserName(uid);    
     KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(username);
     KayttajaviestintaForm.getJSXByName("Message_FromUser").setEnabled(jsx3.gui.Form.STATEDISABLED).repaint();
 }
 
-
+function getRealUserName(uid) {
+    SenderInfo = Arcusys.Internal.Communication.GetUserInfo(uid);  
+    firstname = SenderInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+    lastname = SenderInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+    wholename = firstname + " " + lastname;
+    KayttajaviestintaForm.getJSXByName("Message_FromFirstName").setValue(firstname);
+    KayttajaviestintaForm.getJSXByName("Message_FromLastName").setValue(lastname);
+}
 
 
 
@@ -978,6 +985,41 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) 
 
     };
 });
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserInfo = function(uid) {
+        
+        var tout = 1000;   
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserInfo><userUid>" + uid + "</userUid></soa:getUserInfo></soapenv:Body></soapenv:Envelope>";
+       
+        var url = getUrl();
+        
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+
+        msg = "message=" + encodeURIComponent(msg)+ "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);      
+        
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+       req.send(msg, tout);
+       var objXML = req.getResponseXML();
+
+        if (objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
+    };
+});
+
+
 jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
     arc.GetChildinfo = function(nodes) {
         var tout, msg, endpoint, url, req, objXML;

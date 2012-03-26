@@ -66,6 +66,20 @@
         </object>
       </object>
     </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxheight="55" jsxwidth="820"/>
+      <strings jsxpadding="5,0,5,5" jsxname="invisibles" jsxrelativeposition="1" jsxbgcolor="" jsxtextalign="left" jsxclassname="header" jsxmargin="0,0,0,5"/>
+      <object type="jsx3.gui.Select">
+        <variants jsxwidth="1" jsxheight="1" jsxxmlasync="1" _isfocusing="true"/>
+        <strings jsxname="Message_FromFirstName" jsxmargin="0 4 0 0" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay="none" jsxvisibility="hidden"/>
+        <events jsxselect="" jsxkeydown=""/>
+      </object>
+      <object type="jsx3.gui.Select">
+        <variants jsxwidth="1" jsxheight="1" jsxxmlasync="1" _isfocusing="true"/>
+        <strings jsxname="Message_FromLastName" jsxmargin="0 4 0 0" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay="none" jsxvisibility="hidden"/>
+        <events jsxselect="" jsxkeydown=""/>
+      </object>
+    </object>
     <object type="com.intalio.ria.Section">
       <variants/>
       <strings riaTitleText="Viestin näkyvyys" jsxname="Roolit" jsxclassname="fieldset" jsxdisplay=""/>
@@ -82,14 +96,14 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.Block">
               <variants jsxrelativeposition="1" jsxoverflow="3"/>
-              <strings jsxname="label" jsxtext="Roolit" jsxclassname="FormLabel"/>
+              <strings jsxname="label" jsxtext="Roolit" jsxclassname="FormLabel" jsxdisplay="" jsxvisibility=""/>
             </object>
             <object type="com.intalio.ria.Field">
               <variants/>
-              <strings jsxname="User_Roolit-field" jsxclassname="field" riaLabelText="" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
+              <strings jsxname="User_Roolit-field" jsxclassname="field" riaLabelText="" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif" jsxdisplay="" jsxvisibility=""/>
               <object type="jsx3.gui.Select">
                 <variants jsxwidth="250" jsxheight="18" jsxxmlasync="1" _isfocusing="true"/>
-                <strings jsxname="Message_FromRole" jsxmargin="0 4 0 0" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue=""/>
+                <strings jsxname="Message_FromRole" jsxmargin="0 4 0 0" jsxxml="" jsxdefaulttext="- Valitse -" jsxvalue="" jsxdisplay="" jsxvisibility=""/>
                 <events jsxselect="" jsxkeydown=""/>
               </object>
             </object>

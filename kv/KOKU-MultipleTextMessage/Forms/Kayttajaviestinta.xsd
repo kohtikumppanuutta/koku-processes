@@ -8,6 +8,10 @@
 
     		<element name="Message_FamilyMembers" type="boolean"></element>
     		<element name="Message_Website" type="boolean"></element>
+    		<element name="Message_FromFirstName" type="string"></element>
+    		<element name="Message_FromLastName" type="string"></element>
+    		<element name="Message_ToFirstName" type="string"></element>
+    		<element name="Message_ToLastName" type="string"></element>
     	</sequence>
 </complexType>
     <complexType name="Kayttajaviestinta_Type">
