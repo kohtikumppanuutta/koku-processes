@@ -86,12 +86,14 @@ function prepareForm() {
 }
 
 function getRealUserName(uid) {
-    SenderInfo = Arcusys.Internal.Communication.GetUserInfo(uid);  
-    firstname = SenderInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
-    lastname = SenderInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
-    wholename = firstname + " " + lastname;
-    KayttajaviestintaForm.getJSXByName("Message_FromFirstName").setValue(firstname);
-    KayttajaviestintaForm.getJSXByName("Message_FromLastName").setValue(lastname);
+    SenderInfo = Arcusys.Internal.Communication.GetUserInfo(uid);
+    if (SenderInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'") && SenderInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'")) {
+        firstname = SenderInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+        lastname = SenderInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
+        wholename = firstname + " " + lastname;
+        KayttajaviestintaForm.getJSXByName("Message_FromFirstName").setValue(firstname);
+        KayttajaviestintaForm.getJSXByName("Message_FromLastName").setValue(lastname);
+    }
 }
 
 

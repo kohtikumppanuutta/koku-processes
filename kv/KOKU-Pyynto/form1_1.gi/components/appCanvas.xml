@@ -1954,7 +1954,7 @@
                     <strings jsxname="RequestProcessing_RequestID-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                     <object type="jsx3.gui.TextBox">
                       <variants jsxwidth="400"/>
-                      <strings jsxname="RequestProcessing_RequestID" jsxmargin="0 4 0 0" jsxvalue="-"/>
+                      <strings jsxname="RequestProcessing_RequestID" jsxmargin="0 4 0 0" jsxvalue=""/>
                       <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
                     </object>
                   </object>

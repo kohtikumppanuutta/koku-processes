@@ -49,15 +49,14 @@
     <bpel:scope bpdm:label="Process" bpdm:ID="_EPBGMK0XEeCYk7-iNBydwQ">
         <bpel:partnerLinks>
             <bpel:partnerLink name="processAndInterfacePlkVar" partnerLinkType="diag:ProcessAndInterface" myRole="Process_for_Interface" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForInterface" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/Interface" bpdm:providedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Ilq9YK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_7XlLdq0WEeCYk7-iNBydwQ"/>
-            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" bpdm:invokedPort="KokuRequestProcessingServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_MFpxoK0fEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_NEyd8K0gEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
-            <bpel:partnerLink name="wFmagic_hzHqQARsEeGvy6Wfe0A60wPlkVar" partnerLinkType="diag:WFmagic_hzHqQARsEeGvy6Wfe0A60w" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_hzHqQARsEeGvy6Wfe0A60wService" bpdm:providedPort="Process_for_UserForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/WFmagic_hzHqQARsEeGvy6Wfe0A60w" bpdm:providedIsDefault="true" partnerRole="User_for_ProcessForCopyofform1_1Port" bpdm:invokedService="Copyofform1_1:WorkflowSoapService" bpdm:invokedPort="Copyofform1_1Port" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/Copyofform1_1" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Yudl4K0XEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_OPIgQK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_CDSOcK0XEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="servicesAndProcessForKokuRequestProcessingServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForKokuRequestProcessingServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="KokuRequestProcessingServiceImpl:KokuRequestProcessingService" bpdm:invokedPort="KokuRequestProcessingServicePort" bpdm:invokedSOAPAddress="http://kokusrv1.lahti.fi:8280/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuRequestProcessingServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_MFpxoK0fEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_NEyd8K0gEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="wFmagic_hzHqQARsEeGvy6Wfe0A60wPlkVar" partnerLinkType="diag:WFmagic_hzHqQARsEeGvy6Wfe0A60w" initializePartnerRole="no" myRole="Process_for_UserForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_hzHqQARsEeGvy6Wfe0A60wService" bpdm:providedPort="Process_for_UserForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/User/WFmagic_hzHqQARsEeGvy6Wfe0A60w" bpdm:providedIsDefault="true" partnerRole="User_for_ProcessForCopyofform1_1Port" bpdm:invokedService="Copyofform1_1:WorkflowSoapService" bpdm:invokedPort="Copyofform1_1Port" bpdm:invokedSOAPAddress="http://localhost:8480/fds/workflow/Copyofform1_1" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_Yudl4K0XEeCYk7-iNBydwQ, _EPBGMK0XEeCYk7-iNBydwQ:_OPIgQK0XEeCYk7-iNBydwQ" bpdm:isManaged="true" bpdm:otherPoolId="_CDSOcK0XEeCYk7-iNBydwQ"/>
             <bpel:partnerLink name="servicesAndProcessForPortServicePlkVar" partnerLinkType="diag:ServicesAndProcessForPortServicePlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="TokenService:TokenService" bpdm:invokedPort="Service" bpdm:invokedSOAPAddress="http://localhost:8080/axis2/services/TokenService.Service/" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_m9MocCZYEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
             <bpel:partnerLink name="servicesAndProcessForPortTaskManagementServicesSOAPPlkVar" partnerLinkType="diag:ServicesAndProcessForPortTaskManagementServicesSOAPPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="TaskManagementSystem:TaskManagementServices" bpdm:invokedPort="TaskManagementServicesSOAP" bpdm:invokedSOAPAddress="http://localhost:8080/axis2/services/TaskManagementServices" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_yfwssCZYEeGZ6qIn2ne6Bw" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
-            <bpel:partnerLink name="servicesAndProcessForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:invokedPort="UsersAndGroupsServicePort" bpdm:invokedSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_EPBGMK0XEeCYk7-iNBydwQ:_ZoSbsGdlEeGD74mpnm3lrQ, _EPBGMK0XEeCYk7-iNBydwQ:_m2JbwGdzEeGD74mpnm3lrQ" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
+            <bpel:partnerLink name="servicesAndProcessForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ServicesAndProcessForUsersAndGroupsServicePortPlk" initializePartnerRole="yes" partnerRole="Services_for_Process" bpdm:invokedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:invokedPort="UsersAndGroupsServicePort" bpdm:invokedSOAPAddress="http://kokusrv1.lahti.fi:8280/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:invokedIsDefault="true" bpdm:clientTasks="_K5M_AH2IEeGzXu12ZusphQ:_m2JbwGdzEeGD74mpnm3lrQ, _EPBGMK0XEeCYk7-iNBydwQ:_rQUpkH2DEeGzXu12ZusphQ" bpdm:isManaged="true" bpdm:otherPoolId="_mCUH8K0fEeCYk7-iNBydwQ"/>
         </bpel:partnerLinks>
         <bpel:variables>
             <bpel:variable name="thisVastaanotaRequestMsg" messageType="this:VastaanotaRequest" bpdm:id="_KjyP5a0XEeCYk7-iNBydwQ" bpdm:messageIds="inc:_KjnQwK0XEeCYk7-iNBydwQ"/>
-            <bpel:variable name="Dynamic_Fields_Form" element="tns:Dynamic_Fields_Form" bpdm:id="_RUDCwK0XEeCYk7-iNBydwQ"/>
             <bpel:variable name="thisVastaanotaResponseMsg" messageType="this:VastaanotaResponse" bpdm:id="_dxzj8K0XEeCYk7-iNBydwQ" bpdm:messageIds=" out:_dxroIK0XEeCYk7-iNBydwQ">
                 <bpel:from bpdm:toPart="body">
                     <bpel:literal bpdm:linkedMessageType="this:VastaanotaResponse" bpdm:linkedPart="body"></bpel:literal>
@@ -99,12 +98,23 @@
                 </bpel:from>
             </bpel:variable>
             <bpel:variable name="taskManagementSystemDeleteResponseMsg" messageType="TaskManagementSystem:okResponse" binding="TaskManagementSystem:TaskManagementServicesSOAP" operation="delete" opMsgType="1" bpdm:id="_ztuUoCZYEeGZ6qIn2ne6Bw" bpdm:messageIds="inc:_ztTd4CZYEeGZ6qIn2ne6Bw"/>
-            <bpel:variable name="usersAndGroupsServiceImplGetUserInfoRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserInfo" opMsgType="0" bpdm:id="_bjeWAGdlEeGD74mpnm3lrQ" bpdm:messageIds=" out:_bjNQQGdlEeGD74mpnm3lrQ,_oHNbAGdzEeGD74mpnm3lrQ">
+            <bpel:variable name="usersAndGroupsServiceImplGetUserInfoRequestMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserInfo" opMsgType="0" bpdm:id="_tdKUkH2DEeGzXu12ZusphQ" bpdm:messageIds=" out:_oHNbAGdzEeGD74mpnm3lrQ,_tcuPsH2DEeGzXu12ZusphQ">
                 <bpel:from bpdm:toPart="getUserInfo">
                     <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" bpdm:linkedPart="getUserInfo" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:opMsgType="0" bpdm:operation="getUserInfo"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
-            <bpel:variable name="usersAndGroupsServiceImplGetUserInfoResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserInfo" opMsgType="1" bpdm:id="_cJ6q9WdlEeGD74mpnm3lrQ" bpdm:messageIds="inc:_cJjekGdlEeGD74mpnm3lrQ,_on7icGdzEeGD74mpnm3lrQ"/>
+            <bpel:variable name="usersAndGroupsServiceImplGetUserInfoResponseMsg" messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" operation="getUserInfo" opMsgType="1" bpdm:id="_uap3kH2DEeGzXu12ZusphQ" bpdm:messageIds="inc:_on7icGdzEeGD74mpnm3lrQ,_uaSrMH2DEeGzXu12ZusphQ"/>
+            <bpel:variable name="userIds" type="xs:string" bpdm:id="_CdRCkH2KEeGzXu12ZusphQ">
+                <bpel:from>
+                    <bpel:literal bpdm:linkedType="xs:string"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="counter" type="xs:string" bpdm:id="_wj0VgH4dEeGCxvDvN2AhGg">
+                <bpel:from>
+                    <bpel:literal bpdm:linkedType="xs:string"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="Dynamic_Fields_Form" element="tns:Dynamic_Fields_Form" bpdm:id="_eoSRIH4qEeGCxvDvN2AhGg"/>
         </bpel:variables>
         <bpel:sequence>
             <bpdm:messagingtask eventType="start: message" operation="Vastaanota" partnerLink="processAndInterfacePlkVar" portType="this:ForInterface" isMyRole="true" enableSharing="false" bpdm:label="Vastaanota" bpdm:ID="_Ilq9YK0XEeCYk7-iNBydwQ">
@@ -119,50 +129,210 @@
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>
-            <bpdm:messagingtask eventType="intermediate: message" operation="getUserInfo" partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_ZoSbsGdlEeGD74mpnm3lrQ">
+            <bpdm:messagingtask eventType="intermediate: message" operation="getUserInfo" partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_rQUpkH2DEeGzXu12ZusphQ">
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Sender</bpel:from>
-                        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to><mapper:mapperLink><mapper:vertice id="1564133843" targetPath="$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid" targetedBy="93279827-arg0"></mapper:vertice><mapper:vertice id="93279827" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice></mapper:mapperLink>
+                        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="675691761" targetPath="$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid" targetedBy="491640186-arg0"></mapper:vertice>
+  <mapper:vertice id="491640186" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Sender"></mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
-                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_bjNQQGdlEeGD74mpnm3lrQ"></bpdm:linkset>
-                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoResponseMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_cJjekGdlEeGD74mpnm3lrQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_tcuPsH2DEeGzXu12ZusphQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoResponseMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_uaSrMH2DEeGzXu12ZusphQ"></bpdm:linkset>
             </bpdm:messagingtask>
             <bpdm:messagingtask bpdm:label="Hae lahettaja" bpdm:ID="_mZdBEGdlEeGD74mpnm3lrQ">
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
-                        <bpel:from>$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname</bpel:to><mapper:mapperLink><mapper:vertice id="1602122994" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname" targetedBy="1603038927-arg0"></mapper:vertice><mapper:vertice id="1603038927" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname"></mapper:vertice></mapper:mapperLink>
+                        <bpel:from>if ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname != "") then ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname) else ("")</bpel:from>
+                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1650619890" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_SenderFirstname" targetedBy="249067739-arg2"></mapper:vertice>
+  <mapper:vertice id="249067739" dimension="152x24" location="120,36">
+    <mapper:value>if-then-else</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="774739284" dimension="78x24" location="288,120" targetedBy="249067739-arg0">
+    <mapper:value>!=</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1728682039" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname" targetedBy="774739284-arg0"></mapper:vertice>
+  <mapper:vertice id="1745643594" dimension="78x24" location="396,60" targetedBy="774739284-arg1">
+    <mapper:value>""</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="517645147" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname" targetedBy="249067739-arg1"></mapper:vertice>
+  <mapper:vertice id="1459052244" dimension="78x24" location="301,320" targetedBy="249067739-arg3">
+    <mapper:value>""</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                     <bpel:copy>
-                        <bpel:from>$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname</bpel:to><mapper:mapperLink><mapper:vertice id="526165022" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname" targetedBy="655769561-arg0"></mapper:vertice><mapper:vertice id="655769561" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname"></mapper:vertice></mapper:mapperLink>
+                        <bpel:from>if ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname != "") then ($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname) else ("")</bpel:from>
+                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="2063910668" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_SenderLastname" targetedBy="1433748902-arg0"></mapper:vertice>
+  <mapper:vertice id="1433748902" dimension="158x24" location="300,204">
+    <mapper:value>if-then-else</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="592504169" dimension="78x24" location="516,252" targetedBy="1433748902-arg1">
+    <mapper:value>!=</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1837955592" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname" targetedBy="592504169-arg0"></mapper:vertice>
+  <mapper:vertice id="594946797" dimension="78x24" location="492,120" targetedBy="592504169-arg1">
+    <mapper:value>""</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1174928230" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname" targetedBy="1433748902-arg2"></mapper:vertice>
+  <mapper:vertice id="1455622881" dimension="78x24" location="564,216" targetedBy="1433748902-arg3">
+    <mapper:value>""</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
-                </bpdm:linkset>
-            </bpdm:messagingtask>
-            <bpdm:messagingtask eventType="intermediate: message" operation="getUserInfo" partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_m2JbwGdzEeGD74mpnm3lrQ">
-                <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
                         <bpel:from>$Dynamic_Fields_Form/tns:User/tns:User_Recipient</bpel:from>
-                        <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to><mapper:mapperLink><mapper:vertice id="1607003170" targetPath="$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid" targetedBy="1806439925-arg0"></mapper:vertice><mapper:vertice id="1806439925" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Recipient"></mapper:vertice></mapper:mapperLink>
-                    </bpel:copy>
-                </bpdm:linkset>
-                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_oHNbAGdzEeGD74mpnm3lrQ"></bpdm:linkset>
-                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoResponseMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_on7icGdzEeGD74mpnm3lrQ"></bpdm:linkset>
-            </bpdm:messagingtask>
-            <bpdm:messagingtask bpdm:label="Hae vastottaja" bpdm:ID="_qxYiQGdzEeGD74mpnm3lrQ">
-                <bpdm:linkset bpdm:type="assignments">
-                    <bpel:copy>
-                        <bpel:from>concat($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname, " ")</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname</bpel:to><mapper:mapperLink><mapper:vertice id="1495186623" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientFirstname" targetedBy="1643617085-arg2"></mapper:vertice><mapper:vertice id="1643617085" dimension="78x24" location="324,84"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="376425129" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname" targetedBy="1643617085-arg0"></mapper:vertice><mapper:vertice id="219801610" dimension="78x24" location="240,36" targetedBy="1643617085-arg1"><mapper:value>" "</mapper:value></mapper:vertice></mapper:mapperLink>
+                        <bpel:to>$userIds</bpel:to><mapper:mapperLink><mapper:vertice id="1367545639" targetPath="$userIds" targetedBy="2090715975-arg0"></mapper:vertice><mapper:vertice id="2090715975" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_Recipient"></mapper:vertice></mapper:mapperLink>
                     </bpel:copy>
                     <bpel:copy>
-                        <bpel:from>concat($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname, " ")</bpel:from>
-                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname</bpel:to><mapper:mapperLink><mapper:vertice id="1230032413" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientLastname" targetedBy="1187348603-arg2"></mapper:vertice><mapper:vertice id="1187348603" dimension="78x24" location="360,240"><mapper:value>concat()</mapper:value></mapper:vertice><mapper:vertice id="1049673769" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname" targetedBy="1187348603-arg0"></mapper:vertice><mapper:vertice id="1789043887" dimension="78x24" location="252,288" targetedBy="1187348603-arg1"><mapper:value>" "</mapper:value></mapper:vertice></mapper:mapperLink>
+                        <bpel:from>"0"</bpel:from>
+                        <bpel:to>$counter</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="735037377" targetPath="$counter" targetedBy="1134365491-arg0"></mapper:vertice>
+  <mapper:vertice id="1134365491" dimension="78x24" location="118,351">
+    <mapper:value>"0"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
                     </bpel:copy>
                 </bpdm:linkset>
             </bpdm:messagingtask>
+            <bpel:scope bpdm:label="SubProcess" bpdm:ID="_K5M_AH2IEeGzXu12ZusphQ">
+                <bpdm:linkset bpdm:type="loop" bpdm:loopType="while">
+                    <bpel:condition bpdm:loopType="while">$userIds != ""
+<mapper:mapperLink>
+  <mapper:vertice id="2032476333" targetPath="$while" targetedBy="1885256250-arg2"></mapper:vertice>
+  <mapper:vertice id="1885256250" dimension="78x24" location="288,84">
+    <mapper:value>!=</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="10847301" sourcePath="$userIds" targetedBy="1885256250-arg0"></mapper:vertice>
+  <mapper:vertice id="60606591" dimension="78x24" location="461,160" targetedBy="1885256250-arg1">
+    <mapper:value>""</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="intermediate: message" operation="getUserInfo" partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_m2JbwGdzEeGD74mpnm3lrQ">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>if (contains($userIds, ",")) then (substring-before($userIds, ",")) else ($userIds)</bpel:from>
+                                <bpel:to>$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1163123747" targetPath="$usersAndGroupsServiceImplGetUserInfoRequestMsg.getUserInfo/userUid" targetedBy="1597887722-arg3"></mapper:vertice>
+  <mapper:vertice id="1597887722" dimension="96x24" location="252,12">
+    <mapper:value>if-then-else</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1157534489" dimension="78x24" location="394,53" targetedBy="1597887722-arg0">
+    <mapper:value>contains()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1222858097" sourcePath="$userIds" targetedBy="1157534489-arg0"></mapper:vertice>
+  <mapper:vertice id="1101032357" dimension="78x24" location="492,108" targetedBy="1157534489-arg1">
+    <mapper:value>","</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="627798450" dimension="169x24" location="228,108" targetedBy="1597887722-arg1">
+    <mapper:value>substring-before()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1962449973" sourcePath="$userIds" targetedBy="627798450-arg0"></mapper:vertice>
+  <mapper:vertice id="342365879" dimension="78x24" location="456,216" targetedBy="627798450-arg1">
+    <mapper:value>","</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="986448521" sourcePath="$userIds" targetedBy="1597887722-arg2"></mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoRequestMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfo" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_oHNbAGdzEeGD74mpnm3lrQ"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserInfoResponseMsg" bpdm:msgVarScopeId="_EPBGMK0XEeCYk7-iNBydwQ" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:UsersAndGroupsService_getUserInfoResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceBinding" bpdm:ID="_on7icGdzEeGD74mpnm3lrQ"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                    <bpdm:messagingtask bpdm:label="Hae vastottaja" bpdm:ID="_qxYiQGdzEeGD74mpnm3lrQ">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>if ($counter = "0") then (concat($usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname, " ", $usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname)) else (concat($Dynamic_Fields_Form/tns:User/tns:User_RecipientRealnames, ", ", $usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname, " ", $usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname))</bpel:from>
+                                <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_RecipientRealnames</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="126217476" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientRealnames" targetedBy="921132074-arg3"></mapper:vertice>
+  <mapper:vertice id="921132074" dimension="145x24" location="144,24">
+    <mapper:value>if-then-else</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1770759543" dimension="78x24" location="72,120" targetedBy="921132074-arg0">
+    <mapper:value>=</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1330632136" sourcePath="$counter" targetedBy="1770759543-arg0"></mapper:vertice>
+  <mapper:vertice id="3557888" dimension="78x24" location="72,156" targetedBy="1770759543-arg1">
+    <mapper:value>"0"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1815365147" dimension="78x24" location="216,216" targetedBy="921132074-arg1">
+    <mapper:value>concat()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="233160551" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname" targetedBy="1815365147-arg0"></mapper:vertice>
+  <mapper:vertice id="345276518" dimension="78x24" location="268,259" targetedBy="1815365147-arg1">
+    <mapper:value>" "</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1021115859" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname" targetedBy="1815365147-arg2"></mapper:vertice>
+  <mapper:vertice id="1352419036" dimension="78x24" location="288,156" targetedBy="921132074-arg2">
+    <mapper:value>concat()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="2006235467" sourcePath="$Dynamic_Fields_Form/tns:User/tns:User_RecipientRealnames" targetedBy="1352419036-arg0"></mapper:vertice>
+  <mapper:vertice id="1370423388" dimension="78x24" location="389,71" targetedBy="1352419036-arg1">
+    <mapper:value>", "</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="925074450" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/firstname" targetedBy="1352419036-arg2"></mapper:vertice>
+  <mapper:vertice id="1497183355" dimension="78x24" location="396,168" targetedBy="1352419036-arg3">
+    <mapper:value>" "</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1911499362" sourcePath="$usersAndGroupsServiceImplGetUserInfoResponseMsg.getUserInfoResponse/user/lastname" targetedBy="1352419036-arg4"></mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                    </bpdm:messagingtask>
+                    <bpdm:messagingtask bpdm:label="Task" bpdm:ID="_tdD0oH2IEeGzXu12ZusphQ">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>if (contains($userIds, ",")) then (substring-after($userIds, ",")) else ("")</bpel:from>
+                                <bpel:to>$userIds</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1092633659" targetPath="$userIds" targetedBy="504984449-arg3"></mapper:vertice>
+  <mapper:vertice id="504984449" dimension="126x24" location="264,48">
+    <mapper:value>if-then-else</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="2114043185" dimension="78x24" location="108,108" targetedBy="504984449-arg0">
+    <mapper:value>contains()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="204521405" sourcePath="$userIds" targetedBy="2114043185-arg0"></mapper:vertice>
+  <mapper:vertice id="1990408054" dimension="78x24" location="253,206" targetedBy="2114043185-arg1">
+    <mapper:value>","</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1949780078" dimension="162x24" location="271,102" targetedBy="504984449-arg1">
+    <mapper:value>substring-after()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1430033867" sourcePath="$userIds" targetedBy="1949780078-arg0"></mapper:vertice>
+  <mapper:vertice id="1793146206" dimension="78x24" location="264,144" targetedBy="1949780078-arg1">
+    <mapper:value>","</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="924714435" dimension="78x24" location="483,49" targetedBy="504984449-arg2">
+    <mapper:value>""</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>"1"</bpel:from>
+                                <bpel:to>$counter</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1867805491" targetPath="$counter" targetedBy="547831749-arg0"></mapper:vertice>
+  <mapper:vertice id="547831749" dimension="78x24" location="472,336">
+    <mapper:value>"1"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpel:scope>
             <bpdm:messagingtask bpdm:label="Tee HTML" bpdm:ID="_TPtRkO_bEeCh8b9d8uDTTA">
                 <bpdm:linkset bpdm:type="assignments">
                     <bpel:copy>
@@ -237,17 +407,7 @@
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>bpel:doXslTransform("../xsl/ReplyToRequestAnswers.xsl", $Dynamic_Fields_Form)</bpel:from>
-                                <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="826673632" targetPath="$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers" targetedBy="2013958077-arg2"></mapper:vertice>
-  <mapper:vertice id="2013958077" dimension="217x85" location="348,96">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="149374181" dimension="157x37" location="168,48" targetedBy="2013958077-arg0">
-    <mapper:value>"../xsl/ReplyToRequestAnswers.xsl"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="804097266" sourcePath="$Dynamic_Fields_Form" targetedBy="2013958077-arg1"></mapper:vertice>
-</mapper:mapperLink>
+                                <bpel:to>$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers</bpel:to><mapper:mapperLink><mapper:vertice id="826673632" targetPath="$kokuRequestProcessingServiceImplReplyToRequestMsg.parameters/answers" targetedBy="2013958077-arg2"></mapper:vertice><mapper:vertice id="2013958077" dimension="217x85" location="348,96"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="149374181" dimension="157x37" location="168,48" targetedBy="2013958077-arg0"><mapper:value>"../xsl/ReplyToRequestAnswers.xsl"</mapper:value></mapper:vertice><mapper:vertice id="804097266" sourcePath="$Dynamic_Fields_Form" targetedBy="2013958077-arg1"></mapper:vertice></mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
                                 <bpel:from>$Dynamic_Fields_Form/tns:RequestProcessing/tns:RequestProcessing_RequestID</bpel:from>

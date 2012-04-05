@@ -377,6 +377,11 @@
           </object>
         </object>
       </object>
+      <object type="jsx3.gui.TextBox">
+        <variants jsxwidth="300" jsxenabled="0"/>
+        <strings jsxname="User_Roolit" jsxmargin="0 4 0 0" jsxvalue="" jsxvisibility="hidden" jsxdisplay="none"/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+      </object>
     </object>
     <object type="jsx3.gui.Block">
       <variants jsxoverflow="1" jsxheight="70"/>

@@ -19,7 +19,7 @@
 					<xsl:value-of select="//fe:User_Sender/text()" />
 				</xsl:element>
         		
-        		<xsl:if test="//fe:RequestProcessing_RequestID/text() != '-'">
+        		<xsl:if test="//fe:RequestProcessing_RequestID/text() != ''">
        				<xsl:element name="requestTemplateId">
        					<xsl:value-of select="//fe:RequestProcessing_RequestID/text()" />
        				</xsl:element>

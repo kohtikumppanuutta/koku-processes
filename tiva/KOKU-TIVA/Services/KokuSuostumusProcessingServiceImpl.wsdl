@@ -458,7 +458,9 @@
   </wsdl:binding>
   <wsdl:service name="KokuSuostumusProcessingService">
     <wsdl:port binding="tns:KokuSuostumusProcessingServiceSoapBinding" name="KokuSuostumusProcessingServicePort">
-      <soap:address location="http://trelx51lb:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" />
+      <soap:address location="http://koku-salo-app3.ec.dmz:8280/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" />
+      <!-- <soap:address location="http://kokusrv1.lahti.fi:8280/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" /> -->
+      <!-- <soap:address location="http://trelx51lb:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" /> -->
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

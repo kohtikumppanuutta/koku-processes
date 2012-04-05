@@ -3,7 +3,7 @@
   <icon/>
   <description/>
   <onBeforeDeserialize/>
-  <onAfterDeserialize><![CDATA[preloadCategories();]]></onAfterDeserialize>
+  <onAfterDeserialize>preloadCategories();</onAfterDeserialize>
   <object type="jsx3.gui.Block">
     <variants jsxoverflow="1" jsxwidth="640"/>
     <strings jsxheight="100%" jsxname="root"/>
@@ -699,7 +699,7 @@
                   <strings riaLabelText="Vastaus_Voimassa" jsxname="Vastaus_Voimassa-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay="block"/>
                   <object type="jsx3.gui.DatePicker">
                     <variants jsxheight="18" jsxwidth="100" jsxrelativeposition="1" jsxrequired="0" jsxfirstweekday="1"/>
-                    <strings jsxformat="dd.MM.yyyy" jsxname="Vastaus_Voimassa" jsxmargin="0 4 0 0" jsxdisplay=""/>
+                    <strings jsxformat="dd.MM.yyyy" jsxname="Vastaus_Voimassa" jsxmargin="0 4 0 0" jsxdisplay="" jsxtip="Määräaika"/>
                     <events jsxhide="com.intalio.ria.validate(this);"/>
                   </object>
                 </object>

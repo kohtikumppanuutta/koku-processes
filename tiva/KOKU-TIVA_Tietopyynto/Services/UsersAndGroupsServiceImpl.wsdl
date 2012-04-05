@@ -513,6 +513,7 @@
  </binding>
  <service name="UsersAndGroupsService">
   <port binding="tns:UsersAndGroupsServiceBinding" name="UsersAndGroupsServicePort">
+   <!-- <soap:address location="http://kokusrv1.lahti.fi:8280/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl"/> -->
    <!-- <soap:address location="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl"/> -->
    <soap:address location="http://koku-salo-app3.ec.dmz:8280/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl"/>
    <!-- <soap:address location="http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl"/> -->
