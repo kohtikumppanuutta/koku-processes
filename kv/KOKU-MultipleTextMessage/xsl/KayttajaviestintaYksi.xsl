@@ -15,9 +15,9 @@
 				</div>
 				<div class="main">
 					<h2 class="old">LÄHETTÄJÄ</h2>
-					<xsl:value-of select="//ka:Message_FromFirstName/text()" /><xsl:text> </xsl:text><xsl:value-of select="//ka:Message_FromLastName/text()" />
+					<p><xsl:value-of select="//ka:Message_FromFirstName/text()" /><xsl:text> </xsl:text><xsl:value-of select="//ka:Message_FromLastName/text()" /></p>
 					<h2 class="old">VASTAANOTTAJA</h2>
-							<!-- <p><xsl:value-of select="$Vastaanottaja/ka:receipientDisplay"/></p> -->
+							<!-- <p><xsl:value-of select="$Vastaanottaja/ka:receipientDisplay"/></p>-->
 							<p><xsl:value-of select="//ka:Message_ToFirstName" /><xsl:text> </xsl:text><xsl:value-of select="//ka_Message_ToLastName/text()" /></p>
 								<!--<xsl:if test="position()!=count(//ka:receipients)">-->
 								<!--</xsl:if>-->
@@ -25,7 +25,7 @@
 						<h2 class="old"><xsl:value-of select="//ka:Message_Subject/text()"/></h2>
 					</div>
 					<div class="innerContent">
-						<!-- <div class="old"><p><xsl:value-of select="//ka:Message_Content/text()"/></p></div> -->
+						<!-- <div class="old"><p><xsl:value-of select="//ka:Message_Content/text()"/></p></div>-->
 						<div class="old"><p><xsl:call-template name="PreserveLineBreaks"><xsl:with-param name="text" select="//ka:Message_Content/text()" /></xsl:call-template></p></div>
 					</div>
 				</div>
