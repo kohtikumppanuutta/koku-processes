@@ -758,8 +758,8 @@ function mapFieldsToMatrix(id, entryDate, entryStartTime, entryEndTime, entryLoc
 
     node.setAttribute("jsxid", id);
     node.setAttribute("appointmentDate", pvm);
-    node.setAttribute("startTime", entryStartTime + ":00");
-    node.setAttribute("endTime", entryEndTime + ":00");
+    node.setAttribute("startTime", entryStartTime + ":00+00:00");
+    node.setAttribute("endTime", entryEndTime + ":00+00:00");
     node.setAttribute("location", entryLocation);
     node.setAttribute("comment", entryInfoText);
     node.setAttribute("slotNumber", id);

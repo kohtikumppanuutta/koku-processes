@@ -76,7 +76,7 @@
           				<xsl:for-each select="//fe:slots">
                                 <xsl:element name="slots">
                                         <xsl:element name="slotNumber">                
-                                                <xsl:value-of select="fe:slotNumber/text()"/>        
+                                                <xsl:value-of select="fe:slotNumber/text()"/>      
                                         </xsl:element>
                                         <xsl:element name="appointmentDate">                
                                                 <xsl:value-of select="fe:appointmentDate/text()"/>        
