@@ -646,7 +646,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="300" jsxrequired="0"/>
+                    <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
                     <strings jsxname="Message_FromUser" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>

@@ -5,13 +5,13 @@
   <dd:provide partnerLink="prosessiAndKäyttäjäForPortTypeProcessPlkVar">
     <dd:service name="this:ProsessiAndKäyttäjäForPortTypeProcessPlkService" port="Prosessi_for_KäyttäjäPort"></dd:service>
   </dd:provide>
+  <dd:invoke partnerLink="prosessiAndPalvelutForKokuNotificationServicePortPlkVar">
+    <dd:service name="tns:KokuNotificationService" port="KokuNotificationServicePort"></dd:service>
+  </dd:invoke>
   <dd:invoke partnerLink="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar">
     <dd:service name="UsersAndGroupsServiceImpl:UsersAndGroupsService" port="UsersAndGroupsServicePort"></dd:service>
   </dd:invoke>
   <dd:invoke partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar">
     <dd:service name="tns:KokuMessageProcessingService" port="KokuMessageProcessingServicePort"></dd:service>
-  </dd:invoke>
-  <dd:invoke partnerLink="prosessiAndPalvelutForKokuNotificationServicePortPlkVar">
-    <dd:service name="tns:KokuNotificationService" port="KokuNotificationServicePort"></dd:service>
   </dd:invoke>
 </dd:process></dd:deploy>

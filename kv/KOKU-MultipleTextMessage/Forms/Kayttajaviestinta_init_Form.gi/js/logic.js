@@ -81,8 +81,6 @@ function prepareForm() {
     }
     getRoles(uid);
     getRealUserName(uid);    
-    KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(username);
-    KayttajaviestintaForm.getJSXByName("Message_FromUser").setEnabled(jsx3.gui.Form.STATEDISABLED).repaint();
 }
 
 function getRealUserName(uid) {
@@ -91,6 +89,7 @@ function getRealUserName(uid) {
         firstname = SenderInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         lastname = SenderInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         wholename = firstname + " " + lastname;
+        KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(wholename);
         KayttajaviestintaForm.getJSXByName("Message_FromFirstName").setValue(firstname);
         KayttajaviestintaForm.getJSXByName("Message_FromLastName").setValue(lastname);
     }
