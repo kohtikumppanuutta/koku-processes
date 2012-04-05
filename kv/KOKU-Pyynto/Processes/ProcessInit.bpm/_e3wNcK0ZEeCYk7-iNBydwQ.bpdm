@@ -1,4 +1,4 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:form1_1="http://www.intalio.com/gi/form1_1.gi" xmlns:form1_11="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" xmlns:User="http://thisdiagram/User" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProcessReceipient-Process="http://arcusys.fi/ProcessReceipient/Process" xmlns:Copyofform1_11="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:form1_12="http://www.intalio.com/gi/Forms/form1_1.gi" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:ProcessReceipient-Process1="http://arcusys.fi/Processes/ProcessReceipient/Process" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:attachments="http://www.intalio.com/gi/form1_1.gi/attachments" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:this="http://thisdiagram/Process" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Process">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:form1_1="http://www.intalio.com/gi/form1_1.gi" xmlns:form1_11="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" xmlns:User="http://thisdiagram/User" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProcessReceipient-Process="http://arcusys.fi/ProcessReceipient/Process" xmlns:Copyofform1_11="http://www.intalio.com/gi/Copyofform1_1.gi/attachments" xmlns:form1_12="http://www.intalio.com/gi/Forms/form1_1.gi" xmlns:diag="http://thisdiagram" xmlns:UsersAndGroupsServiceImpl="http://soa.common.koku.arcusys.fi/" xmlns:tns="http://www.arcusys.fi/DynamicFields" xmlns:ProcessReceipient-Process1="http://arcusys.fi/Processes/ProcessReceipient/Process" xmlns:KokuRequestProcessingServiceImpl="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:attachments="http://www.intalio.com/gi/form1_1.gi/attachments" xmlns:Copyofform1_1="http://www.intalio.com/gi/Copyofform1_1.gi" xmlns:this="http://thisdiagram/Process" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Process">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/form1_1.gi" bpdm:prefix="form1_1" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/form1_1.gi/attachments" bpdm:prefix="form1_11" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
@@ -9,9 +9,9 @@
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Forms/form1_1.gi" bpdm:prefix="form1_12" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_ZjUfZK0ZEeCYk7-iNBydwQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://soa.common.koku.arcusys.fi/" bpdm:prefix="UsersAndGroupsServiceImpl" bpdm:comment="contrib=&apos;project:///UsersAndGroupsServiceImpl.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuRequestProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///KokuRequestProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://arcusys.fi/Processes/ProcessReceipient/Process" bpdm:prefix="ProcessReceipient-Process1" bpdm:comment="contrib=&apos;project:///Services/ProcessReceipient-Process.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.arcusys.fi/DynamicFields" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///DynamicFields.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://arcusys.fi/Processes/ProcessReceipient/Process" bpdm:prefix="ProcessReceipient-Process1" bpdm:comment="contrib=&apos;project:///Services/ProcessReceipient-Process.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://soa.kv.koku.arcusys.fi/" bpdm:prefix="KokuRequestProcessingServiceImpl" bpdm:comment="contrib=&apos;project:///KokuRequestProcessingServiceImpl.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/form1_1.gi/attachments" bpdm:prefix="attachments" bpdm:comment="contrib=&apos;project:///form1_1.gi.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/gi/Copyofform1_1.gi" bpdm:prefix="Copyofform1_1" bpdm:comment="contrib=&apos;project:///Services/ProcessReceipient-Process.wsdl"></bpdm:namespaceDefinition>
@@ -245,27 +245,7 @@
                     <bpdm:gateway bpdm:label="Exclusive_Data-based_Gateway" bpdm:ID="_a9MckDX2EeGIWfBqWAuhbg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
                         <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_fBk54DdoEeGWsLc5JL_Ygg" bpdm:targetDisplayName="default"></bpdm:linkset>
                         <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_BLujMH1_EeGzXu12ZusphQ" bpdm:targetDisplayName="[GatewayDataBasedExclusive - Task]">
-                            <bpel:condition>"Loora" = bpel:doXslTransform("../xsl/GetRequestRecipientsRealm.xsl", $Dynamic_Fields_Form/tns:Receipients[$emptyCounter])
-<mapper:mapperLink>
-  <mapper:vertice id="1310537165" targetPath="$condition" targetedBy="322174184-arg2"></mapper:vertice>
-  <mapper:vertice id="322174184" dimension="78x24" location="552,48">
-    <mapper:value>=</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="961874346" dimension="78x24" location="564,156" targetedBy="322174184-arg0">
-    <mapper:value>"Loora"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="258700633" dimension="224x39" location="276,216" targetedBy="322174184-arg1">
-    <mapper:value>bpel:doXslTransform()</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="545415746" dimension="277x49" location="192,60" targetedBy="258700633-arg0">
-    <mapper:value>"../xsl/GetRequestRecipientsRealm.xsl"</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="1044910578" dimension="78x24" location="156,156" targetedBy="258700633-arg1">
-    <mapper:value>[]</mapper:value>
-  </mapper:vertice>
-  <mapper:vertice id="155604799" sourcePath="$Dynamic_Fields_Form/tns:Receipients" targetedBy="1044910578-arg0"></mapper:vertice>
-  <mapper:vertice id="241625486" sourcePath="$emptyCounter" targetedBy="1044910578-arg1"></mapper:vertice>
-</mapper:mapperLink></bpel:condition>
+                            <bpel:condition>"Loora" = bpel:doXslTransform("../xsl/GetRequestRecipientsRealm.xsl", $Dynamic_Fields_Form/tns:Receipients[$emptyCounter])<mapper:mapperLink><mapper:vertice id="1310537165" targetPath="$condition" targetedBy="322174184-arg2"></mapper:vertice><mapper:vertice id="322174184" dimension="78x24" location="552,48"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="961874346" dimension="78x24" location="564,156" targetedBy="322174184-arg0"><mapper:value>"Loora"</mapper:value></mapper:vertice><mapper:vertice id="258700633" dimension="224x39" location="276,216" targetedBy="322174184-arg1"><mapper:value>bpel:doXslTransform()</mapper:value></mapper:vertice><mapper:vertice id="545415746" dimension="277x49" location="192,60" targetedBy="258700633-arg0"><mapper:value>"../xsl/GetRequestRecipientsRealm.xsl"</mapper:value></mapper:vertice><mapper:vertice id="1044910578" dimension="78x24" location="156,156" targetedBy="258700633-arg1"><mapper:value>[]</mapper:value></mapper:vertice><mapper:vertice id="155604799" sourcePath="$Dynamic_Fields_Form/tns:Receipients" targetedBy="1044910578-arg0"></mapper:vertice><mapper:vertice id="241625486" sourcePath="$emptyCounter" targetedBy="1044910578-arg1"></mapper:vertice></mapper:mapperLink></bpel:condition>
                         </bpdm:linkset>
                         <bpel:sequence>
                             <bpdm:messagingtask eventType="intermediate: message" operation="getKunpoNameByUserUid" partnerLink="servicesAndProcessForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="false" enableSharing="false" bpdm:label="Message_Intermediate_Event" bpdm:ID="_ejblUDdoEeGWsLc5JL_Ygg">
@@ -292,13 +272,7 @@
                                 <bpdm:linkset bpdm:type="assignments">
                                     <bpel:copy>
                                         <bpel:from>"true"</bpel:from>
-                                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_Roolit</bpel:to>
-<mapper:mapperLink>
-  <mapper:vertice id="1759389321" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_Roolit" targetedBy="1565744566-arg0"></mapper:vertice>
-  <mapper:vertice id="1565744566" dimension="78x24" location="431,125">
-    <mapper:value>"true"</mapper:value>
-  </mapper:vertice>
-</mapper:mapperLink>
+                                        <bpel:to>$Dynamic_Fields_Form/tns:User/tns:User_Roolit</bpel:to><mapper:mapperLink><mapper:vertice id="1759389321" targetPath="$Dynamic_Fields_Form/tns:User/tns:User_Roolit" targetedBy="1565744566-arg0"></mapper:vertice><mapper:vertice id="1565744566" dimension="78x24" location="431,125"><mapper:value>"true"</mapper:value></mapper:vertice></mapper:mapperLink>
                                     </bpel:copy>
                                 </bpdm:linkset>
                             </bpdm:messagingtask>
