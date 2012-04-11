@@ -717,7 +717,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="75%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <strings jsxcols="*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
@@ -732,18 +732,8 @@
                   <object type="jsx3.gui.Select">
                     <variants jsxheight="18" jsxwidth="400" _isfocusing="true" jsxxmlasync="1" jsxtype="1"/>
                     <strings jsxvalue="" jsxxmlid="Pohjat-nomap" jsxxml="" jsxname="HaePohja_Tulokset" jsxmargin="0 4 0 0"/>
-                    <events onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" onmousedown="this.style.backgroundColor='';" jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
+                    <events onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" onmousedown="this.style.backgroundColor='';" jsxselect="com.intalio.ria.validate(this, objEVENT);getTemplate(TIVAForm.getJSXByName(&quot;HaePohja_Tulokset&quot;).getValue());"/>
                   </object>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxheight="100%" jsxwidth="100%" jsxpadding="18 0 0 0" jsxname="pane"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Button">
-                  <variants jsxindex="0" jsxheight="18"/>
-                  <strings jsxdisplay="" jsxname="button" jsxmargin="0 4 0 0" jsxtext="Hae Pohja"/>
-                  <events jsxexecute="getTemplate(TIVAForm.getJSXByName(&quot;HaePohja_Tulokset&quot;).getValue());"/>
                 </object>
               </object>
             </object>
@@ -790,7 +780,7 @@
         <strings riaLabelText="Pohja_PohjaId" jsxname="Pohja_PohjaId-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
         <object type="jsx3.gui.TextBox">
           <variants/>
-          <strings jsxvalue="12" jsxname="Pohja_PohjaId" jsxmargin="0 4 0 0"/>
+          <strings jsxvalue="" jsxname="Pohja_PohjaId" jsxmargin="0 4 0 0"/>
           <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
         </object>
       </object>

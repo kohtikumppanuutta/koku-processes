@@ -615,7 +615,7 @@
             <dynamics jsxborder="@No jsxborder"/>
             <object type="jsx3.gui.LayoutGrid">
               <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2"/>
-              <strings jsxname="layout ( | )" jsxcols="53%,*" jsxwidth="100%" jsxheight="100%"/>
+              <strings jsxname="layout ( | )" jsxcols="*" jsxwidth="100%" jsxheight="100%"/>
               <object type="jsx3.gui.Block">
                 <variants jsxoverflow="2"/>
                 <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
@@ -630,18 +630,8 @@
                   <object type="jsx3.gui.Select">
                     <variants jsxwidth="350" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
                     <strings jsxname="HaePohja_Tulokset" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="" jsxxmlid="Pohjat-nomap"/>
-                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);"/>
+                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="com.intalio.ria.validate(this, objEVENT);getTemplate(TIVA3Form.getJSXByName(&quot;HaePohja_Tulokset&quot;).getValue());"/>
                   </object>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxpadding="18 0 0 0"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Button">
-                  <variants jsxindex="0" jsxheight="18"/>
-                  <strings jsxname="button" jsxtext="Hae Pohja" jsxmargin="0 4 0 0" jsxdisplay=""/>
-                  <events jsxexecute="getTemplate(TIVA3Form.getJSXByName(&quot;HaePohja_Tulokset&quot;).getValue());"/>
                 </object>
               </object>
             </object>
