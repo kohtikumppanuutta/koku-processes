@@ -24,7 +24,8 @@
     <complexType name="User_Type">
     	<sequence>
     		<element name="User_Recipient" type="string"></element>
-    		<element name="User_Sender" type="string"></element>
+            <element name="User_RecipientRealName" type="string"></element>
+            <element name="User_Sender" type="string"></element>
     		<element name="User_SenderFirstName" type="string"></element>
     		<element name="User_SenderLastName" type="string"></element>
     		<element name="User_RecipientFirstName" type="string"></element>

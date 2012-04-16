@@ -200,8 +200,9 @@ function mapFormDataToFields(objXML) {
     username = username.substring((username.indexOf("/")+1));
     uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    AjanvarausForm.getJSXByName("User_Recipient").setValue(uid);
     userRealName = getUserRealName(uid);
-    AjanvarausForm.getJSXByName("User_Recipient").setValue(userRealName);
+    AjanvarausForm.getJSXByName("User_RecipientRealName").setValue(userRealName);
 
     AjanvarausForm.getJSXByName("User_Sender").setValue(sender).repaint();
     AjanvarausForm.getJSXByName("Otsikko").setTitleText(subject, true);
