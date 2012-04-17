@@ -95,7 +95,7 @@
                   <strings jsxname="tekstikentanOtsikko-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxwidth="400" jsxenabled="0"/>
-                    <strings jsxname="User_Sender" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
+                    <strings jsxname="User_SenderRealName" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#ffffff"/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
                 </object>
@@ -134,6 +134,11 @@
       <object type="jsx3.gui.TextBox">
         <variants jsxwidth="400" jsxenabled="0"/>
         <strings jsxname="User_Recipient" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#ffffff" jsxdisplay="none"/>
+        <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants jsxwidth="400" jsxenabled="0"/>
+        <strings jsxname="User_Sender" jsxmargin="0 4 0 0" jsxvalue="" jsxdisabledbgcolor="#ffffff" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
       </object>
     </object>

@@ -11,7 +11,4 @@
   <dd:invoke partnerLink="prosessiAndPalvelutForKokuMessageProcessingServicePortPlkVar">
     <dd:service name="tns:KokuMessageProcessingService" port="KokuMessageProcessingServicePort"></dd:service>
   </dd:invoke>
-  <dd:invoke partnerLink="prosessiAndPalvelutForKokuNotificationServicePortPlkVar">
-    <dd:service name="tns:KokuNotificationService" port="KokuNotificationServicePort"></dd:service>
-  </dd:invoke>
 </dd:process></dd:deploy>

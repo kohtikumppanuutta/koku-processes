@@ -601,7 +601,7 @@
                   <strings riaLabelText="Viesti_Lahettaja" jsxname="Message_FromUser-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif" jsxdisplay=""/>
                   <object type="jsx3.gui.TextBox">
                     <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
-                    <strings jsxname="User_Sender" jsxmargin="0 4 0 0" jsxvalue=""/>
+                    <strings jsxname="User_SenderRealName" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
                   </object>
                 </object>
@@ -748,6 +748,11 @@
         <variants/>
         <strings jsxvalue="28" jsxname="recipientCounter" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+        <variants jsxwidth="300" jsxrequired="0" jsxreadonly="1"/>
+        <strings jsxname="User_Sender" jsxmargin="0 4 0 0" jsxvalue="" jsxdisplay="none"/>
+        <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
     </object>
     <object type="com.intalio.ria.Section">

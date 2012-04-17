@@ -198,13 +198,16 @@ function mapFormDataToFields(objXML) {
     
     username = Intalio.Internal.Utilities.getUser();
     username = username.substring((username.indexOf("/")+1));
-    uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
+    uidData = Arcusys.Internal.Communication.GetUserUidByKunponame(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     AjanvarausForm.getJSXByName("User_Recipient").setValue(uid);
     userRealName = getUserRealName(uid);
+    senderData = Arcusys.Internal.Communication.GetUserUidByLooraname(sender);
+    senderUid = senderData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi'").getValue();
+    AjanvarausForm.getJSXByName("User_Sender").setValue(senderUid);
+    senderRealName = getUserRealName(senderUid);
     AjanvarausForm.getJSXByName("User_RecipientRealName").setValue(userRealName);
-
-    AjanvarausForm.getJSXByName("User_Sender").setValue(sender).repaint();
+    AjanvarausForm.getJSXByName("User_SenderRealName").setValue(senderRealName);
     AjanvarausForm.getJSXByName("Otsikko").setTitleText(subject, true);
     AjanvarausForm.getJSXByName("kuvaus").setText(description, true);
     AjanvarausForm.getJSXByName("Lomake_ID").setValue(appointmentId).repaint();
@@ -406,6 +409,38 @@ jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function (arc)
 
         }
 
+    };
+});
+
+jsx3.lang.Package.definePackage("Arcusys.Internal.Communication", function(arc) {
+    arc.GetUserUidByKunponame = function(username) {
+
+        var tout = 1000;
+        var limit = 100;
+        var searchString = "";
+
+        var msg = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soa=\"http://soa.common.koku.arcusys.fi/\"><soapenv:Header/><soapenv:Body><soa:getUserUidByKunpoName><kunpoUsername>" + username + "</kunpoUsername></soa:getUserUidByKunpoName></soapenv:Body></soapenv:Envelope>";
+
+        var url = getUrl();
+
+        endpoint = getEndpoint("UsersAndGroupsService");
+        // var endpoint = getEndpoint() + "/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl";
+        msg = "message=" + encodeURIComponent(msg) + "&endpoint=" + encodeURIComponent(endpoint);
+
+        var req = new jsx3.net.Request();
+
+        req.open('POST', url, false);
+
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        req.send(msg, tout);
+        var objXML = req.getResponseXML();
+
+        if(objXML == null) {
+            alert("Virhe palvelinyhteydess\xE4");
+        } else {
+            return objXML;
+
+        }
     };
 });
 

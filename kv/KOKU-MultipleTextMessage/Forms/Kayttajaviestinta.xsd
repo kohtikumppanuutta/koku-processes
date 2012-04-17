@@ -3,13 +3,12 @@
 <complexType name="Message_Type">
     	<sequence>
     		<element name="Message_FromUser" type="string" />
-    		<element name="Message_Content" type="string" />
+            <element name="Message_FromRealName" type="string"></element>
+            <element name="Message_Content" type="string" />
     		<element name="Message_Subject" type="string" />
 
     		<element name="Message_FamilyMembers" type="boolean"></element>
     		<element name="Message_Website" type="boolean"></element>
-    		<element name="Message_FromFirstName" type="string"></element>
-    		<element name="Message_FromLastName" type="string"></element>
     		<element name="Message_ToFirstName" type="string"></element>
     		<element name="Message_ToLastName" type="string"></element>
     	</sequence>

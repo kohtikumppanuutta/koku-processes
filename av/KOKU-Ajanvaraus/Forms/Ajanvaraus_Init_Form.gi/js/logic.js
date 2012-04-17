@@ -970,9 +970,10 @@ function Preload() {
     username = username.substring(username.indexOf("/") + 1);
     uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+    AjanvarausForm.getJSXByName("User_Sender").setValue(uid);
     userRealName = getUserRealName(uid);
     if (userRealName) {
-    	AjanvarausForm.getJSXByName("User_Sender").setValue(userRealName).repaint();
+    	AjanvarausForm.getJSXByName("User_SenderRealName").setValue(userRealName).repaint();
     }
     AjanvarausForm.getJSXByName("block").setHeight(0, true);
     if(gup("FormID")) {

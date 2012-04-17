@@ -934,6 +934,7 @@ function getTemplate(templateId) {
             createFormFromTemplateData(formData);
             form1.getJSXByName("RequestProcessing_RequestID").setValue(templateId).repaint();
             // mapTemplateNamesToField(formData);
+            setButtonDisplay("IntalioInternal_StartButton", "inline-block");
 
             form1.getJSXByName("Pohja").setDisplay("none").repaint();
             form1.getJSXByName("Roolit").setDisplay("block").repaint();
@@ -1105,7 +1106,6 @@ function mapFormDataToFields(objXML) {
 }
 
 function useTemplate() {
-
     getRoles(form1.getJSXByName("User_Sender").getValue());
     form1.getJSXByName("showFormFlag").setValue("Y").repaint();
 
@@ -1116,6 +1116,7 @@ function useTemplate() {
 }
 
 function dontUseTemplate() {
+    setButtonDisplay("IntalioInternal_StartButton", "inline-block");
     getRoles(form1.getJSXByName("User_Sender").getValue());
     form1.getJSXByName("showFormFlag").setValue("Y").repaint();
 
@@ -1240,6 +1241,7 @@ function prepareForm() {
     var username = Intalio.Internal.Utilities.getUser();
     var firstname, lastname;
     username = username.substring((username.indexOf("/") + 1));
+    setButtonDisplay("IntalioInternal_StartButton", "none");
 
     form1.getJSXByName("User_SenderDisplay").setValue(username);
     form1.getJSXByName("User_SenderDisplay").setEnabled(jsx3.gui.Form.STATEDISABLED).repaint();
@@ -1260,6 +1262,11 @@ function prepareForm() {
     }
     data = Arcusys.Internal.Communication.getUserInfo(id);
     form1.getJSXByName("User_SenderDisplay").setValue(parseName(data));
+}
+
+function setButtonDisplay(label, display, width) {
+    $('span[label|="' + label + '"]').css('display', display);
+    //$('span[label|="' + label + '"]').css('width', width);
 }
 
 // Changedate: 15.3.12. Added the function below to parse user's real name instead of using username.

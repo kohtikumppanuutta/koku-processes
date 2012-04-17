@@ -75,6 +75,7 @@ function prepareForm() {
         var userUid = Arcusys.Internal.Communication.GetUserUidByUsername(username);
         if(userUid != null) {
             var uid = userUid.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
+            KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(uid);
         }              
     } catch (e) {
         alert(e);
@@ -89,9 +90,7 @@ function getRealUserName(uid) {
         firstname = SenderInfo.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         lastname = SenderInfo.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         wholename = firstname + " " + lastname;
-        KayttajaviestintaForm.getJSXByName("Message_FromUser").setValue(wholename);
-        KayttajaviestintaForm.getJSXByName("Message_FromFirstName").setValue(firstname);
-        KayttajaviestintaForm.getJSXByName("Message_FromLastName").setValue(lastname);
+        KayttajaviestintaForm.getJSXByName("Message_FromRealName").setValue(wholename);
     }
 }
 

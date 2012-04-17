@@ -37,6 +37,15 @@
         </object>
         <object type="com.intalio.ria.Field">
           <variants/>
+          <strings riaLabelText="Message_FromRealName" jsxname="Message_FromRealName-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <object type="jsx3.gui.TextBox">
+            <variants/>
+            <strings jsxname="Message_FromRealName" jsxmargin="0 4 0 0"/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
+        </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
           <strings riaLabelText="Message_Content" jsxname="Message_Content-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
           <object type="jsx3.gui.TextBox">
             <variants/>
@@ -69,24 +78,6 @@
             <variants jsxchecked="0" jsxheight="18"/>
             <strings jsxname="Message_Website" jsxmargin="0 4 0 0"/>
             <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
-          </object>
-        </object>
-        <object type="com.intalio.ria.Field">
-          <variants/>
-          <strings riaLabelText="Message_FromFirstName" jsxname="Message_FromFirstName-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-          <object type="jsx3.gui.TextBox">
-            <variants/>
-            <strings jsxname="Message_FromFirstName" jsxmargin="0 4 0 0"/>
-            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
-          </object>
-        </object>
-        <object type="com.intalio.ria.Field">
-          <variants/>
-          <strings riaLabelText="Message_FromLastName" jsxname="Message_FromLastName-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-          <object type="jsx3.gui.TextBox">
-            <variants/>
-            <strings jsxname="Message_FromLastName" jsxmargin="0 4 0 0"/>
-            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
         </object>
         <object type="com.intalio.ria.Field">

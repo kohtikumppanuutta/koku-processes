@@ -44,7 +44,7 @@
 				<div class="main">
 					<h2 class="old">LÄHETTÄJÄ</h2>
 					<p>				
-					<xsl:value-of select="//ka:Message_FromFirstName/text()" /><xsl:text> </xsl:text><xsl:value-of select="//ka:Message_FromLastName/text()" />
+					<xsl:value-of select="//ka:Message_FromRealName/text()" />
 					</p>
 					
 					

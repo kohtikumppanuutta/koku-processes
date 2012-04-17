@@ -18,111 +18,111 @@
               <record jsxid="mi_11" name="DOM" value="Message_FromUser"/>
             </mappings>
           </record>
-          <record jsxid="mi_12" jsxtext="Message_Content" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_Content']">
+          <record jsxid="mi_12" jsxtext="Message_FromRealName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FromRealName']">
             <restrictions>
               <record jsxid="mi_13" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_14">
-              <record jsxid="mi_15" name="DOM" value="Message_Content"/>
+              <record jsxid="mi_15" name="DOM" value="Message_FromRealName"/>
             </mappings>
           </record>
-          <record jsxid="mi_16" jsxtext="Message_Subject" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_Subject']">
+          <record jsxid="mi_16" jsxtext="Message_Content" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_Content']">
             <restrictions>
               <record jsxid="mi_17" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_18">
-              <record jsxid="mi_19" name="DOM" value="Message_Subject"/>
+              <record jsxid="mi_19" name="DOM" value="Message_Content"/>
             </mappings>
           </record>
-          <record jsxid="mi_20" jsxtext="Message_FamilyMembers" type="E" datatype="boolean" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FamilyMembers']">
+          <record jsxid="mi_20" jsxtext="Message_Subject" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_Subject']">
             <restrictions>
               <record jsxid="mi_21" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_22">
-              <record jsxid="mi_23" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Message_FamilyMembers', my.getNamespace())));"/>
+              <record jsxid="mi_23" name="DOM" value="Message_Subject"/>
             </mappings>
           </record>
-          <record jsxid="mi_24" jsxtext="Message_Website" type="E" datatype="boolean" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_Website']">
+          <record jsxid="mi_24" jsxtext="Message_FamilyMembers" type="E" datatype="boolean" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FamilyMembers']">
             <restrictions>
               <record jsxid="mi_25" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_26">
-              <record jsxid="mi_27" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Message_Website', my.getNamespace())));"/>
+              <record jsxid="mi_27" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Message_FamilyMembers', my.getNamespace())));"/>
             </mappings>
           </record>
-          <record jsxid="mi_28" jsxtext="Message_FromFirstName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FromFirstName']">
+          <record jsxid="mi_28" jsxtext="Message_Website" type="E" datatype="boolean" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_Website']">
             <restrictions>
               <record jsxid="mi_29" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_30">
-              <record jsxid="mi_31" name="DOM" value="Message_FromFirstName"/>
+              <record jsxid="mi_31" name="Script" value="setValue(Intalio.Internal.Utilities.fixCheckboxOutput(jsx3.GO('Message_Website', my.getNamespace())));"/>
             </mappings>
           </record>
-          <record jsxid="mi_32" jsxtext="Message_FromLastName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FromLastName']">
+          <record jsxid="mi_32" jsxtext="Message_ToFirstName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_ToFirstName']">
             <restrictions>
               <record jsxid="mi_33" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_34">
-              <record jsxid="mi_35" name="DOM" value="Message_FromLastName"/>
+              <record jsxid="mi_35" name="DOM" value="Message_ToFirstName"/>
             </mappings>
           </record>
-          <record jsxid="mi_36" jsxtext="Message_ToFirstName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_ToFirstName']">
+          <record jsxid="mi_36" jsxtext="Message_ToLastName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_ToLastName']">
             <restrictions>
               <record jsxid="mi_37" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_38">
-              <record jsxid="mi_39" name="DOM" value="Message_ToFirstName"/>
-            </mappings>
-          </record>
-          <record jsxid="mi_40" jsxtext="Message_ToLastName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_ToLastName']">
-            <restrictions>
-              <record jsxid="mi_41" name="nillable" value="true"/>
-            </restrictions>
-            <mappings jsxid="mi_42">
-              <record jsxid="mi_43" name="DOM" value="Message_ToLastName"/>
+              <record jsxid="mi_39" name="DOM" value="Message_ToLastName"/>
             </mappings>
           </record>
         </record>
-        <record jsxid="mi_44" jsxtext="receipients" type="C" datatype="" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipients']">
+        <record jsxid="mi_40" jsxtext="receipients" type="C" datatype="" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipients']">
           <restrictions>
-            <record jsxid="mi_45" name="maxoccur" value="unbounded"/>
-            <record jsxid="mi_46" name="minoccur" value="0"/>
+            <record jsxid="mi_41" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_42" name="minoccur" value="0"/>
           </restrictions>
-          <record jsxid="mi_47" jsxtext="receipient" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipient']">
+          <record jsxid="mi_43" jsxtext="receipient" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipient']">
+            <restrictions>
+              <record jsxid="mi_44" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_45">
+              <record jsxid="mi_46" name="CDF Attribute" value="receipient"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_47" jsxtext="receipientDisplay" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipientDisplay']">
             <restrictions>
               <record jsxid="mi_48" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_49">
-              <record jsxid="mi_50" name="CDF Attribute" value="receipient"/>
+              <record jsxid="mi_50" name="CDF Attribute" value="receipientDisplay"/>
             </mappings>
           </record>
-          <record jsxid="mi_51" jsxtext="receipientDisplay" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipientDisplay']">
-            <restrictions>
-              <record jsxid="mi_52" name="nillable" value="true"/>
-            </restrictions>
-            <mappings jsxid="mi_53">
-              <record jsxid="mi_54" name="CDF Attribute" value="receipientDisplay"/>
-            </mappings>
-          </record>
-          <mappings jsxid="mi_55">
-            <record jsxid="mi_56" name="Script" value="if(typeof(this._i_56)=='undefined'){this._i_56=-1;my.getCDFDocument('receipients-nomap','OUTBOUND');}"/>
-            <record jsxid="mi_57" name="CDF Record"/>
+          <mappings jsxid="mi_51">
+            <record jsxid="mi_52" name="Script" value="if(typeof(this._i_52)=='undefined'){this._i_52=-1;my.getCDFDocument('receipients-nomap','OUTBOUND');}"/>
+            <record jsxid="mi_53" name="CDF Record"/>
           </mappings>
         </record>
       </record>
     </record>
-    <record jsxid="mi_58" jsxtext="Output (response)" type="O" jsxopen="1" src="../Kayttajaviestinta.xsd">
-      <record jsxid="mi_59" jsxtext="Kayttajaviestinta_Form" type="C" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Kayttajaviestinta_Form']" datatype="" tns="http://soa.kv.koku.arcusys.fi/">
-        <record jsxid="mi_60" jsxtext="Message" type="C" datatype="" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message']">
+    <record jsxid="mi_54" jsxtext="Output (response)" type="O" jsxopen="1" src="../Kayttajaviestinta.xsd">
+      <record jsxid="mi_55" jsxtext="Kayttajaviestinta_Form" type="C" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Kayttajaviestinta_Form']" datatype="" tns="http://soa.kv.koku.arcusys.fi/">
+        <record jsxid="mi_56" jsxtext="Message" type="C" datatype="" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message']">
           <restrictions>
-            <record jsxid="mi_61" name="nillable" value="true"/>
+            <record jsxid="mi_57" name="nillable" value="true"/>
           </restrictions>
-          <record jsxid="mi_62" jsxtext="Message_FromUser" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FromUser']">
+          <record jsxid="mi_58" jsxtext="Message_FromUser" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FromUser']">
+            <restrictions>
+              <record jsxid="mi_59" name="nillable" value="true"/>
+            </restrictions>
+            <mappings jsxid="mi_60">
+              <record jsxid="mi_61" name="DOM" value="Message_FromUser"/>
+            </mappings>
+          </record>
+          <record jsxid="mi_62" jsxtext="Message_FromRealName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FromRealName']">
             <restrictions>
               <record jsxid="mi_63" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_64">
-              <record jsxid="mi_65" name="DOM" value="Message_FromUser"/>
+              <record jsxid="mi_65" name="DOM" value="Message_FromRealName"/>
             </mappings>
           </record>
           <record jsxid="mi_66" jsxtext="Message_Content" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_Content']">
@@ -157,63 +157,47 @@
               <record jsxid="mi_81" name="Script" value="Intalio.Internal.Utilities.fixCheckboxInput(jsx3.GO('Message_Website', my.getNamespace()), MESSAGENODE.getValue());"/>
             </mappings>
           </record>
-          <record jsxid="mi_82" jsxtext="Message_FromFirstName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FromFirstName']">
+          <record jsxid="mi_82" jsxtext="Message_ToFirstName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_ToFirstName']">
             <restrictions>
               <record jsxid="mi_83" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_84">
-              <record jsxid="mi_85" name="DOM" value="Message_FromFirstName"/>
+              <record jsxid="mi_85" name="DOM" value="Message_ToFirstName"/>
             </mappings>
           </record>
-          <record jsxid="mi_86" jsxtext="Message_FromLastName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_FromLastName']">
+          <record jsxid="mi_86" jsxtext="Message_ToLastName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_ToLastName']">
             <restrictions>
               <record jsxid="mi_87" name="nillable" value="true"/>
             </restrictions>
             <mappings jsxid="mi_88">
-              <record jsxid="mi_89" name="DOM" value="Message_FromLastName"/>
-            </mappings>
-          </record>
-          <record jsxid="mi_90" jsxtext="Message_ToFirstName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_ToFirstName']">
-            <restrictions>
-              <record jsxid="mi_91" name="nillable" value="true"/>
-            </restrictions>
-            <mappings jsxid="mi_92">
-              <record jsxid="mi_93" name="DOM" value="Message_ToFirstName"/>
-            </mappings>
-          </record>
-          <record jsxid="mi_94" jsxtext="Message_ToLastName" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='Message_ToLastName']">
-            <restrictions>
-              <record jsxid="mi_95" name="nillable" value="true"/>
-            </restrictions>
-            <mappings jsxid="mi_96">
-              <record jsxid="mi_97" name="DOM" value="Message_ToLastName"/>
+              <record jsxid="mi_89" name="DOM" value="Message_ToLastName"/>
             </mappings>
           </record>
         </record>
-        <record jsxid="mi_98" jsxtext="receipients" type="C" datatype="" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipients']">
+        <record jsxid="mi_90" jsxtext="receipients" type="C" datatype="" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipients']">
           <restrictions>
-            <record jsxid="mi_99" name="maxoccur" value="unbounded"/>
-            <record jsxid="mi_100" name="minoccur" value="0"/>
+            <record jsxid="mi_91" name="maxoccur" value="unbounded"/>
+            <record jsxid="mi_92" name="minoccur" value="0"/>
           </restrictions>
-          <record jsxid="mi_101" jsxtext="receipient" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipient']">
+          <record jsxid="mi_93" jsxtext="receipient" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipient']">
             <restrictions>
-              <record jsxid="mi_102" name="nillable" value="true"/>
+              <record jsxid="mi_94" name="nillable" value="true"/>
             </restrictions>
-            <mappings jsxid="mi_103">
-              <record jsxid="mi_104" name="CDF Attribute" value="receipient"/>
+            <mappings jsxid="mi_95">
+              <record jsxid="mi_96" name="CDF Attribute" value="receipient"/>
             </mappings>
           </record>
-          <record jsxid="mi_105" jsxtext="receipientDisplay" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipientDisplay']">
+          <record jsxid="mi_97" jsxtext="receipientDisplay" type="E" datatype="string" tns="http://soa.kv.koku.arcusys.fi/" path="//jsx1:schema[@targetNamespace='http://soa.kv.koku.arcusys.fi/']//jsx1:element[@name='receipientDisplay']">
             <restrictions>
-              <record jsxid="mi_106" name="nillable" value="true"/>
+              <record jsxid="mi_98" name="nillable" value="true"/>
             </restrictions>
-            <mappings jsxid="mi_107">
-              <record jsxid="mi_108" name="CDF Attribute" value="receipientDisplay"/>
+            <mappings jsxid="mi_99">
+              <record jsxid="mi_100" name="CDF Attribute" value="receipientDisplay"/>
             </mappings>
           </record>
-          <mappings jsxid="mi_109">
-            <record jsxid="mi_110" name="Script" value="if(typeof(this._i_110)=='undefined'){this._i_110=-1;my.getCDFDocument('receipients-nomap','INBOUND');}"/>
-            <record jsxid="mi_111" name="CDF Record"/>
+          <mappings jsxid="mi_101">
+            <record jsxid="mi_102" name="Script" value="if(typeof(this._i_102)=='undefined'){this._i_102=-1;my.getCDFDocument('receipients-nomap','INBOUND');}"/>
+            <record jsxid="mi_103" name="CDF Record"/>
           </mappings>
         </record>
       </record>
