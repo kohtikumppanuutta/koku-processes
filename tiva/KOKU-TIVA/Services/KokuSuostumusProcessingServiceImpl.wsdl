@@ -1,6 +1,6 @@
-<wsdl:definitions name="KokuSuostumusProcessingService" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="KokuSuostumusProcessingService" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
-<xs:schema elementFormDefault="unqualified" targetNamespace="http://soa.tiva.koku.arcusys.fi/" version="1.0" xmlns:ns1="http://services.koku.fi/entity/tiva/v1" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://soa.tiva.koku.arcusys.fi/" xmlns:ns1="http://services.koku.fi/entity/tiva/v1" xmlns:tns="http://soa.tiva.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:import namespace="http://services.koku.fi/entity/tiva/v1" />
 <xs:element name="annaSuostumus" type="tns:annaSuostumus" />
 <xs:element name="annaSuostumusResponse" type="tns:annaSuostumusResponse" />
@@ -64,6 +64,7 @@
 <xs:complexType name="suostumuspohjaShort">
 <xs:sequence>
 <xs:element minOccurs="0" name="suostumuspohjaId" type="xs:long" />
+<xs:element minOccurs="0" name="code" type="xs:string" />
 <xs:element minOccurs="0" name="otsikko" type="xs:string" />
 </xs:sequence>
 </xs:complexType>
@@ -79,6 +80,9 @@
 <xs:element name="templateId" type="xs:long" />
 <xs:element minOccurs="0" name="templateName" type="xs:string" />
 <xs:element minOccurs="0" name="description" type="xs:string" />
+<xs:element name="validTillMandatory" type="xs:boolean" />
+<xs:element name="consentsOnly" type="xs:boolean" />
+<xs:element name="toSecondGuardianOnly" type="xs:boolean" />
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="toimenpidevastaus">
@@ -138,7 +142,7 @@
 <xs:sequence>
 <xs:element name="suostumuspohjaId" type="xs:long" />
 <xs:element minOccurs="0" name="lahettaja" type="xs:string" />
-<xs:element minOccurs="0" name="suostumustapa" type="xs:string" />
+<xs:element minOccurs="0" name="suostumustapa" type="tns:consentCreateType" />
 <xs:element minOccurs="0" name="kohdehenkilo" type="xs:string" />
 <xs:element maxOccurs="unbounded" minOccurs="0" name="vastaanottaja" type="xs:string" />
 <xs:element minOccurs="0" name="maaraaika" type="xs:anySimpleType" />
@@ -209,6 +213,15 @@
 <xs:enumeration value="Child" />
 <xs:enumeration value="AnyParent" />
 <xs:enumeration value="BothParents" />
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="consentCreateType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Electronic" />
+<xs:enumeration value="EmailBased" />
+<xs:enumeration value="PaperBased" />
+<xs:enumeration value="Verbal" />
+<xs:enumeration value="Fax" />
 </xs:restriction>
 </xs:simpleType>
 </xs:schema>
@@ -458,9 +471,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuSuostumusProcessingService">
     <wsdl:port binding="tns:KokuSuostumusProcessingServiceSoapBinding" name="KokuSuostumusProcessingServicePort">
-      <soap:address location="http://koku-salo-app3.ec.dmz:8280/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" />
-      <!-- <soap:address location="http://kokusrv1.lahti.fi:8280/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" /> -->
-      <!-- <soap:address location="http://trelx51lb:8080/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" /> -->
+      <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

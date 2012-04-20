@@ -1,4 +1,4 @@
-<wsdl:definitions name="KokuMessageProcessingService" targetNamespace="http://soa.kv.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="KokuMessageProcessingService" targetNamespace="http://soa.kv.koku.arcusys.fi/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
 <xs:schema elementFormDefault="unqualified" targetNamespace="http://soa.kv.koku.arcusys.fi/" version="1.0" xmlns:tns="http://soa.kv.koku.arcusys.fi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:element name="receiveMessage" type="tns:receiveMessage" />
@@ -19,6 +19,7 @@
 <xs:complexType name="sendMessage">
 <xs:sequence>
 <xs:element minOccurs="0" name="fromUser" type="xs:string" />
+<xs:element minOccurs="0" name="fromRoleUid" type="xs:string" />
 <xs:element minOccurs="0" name="subject" type="xs:string" />
 <xs:element minOccurs="0" name="receipients" type="tns:receipients" />
 <xs:element minOccurs="0" name="messageContent" type="xs:string" />
@@ -127,9 +128,7 @@
   </wsdl:binding>
   <wsdl:service name="KokuMessageProcessingService">
     <wsdl:port binding="tns:KokuMessageProcessingServiceSoapBinding" name="KokuMessageProcessingServicePort">
-      <!-- <soap:address location="http://koku-salo-app3.ec.dmz:8280/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" /> -->
-      <soap:address location="http://kokusrv1.lahti.fi:8280/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" />
-      <!-- <soap:address location="http://trelx51lb:8080/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" /> -->
+      <soap:address location="http://koku-salo-app3.ec.dmz:8280/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" />
       <!-- <soap:address location="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-kv-model-0.1-SNAPSHOT/KokuMessageProcessingServiceImpl" /> -->
     </wsdl:port>
   </wsdl:service>

@@ -12,6 +12,10 @@
     <xsl:template match="fe:TIVA_Form">
 		<xsl:copy>
 		    <xsl:element name="suostumuspohja">
+		    
+		    <xsl:element name="code">
+		    	<xsl:value-of select="//fe:Pohja_Extend1/text()" />
+		    </xsl:element>
             
             <xsl:element name="otsikko">        
             	<xsl:value-of select="//fe:Pohja_Otsikko/text()" />

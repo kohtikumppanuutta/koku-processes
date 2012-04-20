@@ -157,6 +157,7 @@ function preload() {
 	uidData = Arcusys.Internal.Communication.GetSenderUid(username);
 	uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
 	userRealName = getUserRealName(uid);
+	TivaTietopyyntoForm.getJSXByName("Perustiedot_Lahettaja_UID").setValue(uid);
 	TivaTietopyyntoForm.getJSXByName("Perustiedot_Lahettaja").setValue(userRealName);
 	preloadCategories();
 

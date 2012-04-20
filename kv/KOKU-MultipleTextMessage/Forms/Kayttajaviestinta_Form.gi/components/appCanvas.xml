@@ -98,6 +98,15 @@
             <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
           </object>
         </object>
+        <object type="com.intalio.ria.Field">
+          <variants/>
+          <strings riaLabelText="Message_FromRole" jsxname="Message_FromRole-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+          <object type="jsx3.gui.TextBox">
+            <variants/>
+            <strings jsxname="Message_FromRole" jsxmargin="0 4 0 0"/>
+            <events jsxincchange="com.intalio.ria.validate(this, objEVENT);" jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
+          </object>
+        </object>
       </object>
       <object type="com.intalio.ria.Field">
         <variants/>

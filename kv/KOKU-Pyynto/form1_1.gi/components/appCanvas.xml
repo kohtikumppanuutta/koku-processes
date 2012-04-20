@@ -1473,7 +1473,7 @@
                   <variants/>
                   <strings jsxname="kysymys-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.TextBox">
-                    <variants jsxwidth="400"/>
+                    <variants jsxwidth="400" jsxmaxlength="100"/>
                     <strings jsxname="kysymys" jsxmargin="0 4 0 0" jsxvalue=""/>
                     <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);" jsxchange="com.intalio.ria.validate(this, objEVENT);" jsxincchange="com.intalio.ria.validate(this, objEVENT);"/>
                   </object>
@@ -1699,8 +1699,8 @@
         </object>
       </object>
       <object type="jsx3.gui.TextBox">
-        <variants/>
-        <strings jsxvalue="7" jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
+        <variants jsxvalue="9"/>
+        <strings jsxname="sectionNumber" jsxmargin="0 4 0 0" jsxdisplay="none"/>
         <events jsxfocus="com.intalio.ria.highlightTextInput(this, false);" jsxblur="com.intalio.ria.highlightTextInput(this, true);"/>
       </object>
       <object type="jsx3.gui.TextBox">
@@ -1834,11 +1834,11 @@
       </object>
     </object>
     <object type="jsx3.gui.Block">
-      <variants jsxoverflow="1" jsxheight="0"/>
-      <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay=""/>
+      <variants jsxoverflow="1" jsxheight="205"/>
+      <strings jsxname="paneBlock" jsxwidth="100%" jsxrelativeposition="1" jsxdisplay="none"/>
       <object type="com.intalio.ria.Section">
-        <variants jsxheight="0"/>
-        <strings riaTitleText="Viesti" jsxname="block" jsxclassname="fieldset" jsxdisplay="block"/>
+        <variants/>
+        <strings jsxheight="" riaTitleText="Viesti" jsxname="block" jsxclassname="fieldset" jsxdisplay="block"/>
       </object>
     </object>
     <object type="com.intalio.ria.Section">

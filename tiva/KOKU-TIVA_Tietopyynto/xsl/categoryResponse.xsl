@@ -22,7 +22,7 @@
 	 		</xsl:for-each>
 	 			
 	 		<xsl:element name="description">
-				<xsl:value-of select="//ka:Perustiedot_Lisatietoa/text()"/>
+				<xsl:value-of select="//ka:Perustiedot_Otsikko/text()"/>
 			</xsl:element>
 			
 			<xsl:element name="informationDetails">

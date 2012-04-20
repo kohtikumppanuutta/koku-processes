@@ -1,4 +1,4 @@
-#Thu Apr 05 09:38:32 EEST 2012
+#Fri Apr 20 15:22:18 EEST 2012
 =\=\=\=\=\=\=
 <<<<<<<=.mine
 >>>>>>>=.r2604
@@ -7,8 +7,8 @@ bundleExportPath=/home/henril/intalio_workspace/KOKU-MultipleTextMessage
 deploy.fileRuntimeSelection=Forms\:Forms/Kayttajaviestinta.xsd\:Forms/Kayttajaviestinta_Receipient_Form.gi\:Forms/Kayttajaviestinta_init_Form.gi\:Processes\:Processes/Kayttajaviestinta.bpm\:Services\:Services/BulletinService.wsdl\:Services/KokuMessageProcessingServiceImpl.wsdl\:Services/MessageServiceFacadeImpl.wsdl\:Services/NotifyBulletin-Process-Process.wsdl\:Services/NotifyBulletin.xsd\:Services/tas.wsdl\:schema.xsd\:xsl\:xsl/Kayttajaviestinta.xsl\:xsl/KayttajaviestintaYksi.xsl\:xsl/Kayttajaviestinta_fo.xsl\:xsl/receiveRequest.xsl\:xsl/receivers.xsl\:xsl/receiversOne.xsl\:
 deploy_bundleShouldBeArchived=false
 deploy_bundleShouldBeDeployed=true
-deploy_gi_serverUrl=http\://localhost\:8080/gi
-deploy_serverUrl=http\://localhost\:8080/ode
+deploy_gi_serverUrl=http\://localhost\:9090/gi
+deploy_serverUrl=http\://localhost\:9090/ode
 deploymenttimeout=120
 diagram_baseUri=http\://soa.kv.koku.arcusys.fi/
 eclipse.preferences.version=1

@@ -8,6 +8,9 @@
 			<xsl:element name="fromUser">
 				<xsl:value-of select="//ka:Message_FromUser/text()"/>
 			</xsl:element>
+			<xsl:element name="fromRoleUid">
+				<xsl:value-of select="//ka:Message_FromRole/text()"/>
+			</xsl:element>
 			<xsl:element name="subject">
 				<xsl:value-of select="//ka:Message_Subject/text()"/>
 			</xsl:element>
