@@ -23,6 +23,31 @@ function intalioPreStart() {
     }
 }
 
+function formatDataCache(cache, matrix) {
+    if (TIVAForm.getCache().getDocument(cache).getFirstChild() == null) {
+       commitCustomAutoRowSession(matrix, cache);
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function commitCustomAutoRowSession(matrix, cache) {
+    var nodes, xmlStr;
+
+    nodes = TIVAForm.getJSXByName(matrix).getChildren();
+    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+
+    for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i] && nodes[i].getPath() != "jsxid") {
+            xmlStr += " " + nodes[i].getPath() + "=\"\"";
+        }
+    }
+    xmlStr += "/></data>";
+    TIVAForm.getCache().getDocument(cache).loadXML(xmlStr);
+}
+
 // Removes HTML-tags.
 function escapeHTML(value) {
                 if (value !== null && value !== undefined && isNaN(value) && value.replace()) {
@@ -86,7 +111,8 @@ function cancelConsent(check) {
 
 function formatDataCache(cache, matrix) {
     if (TIVAForm.getCache().getDocument(cache).getFirstChild() == null) {
-        TIVAForm.getJSXByName(matrix).commitAutoRowSession();
+        // TIVAForm.getJSXByName(matrix).commitAutoRowSession();
+        commitCustomAutoRowSession(matrix, cache);
         return true;
     } else {
         return false;

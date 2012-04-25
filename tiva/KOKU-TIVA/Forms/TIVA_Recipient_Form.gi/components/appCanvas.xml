@@ -1,4 +1,4 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
@@ -176,7 +176,7 @@
                 <variants/>
                 <strings riaLabelText="Suostumus_Mitatoi" jsxname="Suostumus_Mitatoi-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                 <object type="jsx3.gui.CheckBox">
-                  <variants jsxchecked="0" jsxheight="30"/>
+                  <variants jsxchecked="0" jsxheight="30" jsxdefaultchecked="0"/>
                   <strings jsxname="Suostumus_Hylkaa" jsxmargin="0 4 0 0" jsxtext=""/>
                   <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);cancelConsent(this.getChecked());"/>
                 </object>
@@ -414,7 +414,7 @@
         <variants/>
         <strings riaLabelText="Pohja_Laheta" jsxname="Pohja_Laheta-field" riaLayoutDirection="vertical" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
         <object type="jsx3.gui.CheckBox">
-          <variants jsxchecked="0" jsxheight="18"/>
+          <variants jsxchecked="0" jsxheight="18" jsxdefaultchecked="0"/>
           <strings jsxname="Pohja_Laheta" jsxmargin="0 4 0 0"/>
           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
         </object>
@@ -518,7 +518,7 @@
             <strings jsxpath="Vastaukset_Vastaus" jsxcellpadding="1" jsxwidth="100" jsxpadding="3" jsxname="Vastaukset_Vastaus" jsxcelltextalign="center" jsxvaluetemplate="@empty" jsxtext="Vastaukset_Vastaus"/>
             <dynamics jsxbg="@Bevel TopDown" jsxborder="@Outset" jsxbgcolor="@Solid Disabled"/>
             <object type="jsx3.gui.CheckBox">
-              <variants jsxenabled="1" jsxchecked="0"/>
+              <variants jsxenabled="1" jsxchecked="0" jsxdefaultchecked="0"/>
               <strings jsxname="Vastaukset_Vastaus" jsxtext=""/>
               <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED);"/>
             </object>

@@ -27,6 +27,31 @@ function throughTextfields() {
     }
 }
 
+ function formatDataCache(cache, matrix) {
+    if (Valtakirja_Form.getCache().getDocument(cache).getFirstChild() == null) {
+       commitCustomAutoRowSession(matrix, cache);
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function commitCustomAutoRowSession(matrix, cache) {
+    var nodes, xmlStr;
+
+    nodes = Valtakirja_Form.getJSXByName(matrix).getChildren();
+    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+
+    for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i] && nodes[i].getPath() != "jsxid") {
+            xmlStr += " " + nodes[i].getPath() + "=\"\"";
+        }
+    }
+    xmlStr += "/></data>";
+    Valtakirja_Form.getCache().getDocument(cache).loadXML(xmlStr);
+}
+
 
 function getEndpoint(serviceName) {
         if (kokuServiceEndpoints == null) {
