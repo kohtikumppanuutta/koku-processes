@@ -36,7 +36,7 @@ function throughTextfields() {
 }
 
 function prepareForm() {
-
+    alert("ok");
 }
 
 
@@ -973,7 +973,7 @@ function Preload() {
     AjanvarausForm.getJSXByName("User_Sender").setValue(uid);
     userRealName = getUserRealName(uid);
     if (userRealName) {
-    	AjanvarausForm.getJSXByName("User_SenderRealName").setValue(userRealName).repaint();
+        AjanvarausForm.getJSXByName("User_SenderRealName").setValue(userRealName).repaint();
     }
     AjanvarausForm.getJSXByName("block").setHeight(0, true);
     if(gup("FormID")) {
@@ -996,14 +996,14 @@ function Preload() {
 }
 
 function getUserRealName(uid) {
-	var userData, firstname, lastname;
+    var userData, firstname, lastname;
     userData = Arcusys.Internal.Communication.getUserInfo(uid);
     if (userData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'") && userData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'")) {
         firstname = userData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         lastname = userData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         return firstname + " " + lastname;
     } else {
-    	return null;
+        return null;
     }
 }
 
