@@ -36,8 +36,6 @@ function throughTextfields() {
 }
 
 function prepareForm() {
-    alert("ok");
-    alert("moar test stuff here...");
 }
 
 
