@@ -1,3 +1,28 @@
+function commitCustomAutoRowSession(matrix, cache) {
+    var nodes, xmlStr;
+
+    nodes = Paivahoitohakemus_Form.getJSXByName(matrix).getChildren();
+    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+
+    for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i] && nodes[i].getPath() != "jsxid") {
+            xmlStr += " " + nodes[i].getPath() + "=\"\"";
+        }
+    }
+    xmlStr += "/></data>";
+    Paivahoitohakemus_Form.getCache().getDocument(cache).loadXML(xmlStr);
+}
+
+function formatDataCache(cache, matrix) {
+    if (Paivahoitohakemus_Form.getCache().getDocument(cache).getFirstChild() == null) {
+       commitCustomAutoRowSession(matrix, cache);
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 /* place JavaScript code here */
 function intalioPreStart() {
     if (Paivahoitohakemus_Form.getJSXByName("Hakutoive_1Tyyppi").getValue() == "- Valitse -") {
@@ -200,17 +225,13 @@ function prefillChildSection() {
 
 function prefillOtherChildrenSection()
 {
-    var node, i;
-    var hasEmptyChild = false;
+    var node, i, hasEmptyChild;
     while (Paivahoitohakemus_Form.getCache().getDocument("MuutLapset-nomap").getFirstChild() != null) {
         Paivahoitohakemus_Form.getCache().getDocument("MuutLapset-nomap").removeChild(Paivahoitohakemus_Form.getCache().getDocument("MuutLapset-nomap").getFirstChild());
     }
     
     // Creates new entry to cache that values can inserted later.
-    if (Paivahoitohakemus_Form.getCache().getDocument("MuutLapset-nomap").getFirstChild() == null) {
-        Paivahoitohakemus_Form.getJSXByName("MuutLapset").commitAutoRowSession();
-        hasEmptyChild = true;
-    }
+    hasEmptyChild = formatDataCache("MuutLapset-nomap", "MuutLapset");
     
     node = Paivahoitohakemus_Form.getCache().getDocument("MuutLapset-nomap").getFirstChild().cloneNode();
             

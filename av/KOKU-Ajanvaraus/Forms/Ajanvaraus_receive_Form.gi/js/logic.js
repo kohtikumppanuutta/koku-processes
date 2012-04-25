@@ -96,9 +96,24 @@ function changeStatus() {
 
 // General functions -----------------------------------------------------------------------------------------------------------------------------
 
+function commitCustomAutoRowSession(matrix, cache) {
+    var nodes, xmlStr;
+
+    nodes = AjanvarausForm.getJSXByName(matrix).getChildren();
+    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+
+    for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i] && nodes[i].getPath() != "jsxid") {
+            xmlStr += " " + nodes[i].getPath() + "=\"\"";
+        }
+    }
+    xmlStr += "/></data>";
+    AjanvarausForm.getCache().getDocument(cache).loadXML(xmlStr);
+}
+
 function formatDataCache(cache, matrix) {
     if (AjanvarausForm.getCache().getDocument(cache).getFirstChild() == null) {
-        AjanvarausForm.getJSXByName(matrix).commitAutoRowSession();
+       commitCustomAutoRowSession(matrix, cache);
         return true;
     }
     else {

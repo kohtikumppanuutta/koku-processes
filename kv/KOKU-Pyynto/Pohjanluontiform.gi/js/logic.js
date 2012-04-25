@@ -1,3 +1,26 @@
+function commitCustomAutoRowSession(matrix, cache) {
+	var nodes, xmlStr;
+	nodes = form1.getJSXByName(matrix).getChildren();
+	xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+
+	for(var i = 0; i < nodes.length; i++) {
+		if(nodes[i] && nodes[i].getPath() != "jsxid") {
+			xmlStr += " " + nodes[i].getPath() + "=\"\"";
+		}
+	}
+	xmlStr += "/></data>";
+	form1.getCache().getDocument(cache).loadXML(xmlStr);
+}
+
+function formatDataCache(cache, matrix) {
+	if(form1.getCache().getDocument(cache).getFirstChild() == null) {
+		commitCustomAutoRowSession(matrix, cache);
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /* place JavaScript code here */
 
 function isNumeric(targetField) {
@@ -590,11 +613,8 @@ function addChoice(tempID) {
 function mapMultipleChoiceToMatrix(id, sectionNumber, question, questionNumber) {
     //  alert("mapMultipleChoiceToMatrix(" + sectionNumber + ", " + question + ", " + questionNumber + ")");
     var node;
-    var hasEmptyChild = false;
-    if(form1.getCache().getDocument("MultipleChoice-nomap").getFirstChild() == null) {
-        form1.getJSXByName("MultipleChoice").commitAutoRowSession();
-        hasEmptyChild = true;
-    }
+    var hasEmptyChild = formatDataCache("MultipleChoice-nomap", "MultipleChoice");
+
     node = form1.getCache().getDocument("MultipleChoice-nomap").getFirstChild().cloneNode();
     // alert(node);
     node.setAttribute("jsxid", id);
@@ -936,11 +956,8 @@ function fillUser() {
 
 function mapFieldsToMatrix(title, question, sectionNumber, type) {
     var node;
-    var hasEmptyChild = false;
-    if(form1.getCache().getDocument("TextInput-nomap").getFirstChild() == null) {
-        form1.getJSXByName("TextInput").commitAutoRowSession();
-        hasEmptyChild = true;
-    }
+    var hasEmptyChild = formatDataCache("TextInput-nomap", "TextInput");
+
     node = form1.getCache().getDocument("TextInput-nomap").getFirstChild().cloneNode();
     // alert(node);
     node.setAttribute("jsxid", sectionNumber);
