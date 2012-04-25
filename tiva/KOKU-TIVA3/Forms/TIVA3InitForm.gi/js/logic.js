@@ -68,12 +68,28 @@ function clearDataCache(cacheName) {
 
 function formatDataCache(cache, matrix) {
     if (TIVA3Form.getCache().getDocument(cache).getFirstChild() == null) {
-        TIVA3Form.getJSXByName(matrix).commitAutoRowSession();
+        commitCustomAutoRowSession(matrix, cache)
         return true;
     } else {
         return false;
     }
 }
+
+function commitCustomAutoRowSession(matrix, cache) {
+    var nodes, xmlStr;
+
+    nodes = TIVA3Form.getJSXByName(matrix).getChildren();
+    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+
+    for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i] && nodes[i].getPath() != "jsxid") {
+            xmlStr += " " + nodes[i].getPath() + "=\"\"";
+        }
+    }
+    xmlStr += "/></data>";
+    TIVA3Form.getCache().getDocument(cache).loadXML(xmlStr);
+}
+
 
 function enabledOnValue(target, value, validValue) {
     if (value == validValue) {
@@ -457,14 +473,14 @@ function preload() {
 }
 
 function getUserRealName(uid) {
-	var userData, firstname, lastname;
+    var userData, firstname, lastname;
     userData = Arcusys.Internal.Communication.getUserInfo(uid);
     if (userData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'") && userData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'")) {
         firstname = userData.selectSingleNode("//firstname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         lastname = userData.selectSingleNode("//lastname", "xmlns:ns2='http://soa.av.koku.arcusys.fi/'").getValue();
         return firstname + " " + lastname;
     } else {
-    	return null;
+        return null;
     }
 }
 

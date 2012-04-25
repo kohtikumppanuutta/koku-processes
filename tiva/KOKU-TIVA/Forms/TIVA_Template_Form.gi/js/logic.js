@@ -168,7 +168,7 @@ function clearDataCache(cacheName, matrixName) {
 
 function formatDataCache(cache, matrix) {
     if (TIVA_Form.getCache().getDocument(cache).getFirstChild() == null) {
-        TIVA_Form.getJSXByName(matrix).commitAutoRowSession();
+        commitCustomAutoRowSession(matrix, cache)
         return true;
     } else {
         return false;
@@ -354,6 +354,22 @@ function preload() {
     }
 }
 
+function commitCustomAutoRowSession(matrix, cache) {
+    var nodes, xmlStr;
+
+    nodes = TIVAForm.getJSXByName(matrix).getChildren();
+    xmlStr = "<data jsxid=\"jsxroot\"><record jsxid=\"\"";
+
+    for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i] && nodes[i].getPath() != "jsxid") {
+            xmlStr += " " + nodes[i].getPath() + "=\"\"";
+        }
+    }
+    xmlStr += "/></data>";
+    TIVAForm.getCache().getDocument(cache).loadXML(xmlStr);
+}
+
+
 // Recipients Mapping ----------------------------------------------------------------------------------------------------------------------------
 
 /**
@@ -411,6 +427,8 @@ function searchNames(searchString) {
     }
 
     childData = Arcusys.Internal.Communication.GetChildren(searchString);
+
+/*
     status = childData.selectSingleNode("//status", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'").getValue();
 
     if(status == "error") {
@@ -421,7 +439,7 @@ function searchNames(searchString) {
             alert("Vastaanottajan hakemisessa tapahtui virhe! Virheviesti: " + error);
         }
     } else {
-
+*/
         if(childData.selectSingleNode("//child", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'") && childData.selectSingleNode("//parents", "xmlns:ns2='http://soa.tiva.koku.arcusys.fi/'")) {
             entryFound = true;
         }
@@ -457,7 +475,7 @@ function searchNames(searchString) {
         } else {
             alert("Valitettavasti antamallasi hakusanalla ei l\u00F6ytynyt tuloksia");
         }
-    }
+   
 }
 
 function addToRecipients(selection) {
