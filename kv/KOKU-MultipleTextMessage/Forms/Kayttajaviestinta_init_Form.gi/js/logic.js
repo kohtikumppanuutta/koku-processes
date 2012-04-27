@@ -270,7 +270,7 @@ function mapSelectedRecipientsToMatrix() {
 	jsxid = 0;
 	error = false;
 	childIterator = KayttajaviestintaForm.getCache().getDocument("receipientsToShow-nomap").getChildIterator();
-	hasEmptyChild = formatDataCache("receipientsToShow-nomap", "matrix1");
+	hasEmptyChild = formatDataCache("receipients-nomap", "matrix1");
 
 	while(childIterator.hasNext()) {
 		childNode = childIterator.next();
@@ -552,7 +552,6 @@ function removefromCache(removable) {
 function searchNames(searchString) {
 	var node, hasEmptyChild, entryFound, userData, parentsData, i, j, xmlData, personInfo, list, parentList, parentUidList;
 	entryFound = false;
-	hasEmptyChild = false;
 
 	// No search String
 	if(searchString == "") {
@@ -606,7 +605,7 @@ function addToRecipients() {
 	var counter, node, i, hasEmptyChild, chosen, childIterator, uidlist, parents, childNode;
 	counter = KayttajaviestintaForm.getJSXByName("recipientCounter").getValue();
 	childIterator = KayttajaviestintaForm.getCache().getDocument("HaetutVastaanottajat-nomap").getChildIterator();
-	hasEmptyChild = formatDataCache("HaetutVastaanottajat-nomap", "dummyMatrix");
+	hasEmptyChild = formatDataCache("receipientsToShow-nomap", "dummyMatrix");
 
 	while(childIterator.hasNext()) {
 		childNode = childIterator.next();
