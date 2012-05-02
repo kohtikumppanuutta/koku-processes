@@ -16,16 +16,9 @@
     </bpdm:dependencies>
     <bpel:scope bpdm:label="Palvelut" bpdm:ID="_BmwxIMJ5EeC8mJIqjPHTFA">
         <bpel:partnerLinks>
-            <bpel:partnerLink name="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar" partnerLinkType="diag:ProsessiAndPalvelutForUsersAndGroupsServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="UsersAndGroupsServiceImpl:UsersAndGroupsService" bpdm:providedPort="UsersAndGroupsServicePort" bpdm:provideSOAPAddress="http://trelx51x:8080/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_BmwxIMJ5EeC8mJIqjPHTFA:_oGprYPM1EeCUfuBHBPlb1A" bpdm:isManaged="true" bpdm:otherPoolId="_GZs_8NU2EeCVPtuzZwEfuA"/>
             <bpel:partnerLink name="prosessiAndPalvelutForKokuSuostumusProcessingServicePortPlkVar" partnerLinkType="diag:ProsessiAndPalvelutForKokuSuostumusProcessingServicePortPlk" myRole="Palvelut_for_Prosessi" bpdm:enableSharing="false" bpdm:providedService="tns:KokuSuostumusProcessingService" bpdm:providedPort="KokuSuostumusProcessingServicePort" bpdm:provideSOAPAddress="http://kohtikumppanuutta-dev.dmz:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuSuostumusProcessingServiceImpl" bpdm:providedIsDefault="true" bpdm:clientTasks="_BmwxIMJ5EeC8mJIqjPHTFA:_LL5J0CSZEeGRn-ArL7CKYA" bpdm:isManaged="true" bpdm:otherPoolId="_GZs_8NU2EeCVPtuzZwEfuA"/>
         </bpel:partnerLinks>
         <bpel:variables>
-            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameMsg" messageType="UsersAndGroupsServiceImpl:getUserUidByLooraName" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" operation="getUserUidByLooraName" opMsgType="0" bpdm:id="_tehvAPM1EeCUfuBHBPlb1A" bpdm:messageIds="inc:_td1LcPM1EeCUfuBHBPlb1A"/>
-            <bpel:variable name="usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg" messageType="UsersAndGroupsServiceImpl:getUserUidByLooraNameResponse" binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" operation="getUserUidByLooraName" opMsgType="1" bpdm:id="_tuoAgPM1EeCUfuBHBPlb1A" bpdm:messageIds=" out:_tuJfYPM1EeCUfuBHBPlb1A">
-                <bpel:from bpdm:toPart="parameters">
-                    <bpel:literal bpdm:linkedMessageType="UsersAndGroupsServiceImpl:getUserUidByLooraNameResponse" bpdm:linkedPart="parameters" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:opMsgType="1" bpdm:operation="getUserUidByLooraName"></bpel:literal>
-                </bpel:from>
-            </bpel:variable>
             <bpel:variable name="tnsLahetaSuostumusMsg" messageType="tns:lahetaSuostumus" binding="tns:KokuSuostumusProcessingServiceSoapBinding" operation="lahetaSuostumus" opMsgType="0" bpdm:id="_NL3dhSSZEeGRn-ArL7CKYA" bpdm:messageIds="inc:_NLjUcCSZEeGRn-ArL7CKYA"/>
             <bpel:variable name="tnsLahetaSuostumusResponseMsg" messageType="tns:lahetaSuostumusResponse" binding="tns:KokuSuostumusProcessingServiceSoapBinding" operation="lahetaSuostumus" opMsgType="1" bpdm:id="_NezAkCSZEeGRn-ArL7CKYA" bpdm:messageIds=" out:_NenaYCSZEeGRn-ArL7CKYA">
                 <bpel:from bpdm:toPart="parameters">
@@ -33,19 +26,11 @@
                 </bpel:from>
             </bpel:variable>
         </bpel:variables>
-        <bpel:flow>
-            <bpel:sequence>
-                <bpdm:messagingtask operation="getUserUidByLooraName" partnerLink="prosessiAndPalvelutForUsersAndGroupsServicePortPlkVar" portType="UsersAndGroupsServiceImpl:UsersAndGroupsService" isMyRole="true" enableSharing="false" bpdm:label="getUserUidByLooraName" bpdm:ID="_oGprYPM1EeCUfuBHBPlb1A">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByLooraNameMsg" bpdm:msgVarScopeId="_BmwxIMJ5EeC8mJIqjPHTFA" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:getUserUidByLooraName" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:ID="_td1LcPM1EeCUfuBHBPlb1A"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="usersAndGroupsServiceImplGetUserUidByLooraNameResponseMsg" bpdm:msgVarScopeId="_BmwxIMJ5EeC8mJIqjPHTFA" bpdm:variableIsManaged="true" bpdm:messageType="UsersAndGroupsServiceImpl:getUserUidByLooraNameResponse" bpdm:binding="UsersAndGroupsServiceImpl:UsersAndGroupsServiceSoapBinding" bpdm:ID="_tuJfYPM1EeCUfuBHBPlb1A"></bpdm:linkset>
-                </bpdm:messagingtask>
-            </bpel:sequence>
-            <bpel:sequence>
-                <bpdm:messagingtask operation="lahetaSuostumus" partnerLink="prosessiAndPalvelutForKokuSuostumusProcessingServicePortPlkVar" portType="tns:KokuSuostumusProcessingService" isMyRole="true" enableSharing="false" bpdm:label="lahetaSuostumus" bpdm:ID="_LL5J0CSZEeGRn-ArL7CKYA">
-                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsLahetaSuostumusMsg" bpdm:msgVarScopeId="_BmwxIMJ5EeC8mJIqjPHTFA" bpdm:variableIsManaged="true" bpdm:messageType="tns:lahetaSuostumus" bpdm:binding="tns:KokuSuostumusProcessingServiceSoapBinding" bpdm:ID="_NLjUcCSZEeGRn-ArL7CKYA"></bpdm:linkset>
-                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsLahetaSuostumusResponseMsg" bpdm:msgVarScopeId="_BmwxIMJ5EeC8mJIqjPHTFA" bpdm:variableIsManaged="true" bpdm:messageType="tns:lahetaSuostumusResponse" bpdm:binding="tns:KokuSuostumusProcessingServiceSoapBinding" bpdm:ID="_NenaYCSZEeGRn-ArL7CKYA"></bpdm:linkset>
-                </bpdm:messagingtask>
-            </bpel:sequence>
-        </bpel:flow>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="lahetaSuostumus" partnerLink="prosessiAndPalvelutForKokuSuostumusProcessingServicePortPlkVar" portType="tns:KokuSuostumusProcessingService" isMyRole="true" enableSharing="false" bpdm:label="lahetaSuostumus" bpdm:ID="_LL5J0CSZEeGRn-ArL7CKYA">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsLahetaSuostumusMsg" bpdm:msgVarScopeId="_BmwxIMJ5EeC8mJIqjPHTFA" bpdm:variableIsManaged="true" bpdm:messageType="tns:lahetaSuostumus" bpdm:binding="tns:KokuSuostumusProcessingServiceSoapBinding" bpdm:ID="_NLjUcCSZEeGRn-ArL7CKYA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsLahetaSuostumusResponseMsg" bpdm:msgVarScopeId="_BmwxIMJ5EeC8mJIqjPHTFA" bpdm:variableIsManaged="true" bpdm:messageType="tns:lahetaSuostumusResponse" bpdm:binding="tns:KokuSuostumusProcessingServiceSoapBinding" bpdm:ID="_NenaYCSZEeGRn-ArL7CKYA"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
     </bpel:scope>
 </bpel:process>
