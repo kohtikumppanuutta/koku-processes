@@ -37,81 +37,81 @@
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D-fW4K0XEeCYk7-iNBydwQ" source="executablepool">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_D-fW4a0XEeCYk7-iNBydwQ" key="poolIsExecutable" value="false"/>
     </eAnnotations>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_iT2_0QRsEeGvy6Wfe0A60w" iD="_iT2_0ARsEeGvy6Wfe0A60w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iT2_0gRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iT2_0wRsEeGvy6Wfe0A60w" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iT41AQRsEeGvy6Wfe0A60w" key="defaultDeclarationName" value="copyofform1_1CreateTaskRequestMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iT6qMARsEeGvy6Wfe0A60w" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}createTaskRequest"/>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_Ad7PoZUFEeGhLfrcJYTqEA" iD="_Ad7PoJUFEeGhLfrcJYTqEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ad7PopUFEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ad7Po5UFEeGhLfrcJYTqEA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ad9E0pUFEeGhLfrcJYTqEA" key="defaultDeclarationName" value="copyofform1_1CreateTaskRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ad_hEZUFEeGhLfrcJYTqEA" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}createTaskRequest"/>
       </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_iT5cEARsEeGvy6Wfe0A60w" direction="From">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iT6DIARsEeGvy6Wfe0A60w" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iT6DIQRsEeGvy6Wfe0A60w" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+      <associations xmi:type="bpmn:Association" xmi:id="_Ad9r4JUFEeGhLfrcJYTqEA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ad-6AJUFEeGhLfrcJYTqEA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ad_hEJUFEeGhLfrcJYTqEA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
         </eAnnotations>
       </associations>
     </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_inWjkQRsEeGvy6Wfe0A60w" iD="_inWjkARsEeGvy6Wfe0A60w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_inWjkgRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_inWjkwRsEeGvy6Wfe0A60w" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_inYYwgRsEeGvy6Wfe0A60w" key="defaultDeclarationName" value="copyofform1_1CreateTaskResponseMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_inaN8QRsEeGvy6Wfe0A60w" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}createTaskResponse"/>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AupMMZUFEeGhLfrcJYTqEA" iD="_AupMMJUFEeGhLfrcJYTqEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AupzQJUFEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AupzQZUFEeGhLfrcJYTqEA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Aus2kpUFEeGhLfrcJYTqEA" key="defaultDeclarationName" value="copyofform1_1CreateTaskResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AuxIAZUFEeGhLfrcJYTqEA" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}createTaskResponse"/>
       </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_inY_0ARsEeGvy6Wfe0A60w" direction="To">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_inZm4ARsEeGvy6Wfe0A60w" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_inaN8ARsEeGvy6Wfe0A60w" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+      <associations xmi:type="bpmn:Association" xmi:id="_AuurwJUFEeGhLfrcJYTqEA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Auv54JUFEeGhLfrcJYTqEA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AuxIAJUFEeGhLfrcJYTqEA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
         </eAnnotations>
       </associations>
     </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_jDH5kQRsEeGvy6Wfe0A60w" iD="_jDH5kARsEeGvy6Wfe0A60w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jDH5kgRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jDH5kwRsEeGvy6Wfe0A60w" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jDLj8gRsEeGvy6Wfe0A60w" key="defaultDeclarationName" value="copyofform1_1NotifyTaskCompletionRequestMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jDP1YARsEeGvy6Wfe0A60w" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}notifyTaskCompletionRequest"/>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_BFMrAZUFEeGhLfrcJYTqEA" iD="_BFMrAJUFEeGhLfrcJYTqEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BFMrApUFEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BFMrA5UFEeGhLfrcJYTqEA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BFRjgZUFEeGhLfrcJYTqEA" key="defaultDeclarationName" value="copyofform1_1NotifyTaskCompletionRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BFWcAZUFEeGhLfrcJYTqEA" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}notifyTaskCompletionRequest"/>
       </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_jDMyEARsEeGvy6Wfe0A60w" direction="To">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jDOnQARsEeGvy6Wfe0A60w" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jDPOUARsEeGvy6Wfe0A60w" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+      <associations xmi:type="bpmn:Association" xmi:id="_BFTYsJUFEeGhLfrcJYTqEA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BFUm0JUFEeGhLfrcJYTqEA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BFWcAJUFEeGhLfrcJYTqEA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
         </eAnnotations>
       </associations>
     </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_jVnXwQRsEeGvy6Wfe0A60w" iD="_jVnXwARsEeGvy6Wfe0A60w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jVnXwgRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVnXwwRsEeGvy6Wfe0A60w" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVrpMQRsEeGvy6Wfe0A60w" key="defaultDeclarationName" value="copyofform1_1NotifyTaskCompletionResponseMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVxIwARsEeGvy6Wfe0A60w" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}notifyTaskCompletionResponse"/>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_Bbww4ZUFEeGhLfrcJYTqEA" iD="_Bbww4JUFEeGhLfrcJYTqEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Bbww4pUFEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Bbww45UFEeGhLfrcJYTqEA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Bb1pYZUFEeGhLfrcJYTqEA" key="defaultDeclarationName" value="copyofform1_1NotifyTaskCompletionResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Bb7I8ZUFEeGhLfrcJYTqEA" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}notifyTaskCompletionResponse"/>
       </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_jVteYARsEeGvy6Wfe0A60w" direction="From">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jVusgARsEeGvy6Wfe0A60w" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVwhsARsEeGvy6Wfe0A60w" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+      <associations xmi:type="bpmn:Association" xmi:id="_Bb3ekJUFEeGhLfrcJYTqEA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Bb5TwJUFEeGhLfrcJYTqEA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Bb7I8JUFEeGhLfrcJYTqEA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
         </eAnnotations>
       </associations>
     </artifacts>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_hzWTyARsEeGvy6Wfe0A60w" iD="_hzHqQARsEeGvy6Wfe0A60w" associations="_iT5cEARsEeGvy6Wfe0A60w _inY_0ARsEeGvy6Wfe0A60w" outgoingEdges="_hzdBcARsEeGvy6Wfe0A60w" name="Copyofform1_1-create" activityType="Task">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hzWTyQRsEeGvy6Wfe0A60w" source="genericFile">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hzWTygRsEeGvy6Wfe0A60w" key="projectRelativePath" value="Copyofform1_1.gi"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_xOvIoJUEEeGhLfrcJYTqEA" iD="_xOJSwJUEEeGhLfrcJYTqEA" associations="_Ad9r4JUFEeGhLfrcJYTqEA _AuurwJUFEeGhLfrcJYTqEA" outgoingEdges="_xO6HypUEEeGhLfrcJYTqEA" name="Copyofform1_1-create" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xOvIoZUEEeGhLfrcJYTqEA" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xOvIopUEEeGhLfrcJYTqEA" key="projectRelativePath" value="Copyofform1_1.gi"/>
       </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hzWTywRsEeGvy6Wfe0A60w" source="humanTask">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hzWTzARsEeGvy6Wfe0A60w" key="factoryId" value="gi"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hzWTzQRsEeGvy6Wfe0A60w" key="taskType" value="create-and-complete"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xOvIo5UEEeGhLfrcJYTqEA" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xOvIpJUEEeGhLfrcJYTqEA" key="factoryId" value="gi"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xOvIpZUEEeGhLfrcJYTqEA" key="taskType" value="create-and-complete"/>
       </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hzWTzgRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hzWTzwRsEeGvy6Wfe0A60w" key="partnerLinkTypeKey" value="WFmagic_hzHqQARsEeGvy6Wfe0A60w"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hzWT0ARsEeGvy6Wfe0A60w" key="douri" value="project:///Copyofform1_1.gi.wsdl?wsdloperationbound={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xOvIppUEEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xOvIp5UEEeGhLfrcJYTqEA" key="partnerLinkTypeKey" value="WFmagic_xOJSwJUEEeGhLfrcJYTqEA"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xOvIqJUEEeGhLfrcJYTqEA" key="douri" value="project:///Copyofform1_1.gi.wsdl?wsdloperationbound={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask"/>
       </eAnnotations>
-      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_iTbiAARsEeGvy6Wfe0A60w"/>
-      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_inFd0QRsEeGvy6Wfe0A60w"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_Acz1UZUFEeGhLfrcJYTqEA"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_AuNHUZUFEeGhLfrcJYTqEA"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_hzZ-KARsEeGvy6Wfe0A60w" iD="_hzJfcwRsEeGvy6Wfe0A60w" associations="_jDMyEARsEeGvy6Wfe0A60w _jVteYARsEeGvy6Wfe0A60w" incomingEdges="_hzdBcARsEeGvy6Wfe0A60w" name="Copyofform1_1-complete" activityType="Task">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hzZ-KQRsEeGvy6Wfe0A60w" source="genericFile">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hzZ-KgRsEeGvy6Wfe0A60w" key="projectRelativePath" value="Copyofform1_1.gi"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_xO1PSJUEEeGhLfrcJYTqEA" iD="_xOVgAJUEEeGhLfrcJYTqEA" associations="_BFTYsJUFEeGhLfrcJYTqEA _Bb3ekJUFEeGhLfrcJYTqEA" incomingEdges="_xO6HypUEEeGhLfrcJYTqEA" name="Copyofform1_1-complete" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xO1PSZUEEeGhLfrcJYTqEA" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xO1PSpUEEeGhLfrcJYTqEA" key="projectRelativePath" value="Copyofform1_1.gi"/>
       </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hzZ-KwRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hzZ-LARsEeGvy6Wfe0A60w" key="partnerLinkTypeKey" value="WFmagic_hzHqQARsEeGvy6Wfe0A60w"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hzZ-LQRsEeGvy6Wfe0A60w" key="douri" value="project:///Copyofform1_1.gi.wsdl?invokerequestresponse={http://www.intalio.com/gi/Copyofform1_1.gi}Process/notifyTaskCompletion"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xO1PS5UEEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xO1PTJUEEeGhLfrcJYTqEA" key="partnerLinkTypeKey" value="WFmagic_xOJSwJUEEeGhLfrcJYTqEA"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xO1PTZUEEeGhLfrcJYTqEA" key="douri" value="project:///Copyofform1_1.gi.wsdl?invokerequestresponse={http://www.intalio.com/gi/Copyofform1_1.gi}Process/notifyTaskCompletion"/>
       </eAnnotations>
-      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_jCzJcQRsEeGvy6Wfe0A60w"/>
-      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_jVHogQRsEeGvy6Wfe0A60w"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_BEybUZUFEeGhLfrcJYTqEA"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_Bary0JUFEeGhLfrcJYTqEA"/>
     </vertices>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_hzdBcARsEeGvy6Wfe0A60w" iD="_hzKtkARsEeGvy6Wfe0A60w" name=""/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_xO6HypUEEeGhLfrcJYTqEA" iD="_xOYjUJUEEeGhLfrcJYTqEA" name=""/>
   </pools>
   <pools xmi:type="bpmn:Pool" xmi:id="_EPBGMa0XEeCYk7-iNBydwQ" iD="_EPBGMK0XEeCYk7-iNBydwQ" name="Process">
     <artifacts xmi:type="bpmn:DataObject" xmi:id="_KjyP5q0XEeCYk7-iNBydwQ" iD="_KjyP5a0XEeCYk7-iNBydwQ">
@@ -135,54 +135,6 @@
       <associations xmi:type="bpmn:Association" xmi:id="_dx31YK0XEeCYk7-iNBydwQ" direction="To">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dx5DgK0XEeCYk7-iNBydwQ" source="dataObjectAssociationTypeSource">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dx6RoK0XEeCYk7-iNBydwQ" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
-        </eAnnotations>
-      </associations>
-    </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_iTqykQRsEeGvy6Wfe0A60w" iD="_iTqykARsEeGvy6Wfe0A60w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iTqykgRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iTqykwRsEeGvy6Wfe0A60w" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iTwSIQRsEeGvy6Wfe0A60w" key="defaultDeclarationName" value="copyofform1_1CreateTaskRequestMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iT1xsARsEeGvy6Wfe0A60w" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}createTaskRequest"/>
-      </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_iTyHUARsEeGvy6Wfe0A60w" direction="To">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iTz8gARsEeGvy6Wfe0A60w" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iT1KoARsEeGvy6Wfe0A60w" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
-        </eAnnotations>
-      </associations>
-    </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_ina1BgRsEeGvy6Wfe0A60w" iD="_ina1BQRsEeGvy6Wfe0A60w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ina1BwRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ina1CARsEeGvy6Wfe0A60w" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_infGcgRsEeGvy6Wfe0A60w" key="defaultDeclarationName" value="copyofform1_1CreateTaskResponseMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_innpUARsEeGvy6Wfe0A60w" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}createTaskResponse"/>
-      </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_ing7oARsEeGvy6Wfe0A60w" direction="From">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_inj-8ARsEeGvy6Wfe0A60w" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_innCQARsEeGvy6Wfe0A60w" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
-        </eAnnotations>
-      </associations>
-    </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_jDQccQRsEeGvy6Wfe0A60w" iD="_jDQccARsEeGvy6Wfe0A60w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jDQccgRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jDQccwRsEeGvy6Wfe0A60w" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jDXxMQRsEeGvy6Wfe0A60w" key="defaultDeclarationName" value="copyofform1_1NotifyTaskCompletionRequestMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jDfF8ARsEeGvy6Wfe0A60w" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}notifyTaskCompletionRequest"/>
-      </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_jDZmYARsEeGvy6Wfe0A60w" direction="From">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jDcCoARsEeGvy6Wfe0A60w" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jDee4ARsEeGvy6Wfe0A60w" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
-        </eAnnotations>
-      </associations>
-    </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_jVXgIQRsEeGvy6Wfe0A60w" iD="_jVXgIARsEeGvy6Wfe0A60w">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jVXgIgRsEeGvy6Wfe0A60w" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVXgIwRsEeGvy6Wfe0A60w" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVcYoQRsEeGvy6Wfe0A60w" key="defaultDeclarationName" value="copyofform1_1NotifyTaskCompletionResponseMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVmJoQRsEeGvy6Wfe0A60w" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}notifyTaskCompletionResponse"/>
-      </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_jVe04ARsEeGvy6Wfe0A60w" direction="To">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jVifQARsEeGvy6Wfe0A60w" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVmJoARsEeGvy6Wfe0A60w" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
         </eAnnotations>
       </associations>
     </artifacts>
@@ -327,18 +279,66 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eohhsH4qEeGCxvDvN2AhGg" key="defaultDeclarationName" value="Dynamic_Fields_Form"/>
       </eAnnotations>
     </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AdJMgZUFEeGhLfrcJYTqEA" iD="_AdJMgJUFEeGhLfrcJYTqEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AdJMgpUFEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AdJMg5UFEeGhLfrcJYTqEA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AddVkZUFEeGhLfrcJYTqEA" key="defaultDeclarationName" value="copyofform1_1CreateTaskRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ad5acJUFEeGhLfrcJYTqEA" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}createTaskRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_AdmfgJUFEeGhLfrcJYTqEA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AdvpcJUFEeGhLfrcJYTqEA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ad4zYJUFEeGhLfrcJYTqEA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AuyWIZUFEeGhLfrcJYTqEA" iD="_AuyWIJUFEeGhLfrcJYTqEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AuyWIpUFEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AuyWI5UFEeGhLfrcJYTqEA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AvF4IpUFEeGhLfrcJYTqEA" key="defaultDeclarationName" value="copyofform1_1CreateTaskResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AvikEJUFEeGhLfrcJYTqEA" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}createTaskResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_AvPCEJUFEeGhLfrcJYTqEA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AvYzEJUFEeGhLfrcJYTqEA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Avh9AJUFEeGhLfrcJYTqEA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_BFXqIZUFEeGhLfrcJYTqEA" iD="_BFXqIJUFEeGhLfrcJYTqEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BFXqIpUFEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BFXqI5UFEeGhLfrcJYTqEA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BFp-AZUFEeGhLfrcJYTqEA" key="defaultDeclarationName" value="copyofform1_1NotifyTaskCompletionRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BGBxcZUFEeGhLfrcJYTqEA" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}notifyTaskCompletionRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_BFx50JUFEeGhLfrcJYTqEA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BF51oJUFEeGhLfrcJYTqEA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BGBxcJUFEeGhLfrcJYTqEA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_BbGCgZUFEeGhLfrcJYTqEA" iD="_BbGCgJUFEeGhLfrcJYTqEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BbGCgpUFEeGhLfrcJYTqEA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BbGCg5UFEeGhLfrcJYTqEA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BbXIQpUFEeGhLfrcJYTqEA" key="defaultDeclarationName" value="copyofform1_1NotifyTaskCompletionResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BbviwJUFEeGhLfrcJYTqEA" key="douri2" value="builtin:///diagram?wsdlmessage={http://www.intalio.com/gi/Copyofform1_1.gi}notifyTaskCompletionResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_BbfEEJUFEeGhLfrcJYTqEA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Bbnm8JUFEeGhLfrcJYTqEA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Bbu7sJUFEeGhLfrcJYTqEA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
     <vertices xmi:type="bpmn:Activity" xmi:id="_Ilq9Ya0XEeCYk7-iNBydwQ" iD="_Ilq9YK0XEeCYk7-iNBydwQ" associations="_KjzeA60XEeCYk7-iNBydwQ _dx31YK0XEeCYk7-iNBydwQ" outgoingEdges="_QftbwK0XEeCYk7-iNBydwQ" name="Vastaanota" activityType="EventStartMessage">
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_KjnQwa0XEeCYk7-iNBydwQ"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_dxroIa0XEeCYk7-iNBydwQ"/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_OPIgQa0XEeCYk7-iNBydwQ" iD="_OPIgQK0XEeCYk7-iNBydwQ" associations="_iTyHUARsEeGvy6Wfe0A60w _ing7oARsEeGvy6Wfe0A60w" outgoingEdges="_0Sk_4X4VEeGCxvDvN2AhGg" incomingEdges="_0CZ14X4VEeGCxvDvN2AhGg" name="Lähetä lomake vastaanottajalle" activityType="EventIntermediateMessage">
-      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_iTbiAARsEeGvy6Wfe0A60w"/>
-      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_inFd0QRsEeGvy6Wfe0A60w"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_OPIgQa0XEeCYk7-iNBydwQ" iD="_OPIgQK0XEeCYk7-iNBydwQ" associations="_AdmfgJUFEeGhLfrcJYTqEA _AvPCEJUFEeGhLfrcJYTqEA" outgoingEdges="_0Sk_4X4VEeGCxvDvN2AhGg" incomingEdges="_0CZ14X4VEeGCxvDvN2AhGg" name="Lähetä lomake vastaanottajalle" activityType="EventIntermediateMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Acz1UZUFEeGhLfrcJYTqEA"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_AuNHUZUFEeGhLfrcJYTqEA"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_PULcwa0XEeCYk7-iNBydwQ" iD="_PULcwK0XEeCYk7-iNBydwQ" outgoingEdges="_r2tUIX2DEeGzXu12ZusphQ" incomingEdges="_QftbwK0XEeCYk7-iNBydwQ" name="Luo tilaus" activityType="Task"/>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_Yudl4a0XEeCYk7-iNBydwQ" iD="_Yudl4K0XEeCYk7-iNBydwQ" associations="_jDZmYARsEeGvy6Wfe0A60w _jVe04ARsEeGvy6Wfe0A60w" outgoingEdges="_ALc0AK0gEeCYk7-iNBydwQ" incomingEdges="_k2xHcSZYEeGZ6qIn2ne6Bw" name="Käsittele" activityType="EventIntermediateMessage">
-      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_jCzJcQRsEeGvy6Wfe0A60w"/>
-      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_jVHogQRsEeGvy6Wfe0A60w"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_Yudl4a0XEeCYk7-iNBydwQ" iD="_Yudl4K0XEeCYk7-iNBydwQ" associations="_BFx50JUFEeGhLfrcJYTqEA _BbfEEJUFEeGhLfrcJYTqEA" outgoingEdges="_ALc0AK0gEeCYk7-iNBydwQ" incomingEdges="_k2xHcSZYEeGZ6qIn2ne6Bw" name="Käsittele" activityType="EventIntermediateMessage">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_BEybUZUFEeGhLfrcJYTqEA"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Bary0JUFEeGhLfrcJYTqEA"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_KUZ6oa0YEeCYk7-iNBydwQ" iD="_KUZ6oK0YEeCYk7-iNBydwQ" incomingEdges="_OmbP0a0gEeCYk7-iNBydwQ" activityType="EventEndEmpty"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_MFpxoa0fEeCYk7-iNBydwQ" iD="_MFpxoK0fEeCYk7-iNBydwQ" associations="_zpZEsCZMEeGZ6qIn2ne6Bw _z4oakCZMEeGZ6qIn2ne6Bw" outgoingEdges="_0CZ14X4VEeGCxvDvN2AhGg" incomingEdges="_z3HL4X4VEeGCxvDvN2AhGg" name="Lähetä viesti vastaanottajalle" activityType="EventIntermediateMessage">
@@ -578,30 +578,6 @@
     </eAnnotations>
   </messages>
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_dxroIa0XEeCYk7-iNBydwQ" iD="_dxroIK0XEeCYk7-iNBydwQ" source="_Ilq9Ya0XEeCYk7-iNBydwQ" target="_Fe3kgK0XEeCYk7-iNBydwQ"/>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_iTbiAARsEeGvy6Wfe0A60w" iD="_iTa68ARsEeGvy6Wfe0A60w" source="_OPIgQa0XEeCYk7-iNBydwQ" target="_hzWTyARsEeGvy6Wfe0A60w">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iTelUARsEeGvy6Wfe0A60w" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iTelUQRsEeGvy6Wfe0A60w" key="partnerLinkTypeKey" value="WFmagic_hzHqQARsEeGvy6Wfe0A60w"/>
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iTelUgRsEeGvy6Wfe0A60w" key="douri" value="project:///Copyofform1_1.gi.wsdl?messageForBoundOperation={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask/input/createTaskRequest"/>
-    </eAnnotations>
-  </messages>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_inFd0QRsEeGvy6Wfe0A60w" iD="_inFd0ARsEeGvy6Wfe0A60w" source="_hzWTyARsEeGvy6Wfe0A60w" target="_OPIgQa0XEeCYk7-iNBydwQ">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_inK9YARsEeGvy6Wfe0A60w" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_inK9YQRsEeGvy6Wfe0A60w" key="partnerLinkTypeKey" value="WFmagic_hzHqQARsEeGvy6Wfe0A60w"/>
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_inK9YgRsEeGvy6Wfe0A60w" key="douri" value="project:///Copyofform1_1.gi.wsdl?messageForBoundOperation={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask/output/createTaskResponse"/>
-    </eAnnotations>
-  </messages>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_jCzJcQRsEeGvy6Wfe0A60w" iD="_jCzJcARsEeGvy6Wfe0A60w" source="_hzZ-KARsEeGvy6Wfe0A60w" target="_Yudl4a0XEeCYk7-iNBydwQ">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jC6eMARsEeGvy6Wfe0A60w" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jC6eMQRsEeGvy6Wfe0A60w" key="partnerLinkTypeKey" value="WFmagic_hzHqQARsEeGvy6Wfe0A60w"/>
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jC6eMgRsEeGvy6Wfe0A60w" key="douri" value="project:///Copyofform1_1.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Copyofform1_1.gi}Process/notifyTaskCompletion/input/notifyTaskCompletionRequest"/>
-    </eAnnotations>
-  </messages>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_jVHogQRsEeGvy6Wfe0A60w" iD="_jVHogARsEeGvy6Wfe0A60w" source="_Yudl4a0XEeCYk7-iNBydwQ" target="_hzZ-KARsEeGvy6Wfe0A60w">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jVO9QARsEeGvy6Wfe0A60w" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVO9QQRsEeGvy6Wfe0A60w" key="partnerLinkTypeKey" value="WFmagic_hzHqQARsEeGvy6Wfe0A60w"/>
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVO9QgRsEeGvy6Wfe0A60w" key="douri" value="project:///Copyofform1_1.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Copyofform1_1.gi}Process/notifyTaskCompletion/output/notifyTaskCompletionResponse"/>
-    </eAnnotations>
-  </messages>
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_zpCfYSZMEeGZ6qIn2ne6Bw" iD="_zpCfYCZMEeGZ6qIn2ne6Bw" source="_MFpxoa0fEeCYk7-iNBydwQ" target="_wxwJOCZMEeGZ6qIn2ne6Bw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zpH-8CZMEeGZ6qIn2ne6Bw" source="attachedDataobject">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zpH-8SZMEeGZ6qIn2ne6Bw" key="douri" value="project:///KokuRequestProcessingServiceImpl.wsdl?messageForBoundOperation={http://soa.kv.koku.arcusys.fi/}KokuRequestProcessingService/KokuRequestProcessingServicePort/receiveRequest/input/receiveRequest"/>
@@ -660,6 +636,30 @@
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_uaSrMX2DEeGzXu12ZusphQ" iD="_uaSrMH2DEeGzXu12ZusphQ" source="_VVmeiGdlEeGD74mpnm3lrQ" target="_rQUpkX2DEeGzXu12ZusphQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uab1IH2DEeGzXu12ZusphQ" source="attachedDataobject">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uab1IX2DEeGzXu12ZusphQ" key="douri" value="project:///UsersAndGroupsServiceImpl.wsdl?messageForBoundOperation={http://soa.common.koku.arcusys.fi/}UsersAndGroupsService/UsersAndGroupsServicePort/getUserInfo/output/getUserInfoResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_Acz1UZUFEeGhLfrcJYTqEA" iD="_Acz1UJUFEeGhLfrcJYTqEA" source="_OPIgQa0XEeCYk7-iNBydwQ" target="_xOvIoJUEEeGhLfrcJYTqEA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ac7KEJUFEeGhLfrcJYTqEA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ac7KEZUFEeGhLfrcJYTqEA" key="partnerLinkTypeKey" value="WFmagic_xOJSwJUEEeGhLfrcJYTqEA"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ac7KEpUFEeGhLfrcJYTqEA" key="douri" value="project:///Copyofform1_1.gi.wsdl?messageForBoundOperation={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask/input/createTaskRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_AuNHUZUFEeGhLfrcJYTqEA" iD="_AuNHUJUFEeGhLfrcJYTqEA" source="_xOvIoJUEEeGhLfrcJYTqEA" target="_OPIgQa0XEeCYk7-iNBydwQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AuW4UJUFEeGhLfrcJYTqEA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AuW4UZUFEeGhLfrcJYTqEA" key="partnerLinkTypeKey" value="WFmagic_xOJSwJUEEeGhLfrcJYTqEA"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AuW4UpUFEeGhLfrcJYTqEA" key="douri" value="project:///Copyofform1_1.gi.wsdl?messageForBoundOperation={http://www.intalio.com/gi/Copyofform1_1.gi}WorkflowSoapService/Copyofform1_1Port/createTask/output/createTaskResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_BEybUZUFEeGhLfrcJYTqEA" iD="_BEybUJUFEeGhLfrcJYTqEA" source="_xO1PSJUEEeGhLfrcJYTqEA" target="_Yudl4a0XEeCYk7-iNBydwQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BE7lQJUFEeGhLfrcJYTqEA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BE7lQZUFEeGhLfrcJYTqEA" key="partnerLinkTypeKey" value="WFmagic_xOJSwJUEEeGhLfrcJYTqEA"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BE7lQpUFEeGhLfrcJYTqEA" key="douri" value="project:///Copyofform1_1.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Copyofform1_1.gi}Process/notifyTaskCompletion/input/notifyTaskCompletionRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_Bary0JUFEeGhLfrcJYTqEA" iD="_BarLwJUFEeGhLfrcJYTqEA" source="_Yudl4a0XEeCYk7-iNBydwQ" target="_xO1PSJUEEeGhLfrcJYTqEA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ba0VsJUFEeGhLfrcJYTqEA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ba0VsZUFEeGhLfrcJYTqEA" key="partnerLinkTypeKey" value="WFmagic_xOJSwJUEEeGhLfrcJYTqEA"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ba0VspUFEeGhLfrcJYTqEA" key="douri" value="project:///Copyofform1_1.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Copyofform1_1.gi}Process/notifyTaskCompletion/output/notifyTaskCompletionResponse"/>
     </eAnnotations>
   </messages>
 </bpmn:BpmnDiagram>
