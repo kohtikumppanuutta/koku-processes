@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://ws.arcusys.fi" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.arcusys.fi">
+    <wsdl:documentation>PropertyStore</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.arcusys.fi">
+            <xs:element name="getProperty">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPropertyResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getPropertyRequest">
+        <wsdl:part name="parameters" element="ns:getProperty"/>
+    </wsdl:message>
+    <wsdl:message name="getPropertyResponse">
+        <wsdl:part name="parameters" element="ns:getPropertyResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="PropertyStorePortType">
+        <wsdl:operation name="getProperty">
+            <wsdl:input message="ns:getPropertyRequest" wsaw:Action="urn:getProperty"/>
+            <wsdl:output message="ns:getPropertyResponse" wsaw:Action="urn:getPropertyResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PropertyStoreSoap11Binding" type="ns:PropertyStorePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getProperty">
+            <soap:operation soapAction="urn:getProperty" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="PropertyStoreSoap12Binding" type="ns:PropertyStorePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getProperty">
+            <soap12:operation soapAction="urn:getProperty" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="PropertyStoreHttpBinding" type="ns:PropertyStorePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getProperty">
+            <http:operation location="PropertyStore/getProperty"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getProperty"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getProperty"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PropertyStore">
+        <wsdl:port name="PropertyStoreHttpSoap11Endpoint" binding="ns:PropertyStoreSoap11Binding">
+            <soap:address location="http://localhost:9090/property-ws/services/PropertyStore.PropertyStoreHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="PropertyStoreHttpSoap12Endpoint" binding="ns:PropertyStoreSoap12Binding">
+            <soap12:address location="http://localhost:9090/property-ws/services/PropertyStore.PropertyStoreHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="PropertyStoreHttpEndpoint" binding="ns:PropertyStoreHttpBinding">
+            <http:address location="http://localhost:9090/property-ws/services/PropertyStore.PropertyStoreHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
