@@ -418,6 +418,7 @@ function searchNames(searchString) {
                 if(childArray[i]["parents_uid"]) {
                     node = TIVAForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
                     node.setAttribute("jsxid", 0);
+                    node.setAttribute("valittu", 1);
                     node.setAttribute("etunimi", childArray[i]["firstname"]);
                     node.setAttribute("sukunimi", childArray[i]["lastname"]);
                     node.setAttribute("uid", childArray[i]["uid"]);
