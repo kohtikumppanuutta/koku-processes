@@ -1055,7 +1055,7 @@
    <soapenv:Body>
       <soa:receiveRequest>
          <toUser>6e6be87e-f059-4154-b943-441190fc7908</toUser>
-         <requestId>95</requestId>
+         <requestId>374</requestId>
          <content><![CDATA[<h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"></h1> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1">    <h1>KÄYTTÄJÄVIESTINTÄ</h1> </div> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main">    <h2 class="old">LÄHETTÄJÄ</h2>    <p>nelli.neuvola</p>    <div class="innerContent">       <h2 class="old">VASTAANOTTAJA</h2>       <p>Kalle Kuntalainen<br> Kirsi Kuntalainen<br></p>    </div>    <h2 class="old">Kysymyksiä</h2>    <div class="innerContent">       <p>Toimiiko service?</p>       <p>Oletko ihminen??</p>       <p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a></p>    </div> </div>]]]]>><![CDATA[</content>
       </soa:receiveRequest>
    </soapenv:Body>
@@ -1075,7 +1075,7 @@
          <!--Optional:-->
          <user>6e6be87e-f059-4154-b943-441190fc7908</user>
          <!--Optional:-->
-         <requestId>95</requestId>
+         <requestId>374</requestId>
          <!--Optional:-->
          <answers>
             <!--Zero or more repetitions:-->
@@ -1109,7 +1109,7 @@
          <!--Optional:-->
          <user>30c7970a-30c2-4110-b1b7-894cda70c98a</user>
          <!--Optional:-->
-         <requestId>95</requestId>
+         <requestId>374</requestId>
          <!--Optional:-->
          <answers>
             <!--Zero or more repetitions:-->
@@ -1180,7 +1180,7 @@
    <soapenv:Header/>
    <soapenv:Body>
       <soa:sendRequestWithTemplateNew>
-         <requestTemplateId>45</requestTemplateId>
+         <requestTemplateId>123</requestTemplateId>
          <request>
             <content><![CDATA[<h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"></h1> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1">    <h1>KÄYTTÄJÄVIESTINTÄ</h1> </div> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main">    <h2 class="old">LÄHETTÄJÄ</h2>    <p>nelli.neuvola</p>    <div class="innerContent">       <h2 class="old">VASTAANOTTAJA</h2>       <p>Kalle Kuntalainen<br> Kirsi Kuntalainen<br></p>    </div>    <h2 class="old">Kysymyksiä</h2>    <div class="innerContent">       <p>Toimiiko tämä:Luodaan uusi template ja sen pohjalta uusi pyyntö testi</p>       <p>Miten menee?</p>       <p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a></p>    </div> </div>]]]]>><![CDATA[</content>
             <fromRole>Neuvolantyontekija</fromRole>
@@ -1198,7 +1198,7 @@
    <soapenv:Body>
       <soa:receiveRequest>
          <toUser>6e6be87e-f059-4154-b943-441190fc7908</toUser>
-         <requestId>99</requestId>
+         <requestId>375</requestId>
          <content><![CDATA[<h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"></h1> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1">    <h1>KÄYTTÄJÄVIESTINTÄ</h1> </div> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main">    <h2 class="old">LÄHETTÄJÄ</h2>    <p>nelli.neuvola</p>    <div class="innerContent">       <h2 class="old">VASTAANOTTAJA</h2>       <p>Kalle Kuntalainen<br> Kirsi Kuntalainen<br></p>    </div>    <h2 class="old">Kysymyksiä</h2>    <div class="innerContent">       <p>Toimiiko tämä:Luodaan uusi template ja sen pohjalta uusi pyyntö testi</p>       <p>Miten menee?</p>       <p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a></p>    </div> </div>]]]]>><![CDATA[</content>
       </soa:receiveRequest>
    </soapenv:Body>
@@ -1207,7 +1207,7 @@
    <soapenv:Body>
       <soa:receiveRequest>
          <toUser>30c7970a-30c2-4110-b1b7-894cda70c98a</toUser>
-         <requestId>99</requestId>
+         <requestId>375</requestId>
          <content><![CDATA[<h1 xmlns:ka="http://www.arcusys.fi/DynamicFields" id="Header"></h1> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="Content1">    <h1>KÄYTTÄJÄVIESTINTÄ</h1> </div> <div xmlns:ka="http://www.arcusys.fi/DynamicFields" class="main">    <h2 class="old">LÄHETTÄJÄ</h2>    <p>nelli.neuvola</p>    <div class="innerContent">       <h2 class="old">VASTAANOTTAJA</h2>       <p>Kalle Kuntalainen<br> Kirsi Kuntalainen<br></p>    </div>    <h2 class="old">Kysymyksiä</h2>    <div class="innerContent">       <p>Toimiiko service?</p>       <p>Oletko ihminen??</p>       <p><a href="javascript:void(0)" onclick="KokuMessage.citizen.redirectToRequestsRecieved()">Klikkaa tästä siirtyäksesi pyyntöihin</a></p>    </div> </div>]]]]>><![CDATA[</content>
       </soa:receiveRequest>
    </soapenv:Body>
@@ -1218,7 +1218,7 @@
          <!--Optional:-->
          <user>6e6be87e-f059-4154-b943-441190fc7908</user>
          <!--Optional:-->
-         <requestId>99</requestId>
+         <requestId>375</requestId>
          <!--Optional:-->
          <answers>
             <!--Zero or more repetitions:-->
@@ -1252,7 +1252,7 @@
          <!--Optional:-->
          <user>30c7970a-30c2-4110-b1b7-894cda70c98a</user>
          <!--Optional:-->
-         <requestId>99</requestId>
+         <requestId>375</requestId>
          <!--Optional:-->
          <answers>
             <!--Zero or more repetitions:-->

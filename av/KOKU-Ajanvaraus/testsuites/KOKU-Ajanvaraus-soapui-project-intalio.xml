@@ -3430,7 +3430,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <tas:getAvailableTasksRequest>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VcbmVsbGkubmV1dm9sYSYmaXNzdWVkPT0xMzI2NjkzODIyODY5JiZyb2xlcz09a29rdVx2aXJrYWlsaWphJiZ1aWQ9PTg4ODg4OC04ODg4JiZlbWFpbD09dGVzdGlwb3N0aUB0ZXN0aXBvc3RpLmNvbSYmY249PW5lbGxpLm5ldXZvbGEmJmxhc3RuYW1lPT1uZXV2b2xhJiZmaXJzdG5hbWU9PW5lbGxpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tNzM1NTY1NDQ3NDgyNjQwMzI5NSYmdGltZXN0YW1wPT0xMzI2NjkzODIyODc3JiZkaWdlc3Q9PVR2M05QYnFiWHpjZ1pvbmNhSW5RRDgzK29rcz0mJiYmVE9LRU4=</tas:participantToken>
+         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VcbmVsbGkubmV1dm9sYSYmaXNzdWVkPT0xMzM2Mzc2MjIxOTQyJiZyb2xlcz09a29rdVx2aXJrYWlsaWphJiZ1aWQ9PTg4ODg4OC04ODg4JiZlbWFpbD09dGVzdGlwb3N0aUB0ZXN0aXBvc3RpLmNvbSYmY249PW5lbGxpLm5ldXZvbGEmJmxhc3RuYW1lPT1uZXV2b2xhJiZmaXJzdG5hbWU9PW5lbGxpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tMzkwMDg5MDk2MDc1ODYwMTAyJiZ0aW1lc3RhbXA9PTEzMzYzNzYyMjE5NDgmJmRpZ2VzdD09U2F5VVRlTDF2cndOUUVBZnVrR096SUNiZEFzPSYmJiZUT0tFTg==</tas:participantToken>
          <tas:taskType>PIPATask</tas:taskType>
          <tas:subQuery>T._description like '%Ajanvaraus%'</tas:subQuery>
       </tas:getAvailableTasksRequest>
@@ -3449,7 +3449,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <tas:initRequest>
-         <tas:taskId>b67bc3bb-67d8-4a75-b7e6-51e99f855db0</tas:taskId>
+         <tas:taskId>5e6d2de3-24ca-4085-8155-4c7e7e1c396a</tas:taskId>
          <tas:input> 
 
 	<Ajanvaraus_Form xmlns:a0="http://www.arcusys.fi/KOKU/Ajanvaraus" xmlns="http://www.arcusys.fi/KOKU/Ajanvaraus">
@@ -3488,7 +3488,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
             </Lomake>
         </Ajanvaraus_Form>
          </tas:input>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VcbmVsbGkubmV1dm9sYSYmaXNzdWVkPT0xMzI2NjkzODIyODY5JiZyb2xlcz09a29rdVx2aXJrYWlsaWphJiZ1aWQ9PTg4ODg4OC04ODg4JiZlbWFpbD09dGVzdGlwb3N0aUB0ZXN0aXBvc3RpLmNvbSYmY249PW5lbGxpLm5ldXZvbGEmJmxhc3RuYW1lPT1uZXV2b2xhJiZmaXJzdG5hbWU9PW5lbGxpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tNzM1NTY1NDQ3NDgyNjQwMzI5NSYmdGltZXN0YW1wPT0xMzI2NjkzODIyODc3JiZkaWdlc3Q9PVR2M05QYnFiWHpjZ1pvbmNhSW5RRDgzK29rcz0mJiYmVE9LRU4=</tas:participantToken>
+         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VcbmVsbGkubmV1dm9sYSYmaXNzdWVkPT0xMzM2Mzc2MjIxOTQyJiZyb2xlcz09a29rdVx2aXJrYWlsaWphJiZ1aWQ9PTg4ODg4OC04ODg4JiZlbWFpbD09dGVzdGlwb3N0aUB0ZXN0aXBvc3RpLmNvbSYmY249PW5lbGxpLm5ldXZvbGEmJmxhc3RuYW1lPT1uZXV2b2xhJiZmaXJzdG5hbWU9PW5lbGxpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tMzkwMDg5MDk2MDc1ODYwMTAyJiZ0aW1lc3RhbXA9PTEzMzYzNzYyMjE5NDgmJmRpZ2VzdD09U2F5VVRlTDF2cndOUUVBZnVrR096SUNiZEFzPSYmJiZUT0tFTg==</tas:participantToken>
       </tas:initRequest>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>COUNT</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ServicesApprove" searchProperties="true" id="8ceab040-a7fd-4177-b4c2-9d933d8a562f"><con:settings/><con:testStep type="request" name="getUserVirkailija"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getUserUidByLooraName</con:operation><con:request name="getUserVirkailija"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
@@ -3552,7 +3552,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
          <kunpoUsername>kirsi.kuntalainen</kunpoUsername>
       </soa:getUserUidByKunpoName>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyUserUid|appointmentId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>userUid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getUserKuntalainen</con:sourceStep><con:sourcePath>//userUid</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>approve</con:targetStep><con:targetPath>//user</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false"><con:name>appointmentId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>storeAppointment</con:sourceStep><con:sourcePath>//return</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>approve</con:targetStep><con:targetPath>//appointmentId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="approve"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuAppointmentProcessingServiceSoapBinding</con:interface><con:operation>approveAppointment</con:operation><con:request name="approve"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.av.koku.arcusys.fi/">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyUserUid|appointmentId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>userUid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getUserKuntalainen</con:sourceStep><con:sourcePath>//userUid</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>approve</con:targetStep><con:targetPath>//user</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false"><con:name>appointmentId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>storeAppointment</con:sourceStep><con:sourcePath>//return</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>approve</con:targetStep><con:targetPath>//appointmentId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="approve"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuAppointmentProcessingServiceSoapBinding</con:interface><con:operation>approveAppointment</con:operation><con:request name="approve"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-av-model-0.1-SNAPSHOT/KokuAppointmentProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.av.koku.arcusys.fi/">
    <soapenv:Header/>
    <soapenv:Body>
       <soa:approveAppointment>
@@ -3561,7 +3561,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
          <!--Optional:-->
          <user>30c7970a-30c2-4110-b1b7-894cda70c98a</user>
          <!--Optional:-->
-         <appointmentId>113</appointmentId>
+         <appointmentId>239</appointmentId>
          <slotNumber>142</slotNumber>
          <!--Optional:-->
          <comment>Kyllä</comment>
@@ -3637,7 +3637,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
          <!--Optional:-->
          <user>30c7970a-30c2-4110-b1b7-894cda70c98a</user>
          <!--Optional:-->
-         <appointmentId>114</appointmentId>
+         <appointmentId>240</appointmentId>
          <!--Optional:-->
          <comment>Ei</comment>
       </soa:declineAppointment>

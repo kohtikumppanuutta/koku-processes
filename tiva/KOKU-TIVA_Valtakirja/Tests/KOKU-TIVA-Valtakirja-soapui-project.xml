@@ -3064,7 +3064,7 @@
          <limit>?</limit>
       </soa:searchUsers>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.common.koku.arcusys.fi/UsersAndGroupsService/searchUsers"/></con:call></con:operation></con:interface><con:testSuite name="Valtakirja"><con:description/><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi valtakirja(intalio) Valtakirjan hyväksyminen ei mahd." searchProperties="true"><con:settings/><con:testStep type="request" name="AuthenticateUser"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TokenServiceSOAP</con:interface><con:operation>authenticateUser</con:operation><con:request name="AuthenticateUser"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soa.common.koku.arcusys.fi/UsersAndGroupsService/searchUsers"/></con:call></con:operation></con:interface><con:testSuite name="Valtakirja"><con:description/><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi valtakirja(intalio) Valtakirjan hyväksyminen ei mahd." searchProperties="true" id="d42af718-f952-4d51-8e69-06c414b48d94"><con:settings/><con:testStep type="request" name="AuthenticateUser"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TokenServiceSOAP</con:interface><con:operation>authenticateUser</con:operation><con:request name="AuthenticateUser"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
    <soapenv:Header/>
    <soapenv:Body>
       <tok:authenticateUser>
@@ -3080,7 +3080,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <tas:getAvailableTasksRequest>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3Vca2FsbGUua3VudGFsYWluZW4mJmlzc3VlZD09MTMyNjc4Mzk3NzAxNSYmcm9sZXM9PWtva3Vca3VudGFsYWluZW4sa29rdVxPcmF2YXQmJnVpZD09MTExMTExLTExMTEmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09a2FsbGUua3VudGFsYWluZW4mJmxhc3RuYW1lPT1rdW50YWxhaW5lbiYmZmlyc3RuYW1lPT1rYWxsZSYmb2JqZWN0Y2xhc3M9PWluZXRPcmdQZXJzb24sdG9wJiZub25jZT09MTEyNDM4Nzk0NTkyODYzNjMyMCYmdGltZXN0YW1wPT0xMzI2NzgzOTc3MDIwJiZkaWdlc3Q9PTZ4c0FNY1o3a2VPaEZ1RFc1K3A3ZkNQNnhuQT0mJiYmVE9LRU4=</tas:participantToken>
+         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3Vca2FsbGUua3VudGFsYWluZW4mJmlzc3VlZD09MTMzNjM4NzYyNTM0MiYmcm9sZXM9PWtva3Vca3VudGFsYWluZW4sa29rdVxPcmF2YXQmJnVpZD09MTExMTExLTExMTEmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09a2FsbGUua3VudGFsYWluZW4mJmxhc3RuYW1lPT1rdW50YWxhaW5lbiYmZmlyc3RuYW1lPT1rYWxsZSYmb2JqZWN0Y2xhc3M9PWluZXRPcmdQZXJzb24sdG9wJiZub25jZT09NDEyNjE2NTYwODYxNTI1OTk4MyYmdGltZXN0YW1wPT0xMzM2Mzg3NjI1MzQ4JiZkaWdlc3Q9PXhvSW9pczhzQnZDc2Ixclc3NDFJVGNCRGVNND0mJiYmVE9LRU4=</tas:participantToken>
          <tas:taskType>PIPATask</tas:taskType>
          <tas:subQuery>T._formURL like '%Valtakirja_Form.gi%'</tas:subQuery>
       </tas:getAvailableTasksRequest>
@@ -3099,7 +3099,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <tas:initRequest>
-         <tas:taskId>696f3811-6ed8-4ab0-b25a-dbd143d3f3df</tas:taskId>
+         <tas:taskId>6ef03a1e-67f6-4b3f-bed8-15e754e2d2f9</tas:taskId>
          <tas:input> 
 	 <Valtakirja_Form xmlns="http://www.arcusys.fi/Valtakirja" xmlns:a0="http://www.arcusys.fi/Valtakirja">
             <Valtakirjapohja>
@@ -3123,10 +3123,10 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
             </Tiedot>
         </Valtakirja_Form>
          </tas:input>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3Vca2FsbGUua3VudGFsYWluZW4mJmlzc3VlZD09MTMyNjc4Mzk3NzAxNSYmcm9sZXM9PWtva3Vca3VudGFsYWluZW4sa29rdVxPcmF2YXQmJnVpZD09MTExMTExLTExMTEmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09a2FsbGUua3VudGFsYWluZW4mJmxhc3RuYW1lPT1rdW50YWxhaW5lbiYmZmlyc3RuYW1lPT1rYWxsZSYmb2JqZWN0Y2xhc3M9PWluZXRPcmdQZXJzb24sdG9wJiZub25jZT09MTEyNDM4Nzk0NTkyODYzNjMyMCYmdGltZXN0YW1wPT0xMzI2NzgzOTc3MDIwJiZkaWdlc3Q9PTZ4c0FNY1o3a2VPaEZ1RFc1K3A3ZkNQNnhuQT0mJiYmVE9LRU4=</tas:participantToken>
+         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3Vca2FsbGUua3VudGFsYWluZW4mJmlzc3VlZD09MTMzNjM4NzYyNTM0MiYmcm9sZXM9PWtva3Vca3VudGFsYWluZW4sa29rdVxPcmF2YXQmJnVpZD09MTExMTExLTExMTEmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09a2FsbGUua3VudGFsYWluZW4mJmxhc3RuYW1lPT1rdW50YWxhaW5lbiYmZmlyc3RuYW1lPT1rYWxsZSYmb2JqZWN0Y2xhc3M9PWluZXRPcmdQZXJzb24sdG9wJiZub25jZT09NDEyNjE2NTYwODYxNTI1OTk4MyYmdGltZXN0YW1wPT0xMzM2Mzg3NjI1MzQ4JiZkaWdlc3Q9PXhvSW9pczhzQnZDc2Ixclc3NDFJVGNCRGVNND0mJiYmVE9LRU4=</tas:participantToken>
       </tas:initRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>COUNT</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi valtakirja/Hyväksy valtakirja(service)" searchProperties="true"><con:settings/><con:testStep type="request" name="annaValtakirja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuValtakirjaProcessingServiceSoapBinding</con:interface><con:operation>annaValtakirja</con:operation><con:request name="annaValtakirja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.tiva.koku.arcusys.fi/">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>COUNT</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi valtakirja/Hyväksy valtakirja(service)" searchProperties="true" id="6ac89b76-a42f-48f1-864f-87e61c0035f3"><con:settings/><con:testStep type="request" name="annaValtakirja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuValtakirjaProcessingServiceSoapBinding</con:interface><con:operation>annaValtakirja</con:operation><con:request name="annaValtakirja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.tiva.koku.arcusys.fi/">
    <soapenv:Header/>
    <soapenv:Body>
       <soa:annaValtakirja>
@@ -3144,14 +3144,14 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <soa:hyvaksyValtakirja>
-         <valtakirjaId>32</valtakirjaId>
+         <valtakirjaId>161</valtakirjaId>
          <!--Optional:-->
          <valtuutettu>30c7970a-30c2-4110-b1b7-894cda70c98a</valtuutettu>
          <!--Optional:-->
          <kommentti>Juuuuuh</kommentti>
       </soa:hyvaksyValtakirja>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi valtakirja/Hylkää valtakirja(service)" searchProperties="true"><con:settings/><con:testStep type="request" name="annaValtakirja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuValtakirjaProcessingServiceSoapBinding</con:interface><con:operation>annaValtakirja</con:operation><con:request name="annaValtakirja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.tiva.koku.arcusys.fi/">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi valtakirja/Hylkää valtakirja(service)" searchProperties="true" id="f6ec6e56-4512-423f-9762-8b6971e3f722"><con:settings/><con:testStep type="request" name="annaValtakirja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuValtakirjaProcessingServiceSoapBinding</con:interface><con:operation>annaValtakirja</con:operation><con:request name="annaValtakirja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.tiva.koku.arcusys.fi/">
    <soapenv:Header/>
    <soapenv:Body>
       <soa:annaValtakirja>
@@ -3169,12 +3169,12 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <soa:hylkaaValtakirja>
-         <valtakirjaId>31</valtakirjaId>
+         <valtakirjaId>162</valtakirjaId>
          <valtuutettu>30c7970a-30c2-4110-b1b7-894cda70c98a</valtuutettu>
          <kommentti>Ei</kommentti>
       </soa:hylkaaValtakirja>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi valtakirja, muokkaa ja mitätöi(service)" searchProperties="true"><con:settings/><con:testStep type="request" name="annaValtakirja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuValtakirjaProcessingServiceSoapBinding</con:interface><con:operation>annaValtakirja</con:operation><con:request name="annaValtakirja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.tiva.koku.arcusys.fi/">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Uusi valtakirja, muokkaa ja mitätöi(service)" searchProperties="true" id="37b3704c-8384-4418-84d4-13ed70a09c56"><con:settings/><con:testStep type="request" name="annaValtakirja"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>KokuValtakirjaProcessingServiceSoapBinding</con:interface><con:operation>annaValtakirja</con:operation><con:request name="annaValtakirja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-tiva-model-0.1-SNAPSHOT/KokuValtakirjaProcessingServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.tiva.koku.arcusys.fi/">
    <soapenv:Header/>
    <soapenv:Body>
       <soa:annaValtakirja>
@@ -3192,7 +3192,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <soa:muokkaaValtakirja>
-         <valtakirjaId>34</valtakirjaId>
+         <valtakirjaId>163</valtakirjaId>
          <!--Optional:-->
          <valtuuttaja>6e6be87e-f059-4154-b943-441190fc7908</valtuuttaja>
          <!--Optional:-->
@@ -3205,7 +3205,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <soa:mitatoiValtakirja>
-         <valtakirjaId>34</valtakirjaId>
+         <valtakirjaId>163</valtakirjaId>
          <!--Optional:-->
          <valtuuttaja>6e6be87e-f059-4154-b943-441190fc7908</valtuuttaja>
          <!--Optional:-->

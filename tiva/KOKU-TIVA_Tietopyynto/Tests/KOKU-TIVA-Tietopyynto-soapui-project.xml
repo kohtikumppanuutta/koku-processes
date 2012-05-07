@@ -2411,7 +2411,7 @@
          <tas:participantToken>?</tas:participantToken>
       </tas:getPipaRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/getPipa"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/getTask" name="getTask" bindingOperationName="getTask" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TaskManagementServices.TaskManagementServicesSOAP/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tas="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/">
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/getPipa"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/getTask" name="getTask" bindingOperationName="getTask" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TaskManagementServices.TaskManagementServicesSOAP/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tas="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/">
    <soapenv:Header/>
    <soapenv:Body>
       <tas:getTaskRequest>
@@ -2999,9 +2999,9 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <tas:getAvailableTasksRequest>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VccGFpdmkucGFpdmFrb3RpJiZpc3N1ZWQ9PTEzMjY3MDg5NDc2ODQmJnJvbGVzPT1rb2t1XHZpcmthaWxpamEmJnVpZD09Nzc3Nzc3LTc3NzcmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09cGFpdmkucGFpdmFrb3RpJiZsYXN0bmFtZT09cGFpdmFrb3RpJiZmaXJzdG5hbWU9PXBhaXZpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tNDMwMjgwMTQ3MDM5MjU2NzIzNCYmdGltZXN0YW1wPT0xMzI2NzA4OTQ3NjkyJiZkaWdlc3Q9PUhEb3daUU52TTRQWVVxNzRxVy9MTTk2cHVvMD0mJiYmVE9LRU4=</tas:participantToken>
+         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VccGFpdmkucGFpdmFrb3RpJiZpc3N1ZWQ9PTEzMzYzODUzMTM4NjUmJnJvbGVzPT1rb2t1XHZpcmthaWxpamEmJnVpZD09Nzc3Nzc3LTc3NzcmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09cGFpdmkucGFpdmFrb3RpJiZsYXN0bmFtZT09UMOkaXbDpGtvdGkmJmZpcnN0bmFtZT09UMOkaXZpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0xODcwMTYzNTMwMzY3MjQ1MTk0JiZ0aW1lc3RhbXA9PTEzMzYzODUzMTM4NzEmJmRpZ2VzdD09MlZQVkdEUG96RlNSRnpYcENiUFRMdDBLK3o0PSYmJiZUT0tFTg==</tas:participantToken>
          <tas:taskType>PIPATask</tas:taskType>
-         <tas:subQuery>T._description like '%Uusi tietopyynto%'</tas:subQuery>
+         <tas:subQuery>T._formURL like '%http://localhost:8080/gi/apppath/KOKU-TIVA_Tietopyynto/Forms/Tiva_Tietopyynto_init_Form.gi/IntalioInternal/ServerLaunch.html%'</tas:subQuery>
       </tas:getAvailableTasksRequest>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="CopyTokenAndPipaId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="true"><con:name>CopyToken</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>AuthenticateUser_virkailija_paivakoti</con:sourceStep><con:sourcePath>declare namespace soapenv='http://schemas.xmlsoap.org/soap/envelope/';
@@ -3018,7 +3018,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <tas:initRequest>
-         <tas:taskId>b4ae64e4-405a-4138-80e8-44aa3fc11266</tas:taskId>
+         <tas:taskId>727a370b-ba59-4ec8-a491-aa46f0e0b7a7</tas:taskId>
          <tas:input> 
 	<Tiva_Tietopyynto_Form xmlns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:jsx1="http://www.arcusys.fi/Tiva_Tietopyynto">
             <Vastaus>
@@ -3060,87 +3060,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
             </Perustiedot>
         </Tiva_Tietopyynto_Form>
          </tas:input>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VccGFpdmkucGFpdmFrb3RpJiZpc3N1ZWQ9PTEzMjY3MDg5NDc2ODQmJnJvbGVzPT1rb2t1XHZpcmthaWxpamEmJnVpZD09Nzc3Nzc3LTc3NzcmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09cGFpdmkucGFpdmFrb3RpJiZsYXN0bmFtZT09cGFpdmFrb3RpJiZmaXJzdG5hbWU9PXBhaXZpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tNDMwMjgwMTQ3MDM5MjU2NzIzNCYmdGltZXN0YW1wPT0xMzI2NzA4OTQ3NjkyJiZkaWdlc3Q9PUhEb3daUU52TTRQWVVxNzRxVy9MTTk2cHVvMD0mJiYmVE9LRU4=</tas:participantToken>
-      </tas:initRequest>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="AuthenticateUser_virkailija_neuvola"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TokenServiceSOAP</con:interface><con:operation>authenticateUser</con:operation><con:request name="AuthenticateUser_virkailija_neuvola"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <tok:authenticateUser>
-         <tok:user>nelli.neuvola</tok:user>
-         <tok:password>test</tok:password>
-      </tok:authenticateUser>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Copy of CopyToken_virkailija2"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>token</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>AuthenticateUser_virkailija_neuvola</con:sourceStep><con:sourcePath>declare namespace soapenv='http://schemas.xmlsoap.org/soap/envelope/';
-declare namespace tokenws='http://tempo.intalio.org/security/tokenService/';
-//tokenws:token</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>GetPipa2</con:targetStep><con:targetPath>declare namespace soap='http://www.w3.org/2003/05/soap-envelope';
-declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/';
-//tas:participantToken</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="GetPipa2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TaskManagementServicesSOAP</con:interface><con:operation>getAvailableTasks</con:operation><con:request name="GetPipa2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TaskManagementServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tas="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <tas:getAvailableTasksRequest>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VcbmVsbGkubmV1dm9sYSYmaXNzdWVkPT0xMzI2NzA4Nzg2NzA4JiZyb2xlcz09a29rdVx2aXJrYWlsaWphJiZ1aWQ9PTg4ODg4OC04ODg4JiZlbWFpbD09dGVzdGlwb3N0aUB0ZXN0aXBvc3RpLmNvbSYmY249PW5lbGxpLm5ldXZvbGEmJmxhc3RuYW1lPT1uZXV2b2xhJiZmaXJzdG5hbWU9PW5lbGxpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tODczODgwNzMzMjI1MTUxNTE3NiYmdGltZXN0YW1wPT0xMzI2NzA4Nzg2NzEzJiZkaWdlc3Q9PWowdlByMHN4QjZQU3N3WFhpeVhnYmo3MDZVMD0mJiYmVE9LRU4=</tas:participantToken>
-         <tas:taskType>PIPATask</tas:taskType>
-         <tas:subQuery>T._description like '%tietopyynto%'</tas:subQuery>
-      </tas:getAvailableTasksRequest>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="CopyTokenAndPipaId2"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="true"><con:name>CopyToken</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>AuthenticateUser_virkailija_neuvola</con:sourceStep><con:sourcePath>declare namespace soapenv='http://schemas.xmlsoap.org/soap/envelope/';
-declare namespace tokenws='http://tempo.intalio.org/security/tokenService/';
-//tokenws:token
-</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>GetPipa2</con:targetStep><con:targetPath>declare namespace soap='http://www.w3.org/2003/05/soap-envelope';
-declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/';
-//tas:participantToken</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="false" transferTextContent="true" failOnError="true" transferChildNodes="false" entitize="false" useXQuery="false" ignoreEmpty="false" transferToAll="false"><con:name>CopyTaskId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GetPipa2</con:sourceStep><con:sourcePath>declare namespace soapenv='http://www.w3.org/2003/05/soap-envelope';
-declare namespace tms='http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/';
-//tms:taskId
-</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>initProcess(Hyväksy pyyntö)</con:targetStep><con:targetPath>declare namespace soap='http://www.w3.org/2003/05/soap-envelope';
-declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/';
-//tas:taskId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="initProcess(Hyväksy pyyntö)"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TaskManagementServicesSOAP</con:interface><con:operation>initProcess</con:operation><con:request name="initProcess(Hyväksy pyyntö)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TaskManagementServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tas="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <tas:initRequest>
-         <tas:taskId>b4ae64e4-405a-4138-80e8-44aa3fc11266</tas:taskId>
-         <tas:input> 
-	<Tiva_Tietopyynto_Form xmlns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:a0="http://www.arcusys.fi/Tiva_Tietopyynto">
-            <Vastaus>
-                <Vastaus_Perustelut>Tottakai</Vastaus_Perustelut>
-                <Vastaus_Lisatieto/>
-                <Vastaus_Voimassa/>
-                <Vastaus_Tyyppi/>
-                <Vastaus_Paatos>true</Vastaus_Paatos>
-                <Vastaus_Liite>Hienosti meneeeSoap</Vastaus_Liite>
-                <Vastaus_VoimassaToistaiseksi>true</Vastaus_VoimassaToistaiseksi>
-                <Vastaus_Extend01>24</Vastaus_Extend01>
-                <Vastaus_Extend02/>
-                <Vastaus_Extend03/>
-                <Vastaus_Extend04/>
-            </Vastaus>
-            <Pyynto>
-                <Pyynto_Kohde>Kauko Kuntalainen</Pyynto_Kohde>
-                <Pyynto_Havainnointitiedot/>
-                <Pyynto_Tarkoitus>Turha</Pyynto_Tarkoitus>
-                <Pyynto_Lainsaadanto/>
-                <Pyynto_Lisatieto/>
-                <Pyynto_Extend01/>
-                <Pyynto_Extend02/>
-                <Pyynto_Extend03/>
-                <Pyynto_Extend04/>
-                <Pyynto_Kohde_UID>163e70af-2c0d-4911-8996-ccd7b5bd09ea</Pyynto_Kohde_UID>
-            </Pyynto>
-            <Perustiedot>
-                <Perustiedot_Otsikko>16-1-2012Soap</Perustiedot_Otsikko>
-                <Perustiedot_Vastaanottaja>nelli neuvola</Perustiedot_Vastaanottaja>
-                <Perustiedot_Lisatietoa>Blob</Perustiedot_Lisatietoa>
-                <Perustiedot_Extend01>koku/nelli.neuvola</Perustiedot_Extend01>
-                <Perustiedot_Extend02/>
-                <Perustiedot_Extend03/>
-                <Perustiedot_Extend04/>
-                <Perustiedot_Lahettaja>paivi.paivakoti</Perustiedot_Lahettaja>
-                <Perustiedot_Vastaanottaja_UID>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</Perustiedot_Vastaanottaja_UID>
-                <Perustiedot_Lahettaja_UID>415ae6c9-406b-41df-b71e-887b5f0e4f3a</Perustiedot_Lahettaja_UID>
-            </Perustiedot>
-        </Tiva_Tietopyynto_Form>
-         </tas:input>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VccGFpdmkucGFpdmFrb3RpJiZpc3N1ZWQ9PTEzMjY2OTk1MzAxMDYmJnJvbGVzPT1rb2t1XHZpcmthaWxpamEmJnVpZD09Nzc3Nzc3LTc3NzcmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09cGFpdmkucGFpdmFrb3RpJiZsYXN0bmFtZT09cGFpdmFrb3RpJiZmaXJzdG5hbWU9PXBhaXZpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT02NTg4ODQyNTcyODQyMTc0OTYxJiZ0aW1lc3RhbXA9PTEzMjY2OTk1MzAxMTUmJmRpZ2VzdD09U2M4dHQxeEpuMnhVMzE0UnBHTksrYU5RblJnPSYmJiZUT0tFTg==</tas:participantToken>
+         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VccGFpdmkucGFpdmFrb3RpJiZpc3N1ZWQ9PTEzMzYzODUzMTM4NjUmJnJvbGVzPT1rb2t1XHZpcmthaWxpamEmJnVpZD09Nzc3Nzc3LTc3NzcmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09cGFpdmkucGFpdmFrb3RpJiZsYXN0bmFtZT09UMOkaXbDpGtvdGkmJmZpcnN0bmFtZT09UMOkaXZpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0xODcwMTYzNTMwMzY3MjQ1MTk0JiZ0aW1lc3RhbXA9PTEzMzYzODUzMTM4NzEmJmRpZ2VzdD09MlZQVkdEUG96RlNSRnpYcENiUFRMdDBLK3o0PSYmJiZUT0tFTg==</tas:participantToken>
       </tas:initRequest>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>COUNT</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UusiTietopyynto/Hylkää(intalio)keskenvastaus" searchProperties="true"><con:settings/><con:testStep type="request" name="AuthenticateUser_virkailija_paivakoti"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TokenServiceSOAP</con:interface><con:operation>authenticateUser</con:operation><con:request name="AuthenticateUser_virkailija_paivakoti"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
@@ -3223,87 +3143,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
          <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VccGFpdmkucGFpdmFrb3RpJiZpc3N1ZWQ9PTEzMjY3MDg5NDc2ODQmJnJvbGVzPT1rb2t1XHZpcmthaWxpamEmJnVpZD09Nzc3Nzc3LTc3NzcmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09cGFpdmkucGFpdmFrb3RpJiZsYXN0bmFtZT09cGFpdmFrb3RpJiZmaXJzdG5hbWU9PXBhaXZpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tNDMwMjgwMTQ3MDM5MjU2NzIzNCYmdGltZXN0YW1wPT0xMzI2NzA4OTQ3NjkyJiZkaWdlc3Q9PUhEb3daUU52TTRQWVVxNzRxVy9MTTk2cHVvMD0mJiYmVE9LRU4=</tas:participantToken>
       </tas:initRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="AuthenticateUser_virkailija_neuvola"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TokenServiceSOAP</con:interface><con:operation>authenticateUser</con:operation><con:request name="AuthenticateUser_virkailija_neuvola"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TokenService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tok="http://tempo.intalio.org/security/tokenService/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <tok:authenticateUser>
-         <tok:user>nelli.neuvola</tok:user>
-         <tok:password>test</tok:password>
-      </tok:authenticateUser>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Copy of CopyToken_virkailija2"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>token</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>AuthenticateUser_virkailija_neuvola</con:sourceStep><con:sourcePath>declare namespace soapenv='http://schemas.xmlsoap.org/soap/envelope/';
-declare namespace tokenws='http://tempo.intalio.org/security/tokenService/';
-//tokenws:token</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>GetPipa2</con:targetStep><con:targetPath>declare namespace soap='http://www.w3.org/2003/05/soap-envelope';
-declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/';
-//tas:participantToken</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="GetPipa2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TaskManagementServicesSOAP</con:interface><con:operation>getAvailableTasks</con:operation><con:request name="GetPipa2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TaskManagementServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tas="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <tas:getAvailableTasksRequest>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VcbmVsbGkubmV1dm9sYSYmaXNzdWVkPT0xMzI2NzA4Nzg2NzA4JiZyb2xlcz09a29rdVx2aXJrYWlsaWphJiZ1aWQ9PTg4ODg4OC04ODg4JiZlbWFpbD09dGVzdGlwb3N0aUB0ZXN0aXBvc3RpLmNvbSYmY249PW5lbGxpLm5ldXZvbGEmJmxhc3RuYW1lPT1uZXV2b2xhJiZmaXJzdG5hbWU9PW5lbGxpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT0tODczODgwNzMzMjI1MTUxNTE3NiYmdGltZXN0YW1wPT0xMzI2NzA4Nzg2NzEzJiZkaWdlc3Q9PWowdlByMHN4QjZQU3N3WFhpeVhnYmo3MDZVMD0mJiYmVE9LRU4=</tas:participantToken>
-         <tas:taskType>PIPATask</tas:taskType>
-         <tas:subQuery>T._description like '%tietopyynto%'</tas:subQuery>
-      </tas:getAvailableTasksRequest>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="CopyTokenAndPipaId2"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="true"><con:name>CopyToken</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>AuthenticateUser_virkailija_neuvola</con:sourceStep><con:sourcePath>declare namespace soapenv='http://schemas.xmlsoap.org/soap/envelope/';
-declare namespace tokenws='http://tempo.intalio.org/security/tokenService/';
-//tokenws:token
-</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>GetPipa2</con:targetStep><con:targetPath>declare namespace soap='http://www.w3.org/2003/05/soap-envelope';
-declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/';
-//tas:participantToken</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="false" transferTextContent="true" failOnError="true" transferChildNodes="false" entitize="false" useXQuery="false" ignoreEmpty="false" transferToAll="false"><con:name>CopyTaskId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GetPipa2</con:sourceStep><con:sourcePath>declare namespace soapenv='http://www.w3.org/2003/05/soap-envelope';
-declare namespace tms='http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/';
-//tms:taskId
-</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>initProcess(Hylkää pyyntö)</con:targetStep><con:targetPath>declare namespace soap='http://www.w3.org/2003/05/soap-envelope';
-declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/';
-//tas:taskId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="initProcess(Hylkää pyyntö)"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TaskManagementServicesSOAP</con:interface><con:operation>initProcess</con:operation><con:request name="initProcess(Hylkää pyyntö)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/axis2/services/TaskManagementServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tas="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <tas:initRequest>
-         <tas:taskId>b4ae64e4-405a-4138-80e8-44aa3fc11266</tas:taskId>
-         <tas:input> 
-	<Tiva_Tietopyynto_Form xmlns="http://www.arcusys.fi/Tiva_Tietopyynto" xmlns:a0="http://www.arcusys.fi/Tiva_Tietopyynto">
-            <Vastaus>
-                <Vastaus_Perustelut>EI IKINÄ!</Vastaus_Perustelut>
-                <Vastaus_Lisatieto/>
-                <Vastaus_Voimassa/>
-                <Vastaus_Tyyppi/>
-                <Vastaus_Paatos>false</Vastaus_Paatos>
-                <Vastaus_Liite>Jepulis</Vastaus_Liite>
-                <Vastaus_VoimassaToistaiseksi>true</Vastaus_VoimassaToistaiseksi>
-                <Vastaus_Extend01>24</Vastaus_Extend01>
-                <Vastaus_Extend02/>
-                <Vastaus_Extend03/>
-                <Vastaus_Extend04/>
-            </Vastaus>
-            <Pyynto>
-                <Pyynto_Kohde>Kauko Kuntalainen</Pyynto_Kohde>
-                <Pyynto_Havainnointitiedot/>
-                <Pyynto_Tarkoitus>Turha</Pyynto_Tarkoitus>
-                <Pyynto_Lainsaadanto/>
-                <Pyynto_Lisatieto/>
-                <Pyynto_Extend01/>
-                <Pyynto_Extend02/>
-                <Pyynto_Extend03/>
-                <Pyynto_Extend04/>
-                <Pyynto_Kohde_UID>163e70af-2c0d-4911-8996-ccd7b5bd09ea</Pyynto_Kohde_UID>
-            </Pyynto>
-            <Perustiedot>
-                <Perustiedot_Otsikko>16-1-2012Soap</Perustiedot_Otsikko>
-                <Perustiedot_Vastaanottaja>nelli neuvola</Perustiedot_Vastaanottaja>
-                <Perustiedot_Lisatietoa>Blob</Perustiedot_Lisatietoa>
-                <Perustiedot_Extend01>koku/nelli.neuvola</Perustiedot_Extend01>
-                <Perustiedot_Extend02/>
-                <Perustiedot_Extend03/>
-                <Perustiedot_Extend04/>
-                <Perustiedot_Lahettaja>paivi.paivakoti</Perustiedot_Lahettaja>
-                <Perustiedot_Vastaanottaja_UID>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</Perustiedot_Vastaanottaja_UID>
-                <Perustiedot_Lahettaja_UID>415ae6c9-406b-41df-b71e-887b5f0e4f3a</Perustiedot_Lahettaja_UID>
-            </Perustiedot>
-        </Tiva_Tietopyynto_Form>
-         </tas:input>
-         <tas:participantToken>VE9LRU4mJnVzZXI9PWtva3VccGFpdmkucGFpdmFrb3RpJiZpc3N1ZWQ9PTEzMjY2OTk1MzAxMDYmJnJvbGVzPT1rb2t1XHZpcmthaWxpamEmJnVpZD09Nzc3Nzc3LTc3NzcmJmVtYWlsPT10ZXN0aXBvc3RpQHRlc3RpcG9zdGkuY29tJiZjbj09cGFpdmkucGFpdmFrb3RpJiZsYXN0bmFtZT09cGFpdmFrb3RpJiZmaXJzdG5hbWU9PXBhaXZpJiZvYmplY3RjbGFzcz09aW5ldE9yZ1BlcnNvbix0b3AmJm5vbmNlPT02NTg4ODQyNTcyODQyMTc0OTYxJiZ0aW1lc3RhbXA9PTEzMjY2OTk1MzAxMTUmJmRpZ2VzdD09U2M4dHQxeEpuMnhVMzE0UnBHTksrYU5RblJnPSYmJiZUT0tFTg==</tas:participantToken>
-      </tas:initRequest>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>COUNT</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UusiTietopyynto/Hyväksy(service)" searchProperties="true"><con:settings/><con:testStep type="request" name="getUserUidByLooraName"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getUserUidByLooraName</con:operation><con:request name="getUserUidByLooraName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>COUNT</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UusiTietopyynto/Hyväksy(service)" searchProperties="true" id="4d3c5182-a444-4e3e-a482-4e8a446fc3d3"><con:settings/><con:testStep type="request" name="getUserUidByLooraName"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getUserUidByLooraName</con:operation><con:request name="getUserUidByLooraName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
    <soapenv:Header/>
    <soapenv:Body>
       <soa:getUserUidByLooraName>
@@ -3332,7 +3172,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
          </tietopyynto>
       </soa:luoTietopyynto>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyTietopyyntoId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>tietopyyntoId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Luo tietopyyntö</con:sourceStep><con:sourcePath>//tietopyyntoId | korjaa tämä</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Hyväksy tietopyyntö</con:targetStep><con:targetPath>//requestId?? | korjaa tämä</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="copyRecieverUid"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>userUid</con:name><con:sourceType>Request</con:sourceType><con:sourceStep>Luo tietopyyntö</con:sourceStep><con:sourcePath>//receiverUid</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>HaeVastaanottajanLoora-tunnus</con:targetStep><con:targetPath>//userUid</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="HaeVastaanottajanLoora-tunnus"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getLooraNameByUserUid</con:operation><con:request name="HaeVastaanottajanLoora-tunnus"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyTietopyyntoId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>tietopyyntoId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Luo tietopyyntö</con:sourceStep><con:sourcePath>//tietopyyntoId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Hyväksy tietopyyntö</con:targetStep><con:targetPath>//requestId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="copyRecieverUid"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>userUid</con:name><con:sourceType>Request</con:sourceType><con:sourceStep>Luo tietopyyntö</con:sourceStep><con:sourcePath>//receiverUid</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>HaeVastaanottajanLoora-tunnus</con:targetStep><con:targetPath>//userUid</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="HaeVastaanottajanLoora-tunnus"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getLooraNameByUserUid</con:operation><con:request name="HaeVastaanottajanLoora-tunnus"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
    <soapenv:Header/>
    <soapenv:Body>
       <soa:getLooraNameByUserUid>
@@ -3347,27 +3187,27 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
          <!--Optional:-->
          <tietoPynnonVastaus>
             <!--Optional:-->
-            <additionalInfo>?</additionalInfo>
+            <additionalInfo/>
             <!--Optional:-->
-            <attachmentURL>?</attachmentURL>
+            <attachmentURL/>
             <!--Zero or more repetitions:-->
-            <categoryIds>?</categoryIds>
+            <categoryIds/>
             <!--Optional:-->
-            <description>?</description>
+            <description>Hyväksyn soap</description>
             <!--Optional:-->
-            <informationAccessType>?</informationAccessType>
+            <informationAccessType/>
             <!--Optional:-->
             <informationDetails>Detaileja</informationDetails>
             <!--Optional:-->
             <replierUid>f313c4a3-063e-49c0-89d3-5bf3dcd98cd7</replierUid>
             <!--Optional:-->
-            <requestId>?</requestId>
+            <requestId>120</requestId>
             <!--Optional:-->
            <!-- <validTill>?</validTill> -->
          </tietoPynnonVastaus>
       </soa:hyvaksyTietopyynto>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UusiTietopyynto/Hylkää(service)" searchProperties="true"><con:settings/><con:testStep type="request" name="getUserUidByLooraName"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getUserUidByLooraName</con:operation><con:request name="getUserUidByLooraName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UusiTietopyynto/Hylkää(service)" searchProperties="true" id="ac7f58a9-396a-4918-9e30-3a8dd0e903f9"><con:settings/><con:testStep type="request" name="getUserUidByLooraName"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getUserUidByLooraName</con:operation><con:request name="getUserUidByLooraName"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
    <soapenv:Header/>
    <soapenv:Body>
       <soa:getUserUidByLooraName>
@@ -3396,7 +3236,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
          </tietopyynto>
       </soa:luoTietopyynto>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyTietopyyntoId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>tietopyyntoId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Luo tietopyyntö</con:sourceStep><con:sourcePath>//tietopyyntoId | korjaa tämä</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Hylkää tietopyyntö</con:targetStep><con:targetPath>//tietopyyntoId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="copyRecieverUid"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>userUid</con:name><con:sourceType>Request</con:sourceType><con:sourceStep>Luo tietopyyntö</con:sourceStep><con:sourcePath>//receiverUid</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>HaeVastaanottajanLoora-tunnus</con:targetStep><con:targetPath>//userUid</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="HaeVastaanottajanLoora-tunnus"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getLooraNameByUserUid</con:operation><con:request name="HaeVastaanottajanLoora-tunnus"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="copyTietopyyntoId"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>tietopyyntoId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Luo tietopyyntö</con:sourceStep><con:sourcePath>//tietopyyntoId</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Hylkää tietopyyntö</con:targetStep><con:targetPath>//tietopyyntoId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="copyRecieverUid"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>userUid</con:name><con:sourceType>Request</con:sourceType><con:sourceStep>Luo tietopyyntö</con:sourceStep><con:sourcePath>//receiverUid</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>HaeVastaanottajanLoora-tunnus</con:targetStep><con:targetPath>//userUid</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="HaeVastaanottajanLoora-tunnus"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UsersAndGroupsServiceSoapBinding</con:interface><con:operation>getLooraNameByUserUid</con:operation><con:request name="HaeVastaanottajanLoora-tunnus"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8180/arcusys-koku-0.1-SNAPSHOT-arcusys-common-0.1-SNAPSHOT/UsersAndGroupsServiceImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soa="http://soa.common.koku.arcusys.fi/">
    <soapenv:Header/>
    <soapenv:Body>
       <soa:getLooraNameByUserUid>
@@ -3408,7 +3248,7 @@ declare namespace tas='http://www.intalio.com/BPMS/Workflow/TaskManagementServic
    <soapenv:Header/>
    <soapenv:Body>
       <soa:hylkaTietopyynto>
-         <tietopyyntoId>?</tietopyyntoId>
+         <tietopyyntoId>119</tietopyyntoId>
          <explanation>Ei käy.. hoho</explanation>
       </soa:hylkaTietopyynto>
    </soapenv:Body>
