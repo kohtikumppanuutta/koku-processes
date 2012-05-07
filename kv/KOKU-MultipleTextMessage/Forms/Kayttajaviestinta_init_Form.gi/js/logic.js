@@ -446,7 +446,7 @@ function searchGroup(searchString) {
     var entryFound, node, i, hasEmptyChild, splits, list, xmlData, groupData;
     clearDataCache("GroupUserList-nomap", "listGroupUsersMatrix");
     if(searchString == "") {
-        alert("Syota hakusana");
+        alert("Sy\xF6t\xE4 hakusana");
         return;
     }
     searchString = searchString.toLowerCase();
@@ -555,7 +555,7 @@ function searchNames(searchString) {
 
     // No search String
     if(searchString == "") {
-        alert("Syota hakusana");
+        alert("Sy\xF6t\xE4 hakusana");
         return;
     }
 
