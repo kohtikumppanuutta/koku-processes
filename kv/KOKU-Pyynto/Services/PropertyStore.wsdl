@@ -69,13 +69,13 @@
     </wsdl:binding>
     <wsdl:service name="PropertyStore">
         <wsdl:port name="PropertyStoreHttpSoap11Endpoint" binding="ns:PropertyStoreSoap11Binding">
-            <soap:address location="http://localhost:9090/property-ws/services/PropertyStore.PropertyStoreHttpSoap11Endpoint/"/>
+            <soap:address location="http://localhost:8080/property-ws/services/PropertyStore.PropertyStoreHttpSoap11Endpoint/"/>
         </wsdl:port>
         <wsdl:port name="PropertyStoreHttpSoap12Endpoint" binding="ns:PropertyStoreSoap12Binding">
-            <soap12:address location="http://localhost:9090/property-ws/services/PropertyStore.PropertyStoreHttpSoap12Endpoint/"/>
+            <soap12:address location="http://localhost:8080/property-ws/services/PropertyStore.PropertyStoreHttpSoap12Endpoint/"/>
         </wsdl:port>
         <wsdl:port name="PropertyStoreHttpEndpoint" binding="ns:PropertyStoreHttpBinding">
-            <http:address location="http://localhost:9090/property-ws/services/PropertyStore.PropertyStoreHttpEndpoint/"/>
+            <http:address location="http://localhost:8080/property-ws/services/PropertyStore.PropertyStoreHttpEndpoint/"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
