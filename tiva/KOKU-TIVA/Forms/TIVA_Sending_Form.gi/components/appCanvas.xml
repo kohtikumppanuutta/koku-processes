@@ -156,6 +156,38 @@
                 <dynamics jsxborder="@No jsxborder"/>
                 <object type="jsx3.gui.Block">
                   <variants jsxoverflow="3" jsxrelativeposition="1"/>
+                  <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Suostumuksen antajat"/>
+                </object>
+                <object type="com.intalio.ria.Field">
+                  <variants/>
+                  <strings riaLabelText="Viesti_SuostumuksenAntajat" jsxname="Viesti_SuostumuksenAntajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
+                  <object type="jsx3.gui.Select">
+                    <variants jsxheight="18" jsxwidth="250" _isfocusing="true" jsxxmlasync="1" jsxrequired="0"/>
+                    <strings jsxvalue="3" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;1&quot; jsxtext=&quot;Lapsi itse&quot;/&gt;&lt;record jsxid=&quot;2&quot; jsxtext=&quot;Toinen Huoltajista&quot;/&gt;&lt;record jsxid=&quot;3&quot; jsxtext=&quot;Molemmat huoltajista&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxname="suostumuksenAntajat" jsxmargin="0 4 0 0"/>
+                    <events jsxselect="com.intalio.ria.validate(this, objEVENT);swapConsentGivers(this.getValue());"/>
+                  </object>
+                </object>
+              </object>
+              <object type="jsx3.gui.Block">
+                <variants jsxoverflow="2"/>
+                <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
+                <dynamics jsxborder="@No jsxborder"/>
+              </object>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
+            <dynamics jsxborder="@No jsxborder"/>
+            <object type="jsx3.gui.LayoutGrid">
+              <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
+              <strings jsxcols="40%,40%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxoverflow="2"/>
+                <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
+                <dynamics jsxborder="@No jsxborder"/>
+                <object type="jsx3.gui.Block">
+                  <variants jsxoverflow="3" jsxrelativeposition="1"/>
                   <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Hakusana (HETU)"/>
                 </object>
                 <object type="com.intalio.ria.Field">
@@ -177,42 +209,10 @@
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="button" jsxmargin="14 4 0 0" jsxtext="Hae"/>
+                    <strings jsxname="button" jsxmargin="14 4 0 0" jsxtext="Lisää"/>
                     <events jsxexecute="searchNames(TIVAForm.getJSXByName(&quot;searchStringChild&quot;).getValue());addToRecipients(TIVAForm.getJSXByName(&quot;suostumuksenAntajat&quot;).getValue());"/>
                   </object>
                 </object>
-              </object>
-            </object>
-          </object>
-          <object type="jsx3.gui.Block">
-            <variants jsxoverflow="2"/>
-            <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
-            <dynamics jsxborder="@No jsxborder"/>
-            <object type="jsx3.gui.LayoutGrid">
-              <variants jsxtop="0" jsxleft="0" jsxoverflow="2" jsxrelativeposition="0"/>
-              <strings jsxcols="40%,40%,*" jsxheight="100%" jsxwidth="100%" jsxname="layout ( | )"/>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
-                <dynamics jsxborder="@No jsxborder"/>
-                <object type="jsx3.gui.Block">
-                  <variants jsxoverflow="3" jsxrelativeposition="1"/>
-                  <strings jsxname="label" jsxclassname="FormLabel" jsxtext="Suostumuksen antajat"/>
-                </object>
-                <object type="com.intalio.ria.Field">
-                  <variants/>
-                  <strings riaLabelText="Viesti_SuostumuksenAntajat" jsxname="Viesti_SuostumuksenAntajat-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
-                  <object type="jsx3.gui.Select">
-                    <variants jsxheight="18" jsxwidth="250" _isfocusing="true" jsxxmlasync="1" jsxrequired="0"/>
-                    <strings jsxvalue="" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;1&quot; jsxtext=&quot;Lapsi itse&quot;/&gt;&lt;record jsxid=&quot;2&quot; jsxtext=&quot;Toinen Huoltajista&quot;/&gt;&lt;record jsxid=&quot;3&quot; jsxtext=&quot;Molemmat huoltajista&quot;/&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -" jsxname="suostumuksenAntajat" jsxmargin="0 4 0 0"/>
-                    <events jsxselect="com.intalio.ria.validate(this, objEVENT);swapConsentGivers(this.getValue());"/>
-                  </object>
-                </object>
-              </object>
-              <object type="jsx3.gui.Block">
-                <variants jsxoverflow="2"/>
-                <strings jsxheight="100%" jsxwidth="100%" jsxname="pane"/>
-                <dynamics jsxborder="@No jsxborder"/>
               </object>
             </object>
           </object>

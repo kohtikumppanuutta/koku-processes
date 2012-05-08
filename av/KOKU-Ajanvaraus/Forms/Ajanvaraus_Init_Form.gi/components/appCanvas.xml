@@ -164,7 +164,7 @@
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
-                    <strings jsxname="button" jsxtext="Hae" jsxmargin="14 4 0 0"/>
+                    <strings jsxname="button" jsxtext="Lisää" jsxmargin="14 4 0 0"/>
                     <events jsxexecute="searchNames(AjanvarausForm.getJSXByName(&quot;searchStringChild&quot;).getValue());addToRecipients();"/>
                   </object>
                 </object>
@@ -195,7 +195,7 @@
                       <xslparameters jsx_rowbg2="#efefff" jsx_rowbg1="#ffffff"/>
                       <object type="jsx3.gui.Matrix.Column">
                         <variants jsxwidth="44" jsxsort="0" jsxresize="0"/>
-                        <strings jsxcellpadding="1" jsxpath="valittu" jsxpadding="3" jsxcelltextalign="center" jsxname="Kayttajahaku_Valittu-column" jsxvaluetemplate="@empty" jsxtext="Valinta"/>
+                        <strings jsxcellpadding="1" jsxpath="valittu" jsxpadding="3" jsxcelltextalign="center" jsxname="Kayttajahaku_Valittu-column" jsxvaluetemplate="@empty" jsxtext="Valinta" jsxdisplay="none"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.CheckBox">
                           <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
@@ -204,7 +204,7 @@
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
-                        <variants jsxwidth="75"/>
+                        <variants jsxwidth="101"/>
                         <strings jsxpath="etunimi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Etunimi-column" jsxtext="Etunimi"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">
@@ -214,7 +214,7 @@
                         </object>
                       </object>
                       <object type="jsx3.gui.Matrix.Column">
-                        <variants jsxwidth="111"/>
+                        <variants jsxwidth="94"/>
                         <strings jsxpath="sukunimi" jsxcellpadding="3" jsxpadding="2" jsxname="Kayttajahaku_Sukunimi-column" jsxtext="Sukunimi"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.TextBox">

@@ -3,15 +3,12 @@
   <pnlk:partnerLinkType name="sAndKuntalainen" bpdm:poolOneId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="s" bpdm:poolTwoId="_Qp5UkLOQEeCelp0oJjnelQ" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Kuntalainen">
     <pnlk:role name="s_for_Kuntalainen" portType="s:ForKuntalainen" bpdm:thisPoolId="_cWxLYLOQEeCelp0oJjnelQ">
       <wsdl:portType name="ForKuntalainen">
-        <wsdl:operation name="EventStartMessage" bpdm:canid="_erRzsL5cEeCS5rrlGBJbAA._p7g98LduEeCo_P1EMSwThw." bpdm:dataobjectPointer="project:///Forms/Ajanvaraus_receive_Form.gi.wsdl?wsdloperation={http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi}Process/initProcess">
+        <wsdl:operation name="EventStartMessage" bpdm:canid="_erRzsL5cEeCS5rrlGBJbAA._p7g98LduEeCo_P1EMSwThw.">
           <wsdl:input message="Ajanvaraus_receive_Form:initProcessRequest" name="EventStartMessage" bpdm:canid="_fIaboL5cEeCS5rrlGBJbAA" bpdm:senderId="_erRzsL5cEeCS5rrlGBJbAA" bpdm:receiverId="_p7g98LduEeCo_P1EMSwThw" bpdm:senderName="Ajanvaraus_receive_Form-init request" bpdm:receiverName="EventStartMessage" bpdm:receiverPoolId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:dataobjectPointer="project:///Forms/Ajanvaraus_receive_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi}Process/initProcess/input/initProcessRequest"></wsdl:input>
           <wsdl:output message="Ajanvaraus_receive_Form:initProcessResponse" name="EventStartMessageResponse" bpdm:canid="_fZu1IL5cEeCS5rrlGBJbAA" bpdm:senderId="_p7g98LduEeCo_P1EMSwThw" bpdm:receiverId="_erRzsL5cEeCS5rrlGBJbAA" bpdm:senderName="EventStartMessage" bpdm:receiverName="Ajanvaraus_receive_Form-init request" bpdm:receiverPoolId="_Qp5UkLOQEeCelp0oJjnelQ" bpdm:dataobjectPointer="project:///Forms/Ajanvaraus_receive_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Ajanvaraus_receive_Form.gi}Process/initProcess/output/initProcessResponse"></wsdl:output>
         </wsdl:operation>
       </wsdl:portType>
     </pnlk:role>
-  </pnlk:partnerLinkType>
-  <pnlk:partnerLinkType name="sAndKuntalainenForPortTypeProcessPlk" bpdm:canPlkId="_cWxLYLOQEeCelp0oJjnelQ-_Qp5UkLOQEeCelp0oJjnelQ">
-    <pnlk:role name="s_for_Kuntalainen" portType="Ajanvaraus_receive_Form:Process"></pnlk:role>
   </pnlk:partnerLinkType>
   <pnlk:partnerLinkType name="sAndPalvelut" bpdm:poolOneId="_c5Bj4LOQEeCelp0oJjnelQ" bpdm:poolOneIsExecutable="false" bpdm:poolOneName="Palvelut" bpdm:poolTwoId="_cWxLYLOQEeCelp0oJjnelQ" bpdm:poolTwoIsExecutable="true" bpdm:poolTwoName="s">
     <pnlk:role name="Palvelut_for_s" portType="Palvelut:Fors" bpdm:thisPoolId="_c5Bj4LOQEeCelp0oJjnelQ">

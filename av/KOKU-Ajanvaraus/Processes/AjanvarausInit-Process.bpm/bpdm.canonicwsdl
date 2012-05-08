@@ -24,14 +24,11 @@
   <pnlk:partnerLinkType name="ProsessiAndVirkailija" bpdm:poolOneId="_miG_MLE5EeC2x8KNg_tcFQ" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Prosessi" bpdm:poolTwoId="_G5qKwLE5EeC2x8KNg_tcFQ" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Virkailija">
     <pnlk:role name="Prosessi_for_Virkailija" portType="Prosessi:ForVirkailija" bpdm:thisPoolId="_miG_MLE5EeC2x8KNg_tcFQ">
       <wsdl:portType name="ForVirkailija">
-        <wsdl:operation name="EventStartMessage" bpdm:canid="_7ar30LK-EeC4UYb-mf9FQA._DYnqwMmUEeCNbLE3JZ8FWg." bpdm:dataobjectPointer="project:///Forms/Ajanvaraus_Init_Form.gi.wsdl?wsdloperation={http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi}Process/initProcess">
+        <wsdl:operation name="EventStartMessage" bpdm:canid="_7ar30LK-EeC4UYb-mf9FQA._DYnqwMmUEeCNbLE3JZ8FWg.">
           <wsdl:input message="Ajanvaraus_Init_Form:initProcessRequest" name="EventStartMessage" bpdm:canid="_D2xmYMmUEeCNbLE3JZ8FWg" bpdm:senderId="_DYnqwMmUEeCNbLE3JZ8FWg" bpdm:receiverId="_7ar30LK-EeC4UYb-mf9FQA" bpdm:senderName="Ajanvaraus_Init_Form-init request" bpdm:receiverName="EventStartMessage" bpdm:receiverPoolId="_miG_MLE5EeC2x8KNg_tcFQ" bpdm:dataobjectPointer="project:///Forms/Ajanvaraus_Init_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi}Process/initProcess/input/initProcessRequest"></wsdl:input>
           <wsdl:output message="Ajanvaraus_Init_Form:initProcessResponse" name="EventStartMessageResponse" bpdm:canid="_ELTE4MmUEeCNbLE3JZ8FWg" bpdm:senderId="_7ar30LK-EeC4UYb-mf9FQA" bpdm:receiverId="_DYnqwMmUEeCNbLE3JZ8FWg" bpdm:senderName="EventStartMessage" bpdm:receiverName="Ajanvaraus_Init_Form-init request" bpdm:receiverPoolId="_G5qKwLE5EeC2x8KNg_tcFQ" bpdm:dataobjectPointer="project:///Forms/Ajanvaraus_Init_Form.gi.wsdl?messageForOperation={http://www.intalio.com/gi/Forms/Ajanvaraus_Init_Form.gi}Process/initProcess/output/initProcessResponse"></wsdl:output>
         </wsdl:operation>
       </wsdl:portType>
     </pnlk:role>
-  </pnlk:partnerLinkType>
-  <pnlk:partnerLinkType name="ProsessiAndVirkailijaForPortTypeProcessPlk" bpdm:canPlkId="_miG_MLE5EeC2x8KNg_tcFQ-_G5qKwLE5EeC2x8KNg_tcFQ">
-    <pnlk:role name="Prosessi_for_Virkailija" portType="Ajanvaraus_Init_Form:Process"></pnlk:role>
   </pnlk:partnerLinkType>
 </wsdl:definitions>
