@@ -1,4 +1,4 @@
-<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.7">
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.9">
   <name/>
   <icon/>
   <description/>
@@ -98,7 +98,7 @@
                   <object type="jsx3.gui.Select">
                     <variants jsxwidth="300" jsxheight="18" jsxtype="1" jsxxmlasync="1"/>
                     <strings jsxname="PohjanValinta" jsxvalue="" jsxmargin="0 4 0 0" jsxxml="&lt;data&gt;&lt;/data&gt;" jsxdefaulttext="- Valitse -"/>
-                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="getTemplate(this.getValue());"/>
+                    <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="getTemplate(this.getValue());if(form1.getJSXByName(&quot;searchVisible&quot;).getChecked() == 0) {  if (form1.getJSXByName(&quot;HaeKayttajia_Checkbox1&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Kayttajat&quot;).setDisplay(&quot;block&quot;).repaint();  }  else if (form1.getJSXByName(&quot;HaeRyhmia_Checkbox2&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;block&quot;).repaint();  }  else if (form1.getJSXByName(&quot;HaeRooleja_Checkbox3&quot;).getChecked()) {   form1.getJSXByName(&quot;Haku_Roolit&quot;).setDisplay(&quot;block&quot;).repaint();  }  form1.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Piilota Haku&quot;, true);  form1.getJSXByName(&quot;searchVisible&quot;).setChecked(1); } else if(form1.getJSXByName(&quot;searchVisible&quot;).getChecked() == 1) {  form1.getJSXByName(&quot;Haku_Ryhmat&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;Haku_Kayttajat&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;Haku_Roolit&quot;).setDisplay(&quot;none&quot;).repaint();  form1.getJSXByName(&quot;showOrHideSearch&quot;).setText(&quot;Lisää vastaanottajia&quot;, true);  form1.getJSXByName(&quot;searchVisible&quot;).setChecked(0); }"/>
                   </object>
                 </object>
               </object>
@@ -211,7 +211,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1" jsxenabled="0"/>
+                    <variants jsxheight="18" jsxchecked="1" jsxenabled="0" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeKayttajia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
                   </object>
@@ -234,7 +234,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRyhmia_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;groups&quot;);"/>
                   </object>
@@ -257,7 +257,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRooleja_Checkbox1" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;roles&quot;);"/>
                   </object>
@@ -309,7 +309,7 @@
                   <object type="jsx3.gui.Button">
                     <variants jsxindex="0" jsxheight="18"/>
                     <strings jsxname="button" jsxtext="Hae" jsxmargin="14 4 0 0"/>
-                    <events jsxexecute="searchNames(form1.getJSXByName(&quot;searchString&quot;).getValue());"/>
+                    <events jsxexecute="searchNames(form1.getJSXByName(&quot;searchString&quot;).getValue());addToRecipients();"/>
                   </object>
                 </object>
               </object>
@@ -444,7 +444,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeKayttajia_Checkbox3" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
                   </object>
@@ -467,7 +467,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRyhmia_Checkbox3" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;groups&quot;);"/>
                   </object>
@@ -490,7 +490,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="0" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRooleja_Checkbox3" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;roles&quot;);"/>
                   </object>
@@ -575,7 +575,7 @@
                         <strings jsxname="Roolihaku_Valittu-column" jsxtext="Valinta" jsxpath="valittu" jsxcelltextalign="center" jsxpadding="3" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxdisplay="none"/>
                         <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
                         <object type="jsx3.gui.CheckBox">
-                          <variants jsxchecked="0" jsxenabled="1"/>
+                          <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                           <strings jsxname="Roolihaku_Valittu" jsxtext=""/>
                         </object>
                       </object>
@@ -696,7 +696,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="1" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="1" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeKayttajia_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;users&quot;);"/>
                   </object>
@@ -719,7 +719,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="0" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRyhmia_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;groups&quot;);"/>
                   </object>
@@ -742,7 +742,7 @@
                   <variants/>
                   <strings riaLabelText="Viesti_Vastaanottaja" jsxname="Viesti_Kohdehenkilo-field" riaErrorImageSrc="images/error.gif" jsxclassname="field" riaHelpImageSrc="images/help.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                     <strings jsxname="HaeRooleja_Checkbox2" jsxtext="" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="switchSearchMode(&quot;roles&quot;);"/>
                   </object>
@@ -827,7 +827,7 @@
                         <strings jsxcellpadding="1" jsxpath="valittu" jsxpadding="3" jsxcelltextalign="center" jsxname="Valittu" jsxvaluetemplate="@empty" jsxtext="Valinta"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.CheckBox">
-                          <variants jsxchecked="0" jsxenabled="1"/>
+                          <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                           <strings jsxname="valittu" jsxtext="" jsxtip=""/>
                           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED); listGroupUsers();"/>
                         </object>
@@ -837,7 +837,7 @@
                         <strings jsxcellpadding="1" jsxpath="haettu" jsxpadding="3" jsxcelltextalign="center" jsxname="Haettu" jsxvaluetemplate="@empty" jsxtext="Valinta" jsxdisplay="none"/>
                         <dynamics jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled" jsxborder="@Outset"/>
                         <object type="jsx3.gui.CheckBox">
-                          <variants jsxchecked="0" jsxenabled="1"/>
+                          <variants jsxchecked="0" jsxenabled="1" jsxdefaultchecked="0"/>
                           <strings jsxname="haettu" jsxtext="" jsxtip="" jsxdisplay="none"/>
                           <events jsxtoggle="com.intalio.ria.validate(this, objEVENT, intCHECKED); listGroupUsers();"/>
                         </object>
@@ -1298,7 +1298,7 @@
                   </object>
                 </object>
                 <object type="jsx3.gui.CheckBox">
-                  <variants jsxheight="18" jsxchecked="0"/>
+                  <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                   <strings jsxname="searchVisible" jsxtext="[checkbox label]" jsxmargin="0 4 0 0" jsxdisplay="none"/>
                 </object>
                 <object type="jsx3.gui.TextBox">
@@ -1403,7 +1403,7 @@
                       <variants/>
                       <strings jsxname="User_PaivitaOlemassaoleva-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxheight="18" jsxchecked="0"/>
+                        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                         <strings jsxname="User_PaivitaOlemassaoleva" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="uncheckTheOthers(&quot;muokkausValinnat-pane&quot;, this.getName());"/>
                       </object>
@@ -1435,7 +1435,7 @@
                       <variants/>
                       <strings jsxname="User_LuoUusi-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxheight="18" jsxchecked="0"/>
+                        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                         <strings jsxname="User_LuoUusi" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="uncheckTheOthers(&quot;muokkausValinnat-pane&quot;, this.getName());"/>
                       </object>
@@ -1530,7 +1530,7 @@
                       <variants/>
                       <strings jsxname="vastausVapaa-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxheight="18" jsxchecked="1"/>
+                        <variants jsxheight="18" jsxchecked="1" jsxdefaultchecked="0"/>
                         <strings jsxname="vastausVapaa" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="uncheckTheOthers(&quot;Valinnat-pane&quot;, this.getName()); this.setChecked(1, true);"/>
                       </object>
@@ -1562,7 +1562,7 @@
                       <variants/>
                       <strings jsxname="vastausKyllaEi-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxheight="18" jsxchecked="0"/>
+                        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                         <strings jsxname="vastausKyllaEi" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="uncheckTheOthers(&quot;Valinnat-pane&quot;, this.getName()); this.setChecked(1, true);"/>
                       </object>
@@ -1594,7 +1594,7 @@
                       <variants/>
                       <strings jsxname="vastausVapaatVaihtoehdot-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxheight="18" jsxchecked="0"/>
+                        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                         <strings jsxname="vastausVapaatVaihtoehdot" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="uncheckTheOthers(&quot;Valinnat-pane&quot;, this.getName()); this.setChecked(1, true);"/>
                       </object>
@@ -1626,7 +1626,7 @@
                       <variants/>
                       <strings jsxname="vastausKalenteriVaihtoehdot-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxheight="18" jsxchecked="0"/>
+                        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                         <strings jsxname="vastausKalenteriVaihtoehdot" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="uncheckTheOthers(&quot;Valinnat-pane&quot;, this.getName()); this.setChecked(1, true);"/>
                       </object>
@@ -1658,7 +1658,7 @@
                       <variants/>
                       <strings jsxname="vastausNumeroVaihtoehdot-field" jsxclassname="field" riaLabelText="[Text input label]" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                       <object type="jsx3.gui.CheckBox">
-                        <variants jsxheight="18" jsxchecked="0"/>
+                        <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                         <strings jsxname="vastausNumeroVaihtoehdot" jsxmargin="0 4 0 0"/>
                         <events jsxtoggle="uncheckTheOthers(&quot;Valinnat-pane&quot;, this.getName()); this.setChecked(1, true);"/>
                       </object>
@@ -1744,7 +1744,7 @@
                   <variants/>
                   <strings jsxname="PohjaNakyvyys_Mina-field" jsxclassname="field" riaLabelText="" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                     <strings jsxname="PohjaNakyvyys_Mina" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="uncheckTheOthers(&quot;Nakyvyys&quot;,this.getName());"/>
                   </object>
@@ -1776,7 +1776,7 @@
                   <variants/>
                   <strings jsxname="PohjaNakyvyys_Organisaatio-field" jsxclassname="field" riaLabelText="" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                     <strings jsxname="PohjaNakyvyys_Organisaatio" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="uncheckTheOthers(&quot;Nakyvyys&quot;,this.getName());"/>
                   </object>
@@ -1808,7 +1808,7 @@
                   <variants/>
                   <strings jsxname="PohjaNakyvyys_Kaikki-field" jsxclassname="field" riaLabelText="" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif"/>
                   <object type="jsx3.gui.CheckBox">
-                    <variants jsxheight="18" jsxchecked="0"/>
+                    <variants jsxheight="18" jsxchecked="0" jsxdefaultchecked="0"/>
                     <strings jsxname="PohjaNakyvyys_Kaikki" jsxmargin="0 4 0 0"/>
                     <events jsxtoggle="uncheckTheOthers(&quot;Nakyvyys&quot;,this.getName());"/>
                   </object>

@@ -366,7 +366,7 @@ function searchNames(searchString) {
         TivaTietopyyntoForm.getJSXByName("searchMatrix").repaintData();
     }
 
-formatDataCache(HaetutVastaanottajat-nomap, searchMatrix);
+formatDataCache("HaetutVastaanottajat-nomap", "searchMatrix");
 
     usersData = Arcusys.Internal.Communication.GetUsers(searchString);
     
@@ -468,7 +468,7 @@ function searchChildrens(searchString) {
 
 
 
-formatDataCache(HaetutLapset-nomap, searchChildMatrix);
+formatDataCache("HaetutLapset-nomap", "searchChildMatrix");
 /*
     if(TivaTietopyyntoForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild() == null) {
         TivaTietopyyntoForm.getJSXByName("searchChildMatrix").commitAutoRowSession();

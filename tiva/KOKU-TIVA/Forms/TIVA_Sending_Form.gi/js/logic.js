@@ -284,7 +284,8 @@ function preload() {
     uidData = Arcusys.Internal.Communication.GetUserUidByLooraname(username);
     uid = uidData.selectSingleNode("//userUid", "xmlns:ns2='http://soa.common.koku.arcusys.fi/'").getValue();
     userRealName = getUserRealName(uid);
-    TIVAForm.getJSXByName("Kayttaja_Lahettaja").setValue(userRealName).repaint();
+    TIVAForm.getJSXByName("Kayttaja_NakyvaLahettaja").setValue(userRealName).repaint();
+    TIVAForm.getJSXByName("Kayttaja_Lahettaja").setValue(uid).repaint();
 }
 
 function getUserRealName(uid) {
@@ -417,6 +418,7 @@ function searchNames(searchString) {
                 if(childArray[i]["parents_uid"]) {
                     node = TIVAForm.getCache().getDocument("HaetutLapset-nomap").getFirstChild().cloneNode();
                     node.setAttribute("jsxid", 0);
+                    node.setAttribute("valittu", 1);
                     node.setAttribute("etunimi", childArray[i]["firstname"]);
                     node.setAttribute("sukunimi", childArray[i]["lastname"]);
                     node.setAttribute("uid", childArray[i]["uid"]);
